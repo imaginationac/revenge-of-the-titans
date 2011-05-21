@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+	<ogg name="sounds.ogg" url="classpath:sounds.ogg" />
+	<soundbank
+		name="sounds.soundbank"
+		format="STEREO_16BIT"
+		frequency="44100"
+		url="resource:sounds.ogg"
+	>
+		<clip name="achievementUnlocked.soundclip" soundbank="sounds.soundbank" offset="0" length="356884"/>
+		<clip name="baseAttacked.soundclip" soundbank="sounds.soundbank" offset="356884" length="264600"/>
+		<clip name="baseDestructionImminent.soundclip" soundbank="sounds.soundbank" offset="621484" length="264600"/>
+		<clip name="bezerk.soundclip" soundbank="sounds.soundbank" offset="886084" length="1557136"/>
+		<clip name="cantBuild.soundclip" soundbank="sounds.soundbank" offset="2443220" length="105304"/>
+		<clip name="empty.soundclip" soundbank="sounds.soundbank" offset="2548524" length="281428"/>
+		<clip name="endLevelBonus.soundclip" soundbank="sounds.soundbank" offset="2829952" length="418164"/>
+		<clip name="factoryShutdown.soundclip" soundbank="sounds.soundbank" offset="3248116" length="587268"/>
+		<clip name="crackle1.soundclip" soundbank="sounds.soundbank" offset="3835384" length="159448"/>
+		<clip name="crackle2.soundclip" soundbank="sounds.soundbank" offset="3994832" length="159196"/>
+		<clip name="crackle3.soundclip" soundbank="sounds.soundbank" offset="4154028" length="191192"/>
+		<clip name="pop1.soundclip" soundbank="sounds.soundbank" offset="4345220" length="174040"/>
+		<clip name="pop2.soundclip" soundbank="sounds.soundbank" offset="4519260" length="285064"/>
+		<clip name="pop3.soundclip" soundbank="sounds.soundbank" offset="4804324" length="264512"/>
+		<clip name="pop4.soundclip" soundbank="sounds.soundbank" offset="5068836" length="336264"/>
+		<clip name="pop5.soundclip" soundbank="sounds.soundbank" offset="5405100" length="336264"/>
+		<clip name="whistle1.soundclip" soundbank="sounds.soundbank" offset="5741364" length="297676"/>
+		<clip name="whistle2.soundclip" soundbank="sounds.soundbank" offset="6039040" length="145452"/>
+		<clip name="whistle3.soundclip" soundbank="sounds.soundbank" offset="6184492" length="148840"/>
+		<clip name="whistle4.soundclip" soundbank="sounds.soundbank" offset="6333332" length="154352"/>
+		<clip name="freeze.soundclip" soundbank="sounds.soundbank" offset="6487684" length="3346932"/>
+		<clip name="full.soundclip" soundbank="sounds.soundbank" offset="9834616" length="249684"/>
+		<clip name="gidrah-earth-boss-amb.soundclip" soundbank="sounds.soundbank" offset="10084300" length="1411204"/>
+		<clip name="gidrah-moon-boss-amb.soundclip" soundbank="sounds.soundbank" offset="11495504" length="1764000"/>
+		<clip name="insufficientFunds.soundclip" soundbank="sounds.soundbank" offset="13259504" length="175908"/>
+		<clip name="medalAwarded.soundclip" soundbank="sounds.soundbank" offset="13435412" length="671480"/>
+		<clip name="newGame.soundclip" soundbank="sounds.soundbank" offset="14106892" length="40184"/>
+		<clip name="newRank.soundclip" soundbank="sounds.soundbank" offset="14147076" length="720896"/>
+		<clip name="powerupExotic.soundclip" soundbank="sounds.soundbank" offset="14867972" length="265288"/>
+		<clip name="powerupSpecial.soundclip" soundbank="sounds.soundbank" offset="15133260" length="265288"/>
+		<clip name="redAlert.soundclip" soundbank="sounds.soundbank" offset="15398548" length="378788"/>
+		<clip name="repair.soundclip" soundbank="sounds.soundbank" offset="15777336" length="198452"/>
+		<clip name="rumble.soundclip" soundbank="sounds.soundbank" offset="15975788" length="890852"/>
+		<clip name="rumble_ambience.soundclip" soundbank="sounds.soundbank" offset="16866640" length="352804"/>
+		<clip name="saucer.soundclip" soundbank="sounds.soundbank" offset="17219444" length="173552"/>
+		<clip name="shields.soundclip" soundbank="sounds.soundbank" offset="17392996" length="3414336"/>
+		<clip name="smartBomb.soundclip" soundbank="sounds.soundbank" offset="20807332" length="1059188"/>
+		<clip name="sold.soundclip" soundbank="sounds.soundbank" offset="21866520" length="354432"/>
+		<clip name="general1.soundclip" soundbank="sounds.soundbank" offset="22220952" length="60640"/>
+		<clip name="general2.soundclip" soundbank="sounds.soundbank" offset="22281592" length="176400"/>
+		<clip name="general3.soundclip" soundbank="sounds.soundbank" offset="22457992" length="121276"/>
+		<clip name="general4.soundclip" soundbank="sounds.soundbank" offset="22579268" length="49616"/>
+		<clip name="general5.soundclip" soundbank="sounds.soundbank" offset="22628884" length="55128"/>
+		<clip name="general6.soundclip" soundbank="sounds.soundbank" offset="22684012" length="55128"/>
+		<clip name="general7.soundclip" soundbank="sounds.soundbank" offset="22739140" length="93716"/>
+		<clip name="general8.soundclip" soundbank="sounds.soundbank" offset="22832856" length="159864"/>
+		<clip name="scientist1.soundclip" soundbank="sounds.soundbank" offset="22992720" length="77176"/>
+		<clip name="scientist2.soundclip" soundbank="sounds.soundbank" offset="23069896" length="93716"/>
+		<clip name="scientist3.soundclip" soundbank="sounds.soundbank" offset="23163612" length="38588"/>
+		<clip name="scientist4.soundclip" soundbank="sounds.soundbank" offset="23202200" length="110252"/>
+		<clip name="scientist5.soundclip" soundbank="sounds.soundbank" offset="23312452" length="27564"/>
+		<clip name="scientist6.soundclip" soundbank="sounds.soundbank" offset="23340016" length="55128"/>
+		<clip name="scientist7.soundclip" soundbank="sounds.soundbank" offset="23395144" length="66152"/>
+		<clip name="scientist8.soundclip" soundbank="sounds.soundbank" offset="23461296" length="77176"/>
+		<clip name="titan1.soundclip" soundbank="sounds.soundbank" offset="23538472" length="33076"/>
+		<clip name="titan2.soundclip" soundbank="sounds.soundbank" offset="23571548" length="110252"/>
+		<clip name="titan3.soundclip" soundbank="sounds.soundbank" offset="23681800" length="77176"/>
+		<clip name="titan4.soundclip" soundbank="sounds.soundbank" offset="23758976" length="38588"/>
+		<clip name="titan5.soundclip" soundbank="sounds.soundbank" offset="23797564" length="82688"/>
+		<clip name="titan6.soundclip" soundbank="sounds.soundbank" offset="23880252" length="88200"/>
+		<clip name="titan7.soundclip" soundbank="sounds.soundbank" offset="23968452" length="38588"/>
+		<clip name="titan8.soundclip" soundbank="sounds.soundbank" offset="24007040" length="33076"/>
+		<clip name="ZX1.soundclip" soundbank="sounds.soundbank" offset="24040116" length="77176"/>
+		<clip name="ZX2.soundclip" soundbank="sounds.soundbank" offset="24117292" length="93716"/>
+		<clip name="ZX3.soundclip" soundbank="sounds.soundbank" offset="24211008" length="38588"/>
+		<clip name="ZX4.soundclip" soundbank="sounds.soundbank" offset="24249596" length="115764"/>
+		<clip name="ZX5.soundclip" soundbank="sounds.soundbank" offset="24365360" length="27564"/>
+		<clip name="ZX6.soundclip" soundbank="sounds.soundbank" offset="24392924" length="55128"/>
+		<clip name="ZX7.soundclip" soundbank="sounds.soundbank" offset="24448052" length="66152"/>
+		<clip name="ZX8.soundclip" soundbank="sounds.soundbank" offset="24514204" length="82688"/>
+		<clip name="textBeep.soundclip" soundbank="sounds.soundbank" offset="24596892" length="14240"/>
+		<clip name="unmined.soundclip" soundbank="sounds.soundbank" offset="24611132" length="303188"/>
+		<clip name="warning.soundclip" soundbank="sounds.soundbank" offset="24914320" length="249684"/>
+		<clip name="gidrahLargeWeapon.soundclip" soundbank="sounds.soundbank" offset="25164004" length="529988"/>
+	</soundbank>
+</resources>

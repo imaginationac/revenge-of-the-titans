@@ -1,0 +1,1394 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Gidrahs! -->
+
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+
+	<!-- generic gidrah stuff... -->
+
+	<animation name="gidrah.death.background.animation">
+		<alpha alpha="200"/>
+		<frame i="spriteimage.bulletBackground" d="0"/>
+	</animation>
+
+	<emitter
+		name="gidrah.death.emitter"
+		inherit="explosion.shrapnel.emitter" 
+		velocity="3, 7"
+		particlesPerTick="4,8"
+		fadeDuration="20.0, 40.0"
+		startHue="0.17"	endHue="0.3"
+		startSaturation="0.0,0.5"
+		endSaturation="1.0"
+		emitterScale="0.65"
+	/>
+
+	<emitter
+		name="gidrah.death.background.emitter"
+		inherit="collect.light.emitter"
+		startBrightness="0"
+		endBrightness="0"
+		particleDuration="0"
+		fadeDuration="16"
+		startScale="1.0"
+		scale="1.0"
+		endScale="1.5"
+		appearance="gidrah.death.background.animation"
+	/>
+
+	<emitter
+		name="gidrah.death.light.emitter"
+		duration="2.0"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		appearance="spriteimage.particle.light.64px.02"
+		layer="6"
+		startScale="0.7"
+		scale="0.8"
+		endScale="0.9"
+		particleDuration="12,14"
+		fadeDuration="8,10"
+		startHue="0.25"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.0"
+		endSaturation="1.0"
+		endBrightness="1.0"
+	/>	
+
+	<emitter
+		name="gidrah.death.flash.emitter"
+		duration="2.0"
+		maxParticles="1"
+		particlesPerTick="1.0"
+		appearance="collect.light.animation"
+		layer="6"
+		startScale="0.25"
+		scale="0.75"
+		endScale="0.5"
+		particleDuration="4.0"
+		fadeDuration="16.0"
+		startHue="0.0010"
+		startSaturation="0.0"
+		startBrightness="0.5"
+		endHue="0.0010"
+		endSaturation="0.0"
+		endBrightness="0.25"
+	/>
+
+	<emitter
+		name="deflect.emitter"
+		duration="1.0"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.deflect.01"
+		layer="10"
+		sublayer="6"
+		startScale="0.74"
+		scale="0.75"
+		endScale="0.8"
+		particleDuration="4.0"
+		fadeDuration="12.0, 16.0"
+		startHue="0.05"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.0"
+		endSaturation="1.0"
+		endBrightness="1.0"
+		sound="deflect.buffer"
+		rotate="true"
+		angle="0"
+		emitterScale="0.6"
+	/>
+
+
+	<!-- EARTH gidrah stuff... -->
+	
+	<emitter name="gidrah.earth.death.emitter" inherit="gidrah.death.emitter">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.22" endHue="0.3" endBrightness="0.005,0.01" emitterScale="0.60" /></slave>
+	</emitter>
+	<emitter name="gidrah.earth.death.flash.emitter" inherit="gidrah.death.flash.emitter">
+		<slave><emitter inherit="gidrah.death.light.emitter" >
+			<slave><emitter inherit="gidrah.death.background.emitter"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.earth.death.large.emitter" inherit="gidrah.death.emitter" emitterScale="0.6" velocity="5.0, 9.0" particlesPerTick="15,20">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.22" endHue="0.3" endBrightness="0.005,0.01" /></slave>
+	</emitter>
+	<emitter name="gidrah.earth.death.flash.large.emitter" inherit="gidrah.death.flash.emitter" emitterScale="1.75">
+		<slave><emitter inherit="gidrah.death.light.emitter" emitterScale="1.75" >
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="1.75"/></slave></emitter></slave>
+	</emitter>
+
+
+
+
+	<emitter name="gidrah.earth.boss.walk.emitter" 
+		duration="2" 
+		infinite="true"
+		appearance="spriteimage.particle.glowing.3px.01"
+		particlesPerTick="10"
+		layer="6"
+		delayAfter="94"
+		particleDuration="4"
+		fadeDuration="4"
+		doYOffset="true"
+	/>	
+
+	<emitter name="gidrah.earth.boss.walk.1.emitter" inherit="gidrah.earth.boss.walk.emitter" delay="27" delayAfter="66"/>
+	<emitter name="gidrah.earth.boss.walk.2.emitter" inherit="gidrah.earth.boss.walk.emitter" delay="59" delayAfter="34"/>
+	<emitter name="gidrah.earth.boss.walk.3.emitter" inherit="gidrah.earth.boss.walk.emitter" delay="91" delayAfter="2"/>
+
+	<emitter name="gidrah.earth.death.boss.start.emitter" sound="mine.buffer" inherit="gidrah.death.emitter" angle="0, 360.0" emitterScale="0.65" velocity="6.0, 10.0" particlesPerTick="40" delay="115" > <!-- infinite="true" delayAfter="274"> -->
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.22" endHue="0.3" endBrightness="0.005,0.01" emitterScale="0.65" /></slave>
+	</emitter>
+	<emitter name="gidrah.earth.death.flash.boss.start.emitter" inherit="gidrah.death.flash.emitter" emitterScale="2.0" delay="115" > <!-- infinite="true" delayAfter="274">  -->
+		<slave><emitter inherit="gidrah.death.light.emitter" emitterScale="2.0" /></slave>
+	</emitter>
+
+ 
+	<emitter name="gidrah.earth.death.boss.fall.emitter"
+		inherit="fire.smoke.emitter"
+		sound="bossFall.buffer"
+		appearance="smoke.animation"
+		duration="3"
+		layer="5"
+		sublayer="6"
+		doYOffset="true"
+		particlesPerTick="12,20"
+		velocity="0,70"
+		acceleration="-70"
+		angle="0"
+		radius="0"
+		startScale="0.1, 0.2"
+		scale="0.8, 1.0"
+		endScale="2, 3"
+		emitterScale="0.75"
+		gravityX="-0.015, 0.015"
+		gravityY="0.003, 0.02"
+		delay="197"
+		particleDuration="10,20"
+		fadeDuration="50,80"
+		startHue="0.15"
+		startSaturation="0.6"
+		startBrightness="0.7,1"
+		endHue="0.15"
+		endSaturation="0.3"
+		endBrightness="0.5,0.6"
+	 />
+		
+	<emitter name="gidrah.earth.death.boss.end.sparks.emitter" inherit="gidrah.death.emitter" appearance="glitter.animation" 
+		fadeDuration="40.0, 128.0" emitterScale="0.6" velocity="8.0, 20.0" duration="5" particlesPerTick="5,10" angle="10,170" delay="385" > <!-- infinite="true" delayAfter="49"> -->
+			<slave><emitter inherit="explosion.shrapnel.trail.emitter" appearance="glitter.animation" startHue="0.22" endHue="0.3" emitterScale="0.6" /></slave>
+	</emitter>
+	<emitter name="gidrah.earth.death.flash.boss.end.emitter" emitterScale="2.0" inherit="building.explosion.flash.light.emitter" delay="385" startHue="0.22" endHue="0.3" endBrightness="1">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="2.0" />
+	</slave></emitter>	
+
+	<emitter name="gidrah.earth.death.boss.end.emitter" sound="buildingExplosion.buffer" inherit="building.explosion.fire.emitter" appearance="explosion.green.animation" emitterScale="1.0" duration="10" delay="390">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="1.5" fadeDuration="128,256" startHue="0.22" endHue="0.3" delay="390"/></chain>
+	</emitter>	 
+
+
+	<!-- MOON gidrah stuff... -->
+
+
+
+	<emitter name="gidrah.moon.death.emitter" inherit="gidrah.death.emitter" startHue="0.44" endHue="0.53">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.44" endHue="0.53" endBrightness="0.005,0.01" emitterScale="0.60" /></slave>
+	</emitter>
+	<emitter name="gidrah.moon.death.flash.emitter" inherit="gidrah.death.flash.emitter">
+		<slave><emitter inherit="gidrah.death.light.emitter" >
+			<slave><emitter inherit="gidrah.death.background.emitter"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.moon.death.large.emitter" inherit="gidrah.death.emitter" startHue="0.44" endHue="0.53" emitterScale="0.6" velocity="5.0, 9.0" particlesPerTick="15,20">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.44" endHue="0.53" endBrightness="0.005,0.01" /></slave>
+	</emitter>
+	<emitter name="gidrah.moon.death.flash.large.emitter" inherit="gidrah.death.flash.emitter" emitterScale="1.75">
+		<slave><emitter inherit="gidrah.death.light.emitter" emitterScale="1.75" >
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="1.75"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.moon.deflect.emitter" inherit="deflect.emitter" startHue="0.44" endHue="0.53"/>
+	<emitter name="gidrah.moon.deflect.large.emitter" inherit="gidrah.moon.deflect.emitter" emitterScale="0.9"/>
+	<emitter name="gidrah.moon.deflect.boss.emitter" inherit="gidrah.moon.deflect.emitter" emitterScale="0.85" appearance="spriteimage.particle.deflect.boss.01"/>
+
+	<emitter name="gidrah.moon.stun.emitter" inherit="gidrah.moon.death.flash.emitter" startHue="0.44" endHue="0.53" emitterScale="0.5">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.0" endHue="0.53" emitterScale="0.5">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.5"/></slave></emitter></slave>
+	</emitter>
+	<emitter name="gidrah.moon.stun.large.emitter" inherit="gidrah.moon.death.flash.large.emitter" startHue="0.44" endHue="0.53" emitterScale="0.8">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.0" endHue="0.53" emitterScale="0.8">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.8"/></slave></emitter></slave>
+	</emitter>
+	
+	
+	<!-- boss death -->
+	
+
+	<emitter name="moon.boss.death.flash.emitter" emitterScale="4.0" inherit="building.explosion.flash.light.emitter" layer="6" delay="148" startHue="0.44" endHue="0.53" 
+		startBrightness="0.5" endBrightness="0.2">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="2.0" layer="6" startBrightness="0.3" endBrightness="0.1"/>
+	</slave></emitter>	
+	
+	<emitter name="moon.boss.fall.emitter" inherit="gidrah.earth.death.boss.fall.emitter"
+		sound="bossFall.buffer"
+		delay="200" velocity="0,50" acceleration="-50" emitterScale="0.5" 
+		appearance="smoke.glowing.alpha.animation" startBrightness="0.4,0.5" endBrightness="0.1,0.2"
+	/>
+	
+	<emitter name="moon.boss.death.explosion.emitter" inherit="building.explosion.fire.emitter" emitterScale="0.8" duration="4"
+		sound="mine.buffer" 
+	>
+		<chain><emitter inherit="explosion.smoke.emitter" 
+			velocity="2,2.5" angle="80,100" startScale="0.2,0.3" scale="0.75,1.25" endScale="2,3" emitterScale="1.0" 
+			startHue="0.44" endHue="0.53" endSaturation="1.0" delay="1"
+		>
+			<chain><emitter inherit="building.explosion.flash.light.emitter" emitterScale="1.0" delay="1">
+				<chain><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.0" delay="1">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" startHue="0.0" endHue="0.0" angle="85,95" velocity="6,15" particlesPerTick="40,85" delay="1">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.0" endHue="0.0" delay="1"/></slave>
+							<chain><emitter inherit="building.explosion.shrapnel.emitter" startHue="0.44" endHue="0.48" angle="80,100" velocity="6,19" particlesPerTick="40,85" delay="1">
+								<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.53" endHue="0.6" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 	
+	
+	
+	<!-- 2 seperate emitters because of slave layer bug -->
+	
+	<emitter name="moon.boss.death.spray.1.emitter" inherit="building.explosion.flash.light.emitter" 
+		duration="40.0" particlesPerTick="-8,1.0" emitterScale="0.4,0.6" delay="70" endScale="1.0" 
+		startHue="0.44" endHue="0.48" startBrightness="0.75" endBrightness="0.1" layer="5" sublayer="2" doYOffset="true"
+	><chain><emitter inherit="building.explosion.flash.strobe.emitter" 
+		layer="5" sublayer="2" delay="1" emitterScale="0.3,0.5" doYOffset="true"/>
+	</chain></emitter>
+	
+	<emitter name="moon.boss.death.spray.2.emitter" inherit="building.explosion.shrapnel.emitter" doYOffset="true"
+		angle="120,140" velocity="7,15" particlesPerTick="-50,15" delay="70" duration="40.0"
+		layer="5" sublayer="2" startHue="0.44" endHue="0.48" emitterScale="0.6"
+		startScale="0.9, 1.0" scale="0.8, 0.9" endScale="0.7" acceleration="-0.4, -0.8"
+		particleDuration="5,20" fadeDuration="20.0, 50.0" gravityY="-0.03, -0.05"
+	><slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.53" endHue="0.6" delay="1"/></slave>
+	</emitter>
+
+
+	
+	<!-- end of death - explode body -->
+	
+	<property key="moonBossDeathDelay" value="350"/>
+	<property key="moonBossDeathFireDelay" value="250"/>	
+	
+	<emitter name="moon.boss.death.remove.explosion.end.emitter" inherit="building.explosion.fire.emitter" 
+			sound="buildingExplosion.buffer"
+			emitterScale="0.8" duration="8" delay="=$moonBossDeathDelay">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.9" delay="=$moonBossDeathDelay" startHue="0.44" endHue="0.53"/></chain>
+	</emitter>	 
+	<emitter name="moon.boss.death.remove.explosion.flash.emitter" endBrightness="1.0" emitterScale="3.0" inherit="building.explosion.flash.light.emitter" delay="=$moonBossDeathDelay-5">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="3.0" />
+	</slave></emitter>	
+	<emitter name="moon.boss.death.remove.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" 
+		emitterScale="0.6" velocity="6,14" duration="5" particlesPerTick="5,10" angle="10,170" appearance="glitter.animation"
+	 	delay="=$moonBossDeathDelay-5">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" /></slave>
+	</emitter>	
+	<emitter name="moon.boss.death.remove.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 30.0" particlesPerTick="-3.0, 1.0"
+		delay="=$moonBossDeathFireDelay">
+		<slave><emitter	inherit="fire.smoke.emitter" duration="300, 350" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+		
+		
+		
+		
+	<!-- MARS gidrah stuff... -->
+
+	<!--  wraith fx -->
+
+
+<emitter
+	name="wraith.emitter"
+	duration="16.0"
+	particlesPerTick="-1.0, 3.0"
+	appearance="sparkle.glitter.animation"
+	layer="5"
+	subLayer="1"
+	velocity="3.0, 6.0"
+	acceleration="-0.2, -1.0"
+	radius="4.0, 14.0"
+	startScale="0.3, 0.4"
+	scale="0.4, 0.5"
+	endScale="0.2, 0.3"
+	gravityY="0.01, 0.1"
+	particleDuration="8.0"
+	fadeDuration="14.0"
+	startHue="0.45"
+	startSaturation="0.0"
+	startBrightness="1.0"
+	endHue="0.45"
+	endSaturation="0.5"
+	endBrightness="1.0"
+	rotate="true"
+	emitterScale="0.75"
+	doYOffset="true"
+>
+	<chain>
+		<emitter
+			duration="1.0"
+			particlesPerTick="1.0"
+			appearance="collect.light.animation"
+			layer="6"
+			subLayer="6"
+			startScale="0.25"
+			scale="1.0"
+			endScale="0.75"
+			particleDuration="4.0"
+			fadeDuration="24.0"
+			startHue="0.5"
+			startSaturation="1.0"
+			startBrightness="1.0"
+			endHue="0.5"
+			endSaturation="1.0"
+			endBrightness="0.5"
+			delay="1.0"
+			emitterScale="1.0"
+			doYOffset="true"
+		>
+			<slave>
+				<emitter
+					duration="1.0"
+					particlesPerTick="1.0"
+					appearance="collect.light.animation"
+					layer="6"
+					subLayer="5"
+					startScale="0.25"
+					scale="1.0"
+					endScale="0.75"
+					particleDuration="5.0"
+					fadeDuration="12.0"
+					startHue="0.0"
+					startSaturation="1.0"
+					startBrightness="1.0"
+					endHue="0.0"
+					endSaturation="1.0"
+					endBrightness="0.1"
+					delay="1.0"
+					emitterScale="1.5"
+					doYOffset="true"
+				/>
+			</slave>
+		</emitter>
+	</chain>
+</emitter>
+
+
+
+	<!--  attack stomp -->
+
+	<emitter name="mars.boss.attack.emitter" inherit="gidrah.earth.death.boss.fall.emitter"
+		delay="115" velocity="0,50" acceleration="-30" emitterScale="0.4" 
+		appearance="smoke.glowing.alpha.animation" startBrightness="0.4,0.5" endBrightness="0.1,0.2"
+	/>
+
+	<!-- boss death 318 / 598 -->
+	
+	<property key="marsBossExplodeDelay" value="318"/>
+
+	
+	<emitter name="mars.boss.death.explosion.emitter" inherit="building.explosion.fire.emitter" 
+		sound="mine.buffer" 
+			appearance="explosion.green.animation" emitterScale="0.8" duration="4" delay="=$marsBossExplodeDelay" >
+		<chain><emitter inherit="explosion.smoke.emitter"  appearance="smoke.glowing.alpha.animation"
+			velocity="2,2.5" angle="80,100" startScale="0.2,0.3" scale="0.75,1.25" endScale="2,3" emitterScale="1.0" 
+			startHue="0.22" endHue="0.3" endSaturation="1.0" delay="=$marsBossExplodeDelay"
+		>
+			<chain><emitter inherit="building.explosion.flash.light.emitter" layer="6" delay="=$marsBossExplodeDelay" startHue="0.0" endHue="0.3" 
+					startBrightness="1.0" endBrightness="0.5" emitterScale="3.0">
+				<chain><emitter inherit="building.explosion.flash.strobe.emitter"  emitterScale="1.0" layer="6" startBrightness="1.0" endBrightness="0.5" delay="=$marsBossExplodeDelay">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" startHue="0.22" endHue="0.3" angle="65,115" velocity="6,15" particlesPerTick="5,10" duration="5" delay="=$marsBossExplodeDelay-5">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.22" endHue="0.3" delay="=$marsBossExplodeDelay"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 	
+	
+	
+	<!-- end of death - explode body -->
+	
+	<property key="marsBossDeathDelay" value="600"/>
+	<property key="marsBossDeathFireDelay" value="400"/>	
+	
+	<emitter name="mars.boss.death.remove.explosion.end.emitter" inherit="building.explosion.fire.emitter" 
+		sound="buildingExplosion.buffer"
+		emitterScale="0.75" duration="8" delay="=$marsBossDeathDelay"
+		particlesPerTick="1,3" velocity="1,6" acceleration="-0.5,-1" angle="5,175" gravityY="0.001,0.3">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.9" delay="=$marsBossDeathDelay" startHue="0.44" endHue="0.53"/></chain>
+	</emitter>	 
+	<emitter name="mars.boss.death.remove.explosion.flash.emitter" emitterScale="3.0" endBrighness="1" layer="6" inherit="building.explosion.flash.light.emitter" delay="=$marsBossDeathDelay-1">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" layer="6" emitterScale="3.0" />
+	</slave></emitter>	
+	<emitter name="mars.boss.death.remove.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" 
+		emitterScale="0.6" velocity="6,14" angle="10,170" particlesPerTick="5,10" duration="5" appearance="glitter.animation"
+	 	delay="=$marsBossDeathDelay-2">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" /></slave>
+	</emitter>	
+	
+	<emitter name="mars.boss.death.remove.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 32.0" particlesPerTick="-3.0, 1.0"  duration="400"  
+		delay="=$marsBossDeathFireDelay" >
+		<slave><emitter	inherit="fire.smoke.emitter" duration="300, 350" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1" /></slave>
+	</emitter></chain></emitter></slave></emitter>	
+
+
+
+	<emitter name="gidrah.mars.death.emitter" inherit="gidrah.death.emitter" startHue="0.1" endHue="0.0">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.0" endHue="0.0" endBrightness="0.005,0.01" emitterScale="0.60" /></slave>
+	</emitter>
+	<emitter name="gidrah.mars.death.flash.emitter" inherit="gidrah.death.flash.emitter">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.3" endHue="0.0">
+			<slave><emitter inherit="gidrah.death.background.emitter"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.mars.death.large.emitter" inherit="gidrah.death.emitter" startHue="0.1" endHue="0.0" emitterScale="0.6" velocity="5.0, 9.0" particlesPerTick="15,20">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.0" endHue="0.0" endBrightness="0.005,0.01" /></slave>
+	</emitter>
+	<emitter name="gidrah.mars.death.flash.large.emitter" inherit="gidrah.death.flash.emitter" emitterScale="1.75">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.3" endHue="0.0" emitterScale="1.75" >
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="1.75"/></slave></emitter></slave>
+	</emitter>	
+	
+
+	<emitter name="gidrah.mars.deflect.emitter" inherit="deflect.emitter" startHue="0.25" endHue="0.3"/>
+	<emitter name="gidrah.mars.deflect.large.emitter" inherit="gidrah.mars.deflect.emitter" emitterScale="0.9"/>
+	<emitter name="gidrah.mars.deflect.boss.emitter" inherit="gidrah.mars.deflect.emitter" emitterScale="0.85" appearance="spriteimage.particle.deflect.boss.01"/>
+
+	<emitter name="gidrah.mars.stun.emitter" inherit="gidrah.mars.death.flash.emitter" startHue="0.25" endHue="0.3" emitterScale="0.5">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.25" endHue="0.3" emitterScale="0.5">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.5"/></slave></emitter></slave>
+	</emitter>
+	<emitter name="gidrah.mars.stun.large.emitter" inherit="gidrah.mars.death.flash.large.emitter" startHue="0.25" endHue="0.3" emitterScale="0.8">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.25" endHue="0.3" emitterScale="0.8">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.8"/></slave></emitter></slave>
+	</emitter>
+
+
+
+
+
+	
+	<!-- SATURN gidrah stuff... -->
+
+
+	<!--  bomb head -->
+
+	<emitter
+			name="bombhead.sparks.emitter"
+			particlesPerTick="-5.0, 1.0"
+			appearance="spriteimage.particle.glowing.4px.01"
+			layer="5"
+			subLayer="6"
+			velocity="4.0, 8.0"
+			acceleration="-0.5"
+			startScale="0.5"
+			scale="0.6"
+			endScale="0.4"
+			gravityY="-0.0010, -0.02"
+			particleDuration="8.0"
+			fadeDuration="20.0, 30.0"
+			startHue="0.15"
+			startSaturation="0.5"
+			startBrightness="1.0"
+			endHue="0.0"
+			endSaturation="1.0"
+			endBrightness="0.75"
+			angle="0.0, 180.0"
+			rotate="true"
+			relativeRotate="true"
+			emitterScale="0.5"
+			doYOffset="true"
+		/>
+
+
+		<emitter
+			name="bombhead.smoke.emitter"
+			tag="smoke"
+			duration="50.0, 200.0"
+			particlesPerTick="-8.0, 1.0"
+			appearance="smoke.animation"
+			layer="5"
+			subLayer="6"
+			velocity="0.4, 0.8"
+			acceleration="-0.0030, -0.0010"
+			radius="0.0, 2.0"
+			startScale="0.2, 0.3"
+			scale="1.5, 1.8"
+			endScale="1.8, 2.0"
+			gravityX="-0.0010, 0.0010"
+			gravityY="0.0010, 0.0020"
+			particleDuration="40.0, 60.0"
+			fadeDuration="20.0, 50.0"
+			startHue="0.1"
+			startSaturation="1.0"
+			startBrightness="1.0"
+			endHue="0.12"
+			endSaturation="0.2"
+			endBrightness="0.45"
+			angle="85.0, 95.0"
+			delay="1.0"
+			relativeRotate="true"
+			emitterScale="0.5"
+			doYOffset="true"
+			inherit="fire.smoke.emitter"
+		/>
+	
+ 	<!-- particle.2px.01 -->
+
+	<emitter
+		name="bombhead.end.right.emitter"
+		duration="1.0"
+		delay="1"
+		particlesPerTick="2.0"
+		appearance="spriteimage.particle.dummy.01"
+		layer="5"
+		subLayer="6"
+		velocity="0.1"
+		acceleration="0.0"
+		startScale="0.5"
+		scale="0.5"
+		endScale="0.5"
+		particleDuration="70.0"
+		fadeDuration="1.0"
+		angle="315.0"
+		rotate="true"
+		relativeRotate="true"
+		emitterScale="1.0"
+	>
+		<slave><emitter inherit="bombhead.sparks.emitter" duration="70.0">
+				<chain><emitter inherit="bombhead.smoke.emitter" delay="1"/></chain>
+				<slave><emitter inherit="ricochet.sparks.trail.emitter"/></slave>
+			</emitter>
+		</slave>
+	</emitter>
+
+	<emitter
+		name="bombhead.end.left.emitter"
+		inherit="bombhead.end.right.emitter"
+		angle="225.0"
+	>
+		<slave><emitter inherit="bombhead.sparks.emitter" duration="70.0">
+				<chain><emitter inherit="bombhead.smoke.emitter" delay="1"/></chain>
+				<slave><emitter inherit="ricochet.sparks.trail.emitter"/></slave>
+			</emitter>
+		</slave>
+	</emitter>
+
+	<emitter
+		name="bombhead.end.right.large.emitter"
+		inherit="bombhead.end.right.emitter" 
+		velocity="0.13"
+	>
+		<slave><emitter inherit="bombhead.sparks.emitter" duration="70.0" emitterScale="0.6" particlesPerTick="-6.0, 1.0">
+				<chain><emitter inherit="bombhead.smoke.emitter" delay="1"/></chain>
+				<slave><emitter inherit="ricochet.sparks.trail.emitter"/></slave>
+			</emitter>
+		</slave>
+	</emitter>
+
+	<emitter
+		name="bombhead.end.left.large.emitter"
+		inherit="bombhead.end.right.large.emitter"
+		angle="225.0"
+	>
+		<slave><emitter inherit="bombhead.sparks.emitter" duration="70.0" emitterScale="0.6" particlesPerTick="-6.0, 1.0">
+				<chain><emitter inherit="bombhead.smoke.emitter" delay="1"/></chain>
+				<slave><emitter inherit="ricochet.sparks.trail.emitter"/></slave>
+			</emitter>
+		</slave>
+	</emitter>
+
+	<property key="bombheadExplosionDelay" value="33"/>
+
+	<emitter name="bombhead.explosion.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.4" duration="4" delay="=$bombheadExplosionDelay">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.6" delay="=$bombheadExplosionDelay">
+			<chain><emitter emitterScale="1.5" inherit="building.explosion.flash.light.emitter" delay="=$bombheadExplosionDelay">
+				<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.5"/></slave>
+				<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="80,100" velocity="6,10" particlesPerTick="10,15" delay="=$bombheadExplosionDelay-2">
+					<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 
+
+	<emitter name="bombhead.explosion.large.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.5" duration="4" delay="=$bombheadExplosionDelay">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.7" delay="=$bombheadExplosionDelay">
+			<chain><emitter emitterScale="1.7" inherit="building.explosion.flash.light.emitter" delay="=$bombheadExplosionDelay">
+				<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.7"/></slave>
+				<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="80,100" velocity="7,12" particlesPerTick="15,20" delay="=$bombheadExplosionDelay-2">
+					<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 
+
+
+
+
+
+	<!--  bomber bomb fizzle -->
+
+	<emitter
+		name="bomber.sparks.emitter"
+		duration="32.0, 128.0"
+		infinite="true"
+		particlesPerTick="-4.0, 1.0"
+		appearance="spriteimage.particle.glowing.4px.01"
+		layer="5"
+		subLayer="6"
+		velocity="2.0, 3.0"
+		acceleration="-0.1,-0.2"
+		radius="1.0, 6.0"
+		startScale="0.5"
+		scale="0.6"
+		endScale="0.4"
+		gravityY="-0.01, -0.02"
+		particleDuration="10.0"
+		fadeDuration="64.0"
+		startHue="0.5"
+		startSaturation="0.0"
+		startBrightness="1.0"
+		endHue="0.5"
+		endSaturation="1.0"
+		endBrightness="0.75"
+		angle="230.0, 310.0"
+		delayAfter="32.0, 256.0"
+		rotate="true"
+		relativeRotate="true"
+		emitterScale="0.6"
+		doYOffset="true"
+	/>
+
+	<emitter
+		name="bomber.sparks.trail.emitter"
+		duration="16.0"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.glowing.3px.01"
+		layer="5"
+		subLayer="6"
+		startScale="0.8"
+		scale="0.7"
+		endScale="0.6"
+		particleDuration="16.0"
+		fadeDuration="5.0"
+		startHue="0.5"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.5"
+		endSaturation="1.0"
+		endBrightness="0.1"
+		interpolation="2"
+		emitterScale="0.6"
+	/>
+	
+	<emitter
+		name="bomber.sparks.smoke.emitter"
+		tag="smoke"
+		duration="2.0"
+		particlesPerTick="1.0, 5.0"
+		appearance="smoke.animation"
+		layer="5"
+		subLayer="6"
+		velocity="1.0, 2.0"
+		acceleration="-0.1, -0.2"
+		radius="0.0, 1.0"
+		startScale="0.2, 0.3"
+		scale="0.6, 0.7"
+		endScale="0.9, 1.0"
+		gravityX="-0.0010, 0.0010"
+		gravityY="0.0010, 0.0020"
+		particleDuration="8.0, 16.0"
+		fadeDuration="40.0, 80.0"
+		startHue="0.5"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.5"
+		endSaturation="0.2"
+		endBrightness="0.45"
+		emitterScale="0.4"
+		doYOffset="true"
+	/>
+
+
+	<emitter name="bomber.emitter" inherit="bomber.sparks.emitter">
+		<slave><emitter inherit="bomber.sparks.trail.emitter">
+			<slave><emitter inherit="bomber.sparks.smoke.emitter"/></slave>
+		</emitter></slave>
+	</emitter>
+
+	<emitter name="bomber.large.emitter" inherit="bomber.sparks.emitter" emitterScale="0.65" particlesPerTick="-3.0, 1.0">
+		<slave><emitter inherit="bomber.sparks.trail.emitter" emitterScale="0.65">
+			<slave><emitter inherit="bomber.sparks.smoke.emitter" emitterScale="0.5"/></slave>
+		</emitter></slave>
+	</emitter>
+
+	<!--  bomber bomb explosion -->
+
+	<!-- startHue="0.44" endHue="0.53" blue colours -->
+
+	<emitter name="saturn.bomb.explosion.emitter" inherit="building.explosion.fire.emitter" appearance="explosion-01.animation" sound="mine.buffer" emitterScale="0.5" duration="4" delay="1">
+		<chain><emitter inherit="explosion.smoke.emitter" startHue="0.44" endHue="0.53" emitterScale="0.7" delay="1">
+			<chain><emitter inherit="building.explosion.flash.light.emitter" emitterScale="0.5" startHue="0.44" endHue="0.53" endBrightness="0.5" fadeDuration="32.0" delay="1">
+				<chain><emitter inherit="building.explosion.shrapnel.emitter" startHue="0.44" endHue="0.53" startSaturation="0" endSaturation="1" angle="60,120" velocity="6,10" particlesPerTick="5,10">
+					<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.44" endHue="0.53" delay="1"/></slave>
+						<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="10,170" velocity="5,8" particlesPerTick="8,16">
+							<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>		
+		</emitter></chain></emitter></chain>
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" endBrightness="1" emitterScale="0.75" delay="1"/></slave></emitter>
+		</chain></emitter></chain>	
+	</emitter>	
+
+	<emitter name="saturn.bomb.explosion.large.emitter" inherit="building.explosion.fire.emitter" appearance="explosion-01.animation" sound="mine.buffer" emitterScale="0.65" duration="4" delay="1">
+		<chain><emitter inherit="explosion.smoke.emitter" startHue="0.44" endHue="0.53" emitterScale="0.8" delay="1">
+			<chain><emitter inherit="building.explosion.flash.light.emitter" emitterScale="0.65" startHue="0.44" endHue="0.53" endBrightness="0.5" fadeDuration="32.0" delay="1">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" emitterScale="0.75" startHue="0.44" endHue="0.53" startSaturation="0" endSaturation="1" angle="60,120" velocity="6,10" particlesPerTick="10,20">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.44" endHue="0.53" delay="1"/></slave>
+							<chain><emitter inherit="building.explosion.shrapnel.emitter" emitterScale="0.75" angle="10,170" velocity="5,8" particlesPerTick="15,20">
+								<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>		
+		</emitter></chain></emitter></chain>
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" endBrightness="1" emitterScale="0.95" delay="1"/></slave></emitter>
+		</chain></emitter></chain>	
+	</emitter>	
+
+
+
+	<!--  deaths -->
+
+	<emitter name="gidrah.saturn.death.emitter" inherit="gidrah.death.emitter" startHue="0.44" endHue="0.53">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.44" endHue="0.53" endBrightness="0.005,0.01" emitterScale="0.60" /></slave>
+	</emitter>
+	<emitter name="gidrah.saturn.death.flash.emitter" inherit="gidrah.death.flash.emitter">
+		<slave><emitter inherit="gidrah.death.light.emitter" >
+			<slave><emitter inherit="gidrah.death.background.emitter"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.saturn.death.large.emitter" inherit="gidrah.death.emitter" startHue="0.44" endHue="0.53" emitterScale="0.6" velocity="5.0, 9.0" particlesPerTick="15,20">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.44" endHue="0.53" endBrightness="0.005,0.01" /></slave>
+	</emitter>
+	<emitter name="gidrah.saturn.death.flash.large.emitter" inherit="gidrah.death.flash.emitter" emitterScale="1.75">
+		<slave><emitter inherit="gidrah.death.light.emitter" emitterScale="1.75" >
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="1.75"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.saturn.deflect.emitter" inherit="deflect.emitter" startHue="0.44" endHue="0.53"/>
+	<emitter name="gidrah.saturn.deflect.large.emitter" inherit="gidrah.saturn.deflect.emitter" emitterScale="0.9"/>
+	<emitter name="gidrah.saturn.deflect.boss.emitter" inherit="gidrah.saturn.deflect.emitter" emitterScale="0.85" appearance="spriteimage.particle.deflect.boss.01"/>
+
+	<emitter name="gidrah.saturn.stun.emitter" inherit="gidrah.saturn.death.flash.emitter" startHue="0.44" endHue="0.53" emitterScale="0.5">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.0" endHue="0.53" emitterScale="0.5">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.5"/></slave></emitter></slave>
+	</emitter>
+	<emitter name="gidrah.saturn.stun.large.emitter" inherit="gidrah.saturn.death.flash.large.emitter" startHue="0.44" endHue="0.53" emitterScale="0.8">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.0" endHue="0.53" emitterScale="0.8">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.8"/></slave></emitter></slave>
+	</emitter>
+	
+	
+	<!-- boss -->
+
+<emitter
+	name="saturn.boss.exp.steam.emitter"
+	tag="smoke"
+	duration="350.0"
+	particlesPerTick="-2.0, 1.0"
+	appearance="smoke.glowing.alpha.animation"
+	layer="6"
+	subLayer="1"
+	velocity="0.1, 0.2"
+	acceleration="-0.001"
+	radius="0.0, 16.0"
+	startScale="0.3, 0.4"
+	scale="1.0, 1.2"
+	endScale="1.1, 1.2"
+	gravityX="-1.0E-4, 1.0E-4"
+	gravityY="5.0E-4, 0.001"
+	particleDuration="180.0, 200.0"
+	fadeDuration="50.0, 100.0"
+	startHue="0.46"
+	startSaturation="1.0"
+	startBrightness="0.0"
+	endHue="0.48"
+	endSaturation="1.0"
+	endBrightness="1.0"
+	angle="90.0"
+	relativeRotate="true"
+	emitterScale="1.0"
+	doYOffset="true"
+/>
+
+<emitter name="saturn.boss.attack.steam.emitter" inherit="saturn.boss.exp.steam.emitter" duration="195.0" particlesPerTick="-2.0, 1.0" />
+
+
+	
+	<property key="saturnBossExpDelay1" value="375"/>
+	<property key="saturnBossExpDelay2" value="395"/>
+	<property key="saturnBossExpDelay3" value="415"/>
+	<property key="saturnBossExpDelay4" value="435"/>
+	<property key="saturnBossExpDelay5" value="455"/>
+	<property key="saturnBossExpDelay6" value="607"/>
+	<property key="saturnBossExpDust" value="600"/>	
+
+	<property key="saturnBossDeathDelay" value="700"/>
+	<property key="saturnBossDeathFireDelay" value="625"/>	
+
+	<property key="saturnBossAttackDust" value="225"/>
+
+	<emitter name="saturn.boss.exp.1.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.5" duration="6" delay="=$saturnBossExpDelay1">
+		<chain><emitter inherit="explosion.smoke.emitter" layer="6"	sublayer="0" duration="2" emitterScale="0.7" delay="=$saturnBossExpDelay1">
+			<chain><emitter emitterScale="1.8" inherit="building.explosion.flash.light.emitter" layer="6" delay="=$saturnBossExpDelay1">
+				<chain><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.8" layer="6" delay="=$saturnBossExpDelay1">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="10,170" velocity="7,12" particlesPerTick="9,10" duration="3" delay="=$saturnBossExpDelay1-3">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 
+
+	<emitter name="saturn.boss.exp.2.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.35" duration="4" delay="=$saturnBossExpDelay2">
+		<chain><emitter inherit="explosion.smoke.emitter" layer="6"	sublayer="0" duration="2" emitterScale="0.55" delay="=$saturnBossExpDelay2">
+			<chain><emitter emitterScale="1.2" inherit="building.explosion.flash.light.emitter" layer="6" delay="=$saturnBossExpDelay2">
+				<chain><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.2" layer="6" delay="=$saturnBossExpDelay2">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="10,170" velocity="5.5,9" particlesPerTick="3,4" duration="3" delay="=$saturnBossExpDelay2-3">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 
+
+	<emitter name="saturn.boss.exp.3.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.4" duration="4" delay="=$saturnBossExpDelay3">
+		<chain><emitter inherit="explosion.smoke.emitter" layer="6"	sublayer="0" duration="2" emitterScale="0.6" delay="=$saturnBossExpDelay3">
+			<chain><emitter emitterScale="1.4" inherit="building.explosion.flash.light.emitter" layer="6" delay="=$saturnBossExpDelay3">
+				<chain><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.4" layer="6" delay="=$saturnBossExpDelay3">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="10,170" velocity="6,10" particlesPerTick="4,5" duration="3" delay="=$saturnBossExpDelay3-3">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 
+
+	<emitter name="saturn.boss.exp.4.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.45" duration="5" delay="=$saturnBossExpDelay4">
+		<chain><emitter inherit="explosion.smoke.emitter" layer="6"	sublayer="0" duration="2" emitterScale="0.65" delay="=$saturnBossExpDelay4">
+			<chain><emitter emitterScale="1.6" inherit="building.explosion.flash.light.emitter" layer="6" delay="=$saturnBossExpDelay4">
+				<chain><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.5" layer="6" delay="=$saturnBossExpDelay4">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="10,170" velocity="6.5,11" particlesPerTick="5,6" duration="3" delay="=$saturnBossExpDelay4-3">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	   
+
+	<emitter name="saturn.boss.exp.5.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.5" duration="6" delay="=$saturnBossExpDelay5">
+		<chain><emitter inherit="explosion.smoke.emitter" layer="6"	sublayer="0" duration="20" emitterScale="0.7" delay="=$saturnBossExpDelay5">
+			<chain><emitter emitterScale="1.8" inherit="building.explosion.flash.light.emitter" layer="6" delay="=$saturnBossExpDelay5">
+				<chain><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.8" layer="6" delay="=$saturnBossExpDelay5">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="10,170" velocity="7,12" particlesPerTick="9,10" duration="4" delay="=$saturnBossExpDelay5-3">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 
+
+
+	<!-- boss head explode -->
+
+	<emitter name="saturn.boss.exp.6.emitter" inherit="building.explosion.fire.emitter" 
+			sound="mine.buffer"
+			emitterScale="0.8" duration="4" delay="=$saturnBossExpDelay6" >
+		<chain><emitter inherit="explosion.smoke.emitter"  appearance="smoke.glowing.alpha.animation"
+			velocity="2,2.5" angle="80,100" startScale="0.2,0.3" scale="0.75,1.25" endScale="2,3" emitterScale="1.0" 
+			 delay="=$saturnBossExpDelay6"
+		>
+			<chain><emitter inherit="building.explosion.flash.light.emitter" layer="6" delay="=$saturnBossExpDelay6" emitterScale="3.0">  
+				<chain><emitter inherit="building.explosion.flash.strobe.emitter"  emitterScale="1.0" layer="6" startBrightness="1.0" endBrightness="0.5" delay="=$saturnBossExpDelay6">
+					<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="65,115" velocity="6,15" particlesPerTick="8,10" duration="5" delay="=$saturnBossExpDelay6-5">
+						<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 	
+
+
+	<!-- boss fall dust -->
+	
+<emitter
+	name="saturn.boss.fall.emitter"
+	sound="bossFall.buffer"
+	tag="smoke"
+	duration="5.0"
+	particlesPerTick="10.0, 20.0"
+	appearance="smoke.glowing.alpha.animation"
+	layer="6"
+	subLayer="6"
+	velocity="0.0, 120.0"
+	acceleration="-120.0"
+	startScale="0.2, 0.8"
+	scale="0.8, 3.0"
+	endScale="0.8, 3.0"
+	gravityX="-0.015, 0.015"
+	gravityY="-0.005, 0.005"
+	particleDuration="10.0, 60.0"
+	fadeDuration="10.0, 80.0"
+	startHue="0.15"
+	startSaturation="0.6"
+	startBrightness="0.3,1.0"
+	endHue="0.15"
+	endSaturation="0.3"
+	endBrightness="0.2, 0.5"
+	angle="0.0"
+	delay="1.0"
+	relativeRotate="true"
+	emitterScale="0.5"
+	doYOffset="true"
+/>
+
+	<emitter name="saturn.boss.attack.fall.emitter" inherit="saturn.boss.fall.emitter" delay="=$saturnBossAttackDust" />	
+	<emitter name="saturn.boss.death.fall.emitter" inherit="saturn.boss.fall.emitter" delay="=$saturnBossExpDust" />	
+	
+
+	<!-- end of death - explode body -->
+
+	
+	<emitter name="saturn.boss.death.remove.explosion.end.emitter" inherit="building.explosion.fire.emitter" emitterScale="0.8" duration="8" delay="=$saturnBossDeathDelay"
+		particlesPerTick="3,5" velocity="1,8" acceleration="-0.5,-1" angle="5,175" gravityY="0.001,0.3">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.9" delay="=$saturnBossDeathDelay" startHue="0.44" endHue="0.53"/></chain>
+	</emitter>	 
+	<emitter name="saturn.boss.death.remove.explosion.flash.emitter" 
+			sound="buildingExplosion.buffer"
+			emitterScale="3.0" layer="6" endBrightness="1" inherit="building.explosion.flash.light.emitter" delay="=$saturnBossDeathDelay">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" layer="6" emitterScale="3.0" />
+	</slave></emitter>	
+	<emitter name="saturn.boss.death.remove.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" 
+		emitterScale="0.65" velocity="6,20" duration="5" particlesPerTick="8,16" appearance="glitter.animation"
+	 	delay="=$saturnBossDeathDelay-3">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" /></slave>
+	</emitter>	
+	
+	<emitter name="saturn.boss.death.remove.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 45.0" acceleration="-45" particlesPerTick="-3.0, 1.0"  duration="100"  
+		delay="=$saturnBossDeathFireDelay" >
+		<slave><emitter	inherit="fire.smoke.emitter" duration="300, 350" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1" /></slave>
+	</emitter></chain></emitter></slave></emitter>	
+
+	
+	
+	<!-- TITAN gidrah stuff... -->
+
+
+		<emitter
+			name="gidrah.titan.flying.smoke.emitter"
+			duration="2.0"
+			particlesPerTick="-50.0, 8.0"
+			appearance="smoke.glowing.alpha.animation"
+			layer="5"
+			subLayer="0"
+			velocity="1.0, 2.0"
+			acceleration="-0.05, -0.07"
+			startScale="0.5, 0.6"
+			scale="0.7, 0.8"
+			endScale="1.5, 2.5"
+			gravityX="-0.01, 0.01"
+			gravityY="-0.005, -0.01"
+			particleDuration="8.0, 24.0"
+			fadeDuration="24.0, 60.0"
+			startHue="0.8"
+			startSaturation="0.0, 1.0"
+			startBrightness="1.0"
+			endHue="0.725, 0.775"
+			endSaturation="1.0"
+			endBrightness="0.5, 1.0"
+			angle="265.0, 275.0"
+			rotate="true"
+			relativeRotate="true"
+			emitterScale="0.3"
+			doYOffset="true"
+		/>
+
+		<emitter
+			name="gidrah.titan.flying.sparks.emitter"
+			duration="2.0"
+			particlesPerTick="-10.0, 5.0"
+			appearance="sparkle.glitter.animation"
+			layer="5"
+			subLayer="0"
+			velocity="0.5, 2.0"
+			acceleration="-0.05, -0.07"
+			startScale="0.5, 0.6"
+			scale="0.7, 0.8"
+			endScale="0.5, 0.6"
+			gravityX="-0.01, 0.01"
+			gravityY="-0.005, -0.01"
+			particleDuration="8.0, 24.0"
+			fadeDuration="24.0, 32.0"
+			startHue="0.8"
+			startSaturation="0.0, 1.0"
+			startBrightness="1.0"
+			endHue="0.725, 0.775"
+			endSaturation="1.0"
+			endBrightness="0.5, 1.0"
+			angle="265.0, 275.0"
+			rotate="true"
+			relativeRotate="true"
+			emitterScale="0.5"
+			doYOffset="true"
+		/>
+
+
+   <emitter
+	   name="gidrah.titan.flying.emitter"
+	   inherit="gidrah.titan.flying.smoke.emitter"
+	><chain><emitter inherit="gidrah.titan.flying.sparks.emitter" /></chain></emitter>
+
+   <emitter
+	   name="gidrah.titan.flying.large.emitter"
+	   inherit="gidrah.titan.flying.smoke.emitter"
+	   emitterScale="0.5"
+	><chain><emitter inherit="gidrah.titan.flying.sparks.emitter" emitterScale="0.65" /></chain></emitter>
+
+
+
+
+
+	<!--  deaths -->
+
+	<emitter name="gidrah.titan.death.emitter" inherit="gidrah.death.emitter" startHue="0.22" endHue="0.28" >
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.22" endHue="0.28" endBrightness="0.005,0.01" emitterScale="0.60" /></slave>
+	</emitter>
+	<emitter name="gidrah.titan.death.flash.emitter" inherit="gidrah.death.flash.emitter">
+		<slave><emitter inherit="gidrah.death.light.emitter" >
+			<slave><emitter inherit="gidrah.death.background.emitter"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.titan.death.large.emitter" inherit="gidrah.death.emitter" startHue="0.22" endHue="0.28" emitterScale="0.6" velocity="5.0, 9.0" particlesPerTick="15,20">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.22" endHue="0.28" endBrightness="0.005,0.01" /></slave>
+	</emitter>
+	<emitter name="gidrah.titan.death.flash.large.emitter" inherit="gidrah.death.flash.emitter" emitterScale="1.75">
+		<slave><emitter inherit="gidrah.death.light.emitter" emitterScale="1.75" >
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="1.75"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.titan.deflect.emitter" inherit="deflect.emitter" startHue="0.8" endHue="0.75"/>
+	<emitter name="gidrah.titan.deflect.large.emitter" inherit="gidrah.titan.deflect.emitter" emitterScale="0.9"/>
+	<emitter name="gidrah.titan.deflect.boss.emitter" inherit="gidrah.titan.deflect.emitter" emitterScale="1.75" appearance="spriteimage.particle.deflect.boss.01"/>
+
+	<emitter name="gidrah.titan.stun.emitter" inherit="gidrah.titan.death.flash.emitter" startHue="0.8" endHue="0.75" emitterScale="0.5">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.8" endHue="0.75" emitterScale="0.5">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.5"/></slave></emitter></slave>
+	</emitter>
+	<emitter name="gidrah.titan.stun.large.emitter" inherit="gidrah.titan.death.flash.large.emitter" startHue="0.8" endHue="0.75" emitterScale="0.8">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="0.8" endHue="0.75" emitterScale="0.8">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.8"/></slave></emitter></slave>
+	</emitter>	
+	
+	
+	<!--  boss attack -->
+
+<emitter
+	name="titan.boss.disruptor.emitter"
+	duration="2.0"
+	particlesPerTick="100.0"
+	appearance="glitter.animation"
+	layer="5"
+	subLayer="6"
+	velocity="7.5"
+	acceleration="-0.25"
+	startScale="0.4"
+	scale="0.4"
+	endScale="0.4"
+	gravityY="-0.001, -0.002"
+	particleDuration="30.0, 40.0"
+	fadeDuration="10.0, 20.0"
+	startHue="0.2"
+	startSaturation="0.5"
+	startBrightness="1.0"
+	endHue="0.1"
+	endSaturation="1.0"
+	endBrightness="0.0, 0.5"
+	emitterScale="1.0"
+>
+	<chain>
+		<emitter
+			duration="2.0"
+			particlesPerTick="100.0"
+			appearance="smoke.glowing.alpha.animation"
+			layer="5"
+			subLayer="6"
+			velocity="7.5"
+			acceleration="-0.245, -0.255"
+			startScale="0.3, 0.4"
+			scale="1.0, 1.5"
+			endScale="1.5, 2.0"
+			gravityX="-0.001, 0.001"
+			gravityY="0.001, 0.004"
+			particleDuration="150.0"
+			fadeDuration="16.0, 128.0"
+			startHue="0.3"
+			startSaturation="0.5"
+			startBrightness="0.0"
+			endHue="0.1, 0.2"
+			endSaturation="0.25, 0.75"
+			endBrightness="0.5, 1.0"
+		/>
+	</chain>
+	<slave>
+		<emitter
+			duration="1.0"
+			particlesPerTick="1.0"
+			appearance="glitter.animation"
+			layer="5"
+			subLayer="6"
+			startScale="0.0"
+			scale="0.6"
+			endScale="0.4"
+			gravityY="0.003, 0.006"
+			particleDuration="10.0"
+			fadeDuration="16.0, 300.0"
+			startHue="0.75"
+			startSaturation="1.0"
+			startBrightness="1.0"
+			endHue="0.725"
+			endSaturation="1.0"
+			endBrightness="1.0"
+			delay="34.0"
+			emitterScale="0.7"
+		/>
+	</slave>
+</emitter>
+
+
+
+
+	
+
+	<!--  boss death -->
+
+
+	<emitter
+		name="titan.boss.fall.emitter"
+		sound="bossFall.buffer"
+		tag="smoke"
+		duration="5.0"
+		particlesPerTick="10.0, 20.0"
+		appearance="smoke.glowing.alpha.animation"
+		layer="6"
+		subLayer="6"
+		velocity="0.0, 100.0"
+		acceleration="-100.0"
+		startScale="0.2, 0.8"
+		scale="0.8, 3.0"
+		endScale="0.8, 3.0"
+		gravityX="-0.015, 0.015"
+		gravityY="-0.005, 0.005"
+		particleDuration="10.0, 60.0"
+		fadeDuration="10.0, 80.0"
+		startHue="0.15"
+		startSaturation="0.6"
+		startBrightness="0.3,1.0"
+		endHue="0.15"
+		endSaturation="0.3"
+		endBrightness="0.2, 0.5"
+		angle="0.0"
+		delay="1.0"
+		relativeRotate="true"
+		emitterScale="0.5"
+		doYOffset="true"
+	/>
+
+
+	<emitter name="gidrah.titan.splat.left" inherit="gidrah.death.emitter" startHue="0.22" endHue="0.28" angle="110,190"
+		emitterScale="0.7" velocity="3,12" particlesPerTick="15,20" duration="2">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.22" endHue="0.28" endBrightness="0.005,0.01" emitterScale="0.60" /></slave>
+	</emitter>
+
+	<emitter name="gidrah.titan.splat.right" inherit="gidrah.death.emitter" startHue="0.22" endHue="0.28" angle="-10,70"
+		emitterScale="0.7" velocity="3,12" particlesPerTick="15,20" duration="2">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.22" endHue="0.28" endBrightness="0.005,0.01" emitterScale="0.60" /></slave>
+	</emitter>
+
+
+	<!-- end of death - explode body -->
+
+	
+	<emitter name="titan.boss.death.remove.explosion.end.emitter" inherit="building.explosion.fire.emitter" 
+		sound="buildingExplosion.buffer"
+		emitterScale="1.0" duration="8"  
+		particlesPerTick="3,5" velocity="1,8" acceleration="-0.5,-1" angle="5,175" gravityY="0.001,0.3">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="1.1" delay="1" startHue="0.22" endHue="0.28"/></chain>
+	</emitter>	 
+	<emitter name="titan.boss.death.remove.explosion.flash.emitter" endBrightness="1" emitterScale="3.0" layer="6" inherit="building.explosion.flash.light.emitter" duration="2">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" layer="6" emitterScale="3.0" delay="1" />
+	</slave></emitter>	
+
+<emitter
+	name="titan.boss.death.remove.explosion.sparks.emitter"
+	duration="3"
+	particlesPerTick="10.0,20"
+	appearance="glitter.animation"
+	layer="5"
+	subLayer="6"
+	velocity="10.0, 25.0"
+	acceleration="-0.3, -0.5"
+	startScale="0.8, 1.0"
+	scale="0.7, 0.8"
+	endScale="0.6"
+	gravityX="-5.0E-4, 5.0E-4"
+	gravityY="-0.001, -0.003"
+	particleDuration="150.0, 200.0"
+	fadeDuration="50.0, 150.0"
+	startHue="0.0, 0.1"
+	startBrightness="1.0"
+	endHue="0.25"
+	endBrightness="1.0"
+	angle="10.0, 170.0"
+	rotate="true"
+	emitterScale="0.55"
+	doYOffset="true"
+	inherit="building.explosion.shrapnel.emitter"
+>
+	<slave>
+		<emitter
+			duration="50.0, 100.0"
+			particlesPerTick="1.0"
+			appearance="spriteimage.particle.glowing.3px.01"
+			layer="5"
+			subLayer="6"
+			startScale="0.8"
+			scale="0.7"
+			endScale="0.7"
+			particleDuration="2.0, 3.0"
+			fadeDuration="4.0, 5.0"
+			startHue="0.0"
+			startSaturation="1.0"
+			startBrightness="0.4, 0.6"
+			endHue="0.0"
+			endSaturation="1.0"
+			endBrightness="0.2, 0.3"
+			delay="1.0"
+			interpolation="2"
+			emitterScale="0.7"
+			doYOffset="true"
+			inherit="explosion.shrapnel.trail.emitter"
+		/>
+	</slave>
+</emitter>
+
+
+	<emitter name="titan.boss.death.remove.fire.emitter" inherit="building.flame.emitter" 
+		velocity="0.0, 100.0" acceleration="-100" particlesPerTick="-3.0, 1.0"  duration="500" >
+		<slave><emitter	inherit="fire.smoke.emitter" duration="300, 350" delay="1" emitterScale="1.2" 
+					layer="6" sublayer="0" particlesPerTick="-16,1" >
+			<chain><emitter inherit="flame.glow.emitter" delay="1" >
+				<slave><emitter inherit="flame.sparks.emitter" delay="1" /></slave>
+	</emitter></chain></emitter></slave></emitter>	
+	
+	
+	<emitter
+		name="wraith.titan.emitter"
+		duration="16.0"
+		particlesPerTick="-1.0, 3.0"
+		appearance="sparkle.glitter.animation"
+		layer="5"
+		subLayer="1"
+		velocity="3.0, 6.0"
+		acceleration="-0.2, -1.0"
+		radius="4.0, 14.0"
+		startScale="0.3, 0.4"
+		scale="0.4, 0.5"
+		endScale="0.2, 0.3"
+		gravityY="0.01, 0.1"
+		particleDuration="14.0"
+		fadeDuration="8.0"
+		startHue="0.99"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.75"
+		endSaturation="1.0"
+		endBrightness="1.0"
+		rotate="true"
+		emitterScale="0.75"
+		doYOffset="true"
+	>
+		<chain>
+			<emitter
+				duration="1.0"
+				particlesPerTick="1.0"
+				appearance="collect.light.animation"
+				layer="6"
+				subLayer="6"
+				startScale="0.25"
+				scale="1.0"
+				endScale="0.75"
+				particleDuration="4.0"
+				fadeDuration="24.0"
+				startHue="0.8"
+				startSaturation="1.0"
+				startBrightness="1.0"
+				endHue="0.75"
+				endSaturation="1.0"
+				endBrightness="0.5"
+				delay="1.0"
+				emitterScale="1.0"
+				doYOffset="true"
+			>
+				<slave>
+					<emitter
+						duration="1.0"
+						particlesPerTick="1.0"
+						appearance="collect.light.animation"
+						layer="6"
+						subLayer="5"
+						startScale="0.25"
+						scale="1.0"
+						endScale="0.75"
+						particleDuration="5.0"
+						fadeDuration="12.0"
+						startHue="0.0"
+						startSaturation="1.0"
+						startBrightness="1.0"
+						endHue="0.0"
+						endSaturation="1.0"
+						endBrightness="0.1"
+						delay="1.0"
+						emitterScale="1.5"
+						doYOffset="true"
+					/>
+				</slave>
+			</emitter>
+		</chain>
+	</emitter>
+
+
+	<include resource="gidrahs-earth.xml" />
+	<include resource="gidrahs-moon.xml" />
+	<include resource="gidrahs-mars.xml" />
+	<include resource="gidrahs-saturn.xml" />
+	<include resource="gidrahs-titan.xml" />
+	<include resource="gidrahs-endless.xml" />
+	
+</resources>

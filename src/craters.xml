@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+		<ruin name="moon.craters.3x2.01" i="11901" layer="2" ruin="true" width="3" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="41,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="2" offset="9,43" ySortOffset="43" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="3" offset="77,59" ySortOffset="59" colored="crater" attenuated="true" image="spriteimage.crater.large.04" />
+				<sprite layer="5" sublayer="3" offset="19,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="56,35" ySortOffset="35" colored="crater" attenuated="true" image="spriteimage.crater.large.06" />
+				<sprite layer="5" sublayer="3" offset="22,26" ySortOffset="26" colored="crater" attenuated="true" image="spriteimage.crater.large.01" />
+				<sprite layer="5" sublayer="3" offset="79,15" ySortOffset="15" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="4" offset="77,59" ySortOffset="59" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.04" />
+				<sprite layer="5" sublayer="4" offset="19,56" ySortOffset="56" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="41,56" ySortOffset="56" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="9,43" ySortOffset="43" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="56,35" ySortOffset="35" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.06" />
+				<sprite layer="5" sublayer="4" offset="22,26" ySortOffset="26" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.01" />
+				<sprite layer="5" sublayer="4" offset="79,15" ySortOffset="15" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.4x2.01" i="11902" layer="2" ruin="true" width="4" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="10,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.tiny.07" />
+				<sprite layer="5" sublayer="2" offset="38,54" ySortOffset="54" colored="crater" attenuated="true" image="spriteimage.crater.tiny.04" />
+				<sprite layer="5" sublayer="2" offset="58,14" ySortOffset="14" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="3" offset="100,59" ySortOffset="59" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="3" offset="56,49" ySortOffset="49" colored="crater" attenuated="true" image="spriteimage.crater.large.07" />
+				<sprite layer="5" sublayer="3" offset="44,24" ySortOffset="24" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="92,24" ySortOffset="24" colored="crater" attenuated="true" image="spriteimage.crater.small.07" />
+				<sprite layer="5" sublayer="3" offset="21,16" ySortOffset="16" colored="crater" attenuated="true" image="spriteimage.crater.large.04" />
+				<sprite layer="5" sublayer="4" offset="100,59" ySortOffset="59" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="10,56" ySortOffset="56" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.07" />
+				<sprite layer="5" sublayer="4" offset="38,54" ySortOffset="54" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.04" />
+				<sprite layer="5" sublayer="4" offset="56,49" ySortOffset="49" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.07" />
+				<sprite layer="5" sublayer="4" offset="44,24" ySortOffset="24" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="92,24" ySortOffset="24" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.07" />
+				<sprite layer="5" sublayer="4" offset="21,16" ySortOffset="16" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.04" />
+				<sprite layer="5" sublayer="4" offset="58,14" ySortOffset="14" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.2x2.01" i="11903" layer="2" ruin="true" width="2" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="11,12" ySortOffset="12" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="3" offset="51,60" ySortOffset="60" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="19,54" ySortOffset="54" colored="crater" attenuated="true" image="spriteimage.crater.small.02" />
+				<sprite layer="5" sublayer="3" offset="35,40" ySortOffset="40" colored="crater" attenuated="true" image="spriteimage.crater.large.05" />
+				<sprite layer="5" sublayer="3" offset="42,22" ySortOffset="22" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="4" offset="51,60" ySortOffset="60" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="19,54" ySortOffset="54" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.02" />
+				<sprite layer="5" sublayer="4" offset="35,40" ySortOffset="40" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.05" />
+				<sprite layer="5" sublayer="4" offset="42,22" ySortOffset="22" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="11,12" ySortOffset="12" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.2x1.01" i="11904" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="56,26" ySortOffset="26" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="2" offset="11,10" ySortOffset="10" colored="crater" attenuated="true" image="spriteimage.crater.tiny.02" />
+				<sprite layer="5" sublayer="3" offset="15,24" ySortOffset="24" colored="crater" attenuated="true" image="spriteimage.crater.small.04" />
+				<sprite layer="5" sublayer="3" offset="41,22" ySortOffset="22" colored="crater" attenuated="true" image="spriteimage.crater.large.05" />
+				<sprite layer="5" sublayer="4" offset="56,26" ySortOffset="26" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="15,24" ySortOffset="24" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.04" />
+				<sprite layer="5" sublayer="4" offset="41,22" ySortOffset="22" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.05" />
+				<sprite layer="5" sublayer="4" offset="11,10" ySortOffset="10" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.02" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.3x2.02" i="11905" layer="2" ruin="true" width="3" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="13,53" ySortOffset="53" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="2" offset="78,51" ySortOffset="51" colored="crater" attenuated="true" image="spriteimage.crater.tiny.06" />
+				<sprite layer="5" sublayer="3" offset="71,49" ySortOffset="49" colored="crater" attenuated="true" image="spriteimage.crater.large.03" />
+				<sprite layer="5" sublayer="3" offset="32,43" ySortOffset="43" colored="crater" attenuated="true" image="spriteimage.crater.large.07" />
+				<sprite layer="5" sublayer="3" offset="24,24" ySortOffset="24" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="3" offset="77,14" ySortOffset="14" colored="crater" attenuated="true" image="spriteimage.crater.small.02" />
+				<sprite layer="5" sublayer="4" offset="13,53" ySortOffset="53" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="78,51" ySortOffset="51" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.06" />
+				<sprite layer="5" sublayer="4" offset="71,49" ySortOffset="49" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.03" />
+				<sprite layer="5" sublayer="4" offset="32,43" ySortOffset="43" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.07" />
+				<sprite layer="5" sublayer="4" offset="24,24" ySortOffset="24" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="77,14" ySortOffset="14" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.02" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.3x2.03" i="11906" layer="2" ruin="true" width="3" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="33,25" ySortOffset="25" colored="crater" attenuated="true" image="spriteimage.crater.tiny.03" />
+				<sprite layer="5" sublayer="2" offset="12,9" ySortOffset="9" colored="crater" attenuated="true" image="spriteimage.crater.tiny.06" />
+				<sprite layer="5" sublayer="3" offset="60,69" ySortOffset="69" colored="crater" attenuated="true" image="spriteimage.crater.large.05" />
+				<sprite layer="5" sublayer="3" offset="31,55" ySortOffset="55" colored="crater" attenuated="true" image="spriteimage.crater.large.08" />
+				<sprite layer="5" sublayer="3" offset="83,53" ySortOffset="53" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="52,35" ySortOffset="35" colored="crater" attenuated="true" image="spriteimage.crater.large.03" />
+				<sprite layer="5" sublayer="3" offset="81,21" ySortOffset="21" colored="crater" attenuated="true" image="spriteimage.crater.small.08" />
+				<sprite layer="5" sublayer="4" offset="60,69" ySortOffset="69" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.05" />
+				<sprite layer="5" sublayer="4" offset="31,55" ySortOffset="55" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.08" />
+				<sprite layer="5" sublayer="4" offset="83,53" ySortOffset="53" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="52,35" ySortOffset="35" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.03" />
+				<sprite layer="5" sublayer="4" offset="33,25" ySortOffset="25" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.03" />
+				<sprite layer="5" sublayer="4" offset="81,21" ySortOffset="21" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.08" />
+				<sprite layer="5" sublayer="4" offset="12,9" ySortOffset="9" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.06" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.3x2.04" i="11907" layer="2" ruin="true" width="3" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="10,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.tiny.07" />
+				<sprite layer="5" sublayer="2" offset="84,55" ySortOffset="55" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="2" offset="83,9" ySortOffset="9" colored="crater" attenuated="true" image="spriteimage.crater.tiny.04" />
+				<sprite layer="5" sublayer="2" offset="43,8" ySortOffset="8" colored="crater" attenuated="true" image="spriteimage.crater.tiny.03" />
+				<sprite layer="5" sublayer="3" offset="65,54" ySortOffset="54" colored="crater" attenuated="true" image="spriteimage.crater.large.05" />
+				<sprite layer="5" sublayer="3" offset="39,36" ySortOffset="36" colored="crater" attenuated="true" image="spriteimage.crater.large.08" />
+				<sprite layer="5" sublayer="3" offset="16,18" ySortOffset="18" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="70,15" ySortOffset="15" colored="crater" attenuated="true" image="spriteimage.crater.small.04" />
+				<sprite layer="5" sublayer="4" offset="10,56" ySortOffset="56" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.07" />
+				<sprite layer="5" sublayer="4" offset="84,55" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="65,54" ySortOffset="54" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.05" />
+				<sprite layer="5" sublayer="4" offset="39,36" ySortOffset="36" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.08" />
+				<sprite layer="5" sublayer="4" offset="16,18" ySortOffset="18" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="70,15" ySortOffset="15" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.04" />
+				<sprite layer="5" sublayer="4" offset="83,9" ySortOffset="9" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.04" />
+				<sprite layer="5" sublayer="4" offset="43,8" ySortOffset="8" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.03" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.4x2.02" i="11908" layer="2" ruin="true" width="4" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="47,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="2" offset="112,41" ySortOffset="41" colored="crater" attenuated="true" image="spriteimage.crater.tiny.08" />
+				<sprite layer="5" sublayer="2" offset="13,40" ySortOffset="40" colored="crater" attenuated="true" image="spriteimage.crater.tiny.03" />
+				<sprite layer="5" sublayer="2" offset="81,8" ySortOffset="8" colored="crater" attenuated="true" image="spriteimage.crater.tiny.03" />
+				<sprite layer="5" sublayer="3" offset="24,58" ySortOffset="58" colored="crater" attenuated="true" image="spriteimage.crater.large.04" />
+				<sprite layer="5" sublayer="3" offset="110,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="87,49" ySortOffset="49" colored="crater" attenuated="true" image="spriteimage.crater.large.08" />
+				<sprite layer="5" sublayer="3" offset="55,37" ySortOffset="37" colored="crater" attenuated="true" image="spriteimage.crater.large.08" />
+				<sprite layer="5" sublayer="3" offset="84,27" ySortOffset="27" colored="crater" attenuated="true" image="spriteimage.crater.small.04" />
+				<sprite layer="5" sublayer="3" offset="28,21" ySortOffset="21" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="3" offset="108,20" ySortOffset="20" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="4" offset="24,58" ySortOffset="58" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.04" />
+				<sprite layer="5" sublayer="4" offset="110,56" ySortOffset="56" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="47,56" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="87,49" ySortOffset="49" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.08" />
+				<sprite layer="5" sublayer="4" offset="112,41" ySortOffset="41" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.08" />
+				<sprite layer="5" sublayer="4" offset="13,40" ySortOffset="40" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.03" />
+				<sprite layer="5" sublayer="4" offset="55,37" ySortOffset="37" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.08" />
+				<sprite layer="5" sublayer="4" offset="84,27" ySortOffset="27" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.04" />
+				<sprite layer="5" sublayer="4" offset="28,21" ySortOffset="21" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="108,20" ySortOffset="20" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="81,8" ySortOffset="8" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.03" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.4x2.03" i="11909" layer="2" ruin="true" width="4" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="11,51" ySortOffset="51" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="2" offset="113,49" ySortOffset="49" colored="crater" attenuated="true" image="spriteimage.crater.tiny.03" />
+				<sprite layer="5" sublayer="2" offset="7,12" ySortOffset="12" colored="crater" attenuated="true" image="spriteimage.crater.tiny.07" />
+				<sprite layer="5" sublayer="3" offset="96,58" ySortOffset="58" colored="crater" attenuated="true" image="spriteimage.crater.small.02" />
+				<sprite layer="5" sublayer="3" offset="34,49" ySortOffset="49" colored="crater" attenuated="true" image="spriteimage.crater.small.06" />
+				<sprite layer="5" sublayer="3" offset="59,40" ySortOffset="40" colored="crater" attenuated="true" image="spriteimage.crater.large.07" />
+				<sprite layer="5" sublayer="3" offset="24,21" ySortOffset="21" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="106,19" ySortOffset="19" colored="crater" attenuated="true" image="spriteimage.crater.large.02" />
+				<sprite layer="5" sublayer="3" offset="53,18" ySortOffset="18" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="4" offset="96,58" ySortOffset="58" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.02" />
+				<sprite layer="5" sublayer="4" offset="11,51" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="113,49" ySortOffset="49" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.03" />
+				<sprite layer="5" sublayer="4" offset="34,49" ySortOffset="49" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.06" />
+				<sprite layer="5" sublayer="4" offset="59,40" ySortOffset="40" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.07" />
+				<sprite layer="5" sublayer="4" offset="24,21" ySortOffset="21" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="106,19" ySortOffset="19" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.02" />
+				<sprite layer="5" sublayer="4" offset="53,18" ySortOffset="18" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="7,12" ySortOffset="12" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.07" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.4x2.04" i="11910" layer="2" ruin="true" width="4" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="70,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.tiny.07" />
+				<sprite layer="5" sublayer="2" offset="39,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="2" offset="47,10" ySortOffset="10" colored="crater" attenuated="true" image="spriteimage.crater.tiny.04" />
+				<sprite layer="5" sublayer="3" offset="105,59" ySortOffset="59" colored="crater" attenuated="true" image="spriteimage.crater.large.05" />
+				<sprite layer="5" sublayer="3" offset="22,54" ySortOffset="54" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="39,39" ySortOffset="39" colored="crater" attenuated="true" image="spriteimage.crater.large.07" />
+				<sprite layer="5" sublayer="3" offset="85,29" ySortOffset="29" colored="crater" attenuated="true" image="spriteimage.crater.large.02" />
+				<sprite layer="5" sublayer="3" offset="26,22" ySortOffset="22" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="3" offset="111,17" ySortOffset="17" colored="crater" attenuated="true" image="spriteimage.crater.small.03" />
+				<sprite layer="5" sublayer="4" offset="105,59" ySortOffset="59" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.05" />
+				<sprite layer="5" sublayer="4" offset="70,56" ySortOffset="56" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.07" />
+				<sprite layer="5" sublayer="4" offset="39,56" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="22,54" ySortOffset="54" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="39,39" ySortOffset="39" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.07" />
+				<sprite layer="5" sublayer="4" offset="85,29" ySortOffset="29" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.02" />
+				<sprite layer="5" sublayer="4" offset="26,22" ySortOffset="22" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="111,17" ySortOffset="17" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.03" />
+				<sprite layer="5" sublayer="4" offset="47,10" ySortOffset="10" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.04" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.2x1.02" i="11911" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="3" offset="51,26" ySortOffset="26" colored="crater" attenuated="true" image="spriteimage.crater.small.02" />
+				<sprite layer="5" sublayer="3" offset="20,26" ySortOffset="26" colored="crater" attenuated="true" image="spriteimage.crater.large.05" />
+				<sprite layer="5" sublayer="3" offset="46,13" ySortOffset="13" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="4" offset="20,26" ySortOffset="26" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.05" />
+				<sprite layer="5" sublayer="4" offset="51,26" ySortOffset="26" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.02" />
+				<sprite layer="5" sublayer="4" offset="46,13" ySortOffset="13" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.2x1.03" i="11912" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="3" offset="47,33" ySortOffset="33" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="3" offset="18,18" ySortOffset="18" colored="crater" attenuated="true" image="spriteimage.crater.large.04" />
+				<sprite layer="5" sublayer="3" offset="43,13" ySortOffset="13" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="4" offset="47,33" ySortOffset="33" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="18,18" ySortOffset="18" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.04" />
+				<sprite layer="5" sublayer="4" offset="43,13" ySortOffset="13" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.2x1.04" i="11913" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="8,24" ySortOffset="24" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="3" offset="48,21" ySortOffset="21" colored="crater" attenuated="true" image="spriteimage.crater.small.02" />
+				<sprite layer="5" sublayer="3" offset="21,19" ySortOffset="19" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="4" offset="8,24" ySortOffset="24" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="48,21" ySortOffset="21" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.02" />
+				<sprite layer="5" sublayer="4" offset="21,19" ySortOffset="19" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.2x2.02" i="11914" layer="2" ruin="true" width="2" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="16,12" ySortOffset="12" colored="crater" attenuated="true" image="spriteimage.crater.tiny.04" />
+				<sprite layer="5" sublayer="3" offset="17,56" ySortOffset="56" colored="crater" attenuated="true" image="spriteimage.crater.small.03" />
+				<sprite layer="5" sublayer="3" offset="47,46" ySortOffset="46" colored="crater" attenuated="true" image="spriteimage.crater.large.01" />
+				<sprite layer="5" sublayer="3" offset="26,35" ySortOffset="35" colored="crater" attenuated="true" image="spriteimage.crater.large.06" />
+				<sprite layer="5" sublayer="3" offset="47,14" ySortOffset="14" colored="crater" attenuated="true" image="spriteimage.crater.small.02" />
+				<sprite layer="5" sublayer="4" offset="17,56" ySortOffset="56" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.03" />
+				<sprite layer="5" sublayer="4" offset="47,46" ySortOffset="46" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.01" />
+				<sprite layer="5" sublayer="4" offset="26,35" ySortOffset="35" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.06" />
+				<sprite layer="5" sublayer="4" offset="47,14" ySortOffset="14" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.02" />
+				<sprite layer="5" sublayer="4" offset="16,12" ySortOffset="12" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.04" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.2x2.03" i="11915" layer="2" ruin="true" width="2" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="11,54" ySortOffset="54" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="2" offset="14,8" ySortOffset="8" colored="crater" attenuated="true" image="spriteimage.crater.tiny.06" />
+				<sprite layer="5" sublayer="3" offset="47,55" ySortOffset="55" colored="crater" attenuated="true" image="spriteimage.crater.large.01" />
+				<sprite layer="5" sublayer="3" offset="29,38" ySortOffset="38" colored="crater" attenuated="true" image="spriteimage.crater.small.06" />
+				<sprite layer="5" sublayer="3" offset="45,22" ySortOffset="22" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="4" offset="47,55" ySortOffset="55" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.01" />
+				<sprite layer="5" sublayer="4" offset="11,54" ySortOffset="54" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="4" offset="29,38" ySortOffset="38" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.06" />
+				<sprite layer="5" sublayer="4" offset="45,22" ySortOffset="22" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="14,8" ySortOffset="8" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.06" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.craters.2x2.04" i="11916" layer="2" ruin="true" width="2" height="2" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="5" sublayer="2" offset="56,7" ySortOffset="7" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="5" sublayer="3" offset="17,54" ySortOffset="54" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="5" sublayer="3" offset="43,51" ySortOffset="51" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="5" sublayer="3" offset="27,23" ySortOffset="23" colored="crater" attenuated="true" image="spriteimage.crater.large.06" />
+				<sprite layer="5" sublayer="4" offset="17,54" ySortOffset="54" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="5" sublayer="4" offset="43,51" ySortOffset="51" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="4" offset="27,23" ySortOffset="23" colored="crater-top" attenuated="true" image="spriteimage.crater.large.top.06" />
+				<sprite layer="5" sublayer="4" offset="56,7" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+		</layers></layers></ruin>
+
+</resources>

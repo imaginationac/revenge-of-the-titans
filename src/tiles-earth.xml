@@ -1,0 +1,1015 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Earth tiles -->
+<resources>
+	<tileset name="earth.tileset" description="Earth Tiles" default_="">
+
+		<include resource="ruins-earth.xml" />
+
+		<!-- Only easy gidrahs come from mid spawnpoints -->		
+		<spawnpoint name="spawnpoint.mid.earth" i="9036" layer="2" image="tiles.road.4.0" xoffset="0" yoffset="0" type="1">
+			<decal image="spriteimage.gidrah.earth.01.01" layer="5" scale="2.0"/>
+		</spawnpoint>
+		
+		
+		<!--  STANDARD FLOOR ========================================================================================================================== -->
+			
+		<floor name="earth.floor.0" i="1000" image="tiles.floor.1.0" colored="floor">
+			<random>
+				<array>
+					<item>earth.floor.0</item>
+					<item>earth.floor.0.01</item>
+					<item>earth.floor.0.02</item>
+					<item>earth.floor.0.03</item>
+					<item>earth.floor.0.04</item>
+					<item>earth.floor.0.05</item>
+					<item>earth.floor.0.06</item>					
+					<item>earth.floor.0.07</item>
+					<item>earth.floor.0.08</item>
+					<item>earth.floor.0.09</item>					
+					<item>earth.floor.0.10</item>
+					<item>earth.floor.0.11</item>
+					<item>earth.floor.0.12</item>
+					<item>earth.floor.0.13</item>
+					<item>earth.floor.0.14</item>
+				</array>
+			</random>
+		</floor>
+		<floor name="earth.floor.0.01" i="1001" image="tiles.floor.2.0" colored="floor"/>
+		<floor name="earth.floor.0.02" i="1002" image="tiles.floor.3.0" colored="floor"/>
+		<floor name="earth.floor.0.03" i="1003" image="tiles.floor.4.0" colored="floor"/>
+		<floor name="earth.floor.0.04" i="1004" image="tiles.floor.5.0" colored="floor"/>
+		<floor name="earth.floor.0.05" i="1005" image="tiles.floor.6.0" colored="floor"/>
+		<floor name="earth.floor.0.06" i="1006" image="tiles.floor.7.0" colored="floor"/>
+		<floor name="earth.floor.0.07" i="1007" image="tiles.floor.8.0" colored="floor"/>
+		<floor name="earth.floor.0.08" i="1008" image="tiles.floor.9.0" colored="floor"/>
+		<floor name="earth.floor.0.09" i="1009" image="tiles.floor.10.0" colored="floor"/>
+		<floor name="earth.floor.0.10" i="1010" image="tiles.floor.11.0" colored="floor"/>
+		<floor name="earth.floor.0.11" i="1011" image="tiles.floor.12.0" colored="floor"/>	
+		<floor name="earth.floor.0.12" i="1012" image="tiles.floor.13.0" colored="floor"/>
+		<floor name="earth.floor.0.13" i="1013" image="tiles.floor.14.0" colored="floor"/>
+		<floor name="earth.floor.0.14" i="1014" image="tiles.floor.15.0" colored="floor"/>
+
+		
+		
+		<!--  ALT FLOOR ========================================================================================================================== -->
+		
+		<floor name="earth.floor.1" i="1100" >
+			<decal image="tiles.floor.1.1" layer="3" colored="floor-alt" attenuated="true" />
+		</floor>
+		
+		
+		<!--  WALL EDGE FLOOR ========================================================================================================================== -->
+					
+		<floor name="earth.floor.2" i="1200" image="tiles.floor.1.2" colored="floor">
+			<random>
+				<array>
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					<item>earth.floor.2.1.01</item>
+					<item>earth.floor.2.1.02</item>
+					<item>earth.floor.2.1.03</item>
+					<item>earth.floor.2.1.04</item>
+
+					
+					<item>earth.floor.2.2.01</item>
+					<item>earth.floor.2.2.02</item>
+					<item>earth.floor.2.2.03</item>
+					<item>earth.floor.2.2.04</item>
+					<item>earth.floor.2.2.05</item>
+					<item>earth.floor.2.2.06</item>
+					<item>earth.floor.2.2.07</item>
+					<item>earth.floor.2.2.08</item>					
+
+					<item>earth.floor.2.2.01</item>
+					<item>earth.floor.2.2.02</item>
+					<item>earth.floor.2.2.03</item>
+					<item>earth.floor.2.2.04</item>
+					<item>earth.floor.2.2.05</item>
+					<item>earth.floor.2.2.06</item>
+					<item>earth.floor.2.2.07</item>
+					<item>earth.floor.2.2.08</item>		
+
+
+					<item>earth.floor.2.3.01</item>
+					<item>earth.floor.2.3.02</item>
+					<item>earth.floor.2.3.03</item>
+					<item>earth.floor.2.3.04</item>
+					<item>earth.floor.2.3.05</item>
+					<item>earth.floor.2.3.06</item>
+					<item>earth.floor.2.3.07</item>
+					<item>earth.floor.2.3.08</item>		
+					
+				</array>
+			</random>
+		</floor>
+
+
+		<floor name="earth.floor.2.1.01" i="1201" image="tiles.floor.2.1" colored="floor"/>
+		<floor name="earth.floor.2.1.02" i="1202" image="tiles.floor.3.1" colored="floor"/>
+		<floor name="earth.floor.2.1.03" i="1203" image="tiles.floor.4.1" colored="floor"/>
+		<floor name="earth.floor.2.1.04" i="1204" image="tiles.floor.5.1" colored="floor"/>
+
+		<!-- cliff edge floor tex plus 1 scree tex -->
+
+		<floor name="earth.floor.2.2.01" i="1211" image="tiles.floor.0.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="6,6" image="spriteimage.cliff.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="6,6" ySortOffset="6" image="spriteimage.cliff.scree.tiny.01" colored="floor-alt" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="earth.floor.2.2.02" i="1212" image="tiles.floor.1.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="2,8" image="spriteimage.cliff.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,8" ySortOffset="8" image="spriteimage.cliff.scree.tiny.02" colored="floor-alt-edge" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.2.03" i="1213" image="tiles.floor.2.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,10" image="spriteimage.cliff.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,10" ySortOffset="10" image="spriteimage.cliff.scree.tiny.03" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.2.04" i="1214" image="tiles.floor.3.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="22,12" image="spriteimage.cliff.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="22,12" ySortOffset="12" image="spriteimage.cliff.scree.tiny.04" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.2.05" i="1215" image="tiles.floor.4.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,22" image="spriteimage.cliff.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,22" ySortOffset="22" image="spriteimage.cliff.scree.tiny.01" colored="floor-alt" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="earth.floor.2.2.06" i="1216" image="tiles.floor.5.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="23,29" image="spriteimage.cliff.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="23,29" ySortOffset="29" image="spriteimage.cliff.scree.tiny.02" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.2.07" i="1217" image="tiles.floor.6.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="3,27" image="spriteimage.cliff.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="3,27" ySortOffset="27" image="spriteimage.cliff.scree.tiny.03" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.2.08" i="1218" image="tiles.floor.7.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="9,21" image="spriteimage.cliff.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="9,21" ySortOffset="21" image="spriteimage.cliff.scree.tiny.04" colored="cliff-top-1" attenuated="true" />
+		</layers></layers></floor>	
+
+
+		<!-- cliff edge floor tex plus 2 scree tex -->
+		
+		<floor name="earth.floor.2.3.01" i="1231" image="tiles.floor.0.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="6,6" image="spriteimage.cliff.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="6,6" ySortOffset="6" image="spriteimage.cliff.scree.tiny.01" colored="cliff-1"  attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="16,2" image="spriteimage.cliff.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="16,2" ySortOffset="2" image="spriteimage.cliff.scree.tiny.01" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="earth.floor.2.3.02" i="1232" image="tiles.floor.1.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="2,8" image="spriteimage.cliff.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,8" ySortOffset="8" image="spriteimage.cliff.scree.tiny.02" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="10,4" image="spriteimage.cliff.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="10,4" ySortOffset="4" image="spriteimage.cliff.scree.tiny.02" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.3.03" i="1233" image="tiles.floor.2.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,10" image="spriteimage.cliff.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,10" ySortOffset="10" image="spriteimage.cliff.scree.tiny.03" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="36,12" image="spriteimage.cliff.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="36,12" ySortOffset="12" image="spriteimage.cliff.scree.tiny.03" colored="cliff-1" attenuated="true" />		
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.3.04" i="1234" image="tiles.floor.3.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="22,12" image="spriteimage.cliff.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="22,12" ySortOffset="12" image="spriteimage.cliff.scree.tiny.04" colored="cliff-top-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="32,10" image="spriteimage.cliff.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="32,10" ySortOffset="10" image="spriteimage.cliff.scree.tiny.04" colored="cliff-1" attenuated="true" />			
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.3.05" i="1235" image="tiles.floor.4.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,22" image="spriteimage.cliff.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,22" ySortOffset="22" image="spriteimage.cliff.scree.tiny.01" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="40,12" image="spriteimage.cliff.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="40,12" ySortOffset="12" image="spriteimage.cliff.scree.tiny.01" colored="floor-alt-edge" attenuated="true" />			
+		</layers></layers></floor>
+		<floor name="earth.floor.2.3.06" i="1236" image="tiles.floor.5.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="23,29" image="spriteimage.cliff.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="23,29" ySortOffset="29" image="spriteimage.cliff.scree.tiny.02" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="16,20" image="spriteimage.cliff.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="16,20" ySortOffset="20" image="spriteimage.cliff.scree.tiny.02" colored="floor-alt" attenuated="true" />			
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.3.07" i="1237" image="tiles.floor.6.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="3,27" image="spriteimage.cliff.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="3,27" ySortOffset="27" image="spriteimage.cliff.scree.tiny.03" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="5,43" image="spriteimage.cliff.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="5,43" ySortOffset="43" image="spriteimage.cliff.scree.tiny.03" colored="floor-alt" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="earth.floor.2.3.08" i="1238" image="tiles.floor.7.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="9,21" image="spriteimage.cliff.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="9,21" ySortOffset="21" image="spriteimage.cliff.scree.tiny.04" colored="cliff-top-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="2,27" image="spriteimage.cliff.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,27" ySortOffset="27" image="spriteimage.cliff.scree.tiny.04" colored="floor-alt-edge" attenuated="true" />			
+		</layers></layers></floor>			
+		
+		
+		
+		<!-- FLOOR 3 - not used at the mo ========================================================================================================================== 	-->	
+		
+		<floor name="earth.floor.3" i="1300">
+			<random>
+				<array>
+					<item>earth.internal.floor.01</item>
+				</array>
+			</random>
+		</floor>
+
+<!-- 
+		<floor name="earth.internal.floor.01" i="1016" image="-" layer="1" colored="shadow"><layers><layers scale="1.0">
+			<sprite layer="3" sublayer="0" image="tiles.floor.2.0" colored="shadow" attenuated="false" />
+		</layers></layers></floor>
+ -->
+
+		<floor name="earth.internal.floor.01" i="1016" image="tiles.floor.2.0" layer="1" colored="black"/>
+
+
+
+		<!--  OBSTACLES ========================================================================================================================== -->
+
+			
+		<obstacle name="earth.obstacle.vehicle.1" i="1400" layer="2" obstacle="earth.vehicle.1"/>
+		<obstacle name="earth.obstacle.vehicle.2" i="1401" layer="2" obstacle="earth.vehicle.2"/>
+		<obstacle name="earth.obstacle.vehicle.3" i="1402" layer="2" obstacle="earth.vehicle.3"/>
+		<obstacle name="earth.obstacle.vehicle.4" i="1403" layer="2" obstacle="earth.vehicle.4"/>
+		<obstacle name="earth.obstacle.vehicle.5" i="1404" layer="2" obstacle="earth.vehicle.5"/>
+
+		<obstacle name="earth.obstacle.vehicle.burning.1" i="1405" layer="2" obstacle="earth.vehicle.burning.1"/>
+		<obstacle name="earth.obstacle.vehicle.burning.2" i="1406" layer="2" obstacle="earth.vehicle.burning.2"/>
+		<obstacle name="earth.obstacle.vehicle.burning.3" i="1407" layer="2" obstacle="earth.vehicle.burning.3"/>
+		<obstacle name="earth.obstacle.vehicle.burning.4" i="1408" layer="2" obstacle="earth.vehicle.burning.4"/>
+		<obstacle name="earth.obstacle.vehicle.burning.5" i="1409" layer="2" obstacle="earth.vehicle.burning.5"/>		
+		
+		<obstacle name="earth.obstacle.cactus.1" i="1410" layer="2" obstacle="earth.cactus.1"/>
+		<obstacle name="earth.obstacle.cactus.2" i="1411" layer="2" obstacle="earth.cactus.2"/>
+		<obstacle name="earth.obstacle.cactus.3" i="1412" layer="2" obstacle="earth.cactus.3"/>
+		<obstacle name="earth.obstacle.cactus.4" i="1413" layer="2" obstacle="earth.cactus.4"/>
+		<obstacle name="earth.obstacle.cactus.5" i="1414" layer="2" obstacle="earth.cactus.5"/>
+
+		<obstacle name="earth.obstacle.tree.1" i="1415" layer="2" obstacle="earth.tree.1"/>
+		<obstacle name="earth.obstacle.tree.2" i="1416" layer="2" obstacle="earth.tree.2"/>
+		<obstacle name="earth.obstacle.tree.3" i="1417" layer="2" obstacle="earth.tree.3"/>
+		<obstacle name="earth.obstacle.tree.4" i="1418" layer="2" obstacle="earth.tree.4"/>
+		<obstacle name="earth.obstacle.tree.5" i="1419" layer="2" obstacle="earth.tree.5"/>
+
+		<obstacle name="earth.obstacle.pine.1" i="1420" layer="2" obstacle="earth.pine.1"/>
+		<obstacle name="earth.obstacle.pine.2" i="1421" layer="2" obstacle="earth.pine.2"/>
+		<obstacle name="earth.obstacle.pine.3" i="1422" layer="2" obstacle="earth.pine.3"/>
+		<obstacle name="earth.obstacle.pine.4" i="1423" layer="2" obstacle="earth.pine.4"/>
+		<obstacle name="earth.obstacle.pine.5" i="1424" layer="2" obstacle="earth.pine.5"/>
+
+
+
+
+
+		<!--  ROADS  ========================================================================================================================== -->
+
+
+		<detail name="earth.road.0" i="1600" layer="1" spriteLayer="3" image="tiles.road.0.1" attenuated="true" colored="road"/>
+		<detail name="earth.road.1" i="1601" layer="1" spriteLayer="3" image="tiles.road.1.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.01" /></layers></layers>
+		</detail>
+		<detail name="earth.road.2" i="1602" layer="1" spriteLayer="3" image="tiles.road.2.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.02" /></layers></layers>
+		</detail>
+		<detail name="earth.road.3" i="1603" layer="1" spriteLayer="3" image="tiles.road.3.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.03" /></layers></layers>
+		</detail>
+		<detail name="earth.road.4" i="1604" layer="1" spriteLayer="3" image="tiles.road.4.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.04" /></layers></layers>
+		</detail>
+		
+		<!--  vertical -->
+		
+		<detail name="earth.road.5" i="1605" layer="1" spriteLayer="3" image="tiles.road.5.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+			<random>
+				<array>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5</item>
+					<item>earth.road.5.01</item>
+					<item>earth.road.5.02</item>
+					<item>earth.road.5.03</item>
+					<item>earth.road.5.04</item>
+					<item>earth.road.5.05</item>
+					<item>earth.road.5.06</item>
+					<item>earth.road.5.07</item>
+					<item>earth.road.5.08</item>
+					<item>earth.road.5.09</item>
+					<item>earth.road.5.10</item>
+					<item>earth.road.5.11</item>
+					<item>earth.road.5.12</item>
+					<item>earth.road.5.13</item>
+					<item>earth.road.5.14</item>
+					<item>earth.road.5.15</item>
+					<item>earth.road.5.16</item>
+				</array>
+			</random>
+		</detail>
+		
+		<detail name="earth.road.6" i="1606" layer="1" spriteLayer="3" image="tiles.road.6.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.06" /></layers></layers>
+		</detail>
+		<detail name="earth.road.7" i="1607" layer="1" spriteLayer="3" image="tiles.road.7.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.07" /></layers></layers>
+		</detail>
+		<detail name="earth.road.8" i="1608" layer="1" spriteLayer="3" image="tiles.road.8.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.08" /></layers></layers>
+		</detail>
+		<detail name="earth.road.9" i="1609" layer="1" spriteLayer="3" image="tiles.road.9.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.09" /></layers></layers>
+		</detail>
+		
+		<!--  horizontal -->
+		
+		<detail name="earth.road.10" i="1610" layer="1" spriteLayer="3" image="tiles.road.10.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+			<random>
+				<array>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10</item>
+					<item>earth.road.10.01</item>
+					<item>earth.road.10.02</item>
+					<item>earth.road.10.03</item>
+					<item>earth.road.10.04</item>
+					<item>earth.road.10.05</item>
+					<item>earth.road.10.06</item>
+					<item>earth.road.10.07</item>
+					<item>earth.road.10.08</item>
+					<item>earth.road.10.09</item>
+					<item>earth.road.10.10</item>
+					<item>earth.road.10.11</item>
+					<item>earth.road.10.12</item>
+					<item>earth.road.10.13</item>
+					<item>earth.road.10.14</item>
+					<item>earth.road.10.15</item>
+					<item>earth.road.10.16</item>
+				</array>
+			</random>
+		</detail>
+		
+		<detail name="earth.road.11" i="1611" layer="1" spriteLayer="3" image="tiles.road.11.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.11" /></layers></layers>
+		</detail>
+		<detail name="earth.road.12" i="1612" layer="1" spriteLayer="3" image="tiles.road.12.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.12" /></layers></layers>
+		</detail>
+		<detail name="earth.road.13" i="1613" layer="1" spriteLayer="3" image="tiles.road.13.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.13" /></layers></layers>
+		</detail>
+		<detail name="earth.road.14" i="1614" layer="1" spriteLayer="3" image="tiles.road.14.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.14" /></layers></layers>
+		</detail>
+		<detail name="earth.road.15" i="1615" layer="1" spriteLayer="3" image="tiles.road.15.1" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="1" attenuated="true" image="spriteimage.road.markings.15" /></layers></layers>
+		</detail>
+
+
+		<!--  random horizontal -->
+
+		<detail name="earth.road.10.01" i="1620" layer="1" spriteLayer="3" image="tiles.road.0.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.02" i="1621" layer="1" spriteLayer="3" image="tiles.road.1.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.03" i="1622" layer="1" spriteLayer="3" image="tiles.road.2.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.04" i="1623" layer="1" spriteLayer="3" image="tiles.road.3.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.05" i="1624" layer="1" spriteLayer="3" image="tiles.road.4.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.06" i="1625" layer="1" spriteLayer="3" image="tiles.road.5.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.07" i="1626" layer="1" spriteLayer="3" image="tiles.road.6.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.08" i="1627" layer="1" spriteLayer="3" image="tiles.road.7.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.09" i="1628" layer="1" spriteLayer="3" image="tiles.road.8.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.10" i="1629" layer="1" spriteLayer="3" image="tiles.road.9.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.11" i="1630" layer="1" spriteLayer="3" image="tiles.road.10.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.12" i="1631" layer="1" spriteLayer="3" image="tiles.road.11.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.13" i="1632" layer="1" spriteLayer="3" image="tiles.road.12.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.14" i="1633" layer="1" spriteLayer="3" image="tiles.road.13.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.15" i="1634" layer="1" spriteLayer="3" image="tiles.road.14.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+		<detail name="earth.road.10.16" i="1635" layer="1" spriteLayer="3" image="tiles.road.15.2" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.10" /></layers></layers>
+		</detail>
+
+		<!--  random vertical -->
+
+		<detail name="earth.road.5.01" i="1640" layer="1" spriteLayer="3" image="tiles.road.0.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.02" i="1641" layer="1" spriteLayer="3" image="tiles.road.1.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.03" i="1642" layer="1" spriteLayer="3" image="tiles.road.2.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.04" i="1643" layer="1" spriteLayer="3" image="tiles.road.3.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.05" i="1644" layer="1" spriteLayer="3" image="tiles.road.4.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.06" i="1645" layer="1" spriteLayer="3" image="tiles.road.5.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.07" i="1646" layer="1" spriteLayer="3" image="tiles.road.6.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.08" i="1647" layer="1" spriteLayer="3" image="tiles.road.7.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.09" i="1648" layer="1" spriteLayer="3" image="tiles.road.8.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.10" i="1649" layer="1" spriteLayer="3" image="tiles.road.9.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.11" i="1650" layer="1" spriteLayer="3" image="tiles.road.10.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.12" i="1651" layer="1" spriteLayer="3" image="tiles.road.11.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.13" i="1652" layer="1" spriteLayer="3" image="tiles.road.12.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.14" i="1653" layer="1" spriteLayer="3" image="tiles.road.13.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.15" i="1654" layer="1" spriteLayer="3" image="tiles.road.14.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+		<detail name="earth.road.5.16" i="1655" layer="1" spriteLayer="3" image="tiles.road.15.3" attenuated="true" colored="road">
+			<layers><layers scale="0.5"><sprite scale="0.5" layer="3" sublayer="2" attenuated="true" image="spriteimage.road.markings.05" /></layers></layers>
+		</detail>
+
+
+
+	</tileset>
+
+
+
+	<!--  WALLS ========================================================================================================================== -->
+
+
+		<wall name="earth.wall.master.1" i="81" layer="2">
+			<random>
+				<array>
+					<item>earth.wall.small.1.01</item>
+					<item>earth.wall.small.1.02</item>
+					<item>earth.wall.small.1.03</item>	
+					<item>earth.wall.small.1.04</item>
+					<item>earth.wall.small.1.05</item>
+					<item>earth.wall.small.1.06</item>
+					<item>earth.wall.small.1.07</item>	
+					<item>earth.wall.small.1.08</item>
+					<item>earth.wall.small.2.01</item>
+					<item>earth.wall.small.2.02</item>
+					<item>earth.wall.small.2.03</item>	
+					<item>earth.wall.small.2.04</item>
+					<item>earth.wall.small.2.05</item>
+					<item>earth.wall.small.2.06</item>
+					<item>earth.wall.small.2.07</item>	
+					<item>earth.wall.small.2.08</item>
+					<item>earth.wall.small.3.01</item>
+					<item>earth.wall.small.3.02</item>
+					<item>earth.wall.small.3.03</item>	
+					<item>earth.wall.small.3.04</item>
+					<item>earth.wall.small.3.05</item>
+					<item>earth.wall.small.3.06</item>
+					<item>earth.wall.small.3.07</item>	
+					<item>earth.wall.small.3.08</item>																				
+				</array>
+			</random>
+		</wall>
+
+		<wall name="earth.wall.master.2" i="82" layer="2">
+			<random>
+				<array>
+					<item>earth.wall.small.1.01</item>
+					<item>earth.wall.small.1.02</item>
+					<item>earth.wall.small.1.03</item>	
+					<item>earth.wall.small.1.04</item>
+					<item>earth.wall.small.1.05</item>
+					<item>earth.wall.small.1.06</item>
+					<item>earth.wall.small.1.07</item>	
+					<item>earth.wall.small.1.08</item>
+					<item>earth.wall.small.2.01</item>
+					<item>earth.wall.small.2.02</item>
+					<item>earth.wall.small.2.03</item>	
+					<item>earth.wall.small.2.04</item>
+					<item>earth.wall.small.2.05</item>
+					<item>earth.wall.small.2.06</item>
+					<item>earth.wall.small.2.07</item>	
+					<item>earth.wall.small.2.08</item>
+					<item>earth.wall.small.3.01</item>
+					<item>earth.wall.small.3.02</item>
+					<item>earth.wall.small.3.03</item>	
+					<item>earth.wall.small.3.04</item>
+					<item>earth.wall.small.3.05</item>
+					<item>earth.wall.small.3.06</item>
+					<item>earth.wall.small.3.07</item>	
+					<item>earth.wall.small.3.08</item>	
+					
+					<item>earth.wall.medium.1.01</item>																									
+					<item>earth.wall.medium.1.02</item>					
+					<item>earth.wall.medium.1.03</item>					
+					<item>earth.wall.medium.1.04</item>					
+					<item>earth.wall.medium.1.05</item>					
+					<item>earth.wall.medium.1.06</item>					
+					<item>earth.wall.medium.1.07</item>					
+					<item>earth.wall.medium.1.08</item>	
+					<item>earth.wall.medium.2.01</item>																									
+					<item>earth.wall.medium.2.02</item>					
+					<item>earth.wall.medium.2.03</item>					
+					<item>earth.wall.medium.2.04</item>					
+					<item>earth.wall.medium.2.05</item>					
+					<item>earth.wall.medium.2.06</item>					
+					<item>earth.wall.medium.2.07</item>					
+					<item>earth.wall.medium.2.08</item>	
+
+					<item>earth.wall.medium.1.01</item>																									
+					<item>earth.wall.medium.1.02</item>					
+					<item>earth.wall.medium.1.03</item>					
+					<item>earth.wall.medium.1.04</item>					
+					<item>earth.wall.medium.1.05</item>					
+					<item>earth.wall.medium.1.06</item>					
+					<item>earth.wall.medium.1.07</item>					
+					<item>earth.wall.medium.1.08</item>	
+					<item>earth.wall.medium.2.01</item>																									
+					<item>earth.wall.medium.2.02</item>					
+					<item>earth.wall.medium.2.03</item>					
+					<item>earth.wall.medium.2.04</item>					
+					<item>earth.wall.medium.2.05</item>					
+					<item>earth.wall.medium.2.06</item>					
+					<item>earth.wall.medium.2.07</item>					
+					<item>earth.wall.medium.2.08</item>	
+					
+					<item>earth.wall.medium.1.01</item>																									
+					<item>earth.wall.medium.1.02</item>					
+					<item>earth.wall.medium.1.03</item>					
+					<item>earth.wall.medium.1.04</item>					
+					<item>earth.wall.medium.1.05</item>					
+					<item>earth.wall.medium.1.06</item>					
+					<item>earth.wall.medium.1.07</item>					
+					<item>earth.wall.medium.1.08</item>	
+					<item>earth.wall.medium.2.01</item>																									
+					<item>earth.wall.medium.2.02</item>					
+					<item>earth.wall.medium.2.03</item>					
+					<item>earth.wall.medium.2.04</item>					
+					<item>earth.wall.medium.2.05</item>					
+					<item>earth.wall.medium.2.06</item>					
+					<item>earth.wall.medium.2.07</item>					
+					<item>earth.wall.medium.2.08</item>											
+				</array>
+			</random>
+		</wall>
+
+		<wall name="earth.wall.master.3" i="83" layer="2">
+			<random>
+				<array>
+					<item>earth.wall.medium.1.01</item>																									
+					<item>earth.wall.medium.1.02</item>					
+					<item>earth.wall.medium.1.03</item>					
+					<item>earth.wall.medium.1.04</item>					
+					<item>earth.wall.medium.1.05</item>					
+					<item>earth.wall.medium.1.06</item>					
+					<item>earth.wall.medium.1.07</item>					
+					<item>earth.wall.medium.1.08</item>	
+					<item>earth.wall.medium.2.01</item>																									
+					<item>earth.wall.medium.2.02</item>					
+					<item>earth.wall.medium.2.03</item>					
+					<item>earth.wall.medium.2.04</item>					
+					<item>earth.wall.medium.2.05</item>					
+					<item>earth.wall.medium.2.06</item>					
+					<item>earth.wall.medium.2.07</item>					
+					<item>earth.wall.medium.2.08</item>	
+					
+					<item>earth.wall.cliff.01</item> 
+					<item>earth.wall.cliff.02</item>
+					<item>earth.wall.cliff.03</item>
+					<item>earth.wall.cliff.04</item>
+					<item>earth.wall.cliff.05</item>
+					<item>earth.wall.cliff.06</item>
+					<item>earth.wall.cliff.07</item>					
+					<item>earth.wall.cliff.08</item> 
+					<item>earth.wall.cliff.09</item>
+					<item>earth.wall.cliff.10</item>
+					<item>earth.wall.cliff.11</item>
+					<item>earth.wall.cliff.12</item>
+					<item>earth.wall.cliff.13</item>
+					<item>earth.wall.cliff.14</item>																			
+				</array>
+			</random>
+		</wall>
+
+		<wall name="earth.wall.master.4" i="84" layer="2">
+			<random>
+				<array>
+			
+					<item>earth.wall.cliff.01</item> 
+					<item>earth.wall.cliff.02</item>
+					<item>earth.wall.cliff.03</item>
+					<item>earth.wall.cliff.04</item>
+					<item>earth.wall.cliff.05</item>
+					<item>earth.wall.cliff.06</item>
+					<item>earth.wall.cliff.07</item>					
+					<item>earth.wall.cliff.08</item> 
+					<item>earth.wall.cliff.09</item>
+					<item>earth.wall.cliff.10</item>
+					<item>earth.wall.cliff.11</item>
+					<item>earth.wall.cliff.12</item>
+					<item>earth.wall.cliff.13</item>
+					<item>earth.wall.cliff.14</item>																			
+				
+					<item>earth.wall.internal.01</item>
+					<item>earth.wall.internal.02</item>
+					<item>earth.wall.internal.03</item>
+					<item>earth.wall.internal.04</item>		
+					<item>earth.wall.internal.05</item>
+					
+					<item>earth.wall.internal.01</item>
+					<item>earth.wall.internal.02</item>
+					<item>earth.wall.internal.03</item>
+					<item>earth.wall.internal.04</item>		
+					<item>earth.wall.internal.05</item>					
+					
+					<item>earth.wall.internal.01</item>
+					<item>earth.wall.internal.02</item>
+					<item>earth.wall.internal.03</item>
+					<item>earth.wall.internal.04</item>		
+					<item>earth.wall.internal.05</item>					
+								
+				</array>
+			</random>
+		</wall>
+
+		<wall name="earth.cave.master.1" i="85" layer="2">
+			<random>
+				<array>
+
+					<item>earth.cave.internal.test</item> 
+
+				</array>
+			</random>
+		</wall>
+
+
+			
+	<tileset name="earth.plains.walls" description="Earth Walls" default_="">
+		<wall name="earth.plains.wall.1" inherit="earth.wall.master.1" i="91" layer="2" />
+		<wall name="earth.plains.wall.2" inherit="earth.wall.master.1" i="92" layer="2" />
+		<wall name="earth.plains.wall.3" inherit="earth.wall.master.1" i="93" layer="2" />
+		<wall name="earth.plains.wall.4" inherit="earth.wall.master.1" i="94" layer="2" />
+		<wall name="earth.plains.wall.5" inherit="earth.wall.master.1" i="95" layer="2" />		
+		<wall name="earth.plains.wall.6" inherit="earth.wall.master.2" i="96" layer="2" />	
+		<wall name="earth.plains.wall.7" inherit="earth.wall.master.2" i="97" layer="2" />
+		<wall name="earth.plains.wall.8" inherit="earth.wall.master.2" i="98" layer="2" />		
+		<wall name="earth.plains.wall.9" inherit="earth.wall.master.2" i="99" layer="2" />	
+	</tileset>	
+	
+	<tileset name="earth.plains.internalWalls" description="Earth Internal Walls" default_="">
+		<wall name="earth.plains.internalWall.1" inherit="earth.wall.master.3" i="9001" layer="2" />
+		<wall name="earth.plains.internalWall.2" inherit="earth.wall.master.3" i="9002" layer="2" />
+		<wall name="earth.plains.internalWall.3" inherit="earth.wall.master.3" i="9003" layer="2" />	
+		<wall name="earth.plains.internalWall.4" inherit="earth.wall.master.3" i="9004" layer="2" />
+		<wall name="earth.plains.internalWall.5" inherit="earth.wall.master.3" i="9005" layer="2" />
+		<wall name="earth.plains.internalWall.6" inherit="earth.wall.master.3" i="9006" layer="2" />
+		<wall name="earth.plains.internalWall.7" inherit="earth.wall.master.3" i="9007" layer="2" />		
+		<wall name="earth.plains.internalWall.8" inherit="earth.wall.master.3" i="9008" layer="2" />
+		<wall name="earth.plains.internalWall.9" inherit="earth.wall.master.4" i="9009" layer="2" />
+	</tileset>
+
+
+	<tileset name="earth.walls" description="Earth Walls" default_="">
+		<wall name="earth.wall.1" inherit="earth.wall.master.1" i="101" layer="2" />
+		<wall name="earth.wall.2" inherit="earth.wall.master.1" i="102" layer="2" />
+		<wall name="earth.wall.3" inherit="earth.wall.master.1" i="103" layer="2" />
+		<wall name="earth.wall.4" inherit="earth.wall.master.1" i="104" layer="2" />
+		<wall name="earth.wall.5" inherit="earth.wall.master.1" i="105" layer="2" />		
+		<wall name="earth.wall.6" inherit="earth.wall.master.1" i="106" layer="2" />	
+		<wall name="earth.wall.7" inherit="earth.wall.master.1" i="107" layer="2" />
+		<wall name="earth.wall.8" inherit="earth.wall.master.1" i="108" layer="2" />		
+		<wall name="earth.wall.9" inherit="earth.wall.master.2" i="109" layer="2" />	
+	</tileset>	
+	
+	<tileset name="earth.internalWalls" description="Earth Internal Walls" default_="">
+		<wall name="earth.internalWall.1" inherit="earth.wall.master.3" i="9011" layer="2" />
+		<wall name="earth.internalWall.2" inherit="earth.wall.master.3" i="9012" layer="2" />
+		<wall name="earth.internalWall.3" inherit="earth.wall.master.3" i="9013" layer="2" />	
+		<wall name="earth.internalWall.4" inherit="earth.wall.master.3" i="9014" layer="2" />
+		<wall name="earth.internalWall.5" inherit="earth.wall.master.3" i="9015" layer="2" />
+		<wall name="earth.internalWall.6" inherit="earth.wall.master.3" i="9016" layer="2" />
+		<wall name="earth.internalWall.7" inherit="earth.wall.master.3" i="9017" layer="2" />		
+		<wall name="earth.internalWall.8" inherit="earth.cave.master.1" i="9018" layer="2" />
+		<wall name="earth.internalWall.9" inherit="earth.cave.master.1" i="9019" layer="2" />
+	</tileset>
+
+
+ 
+	<wall name="earth.wall.spec" image="tiles.floor.1.0" colored="floor" i="110"/>
+	<wall name="earth.wall.cliff.spec" image="tiles.floor.1.0" colored="floor" i="111"/>
+	<wall name="earth.wall.internal.spec" image="tiles.floor.1.0" colored="floor" i="112"/>
+	<wall name="earth.cave.internal.spec" image="tiles.floor.1.0" colored="shadow" i="113"/>
+
+	<include resource="rocks-earth.xml"/>
+
+
+	<wall name="earth.cave.internal.test" inherit="earth.cave.internal.spec" i="180"><layers><layers scale="0.5"></layers></layers></wall>
+
+  
+  
+  	<!-- TRANSITION BETWEEN FLOOR AND ALT FLOOR ========================================================================================================================== -->
+  	
+  	
+ 	<wall name="earth.transition.master.1" i="501" layer="0">
+		<random>
+			<array>
+				<item>earth.trans.1.small.01</item>
+				<item>earth.trans.1.small.02</item>
+				<item>earth.trans.1.small.03</item>
+				<item>earth.trans.1.small.04</item>
+				<item>earth.trans.1.small.05</item>
+				<item>earth.trans.1.small.06</item>
+				<item>earth.trans.1.small.07</item>
+				<item>earth.trans.1.small.08</item>
+				<item>earth.trans.1.small.09</item>
+				<item>earth.trans.1.small.10</item>																				
+			</array>
+		</random>
+	</wall>
+  	
+ 	<wall name="earth.transition.master.2" i="502" layer="0">
+		<random>
+			<array>
+				<item>earth.trans.1.large.01</item>
+				<item>earth.trans.1.large.02</item>
+				<item>earth.trans.1.large.03</item>
+				<item>earth.trans.1.large.04</item>	
+				<item>earth.trans.1.large.05</item>
+				<item>earth.trans.1.large.06</item>
+				<item>earth.trans.1.large.07</item>
+				<item>earth.trans.1.large.08</item>
+				<item>earth.trans.1.large.09</item>
+				<item>earth.trans.1.large.10</item>
+				<item>earth.trans.1.large.10</item>					
+				<item>earth.trans.1.large.11</item>
+				<item>earth.trans.1.large.12</item>
+				<item>earth.trans.1.large.13</item>
+				<item>earth.trans.1.large.14</item>																			
+			</array>
+		</random>
+	</wall>
+	
+	  	
+  	
+	<tileset name="earth.transitions" description="Earth Transitions" default_="">
+
+		<wall name="earth.transition.1" inherit="earth.transition.master.1" i="511" layer="0" />
+		<wall name="earth.transition.2" inherit="earth.transition.master.1" i="512" layer="0" />
+		<wall name="earth.transition.3" inherit="earth.transition.master.1" i="513" layer="0" />		
+		<wall name="earth.transition.4" inherit="earth.transition.master.1" i="514" layer="0" />		
+
+
+		<wall name="earth.transition.5" inherit="earth.transition.master.2" i="515" layer="0" />
+		<wall name="earth.transition.6" inherit="earth.transition.master.2" i="516" layer="0" />
+		<wall name="earth.transition.7" inherit="earth.transition.master.2" i="517" layer="0" />		
+		<wall name="earth.transition.8" inherit="earth.transition.master.2" i="518" layer="0" />		
+
+	</tileset>
+  
+
+	<floor name="trans.spec" spec="true" layer="0"/>
+
+	<decal name="trans.bottom.spec" layer="1" image="spriteimage.trans.1.small.bottom.01" offset="0,0" colored="floor-alt-edge" attenuated="true"/>
+	<decal name="trans.top.spec" layer="2" image="spriteimage.trans.1.small.top.01" offset="0,0" colored="floor-alt" attenuated="true"/>
+
+
+	<floor name="earth.trans.1.small.01" i="8110" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.01" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.small.02" i="8111" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.02" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.02" attenuated="true"/>
+	</floor>	
+	<floor name="earth.trans.1.small.03" i="8112" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.03" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.03" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.small.04" i="8113" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.04" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.04" attenuated="true"/>
+	</floor>		
+	<floor name="earth.trans.1.small.05" i="8114" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.05" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.05" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.small.06" i="8115" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.06" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.06" attenuated="true"/>
+	</floor>		
+	<floor name="earth.trans.1.small.07" i="8116" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.07" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.07" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.small.08" i="8117" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.08" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.08" attenuated="true"/>
+	</floor>		
+	<floor name="earth.trans.1.small.09" i="8118" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.09" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.09" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.small.10" i="8119" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.small.bottom.10" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.small.top.10" attenuated="true"/>
+	</floor>		
+	
+
+	<floor name="earth.trans.1.large.01" i="8150" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.large.02" i="8151" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.02" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.02" attenuated="true"/>
+	</floor>	
+	<floor name="earth.trans.1.large.03" i="8152" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.03" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.03" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.large.04" i="8153" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.04" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.04" attenuated="true"/>
+	</floor>		
+	<floor name="earth.trans.1.large.05" i="8154" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.05" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.05" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.large.06" i="8155" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.06" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.06" attenuated="true"/>
+	</floor>		
+	<floor name="earth.trans.1.large.07" i="8156" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.07" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.07" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.large.08" i="8157" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.08" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.08" attenuated="true"/>
+	</floor>		
+	<floor name="earth.trans.1.large.09" i="8158" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.09" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.09" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.large.10" i="8159" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.10" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.10" attenuated="true"/>
+	</floor>		
+
+
+	<floor name="earth.trans.1.large.11" i="8180" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.11" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.11" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.large.12" i="8181" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.12" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.12" attenuated="true"/>
+	</floor>		
+	<floor name="earth.trans.1.large.13" i="8182" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.13" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.13" attenuated="true"/>
+	</floor>
+	<floor name="earth.trans.1.large.14" i="8183" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.1.large.bottom.14" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.1.large.top.14" attenuated="true"/>  
+	</floor>		
+
+
+
+
+
+</resources>
+
+

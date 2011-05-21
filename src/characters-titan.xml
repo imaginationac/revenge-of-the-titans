@@ -1,0 +1,2259 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Characters -->
+<resources>
+
+
+	<!-- CHARACTER BUBBLE BACKGROUNDS ============================================================================================================================ -->
+
+	<!-- insets are nor inherited here - odd ? -->
+
+	<widgetbackground name="titan.human-speech.background" inherit="human-speech.background" color="titan.colormap:bubble" insets="24,40,24,24" />
+	<widgetbackground name="titan.human-speech-top-left.background" inherit="human-speech-top-left.background" color="titan.colormap:bubble" insets="24,40,24,24" />	
+	<widgetbackground name="titan.human-speech-top-left-info.background" inherit="human-speech-top-left-info.background" color="titan.colormap:bubble" insets="140,40,24,24" />			
+	<widgetbackground name="titan.human-speech-right.background" inherit="human-speech-right.background" color="titan.colormap:bubble" insets="40,24,24,24" />		
+	<widgetbackground name="titan.human-speech-left.background" inherit="human-speech-left.background" color="titan.colormap:bubble" insets="28,24,40,24" />		
+	<widgetbackground name="titan.info.background" inherit="info.background" color="titan.colormap:bubble" insets="24,28,24,24" />	
+	<widgetbackground name="titan.tech.background" inherit="info.background" color="titan.colormap:bubble" insets="135,28,24,24" />	
+	<widgetbackground name="titan.human-speech-bottom.background" inherit="human-speech-bottom.background" color="titan.colormap:bubble" insets="24,24,24,40" />
+	<widgetbackground name="titan.delivery.background" inherit="info.background" color="titan.colormap:bubble" insets="145,28,24,24" />	
+
+
+	<widgetbackground name="titan.gidrah.background" inherit="info.background.spec" insets="175,28,24,24" color="titan.colormap:alert-bubble"/>	
+	<widgetbackground name="titan.gidrah.wide.background" inherit="info.background.spec" insets="191,28,24,24" color="titan.colormap:alert-bubble"/>	
+	<widgetbackground name="titan.alert.background" inherit="info-dark.background.spec" insets="100,28,24,21" color="titan.colormap:alert-bubble"/>
+
+
+	<!-- BUILDINGS / WEAPONS SPEC ============================================================================================================================ -->
+
+
+	<character
+		name="titan.research.char.spec"
+		inherit="research.char.spec"
+		bubble="titan.info.background"
+		color="titan.colormap:text"
+		boldColor="titan.colormap:text-bold"
+	>
+	</character>
+
+	<animation name="titan.info.background.anim">
+		<scale scale="0.625"/>
+		<frame i="spriteimage.story.titan.info.01" d="1"/>
+	</animation>
+
+	<animation name="titan.gidrah.info.background.anim">
+		<scale scale="0.7"/>
+		<frame i="spriteimage.story.titan.info.01" d="1"/>
+	</animation>
+
+	<animation name="titan.gidrah.info.large.background.anim">
+		<scale scale="0.75"/>
+		<frame i="spriteimage.story.titan.info.01" d="1"/>
+	</animation>
+
+	<!-- INFOS =============================================================================================================== -->
+	
+	<character
+		name="titan.info.crystals.char"
+		inherit="titan.research.char.spec"
+		bubble="titan.human-speech-top-left-info.background"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" offset="-4,-53" image="spriteimage.items.info.crystals.01"/>				
+			</layers>
+		</idleLayers>
+	</character>	
+
+	<character
+		name="titan.research.tech.char.spec"
+		inherit="titan.research.char.spec"
+		bubble="titan.tech.background"
+		color="titan.colormap:text"
+		boldColor="titan.colormap:text-bold"
+	>
+	</character>
+
+	<character
+		name="titan.research.delivery.char.spec"
+		inherit="titan.research.tech.char.spec"
+		bubble="titan.delivery.background"
+	>
+	</character>
+
+	<!-- GIDRAHS =============================================================================================================== -->
+	
+	<character
+		name="titan.gidrah.01.char"
+		inherit="research.char.spec"
+		bubble="titan.gidrah.background"
+		color="titan.colormap:alert-text"
+		boldColor="titan.colormap:alert-text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.525">
+				<sprite layer="2" offset="-5,75" animation="titan.gidrah.info.background.anim"/>
+				<sprite layer="12" offset="-20,-22" image="spriteimage.gidrah.info.titan.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.gidrah.02.char"
+		inherit="titan.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.525">
+				<sprite layer="2" offset="-5,70" animation="titan.gidrah.info.background.anim"/>
+				<sprite layer="12" offset="-20,-15" image="spriteimage.gidrah.info.titan.02"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.gidrah.03.char"
+		inherit="titan.gidrah.01.char"
+		bubble="titan.gidrah.wide.background"
+	>
+		<idleLayers>
+			<layers scale="0.525">
+				<sprite layer="2" offset="-5,80" animation="titan.gidrah.info.large.background.anim"/>
+				<sprite layer="12" offset="-20,-18" image="spriteimage.gidrah.info.titan.03"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="titan.gidrah.04.char"
+		inherit="titan.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.525">
+				<sprite layer="12" offset="-20,-18" image="spriteimage.gidrah.info.titan.04"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+
+	<character
+		name="titan.angry.01.char"
+		inherit="titan.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.525">
+				<sprite layer="12" offset="-24,-22" image="spriteimage.gidrah.angry.info.titan.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.angry.02.char"
+		inherit="titan.gidrah.01.char"
+		bubble="titan.gidrah.wide.background"
+	>
+		<idleLayers>
+			<layers scale="0.525">
+				<sprite layer="2" offset="-5,75" animation="titan.gidrah.info.large.background.anim"/>
+				<sprite layer="12" offset="-18,-22" image="spriteimage.gidrah.angry.info.titan.02"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.angry.03.char"
+		inherit="titan.gidrah.01.char"
+		bubble="titan.gidrah.wide.background"
+	>
+		<idleLayers>
+			<layers scale="0.525">
+				<sprite layer="12" offset="-10,-20" image="spriteimage.gidrah.angry.info.titan.03"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.angry.04.char"
+		inherit="titan.gidrah.01.char"
+		bubble="titan.gidrah.wide.background"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<sprite layer="12" offset="-15,-30" image="spriteimage.gidrah.angry.info.titan.04"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	
+	<!--  gidlet -->
+	
+		<character
+		name="titan.gidlet.01.char"
+		inherit="titan.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.6">
+				<sprite layer="2" offset="-5,70" animation="titan.gidrah.info.background.anim"/>
+				<sprite layer="12" offset="-20,-20" image="spriteimage.gidlet.info.titan.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<!--  boss -->
+
+
+	<character
+		name="titan.boss.char"
+		inherit="research.char.spec"
+		bubble="titan.alert.background"
+		color="titan.colormap:alert-text"
+		boldColor="titan.colormap:alert-text-bold"
+		bubbleLayer="0"
+		mouthLayer="1"
+	>
+		<idleLayers>
+			<layers scale="0.50">
+				<sprite layer="1" image="spriteimage.character.boss.titan.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+
+
+	<!-- CUSTERD ============================================================================================================================ -->
+
+
+	<animation name="custerd.titan.body.idle.anim">
+		<frame i="spriteimage.character.custerd.titan.back.01" d="20" />
+	</animation>
+	<animation name="custerd.titan.body.talk.anim">
+		
+		<label id="start"/>
+		<random>
+			<dest id="point" 			n="1"/>
+			<dest id="point-up" 		n="1"/>
+		</random>
+			
+		<label id="point"/>
+		<frame i="spriteimage.character.custerd.titan.back.02" d="25" />
+		<random>
+			<dest id="point-up" n="2"/>
+			<dest id="start"/>
+			<dest id="idle"/>
+		</random>	
+	
+		<label id="point-up"/>
+		<frame i="spriteimage.character.custerd.titan.back.03" d="25" />
+		<random>
+			<dest id="point" n="2"/>
+			<dest id="start"/>
+			<dest id="idle"/>
+		</random>		
+
+		<label id="idle"/>
+		<frame i="spriteimage.character.custerd.titan.back.01" d="25" />
+		<random>
+			<dest id="idle" n="1"/>
+			<dest id="start"/>
+		</random>				
+	</animation>
+
+	<animation name="custerd.titan.head.look-left.anim">
+		<frame i="spriteimage.character.custerd.titan.04" d="3" childXOffset="-2" />
+		<label id="look-left"/>
+		<frame i="spriteimage.character.custerd.titan.05" d="50" childXOffset="-6" />
+		<random>
+			<dest id="look-left" n="2"/>
+			<dest id="stop-look-left"/>
+		</random>
+		<label id="stop-look-left"/>
+		<frame i="spriteimage.character.custerd.titan.04" d="4" childXOffset="-2" />
+		<frame i="spriteimage.character.custerd.titan.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="custerd.titan.head.look-right.anim">
+		<frame i="spriteimage.character.custerd.titan.02" d="3" childXOffset="2" />
+		<label id="look-right"/>
+		<frame i="spriteimage.character.custerd.titan.03" d="50" childXOffset="6" />
+		<random>
+			<dest id="look-right" n="2"/>
+			<dest id="stop-look-right"/>
+		</random>
+		<label id="stop-look-right"/>
+		<frame i="spriteimage.character.custerd.titan.02" d="4" childXOffset="2" />
+		<frame i="spriteimage.character.custerd.titan.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="custerd.titan.head.talk.anim">
+		<frame i="spriteimage.character.custerd.titan.01" d="20" childXOffset="0" />
+	</animation>
+
+	<animation name="custerd.titan.head.idle.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.custerd.titan.01" d="70" childXOffset="0" />
+		<random>
+			<dest id="start" n="3"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="custerd.titan.head.look-left.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start" n="3"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="custerd.titan.head.look-right.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start" n="3"/>
+		</random>
+	</animation>
+
+	<animation name="custerd.titan.glow.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.custerd.titan.glow.04" d="5" />
+		<frame i="spriteimage.character.custerd.titan.glow.05" d="5" />
+		<frame i="spriteimage.character.custerd.titan.glow.06" d="5" />
+		<frame i="spriteimage.character.custerd.titan.glow.05" d="5" />
+		<frame i="spriteimage.character.custerd.titan.glow.04" d="5" />
+		<frame i="spriteimage.character.custerd.titan.glow.01" d="5" />		
+		<random>
+			<dest id="start" n="7"/>
+			<dest id="blink"/>
+		</random>
+		<label id="blink"/>
+		<frame i="spriteimage.character.custerd.titan.glow.03" d="30" />
+		<frame i="spriteimage.character.custerd.titan.glow.02" d="5" />
+		<frame i="spriteimage.character.custerd.titan.glow.01" d="5" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="custerd.titan.mouth.idle.anim">
+		<scale scale="0.5"/>
+		<frame i="spriteimage.character.custerd.titan.top.01" d="1" />
+	</animation>
+	<animation name="custerd.titan.mouth.vowel.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.custerd.titan.top.02" d="200" />
+		<frame i="spriteimage.character.custerd.titan.top.03" d="200" />
+	</animation>
+	<animation name="custerd.titan.mouth.consonant.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.custerd.titan.top.04" d="200" />
+		<frame i="spriteimage.character.custerd.titan.top.05" d="200" />
+	</animation>
+
+
+
+	<character
+		name="titan.custerd.char"
+		inherit="custerd.char"
+		bubble="titan.human-speech.background"
+		color="titan.colormap:text"
+		boldColor="titan.colormap:text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="5" animation="custerd.titan.head.idle.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="4" animation="custerd.titan.body.idle.anim"/>
+				<sprite layer="6" doChildOffset="true" animation="custerd.titan.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.titan.01"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.55">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="5" animation="custerd.titan.head.talk.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="4" animation="custerd.titan.body.talk.anim"/>
+				<sprite layer="6" doChildOffset="true" animation="custerd.titan.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.titan.01"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<frame i="spriteimage.character.custerd.titan.top.01" d="1" />
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.custerd.titan.top.02" d="200" />
+				<frame i="spriteimage.character.custerd.titan.top.03" d="200" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.custerd.titan.top.04" d="200" />
+				<frame i="spriteimage.character.custerd.titan.top.05" d="200" />
+			</animation>
+		</consonantAppearance>
+	
+	</character>
+
+
+	<character
+		name="titan.custerd-left.char"
+		inherit="titan.custerd.char"
+		bubble="titan.human-speech-right.background"
+	>
+	</character>
+	
+	<character
+		name="titan.custerd.alert.char"
+		inherit="titan.custerd.char"
+		bubble="titan.human-speech-top-left.background"
+	>
+	</character>
+
+	<character
+		name="titan.custerd.info.char"
+		inherit="titan.custerd.char"
+		bubble="-"
+	>
+	</character>
+
+	<character
+		name="titan.custerd-gidrah.char"
+		inherit="titan.custerd.char"
+		bubble="titan.human-speech-left.background"
+	>
+	</character>
+
+	<character
+		name="titan.custerd-gidlet.char"
+		inherit="titan.custerd-gidrah.char"
+	>
+	</character>
+
+
+	<!-- TECH ============================================================================================================================ -->
+
+
+	<animation name="tech.titan.body.idle.anim">
+		<frame i="spriteimage.character.tech.titan.01" d="20" />
+	</animation>
+	<animation name="tech.titan.body.talk.anim">
+		<label id="start"/>
+		<random>
+			<dest id="point" 			n="1"/>
+			<dest id="gesture-left" 	n="1"/>
+			<dest id="gesture-right" 	n="1"/>
+			<dest id="shrug" 			n="1"/>
+		</random>
+			
+		<label id="point"/>
+		<frame i="spriteimage.character.tech.titan.02" d="15" />
+		<random>
+			<dest id="point" n="2"/>
+			<dest id="start"/>
+		</random>	
+	
+		<label id="gesture-left"/>
+		<frame i="spriteimage.character.tech.titan.03" d="15" />
+		<random>
+			<dest id="gesture-left" n="2"/>
+			<dest id="start"/>
+		</random>		
+	
+		<label id="gesture-right"/>
+		<frame i="spriteimage.character.tech.titan.04" d="15" />
+		<random>
+			<dest id="gesture-right" n="2"/>
+			<dest id="start"/>
+		</random>		
+		
+		<label id="shrug"/>
+		<frame i="spriteimage.character.tech.titan.05" d="15" />
+		<random>
+			<dest id="shrug" n="2"/>
+			<dest id="start"/>
+		</random>					
+	</animation>
+
+
+	<animation name="tech.titan.head.look-left.anim">
+		<label id="look-left"/>
+		<frame i="spriteimage.character.tech.titan.back.03" d="20" childXOffset="13" />
+		<random>
+			<dest id="look-left" n="2"/>
+			<dest id="stop-look-left"/>
+		</random>
+		<label id="stop-look-left"/>
+		<frame i="spriteimage.character.tech.titan.back.02" d="2" childXOffset="5" />
+		<frame i="spriteimage.character.tech.titan.back.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="tech.titan.head.look-right.anim">
+		<label id="look-right"/>
+		<frame i="spriteimage.character.tech.titan.back.05" d="20" childXOffset="-13" />
+		<random>
+			<dest id="look-right" n="2"/>
+			<dest id="stop-look-right"/>
+		</random>
+		<label id="stop-look-right"/>
+		<frame i="spriteimage.character.tech.titan.back.04" d="2" childXOffset="-5" />
+		<frame i="spriteimage.character.tech.titan.back.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="tech.titan.head.talk.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.tech.titan.back.01" d="20" childXOffset="0" />
+		<random>
+			<dest id="start"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="tech.titan.head.look-left.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="tech.titan.head.look-right.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start"/>
+		</random>
+	</animation>
+
+	<animation name="tech.titan.head.idle.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.tech.titan.back.01" d="100" childXOffset="0" />
+		<random>
+			<dest id="start" n="6"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="tech.titan.head.look-left.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start" n="3"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="tech.titan.head.look-right.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start" n="3"/>
+		</random>
+	</animation>
+
+	<animation name="tech.titan.mouth.idle.anim">
+		<scale scale="0.5"/>
+		<frame i="spriteimage.character.tech.titan.top.01" d="1" />
+	</animation>
+	<animation name="tech.titan.mouth.vowel.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.tech.titan.top.02" d="200" />
+		<frame i="spriteimage.character.tech.titan.top.03" d="200" />
+	</animation>
+	<animation name="tech.titan.mouth.consonant.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.tech.titan.top.04" d="200" />
+		<frame i="spriteimage.character.tech.titan.top.05" d="200" />
+	</animation>
+
+
+
+
+
+
+	<character
+		name="titan.tech.char"
+		inherit="tech.char"
+		bubble="titan.human-speech.background"
+		color="titan.colormap:text"
+		boldColor="titan.colormap:text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="4" animation="tech.titan.head.idle.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" animation="tech.titan.body.idle.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.titan.01"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.5">
+				<sprite layer="4" animation="tech.titan.head.talk.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" animation="tech.titan.body.talk.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.titan.01"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<frame i="spriteimage.character.tech.titan.top.01" d="1" />
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.titan.top.02" d="200" />
+				<frame i="spriteimage.character.tech.titan.top.03" d="200" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.titan.top.04" d="200" />
+				<frame i="spriteimage.character.tech.titan.top.05" d="200" />
+			</animation>
+		</consonantAppearance>
+	</character>
+
+	<character
+		name="titan.tech-left.char"
+		inherit="titan.tech.char"
+		bubble="titan.human-speech-right.background"
+	>
+	</character>
+
+	<character
+		name="titan.tech-gidrah.char"
+		inherit="titan.tech.char"
+		bubble="titan.human-speech-left.background"
+	>
+	</character>
+
+
+
+
+	<!-- GIDLET ============================================================================================================================ -->
+
+	<!-- tech guy -->
+
+	<animation name="gidlet.tech.body.idle.anim">
+		<scale scale="0.375" d="0"/>
+		<label id="start"/>
+		
+		<frame i="spriteimage.character.tech.titan.01" d="50" />
+		
+		<random>
+			<dest id="start" 			n="3"/>
+			<dest id="gesture-left" 	n="2"/>
+			<dest id="shrug" 			n="1"/>
+		</random>
+	
+		<label id="gesture-left"/>
+		<frame i="spriteimage.character.tech.titan.03" d="50" />
+		<random>
+			<dest id="gesture-left" n="5"/>
+			<dest id="start"/>
+		</random>		
+	
+		<label id="shrug"/>
+		<frame i="spriteimage.character.tech.titan.05" d="30" />
+		<random>
+			<dest id="shrug" n="2"/>
+			<dest id="start"/>
+		</random>					
+	</animation>
+
+
+	<animation name="tech.titan.head.look-left-slow.anim">
+		<label id="look-left"/>
+		<frame i="spriteimage.character.tech.titan.back.03" d="50" childXOffset="13" />
+		<random>
+			<dest id="look-left" n="4"/>
+			<dest id="stop-look-left"/>
+		</random>
+		<label id="stop-look-left"/>
+		<frame i="spriteimage.character.tech.titan.back.02" d="2" childXOffset="5" />
+		<frame i="spriteimage.character.tech.titan.back.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="tech.titan.head.look-right-slow.anim">
+		<label id="look-right"/>
+		<frame i="spriteimage.character.tech.titan.back.05" d="50" childXOffset="-13" />
+		<random>
+			<dest id="look-right" n="2"/>
+			<dest id="stop-look-right"/>
+		</random>
+		<label id="stop-look-right"/>
+		<frame i="spriteimage.character.tech.titan.back.04" d="2" childXOffset="-5" />
+		<frame i="spriteimage.character.tech.titan.back.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="gidlet.tech.head.idle.anim">
+		<scale scale="0.375" d="0"/>
+		<label id="start"/>
+		<frame i="spriteimage.character.tech.titan.back.01" d="100" childXOffset="0" />
+		<random>
+			<dest id="start" />
+			<dest id="look-left"/>
+			<dest id="look-right" n="6"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="tech.titan.head.look-left-slow.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start" n="3"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="tech.titan.head.look-right-slow.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start" n="3"/>
+		</random>
+	</animation>
+	
+
+	
+	<animation name="gidlet.tech.spotlight.anim">
+		<scale xscale="0.8" yscale="0.4" d="0"/>
+		<frame i="spriteimage.story.spotlight.titan.01" d="0" />
+	</animation>
+	
+
+	<!-- gidlet -->
+
+	<animation name="gidlet.gidlet.spotlight.anim">
+		<scale xscale="1.25" yscale="1.0" d="0"/>
+		<frame i="spriteimage.story.spotlight.titan.01" d="0" />
+	</animation>
+
+
+
+
+	<animation name="gidlet.eye.talk.anim">
+		<frame i="spriteimage.character.gidlet.eye.01" d="60" />
+		<frame i="spriteimage.character.gidlet.eye.02" d="4" />
+		<frame i="spriteimage.character.gidlet.eye.03" d="3" />
+		<frame i="spriteimage.character.gidlet.eye.04" d="10" />
+	</animation>	
+	
+	<animation name="gidlet.eye.idle.anim">
+		<frame i="spriteimage.character.gidlet.eye.04" d="50" />
+		<frame i="spriteimage.character.gidlet.eye.03" d="5" />
+		<frame i="spriteimage.character.gidlet.eye.02" d="4" />
+		
+		<label id="start"/>
+		<frame i="spriteimage.character.gidlet.eye.01" d="50" />
+		<random>
+			<dest id="blink"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="blink"/>
+		<frame i="spriteimage.character.gidlet.eye.02" d="4" />
+		<frame i="spriteimage.character.gidlet.eye.03" d="3" />
+		<label id="closed"/>
+		<frame i="spriteimage.character.gidlet.eye.04" d="20" />
+		<random>
+			<dest id="closed" n="5"/>
+			<dest id="continue"/>
+		</random>	
+		<label id="continue"/>
+		<frame i="spriteimage.character.gidlet.eye.03" d="5" />
+		<frame i="spriteimage.character.gidlet.eye.02" d="4" />
+		<goto id="start"/>
+	</animation>	
+
+
+
+	<animation name="gidlet.leg.twitch.anim">
+		<label id="start"/>
+		<random>
+			<dest id="twitch1"/>
+			<dest id="twitch2"/>
+			<dest id="twitch3"/>
+			<dest id="twitch4"/>
+			<dest id="twitch5"/>
+			<dest id="twitch6"/>
+			<dest id="twitch7"/>
+			<dest id="twitch8"/>
+		</random>	
+		
+		<label id="twitch1"/>
+		<offset x="0" y="1.5" d="1"/>
+		<goto id="continue"/>
+
+		<label id="twitch2"/>
+		<offset x="1" y="1.5" d="1"/>
+		<goto id="continue"/>
+		
+		<label id="twitch3"/>
+		<offset x="1" y="0" d="1"/>
+		<goto id="continue"/>
+
+		<label id="twitch4"/>
+		<offset x="1" y="-0.5" d="1"/>
+		<goto id="continue"/>		
+
+		<label id="twitch5"/>
+		<offset x="0" y="-0.5" d="1"/>
+		<goto id="continue"/>
+
+		<label id="twitch6"/>
+		<offset x="-1" y="-0.5" d="1"/>
+		<goto id="continue"/>
+
+		<label id="twitch7"/>
+		<offset x="-1" y="0" d="1"/>
+		<goto id="continue"/>
+
+		<label id="twitch8"/>
+		<offset x="-1" y="1.5" d="1"/>
+		<goto id="continue"/>
+		
+		<label id="continue"/>
+		<random>
+			<dest id="start" n="8"/>
+			<dest id="return"/>
+		</random>	
+		
+		<label id="return"/>
+		<return/>
+	</animation>	
+
+	<animation name="gidlet.leg.idle.twitch.anim">
+		<label id="start"/>
+		<offset x="0" y="0" d="16"/>
+		<random>
+			<dest id="start" n="12"/>
+			<dest id="twitch"/>
+		</random>	
+		<label id="twitch"/>
+		<sub id="gidlet.leg.twitch.anim"/>
+		<goto id="start"/>
+	</animation>	
+	<animation name="gidlet.leg.1.idle.anim">
+		<frame i="spriteimage.character.gidlet.leg.01" d="0" />
+		<frame i="gidlet.leg.idle.twitch.anim" d="0" />
+	</animation>	
+	<animation name="gidlet.leg.2.idle.anim">
+		<frame i="spriteimage.character.gidlet.leg.02" d="0" />
+		<frame i="gidlet.leg.idle.twitch.anim" d="0" />
+	</animation>	
+	<animation name="gidlet.leg.3.idle.anim">
+		<frame i="spriteimage.character.gidlet.leg.03" d="0" />
+		<frame i="gidlet.leg.idle.twitch.anim" d="0" />
+	</animation>	
+
+	<animation name="gidlet.leg.talk.twitch.anim">
+		<label id="start"/>
+		<offset x="0" y="0" d="8"/>
+		<random>
+			<dest id="start" />
+			<dest id="twitch" n="2"/>
+		</random>	
+		<label id="twitch"/>
+		<sub id="gidlet.leg.twitch.anim"/>
+		<goto id="start"/>
+	</animation>	
+	<animation name="gidlet.leg.1.talk.anim">
+		<frame i="spriteimage.character.gidlet.leg.01" d="0" />
+		<frame i="gidlet.leg.talk.twitch.anim" d="0" />
+	</animation>	
+	<animation name="gidlet.leg.2.talk.anim">
+		<frame i="spriteimage.character.gidlet.leg.02" d="0" />
+		<frame i="gidlet.leg.talk.twitch.anim" d="0" />
+	</animation>	
+	<animation name="gidlet.leg.3.talk.anim">
+		<frame i="spriteimage.character.gidlet.leg.03" d="0" />
+		<frame i="gidlet.leg.talk.twitch.anim" d="0" />
+	</animation>	
+
+	<animation name="gidlet.panel.text.1.anim">
+		<frame i="spriteimage.character.gidlet.panel.text.1.01" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.01" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.03" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.03" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.04" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.05" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.04" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.05" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.1.06" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.07" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.06" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.07" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.1.08" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.09" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.08" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.1.09" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.1.10" d="3" />
+	</animation>	
+	<animation name="gidlet.panel.text.2.anim">
+		<frame i="spriteimage.character.gidlet.panel.text.2.01" d="0" />
+		<animcolor a="0" d="60"/>
+		<animcolor a="255" d="3"/>
+		<frame i="spriteimage.character.gidlet.panel.text.2.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.01" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.03" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.03" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.04" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.05" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.04" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.05" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.2.06" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.07" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.06" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.07" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.2.08" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.09" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.08" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.2.09" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.2.10" d="3" />
+	</animation>	
+	<animation name="gidlet.panel.text.3.anim">
+		<frame i="spriteimage.character.gidlet.panel.text.3.01" d="0" />
+		<animcolor a="0" d="120"/>
+		<animcolor a="255" d="3"/>
+		<frame i="spriteimage.character.gidlet.panel.text.3.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.01" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.03" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.03" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.04" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.05" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.04" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.05" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.3.06" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.07" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.06" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.07" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.3.08" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.09" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.08" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.3.09" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.3.10" d="3" />
+	</animation>	
+	<animation name="gidlet.panel.text.4.anim">
+		<frame i="spriteimage.character.gidlet.panel.text.4.01" d="0" />
+		<animcolor a="0" d="180"/>
+		<animcolor a="255" d="3"/>
+		<frame i="spriteimage.character.gidlet.panel.text.4.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.01" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.03" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.02" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.03" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.04" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.05" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.04" d="3" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.05" d="3" />		
+		<frame i="spriteimage.character.gidlet.panel.text.4.06" d="3" />
+	
+		<frame i="gidlet.panel.text.4.blink.anim" d="0" />
+	</animation>	
+	<animation name="gidlet.panel.text.4.blink.anim">
+		<frame i="spriteimage.character.gidlet.panel.text.4.06" d="4" />
+		<frame i="spriteimage.character.gidlet.panel.text.4.07" d="4" />
+		<goto seq="0"/>
+	</animation>	
+
+
+
+	<character
+		name="captured.gidlet.char"
+		inherit="titan.char.spec"
+		bubble="titan.human-speech.background"
+		color="titan.colormap:text"
+		boldColor="titan.colormap:text-bold"
+		mouthLayer="6"
+	>
+		<idleLayers>
+			<layers scale="0.525">
+				<sprite layer="0" offset="0,-5" animation="gidlet.gidlet.spotlight.anim"/>	
+				<sprite layer="0" offset="250,-8" animation="gidlet.tech.spotlight.anim"/>		
+
+				<sprite layer="1" image="spriteimage.character.gidlet.ground.01"/>
+				<sprite layer="5" animation="gidlet.leg.1.idle.anim"/>
+				<sprite layer="5" image="spriteimage.character.gidlet.01"/>	
+				<sprite layer="5" animation="gidlet.leg.2.idle.anim"/>
+				<sprite layer="5" animation="gidlet.leg.3.idle.anim"/>				
+				<sprite layer="6" animation="gidlet.eye.idle.anim"/>	
+
+				<sprite layer="1" offset="250,-3" image="spriteimage.character.ground.01"/>
+				<sprite layer="1" image="spriteimage.character.gidlet.implants.ground.01"/>				
+				<sprite layer="5" offset="0,3" image="spriteimage.character.gidlet.panel.01"/>				
+				<sprite layer="5" image="spriteimage.character.gidlet.implants.top.01"/>					
+				
+				<sprite layer="6" offset="242,14" animation="building.light.red.4px.phase.animation"/>
+				<sprite layer="5" offset="0,26" image="spriteimage.character.gidlet.panel.text.1.10"/>
+				<sprite layer="5" offset="0,18" image="spriteimage.character.gidlet.panel.text.2.10"/>
+				<sprite layer="5" offset="0,10" image="spriteimage.character.gidlet.panel.text.3.10"/>
+				<sprite layer="5" offset="0,2"  animation="gidlet.panel.text.4.blink.anim"/>
+
+				<sprite layer="6" offset="315,-8" animation="gidlet.tech.head.idle.anim"/>
+				<sprite layer="1" offset="315,-8" image="spriteimage.character.ground.01"/>
+				<sprite layer="7" offset="315,-8" animation="gidlet.tech.body.idle.anim"/>
+				
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.525">
+				<sprite layer="0" offset="0,-5" animation="gidlet.gidlet.spotlight.anim"/>	
+				<sprite layer="0" offset="250,-8" animation="gidlet.tech.spotlight.anim"/>	
+
+				<sprite layer="1" image="spriteimage.character.gidlet.ground.01"/>
+				<sprite layer="5" animation="gidlet.leg.1.talk.anim"/>
+				<sprite layer="5" image="spriteimage.character.gidlet.01"/>	
+				<sprite layer="5" animation="gidlet.leg.2.talk.anim"/>
+				<sprite layer="5" animation="gidlet.leg.3.talk.anim"/>		
+				<sprite layer="6" animation="gidlet.eye.talk.anim"/>	
+
+				<sprite layer="1" offset="250,-3" image="spriteimage.character.ground.01"/>
+				<sprite layer="1" image="spriteimage.character.gidlet.implants.ground.01"/>				
+				<sprite layer="5" offset="0,3" image="spriteimage.character.gidlet.panel.01"/>				
+				<sprite layer="5" image="spriteimage.character.gidlet.implants.top.01"/>					
+				<sprite layer="5" offset="0,3" animation="gidlet.panel.text.talk.anim"/>
+				
+				<sprite layer="6" offset="242,14" animation="building.light.red.4px.blink.animation"/>
+				<sprite layer="5" offset="0,26" animation="gidlet.panel.text.1.anim"/>
+				<sprite layer="5" offset="0,18" animation="gidlet.panel.text.2.anim"/>
+				<sprite layer="5" offset="0,10" animation="gidlet.panel.text.3.anim"/>
+				<sprite layer="5" offset="0,2"  animation="gidlet.panel.text.4.anim"/>
+							
+				<sprite layer="6" offset="315,-8" animation="gidlet.tech.head.idle.anim"/>
+				<sprite layer="1" offset="315,-8" image="spriteimage.character.ground.01"/>
+				<sprite layer="7" offset="315,-8" animation="gidlet.tech.body.idle.anim"/>
+					
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.525"/>
+				<frame i="spriteimage.character.gidlet.implants.glow.01" d="0" />
+				<label id="start"/>
+					<animcolor a="230" d="10" />
+					<animcolor a="228" d="3" />
+					<animcolor a="226" d="3" />
+					<animcolor a="222" d="3" />
+					<animcolor a="218" d="3" />
+					<animcolor a="213" d="3" />
+					<animcolor a="207" d="3" />
+					<animcolor a="201" d="3" />
+					<animcolor a="194" d="3" />
+					<animcolor a="187" d="3" />
+					<animcolor a="179" d="3" />
+					<animcolor a="171" d="3" />
+					<animcolor a="163" d="3" />
+					<animcolor a="155" d="3" />
+					<animcolor a="147" d="3" />
+					<animcolor a="138" d="3" />
+					<animcolor a="130" d="3" />
+					<animcolor a="122" d="3" />
+					<animcolor a="114" d="3" />
+					<animcolor a="106" d="3" />
+					<animcolor a="99" d="3" />
+					<animcolor a="92" d="3" />
+					<animcolor a="86" d="3" />
+					<animcolor a="80" d="3" />
+					<animcolor a="76" d="3" />
+					<animcolor a="72" d="3" />
+					<animcolor a="68" d="3" />
+					<animcolor a="66" d="3" />
+					<animcolor a="65" d="6" />
+					
+					<random>
+						<dest id="twitch"/>
+						<dest id="continue" n="2"/>
+					</random>	
+					
+					<label id="continue"/>
+					<animcolor a="67" d="3" />
+					<animcolor a="71" d="3" />
+					<animcolor a="77" d="3" />
+					<animcolor a="85" d="3" />
+					<animcolor a="95" d="3" />
+					<animcolor a="108" d="3" />
+					<animcolor a="122" d="3" />
+					<animcolor a="139" d="3" />
+					<animcolor a="159" d="3" />
+					<animcolor a="182" d="3" />
+					<animcolor a="208" d="3" />
+				<goto id="start"/>
+				
+				<label id="twitch"/>
+				
+					<animcolor a="65" d="5" />
+				
+					<label id="twitch0"/>
+				
+					<random>
+						<dest id="continue2"/>
+						<dest id="twitch1" n="30"/>
+						<dest id="twitch2" n="30"/>
+					</random>		
+	
+					<label id="twitch1"/>
+					<animcolor a="100" d="2"/>
+					<goto id="twitch0"/>
+					
+					<label id="twitch2"/>
+					<animcolor a="255" d="2"/>
+					<goto id="twitch0"/>
+				
+				<label id="continue2"/>
+				<animcolor a="65" d="100" />
+				<goto id="continue"/>
+			
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.525"/>
+				<animcolor a="255" d="0"/>
+				<frame i="spriteimage.character.gidlet.implants.glow.01" d="0" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.525"/>
+				<animcolor a="100" d="0"/>
+				<frame i="spriteimage.character.gidlet.implants.glow.01" d="0" />
+			</animation>
+		</consonantAppearance>
+		
+		
+	</character>
+
+
+
+
+
+	<setting
+		name="titan.alert.setting.spec"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="12" offset="96,450" animation="story.alert.anim"/>
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+100"/>
+					<scale xscale="1.3" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.titan.01" d="0"/>
+					<frame i="alert.setting.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+
+	<character
+		name="titan.tech.alert.char"
+		inherit="tech.char"
+		bubble="titan.human-speech-right.background"
+		color="titan.colormap:text"
+		boldColor="titan.colormap:text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.35">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="4" animation="tech.titan.head.idle.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" animation="tech.titan.body.idle.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.titan.01"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.35">
+				<sprite layer="4" animation="tech.titan.head.talk.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" animation="tech.titan.body.talk.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.titan.01"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.25"/>
+				<frame i="spriteimage.character.tech.titan.top.01" d="1" />
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.25"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.titan.top.02" d="200" />
+				<frame i="spriteimage.character.tech.titan.top.03" d="200" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.25"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.titan.top.04" d="200" />
+				<frame i="spriteimage.character.tech.titan.top.05" d="200" />
+			</animation>
+		</consonantAppearance>
+	</character>
+
+
+
+
+	<!-- GENERAL BUILDINGS ============================================================================================================================ -->
+
+	
+	<character
+		name="titan.factory.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.factory.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.factory.01"/>
+				<sprite layer="12" image="spriteimage.info.factory.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.factory.top.01" colored="titan.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.capacitor.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.capacitor.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.capacitor.01"/>
+				<sprite layer="12" image="spriteimage.info.capacitor.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.reactor.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.reactor.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.reactor.01"/>
+				<sprite layer="12" image="spriteimage.info.reactor.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.shieldgenerator.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.shield.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.shield.01"/>
+				<sprite layer="12" image="spriteimage.info.shield.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="titan.warehouse.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.warehouse.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.warehouse.01"/>
+				<sprite layer="12" image="spriteimage.info.warehouse.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.warehouse.top.01" colored="titan.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.barracks.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barracks.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.barracks.01"/>
+				<sprite layer="12" image="spriteimage.info.barracks.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.barracks.top.01" colored="titan.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.collector.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.collector.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.collector.01"/>
+				<sprite layer="12" image="spriteimage.info.collector.top.01" colored="titan.colormap:info-alt" />
+				<sprite layer="12" image="spriteimage.info.collector.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.scanner.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.scanner.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.scanner.01"/>
+				<sprite layer="12" image="spriteimage.info.scanner.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.battery.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.battery.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.battery.01"/>
+				<sprite layer="12" image="spriteimage.info.battery.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+		
+	<character
+		name="titan.cooling.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.cooling.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.cooling.01"/>
+				<sprite layer="12" image="spriteimage.info.cooling.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.cooling.top.01" colored="titan.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.autoloader.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.autoloader.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.autoloader.01"/>
+				<sprite layer="12" image="spriteimage.info.autoloader.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="titan.decoy.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.decoy.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.decoy.01"/>
+				<sprite layer="12" image="spriteimage.info.decoy.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	
+	
+	<!-- MINES ============================================================================================================================ -->
+	
+	<character
+		name="titan.mine.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.mine.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.mine.01"/>
+				<sprite layer="12" image="spriteimage.info.mine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	
+	<character
+		name="titan.clustermines.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.clustermine.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.clustermine.02"/>
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.clustermine.01"/>
+				<sprite layer="12" image="spriteimage.info.clustermine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	
+	<character
+		name="titan.blastmine.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.blastmine.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.blastmine.01"/>
+				<sprite layer="12" image="spriteimage.info.blastmine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="titan.tangleweb.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tangleweb.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tangleweb.01"/>
+				<sprite layer="12" image="spriteimage.info.tangleweb.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>	
+
+	<character
+		name="titan.tankfactory.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="titan.repairdrones.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.scarecrow.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.cloakingdevice.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<!-- BARRICADES ============================================================================================================================ -->
+
+	
+	<character
+		name="titan.concrete.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.concrete.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.barricade.concrete.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.concrete.top.01" colored="titan.colormap:info-alt" />
+		</layers></idleLayers>
+	</character>
+		
+	<character
+		name="titan.steel.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.steel.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.barricade.steel.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.steel.top.01" colored="titan.colormap:info-alt" />
+				<sprite layer="12" image="spriteimage.info.barricade.steel.glow.01" colored="titan.colormap:info-metal" />
+		</layers></idleLayers>
+	</character>
+	
+	<character
+		name="titan.titanium.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.titanium.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.barricade.titanium.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.titanium.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.titanium.top.01" colored="titan.colormap:info-metal" />
+		</layers></idleLayers>
+	</character>
+	
+	<character
+		name="titan.nanomesh.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.nanomesh.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.barricade.nanomesh.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.nanomesh.glow.01"/>
+		</layers></idleLayers>
+	</character>
+	
+	
+	
+	<!-- TURRETS ============================================================================================================================ -->	
+	
+	
+	<character
+		name="titan.blaster.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.blaster.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.blaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.blaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.heavyblaster.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.heavyblaster.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.heavyblaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.heavyblaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="titan.blastcannon.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.blastcannon.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.blastcannon.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.blastcannon.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="titan.multiblaster.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.multiblaster.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.multiblaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.multiblaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="titan.shotgun.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.spreader.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.spreader.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.spreader.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="titan.assault.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.assault.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.assault.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.assault.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="titan.rocket.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.rockets.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.rockets.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.rockets.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="titan.laser.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.laser.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.laser.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.laser.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+		
+
+	<character
+		name="titan.disruptor.char"
+		inherit="titan.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.disruptor.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tower.disruptor.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.disruptor.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.disruptor.top.01" colored="titan.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+
+
+	<!-- TECH ============================================================================================================================ -->	
+	
+	<character name="titan.tech.physics.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.physics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.physics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.physics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.biology.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.biology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.biology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.biology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.chemistry.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.chemistry.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.chemistry.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.chemistry.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.efficiency.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.efficiency.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.efficiency.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.efficiency.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.psychology.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.psychology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.psychology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.psychology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.nuclear.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nuclear.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nuclear.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nuclear.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.explosives.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.explosives.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.explosives.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.explosives.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.textiles.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.textiles.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.textiles.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.textiles.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.automation.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.automation.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.automation.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.automation.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.barometrics.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.barometrics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.barometrics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.barometrics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.optics.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.optics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.optics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.optics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.ballistics.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.ballistics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.ballistics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.ballistics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.robotics.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.robotics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.robotics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.robotics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.forcefields.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.forcefields.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.forcefields.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.forcefields.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.anatomy.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.anatomy.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.anatomy.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.anatomy.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.extraction.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.extraction.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extraction.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.extraction.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+
+
+	<!--  new techs -->
+
+	<character name="titan.tech.ionisation.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.ionisation.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.ionisation.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.ionisation.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.lithium.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.lithium.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.lithium.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.lithium.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.sodium.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.sodium.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.sodium.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.sodium.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.precision.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.precision.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.precision.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.precision.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.advancedexplosives.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.advancedexplosives.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.advancedexplosives.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.advancedexplosives.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.plastic.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.plastic.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.plastic.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.plastic.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.nanohardening.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nanohardening.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nanohardening.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nanohardening.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.finetuning.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.finetuning.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.finetuning.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.finetuning.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.droidbuff.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.droidbuff.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.droidbuff.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.droidbuff.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.nanotechnology.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nanotechnology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nanotechnology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nanotechnology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.splitter.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.splitter.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.splitter.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.splitter.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.multibarrel.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.multibarrel.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.multibarrel.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.multibarrel.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.amplifiers.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.amplifiers.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.amplifiers.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.amplifiers.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.lasertech.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.lasertech.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.lasertech.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.lasertech.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.shells.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.shells.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.shells.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.shells.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.shielding.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.shielding.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.shielding.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.shielding.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.xrays.char" inherit="titan.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.xrays.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.xrays.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.xrays.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+
+
+	<character name="titan.tech.coffee.char" inherit="titan.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.coffee.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.coffee.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.coffee.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.strongercoffee.char" inherit="titan.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.strongercoffee.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.strongercoffee.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.strongercoffee.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.grant.char" inherit="titan.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.grant.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.grant.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.grant.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.reinforcements.char" inherit="titan.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.reinforcements.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.reinforcements.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.reinforcements.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.extrabarricades.char" inherit="titan.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.extrabarricades.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extrabarricades.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.extrabarricades.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="titan.tech.extramines.char" inherit="titan.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.extramines.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extramines.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.extramines.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="titan.tech.powerups.char" inherit="titan.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="titan.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.powerups.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.powerups.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.powerups.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	
+</resources>

@@ -1,0 +1,1964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
+	Particle emitters
+	
+		*** fix for scale bug - startScale and scale must be different values
+		*** only top level emitters are affected by floor and must be offset above floor
+
+-->
+<resources>
+	
+	<emitter name="temp.emitter" /> 
+	
+
+	<emitter name="repair.emitter" inherit="temp.emitter" sound="repair.buffer" emitterScale="0.75"/>	
+
+	<emitter name="build.emitter" inherit="temp.emitter" sound="build.buffer" emitterScale="0.75"/>
+
+	<emitter name="gidrahpain.emitter" sound="gidrahpain.buffer" />
+
+	
+	<!-- DUMMY - for setting off a seq of other emitters -->
+	
+	<emitter
+		name="dummy.emitter"
+		particlesPerTick="1"
+		duration="2"
+		maxParticles="1"
+		particleDuration="1.0"
+		fadeDuration="1.0"
+	emitterScale="0.75" /> <!-- testing! --> 
+	
+	<emitter
+		name="steam.emitter"
+		tag="smoke"
+		duration="300.0, 400.0"
+		infinite="true"
+		particlesPerTick="-4.0, 1.0"
+		appearance="smoke.animation"
+		layer="5"
+		sublayer="2"
+		
+		velocity="0.1, 0.3"
+		acceleration="-0.0010"
+		radius="0.0, 1.0"
+		startScale="0.1, 0.2"
+		scale="0.3, 0.4"
+		endScale="1.3, 1.8"
+		gravityX="-0.0010, 0.0010"
+		gravityY="0.0010, 0.0020"
+		particleDuration="60.0, 80.0"
+		fadeDuration="128.0, 256.0"
+		startHue="0.2"
+		startSaturation="0.0"
+		startBrightness="1.0"
+		endHue="0.2"
+		endSaturation="0.25"
+		endBrightness="1.0"
+		angle="90.0"
+		delayAfter="0.0, 400.0"
+		relativeRotate="true"
+		emitterScale="0.75"
+		doYOffset="true"
+	/> 	
+	
+	<emitter
+		name="reactor.steam.emitter"
+		tag="smoke"
+		inherit="steam.emitter"
+		particleDuration="40.0, 60.0"
+		fadeDuration="100.0, 200.0"
+		startHue="0.18"
+		startSaturation="1.0"
+		startBrightness="0.75"
+		endHue="0.22"
+		endSaturation="1.0"
+		endBrightness="0.75"
+		emitterScale="0.75"
+	/> 
+
+	<emitter
+		name="barracks.steam.emitter"
+		tag="smoke"
+		inherit="reactor.steam.emitter"
+		startHue="0.46"
+		endHue="0.48"
+		emitterScale="0.75"
+	/>	
+	
+	
+	<!-- 
+	<emitter
+		name="steam.burst.emitter"
+		tag="smoke"
+		duration="3.0"
+		infinite="true"
+		particlesPerTick="4.0"
+		appearance="smoke.animation"
+		layer="5"
+		sublayer="2"
+		velocity="1.0, 1.5"
+		acceleration="-0.035"
+		radius="0.0, 3.0"
+		startScale="0.1, 0.2"
+		scale="0.5, 0.6"
+		endScale="1.0, 1.5"
+		gravityX="-0.0015, 0.0015"
+		gravityY="-5.0E-4, 0.0015"
+		particleDuration="25.0, 30.0"
+		fadeDuration="75.0, 200.0"
+		startHue="0.2"
+		startSaturation="0.0"
+		startBrightness="1.0"
+		endHue="0.2"
+		endSaturation="0.3"
+		endBrightness="0.9"
+		angle="75.0, 105.0"
+		delayAfter="166.0"
+		relativeRotate="true"
+		emitterScale="0.75"
+		doYOffset="true"
+	/>
+	 -->
+	 
+	<emitter
+		name="steam.burst.emitter"
+		tag="smoke"
+		duration="12.0"
+		infinite="true"
+		particlesPerTick="-1.0, 2.0"
+		appearance="smoke.animation"
+		layer="5"
+		subLayer="2"
+		velocity="1.0, 1.5"
+		acceleration="-0.035, -0.03"
+		radius="0.0, 2.0"
+		startScale="0.1"
+		scale="0.15, 0.25"
+		endScale="1.0, 1.5"
+		gravityX="-0.0015, 0.0015"
+		gravityY="-0.001, 0.002"
+		particleDuration="1.0, 2.0"
+		fadeDuration="75.0, 150.0"
+		startHue="0.2"
+		startSaturation="0.0"
+		startBrightness="0.9"
+		endHue="0.2"
+		endSaturation="0.3"
+		endBrightness="1.0"
+		angle="85.0, 95.0"
+		delayAfter="157.0"
+		relativeRotate="true"
+		emitterScale="0.75"
+		doYOffset="true"
+	/>
+	
+	
+	<emitter
+		name="spawner.mars.emitter"
+		tag="smoke"
+		infinite="true"
+		duration="100.0, 200.0"
+		delayAfter="10.0, 50.0"
+		particlesPerTick="-6.0, 1.0"
+		appearance="smoke.animation"
+		layer="5"
+		subLayer="5"
+		velocity="0.1, 0.3"
+		acceleration="-0.0010"
+		radius="0.0, 3.0"
+		startScale="0.1, 0.4"
+		scale="0.4, 1.2"
+		endScale="1.3, 1.8"
+		gravityX="-5.0E-4, 5.0E-4"
+		gravityY="0.0010, 0.0020"
+		particleDuration="60.0, 80.0"
+		fadeDuration="128.0, 256.0"
+		startHue="0.18"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.22"
+		endSaturation="1.0"
+		endBrightness="1.0"
+		angle="90.0"
+		relativeRotate="true"
+		emitterScale="1.0"
+		doYOffset="true"
+	>
+		<chain><emitter
+			infinite="true"
+			duration="20.0, 100.0"
+			delayAfter="20.0, 50.0"
+			particlesPerTick="-10.0, 1.0"
+			appearance="spriteimage.particle.light.64px.half.01"
+			layer="5"
+			subLayer="5"
+			velocity="0.0"
+			radius="0.0, 4.0"
+			startScale="0.8"
+			scale="0.8, 1.1"
+			endScale="0.7, 0.9"
+			particleDuration="2.0, 6.0"
+			fadeDuration="80.0, 130.0"
+			startHue="0.18"
+			startBrightness="0.7, 1.0"
+			endHue="0.22"
+			endBrightness="0.3, 0.4"
+			angle="0.0"
+			emitterScale="0.7"
+			doYOffset="true"
+			/></chain>
+	</emitter>
+	
+	
+	<emitter
+		name="spawner.titan.emitter"
+		tag="smoke"
+		duration="100.0, 200.0"
+		infinite="true"
+		particlesPerTick="-8.0, 1.0"
+		appearance="smoke.animation"
+		layer="5"
+		subLayer="5"
+		velocity="0.1, 0.3"
+		acceleration="-0.001"
+		radius="0.0, 3.0"
+		startScale="0.3, 0.5"
+		scale="0.6, 1.2"
+		endScale="1.3, 1.8"
+		gravityX="-5.0E-4, 5.0E-4"
+		gravityY="0.001, 0.002"
+		particleDuration="60.0, 80.0"
+		fadeDuration="128.0, 256.0"
+		startHue="0.75"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.75"
+		endSaturation="1.0"
+		endBrightness="1.0"
+		angle="90.0"
+		delayAfter="10.0, 80.0"
+		relativeRotate="true"
+		emitterScale="0.8"
+		doYOffset="true"
+	>
+		<chain>
+			<emitter
+				duration="2.0, 20.0"
+				infinite="true"
+				particlesPerTick="-10.0, 1.0"
+				appearance="spriteimage.particle.light.64px.half.01"
+				layer="5"
+				subLayer="5"
+				velocity="0.0"
+				radius="0.0, 4.0"
+				startScale="0.8"
+				scale="0.8, 1.1"
+				endScale="0.7, 0.9"
+				particleDuration="2.0, 6.0"
+				fadeDuration="60.0, 100.0"
+				startHue="0.75"
+				startSaturation="0.0"
+				startBrightness="1.0"
+				endHue="0.75"
+				endSaturation="1.0"
+				endBrightness="0.6, 0.8"
+				angle="0.0"
+				delayAfter="40.0, 80.0"
+				emitterScale="1.0, 2.0"
+				doYOffset="true"
+			/>
+		</chain>
+	</emitter>
+
+	
+	
+	<!-- EXPLOSIONS --> 
+
+	<animation name="explosion-01.animation">
+		<frame i="spriteimage.explosion.01.01" d="8"/> 
+		<frame i="spriteimage.explosion.01.02" d="2"/> 
+		<frame i="spriteimage.explosion.01.03" d="2"/> 
+		<frame i="spriteimage.explosion.01.04" d="2"/> 
+		<frame i="spriteimage.explosion.01.05" d="2"/> 
+		<frame i="spriteimage.explosion.01.06" d="2"/> 
+		<frame i="spriteimage.explosion.01.07" d="2"/> 
+		<frame i="spriteimage.explosion.01.08" d="2"/> 
+		<frame i="spriteimage.explosion.01.09" d="2"/> 
+	</animation>					
+
+	<animation name="explosion.green.animation">
+		<frame i="spriteimage.explosion.green.01" d="8"/> 
+		<frame i="spriteimage.explosion.green.02" d="2"/> 
+		<frame i="spriteimage.explosion.green.03" d="2"/> 
+		<frame i="spriteimage.explosion.green.04" d="2"/> 
+		<frame i="spriteimage.explosion.green.05" d="2"/> 
+		<frame i="spriteimage.explosion.green.06" d="2"/> 
+		<frame i="spriteimage.explosion.green.07" d="2"/> 
+		<frame i="spriteimage.explosion.green.08" d="2"/> 
+		<frame i="spriteimage.explosion.green.09" d="2"/> 
+	</animation>	
+
+	<animation name="explosion.blue.animation">
+		<frame i="spriteimage.explosion.blue.01" d="8"/> 
+		<frame i="spriteimage.explosion.blue.02" d="2"/> 
+		<frame i="spriteimage.explosion.blue.03" d="2"/> 
+		<frame i="spriteimage.explosion.blue.04" d="2"/> 
+		<frame i="spriteimage.explosion.blue.05" d="2"/> 
+		<frame i="spriteimage.explosion.blue.06" d="2"/> 
+		<frame i="spriteimage.explosion.blue.07" d="2"/> 
+		<frame i="spriteimage.explosion.blue.08" d="2"/> 
+		<frame i="spriteimage.explosion.blue.09" d="2"/> 
+	</animation>	
+		
+	<emitter
+		name="explosion.fire.emitter"
+		sound="enemyDeath.buffer"
+		duration="8.0"
+		particlesPerTick="1.0"
+		appearance="explosion-01.animation"
+		layer="5"
+		sublayer="6"
+		velocity="1.0, 2.0"
+		acceleration="-0.05, -0.1"
+		startScale="0.5"
+		scale="1.0, 1.6"
+		endScale="0.5, 1.0"
+		gravityY="0.0, -0.01"
+		particleDuration="6.0, 10.0"
+		fadeDuration="16.0, 24.0"
+		angle="30.0, 150.0"
+		relativeRotate="true"	
+		emitterScale="0.75"
+		doYOffset="true"
+	/>
+
+	<emitter
+		name="explosion.flash.emitter"
+		duration="2.0"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		appearance="spriteimage.particle.light.64px.half.01"
+		layer="5"
+		sublayer="6"
+		startScale="0.0"
+		scale="1.5, 2.25"
+		endScale="0.5, 1.5"
+		particleDuration="4.0, 8.0"
+		fadeDuration="40.0, 60.0"
+		startHue="0.1"
+		startSaturation="1.0"
+		startBrightness="0.8"
+		endHue="0.0"
+		endSaturation="1.0"
+		endBrightness="0.4"
+		emitterScale="0.75"
+		doYOffset="true"
+	/> 	
+
+	<emitter
+		name="explosion.shrapnel.emitter"
+		duration="2.0"
+		particlesPerTick="4.0, 8.0"
+		appearance="spriteimage.particle.glowing.3px.01"
+		layer="5"
+		sublayer="6"
+		velocity="4.0, 8.0"
+		acceleration="-0.25, -0.4"
+		startScale="0.8, 1.0"
+		scale="0.7, 0.8"
+		endScale="0.6"
+		gravityY="-0.01, -0.015"
+		particleDuration="15, 20"
+		fadeDuration="30, 70"
+		angle="30.0, 150.0"
+		startHue="0.05,0.2"
+		startBrightness="1.0"
+		endHue="0.0"
+		endBrightness="0.5, 1.0"
+		rotate="true"	
+		emitterScale="0.65"
+		doYOffset="true"
+	/> 	
+
+	<emitter
+		name="explosion.shrapnel.trail.emitter"
+		duration="16.0, 28.0"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.glowing.3px.01"
+		layer="5"
+		sublayer="6"
+		startScale="0.8"
+		scale="0.7"
+		endScale="0.6"
+		particleDuration="2,3"
+		fadeDuration="4,5"
+		startHue="0.0"
+		startSaturation="1.0"
+		startBrightness="0.3,0.4"
+		endHue="0.0"
+		endSaturation="1.0"
+		endBrightness="0.1,0.2"
+		emitterScale="0.65"
+		doYOffset="true"
+		delay="1"
+		interpolation="1"  
+		rotate="true"
+		relativeRotate="true"	  
+	/>
+
+			
+	<emitter
+		name="explosion.smoke.emitter"
+		inherit="fire.smoke.emitter"
+		duration="1.0, 4.0"
+		particlesPerTick="15.0, 20.0"
+		velocity="1.75, 2.25"
+		radius="0, 16"
+		acceleration="-0.05, -0.03"
+		startScale="0.3, 0.5"
+		scale="0.75, 1.25"
+		endScale="1.6, 2.6"
+		gravityX="-0.0010, 0.0010"
+		gravityY="0.0010, 0.0030"
+		particleDuration="16.0, 32.0"
+		fadeDuration="64.0, 128.0"
+		endBrightness="0.3, 0.5"
+		angle="75.0, 105.0"
+		emitterScale="0.75"
+	/>		
+	
+				
+	<!-- FIRE -->
+	
+	<animation name="flame.animation">
+		<frame i="spriteimage.flame.01" d="6"/> 
+		<frame i="spriteimage.flame.02" d="5"/> 
+		<frame i="spriteimage.flame.03" d="4"/> 
+		<frame i="spriteimage.flame.04" d="3"/> 		
+		<frame i="spriteimage.flame.05" d="3"/> 
+		<frame i="spriteimage.flame.06" d="4"/> 		
+		<frame i="spriteimage.flame.07" d="5"/> 
+		<random>
+			<dest seq="0"/> 	
+			<dest seq="3"/> 
+			<dest seq="6"/> 			
+			<dest seq="8"/> 			
+			<dest seq="10"/> 
+		</random>
+		<frame i="spriteimage.flame.06" d="4"/> 
+		<frame i="spriteimage.flame.05" d="3"/> 
+		<frame i="spriteimage.flame.04" d="3"/> 		
+		<frame i="spriteimage.flame.03" d="4"/> 
+		<frame i="spriteimage.flame.02" d="5"/> 				
+		<random>
+			<dest seq="0"/> 	
+			<dest seq="3"/> 
+			<dest seq="6"/> 			
+			<dest seq="8"/> 			
+			<dest seq="10"/> 
+		</random>
+	</animation>	
+
+	
+	<!-- fire anims spread along x-axis from min to max velocity -->
+	
+	<emitter
+		name="flame.emitter"
+		duration="32"
+		particlesPerTick="-20.0, 1.0"
+		appearance="flame.animation"
+		layer="5"
+		sublayer="6"
+		velocity="0.0, 16.0"
+		acceleration="-100.0"
+		particleDuration="64.0, 96.0"
+		fadeDuration="8.0, 16.0"
+		angle="0.0"
+		rotate="true"
+		startScale="1.0"
+		scale="1.0"
+		endScale="1.0"
+		emitterScale="1.0" 
+		doYOffset="true"
+	/> 	
+	
+	<!-- fire anims by radius -->
+		
+	<emitter
+		name="burn.emitter"
+		infinite="true"
+		particlesPerTick="-6.0, 1.0"
+		appearance="flame.animation"
+		radius="0.0, 12.0"
+		layer="5"
+		sublayer="6"
+		particleDuration="16.0, 32.0"
+		fadeDuration="8.0, 8.0"
+		angle="0.0"
+		rotate="true"
+		emitterScale="0.75"
+		doYOffset="true"
+	/> 		
+	
+	<!-- sparks that come out of flames -->
+	
+	<emitter
+		name="flame.sparks.emitter"
+		duration="96.0"
+		particlesPerTick="-1.0, 1.0"
+		appearance="spriteimage.particle.glowing.3px.01"
+		layer="5"
+		sublayer="6"
+		velocity="0.1, 0.2"
+		acceleration="0.02, 0.03"
+		startScale="1.0"
+		scale="0.95"
+		endScale="0.0"
+		gravityX="-0.0050, 0.0050"
+		particleDuration="16.0, 20.0"
+		fadeDuration="16.0, 20.0"
+		startHue="0.02, 0.09"
+		startSaturation="1.0"
+		startBrightness="0.2, 1.0"
+		endHue="0.0"
+		endSaturation="1.0"
+		endBrightness="0.2, 0.8"
+		angle="90.0"
+		rotate="true"
+		emitterScale="0.75"
+		doYOffset="true"
+	/> 	
+	
+	<!-- flame glow - small flashes -->
+
+	<emitter
+		name="flame.glow.emitter"
+		duration="96.0"
+		particlesPerTick="-40.0, 1.0"
+		appearance="spriteimage.particle.light.64px.half.01"
+		layer="5"
+		sublayer="6"
+		startScale="0.4, 0.6"
+		scale="0.6, 1.0"
+		endScale="0.4, 0.6"
+		particleDuration="6.0, 8.0"
+		fadeDuration="6.0, 8.0"
+		startHue="1"
+		startSaturation="1.0"
+		startBrightness="0.1,0.25"
+		endBrightness="0.1, 0.25"	
+		emitterScale="0.75"
+		doYOffset="true"
+	/>	
+	
+	<emitter
+		name="fire.smoke.emitter"
+		tag="smoke"
+			duration="64.0, 256.0"
+			particlesPerTick="-8.0, 1.0"
+			appearance="smoke.animation"
+			layer="5"
+			sublayer="6"
+			velocity="0.3, 0.55"
+			acceleration="-0.0030, -0.0010"
+			radius="0.0, 2.0"
+			startScale="0.2, 0.3"
+			scale="1.5, 1.8"
+			endScale="1.8, 2"
+			gravityX="-0.0010, 0.0010"
+			gravityY="0.0010, 0.0020"
+			particleDuration="120.0, 140.0"
+			fadeDuration="20.0, 50.0"
+			startHue="0.1"
+			startSaturation="1.0"
+			startBrightness="1.0"
+			endHue="0.12"
+			endSaturation="0.2"
+			endBrightness="0.45"
+			angle="85.0, 95.0"
+			relativeRotate="true"
+			emitterScale="0.75"
+			doYOffset="true"
+	/> 
+	
+	<emitter
+		name="fire.smoke.small.emitter"
+		tag="smoke"
+		inherit="fire.smoke.emitter"
+	
+		duration="90.0, 120.0"
+		particlesPerTick="-5.0, 1.0"
+		velocity="0.15, 0.3"
+		acceleration="-0.0020, -0.0010"
+		radius="0.0, 1.0"
+		startScale="0.15, 0.2"
+		scale="0.8, 1.0"
+		endScale="1.0, 1.2"
+		gravityX="-0.0005, 0.0005"
+		gravityY="0.0010, 0.0015"
+
+		emitterScale="0.75"
+	/> 		
+
+
+
+	
+	
+	<!-- initial small explosions on building death -->
+	
+	<emitter
+		name="building.explosion.start.emitter"
+		inherit="dummy.emitter"
+		doYOffset="true"
+	/>
+
+	<emitter
+		name="building.explosion.start.fire.emitter"
+		inherit="explosion.fire.emitter"
+		infinite="true"
+		duration="1,2"
+		delayAfter="10,40"
+		velocity="0.5, 1.5"
+		scale="0.5, 0.6"
+		sound="mine_explosion.buffer"
+		radius="10,20"
+		angle="90"
+		doYOffset="true"
+	/>	
+
+
+	<emitter name="building.1x1.explosion.start.emitter" inherit="building.explosion.start.emitter" radius="0,8" particlesPerTick="-18,1"
+		duration="=$deathDelay+$1x1deathDelay-$deathStartOffset">
+		<chain><emitter inherit="building.explosion.start.fire.emitter" emitterScale="0.25" scale="1.0, 2.0" >
+				<chain><emitter inherit="explosion.flash.emitter" radius="0,10" fadeDuration="8,12" emitterScale="0.25" /></chain>
+	</emitter></chain></emitter>
+
+	<emitter name="building.2x2.explosion.start.emitter" inherit="building.explosion.start.emitter" radius="0,12" particlesPerTick="-16,1"
+		duration="=$deathDelay+$2x2deathDelay-$deathStartOffset">
+		<chain><emitter inherit="building.explosion.start.fire.emitter" emitterScale="0.3" scale="0.9, 1.9"  >
+				<chain><emitter inherit="explosion.flash.emitter" radius="0,12" fadeDuration="8,12" emitterScale="0.3" /></chain>
+	</emitter></chain></emitter>
+		
+	<emitter name="building.3x3.explosion.start.emitter" inherit="building.explosion.start.emitter" radius="0,16" particlesPerTick="-14,1"
+		duration="=$deathDelay+$3x3deathDelay-$deathStartOffset">
+		<chain><emitter inherit="building.explosion.start.fire.emitter" emitterScale="0.35" scale="0.8, 1.8"  >
+				<chain><emitter inherit="explosion.flash.emitter" radius="0,14" fadeDuration="8,12" emitterScale="0.35" /></chain>
+	</emitter></chain></emitter>
+
+	<emitter name="building.4x4.explosion.start.emitter" inherit="building.explosion.start.emitter" radius="0,20" particlesPerTick="-12,1"
+		duration="=$deathDelay+$4x4deathDelay-$deathStartOffset">
+		<chain><emitter inherit="building.explosion.start.fire.emitter" emitterScale="0.4" scale="0.7, 1.7"  >
+				<chain><emitter inherit="explosion.flash.emitter" radius="0,16" fadeDuration="8,12" emitterScale="0.4" /></chain>
+	</emitter></chain></emitter>
+	
+	<emitter name="building.5x5.explosion.start.emitter" inherit="building.explosion.start.emitter" radius="0,36" particlesPerTick="-10,1"
+		duration="=$deathDelay+$5x5deathDelay-$deathStartOffset">
+		<chain><emitter inherit="building.explosion.start.fire.emitter" emitterScale="0.6" scale="0.5, 1.2"  >
+				<chain><emitter inherit="explosion.flash.emitter" radius="0,20" fadeDuration="8,12" emitterScale="0.6" /></chain>
+	</emitter></chain></emitter>
+	
+		
+	
+	<!-- final large explosion on building death -->
+
+	<emitter
+		name="building.explosion.end.emitter"
+		inherit="dummy.emitter"
+		particleDuration="100.0"
+		doYOffset="true"
+	/>
+
+	<emitter
+		name="explosion.flash.end.emitter"
+		inherit="explosion.flash.emitter"
+		duration="2"
+		maxParticles="1"
+		startScale="0.25"
+		scale="2.5"
+		endScale="1"
+		particleDuration="4"
+		fadeDuration="50,60" 
+		startHue="0.1"
+		startBrightness="1.0"
+		endBrightness="0.3"
+		doYOffset="true"
+	/>
+
+	<emitter
+		name="building.explosion.fire.emitter"
+		inherit="explosion.fire.emitter"	
+		particlesPerTick="1.0, 2.0"
+		velocity="1.0, 2.5"
+		scale="1.0, 2.0"
+		sound="grenadeDetonated.buffer"
+		emitterScale="0.75"
+		delay="1"
+		doYOffset="true"
+	/>	
+
+
+	<emitter name="building.1x1.explosion.end.emitter" inherit="building.explosion.fire.emitter" emitterScale="0.4" duration="5" delay="=$deathDelay+$1x1deathDelay">
+			<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.6" delay="=$deathDelay+$1x1deathDelay"/></chain>
+	</emitter>	 	
+	
+	<emitter name="building.2x2.explosion.end.emitter" inherit="building.explosion.fire.emitter" emitterScale="0.5" duration="6" delay="=$deathDelay+$2x2deathDelay">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.7" delay="=$deathDelay+$2x2deathDelay"/></chain>
+	</emitter>	 
+	
+	<emitter name="building.3x3.explosion.end.emitter" inherit="building.explosion.fire.emitter" emitterScale="0.6" duration="7" delay="=$deathDelay+$3x3deathDelay">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.8" delay="=$deathDelay+$3x3deathDelay"/></chain>
+	</emitter>	 
+	
+	<emitter name="building.4x4.explosion.end.emitter" inherit="building.explosion.fire.emitter" emitterScale="0.7" duration="8" delay="=$deathDelay+$4x4deathDelay">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.9" delay="=$deathDelay+$4x4deathDelay"/></chain>
+	</emitter>	 
+	
+	<emitter name="building.5x5.explosion.end.emitter" inherit="building.explosion.fire.emitter" emitterScale="1.0" duration="10" delay="=$deathDelay+$5x5deathDelay">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="1.5" fadeDuration="128,256" delay="=$deathDelay+$5x5deathDelay"/></chain>
+	</emitter>	 
+
+
+
+	<!-- flash on final explosion -->
+
+	<emitter
+		name="building.explosion.flash.light.emitter"
+		duration="5.0"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		appearance="spriteimage.particle.light.64px.half.01"
+		layer="5"
+		sublayer="6"
+		startScale="0.5"
+		scale="2.0"
+		endScale="5"
+		particleDuration="8.0"
+		fadeDuration="64.0"
+		startHue="0.1"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.0"
+		endSaturation="1.0"
+		endBrightness="0.25"
+		doYOffset="true"
+	/>	
+	<emitter
+		name="building.explosion.flash.strobe.emitter"
+		duration="2.0"
+		delay="1"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		appearance="collect.light.animation"
+		layer="5"
+		sublayer="6"
+		velocity="3"
+		acceleration="-3"
+		angle="90"
+		startScale="0.25"
+		scale="0.75"
+		endScale="0.5"
+		particleDuration="16.0"
+		fadeDuration="24.0"
+		startHue="0.1"
+		startSaturation="0.0"
+		startBrightness="1.0"
+		endHue="0"
+		endSaturation="1.0"
+		endBrightness="0.2"
+		doYOffset="true"
+	/>
+
+	<emitter name="unit.explosion.flash.emitter" emitterScale="0.5" inherit="building.explosion.flash.light.emitter" delay="50">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="0.5" velocity="1"/>
+	</slave></emitter>	
+
+	<emitter name="building.1x1.explosion.flash.emitter" emitterScale="0.7" inherit="building.explosion.flash.light.emitter" delay="=$deathDelay+$1x1deathDelay">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="0.7" velocity="2"/>
+	</slave></emitter>	
+
+	<emitter name="building.2x2.explosion.flash.emitter" emitterScale="1.1"  inherit="building.explosion.flash.light.emitter" delay="=$deathDelay+$2x2deathDelay">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.1" velocity="2"/>
+	</slave></emitter>	
+
+	<emitter name="building.3x3.explosion.flash.emitter" emitterScale="1.5" inherit="building.explosion.flash.light.emitter" delay="=$deathDelay+$3x3deathDelay">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.5" velocity="1.5"/>
+	</slave></emitter>	
+
+	<emitter name="building.4x4.explosion.flash.emitter" emitterScale="1.9" inherit="building.explosion.flash.light.emitter" delay="=$deathDelay+$4x4deathDelay">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.8" velocity="1"/>
+	</slave></emitter>	
+
+	<emitter name="building.5x5.explosion.flash.emitter" emitterScale="4.0" inherit="building.explosion.flash.light.emitter" delay="=$deathDelay+$5x5deathDelay" fadeDuration="128.0">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="4.0" velocity="0.5"/>
+	</slave></emitter>	
+
+
+	<!-- buildings explosion shrapnel -->
+
+	<emitter
+		name="building.explosion.shrapnel.emitter"
+		inherit="explosion.shrapnel.emitter"
+		doYOffset="true"
+	/> 	
+
+	<emitter name="unit.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" velocity="2,6" particlesPerTick="4,5"
+	 	delay="50" emitterScale="0.55">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" emitterScale="0.5"/></slave>
+	</emitter>
+
+	<emitter name="building.1x1.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" velocity="3.5,7" particlesPerTick="5,10"
+	 	delay="=$deathDelay+$1x1deathDelay" emitterScale="0.65">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" /></slave>
+	</emitter>
+
+	<emitter name="building.2x2.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" velocity="4.5,9" particlesPerTick="8,16"
+	 	delay="=$deathDelay+$2x2deathDelay" >
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" /></slave>
+	</emitter>
+
+	<emitter name="building.3x3.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" velocity="5,10" particlesPerTick="10,20"
+	 	delay="=$deathDelay+$3x3deathDelay">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" /></slave>
+	</emitter>
+	
+	<emitter name="building.4x4.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" velocity="6,12" particlesPerTick="15,30"
+	 	delay="=$deathDelay+$4x4deathDelay">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" /></slave>
+	</emitter>	
+	
+	<emitter name="building.5x5.explosion.sparks.emitter" inherit="building.explosion.shrapnel.emitter" velocity="7,15" particlesPerTick="25,50"
+	 	delay="=$deathDelay+$5x5deathDelay" particleDuration="15, 25" fadeDuration="50, 150" duration="3">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" duration="15,60"/></slave>
+	</emitter>	
+
+
+
+
+	
+	<emitter name="obstacle.explosion.emitter" inherit="building.explosion.fire.emitter" emitterScale="0.3" duration="4" delay="1">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.5" delay="1">
+			<chain><emitter emitterScale="0.7" inherit="building.explosion.flash.light.emitter" delay="1">
+				<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="0.7" delay="1"/></slave>
+				<chain><emitter inherit="building.explosion.shrapnel.emitter" velocity="2.5,5.5" particlesPerTick="8,12">
+					<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 
+
+	<emitter name="obstacle.explosion.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 6.0" particlesPerTick="-10.0, 1.0" delay="1">
+		<slave><emitter	inherit="fire.smoke.emitter" duration="50, 200" delay="1">
+			<chain><emitter inherit="flame.glow.emitter" delay="1">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>		
+
+
+
+	<emitter name="clustermine.explosion.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.4" duration="4" delay="1">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.6" velocity="2.75,3.25" angle="85,95" delay="1">
+			<chain><emitter emitterScale="1.5" inherit="building.explosion.flash.light.emitter" delay="1">
+				<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.0" delay="1"/></slave>
+				<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="80,100" velocity="6,10" particlesPerTick="10,15" >
+					<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain>
+	</emitter>	 
+
+	<emitter name="mine.explosion.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.6" duration="4" delay="1">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="0.7" delay="1">
+			<chain><emitter emitterScale="2.0" inherit="building.explosion.flash.light.emitter" delay="1">
+				<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="1.5" delay="1"/></slave>
+				<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="20,160" velocity="6,10" particlesPerTick="15,20" >
+					<slave><emitter inherit="explosion.shrapnel.trail.emitter"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain>	
+	</emitter>	 
+
+	<emitter name="blastmine.explosion.emitter" inherit="building.explosion.fire.emitter" sound="mine.buffer" emitterScale="0.8" duration="4" delay="1">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="1.4" velocity="4,4.5" acceleration="-0.15,-0.2" gravityX="-0.006,0.006" delay="1">
+			<chain><emitter emitterScale="3.0" inherit="building.explosion.flash.light.emitter" delay="1" fadeDuration="128.0">
+				<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="2.0" delay="1"/></slave>
+				<chain><emitter inherit="building.explosion.shrapnel.emitter" angle="1,179" velocity="10,15" particlesPerTick="40,60" emitterScale="0.7"
+					particleDuration="30, 45" fadeDuration="80, 120">
+					<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		</emitter></chain></emitter></chain></emitter></chain>
+	</emitter>	 
+
+
+	<!-- buildings on fire -->
+
+	
+	<emitter
+		name="building.flame.emitter"
+		inherit="flame.emitter"
+		duration="128"
+		particlesPerTick="-5.0, 1.0"
+		velocity="0.0, 26.0"
+		particleDuration="128.0, 256.0"
+		startScale="0.55"
+		scale="0.6"
+		endScale="0.5"		
+		emitterScale="1.0"
+		doYOffset="true"
+	/>
+		
+	<emitter name="unit.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 6.0" particlesPerTick="-12.0, 1.0" duration="80"
+		delay="0">
+		<slave><emitter	inherit="fire.smoke.emitter" duration="50, 150" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>		
+
+	<emitter name="building.1x1.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 10.0" particlesPerTick="-10.0, 1.0"
+		delay="=$1x1fireDelay">
+		<slave><emitter	inherit="fire.smoke.emitter" duration="50, 200" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>		
+
+	<emitter name="building.2x2.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 18.0" particlesPerTick="-8.0, 1.0"
+		delay="=$2x2fireDelay">
+		<slave><emitter	inherit="fire.smoke.emitter" duration="200, 250" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+
+	<emitter name="building.3x3.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 22.0" particlesPerTick="-6.0, 1.0"
+		delay="=$3x3fireDelay">
+		<slave><emitter	inherit="fire.smoke.emitter" duration="250, 300" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+
+	<emitter name="building.4x4.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 28.0" particlesPerTick="-4.0, 1.0"
+		delay="=$4x4fireDelay">
+		<slave><emitter	inherit="fire.smoke.emitter" duration="300, 350" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+	
+	<emitter name="building.5x5.fire.emitter" inherit="building.flame.emitter" velocity="0.0, 50.0" particlesPerTick="-2.0, 1.0" duration="999"
+		delay="=$5x5fireDelay">
+		<slave><emitter	inherit="fire.smoke.emitter" duration="300, 500" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+	
+
+	
+	
+	
+	<!-- Building damage -->
+	<emitter name="buildingdamage.emitter" inherit="building.explosion.shrapnel.emitter" emitterScale="0.6" angle="60,120" velocity="2,6" particlesPerTick="1,3">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" delay="1"/></slave>
+		<chain><emitter inherit="flash.emitter" emitterScale="0.5" fadeDuration="8,12" /></chain>
+	</emitter>	
+	
+	
+	
+	<!-- ruins on fire -->
+	
+	<emitter
+		name="ruins.flame.emitter"
+		infinite="true"
+		duration="1,512"
+		particlesPerTick="-20.0, 1.0"
+		appearance="flame.animation"
+		layer="5"
+		sublayer="6"
+		velocity="0.0, 16.0"
+		acceleration="-100.0"
+		particleDuration="64.0, 96.0"
+		fadeDuration="8.0, 16.0"
+		angle="0.0"
+		rotate="true"
+		delayAfter="50,150"
+	
+		startScale="1"
+		scale="1"
+		endScale="1"	
+
+		emitterScale="0.75"
+		doYOffset="true"
+	/>
+
+	<emitter
+		name="ruins.small.fire.emitter"
+		inherit="ruins.flame.emitter"
+		velocity="0.0, 5.0"
+		scale="0.7"
+		particlesPerTick="-40.0, 1.0"
+		emitterScale="0.75"
+	>
+		<slave><emitter	inherit="fire.smoke.small.emitter" emitterScale="0.75">
+			<chain><emitter inherit="flame.glow.emitter" emitterScale="0.75" startBrightness="0.2,0.6">
+				<slave><emitter inherit="flame.sparks.emitter" emitterScale="0.75" /></slave>
+			</emitter></chain>
+		</emitter></slave>	
+	</emitter>	
+	
+	<emitter
+		name="ruins.medium.fire.emitter"
+		inherit="ruins.flame.emitter"
+		emitterScale="0.75"
+	>
+		<slave><emitter	inherit="fire.smoke.emitter" emitterScale="0.75" >
+			<chain><emitter inherit="flame.glow.emitter" emitterScale="1.0" startBrightness="0.2,0.6">
+				<slave><emitter inherit="flame.sparks.emitter" emitterScale="0.75" /></slave>
+			</emitter></chain>
+		</emitter></slave>	
+	</emitter>		
+
+	<emitter
+		name="ruins.smokey.emitter"
+		inherit="fire.smoke.emitter"
+		emitterScale="0.75"
+		infinite="true"
+	>
+		<chain><emitter inherit="flame.glow.emitter" emitterScale="0.75" startBrightness="0.2,0.6"></emitter></chain>
+	</emitter>	
+
+
+	<emitter
+		name="ruins.inside.fire.emitter"
+		inherit="ruins.flame.emitter"
+		velocity="0.0, 8.0"
+		scale="0.7"
+		particlesPerTick="-35.0, 1.0"
+		emitterScale="0.75"
+		layer="5"
+		sublayer="2"
+		delayAfter="50,250"
+	>
+		<slave><emitter	inherit="fire.smoke.small.emitter" emitterScale="0.75" layer="5" sublayer="2">
+			<chain><emitter inherit="flame.glow.emitter" emitterScale="0.75" layer="5" sublayer="2" startBrightness="0.2,0.6">
+				<slave><emitter inherit="flame.sparks.emitter" sublayer="6" emitterScale="0.6" /></slave>
+			</emitter></chain>
+		</emitter></slave>	
+	</emitter>	
+
+
+
+
+	
+	<!-- BULLETS -->
+	
+	<!-- scale bug? -->
+	
+	<emitter
+		name="bullet.trail.emitter"
+		tag="trail"
+		infinite="true"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.glowing.4px.01"
+		layer="5"
+		sublayer="6"
+		startScale="0.55"
+		scale="0.5"
+		endScale="0.45"
+		particleDuration="4"
+		fadeDuration="8"
+		startHue="0.95"
+		startBrightness="0.3"
+		endBrightness="0.03"
+		angle="0.0"
+		delay="1.0"
+		rotate="true"
+		interpolation="2"
+		emitterScale="0.75"
+	/>
+
+		
+	<emitter
+		name="ricochet.sparks.emitter"
+		duration="1.0"
+		particlesPerTick="3.0, 6.0"
+		appearance="spriteimage.particle.glowing.4px.01"
+		layer="5"
+		sublayer="6"
+		velocity="4.0, 8.0"
+		acceleration="-0.5"
+		radius="1.0, 2.0"
+		startScale="0.8, 1.0"
+		scale="0.7, 0.8"
+		endScale="0.6"
+		gravityY="-0.01, -0.02"
+		particleDuration="5.0, 20.0"
+		fadeDuration="5.0"
+		startHue="1.0"
+		startSaturation="0.0"
+		startBrightness="1.0"
+		endHue="1.0"
+		endSaturation="1.0"
+		endBrightness="1.0"
+		angle="90.0, 270.0"
+		rotate="true"
+		relativeRotate="true"
+		emitterScale="0.5" 
+		doYOffset="true"
+	/> 
+	
+	<emitter
+		name="ricochet.sparks.trail.emitter"
+		duration="12.0"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.glowing.3px.01"
+		layer="5"
+		sublayer="6"
+		startScale="0.8"
+		scale="0.7"
+		endScale="0.6"
+		particleDuration="2.0"
+		fadeDuration="5.0"
+		startHue="1.0"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="1.0"
+		endSaturation="1.0"
+		endBrightness="0.1"
+		interpolation="2"
+		emitterScale="0.5"
+		doYOffset="false"
+	/> 	
+
+
+	<!-- trail for gidrah weapons -->
+	
+	<emitter
+		name="bullet.fizzle.trail.emitter"
+		infinite="true"
+		particlesPerTick="1.0, 2.0"
+		appearance="spriteimage.particle.glowing.4px.01"
+		layer="5"
+		sublayer="6"
+		acceleration="0.0, 0.05"
+		radius="0,3.0"
+		startScale="0.7"
+		scale="0.6"
+		endScale="0.5"
+		particleDuration="12.0"
+		fadeDuration="8.0, 32.0"
+		startHue="0.8"
+		startBrightness="1.0"
+		endHue="0.7"
+		endBrightness="0.3"
+		delay="8.0"
+		emitterScale="0.6"
+	/>
+
+	<emitter
+		name="bullet.large.fizzle.trail.emitter"
+		inherit="bullet.fizzle.trail.emitter"
+		radius="0,5.0"
+		emitterScale="0.65"
+		fadeDuration="8.0, 32.0"
+		acceleration="0.0, 0.2"
+		delay="60.0"
+		angle="170,190"
+		rotate="true"
+		relativeRotate="true"
+	>
+		<chain>
+			<emitter
+				name="bullet.fizzle.smoke.emitter"
+				tag="smoke"
+				infinite="true"
+				delay="30.0"
+				particlesPerTick="-1.0, 2.0"
+				appearance="smoke.animation"
+				layer="5"
+				subLayer="6"
+				velocity="0.5, 1.5"
+				acceleration="-0.1, -0.2"
+				radius="0.0, 2.0"
+				startScale="0.1, 0.2"
+				scale="0.5, 1.0"
+				endScale="0.3, 0.7"
+				gravityX="-0.001, 0.001"
+				gravityY="0.0005, 0.0020"
+				particleDuration="15.0, 20.0"
+				fadeDuration="30.0, 70.0"
+				startHue="0.8"
+				startSaturation="1.0"
+				startBrightness="1.0"
+				endHue="0.7"
+				endSaturation="0.5"
+				endBrightness="0.5,0.6"
+				emitterScale="0.6"
+				doYOffset="true"
+			/>
+		</chain>
+	</emitter>
+
+
+
+
+	<!-- bullet smokle trail -->
+	
+	<emitter
+		name="bullet.smoke.trail.emitter"
+		appearance="spriteimage.particle.glowing.circle.16px.01"
+		delay="1"
+		infinite="true"
+		particlesPerTick="-1.0,1.0"
+		interpolation="4"
+		radius="0,2"
+		velocity="0.1,0.2"
+		startScale="0.2,0.3"
+		scale="0.6,0.8"
+		endScale="1.5, 2.2"
+		particleDuration="8.0, 12.0"
+		fadeDuration="10.0, 20.0"
+		gravityY="0.01, 0.1"
+		startHue="1"
+		startSaturation="0"
+		startBrightness="0.1"
+		endHue="1"
+		endSaturation="0"
+		endBrightness="0.01"
+		layer="5"
+		emitterScale="0.75" 
+	/> 	
+		
+	
+	
+	
+	<!-- MISC STUFF -->
+	
+	<!-- basic small flash -->
+	
+	<emitter
+		name="flash.emitter"
+		duration="2.0"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		appearance="spriteimage.particle.light.64px.01"
+		layer="5"
+		sublayer="6"
+		startScale="0.4"
+		scale="0.8"
+		endScale="1.75"
+		particleDuration="4.0"
+		fadeDuration="12.0, 16.0"
+		startHue="0.07"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.0"
+		endSaturation="1.0"
+		endBrightness="0.5"
+		emitterScale="0.75"
+		doYOffset="true"
+	/>
+	
+	<!-- sparkle -->
+	
+	<animation name="sparkle.animation">
+		<frame i="spriteimage.particle.glowing.sparkle.01" d="1" />
+		<frame i="spriteimage.particle.glowing.sparkle.03" d="1" />
+		<frame i="spriteimage.particle.glowing.sparkle.05" d="8" />			
+		<frame i="spriteimage.particle.glowing.sparkle.04" d="6" />
+		<frame i="spriteimage.particle.glowing.sparkle.03" d="5" />	
+		<frame i="spriteimage.particle.glowing.sparkle.02" d="3" />
+		<frame i="spriteimage.particle.glowing.sparkle.01" d="2" />	
+	</animation>
+	
+	<emitter
+		name="frozen.sparkle.emitter"
+		particlesPerTick="-20.0, 1.0"
+		appearance="sparkle.animation"
+		layer="5"
+		sublayer="1"
+		velocity="2.0"
+		acceleration="-10.0"
+		radius="4.0, 14.0"
+		startScale="0.3, 0.4"
+		scale="0.4, 0.5"
+		endScale="0.2, 0.3"
+		particleDuration="8.0"
+		fadeDuration="24.0"
+		startSaturation="0.0"
+		startBrightness="1.0"
+		endSaturation="0.5"
+		endBrightness="1.0"
+		angle="90.0"
+		rotate="true"
+		
+		startHue="0.45"
+		endHue="0.45"
+		infinite="true"
+		emitterScale="0.5"
+		doYOffset="true"
+	/>
+	
+	<emitter
+		name="frozen.boss.sparkle.emitter"
+		inherit="frozen.sparkle.emitter"
+		sublayer="6"
+		particlesPerTick="-10.0, 1.0"
+		radius="4.0,28.0"
+		emitterScale="0.55"
+	/>
+
+	<emitter
+		name="frozen.boss.sparkle.large.emitter"
+		inherit="frozen.sparkle.emitter"
+		sublayer="6"
+		particlesPerTick="-7.0, 1.0"
+		radius="4.0,40.0"
+		emitterScale="0.65"
+	/>
+
+	<animation name="sparkle.glitter.animation">
+		<frame i="spriteimage.particle.glowing.sparkle.02" d="2" />
+		<frame i="spriteimage.particle.glowing.sparkle.03" d="2" />	
+		<frame i="spriteimage.particle.glowing.sparkle.04" d="2" />
+		<frame i="spriteimage.particle.glowing.sparkle.05" d="4" />			
+		<frame i="spriteimage.particle.glowing.sparkle.04" d="3" />
+		<frame i="spriteimage.particle.glowing.sparkle.03" d="2" />	
+		<frame i="spriteimage.particle.glowing.sparkle.02" d="2" />
+		<frame i="spriteimage.particle.glowing.sparkle.01" d="2" />	
+		<frame i="spriteimage.particle.glowing.4px.01" d="2" />
+		<random>
+			<dest seq="10" n="2"/>
+			<dest seq="12"/>
+			<dest seq="14"/>
+			<dest seq="16"/>
+			<dest seq="18"/>
+		</random>
+		<alpha alpha="255" d="2"/>
+		<goto seq="9"/>
+		<alpha alpha="192" d="2"/>
+		<goto seq="9"/>
+		<alpha alpha="128" d="2"/>
+		<goto seq="9"/>
+		<alpha alpha="64" d="2"/>
+		<goto seq="9"/>
+		<alpha alpha="0" d="2"/>
+		<goto seq="9"/>		
+	</animation>
+
+
+
+	<!-- repair emitter same as above but cant inherit cos use of infinite=true -->
+
+	<animation name="glitter.animation">
+		<frame i="spriteimage.particle.glowing.4px.01" d="2" />
+		<random>
+			<dest seq="2" n="3"/>
+			<dest seq="4"/>
+			<dest seq="6"/>
+			<dest seq="8"/>
+			<dest seq="10"/>
+		</random>
+		<alpha alpha="255" d="2"/>
+		<goto seq="1"/>
+		<alpha alpha="192" d="2"/>
+		<goto seq="1"/>
+		<alpha alpha="128" d="2"/>
+		<goto seq="1"/>
+		<alpha alpha="64" d="2"/>
+		<goto seq="1"/>
+		<alpha alpha="0" d="2"/>
+		<goto seq="1"/>		
+	</animation>
+
+
+	<emitter
+		name="repair.icon.emitter"	
+		duration="2.0"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		appearance="spriteimage.particle.powerup.repair.01"
+		layer="6"
+		startScale="0.3"
+		scale="0.4"
+		endScale="0.5"
+		emitterScale="0.3"
+		gravityY="0.01"
+		particleDuration="20.0"
+		fadeDuration="30.0"
+		angle="90.0"
+		rotate="false"
+		velocity="1"
+		acceleration="-0.5"
+		doYOffset="true"
+	/>	
+
+	<emitter 
+		name="repair.ping.emitter"
+		appearance="glitter.animation"
+		inherit="ping.emitter"
+		acceleration="-0.65"
+		startHue="0.22"
+		endHue="0.3"
+		endBrightness="0.25"
+		emitterScale="0.6"
+		particleDuration="14.0"
+		fadeDuration="14.0, 32.0"
+		doYOffset="true"	
+	/>
+
+
+	<emitter name="repair.2x2.emitter" inherit="repair.ping.emitter" particlesPerTick="5.0" velocity="4.5">
+	<chain><emitter inherit="repair.icon.emitter" emitterScale="0.7">
+		<slave><emitter inherit="collect.light.green.emitter" emitterScale="0.6">
+			<slave><emitter inherit="collect.light.flash.emitter" emitterScale="0.6"/>
+	</slave></emitter></slave></emitter></chain></emitter>
+
+	<emitter name="repair.3x3.emitter" inherit="repair.ping.emitter" particlesPerTick="8.0" velocity="5.0">
+	<chain><emitter inherit="repair.icon.emitter" emitterScale="1.0">
+		<slave><emitter inherit="collect.light.green.emitter" emitterScale="0.7">
+			<slave><emitter inherit="collect.light.flash.emitter" emitterScale="0.7"/>
+	</slave></emitter></slave></emitter></chain></emitter>
+
+	<emitter name="repair.4x4.emitter" inherit="repair.ping.emitter" particlesPerTick="10.0" velocity="5.5">
+	<chain><emitter inherit="repair.icon.emitter" emitterScale="1.2">
+		<slave><emitter inherit="collect.light.green.emitter" emitterScale="0.8">
+			<slave><emitter inherit="collect.light.flash.emitter" emitterScale="0.8"/>
+	</slave></emitter></slave></emitter></chain></emitter>
+
+	<emitter name="repair.5x5.emitter" inherit="repair.ping.emitter" particlesPerTick="14.0" velocity="7.5">
+	<chain><emitter inherit="repair.icon.emitter" emitterScale="1.5">
+		<slave><emitter inherit="collect.light.green.emitter" emitterScale="1.1">
+			<slave><emitter inherit="collect.light.flash.emitter" emitterScale="1.1"/>
+	</slave></emitter></slave></emitter></chain></emitter>
+
+
+	<emitter 
+		name="shield.ping.emitter"
+		inherit="repair.ping.emitter"
+	/>
+
+	<emitter name="shield.2x2.emitter" inherit="shield.ping.emitter" particlesPerTick="3.0" velocity="4.5">
+		<chain><emitter inherit="collect.light.green.emitter" emitterScale="0.6">
+		<slave><emitter inherit="collect.light.flash.emitter" emitterScale="0.6"/>
+	</slave></emitter></chain></emitter>
+
+	<emitter name="shield.3x3.emitter" inherit="shield.ping.emitter" particlesPerTick="5.0" velocity="5.0">
+		<chain><emitter inherit="collect.light.green.emitter" emitterScale="0.7">
+		<slave><emitter inherit="collect.light.flash.emitter" emitterScale="0.7"/>
+	</slave></emitter></chain></emitter>
+
+	<emitter name="shield.4x4.emitter" inherit="shield.ping.emitter" particlesPerTick="7.0" velocity="5.5">
+		<chain><emitter inherit="collect.light.green.emitter" emitterScale="0.8">
+		<slave><emitter inherit="collect.light.flash.emitter" emitterScale="0.8"/>
+	</slave></emitter></chain></emitter>
+
+	<emitter name="shield.5x5.emitter" inherit="shield.ping.emitter" particlesPerTick="10.0" velocity="7.5">
+		<chain><emitter inherit="collect.light.green.emitter" emitterScale="1.1">
+		<slave><emitter inherit="collect.light.flash.emitter" emitterScale="1.1"/>
+	</slave></emitter></chain></emitter>
+
+	<emitter
+		name="shield.sparkle.emitter"
+		particlesPerTick="-15.0, 1.0"
+		appearance="sparkle.glitter.animation"
+		layer="5"
+		sublayer="6"
+		radius="10,23"
+		startScale="0.3"
+		scale="0.5"
+		endScale="0.25"
+		particleDuration="14,20"
+		fadeDuration="16,24"
+		startHue="0.22"
+		startSaturation="0.2"
+		startBrightness="1.0"
+		endHue="0.3"
+		endSaturation="1.0"
+		endBrightness="1.0"		
+		infinite="true"
+		emitterScale="0.7"
+		doYOffset="true"
+		delay="30"
+	/>
+
+
+
+
+	<emitter name="shield.sparkle.2x2.emitter" inherit="shield.sparkle.emitter" radius="6,12" particlesPerTick="-30.0, 1.0"/>
+	<emitter name="shield.sparkle.3x3.emitter" inherit="shield.sparkle.emitter" radius="8,17" particlesPerTick="-22.0, 1.0"/>
+	<emitter name="shield.sparkle.4x4.emitter" inherit="shield.sparkle.emitter" radius="11,23" particlesPerTick="-15.0, 1.0"/>
+	<emitter name="shield.sparkle.5x5.emitter" inherit="shield.sparkle.emitter" radius="17,35" particlesPerTick="-6.0, 1.0"/>
+
+	<emitter
+		name="forcefield.sparkle.emitter"
+		inherit="shield.sparkle.emitter"
+		startHue="0.44"
+		endHue="0.53"
+	/>
+
+	<emitter name="forcefield.sparkle.2x2.emitter" inherit="forcefield.sparkle.emitter" radius="6,12" particlesPerTick="-30.0, 1.0"/>
+	<emitter name="forcefield.sparkle.3x3.emitter" inherit="forcefield.sparkle.emitter" radius="8,17" particlesPerTick="-22.0, 1.0"/>
+	<emitter name="forcefield.sparkle.4x4.emitter" inherit="forcefield.sparkle.emitter" radius="11,23" particlesPerTick="-15.0, 1.0"/>
+	<emitter name="forcefield.sparkle.5x5.emitter" inherit="forcefield.sparkle.emitter" radius="17,35" particlesPerTick="-6.0, 1.0"/>
+
+
+
+
+	<emitter 
+		name="build.ping.emitter"
+		inherit="repair.ping.emitter"
+		startHue="0.5"
+		endHue="0.52"
+		endBrightness="0.3"
+		angle="0,180"
+		
+	/>
+
+	<emitter 
+		name="build.dust.dummy.emitter"
+		inherit="dummy.emitter"
+		velocity="24"
+		acceleration="-24"
+		angle="180"
+		particleDuration="10"
+		delay="1"
+		duration="2"
+	/>
+
+	<emitter name="build.dust.emitter"
+		inherit="fire.smoke.emitter"
+		appearance="smoke.animation"
+		duration="3"
+		particlesPerTick="12,20"
+		velocity="0,70"
+		acceleration="-70"
+		angle="0"
+		radius="0"
+		startScale="0.1, 0.2"
+		scale="0.8, 1.0"
+		endScale="2, 3"
+		emitterScale="0.75"
+		gravityX="-0.015, 0.015"
+		gravityY="0.003, 0.02"
+		particleDuration="10,20"
+		fadeDuration="50,80"
+		startHue="0.15"
+		startSaturation="0.6"
+		startBrightness="0.7,1"
+		endHue="0.15"
+		endSaturation="0.3"
+		endBrightness="0.5,0.6"
+		layer="5"
+		sublayer="6"
+		doYOffset="true"
+	 />
+
+	<emitter name="build.1x1.emitter" inherit="build.ping.emitter" particlesPerTick="5.0" velocity="5">
+		<chain><emitter inherit="collect.light.cyan.emitter" emitterScale="0.3" fadeDuration="32.0" layer="5" sublayer="0"/></chain>
+	</emitter>
+	
+	<emitter name="build.2x2.emitter" inherit="build.ping.emitter" particlesPerTick="7.0" velocity="6">
+		<chain><emitter inherit="collect.light.cyan.emitter" emitterScale="0.5" layer="5" sublayer="0"/></chain>
+	</emitter>
+
+	<emitter name="build.3x3.emitter" inherit="build.ping.emitter" particlesPerTick="9.0" velocity="6.5">
+		<chain><emitter inherit="collect.light.cyan.emitter" emitterScale="0.6" layer="5" sublayer="0"/></chain>
+	</emitter>
+
+	<emitter name="build.4x4.emitter" inherit="build.ping.emitter" particlesPerTick="12.0" velocity="7.0">
+		<chain><emitter inherit="collect.light.cyan.emitter" emitterScale="0.7" layer="5" sublayer="0"/></chain>
+	</emitter>
+
+
+
+	<emitter	
+		name="iceshards.emitter"
+		duration="2.0"
+		particlesPerTick="1.0, 3.0"
+		appearance="sparkle.glitter.animation"
+		layer="5"
+		sublayer="6"
+		velocity="0.0"
+		acceleration="0.0"
+		radius="10.0"
+		startScale="0.2"
+		scale="0.3"
+		endScale="0.2"
+		gravityY="0.0050, 0.01"
+		particleDuration="16.0"
+		fadeDuration="16.0, 32.0"
+		startHue="0.44"
+		startSaturation="0.5, 7.5"
+		startBrightness="1.0"
+		endSaturation="1.0"
+		endBrightness="0.5"
+		endHue="0.53"
+		angle="0.0"
+		rotate="true"
+		relativeRotate="true"
+	/>
+
+	<emitter	
+		name="iceshards.small.emitter"
+		inherit="iceshards.emitter"
+	>
+		<chain><emitter inherit="collect.light.cyan.emitter" emitterScale="0.4" fadeDuration="48"/></chain>
+	</emitter>
+
+	<emitter	
+		name="iceshards.angry.emitter"
+		inherit="iceshards.emitter"
+		radius="15.0"
+		particlesPerTick="2.0, 4.0"
+	>
+		<chain><emitter inherit="collect.light.cyan.emitter" emitterScale="0.6" fadeDuration="48"/></chain>
+	</emitter>
+
+	<emitter	
+		name="iceshards.boss.emitter"
+		inherit="iceshards.emitter"
+		radius="30.0"
+		particlesPerTick="8.0, 10.0"
+	>
+		<chain><emitter inherit="collect.light.cyan.emitter" emitterScale="1.0" fadeDuration="48"/></chain>
+	</emitter>	
+
+	
+	<!-- ping - powerup death/collect -->
+	
+	<emitter
+		name="ping.emitter"
+		duration="2.0"
+		particlesPerTick="14.0"
+		appearance="spriteimage.particle.glowing.4px.01"
+		layer="5"
+		sublayer="6"
+		velocity="5.0"
+		acceleration="-0.4"
+		startScale="0.5"
+		scale="0.65"
+		endScale="0.4"
+		gravityY="0.01, 0.03"
+		particleDuration="16.0"
+		fadeDuration="16.0, 56.0"
+		startHue="0.27"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endSaturation="1.0"
+		endBrightness="0.25"
+		rotate="true"
+		emitterScale="0.75"
+		doYOffset="false"
+	/> 
+	
+
+	
+	<emitter
+		name="crystal.sparkle.emitter"
+		inherit="frozen.sparkle.emitter"
+		sublayer="6"
+		particlesPerTick="-4.0, 1.0"
+		radius="2.0,8.0"
+		delayAfter="40,80"
+		duration="1"
+	/>
+	
+	<emitter
+		name="crystal.large.sparkle.emitter"
+		inherit="crystal.sparkle.emitter"
+		sublayer="6"
+		particlesPerTick="-4.0, 1.0"
+		radius="4.0,16.0"
+		delayAfter="40,80"
+		duration="1"
+	/>	
+
+
+	
+<emitter
+	name="volcano.emitter"
+	duration="20.0, 100.0"
+	infinite="true"
+	particlesPerTick="-10.0, 1.0"
+	appearance="spriteimage.particle.light.64px.half.01"
+	layer="5"
+	subLayer="5"
+	velocity="0.0"
+	radius="0.0, 4.0"
+	startScale="0.8"
+	scale="0.8, 1.1"
+	endScale="0.7, 0.9"
+	particleDuration="2.0, 6.0"
+	fadeDuration="80.0, 130.0"
+	startHue="0.0, 0.2"
+	startBrightness="0.7, 1.0"
+	endHue="0.0"
+	endBrightness="0.3, 0.4"
+	angle="0.0"
+	delayAfter="20.0, 50.0"
+	emitterScale="0.7"
+	doYOffset="true"
+>
+	<slave>
+		<emitter
+			duration="2.0"
+			particlesPerTick="-2.0, 2.0"
+			appearance="spriteimage.particle.glowing.3px.01"
+			layer="5"
+			subLayer="5"
+			velocity="3.0, 7.0"
+			acceleration="-0.3, -0.6"
+			radius="0.0, 9.0"
+			startScale="0.8, 0.9"
+			scale="0.6, 0.7"
+			endScale="0.5, 0.6"
+			gravityY="-0.0040, -0.0080"
+			particleDuration="15.0, 30.0"
+			fadeDuration="40.0, 60.0"
+			startHue="0.01, 0.2"
+			startBrightness="1.0"
+			endHue="0.0"
+			endBrightness="0.5, 1.0"
+			angle="80.0, 100.0"
+			rotate="true"
+			emitterScale="0.7"
+			doYOffset="true"
+		>
+			<chain>
+				<emitter
+					tag="smoke"
+					infinite="true"
+					particlesPerTick="2.0, 4.0"
+					appearance="smoke.glowing.alpha.animation"
+					layer="5"
+					subLayer="5"
+					velocity="0.4, 0.9"
+					acceleration="-0.0080, -0.0040"
+					radius="0.0, 4.0"
+					startScale="0.1, 0.3"
+					scale="0.4, 0.7"
+					endScale="1.6, 1.8"
+					gravityX="-9.0E-4, 9.0E-4"
+					gravityY="0.0, -0.0010"
+					particleDuration="50.0, 70.0"
+					fadeDuration="50.0, 120.0"
+					startHue="0.0, 0.1"
+					startSaturation="1.0"
+					startBrightness="0.5, 0.8"
+					endHue="0.0"
+					endSaturation="1.0"
+					endBrightness="0.4, 0.8"
+					angle="85.0, 95.0"
+					relativeRotate="true"
+					emitterScale="1.0"
+					doYOffset="true"
+				/>
+			</chain>
+			<slave>
+				<emitter
+					duration="16.0, 32.0"
+					particlesPerTick="1.0"
+					appearance="spriteimage.particle.glowing.3px.01"
+					layer="5"
+					subLayer="5"
+					startScale="0.8"
+					scale="0.7"
+					endScale="0.6"
+					particleDuration="8.0"
+					fadeDuration="16.0, 48.0"
+					startHue="0.0"
+					startSaturation="1.0"
+					startBrightness="0.3, 0.5"
+					endHue="0.0"
+					endSaturation="1.0"
+					endBrightness="0.01, 0.02"
+					delay="1.0"
+					emitterScale="0.7"
+					doYOffset="true"
+				/>
+			</slave>
+		</emitter>
+	</slave>
+</emitter>
+
+
+<emitter
+	name="pool.bubble.emitter"
+	duration="1.0, 5.0"
+	infinite="true"
+	particlesPerTick="-10.0, 1.0"
+	appearance="pool.bubble.anim"
+	layer="4"
+	subLayer="2"
+	velocity="0.0, 8.0"
+	acceleration="-100.0"
+	radius="0.0, 3.0"
+	startScale="0.1, 0.15"
+	scale="0.2, 0.25"
+	endScale="0.3, 0.5"
+	particleDuration="48.0"
+	fadeDuration="24.0, 48.0"
+	startHue="0.2"
+	startSaturation="1.0"
+	startBrightness="0.1, 0.3"
+	endHue="0.2"
+	endSaturation="1.0"
+	endBrightness="0.1"
+	angle="0.0"
+	delay="1.0, 10.0"
+	rotate="true"
+	emitterScale="1.0"
+	doYOffset="true"
+>
+	<slave>
+		<emitter
+			tag="smoke"
+			duration="-10.0, 20.0"
+			particlesPerTick="-2.0, 2.0"
+			appearance="smoke.glowing.alpha.animation"
+			layer="5"
+			subLayer="5"
+			velocity="0.4, 0.7"
+			acceleration="-0.0080, -0.0040"
+			startScale="0.1, 0.2"
+			scale="0.5, 0.6"
+			endScale="1.0, 1.2"
+			gravityX="-9.0E-4, 9.0E-4"
+			gravityY="0.0, -0.0010"
+			particleDuration="30.0, 60.0"
+			fadeDuration="40.0, 90.0"
+			startHue="0.2"
+			startSaturation="1.0"
+			startBrightness="0.6, 1.0"
+			endHue="0.25"
+			endSaturation="1.0"
+			endBrightness="0.4, 0.6"
+			angle="85.0, 95.0"
+			relativeRotate="true"
+			emitterScale="0.5"
+			doYOffset="true"
+		/>
+	</slave>
+</emitter>
+
+
+<emitter
+	name="pool.bubble.large.emitter"
+	inherit="pool.bubble.emitter"
+	particlesPerTick="-7.0, 2.0"
+	appearance="pool.bubble.anim"
+	velocity="0,14.0"
+	radius="0.0, 5.0"
+	emitterScale="1.0"
+/>	
+	
+<emitter
+	name="saturn.tower.emitter"
+	duration="10.0, 256.0"
+	infinite="true"
+	particlesPerTick="-20.0, 1.0"
+	appearance="flame.animation"
+	layer="5"
+	subLayer="6"
+	velocity="0.0, 2.5"
+	acceleration="-2.0"
+	startScale="0.6"
+	scale="0.65"
+	endScale="0.55"
+	particleDuration="128.0, 256.0"
+	fadeDuration="8.0, 16.0"
+	angle="0.0"
+	delayAfter="10.0, 100.0"
+	rotate="true"
+	emitterScale="1.0"
+	doYOffset="true"
+>
+	<chain>
+
+				<emitter
+					tag="smoke"
+					infinite="true"
+					particlesPerTick="-20.0, 1.0"
+					appearance="smoke.dirty.animation"
+					layer="5"
+					subLayer="6"
+					velocity="0.6, 1.2"
+					acceleration="-0.0030, -0.0010"
+					radius="0.0, 2.0"
+					startScale="0.2, 0.3"
+					scale="0.4, 0.5"
+					endScale="1.5, 2.0"
+					gravityX="-0.0030, 0.0030"
+					gravityY="-0.0040, -0.0080"
+					particleDuration="10.0, 20.0"
+					fadeDuration="40.0, 80.0"
+					startHue="0.1"
+					startSaturation="0.0"
+					startBrightness="1.0"
+					endHue="0.12"
+					endSaturation="0.0"
+					endBrightness="0.0"
+					angle="85.0, 95.0"
+					delay="1.0"
+					relativeRotate="true"
+					emitterScale="0.6"
+					doYOffset="true"
+				/>
+
+	</chain>
+	<slave>
+		<emitter
+			duration="96.0"
+			infinite="true"
+			particlesPerTick="-5.0, 1.0"
+			appearance="spriteimage.particle.glowing.3px.01"
+			layer="5"
+			subLayer="6"
+			velocity="0.2, 0.4"
+			acceleration="0.02, 0.03"
+			startScale="0.9"
+			scale="0.7"
+			endScale="0.6"
+			gravityX="-0.0020, 0.0020"
+			particleDuration="16.0, 20.0"
+			fadeDuration="16.0, 30.0"
+			startHue="0.02, 0.09"
+			startSaturation="1.0"
+			startBrightness="0.2, 1.0"
+			endHue="0.0"
+			endSaturation="1.0"
+			endBrightness="0.2, 0.8"
+			angle="90.0"
+			delay="1.0"
+			rotate="true"
+			emitterScale="0.8"
+			doYOffset="true"
+		/>
+	</slave>
+</emitter>
+
+
+	
+	
+				
+</resources>

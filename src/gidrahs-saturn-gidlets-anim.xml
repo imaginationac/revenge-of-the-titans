@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDLET.SATURN.01 ==================================================================================================  -->
+
+
+	<!-- GIDLET.SATURN.01 definition -->
+
+	<gidrah
+		 name="gidlet.saturn.01"
+		 inherit="gidlet.saturn.01.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidlet.saturn.01.walk.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidlet.saturn.01.walk.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidlet.saturn.01.walk.face.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidlet.saturn.01.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidlet.saturn.01.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidlet.saturn.01.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidlet.saturn.01.dead.anim" />
+				<emitter emitter="gidrah.moon.death.emitter" offset="16,16"  />
+				<emitter emitter="gidrah.moon.death.flash.emitter" offset="16,25"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidlet.saturn.01.idle.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidlet.saturn.01.idle.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidlet.saturn.01.idle.face.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidlet.saturn.01.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidlet.saturn.01.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidlet.saturn.01.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidlet.saturn.01.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidlet.saturn.01.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidlet.saturn.01.ice.glow.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidlet.saturn.01.04" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidlet.saturn.01.ice.glow.04" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidlet.saturn.01.02" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidlet.saturn.01.stun.anim" />
+				<emitter emitter="gidrah.saturn.stun.emitter" offset="16,26"  />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidlet.saturn.01.stun.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidlet.saturn.01.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>
+
+
+	<!-- FRAMESETS for GIDLET.SATURN.01 -->
+
+	<array name="gidlet.saturn.01.glow.array">
+		<item>spriteimage.gidlet.saturn.01.glow.01</item>
+		<item>spriteimage.gidlet.saturn.01.glow.02</item>
+		<item>spriteimage.gidlet.saturn.01.glow.03</item>
+		<item>spriteimage.gidlet.saturn.01.glow.04</item>
+		<item>spriteimage.gidlet.saturn.01.glow.05</item>
+		<item>spriteimage.gidlet.saturn.01.glow.06</item>
+		<item>spriteimage.gidlet.saturn.01.glow.07</item>
+		<item>spriteimage.gidlet.saturn.01.glow.08</item>
+		<item>spriteimage.gidlet.saturn.01.glow.09</item>
+		<item>spriteimage.gidlet.saturn.01.glow.10</item>
+		<item>spriteimage.gidlet.saturn.01.glow.11</item>
+		<item>spriteimage.gidlet.saturn.01.glow.12</item>
+		<item>spriteimage.gidlet.saturn.01.attack.glow.01</item>
+		<item>spriteimage.gidlet.saturn.01.attack.glow.02</item>
+		<item>spriteimage.gidlet.saturn.01.attack.glow.03</item>
+		<item>spriteimage.gidlet.saturn.01.attack.glow.04</item>
+		<item>spriteimage.gidlet.saturn.01.attack.glow.05</item>
+		<item>spriteimage.gidlet.saturn.01.attack.glow.06</item>
+		<item>spriteimage.gidlet.saturn.01.attack.glow.07</item>
+	</array>
+
+	<array name="gidlet.saturn.01.face.array">
+		<item>spriteimage.gidlet.saturn.01.top.01</item>
+		<item>spriteimage.gidlet.saturn.01.top.02</item>
+		<item>spriteimage.gidlet.saturn.01.top.03</item>
+		<item>spriteimage.gidlet.saturn.01.top.04</item>
+		<item>spriteimage.gidlet.saturn.01.top.05</item>
+		<item>spriteimage.gidlet.saturn.01.top.06</item>
+		<item>spriteimage.gidlet.saturn.01.top.07</item>
+		<item>spriteimage.gidlet.saturn.01.top.08</item>
+		<item>spriteimage.gidlet.saturn.01.top.09</item>
+		<item>spriteimage.gidlet.saturn.01.top.10</item>
+		<item>spriteimage.gidlet.saturn.01.top.11</item>
+		<item>spriteimage.gidlet.saturn.01.top.12</item>
+		<item>spriteimage.gidlet.saturn.01.attack.top.01</item>
+		<item>spriteimage.gidlet.saturn.01.attack.top.02</item>
+		<item>spriteimage.gidlet.saturn.01.attack.top.03</item>
+		<item>spriteimage.gidlet.saturn.01.attack.top.04</item>
+		<item>spriteimage.gidlet.saturn.01.attack.top.05</item>
+		<item>spriteimage.gidlet.saturn.01.attack.top.06</item>
+		<item>spriteimage.gidlet.saturn.01.attack.top.07</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDLET.SATURN.01 -->
+
+	<animation name="gidlet.saturn.01.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidlet.saturn.01.01" d="3" />
+			<frame i="spriteimage.gidlet.saturn.01.02" d="1" />
+			<frame i="spriteimage.gidlet.saturn.01.03" d="1" />
+			<frame i="spriteimage.gidlet.saturn.01.04" d="1" />
+			<frame i="spriteimage.gidlet.saturn.01.04" d="3" />
+			<frame i="spriteimage.gidlet.saturn.01.03" d="2" />
+			<frame i="spriteimage.gidlet.saturn.01.02" d="1" />
+			<frame i="spriteimage.gidlet.saturn.01.01" d="3" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidlet.saturn.01.walk.face.glow.anim">
+		<frameset id="gidlet.saturn.01.glow.array" />
+	</animation>
+
+	<animation name="gidlet.saturn.01.walk.face.anim">
+		<frameset id="gidlet.saturn.01.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="3" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="1" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="1" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="3" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="2" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="3" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+			<notify layer="glow" idx="0"/><frame idx="0" d="15" />
+		<label id="blink"/>
+			<notify layer="glow" idx="4"/><frame idx="4" d="3" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="1" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="1" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="4" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="2" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="1" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="6" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="1" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="1" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="2" />
+			<notify layer="glow" idx="7"/><frame idx="7" d="2" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="2" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="1" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="3" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidlet.saturn.01.attack.anim">
+		<label id="bite"/>
+			<frame i="spriteimage.gidlet.saturn.01.01" d="2" />
+			<frame i="spriteimage.gidlet.saturn.01.02" d="4" />
+			<frame i="spriteimage.gidlet.saturn.01.attack.03" d="2" />
+			<frame i="spriteimage.gidlet.saturn.01.attack.04" d="2" />
+			<frame i="spriteimage.gidlet.saturn.01.attack.05" d="23" />
+		<event id="1"/>
+			<frame i="spriteimage.gidlet.saturn.01.02" d="2" />
+			<frame i="spriteimage.gidlet.saturn.01.03" d="2" />
+			<frame i="spriteimage.gidlet.saturn.01.04" d="9" />
+			<frame i="spriteimage.gidlet.saturn.01.03" d="2" />
+			<frame i="spriteimage.gidlet.saturn.01.02" d="3" />
+			<frame i="spriteimage.gidlet.saturn.01.01" d="4" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidlet.saturn.01.attack.face.glow.anim">
+		<frameset id="gidlet.saturn.01.glow.array" />
+	</animation>
+
+	<animation name="gidlet.saturn.01.attack.face.anim">
+		<frameset id="gidlet.saturn.01.face.array" />
+		<label id="bite"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="2" />
+			<notify layer="glow" idx="12"/><frame idx="12" d="2" />
+			<notify layer="glow" idx="13"/><frame idx="13" d="2" />
+			<notify layer="glow" idx="14"/><frame idx="14" d="2" />
+			<notify layer="glow" idx="15"/><frame idx="15" d="2" />
+			<notify layer="glow" idx="16"/><frame idx="16" d="23" />
+			<notify layer="glow" idx="13"/><frame idx="13" d="2" />
+			<notify layer="glow" idx="17"/><frame idx="17" d="2" />
+			<notify layer="glow" idx="18"/><frame idx="18" d="9" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="2" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="3" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="4" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="444" />
+	</animation>
+
+	<animation name="gidlet.saturn.01.dead.anim">
+			<frame i="spriteimage.gidlet.saturn.01.ghost.01" d="3" />
+			<frame i="spriteimage.gidlet.saturn.01.ghost.02" d="3" />
+			<frame i="spriteimage.gidlet.saturn.01.ghost.03" d="3" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidlet.saturn.01.idle.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidlet.saturn.01.01" d="6" />
+			<frame i="spriteimage.gidlet.saturn.01.02" d="4" />
+			<frame i="spriteimage.gidlet.saturn.01.03" d="5" />
+			<frame i="spriteimage.gidlet.saturn.01.03" d="8" />
+			<frame i="spriteimage.gidlet.saturn.01.02" d="4" />
+			<frame i="spriteimage.gidlet.saturn.01.01" d="8" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidlet.saturn.01.idle.face.glow.anim">
+		<frameset id="gidlet.saturn.01.glow.array" />
+	</animation>
+
+	<animation name="gidlet.saturn.01.idle.face.anim">
+		<frameset id="gidlet.saturn.01.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="6" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="5" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="8" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="8" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+			<notify layer="glow" idx="0"/><frame idx="0" d="35" />
+		<label id="blink"/>
+			<notify layer="glow" idx="4"/><frame idx="4" d="6" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="5" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="8" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="14" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="3" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="10" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="4" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="2" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="6" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidlet.saturn.01.stun.anim">
+			<frame i="spriteimage.gidlet.saturn.01.ghost.04" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidlet.saturn.01.stun.face.glow.anim">
+		<frameset id="gidlet.saturn.01.glow.array" />
+	</animation>
+
+	<animation name="gidlet.saturn.01.stun.face.anim">
+		<frameset id="gidlet.saturn.01.face.array" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="45" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="5" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="449" />
+	</animation>
+
+</resources>

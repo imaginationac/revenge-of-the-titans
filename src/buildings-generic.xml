@@ -1,0 +1,3672 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Generic Buildings -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	
+
+
+	<!-- FACTORY  -->
+	
+	<animation name="generic.factory.animation">
+		<frame i="spriteimage.generic.factory.05" d="16"/>
+		<frame i="spriteimage.generic.factory.04" d="2"/>
+		<frame i="spriteimage.generic.factory.03" d="3"/>
+		<frame i="spriteimage.generic.factory.02" d="4"/>
+		<frame i="spriteimage.generic.factory.01" d="16"/>
+		<frame i="spriteimage.generic.factory.03" d="2"/>		
+		<frame i="spriteimage.generic.factory.05" d="16"/>
+		<frame i="spriteimage.generic.factory.09" d="2"/>
+		<frame i="spriteimage.generic.factory.08" d="3"/>
+		<frame i="spriteimage.generic.factory.07" d="4"/>
+		<frame i="spriteimage.generic.factory.06" d="16"/>
+		<frame i="spriteimage.generic.factory.08" d="2"/>	
+		<goto seq="0"/>
+	</animation>
+	 
+	<!-- 
+	<animation name="generic.factory.glow.animation">
+		<animcolor a="25" d="0"/>
+		<frame i="spriteimage.building.light.white.5px.04" d="16"/>
+		<animcolor a="128" d="3"/>
+		<animcolor a="255" d="3"/>
+		<frame i="spriteimage.building.light.white.5px.03" d="3"/>
+		<frame i="spriteimage.building.light.white.5px.02" d="3"/>
+		<frame i="spriteimage.building.light.white.5px.01" d="4"/>
+		<goto seq="0"/>
+	</animation>		
+ -->
+ 
+ 	<animation name="generic.factory.glow.zap.animation">
+		<frame i="spriteimage.generic.factory.glow.01" d="1"/>
+	</animation>	
+  	<animation name="generic.factory.glow.collect.animation">
+		<loop count="5"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="1"/> 
+		<animcolor a="0" d="16"/>
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.factory.glow.05" d="11"/>
+		<frame i="spriteimage.generic.factory.glow.04" d="5"/>
+		<frame i="spriteimage.generic.factory.glow.03" d="4"/>
+		<frame i="spriteimage.generic.factory.glow.02" d="6"/>
+		<frame i="spriteimage.generic.factory.glow.03" d="2"/>
+		<frame i="spriteimage.generic.factory.glow.04" d="2"/>
+		<frame i="spriteimage.generic.factory.glow.05" d="2"/>		
+		<loop count="5"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="13"/> 
+		<goto seq="0"/>
+	</animation>	
+ 	<animation name="generic.factory.glow.shutdown.animation">
+		<loop count="5"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="1"/> 
+		<animcolor a="0" d="16"/>
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.factory.glow.09" d="11"/>
+		<frame i="spriteimage.generic.factory.glow.08" d="5"/>
+		<frame i="spriteimage.generic.factory.glow.07" d="4"/>
+		<frame i="spriteimage.generic.factory.glow.06" d="6"/>
+		<frame i="spriteimage.generic.factory.glow.07" d="2"/>
+		<frame i="spriteimage.generic.factory.glow.08" d="2"/>
+		<frame i="spriteimage.generic.factory.glow.09" d="2"/>		
+		<loop count="5"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="13"/> 
+		<goto seq="0"/>
+	</animation>	
+ 
+ 
+	<animation name="generic.factory.off.animation">
+		<frame i="spriteimage.generic.factory.10" d="1"/>
+	</animation>
+
+
+	<animation name="generic.factory.dead.animation">
+		<frame i="spriteimage.generic.factory.11" d="1"/>
+		<frame i="building.4x4.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.factory.dead.ground.animation">
+		<frame i="spriteimage.generic.factory.ground.02" d="1"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>
+	<animation name="generic.factory.dead.top.animation">
+		<frame i="spriteimage.generic.factory.top.01" d="1"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>	
+	
+	
+	<animation name="generic.factory.collect.back.animation">
+		<frame i="spriteimage.money.collect.back.01" d="32"/>
+		<loop count="10"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="2"/> 
+		<animcolor a="0" d="16"/>
+		<animcolor a="255" d="0"/>
+		<goto seq="0"/>
+	</animation>
+	
+	
+	
+	<!-- SMALL BUILDINGS -->
+	
+
+	<animation name="generic.cooling.animation">
+		<frame i="spriteimage.generic.cooling.03" d="1"/>
+		<frame i="spriteimage.generic.cooling.05" d="68"/>
+		<frame i="spriteimage.generic.cooling.04" d="3"/>
+		<frame i="spriteimage.generic.cooling.03" d="3"/>
+		<frame i="spriteimage.generic.cooling.01" d="4"/>
+		<frame i="spriteimage.generic.cooling.02" d="5"/>
+		<frame i="spriteimage.generic.cooling.01" d="76"/>
+		<frame i="spriteimage.generic.cooling.02" d="10"/>		
+		<goto seq="0"/>
+	</animation>
+	<animation name="generic.cooling.back.animation">
+		<frame i="spriteimage.generic.cooling.back.03" d="1"/>
+		<frame i="spriteimage.generic.cooling.back.05" d="68"/>
+		<frame i="spriteimage.generic.cooling.back.04" d="3"/>
+		<frame i="spriteimage.generic.cooling.back.03" d="3"/>
+		<frame i="spriteimage.generic.cooling.back.01" d="4"/>
+		<frame i="spriteimage.generic.cooling.back.02" d="5"/>
+		<frame i="spriteimage.generic.cooling.back.01" d="76"/>
+		<frame i="spriteimage.generic.cooling.back.02" d="10"/>		
+		<goto seq="0"/>
+	</animation>	
+	<animation name="generic.cooling.top.animation">
+		<frame i="spriteimage.generic.cooling.top.03" d="1"/>
+		<frame i="spriteimage.generic.cooling.top.05" d="68"/>
+		<frame i="spriteimage.generic.cooling.top.04" d="3"/>
+		<frame i="spriteimage.generic.cooling.top.03" d="3"/>
+		<frame i="spriteimage.generic.cooling.top.01" d="4"/>
+		<frame i="spriteimage.generic.cooling.top.02" d="5"/>
+		<frame i="spriteimage.generic.cooling.top.01" d="76"/>
+		<frame i="spriteimage.generic.cooling.top.02" d="10"/>		
+		<goto seq="0"/>
+	</animation>	
+	
+	<animation name="generic.cooling.glow.charge.animation">
+
+		<animcolor a="0" d="20"/>
+		<frame i="spriteimage.generic.cooling.glow.01" d="17"/>
+		
+		<loop count="15"/>
+			<animcolor a="+16" d="4"/>
+		<repeat seq="3"/>
+		<animcolor a="255" d="4"/> 
+		
+		<frame i="spriteimage.generic.cooling.glow.02" d="5"/>
+		<frame i="spriteimage.generic.cooling.glow.03" d="5"/>
+		<frame i="spriteimage.generic.cooling.glow.04" d="5"/>
+		<frame i="spriteimage.generic.cooling.glow.05" d="5"/>		
+		<frame i="spriteimage.generic.cooling.glow.06" d="5"/>
+		<frame i="spriteimage.generic.cooling.glow.07" d="5"/>
+		<frame i="spriteimage.generic.cooling.glow.08" d="5"/>
+		<frame i="spriteimage.generic.cooling.glow.09" d="5"/>	
+		<frame i="spriteimage.generic.cooling.glow.10" d="5"/> 
+		<frame i="spriteimage.generic.cooling.glow.11" d="20"/>
+
+		<frame i="spriteimage.generic.cooling.glow.10" d="1"/>
+		<frame i="spriteimage.generic.cooling.glow.09" d="1"/>
+		<frame i="spriteimage.generic.cooling.glow.08" d="1"/>
+		<frame i="spriteimage.generic.cooling.glow.07" d="1"/>		
+		<frame i="spriteimage.generic.cooling.glow.06" d="1"/>
+		<frame i="spriteimage.generic.cooling.glow.05" d="1"/>
+		<frame i="spriteimage.generic.cooling.glow.04" d="1"/>
+		<frame i="spriteimage.generic.cooling.glow.03" d="1"/>	
+		<frame i="spriteimage.generic.cooling.glow.02" d="1"/>		
+		<frame i="spriteimage.generic.cooling.glow.01" d="1"/>
+		<animcolor a="128" d="2"/>
+		<animcolor a="64" d="2"/>
+		<animcolor a="0" d="10"/>
+		<goto seq="1"/>
+	</animation>
+
+	<animation name="generic.cooling.glow.release.animation">
+		<frame i="spriteimage.building.light.white.4px.03" d="2"/>
+		<frame i="spriteimage.building.light.white.4px.01" d="25"/>
+		<frame i="spriteimage.building.light.white.4px.02" d="4"/>
+		<frame i="spriteimage.building.light.white.4px.03" d="4"/>
+		<frame i="spriteimage.building.light.white.4px.04" d="4"/>
+		<animcolor a="25" d="4"/>
+		<frame i="spriteimage.building.light.white.4px.04" d="127"/>
+		<animcolor a="255" d="0"/>
+		<goto seq="0"/>
+	</animation>		
+	
+
+	<animation name="generic.cooling.dead.animation">
+		<frame i="spriteimage.generic.cooling.06" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.cooling.dead.ground.animation">
+		<frame i="spriteimage.generic.cooling.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>	
+	<animation name="generic.cooling.dead.top.animation">
+		<frame i="spriteimage.generic.cooling.top.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>		
+	
+	
+	<animation name="generic.battery.animation">
+		<frame i="spriteimage.generic.battery.01" d="1"/>
+	</animation>		
+	<animation name="generic.battery.glow.animation">
+		<animcolor a="0" d="30"/>
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.battery.glow.01" d="5"/>
+		<frame i="spriteimage.generic.battery.glow.02" d="4"/>	
+		<frame i="spriteimage.generic.battery.glow.03" d="3"/>
+		<frame i="spriteimage.generic.battery.glow.04" d="2"/>		
+		<frame i="spriteimage.generic.battery.glow.05" d="2"/>
+		<frame i="spriteimage.generic.battery.glow.06" d="2"/>		
+		<frame i="spriteimage.generic.battery.glow.07" d="3"/>
+		<frame i="spriteimage.generic.battery.glow.08" d="4"/>		
+		<frame i="spriteimage.generic.battery.glow.09" d="5"/>
+		<frame i="spriteimage.generic.battery.glow.10" d="90"/>		
+		<frame i="spriteimage.generic.battery.glow.11" d="5"/>
+		<frame i="spriteimage.generic.battery.glow.12" d="4"/>
+		<frame i="spriteimage.generic.battery.glow.13" d="3"/>
+		<frame i="spriteimage.generic.battery.glow.14" d="2"/>
+		<frame i="spriteimage.generic.battery.glow.15" d="2"/>
+		<frame i="spriteimage.generic.battery.glow.16" d="2"/>
+		<frame i="spriteimage.generic.battery.glow.17" d="2"/>
+		<frame i="spriteimage.generic.battery.glow.18" d="2"/>		
+		<animcolor a="128" d="2"/>
+		<animcolor a="64" d="3"/>
+		<goto seq="0"/>				
+	</animation>	
+	
+	<animation name="generic.battery.dead.animation">
+		<frame i="spriteimage.generic.battery.02" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.battery.dead.ground.animation">
+		<frame i="spriteimage.generic.battery.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>		
+	
+	
+	<animation name="generic.capacitor.animation">
+		<frame i="spriteimage.generic.capacitor.01" d="1"/>
+	</animation>		
+	<animation name="generic.capacitor.glow.animation">
+		<random>
+			<dest seq="1"/>
+			<dest seq="3"/>
+			<dest seq="5"/>
+			<dest seq="7"/>
+		</random>		
+		<frame i="spriteimage.generic.capacitor.glow.01" d="3"/>
+		<goto seq="0"/>	
+		<frame i="spriteimage.generic.capacitor.glow.02" d="3"/>
+		<goto seq="0"/>
+		<frame i="spriteimage.generic.capacitor.glow.03" d="3"/>
+		<goto seq="0"/>
+		<frame i="spriteimage.generic.capacitor.glow.04" d="3"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="generic.capacitor.dead.animation">
+		<frame i="spriteimage.generic.capacitor.02" d="0"/>
+		<frame i="building.3x3.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.capacitor.dead.ground.animation">
+		<frame i="spriteimage.generic.capacitor.ground.01" d="0"/>
+		<frame i="building.3x3.dead.misc.anim" d="1"/>
+	</animation>	
+	
+		
+
+	<animation name="generic.scanner.animation">
+		<frame i="spriteimage.generic.scanner.01" d="3"/>
+		<frame i="spriteimage.generic.scanner.02" d="4"/>
+		<frame i="spriteimage.generic.scanner.03" d="5"/>
+		<frame i="spriteimage.generic.scanner.04" d="6"/>
+		<frame i="spriteimage.generic.scanner.03" d="5"/>
+		<frame i="spriteimage.generic.scanner.02" d="4"/>
+		<goto seq="0"/>
+	</animation>		
+
+	<animation name="generic.scanner.glow.animation">
+		<frame i="spriteimage.generic.scanner.glow.01" d="24" />
+		<frame i="spriteimage.generic.scanner.glow.02" d="3"/>
+		<frame i="spriteimage.generic.scanner.glow.03" d="3"/>
+		<frame i="spriteimage.generic.scanner.glow.04" d="3"/>				
+		<frame i="spriteimage.generic.scanner.glow.05" d="24"/>					
+		<frame i="spriteimage.generic.scanner.glow.06" d="3"/>
+		<frame i="spriteimage.generic.scanner.glow.07" d="3"/>
+		<frame i="spriteimage.generic.scanner.glow.08" d="3"/>
+		<goto seq="0"/>
+	</animation>
+	
+	<animation name="generic.scanner.dead.animation">
+		<frame i="spriteimage.generic.scanner.05" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.scanner.dead.ground.animation">
+		<frame i="spriteimage.generic.scanner.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>	
+
+
+
+
+
+	<animation name="generic.warehouse.glow.animation">
+		<animcolor a="25" d="0"/>
+		<frame i="spriteimage.generic.warehouse.glow.04" d="16"/>
+		<animcolor a="128" d="3"/>
+		<animcolor a="255" d="3"/>
+		<frame i="spriteimage.generic.warehouse.glow.03" d="3"/>
+		<frame i="spriteimage.generic.warehouse.glow.02" d="3"/>
+		<frame i="spriteimage.generic.warehouse.glow.01" d="4"/>
+		<goto seq="0"/>
+	</animation>	
+	<animation name="generic.warehouse.dead.animation">
+		<frame i="spriteimage.generic.warehouse.02" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.warehouse.dead.ground.animation">
+		<frame i="spriteimage.generic.warehouse.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>	
+
+
+
+	<animation name="generic.collector.animation">
+		<frame i="spriteimage.generic.collector.05" d="2"/>
+		<frame i="spriteimage.generic.collector.04" d="2"/>
+		<frame i="spriteimage.generic.collector.03" d="3"/>
+		<frame i="spriteimage.generic.collector.02" d="4"/>
+		<frame i="spriteimage.generic.collector.01" d="12"/>
+		<frame i="spriteimage.generic.collector.03" d="2"/>		
+		<frame i="spriteimage.generic.collector.05" d="2"/>
+		
+		<frame i="spriteimage.generic.collector.10" d="2"/>
+		<frame i="spriteimage.generic.collector.09" d="2"/>
+		<frame i="spriteimage.generic.collector.08" d="3"/>
+		<frame i="spriteimage.generic.collector.07" d="4"/>
+		<frame i="spriteimage.generic.collector.06" d="12"/>
+		<frame i="spriteimage.generic.collector.08" d="2"/>		
+		<frame i="spriteimage.generic.collector.10" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+
+	<animation name="generic.collector.glow.animation">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.collector.glow.01" d="5"/>
+		<frame i="spriteimage.generic.collector.glow.02" d="4"/>
+		<frame i="spriteimage.generic.collector.glow.03" d="3"/>
+		<frame i="spriteimage.generic.collector.glow.04" d="3"/>		
+		<animcolor a="128" d="3"/>
+		<animcolor a="64" d="3"/>
+		<animcolor a="0" d="6"/>
+		
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.collector.glow.05" d="5"/>
+		<frame i="spriteimage.generic.collector.glow.06" d="4"/>
+		<frame i="spriteimage.generic.collector.glow.07" d="3"/>
+		<frame i="spriteimage.generic.collector.glow.08" d="3"/>		
+		<animcolor a="128" d="3"/>
+		<animcolor a="64" d="3"/>
+		<animcolor a="0" d="6"/>
+		<goto seq="0"/>		
+	</animation>
+
+	<animation name="generic.collector.dead.animation">
+		<frame i="spriteimage.generic.collector.02" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.collector.dead.ground.animation">
+		<frame i="spriteimage.generic.collector.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>	
+
+
+
+	<animation name="generic.barracks.glow.animation">
+		
+		<label id="start"/>
+		<frame i="spriteimage.generic.barracks.glow.01" d="100"/>
+		<frame i="spriteimage.generic.barracks.glow.02" d="7"/>
+		<frame i="spriteimage.generic.barracks.glow.03" d="6"/>
+		<frame i="spriteimage.generic.barracks.glow.04" d="5"/>		
+		<frame i="spriteimage.generic.barracks.glow.05" d="5"/>
+		<frame i="spriteimage.generic.barracks.glow.06" d="5"/>		
+		<frame i="spriteimage.generic.barracks.glow.07" d="20"/>
+
+		<frame i="spriteimage.generic.barracks.glow.06" d="2"/>
+		<frame i="spriteimage.generic.barracks.glow.05" d="2"/>	
+		
+		<loop count="8"/>
+			<label id="loop"/>
+			<frame i="spriteimage.generic.barracks.glow.08" d="2"/>		
+			<frame i="spriteimage.generic.barracks.glow.09" d="2"/>
+		<repeat id="loop"/>
+		
+		<frame i="spriteimage.generic.barracks.glow.08" d="2"/>
+		<frame i="spriteimage.generic.barracks.glow.09" d="3"/>
+		<frame i="spriteimage.generic.barracks.glow.10" d="4"/>
+		<frame i="spriteimage.generic.barracks.glow.11" d="5"/>
+		
+		<goto id="start"/>
+	</animation>	
+
+	<animation name="generic.barracks.dead.animation">
+		<frame i="spriteimage.generic.barracks.02" d="0"/>
+		<frame i="building.4x4.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.barracks.dead.ground.animation">
+		<frame i="spriteimage.generic.barracks.ground.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>	
+	<animation name="generic.barracks.dead.top.animation">
+		<frame i="spriteimage.generic.barracks.top.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>
+
+
+
+
+	<animation name="generic.decoy.animation">
+		<frame i="spriteimage.generic.decoy.01" d="25"/>
+		<frame i="spriteimage.generic.decoy.02" d="5"/>
+		<frame i="spriteimage.generic.decoy.03" d="4"/>
+		<frame i="spriteimage.generic.decoy.04" d="3"/>
+		<frame i="spriteimage.generic.decoy.05" d="2"/>
+		<frame i="spriteimage.generic.decoy.06" d="2"/>
+		<frame i="spriteimage.generic.decoy.07" d="2"/>
+		<frame i="spriteimage.generic.decoy.08" d="15"/>
+		<frame i="spriteimage.generic.decoy.09" d="6"/>		
+		
+		<frame i="spriteimage.generic.decoy.01" d="7"/>
+		<goto seq="0"/>
+	</animation>
+	
+	<!-- 69 -->
+	
+	<animation name="generic.decoy.glow.animation">
+
+		<frame i="spriteimage.generic.decoy.glow.01" d="7"/>
+		<frame i="spriteimage.generic.decoy.glow.02" d="3"/>
+		<frame i="spriteimage.generic.decoy.glow.03" d="4"/>		
+		<frame i="spriteimage.generic.decoy.glow.04" d="5"/>		
+		<animcolor a="128" d="6"/>
+		<animcolor a="0" d="46"/>
+		<animcolor a="255" d="0"/>
+		
+		<goto seq="0"/>	
+	</animation>		
+	
+	<animation name="generic.decoy.flash.animation">
+		<frame i="spriteimage.light.cyan.64px.01" d="0" />
+		
+		<animcolor a="64"/>		
+		<scale scale="1.5" d="2"/>	
+		
+		<animcolor a="128"/>
+		<scale scale="2" d="5"/>
+
+		<animcolor a="+-64" d="3"/>
+		<scale scale="+-0.2" />
+		<animcolor a="+-32" d="4"/>
+		<scale scale="+-0.1" />
+		<animcolor a="+-16" d="5"/>
+		<scale scale="+-0.1" />
+		<animcolor a="+-8" d="6"/>
+	
+		<animcolor a="0" d="46"/>
+
+		<goto seq="1"/>
+	</animation>
+	
+
+	
+	<animation name="generic.decoy.dead.animation">
+		<frame i="spriteimage.generic.decoy.10" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>
+	<animation name="generic.decoy.dead.ground.animation">
+		<frame i="spriteimage.generic.decoy.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>
+
+
+
+	<!-- REACTOR AND TURRETS -->
+
+
+	<animation name="generic.autoloader.glow.animation">
+		<frame i="spriteimage.generic.autoloader.glow.01" d="6"/>
+		<frame i="spriteimage.generic.autoloader.glow.02" d="6"/>
+		<frame i="spriteimage.generic.autoloader.glow.03" d="6"/>
+		<frame i="spriteimage.generic.autoloader.glow.04" d="6"/>		
+		<frame i="spriteimage.generic.autoloader.glow.05" d="6"/>
+		<frame i="spriteimage.generic.autoloader.glow.06" d="6"/>
+		<frame i="spriteimage.generic.autoloader.glow.07" d="6"/>
+		<frame i="spriteimage.generic.autoloader.glow.08" d="6"/>			
+		<goto seq="0"/>		
+	</animation>
+
+	<animation name="generic.autoloader.dead.animation">
+		<frame i="spriteimage.generic.autoloader.02" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.autoloader.dead.ground.animation">
+		<frame i="spriteimage.generic.autoloader.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>	
+
+
+
+	<animation name="generic.reactor.animation">
+		<frame i="spriteimage.generic.reactor.01" d="1"/>
+	</animation>		
+	<animation name="generic.reactor.glow.animation">
+		<random>
+			<dest seq="1"/>
+			<dest seq="3"/>
+			<dest seq="5"/>
+			<dest seq="7"/>
+		</random>		
+		<frame i="spriteimage.generic.reactor.glow.01" d="3"/>
+		<goto seq="0"/>	
+		<frame i="spriteimage.generic.reactor.glow.02" d="3"/>
+		<goto seq="0"/>
+		<frame i="spriteimage.generic.reactor.glow.03" d="3"/>
+		<goto seq="0"/>
+		<frame i="spriteimage.generic.reactor.glow.04" d="3"/>
+		<goto seq="0"/>
+	</animation>		
+	
+	<animation name="generic.reactor.dead.animation">
+		<frame i="spriteimage.generic.reactor.02" d="0"/>
+		<frame i="building.3x3.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.reactor.dead.ground.animation">
+		<frame i="spriteimage.generic.reactor.ground.01" d="0"/>
+		<frame i="building.3x3.dead.misc.anim" d="1"/>
+	</animation>
+	
+	
+	
+	<animation name="generic.shield.animation">
+		<frame i="spriteimage.generic.shield.01" d="1"/>
+	</animation>		
+	
+	<animation name="generic.shield.glow.animation">
+		<random>
+			<dest seq="1"/>
+			<dest seq="3"/>
+			<dest seq="5"/>
+			<dest seq="7"/>
+		</random>		
+		<frame i="spriteimage.generic.shield.glow.01" d="3"/>
+		<goto seq="0"/>	
+		<frame i="spriteimage.generic.shield.glow.02" d="3"/>
+		<goto seq="0"/>
+		<frame i="spriteimage.generic.shield.glow.03" d="3"/>
+		<goto seq="0"/>
+		<frame i="spriteimage.generic.shield.glow.04" d="3"/>
+		<goto seq="0"/>
+	</animation>	
+
+	<animation name="generic.shield.dead.animation">
+		<frame i="spriteimage.generic.shield.02" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.shield.dead.ground.animation">
+		<frame i="spriteimage.generic.shield.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>
+	
+
+
+	<!--  TURRETS -->
+	
+	
+	<animation name="generic.tower.glow.animation">
+		<animcolor a="25" d="0"/>
+		<frame i="spriteimage.building.light.red.3px.04" d="12"/>
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.building.light.red.3px.01" d="3"/>
+		<frame i="spriteimage.building.light.red.3px.02" d="3"/>
+		<frame i="spriteimage.building.light.red.3px.03" d="3"/>
+		<animcolor a="25" d="0"/>
+		<frame i="spriteimage.building.light.red.3px.04" d="12"/>
+		<goto seq="0"/>
+	</animation>		
+	<animation name="generic.tower.sweep.animation">
+		<angle angle="32768"/>
+		<frame i="light.red.sweep.animation" d="1"/>
+	</animation>	
+	
+	
+	<animation name="generic.tower.blaster.dead.animation">
+		<frame i="spriteimage.generic.tower.blaster.02" d="0"/>
+		<frame i="building.3x3.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.blaster.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.blaster.ground.01" d="0"/>
+		<frame i="building.3x3.dead.misc.anim" d="1"/>
+	</animation>
+
+	<animation name="generic.tower.heavyblaster.dead.animation">
+		<frame i="spriteimage.generic.tower.heavyblaster.02" d="0"/>
+		<frame i="building.3x3.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.heavyblaster.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.heavyblaster.ground.01" d="0"/>
+		<frame i="building.3x3.dead.misc.anim" d="1"/>
+	</animation>
+
+	<animation name="generic.tower.blastcannon.dead.animation">
+		<frame i="spriteimage.generic.tower.blastcannon.02" d="0"/>
+		<frame i="building.3x3.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.blastcannon.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.blastcannon.ground.01" d="0"/>
+		<frame i="building.3x3.dead.misc.anim" d="1"/>
+	</animation>
+
+	<animation name="generic.tower.multiblaster.dead.animation">
+		<frame i="spriteimage.generic.tower.multiblaster.02" d="0"/>
+		<frame i="building.3x3.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.multiblaster.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.multiblaster.ground.01" d="0"/>
+		<frame i="building.3x3.dead.misc.anim" d="1"/>
+	</animation>
+	
+	<animation name="generic.tower.spreader.dead.animation">
+		<frame i="spriteimage.generic.tower.spreader.02" d="0"/>
+		<frame i="building.3x3.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.spreader.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.spreader.ground.01" d="0"/>
+		<frame i="building.3x3.dead.misc.anim" d="1"/>
+	</animation>	
+	
+	<animation name="generic.tower.assault.dead.animation">
+		<frame i="spriteimage.generic.tower.assault.02" d="0"/>
+		<frame i="building.4x4.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.assault.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.assault.ground.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>	
+	
+	<animation name="generic.tower.laser.dead.animation">
+		<frame i="spriteimage.generic.tower.laser.02" d="0"/>
+		<frame i="building.4x4.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.laser.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.laser.ground.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>	
+	
+	<animation name="generic.tower.rockets.dead.animation">
+		<frame i="spriteimage.generic.tower.rockets.02" d="0"/>
+		<frame i="building.4x4.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.rockets.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.rockets.ground.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>	
+	
+	<animation name="generic.tower.disruptor.dead.animation">
+		<frame i="spriteimage.generic.tower.disruptor.02" d="0"/>
+		<frame i="building.4x4.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tower.disruptor.dead.ground.animation">
+		<frame i="spriteimage.generic.tower.disruptor.ground.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>	
+	
+
+	
+	<!--  BARRICADES  ========================================================================================== -->
+
+	
+	<animation name="generic.barricade.concrete.dead.animation">
+		<frame i="spriteimage.generic.barricade.concrete.04" d="0"/>
+		<frame i="building.1x1.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.barricade.concrete.dead.ground.animation">
+		<frame i="spriteimage.generic.barricade.concrete.ground.01" d="0"/>
+		<frame i="building.1x1.dead.misc.anim" d="1"/>
+	</animation>	
+	<animation name="generic.barricade.concrete.dead.top.animation">
+		<frame i="spriteimage.generic.barricade.concrete.top.04" d="0"/>
+		<frame i="building.1x1.dead.misc.anim" d="1"/>
+	</animation>		
+
+	<animation name="generic.barricade.steel.dead.animation">
+		<frame i="spriteimage.generic.barricade.steel.05" d="0"/>
+		<frame i="building.1x1.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.barricade.steel.dead.ground.animation">
+		<frame i="spriteimage.generic.barricade.steel.ground.01" d="0"/>
+		<frame i="building.1x1.dead.misc.anim" d="1"/>
+	</animation>	
+	<animation name="generic.barricade.steel.dead.top.animation">
+		<frame i="spriteimage.generic.barricade.steel.top.05" d="0"/>
+		<frame i="building.1x1.dead.misc.anim" d="1"/>
+	</animation>	
+	
+	<animation name="generic.barricade.titanium.dead.animation">
+		<frame i="spriteimage.generic.barricade.titanium.06" d="0"/>
+		<frame i="building.1x1.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.barricade.titanium.dead.ground.animation">
+		<frame i="spriteimage.generic.barricade.titanium.ground.01" d="0"/>
+		<frame i="building.1x1.dead.misc.anim" d="1"/>
+	</animation>	
+	
+
+<!-- <sync id="global" i="1"/>  -->
+
+	<animation name="generic.barricade.titanium.glow.animation">
+		
+		<animcolor a="0" d="8"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.06" d="0"/>
+
+		<loop count="10"/> 
+			<label id="loop1"/>
+			<animcolor a="+25" d="3"/>
+			<repeat id="loop1"/> 
+		
+		<animcolor a="255" d="0"/>		
+		
+		<frame i="spriteimage.generic.barricade.titanium.glow.05" d="3"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.04" d="3"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.03" d="4"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.02" d="5"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.01" d="6"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.02" d="5"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.03" d="4"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.04" d="3"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.05" d="3"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.06" d="3"/>
+
+		<loop count="10"/> 
+			<label id="loop2"/>
+			<animcolor a="+-25" d="3"/>
+			<repeat id="loop2"/> 
+		
+		<goto seq="0"/>
+	</animation>	
+
+	<animation name="generic.barricade.titanium.glow.damaged.1.animation">
+		
+		<animcolor a="0" d="8"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.06" d="0"/>
+
+		<loop count="10"/> 
+			<label id="loop1"/>
+			<animcolor a="+25" d="4"/>
+			<repeat id="loop1"/> 
+		
+		<animcolor a="255" d="0"/>		
+		
+		<frame i="spriteimage.generic.barricade.titanium.glow.05" d="5"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.04" d="6"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.05" d="5"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.06" d="4"/>
+
+		<loop count="10"/> 
+			<label id="loop2"/>
+			<animcolor a="+-25" d="4"/>
+			<repeat id="loop2"/> 
+		
+		<goto seq="0"/>
+	</animation>		
+
+
+	<animation name="generic.barricade.titanium.glow.damaged.2.animation">
+		
+		<animcolor a="0" d="8"/>
+		<frame i="spriteimage.generic.barricade.titanium.glow.06" d="0"/>
+
+		<loop count="10"/> 
+			<label id="loop1"/>
+			<animcolor a="+10" d="5"/>
+			<repeat id="loop1"/> 
+		
+		<loop count="10"/> 
+			<label id="loop2"/>
+			<animcolor a="+-10" d="5"/>
+			<repeat id="loop2"/> 
+		
+		<goto seq="0"/>
+	</animation>	
+	
+	
+	<animation name="generic.barricade.nanomesh.dead.animation">
+		<frame i="spriteimage.generic.barricade.nanomesh.07" d="0"/>
+		<frame i="building.1x1.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.barricade.nanomesh.dead.ground.animation">
+		<frame i="spriteimage.generic.barricade.nanomesh.ground.01" d="0"/>
+		<frame i="building.1x1.dead.misc.anim" d="1"/>
+	</animation>	
+		
+	
+
+	<animation name="generic.barricade.nanomesh.glow.animation">
+		
+		<animcolor a="0" d="8"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.06" d="0"/>
+
+		<loop count="10"/> 
+			<label id="loop1"/>
+			<animcolor a="+25" d="3"/>
+			<repeat id="loop1"/> 
+		
+		<animcolor a="255" d="0"/>		
+		
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.05" d="3"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.04" d="3"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.03" d="4"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.02" d="5"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.01" d="6"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.02" d="5"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.03" d="4"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.04" d="3"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.05" d="3"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.06" d="3"/>
+
+		<loop count="10"/> 
+			<label id="loop2"/>
+			<animcolor a="+-25" d="3"/>
+			<repeat id="loop2"/> 
+		
+		<goto seq="0"/>
+	</animation>	
+
+	<animation name="generic.barricade.nanomesh.glow.damaged.1.animation">
+		
+		<animcolor a="0" d="8"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.06" d="0"/>
+
+		<loop count="10"/> 
+			<label id="loop1"/>
+			<animcolor a="+25" d="4"/>
+			<repeat id="loop1"/> 
+		
+		<animcolor a="255" d="0"/>		
+		
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.05" d="5"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.04" d="6"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.05" d="5"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.06" d="4"/>
+
+		<loop count="10"/> 
+			<label id="loop2"/>
+			<animcolor a="+-25" d="4"/>
+			<repeat id="loop2"/> 
+		
+		<goto seq="0"/>
+	</animation>		
+	
+	<animation name="generic.barricade.nanomesh.glow.damaged.2.animation">
+		
+		<animcolor a="0" d="8"/>
+		<frame i="spriteimage.generic.barricade.nanomesh.glow.06" d="0"/>
+
+		<loop count="10"/> 
+			<label id="loop1"/>
+			<animcolor a="+25" d="5"/>
+			<repeat id="loop1"/> 
+		
+		<animcolor a="255" d="0"/>		
+
+		<loop count="10"/> 
+			<label id="loop2"/>
+			<animcolor a="+-25" d="5"/>
+			<repeat id="loop2"/> 
+		
+		<goto seq="0"/>
+	</animation>	
+	
+	
+		
+	
+	<!--  MINES ========================================================================================== -->
+
+
+
+
+	<animation name="mine.dead.anim">
+		<animcolor a="255" d="14"/>	
+		<shake amount="20"/>
+		<event id="1"/>
+		<animcolor a="0" d="256"/>	
+		<event id="2"/>
+	</animation>
+
+	<animation name="mine.dead.misc.anim">
+		<animcolor a="255" d="14"/>
+		<animcolor a="0" d="1"/>		
+	</animation>	
+	
+	<animation name="mine.dead.base.anim">
+		<animcolor a="255" d="14"/>	
+		<loop count="63"/>
+			<animcolor a="+-4" d="4"/>				
+		<repeat seq="2"/>
+		<animcolor a="0" d="1"/>		
+	</animation>	
+	
+	
+
+	<animation name="generic.mine.dead.animation">
+		<frame i="spriteimage.generic.mine.02" d="1"/>
+		<frame i="mine.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.mine.dead.ground.animation">
+		<frame i="spriteimage.generic.mine.ground.01" d="1"/>
+		<frame i="mine.dead.misc.anim" d="1"/>
+	</animation>	
+	
+	<animation name="generic.mine.glow.animation">
+		
+		<!--  hmm - delay dont seem to work here? <delay min="1" max="32"/>  -->
+		
+		<animcolor a="0" d="3"/>
+		<random>
+			<dest seq="0" n="32"/>
+			<dest seq="2"/>
+		</random>
+		
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.mine.glow.05" d="5"/>
+		<frame i="spriteimage.generic.mine.glow.06" d="2"/>		
+		<frame i="spriteimage.generic.mine.glow.07" d="2"/>		
+		<frame i="spriteimage.generic.mine.glow.08" d="2"/>		
+		<animcolor a="128" d="2"/>
+		<animcolor a="64" d="2"/>
+
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.mine.glow.01" d="5"/>
+		<frame i="spriteimage.generic.mine.glow.02" d="2"/>		
+		<frame i="spriteimage.generic.mine.glow.03" d="2"/>		
+		<frame i="spriteimage.generic.mine.glow.04" d="3"/>		
+		<animcolor a="128" d="4"/>
+		<animcolor a="64" d="5"/>
+		<animcolor a="32" d="6"/>		
+		
+		<animcolor a="0" d="200"/>
+		
+		<goto seq="2"/>
+	</animation>	
+
+
+
+
+	<animation name="generic.cluster.glow.fade.anim">
+		<animcolor a="128" d="4"/>
+		<animcolor a="64" d="5"/>
+		<animcolor a="32" d="6"/>
+		<animcolor a="0" d="15"/>
+		<return/>
+	</animation>
+	<animation name="generic.cluster.glow.1.anim">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.clustermine.glow.01" d="5"/>
+		<frame i="spriteimage.generic.clustermine.glow.02" d="2"/>
+		<frame i="spriteimage.generic.clustermine.glow.03" d="3"/>
+		<return/>
+	</animation>
+	<animation name="generic.cluster.glow.2.anim">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.clustermine.glow.04" d="5"/>
+		<frame i="spriteimage.generic.clustermine.glow.05" d="2"/>
+		<frame i="spriteimage.generic.clustermine.glow.06" d="3"/>
+		<return/>
+	</animation>
+	<animation name="generic.cluster.glow.3.anim">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.clustermine.glow.07" d="5"/>
+		<frame i="spriteimage.generic.clustermine.glow.08" d="2"/>
+		<frame i="spriteimage.generic.clustermine.glow.09" d="3"/>
+		<return/>
+	</animation>
+		<animation name="generic.cluster.glow.4.anim">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.clustermine.glow.10" d="5"/>
+		<frame i="spriteimage.generic.clustermine.glow.11" d="2"/>
+		<frame i="spriteimage.generic.clustermine.glow.12" d="3"/>
+		<return/>
+	</animation>
+
+	<animation name="generic.clustermine.glow.4.animation">
+		<animcolor a="0" d="3"/>
+		<random>
+			<dest seq="0" n="16"/>
+			<dest seq="2"/>
+		</random>
+		<sub id="generic.cluster.glow.1.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>
+		<sub id="generic.cluster.glow.2.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>
+		<sub id="generic.cluster.glow.3.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>
+		<sub id="generic.cluster.glow.4.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>				
+		<goto seq="2"/>	
+	</animation>	
+
+	<animation name="generic.clustermine.glow.3.animation">
+		<animcolor a="0" d="3"/>
+		<random>
+			<dest seq="0" n="16"/>
+			<dest seq="2"/>
+		</random>
+		<animcolor a="0" d="40"/>
+		<sub id="generic.cluster.glow.2.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>
+		<sub id="generic.cluster.glow.3.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>
+		<sub id="generic.cluster.glow.4.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>				
+		<goto seq="2"/>	
+	</animation>	
+
+	<animation name="generic.clustermine.glow.2.animation">
+		<animcolor a="0" d="3"/>
+		<random>
+			<dest seq="0" n="16"/>
+			<dest seq="2"/>
+		</random>
+		<animcolor a="0" d="40"/>
+		<sub id="generic.cluster.glow.2.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>
+		<animcolor a="0" d="40"/>
+		<sub id="generic.cluster.glow.4.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>				
+		<goto seq="2"/>	
+	</animation>	
+	
+	<animation name="generic.clustermine.glow.1.animation">
+		<animcolor a="0" d="3"/>
+		<random>
+			<dest seq="0" n="16"/>
+			<dest seq="2"/>
+		</random>
+		<animcolor a="0" d="40"/>
+		<sub id="generic.cluster.glow.2.anim"/>
+		<sub id="generic.cluster.glow.fade.anim"/>
+		<animcolor a="0" d="40"/>
+		<animcolor a="0" d="40"/>				
+		<goto seq="2"/>	
+	</animation>		
+	
+	
+
+
+	<animation name="generic.blastmine.glow.animation">
+		
+		<frame i="spriteimage.generic.blastmine.glow.01" d="8"/>
+		<frame i="spriteimage.generic.blastmine.glow.02" d="4"/>
+		<frame i="spriteimage.generic.blastmine.glow.03" d="3"/>
+		<frame i="spriteimage.generic.blastmine.glow.04" d="3"/>
+	
+		<loop count="10"/> 
+			<label id="loop1"/>
+			<animcolor a="+-25" d="3"/>
+			<repeat id="loop1"/> 
+
+		<loop count="5"/> 
+			<label id="loop2"/>
+			<animcolor a="+50" d="2"/>
+			<repeat id="loop2"/> 
+
+		<frame i="spriteimage.generic.blastmine.glow.04" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.03" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.02" d="2"/>
+	
+		<goto seq="0"/>	
+	
+	</animation>	
+	
+	<animation name="generic.blastmine.armed.animation">
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.01" d="10"/>
+		<frame i="spriteimage.generic.blastmine.02" d="3"/>
+		<frame i="spriteimage.generic.blastmine.03" d="2"/>
+		<frame i="spriteimage.generic.blastmine.04" d="2"/>
+		<frame i="spriteimage.generic.blastmine.05" d="2"/>
+		<frame i="spriteimage.generic.blastmine.07" d="4"/>
+		<frame i="spriteimage.generic.blastmine.06" d="2"/>		
+	</animation>	
+
+
+	<animation name="generic.blastmine.armed.glow.animation">
+		
+		<animcolor a="0" d="32"/>
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="5"/>
+		<frame i="spriteimage.generic.blastmine.glow.08" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.07" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="2"/>
+
+		<loop count="4"/> 
+			<label id="alphaLoop1"/>
+			<animcolor a="+-50" d="2"/>
+		<repeat id="alphaLoop1"/> 
+
+		<animcolor a="0" d="23"/>
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="5"/>
+		<frame i="spriteimage.generic.blastmine.glow.08" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.07" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="2"/>
+
+		<loop count="4"/> 
+			<label id="alphaLoop3"/>
+			<animcolor a="+-50" d="2"/>
+		<repeat id="alphaLoop3"/> 
+
+		<animcolor a="0" d="15"/>
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="5"/>
+		<frame i="spriteimage.generic.blastmine.glow.08" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.07" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="2"/>
+
+		<loop count="3"/> 
+			<label id="alphaLoop4"/>
+			<animcolor a="+-50" d="2"/>
+		<repeat id="alphaLoop4"/> 
+
+		<animcolor a="0" d="8"/>
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="5"/>
+		<frame i="spriteimage.generic.blastmine.glow.08" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.07" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="2"/>
+
+		<loop count="3"/> 
+			<label id="alphaLoop5"/>
+			<animcolor a="+-50" d="2"/>
+		<repeat id="alphaLoop5"/> 
+		
+
+		<animcolor a="0" d="2"/>
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="5"/>
+		<frame i="spriteimage.generic.blastmine.glow.08" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.07" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="2"/>
+
+		<loop count="2"/> 
+			<label id="alphaLoop6"/>
+			<animcolor a="+-50" d="2"/>
+		<repeat id="alphaLoop6"/> 		
+
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="5"/>
+		<frame i="spriteimage.generic.blastmine.glow.08" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.07" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="2"/>
+		<animcolor a="0" d="3"/>
+
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="5"/>
+		<frame i="spriteimage.generic.blastmine.glow.07" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="2"/>
+		<animcolor a="0" d="3"/>
+
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="4"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="2"/>
+		<animcolor a="0" d="3"/>
+
+		<animcolor a="255" d="0"/>
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="3"/>
+		<frame i="spriteimage.generic.blastmine.glow.05" d="3"/>
+		<animcolor a="0" d="3"/>
+
+		<event id="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="0"/>
+		<animcolor a="255" d="3"/>
+		
+		<animcolor a="0" d="3"/>
+		<event id="1"/>
+		<animcolor a="255" d="3"/>
+		
+		<animcolor a="0" d="3"/>
+		<event id="1"/>
+		<animcolor a="255" d="3"/>
+
+		<animcolor a="0" d="3"/>
+		<event id="1"/>
+		<animcolor a="255" d="3"/>
+
+		<animcolor a="0" d="3"/>
+		<event id="1"/>
+		<animcolor a="255" d="3"/>
+
+		<animcolor a="0" d="3"/>
+		<event id="1"/>
+		<animcolor a="255" d="3"/>
+
+		<frame i="spriteimage.generic.blastmine.glow.05" d="0"/>
+		<animcolor a="16" d="10"/>
+		<animcolor a="32" d="6"/>
+		<animcolor a="64" d="5"/>
+		<animcolor a="128" d="4"/>
+		<animcolor a="255" d="3"/>
+		<frame i="spriteimage.generic.blastmine.glow.06" d="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.07" d="1"/>
+		<frame i="spriteimage.generic.blastmine.glow.08" d="1"/>
+		<event id="2"/>
+		<frame i="spriteimage.generic.blastmine.glow.09" d="100"/>
+		<event id="3"/>
+		
+		
+	</animation>	
+
+	<animation name="generic.blastmine.dead.animation">
+		<frame i="spriteimage.generic.blastmine.08" d="1"/>
+		<frame i="mine.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.blastmine.dead.ground.animation">
+		<frame i="spriteimage.generic.blastmine.ground.01" d="1"/>
+		<frame i="mine.dead.misc.anim" d="1"/>
+	</animation>	
+
+
+
+	<animation name="generic.tangleweb.glow.animation">
+
+		<frame i="spriteimage.generic.tangleweb.glow.05" d="0"/>
+		<animcolor a="255" d="0"/>
+		
+		<random>
+			<dest id="glow1" n="4"/>
+			<dest id="glow2"/>
+			<dest id="glow3"/>
+			<dest id="glow4"/>
+			<dest id="glow5"/>
+			<dest id="glowDown"/>
+		</random>		
+		
+		<label id="glow1"/>
+		<frame i="spriteimage.generic.tangleweb.glow.01" d="3"/>
+		<goto seq="0"/>	
+		
+		<label id="glow2"/>
+		<frame i="spriteimage.generic.tangleweb.glow.02" d="3"/>
+		<goto seq="0"/>
+		
+		<label id="glow3"/>
+		<frame i="spriteimage.generic.tangleweb.glow.03" d="3"/>
+		<goto seq="0"/>
+		
+		<label id="glow4"/>
+		<frame i="spriteimage.generic.tangleweb.glow.04" d="3"/>
+		<goto seq="0"/>
+
+		<label id="glow5"/>
+		<frame i="spriteimage.generic.tangleweb.glow.05" d="3"/>
+		<goto seq="0"/>
+
+		<label id="glowDown"/>
+			<frame i="spriteimage.generic.tangleweb.glow.01" d="3"/>
+			<frame i="spriteimage.generic.tangleweb.glow.02" d="3"/>
+			<frame i="spriteimage.generic.tangleweb.glow.03" d="3"/>
+			<frame i="spriteimage.generic.tangleweb.glow.04" d="3"/>
+			<frame i="spriteimage.generic.tangleweb.glow.05" d="3"/>
+			<animcolor a="128" d="3"/>
+			<animcolor a="64" d="3"/>
+			<animcolor a="50" d="4"/>
+			<animcolor a="40" d="5"/>
+			<animcolor a="30" d="6"/>
+			<label id="glowDownLoop"/>
+			<animcolor a="20" d="7"/>
+		<random>
+			<dest id="glowDownLoop" n="40"/>
+			<dest id="glow1"/>
+			<dest id="glow2"/>
+			<dest id="glow3"/>
+			<dest id="glow4"/>
+			<dest id="glow5"/>
+		</random>	
+
+	</animation>	
+
+
+
+	<!--  factory emitters -->
+
+	<property key="factory_beam_start_hue" value="0.17" />
+	<property key="factory_beam_start_hue_end" value="0.06" />
+	
+	<property key="factory_beam_end_hue" value="0.17" />
+	<property key="factory_beam_end_hue_end" value="0.06" />
+	
+	<emitter name="factory.beam.start.emitter" 
+		startHue="=$factory_beam_start_hue"
+		endHue="=$factory_beam_start_hue_end"
+		inherit="weapon.flash.capacitor.emitter"
+		emitterScale="0.75"
+	/>
+	
+	<emitter name="factory.beam.end.emitter" inherit="factory.beam.start.emitter" 
+		particlesPerTick="1.0" 
+		particleDuration="1.0" 
+		fadeDuration="1.0"
+		scale="0.4,0.6"
+		endScale="0.8,1.0"
+		emitterScale="0.3"
+		startBrightness="0.8,1.0"
+		endBrightness="0.5,1.0"
+		startSaturation="0.0"
+	>
+	 	<slave><emitter inherit="factory.beam.start.emitter"
+			emitterScale="1.0"
+			startBrightness="0.3,0.5"
+			endBrightness="0.2,0.4"
+		>
+	 		<slave><emitter inherit="ricochet.sparks.emitter" 
+	 			particlesPerTick="-3.0, 1.0" 
+	 			velocity="7,9"
+				acceleration="-0.75"
+				interpolation="1"
+				startHue="=$factory_beam_end_hue"
+				endHue="=$factory_beam_end_hue_end"
+				angle="0.0, 360.0"
+				emitterScale="0.55">
+				<slave><emitter inherit="ricochet.sparks.trail.emitter" 
+					startHue="=$factory_beam_end_hue" 
+					endHue="=$factory_beam_end_hue_end"
+					endBrightness="0.3"
+					emitterScale="0.55"/>
+				</slave>
+			</emitter></slave>
+		</emitter></slave>
+	</emitter>	
+
+
+	<instance
+		class="worm.buildings.FactoryBuildingFeature"
+		name="building.generic.factory"
+		inherit="factory.building.spec"
+		offset="=$4x4offsetX,$4x4offsetY"
+		floor="-4"
+		research="factory"
+	>
+		<beamStartEmitter>
+			<emitter inherit="factory.beam.start.emitter" />	
+		</beamStartEmitter>
+		<beamEndEmitter>
+			<emitter inherit="factory.beam.end.emitter" />	
+		</beamEndEmitter>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.factory.ground.01"/>
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.factory.back.01"/>
+				<emitter offset="23.5,9" ySortOffset="57" emitter="steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.factory.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.factory.top.01"/>
+				<sprite layer="5" sublayer="5" offset="0,0" animation="generic.factory.glow.zap.animation"/>	
+			</layers>
+		</appearance>
+
+		<shutdownAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.factory.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.factory.off.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.factory.top.01"/>
+				<sprite layer="5" sublayer="5" offset="0,0" animation="generic.factory.glow.shutdown.animation"/>
+			</layers>
+		</shutdownAppearance>
+		
+		<deathAppearance>
+			<layers scale="0.5">
+				<!--  first sprite contains important event=1 to remove building -->
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.factory.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.4x4.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.factory.dead.ground.animation"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" animation="generic.factory.dead.top.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.start.emitter"/> 
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.end.emitter"/>
+				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$4x4xFire,0" ySortOffset="=$4x4yFloor" emitter="test.spread.emitter"/> -->
+				<!-- <emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.4x4.animation"/>
+				<emitter offset="=$4x4x,$4x4y" emitter="shield.4x4.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="shield.sparkle.4x4.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.4x4.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="forcefield.sparkle.4x4.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" image="spriteimage.info.factory.ground.01"/>
+				<sprite layer="10" sublayer="2" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.factory.01"/>
+				<sprite layer="10" sublayer="3" colored="buildings-alt" image="spriteimage.info.factory.top.01"/>
+				<sprite layer="10" sublayer="3" image="spriteimage.info.factory.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+
+			
+	<instance
+		class="worm.buildings.ReactorBuildingFeature"
+		name="building.generic.reactor"
+		inherit="reactor.building.spec"
+		offset="=$3x3offsetX,$3x3offsetY"
+		floor="-4"
+		research="reactor"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.reactor.ground.01"/>
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.reactor.back.01"/>
+				<emitter offset="23,8" ySortOffset="48" emitter="reactor.steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.reactor.animation"/>
+				<sprite layer="5" sublayer="4" offset="0, 0" animation="generic.reactor.glow.animation"/>
+				<sprite layer="5" sublayer="5" offset="13,36" animation="building.light.white.5px.phase.animation"/>
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.reactor.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.3x3.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.reactor.dead.ground.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.start.emitter"/> 
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.end.emitter"/>
+				<emitter offset="=$3x3xFire,=$3x3yFloor" ySortOffset="0" emitter="building.3x3.fire.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3ySparks" emitter="building.3x3.explosion.sparks.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.3x3.animation"/>
+				<emitter offset="=$3x3x,$3x3y" emitter="shield.3x3.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="shield.sparkle.3x3.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.3x3.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="forcefield.sparkle.3x3.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.reactor.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.reactor.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.reactor.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+			
+	<instance
+		class="worm.buildings.ShieldGeneratorBuildingFeature"
+		name="building.generic.shield"
+		inherit="shield.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="shieldgenerator"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.shield.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.shield.animation"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="generic.shield.glow.animation"/>
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.shield.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.shield.dead.ground.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.shield.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.shield.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.shield.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+
+
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.decoy"
+		inherit="decoy.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="decoy"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.decoy.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.decoy.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" animation="generic.decoy.glow.animation"/>
+				<sprite layer="5" sublayer="5" offset="6,22" animation="generic.decoy.flash.animation"/>
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.decoy.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.decoy.dead.ground.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.decoy.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.decoy.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.decoy.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+
+	
+	<instance
+		class="worm.buildings.WarehouseBuildingFeature"
+		name="building.generic.warehouse"
+		inherit="warehouse.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="warehouse"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.warehouse.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.warehouse.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.warehouse.top.01"/>
+				<sprite layer="5" sublayer="5" offset="0,0" animation="generic.warehouse.glow.animation"/>	
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.warehouse.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.warehouse.dead.ground.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.warehouse.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.warehouse.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.warehouse.top.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.warehouse.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+
+	<instance
+		class="worm.buildings.BarracksBuildingFeature"
+		name="building.generic.barracks"
+		inherit="barracks.building.spec"
+		offset="=$4x4offsetX,$4x4offsetY"
+		floor="-4"
+		research="barracks"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barracks.ground.01"/>
+				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.barracks.back.01"/>
+				<emitter offset="50,9" ySortOffset="65" emitter="barracks.steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.barracks.01"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.barracks.top.01"/>
+				<sprite layer="5" sublayer="5" offset="0,0" attenuated="false" animation="generic.barracks.glow.animation"/>	
+			</layers>
+		</appearance> 
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.barracks.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.4x4.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.barracks.dead.ground.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" animation="generic.barracks.dead.top.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.start.emitter"/> 
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.end.emitter"/>
+				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.4x4.animation"/>
+				<emitter offset="=$4x4x,$4x4y" emitter="shield.4x4.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="shield.sparkle.4x4.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.4x4.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="forcefield.sparkle.4x4.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.barracks.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.barracks.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.barracks.top.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" image="spriteimage.info.barracks.glow.01"/>
+			</layers>
+		</shopAppearance> 
+		
+	</instance>	
+
+	
+	
+	<instance
+		class="worm.buildings.CollectorBuildingFeature"
+		name="building.generic.collector"
+		inherit="collector.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="collector"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.collector.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.collector.animation"/>	
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.collector.top.01"/>
+				<sprite layer="5" sublayer="5" offset="0,0" animation="generic.collector.glow.animation"/>	
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.collector.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.collector.dead.ground.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.collector.top.01"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.collector.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.collector.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.collector.glow.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.collector.top.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+
+
+ 	<!--  ADD-ONS ============================================================================================================================== -->
+
+
+
+
+	<instance
+		class="worm.buildings.ScannerBuildingFeature"
+		name="building.generic.scanner"
+		inherit="scanner.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="scanner"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.scanner.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.scanner.animation"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="generic.scanner.glow.animation"/>
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.scanner.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.scanner.dead.ground.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.scanner.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.scanner.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.scanner.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+		
+	<instance
+		class="worm.buildings.BatteryBuildingFeature"
+		name="building.generic.battery"
+		inherit="battery.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="battery"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.battery.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.battery.animation"/>
+				<sprite layer="5" sublayer="3" offset="0, 0" animation="generic.battery.glow.animation"/>
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.battery.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.battery.dead.ground.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.battery.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.battery.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.battery.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+
+	<instance
+		class="worm.buildings.CoolingTowerBuildingFeature"
+		name="building.generic.coolingtower"
+		inherit="coolingtower.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="coolingtower"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.cooling.ground.01"/>
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.cooling.back.animation"/>
+				<emitter offset="22,2" ySortOffset="32" emitter="steam.burst.emitter"/>				
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.cooling.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" animation="generic.cooling.top.animation"/>
+				<sprite layer="5" sublayer="5" offset="0,0" animation="generic.cooling.glow.charge.animation"/>
+				<sprite layer="5" sublayer="5" offset="0,-1" animation="generic.cooling.glow.release.animation"/>
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.cooling.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.cooling.dead.ground.animation"/>
+				<sprite layer="4" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" animation="generic.cooling.dead.top.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.cooling.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.cooling.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.cooling.top.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.cooling.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+
+
+	<instance
+		class="worm.buildings.AutoLoaderBuildingFeature"
+		name="building.generic.autoloader"
+		inherit="autoloader.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="autoloader"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.autoloader.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.autoloader.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="generic.autoloader.glow.animation"/>
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.autoloader.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.autoloader.dead.ground.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.autoloader.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.autoloader.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.autoloader.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+
+
+
+ 	<!--  TURRETS ============================================================================================================================== -->
+
+
+	<instance
+		class="worm.buildings.CapacitorBuildingFeature"
+		name="building.generic.capacitor"
+		inherit="capacitor.building.spec"
+		offset="=$3x3offsetX,$3x3offsetY"
+		beamOffsetX="-3"
+		beamOffsetY="9"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="capacitor"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.capacitor.ground.01" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.capacitor.animation" />
+				<sprite layer="5" sublayer="3" offset="0, 0" animation="generic.capacitor.glow.animation"/>
+			</layers>
+		</appearance>
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.white.2px.01" d="0"/>
+				<scale xscale="0.7" yscale="1.2"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.capacitor.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.3x3.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.capacitor.dead.ground.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.start.emitter"/> 
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.end.emitter"/>
+				<emitter offset="=$3x3xFire,$3x3yFloor" ySortOffset="0" emitter="building.3x3.fire.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3ySparks" emitter="building.3x3.explosion.sparks.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.3x3.animation"/>
+				<emitter offset="=$3x3x,$3x3y" emitter="shield.3x3.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="shield.sparkle.3x3.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.3x3.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="forcefield.sparkle.3x3.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.capacitor.ground.01" />
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.capacitor.01" />
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.capacitor.glow.01" />
+			</layers>
+		</shopAppearance>	
+		
+	</instance>	
+
+		
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.blaster"
+		inherit="blaster.building.spec"
+		offset="=$3x3offsetX,$3x3offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="blaster"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.blaster.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.blaster.01"/>
+				<sprite layer="5" sublayer="3" offset="0, 0" image="spriteimage.generic.tower.blaster.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="1,28" animation="building.light.red.4px.blink.animation"/>
+				<!--<sprite layer="5" sublayer="4" offset="0,0" image="spriteimage.ammo.back.01"/>-->
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.blaster.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.blaster.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.ammo.13"/>
+			</layers>
+		</reloadAppearance>		
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.blaster.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.blaster.01"/>
+				<sprite layer="5" sublayer="3" offset="1,28" animation="building.light.red.4px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>		
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.red.2px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.blaster.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.3x3.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.blaster.dead.ground.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.start.emitter"/> 
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.end.emitter"/>
+				<emitter offset="=$3x3xFire,$3x3yFloor" ySortOffset="0" emitter="building.3x3.fire.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3ySparks" emitter="building.3x3.explosion.sparks.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.3x3.animation"/>
+				<emitter offset="=$3x3x,$3x3y" emitter="shield.3x3.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="shield.sparkle.3x3.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.3x3.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="forcefield.sparkle.3x3.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.blaster.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.blaster.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.blaster.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+			
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.heavyblaster"
+		inherit="heavyblaster.building.spec"
+		offset="=$3x3offsetX,$3x3offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="heavyblaster"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.heavyblaster.ground.01"/>	
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.heavyblaster.01"/>
+				<sprite layer="5" sublayer="3" offset="0, 0" image="spriteimage.generic.tower.heavyblaster.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="-14,31" animation="building.light.red.4px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="3,35" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.heavyblaster.ground.01"/>	
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.heavyblaster.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.ammo.13"/>
+			</layers>
+		</reloadAppearance>	
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.heavyblaster.ground.01"/>	
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.heavyblaster.01"/>
+				<sprite layer="5" sublayer="3" offset="-14,31" animation="building.light.red.4px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="3,35" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>				
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.orange.3px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.heavyblaster.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.3x3.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.heavyblaster.dead.ground.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.start.emitter"/> 
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.end.emitter"/>
+				<emitter offset="=$3x3xFire,$3x3yFloor" ySortOffset="0" emitter="building.3x3.fire.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3ySparks" emitter="building.3x3.explosion.sparks.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.3x3.animation"/>
+				<emitter offset="=$3x3x,$3x3y" emitter="shield.3x3.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="shield.sparkle.3x3.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.3x3.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="forcefield.sparkle.3x3.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.heavyblaster.ground.01"/>	
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.heavyblaster.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.heavyblaster.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+	
+
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.multiblaster"
+		inherit="multiblaster.building.spec"
+		offset="=$3x3offsetX,$3x3offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="multiblaster"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.multiblaster.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.multiblaster.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" image="spriteimage.generic.tower.multiblaster.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="-13,35" animation="building.light.red.4px.blink.animation"/>
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.multiblaster.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.multiblaster.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.ammo.13"/>
+			</layers>
+		</reloadAppearance>
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.multiblaster.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.multiblaster.01"/>
+				<sprite layer="5" sublayer="3" offset="-13,35" animation="building.light.red.4px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>						
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.yellow.2px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.multiblaster.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.3x3.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.multiblaster.dead.ground.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.start.emitter"/> 
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.end.emitter"/>
+				<emitter offset="=$3x3xFire,$3x3yFloor" ySortOffset="0" emitter="building.3x3.fire.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3ySparks" emitter="building.3x3.explosion.sparks.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.3x3.animation"/>
+				<emitter offset="=$3x3x,$3x3y" emitter="shield.3x3.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="shield.sparkle.3x3.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.3x3.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="forcefield.sparkle.3x3.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.multiblaster.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.multiblaster.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.multiblaster.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.blastcannon"
+		inherit="blastcannon.building.spec"
+		offset="=$3x3offsetX,$3x3offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="blastcannon"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.blastcannon.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.blastcannon.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" image="spriteimage.generic.tower.blastcannon.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="-14,38" animation="building.light.white.5px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="2,38" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.blastcannon.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.blastcannon.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.ammo.13"/>
+			</layers>
+		</reloadAppearance>	
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.blastcannon.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.blastcannon.01"/>
+				<sprite layer="5" sublayer="3" offset="-14,38" animation="building.light.white.5px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="2,38" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>				
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.cyan.3px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.blastcannon.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.3x3.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.blastcannon.dead.ground.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.start.emitter"/> 
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.end.emitter"/>
+				<emitter offset="=$3x3xFire,$3x3yFloor" ySortOffset="0" emitter="building.3x3.fire.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3ySparks" emitter="building.3x3.explosion.sparks.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.3x3.animation"/>
+				<emitter offset="=$3x3x,$3x3y" emitter="shield.3x3.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="shield.sparkle.3x3.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.3x3.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="forcefield.sparkle.3x3.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.blastcannon.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.blastcannon.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.blastcannon.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+
+	
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.shotgun"
+		inherit="shotgun.building.spec"
+		offset="=$3x3offsetX,$3x3offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="spreadercannon"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.spreader.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.spreader.01"/>
+				<sprite layer="5" sublayer="3" offset="0, 0" image="spriteimage.generic.tower.spreader.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="-1,37" animation="building.light.red.4px.blink.animation"/>
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.spreader.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.spreader.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.ammo.13"/>
+			</layers>
+		</reloadAppearance>
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.02"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.spreader.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.spreader.01"/>
+				<sprite layer="5" sublayer="3" offset="-1,37" animation="building.light.red.4px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>		
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.purple.2px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.spreader.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.3x3.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.spreader.dead.ground.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.start.emitter"/> 
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.end.emitter"/>
+				<emitter offset="=$3x3xFire,$3x3yFloor" ySortOffset="0" emitter="building.3x3.fire.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3ySparks" emitter="building.3x3.explosion.sparks.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.3x3.animation"/>
+				<emitter offset="=$3x3x,$3x3y" emitter="shield.3x3.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="shield.sparkle.3x3.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.3x3.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="forcefield.sparkle.3x3.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.spreader.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.spreader.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.spreader.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.assault"
+		inherit="assault.building.spec"
+		offset="=$4x4offsetX,$4x4offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="assaultcannon"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.assault.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.assault.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" image="spriteimage.generic.tower.assault.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="-13,42" animation="building.light.white.5px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="0,42" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.assault.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.assault.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.large.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.large.ammo.15"/>
+			</layers>
+		</reloadAppearance>	
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.assault.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.assault.01"/>
+				<sprite layer="5" sublayer="3" offset="-13,42" animation="building.light.white.5px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="0,42" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>		
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.green.3px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.assault.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.4x4.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.assault.dead.ground.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.start.emitter"/> 
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.end.emitter"/>
+				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.4x4.animation"/>
+				<emitter offset="=$4x4x,$4x4y" emitter="shield.4x4.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="shield.sparkle.4x4.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.4x4.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="forcefield.sparkle.4x4.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.assault.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.assault.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.assault.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+
+
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.rocket"
+		inherit="rocket.building.spec"
+		offset="=$4x4offsetX,$4x4offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="rockets"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.rockets.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.rockets.01"/>
+				<sprite layer="5" sublayer="3" offset="0, 0" image="spriteimage.generic.tower.rockets.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="11,43" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.rockets.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.rockets.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.large.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.large.ammo.15"/>
+			</layers>
+		</reloadAppearance>
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.rockets.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.rockets.01"/>
+				<sprite layer="5" sublayer="3" offset="11,43" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>	
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.purple.3px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.rockets.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.4x4.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.rockets.dead.ground.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.start.emitter"/> 
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.end.emitter"/>
+				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.4x4.animation"/>
+				<emitter offset="=$4x4x,$4x4y" emitter="shield.4x4.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="shield.sparkle.4x4.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.4x4.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="forcefield.sparkle.4x4.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.rockets.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.rockets.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.rockets.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.laser"
+		inherit="laser.building.spec"
+		offset="=$4x4offsetX,$4x4offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="laser"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.laser.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.laser.01"/>
+				<sprite layer="5" sublayer="3" offset="0, 0" image="spriteimage.generic.tower.laser.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="-24,40" animation="building.light.red.4px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="10,43" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.laser.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.laser.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.large.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.large.ammo.15"/>
+			</layers>
+		</reloadAppearance>
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.laser.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.laser.01"/>
+				<sprite layer="5" sublayer="3" offset="-24,40" animation="building.light.red.4px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="10,43" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>		
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.purple.3px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.laser.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.4x4.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.laser.dead.ground.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.start.emitter"/> 
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.end.emitter"/>
+				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.4x4.animation"/>
+				<emitter offset="=$4x4x,$4x4y" emitter="shield.4x4.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="shield.sparkle.4x4.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.4x4.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="forcefield.sparkle.4x4.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.laser.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.laser.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.laser.glow.01"/>
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.disruptor"
+		inherit="disruptor.building.spec"
+		offset="=$4x4offsetX,$4x4offsetY"
+		lightSpeed="4.0"
+		beamLayer="10"
+		floor="-4"
+		research="disruptor"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0, 0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.disruptor.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.disruptor.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.tower.disruptor.top.01"/>
+				<sprite layer="5" sublayer="4" offset="0, 0" image="spriteimage.generic.tower.disruptor.glow.01"/>
+				<sprite layer="5" sublayer="3" offset="3,45" animation="building.light.red.4px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="10,40" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</appearance>
+		<reloadAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.disruptor.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.disruptor.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.tower.disruptor.top.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="reload.large.indicator.back.animation"/>
+				<sprite layer="5" sublayer="2" offset="0,0" image="spriteimage.timer.large.ammo.15"/>
+			</layers>
+		</reloadAppearance>
+		<reloadingAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.03"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tower.disruptor.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tower.disruptor.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.tower.disruptor.top.01"/>
+				<sprite layer="5" sublayer="3" offset="3,45" animation="building.light.red.4px.blink.animation"/>
+				<sprite layer="5" sublayer="3" offset="10,40" animation="building.light.white.5px.blink.animation"/>
+			</layers>
+		</reloadingAppearance>		
+		<beam>
+			<animation>
+				<frame i="spriteimage.building.spot.purple.3px.01" d="0"/>
+				<frame i="beam.phase.animation" d="1"/>
+			</animation>
+		</beam>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tower.disruptor.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.4x4.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tower.disruptor.dead.ground.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.start.emitter"/> 
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.end.emitter"/>
+				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.4x4.animation"/>
+				<emitter offset="=$4x4x,$4x4y" emitter="shield.4x4.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="shield.sparkle.4x4.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.4x4.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="forcefield.sparkle.4x4.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tower.disruptor.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tower.disruptor.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.tower.disruptor.top.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tower.disruptor.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+
+
+
+
+ 	<!--  MINES ============================================================================================================================== -->
+
+
+	<instance
+		class="worm.buildings.MinefieldFeature"
+		name="building.generic.mine"
+		inherit="mine.building.spec"
+		mineExplosionEmitter="mine.explosion.emitter"
+		offset="=$mineoffsetX,$mineoffsetY"
+		floor="-4"
+		research="mines"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.mine.ground.01"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.mine.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" animation="generic.mine.glow.animation"/>
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.mine.dead.animation"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.mine.dead.ground.animation"/>
+				<emitter offset="25,25" ySortOffset="25" emitter="building.1x1.explosion.start.emitter"/> 
+				<emitter offset="25,25" ySortOffset="25" emitter="building.3x3.explosion.end.emitter"/>
+			</layers>
+		</deathAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" colored="shadow" image="spriteimage.info.mine.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.mine.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" image="spriteimage.info.mine.glow.01"/>	
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+	
+	<instance
+		class="worm.buildings.MinefieldFeature"
+		name="building.generic.clustermine"
+		inherit="clustermine.building.spec"
+		mineExplosionEmitter="clustermine.explosion.emitter"
+		offset="=$1x1offsetX,$1x1offsetY"
+		floor="-4"
+		research="clustermines"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" attenuated="true" colored="shadow" image="spriteimage.generic.clustermine.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.03"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.05"/>				
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.07"/>				
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" animation="generic.clustermine.glow.4.animation"/>
+			</layers>
+		</appearance>
+		<appearances>
+			<array>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" offset="0,0" attenuated="true" colored="shadow" image="spriteimage.generic.clustermine.ground.01"/>
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.01"/>
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.03"/>				
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.05"/>				
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.07"/>				
+						<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" animation="generic.clustermine.glow.4.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" offset="0,0" attenuated="true" colored="shadow" image="spriteimage.generic.clustermine.ground.02"/>
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.03"/>				
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.05"/>				
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.07"/>	
+						<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" animation="generic.clustermine.glow.3.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" offset="0,0" attenuated="true" colored="shadow" image="spriteimage.generic.clustermine.ground.03"/>
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.03"/>				
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.07"/>	
+						<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" animation="generic.clustermine.glow.2.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" offset="0,0" attenuated="true" colored="shadow" image="spriteimage.generic.clustermine.ground.04"/>
+						<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.clustermine.03"/>				
+						<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" animation="generic.clustermine.glow.1.animation"/>
+					</layers>
+				</item>
+			</array>
+		</appearances>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" colored="shadow" image="spriteimage.info.clustermine.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.clustermine.02"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.clustermine.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" image="spriteimage.info.clustermine.glow.01"/>
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+
+	<instance
+		class="worm.buildings.MinefieldFeature"
+		name="building.generic.blastmine"
+		inherit="blastmine.building.spec"
+		mineExplosionEmitter="blastmine.explosion.emitter"
+		offset="=$1x1offsetX,$1x1offsetY"
+		floor="-4"
+		research="blastmine"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.blastmine.ground.01"/>				
+				<sprite layer="5" sublayer="2" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.blastmine.01"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" animation="generic.blastmine.glow.animation"/>
+			</layers>
+		</appearance>
+		<armedAppearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.blastmine.ground.01"/>							
+				<sprite layer="5" sublayer="2" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0, 0" animation="generic.blastmine.armed.animation"/>
+				<sprite layer="5" sublayer="3" offset="0, 0" attenuated="false" animation="generic.blastmine.armed.glow.animation"/>
+			</layers>
+		</armedAppearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.blastmine.dead.animation"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.blastmine.dead.ground.animation"/>
+				<emitter offset="25,25" ySortOffset="25" emitter="building.1x1.explosion.start.emitter"/> 
+				<emitter offset="25,25" ySortOffset="25" emitter="building.4x4.explosion.end.emitter"/>
+			</layers>
+		</deathAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.blastmine.ground.01"/>				
+				<sprite layer="10" sublayer="2" bottomColored="buildings-shop-floor" topColored="buildings" offset="0,0" image="spriteimage.info.blastmine.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" image="spriteimage.info.blastmine.glow.01"/>		
+			</layers>
+		</shopAppearance>
+		
+	</instance>	
+
+	
+	
+	
+	 <!--  BARRICADES ============================================================================================================================== -->
+	
+	
+	
+	
+	<instance
+		class="worm.buildings.BarricadeFeature"
+		name="building.generic.concrete"
+		inherit="concrete.building.spec"
+		offset="=$1x1offsetX,$1x1offsetY"
+		floor="-4"
+		research="concrete"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.concrete.ground.01"/>
+				<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.concrete.03"/>
+				<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.generic.barricade.concrete.top.03"/>
+			</layers>
+		</appearance>		
+		<appearances>
+			<array>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.concrete.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.concrete.02"/>
+						<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.generic.barricade.concrete.top.02"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.concrete.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.concrete.01"/>
+						<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.generic.barricade.concrete.top.01"/>
+					</layers>
+				</item>
+			</array>
+		</appearances>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" animation="generic.barricade.concrete.dead.animation"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" animation="generic.barricade.concrete.dead.ground.animation"/>
+				<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" animation="generic.barricade.concrete.dead.top.animation"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.start.emitter"/> 
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.end.emitter"/>
+				<emitter offset="=$1x1xFire,$1x1yFloor" ySortOffset="0" emitter="building.1x1.fire.emitter"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1ySparks" emitter="building.1x1.explosion.sparks.emitter"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$1x1x,0" ySortOffset="=$1x1y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.barricade.concrete.ground.01"/>
+				<sprite layer="10" sublayer="2" bottomColored="buildings-shop-floor" topColored="buildings" offset="0,0" image="spriteimage.info.barricade.concrete.01"/>
+				<sprite layer="10" sublayer="3" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.info.barricade.concrete.top.01"/>
+			</layers>
+		</shopAppearance>	
+	
+	</instance>
+	
+	<instance
+		class="worm.buildings.BarricadeFeature"
+		name="building.generic.steel"
+		inherit="steel.building.spec"
+		offset="=$1x1offsetX,$1x1offsetY"
+		floor="-4"
+		research="steel"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.steel.ground.01"/>
+				<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.steel.04"/>
+				<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.generic.barricade.steel.top.04"/>
+				<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.steel.highlight.04"/>
+			</layers>
+		</appearance>		
+		<appearances>
+			<array>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.steel.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.steel.03"/>
+						<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.generic.barricade.steel.top.03"/>
+						<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.steel.highlight.03"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.steel.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.steel.02"/>
+						<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.generic.barricade.steel.top.02"/>
+						<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.steel.highlight.02"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.steel.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.steel.01"/>
+						<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.generic.barricade.steel.top.01"/>
+						<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.steel.highlight.01"/>
+					</layers>
+				</item>
+			</array>
+		</appearances>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" animation="generic.barricade.steel.dead.animation"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" animation="generic.barricade.steel.dead.ground.animation"/>
+				<sprite layer="5" sublayer="4" attenuated="false" colored="buildings-alt" offset="0,0" animation="generic.barricade.steel.dead.top.animation"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.start.emitter"/> 
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.end.emitter"/>
+				<emitter offset="=$1x1xFire,$1x1yFloor" ySortOffset="0" emitter="building.1x1.fire.emitter"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1ySparks" emitter="building.1x1.explosion.sparks.emitter"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$1x1x,0" ySortOffset="=$1x1y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+		
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.barricade.steel.ground.01"/>
+				<sprite layer="10" sublayer="2" bottomColored="buildings-shop-floor" topColored="buildings" offset="0,0" image="spriteimage.info.barricade.steel.01"/>
+				<sprite layer="10" sublayer="3" attenuated="false" colored="buildings-alt" offset="0,0" image="spriteimage.info.barricade.steel.top.01"/>
+				<sprite layer="10" sublayer="3" colored="buildings-highlight" offset="0,0" image="spriteimage.info.barricade.steel.glow.01"/>
+			</layers>
+		</shopAppearance>	
+
+	</instance>	
+	
+	<instance
+		class="worm.buildings.BarricadeFeature"
+		name="building.generic.titanium"
+		inherit="titanium.building.spec"
+		offset="=$1x1offsetX,$1x1offsetY"
+		floor="-4"
+		research="titanium"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.titanium.ground.01"/>
+				<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.titanium.05"/>
+				<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.titanium.top.05"/>
+			</layers>
+		</appearance>		
+		<appearances>
+			<array>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.titanium.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.titanium.04"/>
+						<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.titanium.top.04"/>
+						<sprite layer="5" sublayer="5" attenuated="false" offset="0,0" animation="generic.barricade.titanium.glow.damaged.2.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.titanium.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.titanium.03"/>
+						<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.titanium.top.03"/>
+						<sprite layer="5" sublayer="5" attenuated="false" offset="0,0" animation="generic.barricade.titanium.glow.damaged.2.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.titanium.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.titanium.02"/>
+						<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.titanium.top.02"/>
+						<sprite layer="5" sublayer="5" attenuated="false" offset="0,0" animation="generic.barricade.titanium.glow.damaged.1.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.titanium.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.titanium.01"/>
+						<sprite layer="5" sublayer="5" attenuated="true" colored="buildings-highlight" offset="0,0" image="spriteimage.generic.barricade.titanium.top.01"/>
+						<sprite layer="5" sublayer="5" attenuated="false" offset="0,0" animation="generic.barricade.titanium.glow.animation"/>
+					</layers>
+				</item>
+			</array>
+		</appearances>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" animation="generic.barricade.titanium.dead.animation"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" animation="generic.barricade.titanium.dead.ground.animation"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.start.emitter"/> 
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.end.emitter"/>
+				<emitter offset="=$1x1xFire,$1x1yFloor" ySortOffset="0" emitter="building.1x1.fire.emitter"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1ySparks" emitter="building.1x1.explosion.sparks.emitter"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$1x1x,0" ySortOffset="=$1x1y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.barricade.titanium.ground.01"/>
+				<sprite layer="10" sublayer="2" bottomColored="buildings-shop-floor" topColored="buildings" offset="0,0" image="spriteimage.info.barricade.titanium.01"/>
+				<sprite layer="10" sublayer="3" colored="buildings-highlight" offset="0,0" image="spriteimage.info.barricade.titanium.top.01"/>
+				<sprite layer="10" sublayer="3" attenuated="false" offset="0,0" image="spriteimage.info.barricade.titanium.glow.01"/>		
+			</layers>
+		</shopAppearance>	
+
+	</instance>
+	
+	<instance
+		class="worm.buildings.BarricadeFeature"
+		name="building.generic.nanomesh"
+		inherit="nanomesh.building.spec"
+		offset="=$1x1offsetX,$1x1offsetY"
+		floor="-4"
+		research="nanomesh"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.nanomesh.ground.01"/>
+				<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.nanomesh.06"/>
+			</layers>
+		</appearance>		
+		<appearances>
+			<array>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.nanomesh.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.nanomesh.05"/>
+						
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.nanomesh.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.nanomesh.04"/>
+						<sprite layer="5" sublayer="5" attenuated="false" offset="0,0" animation="generic.barricade.nanomesh.glow.damaged.2.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.nanomesh.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.nanomesh.03"/>
+						<sprite layer="5" sublayer="5" attenuated="false" offset="0,0" animation="generic.barricade.nanomesh.glow.damaged.2.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.nanomesh.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.nanomesh.02"/>
+						<sprite layer="5" sublayer="5" attenuated="false" offset="0,0" animation="generic.barricade.nanomesh.glow.damaged.1.animation"/>
+					</layers>
+				</item>				
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barricade.nanomesh.ground.01"/>
+						<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" image="spriteimage.generic.barricade.nanomesh.01"/>
+						<sprite layer="5" sublayer="5" attenuated="false" offset="0,0" animation="generic.barricade.nanomesh.glow.animation"/>
+					</layers>
+				</item>		
+			</array>
+		</appearances>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="3" attenuated="true" bottomColored="floor-fog" topColored="buildings" offset="0,0" animation="generic.barricade.nanomesh.dead.animation"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" animation="generic.barricade.nanomesh.dead.ground.animation"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.start.emitter"/> 
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.end.emitter"/>
+				<emitter offset="=$1x1xFire,$1x1yFloor" ySortOffset="0" emitter="building.1x1.fire.emitter"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1ySparks" emitter="building.1x1.explosion.sparks.emitter"/>
+				<emitter offset="=$1x1x,0" ySortOffset="=$1x1yExplode" emitter="building.1x1.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$1x1x,0" ySortOffset="=$1x1y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>	
+
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.barricade.nanomesh.ground.01"/>
+				<sprite layer="10" sublayer="2" bottomColored="buildings-shop-floor" topColored="buildings" offset="0,0" image="spriteimage.info.barricade.nanomesh.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.barricade.nanomesh.glow.01"/>
+			</layers>
+		</shopAppearance>		
+	
+	</instance>
+	
+	<instance
+		class="worm.buildings.BarricadeFeature"
+		name="building.generic.tangleweb"
+		inherit="tangleweb.building.spec"
+		offset="=$1x1offsetX,$1x1offsetY"
+		floor="-4"
+		research="tangleweb"
+	>
+
+
+		<appearances>
+			<array>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="-6,0" colored="shadow" attenuated="true" image="spriteimage.generic.tangleweb.ground.01"/>
+						<sprite layer="5" sublayer="3" offset="-6,0" bottomColored="floor-fog" topColored="buildings" attenuated="true" image="spriteimage.generic.tangleweb.01"/>
+						<sprite layer="5" sublayer="5" offset="-6,0" attenuated="false" animation="generic.tangleweb.glow.animation"/>
+						<sprite layer="4" sublayer="2" offset="6,12" ySortOffset="12" colored="shadow" attenuated="true" image="spriteimage.generic.tangleweb.ground.01"/>
+						<sprite layer="5" sublayer="3" offset="6,12" ySortOffset="12" bottomColored="floor-fog" topColored="buildings" attenuated="true" image="spriteimage.generic.tangleweb.01"/>
+						<sprite layer="5" sublayer="5" offset="6,12" ySortOffset="12" attenuated="false" animation="generic.tangleweb.glow.animation"/>
+					</layers>
+				</item>
+				<item>
+					<layers scale="0.5">
+						<sprite layer="4" sublayer="2" offset="5,-1" ySortOffset="-1" colored="shadow" attenuated="true" image="spriteimage.generic.tangleweb.ground.01"/>
+						<sprite layer="5" sublayer="3" offset="5,-1" ySortOffset="-1" bottomColored="floor-fog" topColored="buildings" attenuated="true" image="spriteimage.generic.tangleweb.01"/>
+						<sprite layer="5" sublayer="5" offset="5,-1" ySortOffset="-1" attenuated="false" animation="generic.tangleweb.glow.animation"/>
+						<sprite layer="4" sublayer="2" offset="-5,13" ySortOffset="13" colored="shadow" attenuated="true" image="spriteimage.generic.tangleweb.ground.01"/>
+						<sprite layer="5" sublayer="3" offset="-5,13" ySortOffset="13" bottomColored="floor-fog" topColored="buildings" attenuated="true" image="spriteimage.generic.tangleweb.01"/>
+						<sprite layer="5" sublayer="5" offset="-5,13" ySortOffset="13" attenuated="false" animation="generic.tangleweb.glow.animation"/>
+					</layers>
+				</item>
+			</array>
+		</appearances>		
+
+		<shopAppearance>
+			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tangleweb.ground.01"/>
+				<sprite layer="10" sublayer="2" bottomColored="buildings-shop-floor" topColored="buildings" offset="0,0" image="spriteimage.info.tangleweb.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.tangleweb.glow.01"/>
+			</layers>
+		</shopAppearance>		
+	
+	</instance>
+	
+	
+	<!-- NEW ======================================================================================================================= -->
+		
+	
+	<instance
+		class="worm.buildings.BarracksBuildingFeature"
+		name="building.generic.tankfactory"
+		inherit="tankfactory.building.spec"
+		offset="=$4x4offsetX,$4x4offsetY"
+		floor="-4"
+		research="tankfactory"
+	>
+		<appearance>
+			<layers scale="0.5">
+			</layers>
+		</appearance> 
+		<deathAppearance>
+			<layers scale="0.5">
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.4x4.animation"/>
+				<emitter offset="=$4x4x,$4x4y" emitter="shield.4x4.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="shield.sparkle.4x4.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.4x4.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="forcefield.sparkle.4x4.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+			</layers>
+		</shopAppearance> 
+		
+	</instance>	
+	
+
+	<instance
+		class="worm.buildings.BarracksBuildingFeature"
+		name="building.generic.repairdrones"
+		inherit="repairdrones.building.spec"
+		offset="=$4x4offsetX,$4x4offsetY"
+		floor="-4"
+		research="repairdrones"
+	>
+		<appearance>
+			<layers scale="0.5">
+			</layers>
+		</appearance> 
+		<deathAppearance>
+			<layers scale="0.5">
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.4x4.animation"/>
+				<emitter offset="=$4x4x,$4x4y" emitter="shield.4x4.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="shield.sparkle.4x4.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.4x4.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="forcefield.sparkle.4x4.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+			</layers>
+		</shopAppearance> 
+		
+	</instance>	
+	
+	
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.scarecrow"
+		inherit="scarecrow.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="scarecrow"
+	>
+		<appearance>
+			<layers scale="0.5">
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+	
+
+	<instance
+		class="worm.buildings.TurretBuildingFeature"
+		name="building.generic.cloakingdevice"
+		inherit="cloakingdevice.building.spec"
+		offset="=$2x2offsetX,$2x2offsetY"
+		floor="-4"
+		research="cloakingdevice"
+	>
+		<appearance>
+			<layers scale="0.5">
+			</layers>
+		</appearance>
+		<deathAppearance>
+			<layers scale="0.5">
+			</layers>
+		</deathAppearance>	
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
+				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+		
+		<shopAppearance>
+			<layers scale="0.5">
+			</layers>
+		</shopAppearance>		
+		
+	</instance>	
+		
+	
+	<!-- CRYSTALS ======================================================================================================================= -->
+	
+	<animation name="crystal.top.fade.anim">
+
+		<random>
+			<dest seq="2"/>
+			<dest seq="4"/>
+			<dest seq="6"/>
+			<dest seq="8"/>
+			<dest seq="10"/>
+			<dest seq="12"/>
+			<dest seq="14"/>
+			<dest seq="16"/>
+			<dest seq="18"/>
+			<dest seq="20"/>
+			<dest seq="22"/>
+			<dest seq="24"/>
+			<dest seq="26"/>
+			<dest seq="28"/>
+		</random>
+
+		<label id="start"/>
+			<animcolor a="0" d="3" />
+			<animcolor a="5" d="3" />
+			<animcolor a="14" d="3" />
+			<animcolor a="24" d="3" />
+			<animcolor a="36" d="3" />
+			<animcolor a="49" d="3" />
+			<animcolor a="63" d="3" />
+			<animcolor a="77" d="3" />
+			<animcolor a="91" d="3" />
+			<animcolor a="106" d="3" />
+			<animcolor a="121" d="3" />
+			<animcolor a="136" d="3" />
+			<animcolor a="151" d="3" />
+			<animcolor a="166" d="3" />
+			<animcolor a="181" d="3" />
+			<animcolor a="196" d="3" />
+			<animcolor a="210" d="3" />
+			<animcolor a="224" d="3" />
+			<animcolor a="237" d="3" />
+			<animcolor a="248" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="254" d="3" />
+			<animcolor a="253" d="3" />
+			<animcolor a="252" d="3" />
+			<animcolor a="250" d="3" />
+			<animcolor a="247" d="3" />
+			<animcolor a="244" d="3" />
+			<animcolor a="240" d="3" />
+			<animcolor a="236" d="3" />
+			<animcolor a="231" d="3" />
+			<animcolor a="226" d="3" />
+			<animcolor a="220" d="3" />
+			<animcolor a="214" d="3" />
+			<animcolor a="208" d="3" />
+			<animcolor a="201" d="3" />
+			<animcolor a="194" d="3" />
+			<animcolor a="186" d="3" />
+			<animcolor a="178" d="3" />
+			<animcolor a="170" d="3" />
+			<animcolor a="162" d="3" />
+			<animcolor a="153" d="3" />
+			<animcolor a="144" d="3" />
+			<animcolor a="135" d="3" />
+			<animcolor a="126" d="3" />
+			<animcolor a="117" d="3" />
+			<animcolor a="107" d="3" />
+			<animcolor a="98" d="3" />
+			<animcolor a="88" d="3" />
+			<animcolor a="79" d="3" />
+			<animcolor a="70" d="3" />
+			<animcolor a="60" d="3" />
+			<animcolor a="51" d="3" />
+			<animcolor a="43" d="3" />
+			<animcolor a="34" d="3" />
+			<animcolor a="27" d="3" />
+			<animcolor a="19" d="3" />
+			<animcolor a="13" d="3" />
+			<animcolor a="8" d="3" />
+			<animcolor a="3" d="3" />
+			<animcolor a="0" d="3" />	
+		<goto id="start"/>
+	</animation>
+
+	
+	<animation name="crystal.small.top.01.anim">
+		<frame i="spriteimage.crystal.small.top.01" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.small.top.02.anim">
+		<frame i="spriteimage.crystal.small.top.02" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>	
+	<animation name="crystal.small.top.03.anim">
+		<frame i="spriteimage.crystal.small.top.03" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.small.top.04.anim">
+		<frame i="spriteimage.crystal.small.top.04" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>	
+	<animation name="crystal.small.top.05.anim">
+		<frame i="spriteimage.crystal.small.top.05" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.small.top.06.anim">
+		<frame i="spriteimage.crystal.small.top.06" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>	
+	<animation name="crystal.small.top.07.anim">
+		<frame i="spriteimage.crystal.small.top.07" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.small.top.08.anim">
+		<frame i="spriteimage.crystal.small.top.08" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>	
+	<animation name="crystal.small.top.09.anim">
+		<frame i="spriteimage.crystal.small.top.09" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.small.top.10.anim">
+		<frame i="spriteimage.crystal.small.top.10" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>	
+	<animation name="crystal.small.top.11.anim">
+		<frame i="spriteimage.crystal.small.top.11" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.small.top.12.anim">
+		<frame i="spriteimage.crystal.small.top.12" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>			
+	
+	<animation name="crystal.medium.top.01.anim">
+		<frame i="spriteimage.crystal.medium.top.01" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.medium.top.02.anim">
+		<frame i="spriteimage.crystal.medium.top.02" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>	
+	<animation name="crystal.medium.top.03.anim">
+		<frame i="spriteimage.crystal.medium.top.03" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.medium.top.04.anim">
+		<frame i="spriteimage.crystal.medium.top.04" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>	
+	<animation name="crystal.medium.top.05.anim">
+		<frame i="spriteimage.crystal.medium.top.05" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	<animation name="crystal.medium.top.06.anim">
+		<frame i="spriteimage.crystal.medium.top.06" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>		
+
+	<animation name="crystal.large.top.01.anim">
+		<frame i="spriteimage.crystal.large.top.01" d="0"/>
+		<frame i="crystal.top.fade.anim" d="0"/>
+	</animation>
+	
+
+	<include resource="crystals.xml" />
+	<include resource="crystals-2tone.xml" />
+
+
+		
+</resources>

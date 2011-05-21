@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+	<resources>
+
+		<ruin name="earth.ruin.1x1.01" i="1501" layer="2" roads="true" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="10,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.03" />
+			<sprite layer="4" sublayer="2" offset="10,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.03" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.02" i="1502" layer="2" roads="true" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.02" />
+			<sprite layer="4" sublayer="2" offset="0,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.02" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.03" i="1503" layer="2" roads="true" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.03" />
+			<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.03" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.04" i="1504" layer="2" roads="true" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="9,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.02" />
+			<sprite layer="4" sublayer="2" offset="9,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.02" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.tank.01" i="1505" layer="2" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.tank.01" />
+			<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.tank.ground.01" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.tank.02" i="1506" layer="2" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="1,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.tank.02" />
+			<sprite layer="4" sublayer="2" offset="1,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.tank.ground.02" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.tank.03" i="1507" layer="2" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.tank.03" />
+			<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.tank.ground.03" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.tank.04" i="1508" layer="2" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.tank.04" />
+			<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.tank.ground.04" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.05" i="1509" layer="2" roads="true" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="-2,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.01" />
+			<sprite layer="4" sublayer="2" offset="-2,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.01" />
+			<sprite layer="5" sublayer="1" offset="-2,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.01" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="13,0" ySortOffset="9"  />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.06" i="1510" layer="2" roads="true" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.02" />
+			<sprite layer="4" sublayer="2" offset="0,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.02" />
+			<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.02" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="6,0" ySortOffset="9"  />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.1x1.07" i="1511" layer="2" roads="true" ruin="true" width="1" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="-3,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.04" />
+			<sprite layer="4" sublayer="2" offset="-3,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.04" />
+			<sprite layer="5" sublayer="1" offset="-3,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.04" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="17,0" ySortOffset="9"  />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.2x1.01" i="1512" layer="2" roads="true" ruin="true" width="2" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.02" />
+			<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.02" />
+			<sprite layer="5" sublayer="3" offset="32,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.02" />
+			<sprite layer="4" sublayer="2" offset="32,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.02" />
+			<sprite layer="5" sublayer="1" offset="32,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.02" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="40,0" ySortOffset="9"  />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.2x1.02" i="1513" layer="2" roads="true" ruin="true" width="2" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="32,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.03" />
+			<sprite layer="4" sublayer="2" offset="32,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.03" />
+			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.04" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="22,0" ySortOffset="9"  />
+			<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.04" />
+			<sprite layer="4" sublayer="2" offset="0,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.04" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.2x1.03" i="1514" layer="2" roads="true" ruin="true" width="2" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="1,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.05" />
+			<sprite layer="4" sublayer="2" offset="1,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.05" />
+			<sprite layer="5" sublayer="3" offset="29,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.02" />
+			<sprite layer="4" sublayer="2" offset="29,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.02" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.2x1.04" i="1515" layer="2" roads="true" ruin="true" width="2" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="9,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.02" />
+			<sprite layer="4" sublayer="2" offset="9,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.02" />
+			<sprite layer="5" sublayer="3" offset="28,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.04" />
+			<sprite layer="4" sublayer="2" offset="28,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.04" />
+			<sprite layer="5" sublayer="1" offset="28,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.04" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="50,0" ySortOffset="9"  />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.2x1.05" i="1516" layer="2" roads="true" ruin="true" width="2" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="32,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.01" />
+			<sprite layer="4" sublayer="2" offset="32,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.01" />
+			<sprite layer="5" sublayer="3" offset="11,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.03" />
+			<sprite layer="4" sublayer="2" offset="11,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.03" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.2x1.06" i="1517" layer="2" roads="true" ruin="true" width="2" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.04" />
+			<sprite layer="4" sublayer="2" offset="0,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.04" />
+			<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.04" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="20,0" ySortOffset="9"  />
+			<sprite layer="5" sublayer="3" offset="42,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.01" />
+			<sprite layer="4" sublayer="2" offset="42,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.01" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.2x1.07" i="1518" layer="2" roads="true" ruin="true" width="2" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="6,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.01" />
+			<sprite layer="4" sublayer="2" offset="6,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.01" />
+			<sprite layer="5" sublayer="3" offset="27,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.02" />
+			<sprite layer="4" sublayer="2" offset="27,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.02" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.3x1.01" i="1519" layer="2" roads="true" ruin="true" width="3" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="31,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.04" />
+			<sprite layer="4" sublayer="2" offset="31,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.04" />
+			<sprite layer="5" sublayer="1" offset="31,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.04" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="53,0" ySortOffset="9"  />
+			<sprite layer="5" sublayer="3" offset="73,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.02" />
+			<sprite layer="4" sublayer="2" offset="73,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.02" />
+			<sprite layer="5" sublayer="3" offset="12,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.01" />
+			<sprite layer="4" sublayer="2" offset="12,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.01" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.3x1.02" i="1520" layer="2" roads="true" ruin="true" width="3" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="1,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.05" />
+			<sprite layer="4" sublayer="2" offset="1,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.05" />
+			<sprite layer="5" sublayer="3" offset="26,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.04" />
+			<sprite layer="4" sublayer="2" offset="26,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.04" />
+			<sprite layer="5" sublayer="3" offset="73,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.03" />
+			<sprite layer="4" sublayer="2" offset="73,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.03" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.3x1.03" i="1521" layer="2" roads="true" ruin="true" width="3" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="32,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.01" />
+			<sprite layer="4" sublayer="2" offset="32,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.01" />
+			<sprite layer="5" sublayer="3" offset="0,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.03" />
+			<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.03" />
+			<sprite layer="5" sublayer="3" offset="60,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.04" />
+			<sprite layer="4" sublayer="2" offset="60,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.04" />
+			<sprite layer="5" sublayer="1" offset="60,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.04" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="82,0" ySortOffset="9"  />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.3x1.04" i="1522" layer="2" roads="true" ruin="true" width="3" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="7,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.02" />
+			<sprite layer="4" sublayer="2" offset="7,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.02" />
+			<sprite layer="5" sublayer="3" offset="27,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.03" />
+			<sprite layer="4" sublayer="2" offset="27,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.03" />
+			<sprite layer="5" sublayer="1" offset="27,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.03" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="38,0" ySortOffset="9"  />
+			<sprite layer="5" sublayer="3" offset="67,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.05" />
+			<sprite layer="4" sublayer="2" offset="67,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.05" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.3x1.05" i="1523" layer="2" roads="true" ruin="true" width="3" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="77,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.04" />
+			<sprite layer="4" sublayer="2" offset="77,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.04" />
+			<sprite layer="5" sublayer="3" offset="42,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.04" />
+			<sprite layer="4" sublayer="2" offset="42,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.04" />
+			<sprite layer="5" sublayer="3" offset="4,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.02" />
+			<sprite layer="4" sublayer="2" offset="4,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.02" />
+			<sprite layer="5" sublayer="1" offset="4,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.02" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="12,0" ySortOffset="9"  />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.4x1.01" i="1524" layer="2" roads="true" ruin="true" width="4" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="104,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.04" />
+			<sprite layer="4" sublayer="2" offset="104,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.04" />
+			<sprite layer="5" sublayer="3" offset="60,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.06" />
+			<sprite layer="4" sublayer="2" offset="60,3" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.06" />
+			<sprite layer="5" sublayer="3" offset="8,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.01" />
+			<sprite layer="4" sublayer="2" offset="8,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.01" />
+			<sprite layer="5" sublayer="1" offset="8,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.01" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="23,0" ySortOffset="9"  />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.4x1.02" i="1525" layer="2" roads="true" ruin="true" width="4" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="67,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.05" />
+			<sprite layer="4" sublayer="2" offset="67,3" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.05" />
+			<sprite layer="5" sublayer="3" offset="31,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.04" />
+			<sprite layer="4" sublayer="2" offset="31,3" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.04" />
+			<sprite layer="5" sublayer="3" offset="1,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.02" />
+			<sprite layer="4" sublayer="2" offset="1,1" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.burning.ground.02" />
+			<sprite layer="5" sublayer="1" offset="1,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.burning.back.02" />
+			<emitter emitter="ruins.inside.fire.emitter" offset="9,0" ySortOffset="9"  />
+			<sprite layer="5" sublayer="3" offset="102,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.small.03" />
+			<sprite layer="4" sublayer="2" offset="102,0" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.small.ground.03" />
+		</layers></layers></ruin>
+
+		<ruin name="earth.ruin.4x1.03" i="1526" layer="2" roads="true" ruin="true" width="4" height="1" ySortOffset="6"><layers><layers scale="0.5">
+ 			<sprite layer="5" sublayer="3" offset="93,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.07" />
+			<sprite layer="4" sublayer="2" offset="93,3" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.07" />
+			<sprite layer="5" sublayer="3" offset="44,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.08" />
+			<sprite layer="4" sublayer="2" offset="44,3" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.08" />
+			<sprite layer="5" sublayer="3" offset="6,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.earth.ruin.building.03" />
+			<sprite layer="4" sublayer="2" offset="6,3" colored="shadow" attenuated="true" image="spriteimage.earth.ruin.building.ground.03" />
+		</layers></layers></ruin>
+
+	</resources>

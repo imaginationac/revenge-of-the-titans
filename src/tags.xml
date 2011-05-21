@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!--  Tags -->
+
+<resources>
+
+	<!-- All the mappings to tags -->
+	<map tag="font" class="com.shavenpuppy.jglib.opengl.GLFont" />
+	<map tag="texture" class="com.shavenpuppy.jglib.opengl.GLTexture" />
+	<map tag="soundbank" class="com.shavenpuppy.jglib.openal.SoundBank" />
+	<map tag="soundclip" class="com.shavenpuppy.jglib.openal.SoundClip" />
+	<map tag="imagebank" class="com.shavenpuppy.jglib.sprites.ImageBank" />
+	<map tag="colorseq" class="com.shavenpuppy.jglib.resources.ColorSequenceResource" />
+	<map tag="buffer" class="com.shavenpuppy.jglib.openal.ALBuffer" />
+	<map tag="ogg" class="com.shavenpuppy.jglib.sound.OggVorbis" />
+	<map tag="buffer" class="com.shavenpuppy.jglib.openal.ALBuffer" />
+	<map tag="stream" class="com.shavenpuppy.jglib.openal.ALStream" />
+	<map tag="text" class="com.shavenpuppy.jglib.resources.TextResource" />
+	<map tag="dynamic" class="com.shavenpuppy.jglib.resources.DynamicResource" />
+	<map tag="emitter" class="net.puppygames.applet.effects.EmitterFeature" />
+	<map tag="widgetbackground" class="com.shavenpuppy.jglib.resources.Background"/>
+	<map tag="powerdisplay" class="net.puppygames.applet.widgets.PowerDisplayFeature" />
+	<map tag="compoundeffect" class="net.puppygames.applet.effects.CompoundEffectFeature" />
+	<map tag="labeleffect" class="net.puppygames.applet.effects.LabelEffectFeature" />
+	<map tag="spriteeffect" class="net.puppygames.applet.effects.SpriteEffectFeature" />
+	<map tag="strobeeffect" class="net.puppygames.applet.effects.StrobeEffectFeature" />
+	<map tag="binding" class="net.puppygames.applet.Binding" />
+	<map tag="animation" class="com.shavenpuppy.jglib.sprites.Animation"/>
+	<map tag="array" class="com.shavenpuppy.jglib.resources.ResourceArray" />
+	<map tag="strings" class="com.shavenpuppy.jglib.resources.StringArray"/>
+	<map tag="area" class="net.puppygames.applet.Area" />
+	<map tag="colormap" class="com.shavenpuppy.jglib.resources.ColorMapFeature"/>
+	<map tag="anchor" class="net.puppygames.applet.Anchor" />
+	
+	<!-- Game specific tags -->
+	<map tag="layers" class="worm.features.LayersFeature" />
+	<map tag="bullet" class="worm.features.BulletFeature" />
+	<map tag="weapon" class="worm.weapons.WeaponFeature" />
+	<map tag="shake" class="worm.animation.ShakeCommand" />
+	<map tag="lock" class="worm.animation.LockCommand" />
+	<map tag="unlock" class="worm.animation.UnlockCommand" />
+	<map tag="setlayers" class="worm.animation.LayersCommand" />
+	<map tag="notify" class="worm.animation.NotifyCommand"/>
+	<map tag="followplayer" class="worm.animation.LightAngleCommand"/>
+	<map tag="gidrah" class="worm.features.GidrahFeature" />
+	<map tag="world" class="worm.features.WorldFeature" />
+	<map tag="level" class="worm.features.LevelFeature" />
+	<map tag="levelcolors" class="worm.features.LevelColorsFeature" />
+	<map tag="tileset" class="worm.features.TileSetFeature" />
+	<map tag="decal" class="worm.features.DecalFeature" />
+	<map tag="character" class="worm.features.CharacterFeature" />
+	<map tag="setting" class="worm.features.SettingFeature" />
+	<map tag="cavetemplate" class="worm.features.CaveTemplateFeature" />
+	<map tag="perlintemplate" class="worm.features.PerlinTemplateFeature" />
+	<map tag="plainstemplate" class="worm.features.PlainsTemplateFeature" />
+	<map tag="emptytemplate" class="worm.features.EmptyTemplateFeature" />
+	<map tag="unit" class="worm.features.UnitFeature"/>
+	<map tag="scenery" class="worm.features.SceneryFeature"/>
+	<map tag="medal" class="worm.features.MedalFeature"/>
+	<map tag="story" class="worm.features.StoryFeature"/>
+	<map tag="research" class="worm.features.ResearchFeature"/>
+	<map tag="bomb" class="worm.features.BombFeature"/>
+	<map tag="hint" class="worm.features.HintFeature"/>
+	<map tag="rank" class="worm.features.RankFeature"/>
+	<map tag="emit" class="worm.animation.EmitCommand"/>
+	<map tag="print" class="worm.animation.PrintCommand"/>
+	<map tag="shoot" class="worm.animation.ShootCommand"/>
+</resources>

@@ -1,0 +1,1166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!--  Medals -->
+<resources>
+
+	<medal
+		name="medal.gold"
+		title="GOLD"
+		description="COMPLETED LEVEL AT MAXIMUM DIFFICULTY"
+		repeatable="true"
+		points="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.gold.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.gold.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.silver"
+		title="SILVER"
+		description="COMPLETED LEVEL AT HIGH DIFFICULTY"
+		repeatable="true"
+		points="50"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.silver.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.silver.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.bronze"
+		title="BRONZE"
+		description="COMPLETED LEVEL AT MEDIUM DIFFICULTY"
+		repeatable="true"
+		points="25"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.bronze.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.bronze.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.earth_boss"
+		title="GUARDIAN"
+		description="DESTROYED A MEGATITAN"
+		repeatable="true"
+		points="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.boss.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.moon_boss"
+		title="PROTECTOR"
+		description="DESTROYED A LEVIATHAN-CLASS TITAN"
+		repeatable="true"
+		points="150"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.02" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.boss.glow.02" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.mars_boss"
+		title="DEFENDER"
+		description="DESTROYED A GARGANTUAN-CLASS TITAN"
+		repeatable="true"
+		points="200"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.03" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.boss.glow.03" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.saturn_boss"
+		title="STALWART"
+		description="DESTROYED A BEHEMOTH-CLASS TITAN"
+		repeatable="true"
+		points="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.04" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.boss.glow.04" />
+ 		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.titan_boss"
+		title="SLAYER"
+		description="DESTROYED THE ULTRATITAN!"
+		repeatable="true"
+		points="300"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.05" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.boss.glow.05" />
+           
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.earth_complete"
+		title="EARTH COMPLETE"
+		description="COMPLETED THE EARTH MISSIONS"
+		repeatable="true"
+		points="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.victory.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.earth.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.moon_complete"
+		title="MOON COMPLETE"
+		description="COMPLETED THE MOON MISSIONS"
+		repeatable="true"
+		points="200"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.victory.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.moon.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.mars_complete"
+		title="MARS COMPLETE"
+		description="COMPLETED THE MARS MISSIONS"
+		repeatable="true"
+		points="300"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.victory.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.mars.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.saturn_complete"
+		title="SATURN COMPLETE"
+		description="COMPLETED THE SATURN MISSIONS"
+		repeatable="true"
+		points="400"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.victory.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.saturn.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.titan_complete"
+		title="TITAN COMPLETE"
+		description="COMPLETED THE TITAN MISSIONS"
+		repeatable="true"
+		points="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.victory.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.titan.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.perfect_game"
+		title="PERFECT GAME"
+		description="COMPLETED ALL LEVELS AT MAXIMUM DIFFICULTY"
+		repeatable="true"
+		points="10000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.perfect.game.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.perfect.game.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.perfect_world"
+		title="PERFECT WORLD"
+		description="COMPLETED WHOLE WORLD AT MAXIMUM DIFFICULTY"
+		repeatable="true"
+		points="1000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.perfect.world.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.perfect.world.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.pristine"
+		title="PRISTINE"
+		description="TITANS DIDN'T EVEN SCRATCH THE PAINT"
+		repeatable="true"
+		points="100"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.pristine.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.pristine.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.careful"
+		title="CAREFUL"
+		description="DIDN'T LOSE A SINGLE BUILDING"
+		repeatable="true"
+		points="50"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careful.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.careful.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.careless"
+		title="CARELESS"
+		description="LOST 10 BUILDINGS TO THE ENEMY"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careless.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.careless.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.10.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.rash"
+		title="RASH"
+		description="LOST 25 BUILDINGS TO THE ENEMY"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careless.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.careless.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.25.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.reckless"
+		title="RECKLESS"
+		description="LOST 50 BUILDINGS TO THE ENEMY"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careless.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.careless.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.50.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.negligent"
+		title="NEGLIGENT"
+		description="LOST 100 BUILDINGS TO THE ENEMY"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careless.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.careless.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.100.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.vanquished_100"
+		title="VANQUISHED 100"
+		description="VANQUISHED 100 TITANS"
+		points="25"
+		money="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.vanquished.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.100.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.vanquished_250"
+		title="VANQUISHED 250"
+		description="VANQUISHED 250 TITANS"
+		points="50"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.vanquished.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.250.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.vanquished_500"
+		title="VANQUISHED 500"
+		description="VANQUISHED 500 TITANS"
+		points="100"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.vanquished.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.500.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.vanquished_1000"
+		title="VANQUISHED 1000"
+		description="VANQUISHED 1000 TITANS"
+		points="250"
+		money="1000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.vanquished.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.1000.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.vanquished_2500"
+		title="VANQUISHED 2500"
+		description="VANQUISHED 2500 TITANS"
+		points="500"
+		money="2500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.vanquished.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.2500.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.vanquished_5000"
+		title="VANQUISHED 5000"
+		description="VANQUISHED 5000 TITANS"
+		points="1000"
+		money="5000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.vanquished.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.5000.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.vanquished_10000"
+		title="VANQUISHED 10000"
+		description="VANQUISHED 10000 TITANS"
+		points="2500"
+		money="10000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.vanquished.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.10000.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+
+	<medal
+		name="medal.crushed_25"
+		title="CRUSHER"
+		description="CRUSHED 25 TITANS UNDER NEW BUILDINGS"
+		points="250"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.crushed.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.crushed.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.25.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.crushed_50"
+		title="SQUISHER"
+		description="SQUISHED 50 TITANS UNDER NEW BUILDINGS"
+		points="1000"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.crushed.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.crushed.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.50.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.crushed_100"
+		title="DIMENSIONAL TRANSGIDRIFIER"
+		description="TURNED 100 3-D TITANS INTO 2-D TITANS"
+		points="2500"
+		money="2500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.crushed.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.crushed.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.100.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.fried_100"
+		title="SIZZLE SIZZLE"
+		description="FRIED 100 TITANS WITH THE CAPACITOR"
+		points="250"
+		money="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.fried.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.fried.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.100.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.fried_250"
+		title="SAUSAGES AND BACON"
+		description="FRIED 250 TITANS WITH THE CAPACITOR"
+		points="500"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.fried.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.fried.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.250.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.fried_500"
+		title="KRISPY KREME"
+		description="FRIED 500 TITANS WITH THE CAPACITOR"
+		points="1000"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.fried.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.fried.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.500.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+
+	<medal
+		name="medal.nuked_50"
+		title="DEATH FROM THE SKIES"
+		description="NUKED 50 TITANS FROM ORBIT"
+		points="500"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.nuked.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.nuked.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.50.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.nuked_100"
+		title="BRINGER OF THE APOCALYSPE"
+		description="NUKED 100 TITANS FROM ORBIT"
+		points="1000"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.nuked.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.nuked.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.100.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.nuked_250"
+		title="AUTHOR OF ARMAGEDDON"
+		description="NUKED 250 TITANS FROM ORBIT"
+		points="2500"
+		money="1000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.nuked.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.nuked.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.250.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.exploded_100"
+		title="BOOM!"
+		description="BLEW UP 100 TITANS USING EXPLOSIVES"
+		points="100"
+		money="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.exploded.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.exploded.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.100.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.exploded_250"
+		title="KABOOM!"
+		description="BLEW UP 250 TITANS USING EXPLOSIVES"
+		points="250"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.exploded.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.exploded.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.250.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<medal
+		name="medal.exploded_500"
+		title="BLAM!"
+		description="BLEW UP 500 TITANS USING EXPLOSIVES"
+		points="500"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.exploded.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.exploded.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.500.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.offensive_capability"
+		title="OFFENSIVE CAPABILITY"
+		description="RESEARCHED ALL WEAPONS"
+		points="5000"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.offensive.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.offensive.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.defensive_capability"
+		title="DEFENSIVE CAPABILITY"
+		description="RESEARCHED ALL DEFENCES"
+		points="5000"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.defensive.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.defensive.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.spear_and_magic_helmet"
+		title="SPEAR AND MAGIC HELMET"
+		description="RESEARCHED ALL TURRET UPGRADES"
+		points="1000"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.upgrades.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.upgrades.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.dangerous_nutter"
+		title="DANGEROUS NUTTER"
+		description="RESEARCHED ALL EXPLOSIVE TECH"
+		points="1000"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.explosives.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.explosives.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.robot_wants_kitty"
+		title="ROBOT WANTS KITTY"
+		description="RESEARCHED THE DROID FACTORY"
+		points="1000"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.automation.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.automation.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.propellerhead"
+		title="PROPELLERHEAD"
+		description="RESEARCHED ALL SCIENCE AND TECHNOLOGY"
+		points="5000"
+		money="1000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.tech.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.tech.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.problem_for_grandchildren"
+		title="A PROBLEM FOR OUR GRANDCHILDREN"
+		description="RESEARCHED NUCLEAR REACTORS"
+		points="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.nuclear.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.nuclear.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.devious"
+		title="DEVIOUS"
+		description="RESEARCHED THE DECOY TOWER"
+		points="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.decoy.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.decoy.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.encyclopaedic"
+		title="ENCYCLOPAEDIC"
+		description="RESEARCHED EVERYTHING"
+		points="5000"
+		money="2500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.all.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.r+d.all.glow.01" />
+            <sprite layer="10" colored="text-bold"  image="spriteimage.medal.label.researched.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.tape_and_string"
+		title="TAPE AND STRING"
+		description="BASE HELD TOGETHER WITH TAPE AND STRING AT END OF MISSION"
+		repeatable="true"
+		points="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.tapeandstring.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.tapeandstring.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.phew_that_was_close"
+		title="PHEW THAT WAS CLOSE"
+		description="GIANT TITAN KILLED WITHIN A FEW METRES OF THE BASE"
+		repeatable="true"
+		points="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.phew.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.phew.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.skin_of_your_teeth"
+		title="SKIN OF YOUR TEETH"
+		description="LOST 90% OF YOUR BUILDINGS TO THE ENEMY"
+		repeatable="true"
+		points="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.skinofyoutteeth.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.skinofyoutteeth.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.awesome"
+		title="AWESOME"
+		description="FULLY UPGRADED A TURRET"
+		repeatable="true"
+		points="1000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.awesome.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.awesome.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.registered"
+		title="REGISTERED"
+		description="REGISTERED THE GAME :)"
+		points="500"
+		suppressHint="true"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.registered.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.registered.glow.01" />
+		</layers></appearance>
+	</medal>
+
+	<medal
+		name="medal.short_tempered"
+		title="SHORT TEMPERED"
+		description="USED BEZERK POWERUP 5 TIMES"
+		points="250"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.bezerk.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.powerup.bezerk.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.x5.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.only_way_to_be_sure"
+		title="THE ONLY WAY TO BE SURE"
+		description="NUKED THE SITE FROM ORBIT 5 TIMES"
+		points="250"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.smartbomb.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.powerup.smartbomb.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.x5.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.toilet_break"
+		title="TOILET BREAK"
+		description="USED THE FREEZE POWERUP 5 TIMES"
+		points="250"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.freeze.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.powerup.freeze.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.x5.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.jimll_fix_it"
+		title="JIM'LL FIX IT"
+		description="REPAIRED YOUR BUILDINGS 5 TIMES"
+		points="250"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.repair.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.powerup.repair.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.x5.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.batfink"
+		title="BATFINK"
+		description="USED THE SHIELD POWERUP 5 TIMES"
+		points="250"
+		money="250"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.shield.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.powerup.shield.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.x5.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+
+	<medal
+		name="medal.efficient"
+		title="EFFICIENT"
+		description="MINED ALL CRYSTALS IN TIME"
+		repeatable="true"
+		points="50"
+		money="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.efficient.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.efficient.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	<medal
+		name="medal.thrifty"
+		title="THRIFTY"
+		description="MADE $5000 PROFIT FROM ONE LEVEL"
+		repeatable="true"
+		points="100"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.profit.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.profit.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.$5k.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.tight_fisted"
+		title="TIGHT FISTED"
+		description="MADE $10000 PROFIT FROM ONE LEVEL"
+		repeatable="true"
+		points="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.profit.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.profit.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.$10k.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.short_arms_deep_pockets"
+		title="SHORT ARMS DEEP POCKETS"
+		description="MADE $15000 PROFIT FROM ONE LEVEL"
+		repeatable="true"
+		points="2500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.profit.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.profit.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.$15k.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.hoarded_$5000"
+		title="HOARDED $5000"
+		description="GOT $5000 IN THE BANK"
+		points="500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.hoarded.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.hoarded.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.$5k.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.hoarded_$10000"
+		title="HOARDED $10000"
+		description="GOT $10000 IN THE BANK"
+		points="2500"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.hoarded.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.hoarded.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.$10k.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.hoarded_$25000"
+		title="HOARDED $25000"
+		description="GOT $25000 IN THE BANK"
+		points="5000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.hoarded.01" />
+			<sprite layer="10" colored="text-bold"  image="spriteimage.medal.hoarded.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.$25k.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+	
+	<medal
+		name="medal.hoarded_$50000"
+		title="HOARDED $50000"
+		description="GOT $50000 IN THE BANK"
+		points="5000"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.hoarded.01" />
+			<sprite layer="10" colored="text-bold" image="spriteimage.medal.hoarded.glow.01" />
+            <sprite layer="11" colored="text-bold"  image="spriteimage.medal.label.$50k.glow.01" />
+		</layers></appearance>
+	</medal>
+	
+		
+	<!--  Medals screen -->	
+	
+	
+	<property key="medals_w" value="300" />
+	<property key="medals_h" value="308" />	
+	<property key="medals_x" value="=$medals_w/-2+$SCREEN_X" />
+	<property key="medals_y" value="=$medals_h/-2+$SCREEN_Y" />
+	<property key="medals_padding" value="16" />
+	
+	<property key="medal_slot_h" value="35" />
+	
+	<property key="medal_slot_pic_w" value="38" />
+	<property key="medal_slot_pic_w_margin" value="8" />
+	<property key="medal_slot_img_anc_x" value="=-$SCREEN_X+$medals_x+$medals_padding" />
+	<property key="medal_slot_img_offset" value="3" />
+	
+	<property key="medal_slot_x" value="=$medals_x+$medals_padding+$medal_slot_pic_w+$medal_slot_pic_w_margin" />
+	<property key="medal_slot_w" value="=$medals_w-($medals_padding*2)-$medal_slot_pic_w-$medal_slot_pic_w_margin" />
+	<property key="medal_slot_desc_padding" value="35"/>
+
+
+
+	<property key="medals_slots_top" value="=$medals_y+$medals_h-68" />
+
+
+	<property key="medal_slot_1_y" value="=$medals_slots_top-($medal_slot_h*1)" />
+	<property key="medal_slot_2_y" value="=$medals_slots_top-($medal_slot_h*2)" />	
+	<property key="medal_slot_3_y" value="=$medals_slots_top-($medal_slot_h*3)" />	
+	<property key="medal_slot_4_y" value="=$medals_slots_top-($medal_slot_h*4)" />	
+	<property key="medal_slot_5_y" value="=$medals_slots_top-($medal_slot_h*5)" />
+	<property key="medal_slot_6_y" value="=$medals_slots_top-($medal_slot_h*6)" />
+	
+	<property key="medals_stats_y" value="=$medals_y+$medals_h-54" />
+	
+	<area name="medal.slot.title.spec"
+		inherit="dialog.message.spec"
+		halign="left"
+        valign="top"
+		size="=$medal_slot_w,$medal_slot_h"
+		textOffset="0,0"
+		color="text-bold"
+		layer="9"
+		scale="0.5"
+	/>
+
+	<area name="medal.slot.desc.spec"
+		inherit="medal.slot.title.spec"
+		textOffset="0,-11"
+		valign="top"
+		size="=$medal_slot_w-$medal_slot_desc_padding,$medal_slot_h"
+		color="text"
+		leading="-2"
+	/>
+	
+	<area name="medal.slot.value.spec"
+		inherit="medal.slot.title.spec"
+		halign="right"
+		valign="top"
+		color="text"
+		leading="-1"
+	/>
+	
+	<area name="medal.slot.img.spec"
+		layer="9"
+		size="=$medal_slot_pic_w,$medal_slot_h"
+		scale="0.5"
+		offset="=$medal_slot_pic_w/2+1,$medal_slot_h/2"
+	/>
+		
+
+		
+	<instance
+		name="medals.screen"
+		class="worm.screens.MedalsScreen"
+		autocreated="true"
+		keyboardnavigation="false"
+		transition="instant.transition"
+		centre="both"
+		dialog="true"
+	>
+	
+		<hotkey key="BACKSPACE" area="close"/>	
+		<hotkey key="ESCAPE" area="close"/>	
+		<hotkey key="PRIOR" area="prev"/>	
+		<hotkey key="NEXT" area="next"/>	
+		<hotkey key="LEFT" area="prev"/>	
+		<hotkey key="RIGHT" area="next"/>	
+		<hotkey key="UP" area="prev"/>	
+		<hotkey key="DOWN" area="next"/>	
+	
+		<area id="medals_background" text="PERSONAL ACHIEVEMENTS" inherit="dialog.closeable.spec" position="=$medals_x,$medals_y" size="=$medals_w,$medals_h" />
+		<area id="medals_background_glow" inherit="dialog.glow.spec" position="=$medals_x,$medals_y" size="=$medals_w,$medals_h" />
+
+		<!-- <area id="background" inherit="titlescreen.spec" mouseoff="earth.research.background.anim" size="1,1"/>   -->
+		
+		<area id="background" inherit="dialog.ingame.background.spec"/>
+		<area id="background_glow" inherit="dialog.ingame.background.glow.spec"/>
+
+		<area id="close" inherit="close.default.button.spec" position="=$medals_x+$medals_w+$close_x_offset,$medals_y+$medals_h+$close_y_offset" />
+		
+		
+		<!--  page list -->
+	
+		<area id="id_medal_slot_1_title" group="slot_1_group" text="PERFECT GAME" inherit="medal.slot.title.spec" position="=$medal_slot_x,$medal_slot_1_y" />
+		<area id="id_medal_slot_1_desc" group="slot_1_group" text="COMPLETED ALL LEVELS AT MAXIMUM DIFFICULTY" inherit="medal.slot.desc.spec" position="=$medal_slot_x,$medal_slot_1_y" />
+		<area id="id_medal_slot_1_value" group="slot_1_group" text="1000" inherit="medal.slot.value.spec" position="=$medal_slot_x,$medal_slot_1_y" />
+		<area id="id_medal_slot_1_img" group="slot_1_group" inherit="medal.slot.img.spec" position="0,0" >
+			<anchor x="mid" d="=$medal_slot_img_anc_x"/><anchor y="mid" d="=-$SCREEN_Y+$medal_slot_1_y+$medal_slot_img_offset"/></area>
+	
+		<area id="id_medal_slot_2_title" group="slot_2_group" text="HOARDED $50000" inherit="medal.slot.title.spec" position="=$medal_slot_x,$medal_slot_2_y" />
+		<area id="id_medal_slot_2_desc" group="slot_2_group" text="GOT $50000 IN THE BANK" inherit="medal.slot.desc.spec" position="=$medal_slot_x,$medal_slot_2_y" />
+		<area id="id_medal_slot_2_value" group="slot_2_group" text="1000" inherit="medal.slot.value.spec" position="=$medal_slot_x,$medal_slot_2_y" />
+		<area id="id_medal_slot_2_img" group="slot_2_group" inherit="medal.slot.img.spec" position="0,0" >
+			<anchor x="mid" d="=$medal_slot_img_anc_x"/><anchor y="mid" d="=-$SCREEN_Y+$medal_slot_2_y+$medal_slot_img_offset"/></area>
+				
+		<area id="id_medal_slot_3_title" group="slot_3_group" text="SHORT ARMS DEEP POCKETS" inherit="medal.slot.title.spec" position="=$medal_slot_x,$medal_slot_3_y" />
+		<area id="id_medal_slot_3_desc" group="slot_3_group" text="MADE $15000 PROFIT FROM ONE LEVEL" inherit="medal.slot.desc.spec" position="=$medal_slot_x,$medal_slot_3_y" />
+		<area id="id_medal_slot_3_value" group="slot_3_group" text="1000" inherit="medal.slot.value.spec" position="=$medal_slot_x,$medal_slot_3_y" />
+		<area id="id_medal_slot_3_img" group="slot_3_group" inherit="medal.slot.img.spec" position="0,0" >
+			<anchor x="mid" d="=$medal_slot_img_anc_x"/><anchor y="mid" d="=-$SCREEN_Y+$medal_slot_3_y+$medal_slot_img_offset"/></area>
+								
+		<area id="id_medal_slot_4_title" group="slot_4_group" text="TAPE AND STRING" inherit="medal.slot.title.spec" position="=$medal_slot_x,$medal_slot_4_y" />
+		<area id="id_medal_slot_4_desc" group="slot_4_group" text="BASE HELD TOGETHER WITH TAPE AND STRING AT END OF MISSION" inherit="medal.slot.desc.spec" position="=$medal_slot_x,$medal_slot_4_y" />
+		<area id="id_medal_slot_4_value" group="slot_4_group" text="1000" inherit="medal.slot.value.spec" position="=$medal_slot_x,$medal_slot_4_y" />
+		<area id="id_medal_slot_4_img" group="slot_4_group" inherit="medal.slot.img.spec" position="0,0" >
+			<anchor x="mid" d="=$medal_slot_img_anc_x"/><anchor y="mid" d="=-$SCREEN_Y+$medal_slot_4_y+$medal_slot_img_offset"/></area>
+							
+		<area id="id_medal_slot_5_title" group="slot_5_group" text="DEFENSIVE CAPABILITY" inherit="medal.slot.title.spec" position="=$medal_slot_x,$medal_slot_5_y" />
+		<area id="id_medal_slot_5_desc" group="slot_5_group" text="RESEARCHED ALL BARRICADES AND THE SHIELD GENERATOR" inherit="medal.slot.desc.spec" position="=$medal_slot_x,$medal_slot_5_y" />
+		<area id="id_medal_slot_5_value" group="slot_5_group" text="1000" inherit="medal.slot.value.spec" position="=$medal_slot_x,$medal_slot_5_y" />
+		<area id="id_medal_slot_5_img" group="slot_5_group" inherit="medal.slot.img.spec" position="0,0" >
+			<anchor x="mid" d="=$medal_slot_img_anc_x"/><anchor y="mid" d="=-$SCREEN_Y+$medal_slot_5_y+$medal_slot_img_offset"/></area>
+							
+		<area id="id_medal_slot_6_title" group="slot_6_group" text="A PROBLEM FOR OUR GRANDCHILDREN" inherit="medal.slot.title.spec" position="=$medal_slot_x,$medal_slot_6_y" />
+		<area id="id_medal_slot_6_desc" group="slot_6_group" text="RESEARCHED NUCLEAR REACTORS" inherit="medal.slot.desc.spec" position="=$medal_slot_x,$medal_slot_6_y" />
+		<area id="id_medal_slot_6_value" group="slot_6_group" text="1000" inherit="medal.slot.value.spec" position="=$medal_slot_x,$medal_slot_6_y" />
+		<area id="id_medal_slot_6_img" group="slot_6_group" inherit="medal.slot.img.spec" position="0,0" >
+			<anchor x="mid" d="=$medal_slot_img_anc_x"/><anchor y="mid" d="=-$SCREEN_Y+$medal_slot_6_y+$medal_slot_img_offset"/></area>
+	
+		<!--  page nav -->
+
+		<area id="prev" text="PREV" inherit="button.spec" position="=$medals_x+$dialog_padding,$medals_y+$dialog_padding" />
+		<area id="next" text="NEXT" inherit="button.spec" position="=$medals_x+$medals_w-$button_w-$dialog_padding,$medals_y+$dialog_padding" />
+		
+		<area id="page" text="1/1" inherit="dialog.message.spec" halign="right" color="text-dark"
+			size="42,20" position="=$medals_w/2+$medals_x-22,$medals_y+$dialog_padding" />
+	
+		<!--  player stats -->
+	
+		<area id="score" inherit="shop.info.spec" color="text-bold" text="SCORE: 234567" halign="left" position="=$medals_x+$medals_padding,$medals_stats_y" size="=$medals_w-($medals_padding*2),12" />
+		<area id="rank" inherit="shop.info.spec" color="text-bold" text="RANK: LONGER RANK TITLE" halign="left" position="=$medals_x+$medals_padding,$medals_stats_y" size="=$medals_w-($medals_padding*2),28"  />
+		
+		
+		<!--  temp rank images thang -->
+		<area id="rank-img" position="263,255" size="32,32" offset="16,16" scale="0.4" noClick="true"/>
+		
+		
+	
+		<!-- <area id="close" inherit="button.abort.spec" text="CLOSE"/>  -->
+	
+	</instance>		
+
+
+
+
+
+</resources>

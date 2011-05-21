@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Buildings properties -->
+
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<property key="1x1x" value="10"/>
+	<property key="1x1xFire" value="0"/>
+	<property key="1x1y" value="10"/>
+	<property key="1x1yFloor" value="4"/>
+	<property key="1x1ySparks" value="7"/>
+	<property key="1x1yExplode" value="10"/>
+	
+	<property key="2x2x" value="20"/>
+	<property key="2x2xFire" value="4"/>
+	<property key="2x2y" value="29"/>
+	<property key="2x2yFloor" value="12"/>
+	<property key="2x2ySparks" value="16"/>
+	<property key="2x2yExplode" value="20"/>
+	
+	<property key="3x3x" value="31"/>
+	<property key="3x3xFire" value="9"/>
+	<property key="3x3y" value="38"/>
+	<property key="3x3yFloor" value="17"/>
+	<property key="3x3ySparks" value="21"/>
+	<property key="3x3yExplode" value="26"/>
+	
+	<property key="4x4x" value="39"/>
+	<property key="4x4xFire" value="10"/>
+	<property key="4x4y" value="39"/>
+	<property key="4x4yFloor" value="17"/>
+	<property key="4x4ySparks" value="21"/>
+	<property key="4x4yExplode" value="30"/>
+		
+	<property key="5x5x" value="60"/>
+	<property key="5x5xFire" value="10"/>
+	<property key="5x5y" value="58"/>
+	<property key="5x5yFloor" value="18"/>
+	<property key="5x5ySparks" value="22"/>
+	<property key="5x5yExplode" value="30"/>
+
+	<property key="mineoffsetX" value="0"/>
+	<property key="mineoffsetY" value="0"/>
+
+	<property key="1x1offsetX" value="6"/>
+	<property key="1x1offsetY" value="2"/>
+
+	<property key="2x2offsetX" value="10"/>
+	<property key="2x2offsetY" value="6"/>
+	
+	<property key="3x3offsetX" value="16"/>
+	<property key="3x3offsetY" value="8"/>
+	
+	<property key="4x4offsetX" value="20"/>
+	<property key="4x4offsetY" value="9"/>
+	
+	<property key="5x5offsetX" value="30"/>
+	<property key="5x5offsetY" value="10"/>
+	
+	<property key="baserange" value="64.0"/>
+	<property key="rangeincrement" value="16.0"/>
+
+	<property key="barricade" value="12"/>
+	<property key="cost" value="4"/>
+	
+	<property key="crystal" value="24"/>
+	
+	<!-- Hitpoints graphics -->
+	<property key="hitpointslayer" value="9"/>
+	
+</resources>

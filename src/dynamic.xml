@@ -1,0 +1,1356 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Dynamic resources configuration file  -->
+
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<!-- Sound effects & other resources -->
+	<instance
+		class="worm.Res"
+	/>
+	<instance
+		class="worm.SFX"
+	/>
+	
+	<!-- Fonts -->
+	<font
+		name="tinyfont.glfont"
+		url="classpath:tinyfont.jgfont"
+		magmode="GL_LINEAR"
+		minmode="GL_LINEAR"
+		scale="0.5"
+	/>
+	<font
+		name="smallfont.glfont"
+		url="classpath:smallfont.jgfont"
+		magmode="GL_LINEAR"
+		minmode="GL_LINEAR"
+		scale="0.5"
+	/>
+	<font
+		name="bigfont.glfont"
+		url="classpath:bigfont.jgfont"
+		magmode="GL_LINEAR"
+		minmode="GL_LINEAR"
+		scale="0.5"
+	/>
+
+	<!-- Messageboxes -->
+
+
+	<texture
+		name="hud_background.texture"
+		url="classpath:widget.background.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+
+	<imagebank name="hud_background.imagebank" texture="hud_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.hud_background_bottom_left" 		x="0"  y="0"  w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_bottom" 			x="28" y="0"  w="8"  h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_bottom_right" 	x="36" y="0"  w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_left" 			x="0"  y="28" w="28" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_middle" 			x="28" y="28" w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_right" 			x="36" y="28" w="28" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_top_left" 		x="0"  y="36" w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_top" 				x="28" y="36" w="8"  h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_top_right" 		x="36" y="36" w="28" h="28" hx="0" hy="0" />
+	</imagebank>
+
+	<texture
+		name="hud_background_closeable.texture"
+		url="classpath:widget.background.closeable.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+
+	<imagebank name="hud_background_closeable.imagebank" texture="hud_background_closeable.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.hud_background_closeable_bottom_left" 	x="0"  y="0"  w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_closeable_bottom" 		x="28" y="0"  w="8"  h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_closeable_bottom_right" 	x="36" y="0"  w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_closeable_left" 			x="0"  y="28" w="28" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_closeable_middle" 		x="28" y="28" w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_closeable_right" 			x="36" y="28" w="28" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_closeable_top_left" 		x="0"  y="36" w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_closeable_top" 			x="28" y="36" w="8"  h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_closeable_top_right" 		x="36" y="36" w="28" h="28" hx="0" hy="0" />
+	</imagebank>
+
+	<texture
+		name="hud_background_status.texture"
+		url="classpath:widget.background.status.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+
+	<imagebank name="hud_background_status.imagebank" texture="hud_background_status.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.hud_background_status_bottom_left" 	x="0"  y="0"  w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_status_bottom" 		x="28" y="0"  w="8"  h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_status_bottom_right" 	x="36" y="0"  w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_status_left" 			x="0"  y="28" w="28" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_status_middle" 		x="28" y="28" w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_status_right" 			x="36" y="28" w="28" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_status_top_left" 		x="0"  y="36" w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_status_top" 			x="28" y="36" w="8"  h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_status_top_right" 		x="36" y="36" w="28" h="28" hx="0" hy="0" />
+	</imagebank>
+
+
+
+	<texture
+		name="hud_background_glow.texture"
+		url="classpath:widget.background.glow.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+
+	<imagebank name="hud_background_glow.imagebank" texture="hud_background_glow.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.hud_background_glow_bottom_left" 	x="0"  y="0"  w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_glow_bottom" 			x="28" y="0"  w="4"  h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_glow_bottom_right" 	x="32" y="0"  w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_glow_left" 			x="0"  y="28" w="28" h="4"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_glow_middle" 			x="28" y="28" w="4"  h="4"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_glow_right" 			x="32" y="28" w="28" h="4"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_glow_top_left" 		x="0"  y="32" w="28" h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_glow_top" 			x="28" y="32" w="4"  h="28" hx="0" hy="0" />
+		<spriteimage name="spriteimage.hud_background_glow_top_right" 		x="32" y="32" w="28" h="28" hx="0" hy="0" />
+	</imagebank>
+
+
+	
+
+	<texture
+		name="button_background.texture"
+		url="classpath:widget.background.button.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="button_background.imagebank" texture="button_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.button_background_bottom_left" 		x="0"  y="0"  w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_background_bottom" 			x="8"  y="0"  w="16" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_background_bottom_right" 		x="24" y="0"  w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_background_left" 				x="0"  y="8"  w="8"  h="2" hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_background_middle" 			x="8"  y="8"  w="16" h="16" hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_background_right" 			x="24" y="8"  w="8"  h="2" hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_background_top_left" 			x="0"  y="24" w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_background_top" 				x="8"  y="24" w="16" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_background_top_right" 		x="24" y="24" w="8"  h="8"  hx="0" hy="0" />
+	</imagebank>	
+	
+
+	<texture
+		name="research_item_background.texture"
+		url="classpath:widget.background.research.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="research_item_background.imagebank" texture="research_item_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.research_item_background_bottom_left" 	x="0"  	y="0"  	w="14"  h="14"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.research_item_background_bottom" 			x="14"  y="0"  	w="4" 	h="14"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.research_item_background_bottom_right" 	x="18" 	y="0"  	w="14"  h="14"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.research_item_background_left" 			x="0"  	y="14" 	w="14"  h="4" 	hx="0" hy="0" />
+		<spriteimage name="spriteimage.research_item_background_middle" 			x="14"  y="14" 	w="4" 	h="4" 	hx="0" hy="0" />
+		<spriteimage name="spriteimage.research_item_background_right" 			x="18" 	y="14" 	w="14"  h="4" 	hx="0" hy="0" />
+		<spriteimage name="spriteimage.research_item_background_top_left" 		x="0"  	y="18" 	w="14"  h="14"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.research_item_background_top" 			x="14"  y="18" 	w="4" 	h="14"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.research_item_background_top_right" 		x="18" 	y="18" 	w="14"  h="14"  hx="0" hy="0" />
+	</imagebank>	
+
+	<texture
+		name="button_square_background.texture"
+		url="classpath:widget.background.button.square.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="button_square_background.imagebank" texture="button_square_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.button_square_background_bottom_left" 	x="0"  y="0"  w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_square_background_bottom" 		x="8"  y="0"  w="16" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_square_background_bottom_right" 	x="24" y="0"  w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_square_background_left" 			x="0"  y="8"  w="8"  h="16" hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_square_background_middle" 		x="8"  y="8"  w="16" h="16" hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_square_background_right" 			x="24" y="8"  w="8"  h="16" hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_square_background_top_left" 		x="0"  y="24" w="8"  h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_square_background_top" 			x="8"  y="24" w="16" h="8"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.button_square_background_top_right" 		x="24" y="24" w="8"  h="8"  hx="0" hy="0" />
+	</imagebank>	
+	
+	
+	<texture
+		name="textfieldbackground.texture"
+		url="classpath:widget.background.textfield.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="textfieldbackground.imagebank" texture="textfieldbackground.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.textfieldbackground_bottom_left" 	x="0"  y="0"  w="6" h="6" hx="0" hy="0" />
+		<spriteimage name="spriteimage.textfieldbackground_bottom" 		    x="6"  y="0"  w="4" h="6" hx="0" hy="0" />
+		<spriteimage name="spriteimage.textfieldbackground_bottom_right" 	x="10" y="0"  w="6" h="6" hx="0" hy="0" />
+		<spriteimage name="spriteimage.textfieldbackground_left" 			x="0"  y="6"  w="6" h="4" hx="0" hy="0" />
+		<spriteimage name="spriteimage.textfieldbackground_middle" 		    x="6"  y="6"  w="4" h="4" hx="0" hy="0" />
+		<spriteimage name="spriteimage.textfieldbackground_right" 			x="10" y="6"  w="6" h="4" hx="0" hy="0" />
+		<spriteimage name="spriteimage.textfieldbackground_top_left" 		x="0"  y="10" w="6" h="6" hx="0" hy="0" />
+		<spriteimage name="spriteimage.textfieldbackground_top" 			x="6"  y="10" w="4" h="6" hx="0" hy="0" />
+		<spriteimage name="spriteimage.textfieldbackground_top_right" 		x="10" y="10" w="6" h="6" hx="0" hy="0" />
+	</imagebank>	
+
+	<texture
+		name="line_background.texture"
+		url="classpath:widget.background.line.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="line_background.imagebank" texture="line_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.line_background_bottom_left" 	x="0" y="0" w="3" h="3" hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.line_background_bottom" 			x="3" y="0" w="2" h="3" hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.line_background_bottom_right" 	x="5" y="0" w="3" h="3" hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.line_background_left" 			x="0" y="3" w="3" h="2" hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.line_background_middle" 			x="3" y="3" w="2" h="2" hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.line_background_right" 			x="5" y="3" w="3" h="2" hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.line_background_top_left" 		x="0" y="5" w="3" h="3" hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.line_background_top" 			x="3" y="5" w="2" h="3" hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.line_background_top_right" 		x="5" y="5" w="3" h="3" hx="0" hy="0" offset="false"/>
+	</imagebank>	
+	
+	
+	<texture
+		name="bar_background.texture"
+		url="classpath:widget.background.bar.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="bar_background.imagebank" texture="bar_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.bar_background_bottom_left" 		x="0"  y="0" 	w="4" h="4" 	hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.bar_background_bottom" 			x="4"  y="0" 	w="2" h="4" 	hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.bar_background_bottom_right" 	x="12" y="0" 	w="4" h="4" 	hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.bar_background_left" 			x="0"  y="4" 	w="4" h="2" 	hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.bar_background_middle" 			x="4"  y="4" 	w="2" h="2" 	hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.bar_background_right" 			x="12" y="4" 	w="4" h="2" 	hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.bar_background_top_left" 		x="0"  y="12" 	w="4" h="4" 	hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.bar_background_top" 				x="4"  y="12" 	w="2" h="4" 	hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.bar_background_top_right" 		x="12" y="12" 	w="4" h="4" 	hx="0" hy="0" offset="false" />
+	</imagebank>			
+	
+
+	<texture
+		name="alert_message_background.texture"
+		url="classpath:widget.background.alert.message.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="alert_message_background.imagebank" texture="alert_message_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.alert_message_background_bottom_left" 		x="0"  y="0"  w="18" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_background_bottom" 			x="18" y="0"  w="1"  h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_background_bottom_right" 		x="19" y="0"  w="16" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_background_left" 				x="0"  y="15" w="18" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_background_middle" 			x="18" y="15" w="1"  h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_background_right" 				x="19" y="15" w="16" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_background_top_left" 			x="0"  y="16" w="18" h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_background_top" 				x="18" y="16" w="1"  h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_background_top_right" 			x="19" y="16" w="16" h="16"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+	<texture
+		name="alert_message_glow_background.texture"
+		url="classpath:widget.background.alert.message.glow.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="alert_message_glow_background.imagebank" texture="alert_message_glow_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.alert_message_glow_background_bottom_left" 		x="0"  y="0"  w="18" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_glow_background_bottom" 			x="18" y="0"  w="1"  h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_glow_background_bottom_right" 		x="19" y="0"  w="16" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_glow_background_left" 				x="0"  y="15" w="18" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_glow_background_middle" 			x="18" y="15" w="1"  h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_glow_background_right" 			x="19" y="15" w="16" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_glow_background_top_left" 			x="0"  y="16" w="18" h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_glow_background_top" 				x="18" y="16" w="1"  h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.alert_message_glow_background_top_right" 		x="19" y="16" w="16" h="16"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+	
+	<texture
+		name="ffwd_background.texture"
+		url="classpath:widget.background.ffwd.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="ffwd_background.imagebank" texture="ffwd_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.ffwd_background_bottom_left" 		x="0"  y="0"  w="18" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_background_bottom" 			x="18" y="0"  w="1"  h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_background_bottom_right" 		x="19" y="0"  w="16" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_background_left" 				x="0"  y="15" w="18" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_background_middle" 			x="18" y="15" w="1"  h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_background_right" 				x="19" y="15" w="16" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_background_top_left" 			x="0"  y="16" w="18" h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_background_top" 				x="18" y="16" w="1"  h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_background_top_right" 			x="19" y="16" w="16" h="16"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+	<texture
+		name="ffwd_glow_background.texture"
+		url="classpath:widget.background.ffwd.glow.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="ffwd_glow_background.imagebank" texture="ffwd_glow_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.ffwd_glow_background_bottom_left" 		x="0"  y="0"  w="18" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_glow_background_bottom" 			x="18" y="0"  w="1"  h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_glow_background_bottom_right" 		x="19" y="0"  w="16" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_glow_background_left" 				x="0"  y="15" w="18" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_glow_background_middle" 			x="18" y="15" w="1"  h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_glow_background_right" 			x="19" y="15" w="16" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_glow_background_top_left" 			x="0"  y="16" w="18" h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_glow_background_top" 				x="18" y="16" w="1"  h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.ffwd_glow_background_top_right" 		x="19" y="16" w="16" h="16"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+
+
+	<texture
+		name="message_buildinfo_background.texture"
+		url="classpath:widget.background.buildinfo.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="message_buildinfo_background.imagebank" texture="message_buildinfo_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.message_buildinfo_background_bottom_left" 	x="0"  y="0"  w="12" h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_background_bottom" 		x="12" y="0"  w="2"  h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_background_bottom_right" 	x="27" y="0"  w="12" h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_background_left" 			x="0"  y="12" w="12" h="2"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_background_middle" 		x="12" y="12" w="2"  h="2"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_background_right" 		x="27" y="12" w="12" h="2"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_background_top_left" 		x="0"  y="20" w="12" h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_background_top" 			x="12" y="20" w="2"  h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_background_top_right" 	x="27" y="20" w="12" h="12"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+	<texture
+		name="message_buildinfo_glow_background.texture"
+		url="classpath:widget.background.buildinfo.glow.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="message_buildinfo_glow_background.imagebank" texture="message_buildinfo_glow_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_bottom_left" 	x="0"  y="0"  w="12" h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_bottom" 		x="12" y="0"  w="2"  h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_bottom_right" 	x="27" y="0"  w="12" h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_left" 			x="0"  y="12" w="12" h="2"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_middle" 		x="12" y="12" w="2"  h="2"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_right" 		x="27" y="12" w="12" h="2"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_top_left" 		x="0"  y="20" w="12" h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_top" 			x="12" y="20" w="2"  h="12"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_buildinfo_glow_background_top_right" 	x="27" y="20" w="12" h="12"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+	
+	<texture
+		name="message_quicklaunch_background.texture"
+		url="classpath:widget.background.quicklaunch.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="message_quicklaunch_background.imagebank" texture="message_quicklaunch_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.message_quicklaunch_background_bottom_left" 		x="0"  y="0"  w="15" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_background_bottom" 			x="15" y="0"  w="1"  h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_background_bottom_right" 	x="16" y="0"  w="22" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_background_left" 			x="0"  y="15" w="15" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_background_middle" 			x="15" y="15" w="1"  h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_background_right" 			x="16" y="15" w="22" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_background_top_left" 		x="0"  y="16" w="15" h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_background_top" 				x="15" y="16" w="1"  h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_background_top_right" 		x="16" y="16" w="22" h="16"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+	<texture
+		name="message_quicklaunch_glow_background.texture"
+		url="classpath:widget.background.quicklaunch.glow.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="message_quicklaunch_glow_background.imagebank" texture="message_quicklaunch_glow_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_bottom_left" 	x="0"  y="0"  w="15" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_bottom" 			x="15" y="0"  w="1"  h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_bottom_right" 	x="16" y="0"  w="22" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_left" 			x="0"  y="15" w="15" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_middle" 			x="15" y="15" w="1"  h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_right" 			x="16" y="15" w="22" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_top_left" 		x="0"  y="16" w="15" h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_top" 			x="15" y="16" w="1"  h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_glow_background_top_right" 		x="16" y="16" w="22" h="16"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+
+
+	<texture
+		name="message_quicklaunch_powerup_background.texture"
+		url="classpath:widget.background.powerup.quicklaunch.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="message_quicklaunch_powerup_background.imagebank" texture="message_quicklaunch_powerup_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_bottom_left" 		x="0"  y="0"  w="15" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_bottom" 			x="15" y="0"  w="1"  h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_bottom_right" 	x="16" y="0"  w="22" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_left" 			x="0"  y="15" w="15" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_middle" 			x="15" y="15" w="1"  h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_right" 			x="16" y="15" w="22" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_top_left" 		x="0"  y="16" w="15" h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_top" 				x="15" y="16" w="1"  h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_background_top_right" 		x="16" y="16" w="22" h="16"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+	<texture
+		name="message_quicklaunch_powerup_glow_background.texture"
+		url="classpath:widget.background.powerup.quicklaunch.glow.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="message_quicklaunch_powerup_glow_background.imagebank" texture="message_quicklaunch_powerup_glow_background.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_bottom_left" 	x="0"  y="0"  w="15" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_bottom" 			x="15" y="0"  w="1"  h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_bottom_right" 	x="16" y="0"  w="22" h="15"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_left" 			x="0"  y="15" w="15" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_middle" 			x="15" y="15" w="1"  h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_right" 			x="16" y="15" w="22" h="1"   hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_top_left" 		x="0"  y="16" w="15" h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_top" 			x="15" y="16" w="1"  h="16"  hx="0" hy="0" offset="false" />
+		<spriteimage name="spriteimage.message_quicklaunch_powerup_glow_background_top_right" 		x="16" y="16" w="22" h="16"  hx="0" hy="0" offset="false" />
+	</imagebank>	
+
+
+
+	<texture
+		name="proximity.texture"
+		url="classpath:widget.proximity.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="proximity.imagebank" texture="proximity.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.proximity_bottom_left" 	x="0"  y="0"  w="8"  h="3"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.proximity_bottom" 		x="8"  y="0"  w="1"  h="3"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.proximity_bottom_right" 	x="9"  y="0"  w="7"  h="3"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.proximity_left" 			x="0"  y="3"  w="8"  h="2"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.proximity_middle" 		x="8"  y="3"  w="1"  h="2"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.proximity_right" 		x="9"  y="3"  w="7"  h="2"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.proximity_top_left" 		x="0"  y="5"  w="8"  h="3"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.proximity_top" 			x="8"  y="5"  w="1"  h="3"  hx="0" hy="0" />
+		<spriteimage name="spriteimage.proximity_top_right" 	x="9"  y="5"  w="7"  h="3"  hx="0" hy="0" />
+	</imagebank>	
+
+	
+	
+	<widgetbackground
+		name="textfield_background"
+		bottom_left="spriteimage.textfieldbackground_bottom_left"
+		bottom="spriteimage.textfieldbackground_bottom"
+		bottom_right="spriteimage.textfieldbackground_bottom_right"
+		left="spriteimage.textfieldbackground_left"
+		middle="spriteimage.textfieldbackground_middle"
+		right="spriteimage.textfieldbackground_right"
+		top_left="spriteimage.textfieldbackground_top_left"
+		top="spriteimage.textfieldbackground_top"
+		top_right="spriteimage.textfieldbackground_top_right"
+		color="255,255,255,255"
+	/>
+
+
+	<widgetbackground
+		name="hud_background"
+		bottom_left="spriteimage.hud_background_bottom_left"
+		bottom="spriteimage.hud_background_bottom"
+		bottom_right="spriteimage.hud_background_bottom_right"
+		left="spriteimage.hud_background_left"
+		middle="spriteimage.hud_background_middle"
+		right="spriteimage.hud_background_right"
+		top_left="spriteimage.hud_background_top_left"
+		top="spriteimage.hud_background_top"
+		top_right="spriteimage.hud_background_top_right"
+		color="255,255,255,255"
+	/>
+
+	<widgetbackground
+		name="hud_background_closeable"
+		bottom_left="spriteimage.hud_background_closeable_bottom_left"
+		bottom="spriteimage.hud_background_closeable_bottom"
+		bottom_right="spriteimage.hud_background_closeable_bottom_right"
+		left="spriteimage.hud_background_closeable_left"
+		middle="spriteimage.hud_background_closeable_middle"
+		right="spriteimage.hud_background_closeable_right"
+		top_left="spriteimage.hud_background_closeable_top_left"
+		top="spriteimage.hud_background_closeable_top"
+		top_right="spriteimage.hud_background_closeable_top_right"
+		color="255,255,255,255"
+	/>
+
+	<widgetbackground
+		name="hud_background_status"
+		bottom_left="spriteimage.hud_background_status_bottom_left"
+		bottom="spriteimage.hud_background_status_bottom"
+		bottom_right="spriteimage.hud_background_status_bottom_right"
+		left="spriteimage.hud_background_status_left"
+		middle="spriteimage.hud_background_status_middle"
+		right="spriteimage.hud_background_status_right"
+		top_left="spriteimage.hud_background_status_top_left"
+		top="spriteimage.hud_background_status_top"
+		top_right="spriteimage.hud_background_status_top_right"
+		color="255,255,255,255"
+	/>
+
+	<widgetbackground
+		name="hud_background_glow"
+		bottom_left="spriteimage.hud_background_glow_bottom_left"
+		bottom="spriteimage.hud_background_glow_bottom"
+		bottom_right="spriteimage.hud_background_glow_bottom_right"
+		left="spriteimage.hud_background_glow_left"
+		middle="spriteimage.hud_background_glow_middle"
+		right="spriteimage.hud_background_glow_right"
+		top_left="spriteimage.hud_background_glow_top_left"
+		top="spriteimage.hud_background_glow_top"
+		top_right="spriteimage.hud_background_glow_top_right"
+		color="255,255,255,255"
+	/>
+
+
+
+	<widgetbackground
+		name="button_background"
+		bottom_left="spriteimage.button_background_bottom_left"
+		bottom="spriteimage.button_background_bottom"
+		bottom_right="spriteimage.button_background_bottom_right"
+		left="spriteimage.button_background_left"
+		middle="spriteimage.button_background_middle"
+		right="spriteimage.button_background_right"
+		top_left="spriteimage.button_background_top_left"
+		top="spriteimage.button_background_top"
+		top_right="spriteimage.button_background_top_right"
+	/>
+
+	<widgetbackground
+		name="research_item_background"
+		bottom_left="spriteimage.research_item_background_bottom_left"
+		bottom="spriteimage.research_item_background_bottom"
+		bottom_right="spriteimage.research_item_background_bottom_right"
+		left="spriteimage.research_item_background_left"
+		middle="spriteimage.research_item_background_middle"
+		right="spriteimage.research_item_background_right"
+		top_left="spriteimage.research_item_background_top_left"
+		top="spriteimage.research_item_background_top"
+		top_right="spriteimage.research_item_background_top_right"
+	/>
+
+	<widgetbackground
+		name="button_tab_background"
+		bottom_left="spriteimage.button_square_background_bottom_left"
+		bottom="spriteimage.button_background_bottom"
+		bottom_right="spriteimage.button_square_background_bottom_right"
+		left="spriteimage.button_background_left"
+		middle="spriteimage.button_background_middle"
+		right="spriteimage.button_background_right"
+		top_left="spriteimage.button_background_top_left"
+		top="spriteimage.button_background_top"
+		top_right="spriteimage.button_background_top_right"
+	/>
+	
+	<widgetbackground
+		name="message_title_background"
+		bottom_left="spriteimage.hud_background_bottom_left"
+		bottom="spriteimage.hud_background_bottom"
+		bottom_right="spriteimage.hud_background_bottom_right"
+		left="spriteimage.hud_background_left"
+		middle="spriteimage.hud_background_middle"
+		right="spriteimage.hud_background_right"
+		top_left="spriteimage.hud_background_top_left"
+		top="spriteimage.hud_background_top"
+		top_right="spriteimage.hud_background_top_right"
+		color="251,42,155,224"
+	/>
+	
+	<widgetbackground
+		name="message_body_background"
+		bottom_left="spriteimage.hud_background_bottom_left"
+		bottom="spriteimage.hud_background_bottom"
+		bottom_right="spriteimage.hud_background_bottom_right"
+		left="spriteimage.hud_background_left"
+		middle="spriteimage.hud_background_middle"
+		right="spriteimage.hud_background_right"
+		top_left="spriteimage.hud_background_top_left"
+		top="spriteimage.hud_background_top"
+		top_right="spriteimage.hud_background_top_right"
+		color="217,37,134,224"
+	/>
+
+	<widgetbackground
+		name="progress_background"
+		bottom_left="spriteimage.hud_background_bottom_left"
+		bottom="spriteimage.hud_background_bottom"
+		bottom_right="spriteimage.hud_background_bottom_right"
+		left="spriteimage.hud_background_left"
+		middle="spriteimage.hud_background_middle"
+		right="spriteimage.hud_background_right"
+		top_left="spriteimage.hud_background_top_left"
+		top="spriteimage.hud_background_top"
+		top_right="spriteimage.hud_background_top_right"
+		color="217,37,134,224"
+	/>
+
+	<widgetbackground
+		name="line_background"
+		bottom_left="spriteimage.line_background_bottom_left"
+		bottom="spriteimage.line_background_bottom"
+		bottom_right="spriteimage.line_background_bottom_right"
+		left="spriteimage.line_background_left"
+		middle="spriteimage.line_background_middle"
+		right="spriteimage.line_background_right"
+		top_left="spriteimage.line_background_top_left"
+		top="spriteimage.line_background_top"
+		top_right="spriteimage.line_background_top_right"
+	/>
+
+
+	<widgetbackground
+		name="alert_message_background"
+		bottom_left="spriteimage.alert_message_background_bottom_left"
+		bottom="spriteimage.alert_message_background_bottom"
+		bottom_right="spriteimage.alert_message_background_bottom_right"
+		left="spriteimage.alert_message_background_left"
+		middle="spriteimage.alert_message_background_middle"
+		right="spriteimage.alert_message_background_right"
+		top_left="spriteimage.alert_message_background_top_left"
+		top="spriteimage.alert_message_background_top"
+		top_right="spriteimage.alert_message_background_top_right"
+	/>
+	<widgetbackground
+		name="alert_message_glow_background"
+		bottom_left="spriteimage.alert_message_glow_background_bottom_left"
+		bottom="spriteimage.alert_message_glow_background_bottom"
+		bottom_right="spriteimage.alert_message_glow_background_bottom_right"
+		left="spriteimage.alert_message_glow_background_left"
+		middle="spriteimage.alert_message_glow_background_middle"
+		right="spriteimage.alert_message_glow_background_right"
+		top_left="spriteimage.alert_message_glow_background_top_left"
+		top="spriteimage.alert_message_glow_background_top"
+		top_right="spriteimage.alert_message_glow_background_top_right"
+	/>
+
+
+	<widgetbackground
+		name="ffwd_background"
+		bottom_left="spriteimage.ffwd_background_bottom_left"
+		bottom="spriteimage.ffwd_background_bottom"
+		bottom_right="spriteimage.ffwd_background_bottom_right"
+		left="spriteimage.ffwd_background_left"
+		middle="spriteimage.ffwd_background_middle"
+		right="spriteimage.ffwd_background_right"
+		top_left="spriteimage.ffwd_background_top_left"
+		top="spriteimage.ffwd_background_top"
+		top_right="spriteimage.ffwd_background_top_right"
+	/>
+	<widgetbackground
+		name="ffwd_glow_background"
+		bottom_left="spriteimage.ffwd_glow_background_bottom_left"
+		bottom="spriteimage.ffwd_glow_background_bottom"
+		bottom_right="spriteimage.ffwd_glow_background_bottom_right"
+		left="spriteimage.ffwd_glow_background_left"
+		middle="spriteimage.ffwd_glow_background_middle"
+		right="spriteimage.ffwd_glow_background_right"
+		top_left="spriteimage.ffwd_glow_background_top_left"
+		top="spriteimage.ffwd_glow_background_top"
+		top_right="spriteimage.ffwd_glow_background_top_right"
+	/>
+
+
+	<widgetbackground
+		name="message_buildinfo_background"
+		bottom_left="spriteimage.message_buildinfo_background_bottom_left"
+		bottom="spriteimage.message_buildinfo_background_bottom"
+		bottom_right="spriteimage.message_buildinfo_background_bottom_right"
+		left="spriteimage.message_buildinfo_background_left"
+		middle="spriteimage.message_buildinfo_background_middle"
+		right="spriteimage.message_buildinfo_background_right"
+		top_left="spriteimage.message_buildinfo_background_top_left"
+		top="spriteimage.message_buildinfo_background_top"
+		top_right="spriteimage.message_buildinfo_background_top_right"
+	/>
+	<widgetbackground
+		name="message_buildinfo_glow_background"
+		bottom_left="spriteimage.message_buildinfo_glow_background_bottom_left"
+		bottom="spriteimage.message_buildinfo_glow_background_bottom"
+		bottom_right="spriteimage.message_buildinfo_glow_background_bottom_right"
+		left="spriteimage.message_buildinfo_glow_background_left"
+		middle="spriteimage.message_buildinfo_glow_background_middle"
+		right="spriteimage.message_buildinfo_glow_background_right"
+		top_left="spriteimage.message_buildinfo_glow_background_top_left"
+		top="spriteimage.message_buildinfo_glow_background_top"
+		top_right="spriteimage.message_buildinfo_glow_background_top_right"
+	/>
+
+
+	<widgetbackground
+		name="message_quicklaunch_background"
+		bottom_left="spriteimage.message_quicklaunch_background_bottom_left"
+		bottom="spriteimage.message_quicklaunch_background_bottom"
+		bottom_right="spriteimage.message_quicklaunch_background_bottom_right"
+		left="spriteimage.message_quicklaunch_background_left"
+		middle="spriteimage.message_quicklaunch_background_middle"
+		right="spriteimage.message_quicklaunch_background_right"
+		top_left="spriteimage.message_quicklaunch_background_top_left"
+		top="spriteimage.message_quicklaunch_background_top"
+		top_right="spriteimage.message_quicklaunch_background_top_right"
+	/>
+	<widgetbackground
+		name="message_quicklaunch_glow_background"
+		bottom_left="spriteimage.message_quicklaunch_glow_background_bottom_left"
+		bottom="spriteimage.message_quicklaunch_glow_background_bottom"
+		bottom_right="spriteimage.message_quicklaunch_glow_background_bottom_right"
+		left="spriteimage.message_quicklaunch_glow_background_left"
+		middle="spriteimage.message_quicklaunch_glow_background_middle"
+		right="spriteimage.message_quicklaunch_glow_background_right"
+		top_left="spriteimage.message_quicklaunch_glow_background_top_left"
+		top="spriteimage.message_quicklaunch_glow_background_top"
+		top_right="spriteimage.message_quicklaunch_glow_background_top_right"
+	/>
+
+
+	<widgetbackground
+		name="message_quicklaunch_powerup_background"
+		bottom_left="spriteimage.message_quicklaunch_powerup_background_bottom_left"
+		bottom="spriteimage.message_quicklaunch_powerup_background_bottom"
+		bottom_right="spriteimage.message_quicklaunch_powerup_background_bottom_right"
+		left="spriteimage.message_quicklaunch_powerup_background_left"
+		middle="spriteimage.message_quicklaunch_powerup_background_middle"
+		right="spriteimage.message_quicklaunch_powerup_background_right"
+		top_left="spriteimage.message_quicklaunch_powerup_background_top_left"
+		top="spriteimage.message_quicklaunch_powerup_background_top"
+		top_right="spriteimage.message_quicklaunch_powerup_background_top_right"
+	/>
+	<widgetbackground
+		name="message_quicklaunch_powerup_glow_background"
+		bottom_left="spriteimage.message_quicklaunch_powerup_glow_background_bottom_left"
+		bottom="spriteimage.message_quicklaunch_powerup_glow_background_bottom"
+		bottom_right="spriteimage.message_quicklaunch_powerup_glow_background_bottom_right"
+		left="spriteimage.message_quicklaunch_powerup_glow_background_left"
+		middle="spriteimage.message_quicklaunch_powerup_glow_background_middle"
+		right="spriteimage.message_quicklaunch_powerup_glow_background_right"
+		top_left="spriteimage.message_quicklaunch_powerup_glow_background_top_left"
+		top="spriteimage.message_quicklaunch_powerup_glow_background_top"
+		top_right="spriteimage.message_quicklaunch_powerup_glow_background_top_right"
+	/>
+
+
+	<widgetbackground
+		name="beam.background"
+		insets="1,1,1,1"
+		bottom_left="spriteimage.line_background_bottom_left"
+		bottom="spriteimage.line_background_bottom"
+		bottom_right="spriteimage.line_background_bottom_right"
+		left="spriteimage.line_background_left"
+		middle="spriteimage.line_background_middle"
+		right="spriteimage.line_background_right"
+		top_left="spriteimage.line_background_top_left"
+		top="spriteimage.line_background_top"
+		top_right="spriteimage.line_background_top_right"
+		color="255,255,255,255"
+	/>
+
+	<widgetbackground
+		name="proximity.background"
+		insets="0,0,0,0"
+		bottom_left="spriteimage.proximity_bottom_left"
+		bottom="spriteimage.proximity_bottom"
+		bottom_right="spriteimage.proximity_bottom_right"
+		left="spriteimage.proximity_left"
+		middle="spriteimage.proximity_middle"
+		right="spriteimage.proximity_right"
+		top_left="spriteimage.proximity_top_left"
+		top="spriteimage.proximity_top"
+		top_right="spriteimage.proximity_top_right"
+		leftColor="255,255,255,0"
+		rightColor="255,255,255,255"
+	/>
+
+
+	<!-- Dim GUI / game behind dialog -->
+	
+	<texture
+		name="dialog-dim.texture"
+		url="classpath:dialog-dim.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_NEAREST"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="dialog-dim.imagebank" texture="dialog-dim.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.dialog-dim_bottom_left" 		x="0"  	y="0"  	w="2"	h="2"	hx="0" hy="0" />
+		<spriteimage name="spriteimage.dialog-dim_bottom" 			x="2"  	y="0" 	w="4"	h="2"	hx="0" hy="0" />
+		<spriteimage name="spriteimage.dialog-dim_bottom_right" 	x="6" 	y="0"  	w="2"	h="2"	hx="0" hy="0" />
+		<spriteimage name="spriteimage.dialog-dim_left" 			x="0"  	y="2"  	w="2"	h="4"	hx="0" hy="0" />
+		<spriteimage name="spriteimage.dialog-dim_middle" 			x="2"  	y="2"  	w="4"	h="4"	hx="0" hy="0" />
+		<spriteimage name="spriteimage.dialog-dim_right" 			x="6"	y="2"  	w="2"	h="4"	hx="0" hy="0" />
+		<spriteimage name="spriteimage.dialog-dim_top_left" 		x="0"  	y="6"	w="2"	h="2"  	hx="0" hy="0" />
+		<spriteimage name="spriteimage.dialog-dim_top" 				x="2"  	y="6"	w="4"	h="2"  	hx="0" hy="0" />
+		<spriteimage name="spriteimage.dialog-dim_top_right" 		x="6"	y="6"	w="2"	h="2"	hx="0" hy="0" />
+	</imagebank>	
+
+	<widgetbackground
+		name="dialog-dim.background"
+		bottom_left="spriteimage.dialog-dim_bottom_left"
+		bottom="spriteimage.dialog-dim_bottom"
+		bottom_right="spriteimage.dialog-dim_bottom_right"
+		left="spriteimage.dialog-dim_left"
+		middle="spriteimage.dialog-dim_middle"
+		right="spriteimage.dialog-dim_right"
+		top_left="spriteimage.dialog-dim_top_left"
+		top="spriteimage.dialog-dim_top"
+		top_right="spriteimage.dialog-dim_top_right"
+	/>
+	
+	<!-- Rocket explosion effect -->
+	<texture
+		name="rocket.texture"
+		url="classpath:rocketExplosion.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_TRUE"
+	/>
+	
+	<!-- Mine explosion effect -->
+	<texture
+		name="explosion.texture"
+		url="classpath:explosion.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_TRUE"
+	/>
+	
+	<!-- Smartbomb effect -->
+	<texture
+		name="smartbomb.texture"
+		url="classpath:smartbomb.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_TRUE"
+	/>
+	
+	<!-- Disruptor effect -->
+	<texture
+		name="disruptor.texture"
+		url="classpath:disruptor.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_TRUE"
+	/>
+
+	<!-- Titan boss disruptor effect -->
+	<texture
+		name="titan-boss-disruptor.texture"
+		url="classpath:titan-boss-disruptor.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_TRUE"
+	/>
+	
+	<!-- Beam effect -->
+	<texture
+		name="beam.01.texture"
+		url="classpath:beam.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR_MIPMAP_NEAREST"
+		mag="GL_LINEAR"
+		wrap="GL_TRUE"
+	/>
+	<texture
+		name="beam.02.texture"
+		url="classpath:beam.02.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR_MIPMAP_NEAREST"
+		mag="GL_LINEAR"
+		wrap="GL_TRUE"
+	/>
+	
+	<!--  Turret and capacitor ranges -->
+	<texture
+		name="range.texture"
+		url="classpath:range.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_1D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+
+	
+	<array name="ammo.array">
+		<item>spriteimage.timer.ammo.12</item>
+		<item>spriteimage.timer.ammo.11</item>
+		<item>spriteimage.timer.ammo.10</item>
+		<item>spriteimage.timer.ammo.09</item>
+		<item>spriteimage.timer.ammo.08</item>
+		<item>spriteimage.timer.ammo.07</item>
+		<item>spriteimage.timer.ammo.06</item>
+		<item>spriteimage.timer.ammo.05</item>
+		<item>spriteimage.timer.ammo.04</item>
+		<item>spriteimage.timer.ammo.03</item>
+		<item>spriteimage.timer.ammo.02</item>
+		<item>spriteimage.timer.ammo.01</item> 
+	 </array>
+
+	<array name="reload.array">
+		<item>spriteimage.timer.reload.12</item>
+		<item>spriteimage.timer.reload.11</item>
+		<item>spriteimage.timer.reload.10</item>
+		<item>spriteimage.timer.reload.09</item>
+		<item>spriteimage.timer.reload.08</item>
+		<item>spriteimage.timer.reload.07</item>
+		<item>spriteimage.timer.reload.06</item>
+		<item>spriteimage.timer.reload.05</item>
+		<item>spriteimage.timer.reload.04</item>
+		<item>spriteimage.timer.reload.03</item>
+		<item>spriteimage.timer.reload.02</item>
+		<item>spriteimage.timer.reload.01</item> 
+	</array>
+
+	<array name="ammo.large.array">
+		<item>spriteimage.timer.large.ammo.14</item>
+		<item>spriteimage.timer.large.ammo.13</item>
+		<item>spriteimage.timer.large.ammo.12</item>
+		<item>spriteimage.timer.large.ammo.11</item>
+		<item>spriteimage.timer.large.ammo.10</item>
+		<item>spriteimage.timer.large.ammo.09</item>
+		<item>spriteimage.timer.large.ammo.08</item>
+		<item>spriteimage.timer.large.ammo.07</item>
+		<item>spriteimage.timer.large.ammo.06</item>
+		<item>spriteimage.timer.large.ammo.05</item>
+		<item>spriteimage.timer.large.ammo.04</item>
+		<item>spriteimage.timer.large.ammo.03</item>
+		<item>spriteimage.timer.large.ammo.02</item>
+		<item>spriteimage.timer.large.ammo.01</item> 
+	 </array>
+
+	<array name="reload.large.array">
+		<item>spriteimage.timer.large.reload.14</item>
+		<item>spriteimage.timer.large.reload.13</item>		
+		<item>spriteimage.timer.large.reload.12</item>
+		<item>spriteimage.timer.large.reload.11</item>
+		<item>spriteimage.timer.large.reload.10</item>
+		<item>spriteimage.timer.large.reload.09</item>
+		<item>spriteimage.timer.large.reload.08</item>
+		<item>spriteimage.timer.large.reload.07</item>
+		<item>spriteimage.timer.large.reload.06</item>
+		<item>spriteimage.timer.large.reload.05</item>
+		<item>spriteimage.timer.large.reload.04</item>
+		<item>spriteimage.timer.large.reload.03</item>
+		<item>spriteimage.timer.large.reload.02</item>
+		<item>spriteimage.timer.large.reload.01</item> 
+	</array>
+
+	<array name="energy.array">
+		<item>spriteimage.timer.energy.12</item>
+		<item>spriteimage.timer.energy.11</item>
+		<item>spriteimage.timer.energy.10</item>
+		<item>spriteimage.timer.energy.09</item>
+		<item>spriteimage.timer.energy.08</item>
+		<item>spriteimage.timer.energy.07</item>
+		<item>spriteimage.timer.energy.06</item>
+		<item>spriteimage.timer.energy.05</item>
+		<item>spriteimage.timer.energy.04</item>
+		<item>spriteimage.timer.energy.03</item>
+		<item>spriteimage.timer.energy.02</item>
+		<item>spriteimage.timer.energy.01</item>			
+	</array>
+
+
+	<array name="money.array">
+		<item>spriteimage.timer.money.15</item>
+		<item>spriteimage.timer.money.14</item>
+		<item>spriteimage.timer.money.13</item>
+		<item>spriteimage.timer.money.12</item>
+		<item>spriteimage.timer.money.11</item>
+		<item>spriteimage.timer.money.10</item>
+		<item>spriteimage.timer.money.09</item>
+		<item>spriteimage.timer.money.08</item>
+		<item>spriteimage.timer.money.07</item>
+		<item>spriteimage.timer.money.06</item>
+		<item>spriteimage.timer.money.05</item>
+		<item>spriteimage.timer.money.04</item>
+		<item>spriteimage.timer.money.03</item>
+		<item>spriteimage.timer.money.02</item>
+		<item>spriteimage.timer.money.01</item> 
+	</array>
+
+	<array name="bossHitPoints.array">
+		<item>spriteimage.boss.hitpoints.09</item>
+		<item>spriteimage.boss.hitpoints.08</item>
+		<item>spriteimage.boss.hitpoints.07</item>
+		<item>spriteimage.boss.hitpoints.06</item>
+		<item>spriteimage.boss.hitpoints.05</item>
+		<item>spriteimage.boss.hitpoints.04</item>
+		<item>spriteimage.boss.hitpoints.03</item>
+		<item>spriteimage.boss.hitpoints.02</item>
+		<item>spriteimage.boss.hitpoints.01</item>
+	</array>
+
+	<!-- Brains -->
+	<instance name="dumb.brain" class="worm.brains.DumbBrainFeature" avoidanceFactor="0.25" />
+	<instance name="clever.brain" class="worm.brains.SmartBrainFeature" avoidanceFactor="0.5" baseFactor="0.5" defaultFactor="1.0"/>
+	<instance name="tactical.brain" class="worm.brains.TacticalBrainFeature" avoidanceFactor="1.0" baseFactor="1.0" factoryFactor="1.5" turretFactor="2.0" heavyTurretFactor="1.25"/>
+	<instance name="unit.brain" class="worm.brains.UnitBrainFeature"/>
+	<instance name="boss.brain" class="worm.brains.DumbBrainFeature" avoidanceFactor="0.0" />
+	
+
+	
+	<instance
+		name="gidrah.player"
+		class="com.shavenpuppy.jglib.sound.SoundPlayer"
+		sources="6"
+		autocreated="true"
+	/>
+	
+	<layers name="arrow.north.layers">
+		<sprite layer="13" sublayer="0" offset="0,0" animation="spawnpoint.north.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,0" animation="spawnpoint.north.animation" />
+	</layers>
+	<layers name="arrow.south.layers">
+		<sprite layer="13" sublayer="0" offset="0,0" animation="spawnpoint.south.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,0" animation="spawnpoint.south.animation" />
+	</layers>
+	<layers name="arrow.east.layers">
+		<sprite layer="13" sublayer="0" offset="0,0" animation="spawnpoint.east.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,0" animation="spawnpoint.east.animation" />
+	</layers>
+	<layers name="arrow.west.layers">
+		<sprite layer="13" sublayer="0" offset="0,0" animation="spawnpoint.west.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,0" animation="spawnpoint.west.animation" />
+	</layers>
+	<layers name="arrow.northeast.layers">
+		<sprite layer="13" sublayer="0" offset="0,0" animation="spawnpoint.northeast.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,0" animation="spawnpoint.northeast.animation" />
+	</layers>
+	<layers name="arrow.southeast.layers">
+		<sprite layer="13" sublayer="0" offset="0,0" animation="spawnpoint.southeast.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,0" animation="spawnpoint.southeast.animation" />
+	</layers>
+	<layers name="arrow.southwest.layers">
+		<sprite layer="13" sublayer="0" offset="0,0" animation="spawnpoint.southwest.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,0" animation="spawnpoint.southwest.animation" />
+	</layers>
+	<layers name="arrow.northwest.layers">
+		<sprite layer="13" sublayer="0" offset="0,0" animation="spawnpoint.northwest.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,0" animation="spawnpoint.northwest.animation" />
+	</layers>
+	<layers name="arrow.midspawner.layers">
+		<sprite layer="13" sublayer="0" offset="1,-30" animation="spawnpoint.north.back.animation" />
+		<sprite layer="14" sublayer="0" offset="1,-30" animation="spawnpoint.north.animation" />
+		<sprite layer="13" sublayer="0" offset="0,31" animation="spawnpoint.south.back.animation" />
+		<sprite layer="14" sublayer="0" offset="0,31" animation="spawnpoint.south.animation" />
+		<sprite layer="13" sublayer="0" offset="-30,0" animation="spawnpoint.east.back.animation" />
+		<sprite layer="14" sublayer="0" offset="-30,0" animation="spawnpoint.east.animation" />	
+		<sprite layer="13" sublayer="0" offset="31,1" animation="spawnpoint.west.back.animation" />
+		<sprite layer="14" sublayer="0" offset="31,1" animation="spawnpoint.west.animation" />	
+	</layers>
+
+	<!-- Ranks -->
+	
+	<rank title="UNRANKED" points="0">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.unranked.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.unranked.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="WARRANT OFFICER" points="500">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.warrant-officer.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.warrant-officer.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="SECOND LIEUTENANT" points="1000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.2nd-lieutenant.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.2nd-lieutenant.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="LIEUTENANT" points="2000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.lieutenant.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.lieutenant.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="CAPTAIN" points="3000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.captain.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.captain.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="MAJOR" points="4000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.major.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.major.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="LIEUTENANT COLONEL" points="5000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.lieutenant-colonel.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.lieutenant-colonel.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="COLONEL" points="7500">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.colonel.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.colonel.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="BRIGADIER" points="10000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.brigadier.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.brigadier.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="MAJOR GENERAL" points="20000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.major-general.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.major-general.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="LIEUTENANT GENERAL" points="30000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.lieutenant-general.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.lieutenant-general.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="GENERAL" points="40000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.general.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.general.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<rank title="FIELD MARSHAL" points="50000">
+		<appearance><layers scale="0.45">
+			<sprite layer="10" bottomColored="info-floor" topColored="info-building" image="spriteimage.rank.field-marshal.01" />
+			<sprite layer="11" colored="text-bold"  image="spriteimage.rank.field-marshal.glow.01" />
+		</layers></appearance>
+	</rank>
+	
+	<!-- Spotlight texture -->
+	<instance
+		name="edgefade.image"
+		class="worm.InterpolatorImageResource"
+		type="luminance_alpha"
+		size="64"
+		interpolator="cosine"
+	/>
+	<texture
+		name="edgefade.texture"
+		url="resource:edgefade.image"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR_MIPMAP_NEAREST"
+		mag="GL_LINEAR"
+		wrap="GL_TRUE"
+	/>
+
+	<!-- GUI resources -->
+	<include resource="colours.xml" />
+	<include resource="gui.xml" />
+	<include resource="gui-levels.xml" />
+	<include resource="gui-story.xml" />
+	<include resource="gui-game.xml" />
+	<include resource="victory.xml" />
+
+	<!-- Animation -->
+	<include resource="animation.xml" />
+	
+	<!-- Emitters -->
+	<include resource="emitters.xml" />
+	
+	<!-- Buildings -->
+	<include resource="buildings.xml" />
+
+	<!-- Weapons -->
+	<include resource="weapons.xml" />
+
+	<!-- Powerups -->
+	<include resource="powerups.xml" />
+	
+	<!-- Characters -->
+	<include resource="characters.xml" />
+	
+	<!-- Worlds -->
+	<include resource="worlds.xml" />
+	
+	<!-- Gidrahs -->
+	<include resource="gidrahs.xml" />
+	
+	<!--  Units -->
+	<include resource="units.xml" />
+	
+	<!-- Tiles -->
+	<include resource="tiles.xml" />
+	
+	<!-- Mousepointers -->
+	<include resource="mousepointers.xml" />
+	
+	<!-- Medals -->
+	<include resource="medals.xml" />
+
+	<!-- Hints -->
+	<include resource="hints.xml" />
+	
+	<!-- Research -->
+	<include resource="research.xml" />
+
+	<!-- Sounds -->
+	<include resource="sounds.xml" />
+
+	<!-- Sprites -->
+	<include resource="sprites.xml" />
+	
+	<!-- Endless mode -->
+	<include resource="endless.xml" />
+
+	<!-- Survival mode -->
+	<include resource="survival.xml" />
+
+	<!-- Basic game config -->
+	<include resource="config.xml" />
+
+</resources>

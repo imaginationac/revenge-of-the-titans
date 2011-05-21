@@ -1,0 +1,2724 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDRAH.SATURN.04 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.SATURN.04 definition -->
+
+	<gidrah
+		 name="gidrah.saturn.04"
+		 inherit="gidrah.saturn.04.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.04.walk.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.04.walk.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.04.walk.ground.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.04.attack.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.04.attack.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.04.attack.ground.anim" />
+				<emitter emitter="wraith.emitter" offset="17,25"  />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.04.dead.anim" />
+				<emitter emitter="gidrah.mars.death.emitter" offset="16,23"  />
+				<emitter emitter="gidrah.mars.death.flash.emitter" offset="16,32"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.04.walk.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.04.walk.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.04.glow.ground.01" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.04.frozen.1.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.04.frozen.1.ground.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="28"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,3" ySortOffset="3" attenuated="false" animation="gidrah.saturn.04.frozen.2.anim" />
+								<sprite layer="5" sublayer="1" offset="0,3" ySortOffset="3" attenuated="false" image="spriteimage.gidrah.saturn.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.04.frozen.2.ground.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="31"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,6" ySortOffset="6" attenuated="false" animation="gidrah.saturn.04.frozen.3.anim" />
+								<sprite layer="5" sublayer="1" offset="0,6" ySortOffset="6" attenuated="false" image="spriteimage.gidrah.saturn.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.04.frozen.3.ground.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="34"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,8" ySortOffset="8" attenuated="false" animation="gidrah.saturn.04.frozen.4.anim" />
+								<sprite layer="5" sublayer="1" offset="0,8" ySortOffset="8" attenuated="false" image="spriteimage.gidrah.saturn.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.04.frozen.4.ground.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="36"  />
+				</layers></item>
+		</array></frozenAppearance>
+ 	</gidrah>
+
+
+	<!-- ANIMATION for GIDRAH.SATURN.04 -->
+
+	<animation name="gidrah.saturn.04.walk.anim">
+		<loop count="5"/>
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="2" childYOffset="0.1" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.3" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.5" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.7" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.8" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.0" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.2" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.3" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.5" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.9" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.4" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.6" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.0" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.3" />
+			<offset x="0.0" y="1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.5" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.8" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.0" />
+			<offset x="0.0" y="1.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.2" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.5" />
+			<offset x="0.0" y="2.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.7" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.0" />
+			<offset x="0.0" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.2" />
+			<offset x="0.0" y="2.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.4" />
+			<offset x="0.0" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.6" />
+			<offset x="0.0" y="2.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.9" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.1" />
+			<offset x="0.0" y="2.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.3" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.5" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.7" />
+			<offset x="0.0" y="3.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.8" />
+			<offset x="0.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="7.0" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.3" />
+			<offset x="0.0" y="3.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.5" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.6" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.7" />
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.8" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.9" />
+			<offset x="0.0" y="3.9" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="8.0" />
+			<offset x="0.0" y="4.0" d="4"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.9" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.8" />
+			<offset x="0.0" y="3.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.6" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.4" />
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.9" />
+			<offset x="0.0" y="3.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.6" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.3" />
+			<offset x="0.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="5.9" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.6" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.2" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.8" />
+			<offset x="0.0" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.4" />
+			<offset x="0.0" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.0" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.6" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.2" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.4" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.4" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.1" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.8" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.6" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.1" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+			<offset x="0.0" y="0.0" d="1"/>
+		<repeat id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="2" childYOffset="0.1" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.3" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.5" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.7" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.8" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.0" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.2" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.3" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.5" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.9" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="2.4" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="2.6" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="3.0" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="3.3" />
+			<offset x="0.0" y="1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="3.5" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="3.8" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="4.0" />
+			<offset x="0.0" y="1.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="4.2" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="4.5" />
+			<offset x="0.0" y="2.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="4.7" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.0" />
+			<offset x="0.0" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.2" />
+			<offset x="0.0" y="2.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.4" />
+			<offset x="0.0" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.6" />
+			<offset x="0.0" y="2.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.9" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.1" />
+			<offset x="0.0" y="2.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.3" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.5" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.7" />
+			<offset x="0.0" y="3.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.8" />
+			<offset x="0.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="7.0" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="7.3" />
+			<offset x="0.0" y="3.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="7.5" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="1" childYOffset="7.6" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.7" />
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.8" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.9" />
+			<offset x="0.0" y="3.9" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="8.0" />
+			<offset x="0.0" y="4.0" d="4"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.9" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.8" />
+			<offset x="0.0" y="3.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.6" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.4" />
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.9" />
+			<offset x="0.0" y="3.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.6" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.3" />
+			<offset x="0.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="5.9" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.6" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.2" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.8" />
+			<offset x="0.0" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.4" />
+			<offset x="0.0" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.0" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.6" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.2" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.4" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.4" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.1" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.8" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.6" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.1" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+			<offset x="0.0" y="0.0" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.walk.glow.anim">
+		<loop count="5"/>
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="20" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.02" d="20" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="20" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.02" d="20" />
+		<repeat id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="17" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.03" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.04" d="20" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.03" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="17" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.02" d="20" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.walk.ground.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="1" />
+			<animcolor a="255" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="254" d="0"/>
+			<scale scale="0.501" d="1"/>
+			<animcolor a="254" d="0"/>
+			<scale scale="0.502" d="1"/>
+			<animcolor a="253" d="0"/>
+			<scale scale="0.504" d="1"/>
+			<animcolor a="251" d="0"/>
+			<scale scale="0.506" d="1"/>
+			<animcolor a="250" d="0"/>
+			<scale scale="0.508" d="1"/>
+			<animcolor a="248" d="0"/>
+			<scale scale="0.511" d="1"/>
+			<animcolor a="246" d="0"/>
+			<scale scale="0.514" d="1"/>
+			<animcolor a="244" d="0"/>
+			<scale scale="0.517" d="1"/>
+			<animcolor a="242" d="0"/>
+			<scale scale="0.521" d="1"/>
+			<animcolor a="239" d="0"/>
+			<scale scale="0.525" d="1"/>
+			<animcolor a="236" d="0"/>
+			<scale scale="0.529" d="1"/>
+			<animcolor a="234" d="0"/>
+			<scale scale="0.534" d="1"/>
+			<animcolor a="231" d="0"/>
+			<scale scale="0.538" d="1"/>
+			<animcolor a="227" d="0"/>
+			<scale scale="0.543" d="1"/>
+			<animcolor a="224" d="0"/>
+			<scale scale="0.548" d="1"/>
+			<animcolor a="221" d="0"/>
+			<scale scale="0.554" d="1"/>
+			<animcolor a="217" d="0"/>
+			<scale scale="0.559" d="1"/>
+			<animcolor a="214" d="0"/>
+			<scale scale="0.565" d="1"/>
+			<animcolor a="210" d="0"/>
+			<scale scale="0.57" d="1"/>
+			<animcolor a="206" d="0"/>
+			<scale scale="0.576" d="1"/>
+			<animcolor a="203" d="0"/>
+			<scale scale="0.582" d="1"/>
+			<animcolor a="199" d="0"/>
+			<scale scale="0.588" d="1"/>
+			<animcolor a="195" d="0"/>
+			<scale scale="0.594" d="1"/>
+			<animcolor a="191" d="0"/>
+			<scale scale="0.6" d="1"/>
+			<animcolor a="187" d="0"/>
+			<scale scale="0.606" d="1"/>
+			<animcolor a="184" d="0"/>
+			<scale scale="0.612" d="1"/>
+			<animcolor a="180" d="0"/>
+			<scale scale="0.618" d="1"/>
+			<animcolor a="176" d="0"/>
+			<scale scale="0.624" d="1"/>
+			<animcolor a="172" d="0"/>
+			<scale scale="0.63" d="1"/>
+			<animcolor a="169" d="0"/>
+			<scale scale="0.635" d="1"/>
+			<animcolor a="165" d="0"/>
+			<scale scale="0.641" d="1"/>
+			<animcolor a="162" d="0"/>
+			<scale scale="0.646" d="1"/>
+			<animcolor a="158" d="0"/>
+			<scale scale="0.652" d="1"/>
+			<animcolor a="155" d="0"/>
+			<scale scale="0.657" d="1"/>
+			<animcolor a="152" d="0"/>
+			<scale scale="0.662" d="1"/>
+			<animcolor a="149" d="0"/>
+			<scale scale="0.666" d="1"/>
+			<animcolor a="146" d="0"/>
+			<scale scale="0.671" d="1"/>
+			<animcolor a="143" d="0"/>
+			<scale scale="0.675" d="1"/>
+			<animcolor a="141" d="0"/>
+			<scale scale="0.679" d="1"/>
+			<animcolor a="138" d="0"/>
+			<scale scale="0.683" d="1"/>
+			<animcolor a="136" d="0"/>
+			<scale scale="0.686" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="0.689" d="1"/>
+			<animcolor a="133" d="0"/>
+			<scale scale="0.692" d="1"/>
+			<animcolor a="131" d="0"/>
+			<scale scale="0.694" d="1"/>
+			<animcolor a="130" d="0"/>
+			<scale scale="0.696" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.698" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.699" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.7" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.7" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.699" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.697" d="1"/>
+			<animcolor a="131" d="0"/>
+			<scale scale="0.694" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="0.69" d="1"/>
+			<animcolor a="137" d="0"/>
+			<scale scale="0.685" d="1"/>
+			<animcolor a="141" d="0"/>
+			<scale scale="0.679" d="1"/>
+			<animcolor a="145" d="0"/>
+			<scale scale="0.672" d="1"/>
+			<animcolor a="150" d="0"/>
+			<scale scale="0.665" d="1"/>
+			<animcolor a="155" d="0"/>
+			<scale scale="0.657" d="1"/>
+			<animcolor a="161" d="0"/>
+			<scale scale="0.648" d="1"/>
+			<animcolor a="166" d="0"/>
+			<scale scale="0.639" d="1"/>
+			<animcolor a="172" d="0"/>
+			<scale scale="0.63" d="1"/>
+			<animcolor a="179" d="0"/>
+			<scale scale="0.62" d="1"/>
+			<animcolor a="185" d="0"/>
+			<scale scale="0.61" d="1"/>
+			<animcolor a="191" d="0"/>
+			<scale scale="0.6" d="1"/>
+			<animcolor a="198" d="0"/>
+			<scale scale="0.59" d="1"/>
+			<animcolor a="204" d="0"/>
+			<scale scale="0.58" d="1"/>
+			<animcolor a="210" d="0"/>
+			<scale scale="0.57" d="1"/>
+			<animcolor a="216" d="0"/>
+			<scale scale="0.561" d="1"/>
+			<animcolor a="222" d="0"/>
+			<scale scale="0.552" d="1"/>
+			<animcolor a="227" d="0"/>
+			<scale scale="0.543" d="1"/>
+			<animcolor a="233" d="0"/>
+			<scale scale="0.535" d="1"/>
+			<animcolor a="237" d="0"/>
+			<scale scale="0.528" d="1"/>
+			<animcolor a="242" d="0"/>
+			<scale scale="0.521" d="1"/>
+			<animcolor a="246" d="0"/>
+			<scale scale="0.515" d="1"/>
+			<animcolor a="249" d="0"/>
+			<scale scale="0.51" d="1"/>
+			<animcolor a="251" d="0"/>
+			<scale scale="0.506" d="1"/>
+			<animcolor a="253" d="0"/>
+			<scale scale="0.503" d="1"/>
+			<animcolor a="255" d="0"/>
+			<scale scale="0.501" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.attack.anim">
+			<frame i="spriteimage.gidrah.saturn.04.01" d="3" childYOffset="1.3" />
+			<frame i="spriteimage.gidrah.saturn.04.05" d="5" childYOffset="1.3" />
+			<frame i="spriteimage.gidrah.saturn.04.06" d="2" childYOffset="1.3" />
+			<frame i="spriteimage.gidrah.saturn.04.06" d="3" childYOffset="1.4" />
+			<frame i="spriteimage.gidrah.saturn.04.07" d="2" childYOffset="1.4" />
+			<frame i="spriteimage.gidrah.saturn.04.07" d="1" childYOffset="1.5" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="1" childYOffset="1.5" />
+			<frame i="spriteimage.gidrah.saturn.04.08" d="3" childYOffset="1.6" />
+			<frame i="spriteimage.gidrah.saturn.04.08" d="1" childYOffset="1.7" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="2" childYOffset="1.8" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="1.9" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="2.0" />
+			<offset x="0.0" y="0.3" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="2.1" />
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childYOffset="2.2" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="1" childYOffset="2.3" />
+			<frame i="spriteimage.gidrah.saturn.04.12" d="0" childYOffset="2.3" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.12" d="1" childYOffset="2.4" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="2.5" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="2.6" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="1" childYOffset="2.7" />
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="1" childYOffset="2.9" />
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childYOffset="3.0" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="1" childYOffset="3.1" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="3.2" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="3.3" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="3.5" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="-0.5" childYOffset="3.6" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="-0.5" childYOffset="3.7" />
+			<offset x="-0.2" y="1.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.12" d="0" childXOffset="-0.5" childYOffset="3.8" />
+			<offset x="-0.2" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.12" d="1" childXOffset="0.5" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childXOffset="0.5" childYOffset="4.1" />
+			<offset x="0.3" y="1.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childXOffset="0.5" childYOffset="4.2" />
+			<offset x="0.3" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="4.4" />
+			<offset x="0.3" y="1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="4.5" />
+			<offset x="0.0" y="1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childYOffset="4.7" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="-1.0" childYOffset="4.8" />
+			<offset x="0.0" y="1.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-1.0" childYOffset="5.0" />
+			<offset x="-0.5" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="1" childXOffset="1.0" childYOffset="5.2" />
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="1.0" childYOffset="5.3" />
+			<offset x="0.5" y="1.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="-1.0" childYOffset="5.5" />
+			<offset x="0.5" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="-1.0" childYOffset="5.7" />
+			<offset x="-0.5" y="2.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="5.8" />
+			<offset x="-0.5" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="6.0" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childXOffset="1.5" childYOffset="6.2" />
+			<offset x="0.0" y="2.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="1.5" childYOffset="6.4" />
+			<offset x="0.8" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="-1.5" childYOffset="6.6" />
+			<offset x="0.8" y="2.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-1.5" childYOffset="6.8" />
+			<offset x="-0.7" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="1.0" childYOffset="7.0" />
+			<offset x="-0.7" y="2.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="1.0" childYOffset="7.2" />
+			<offset x="0.5" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-1.0" childYOffset="7.4" />
+			<offset x="0.5" y="2.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-1.0" childYOffset="7.6" />
+			<offset x="-0.5" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="2.0" childYOffset="7.8" />
+			<offset x="-0.5" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="2.0" childYOffset="8.0" />
+			<offset x="1.0" y="3.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="8.2" />
+			<offset x="1.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="8.4" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childXOffset="-2.0" childYOffset="8.7" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="-2.0" childYOffset="8.9" />
+			<offset x="-1.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="1.0" childYOffset="9.1" />
+			<offset x="-1.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="1.0" childYOffset="9.3" />
+			<offset x="0.5" y="3.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-2.0" childYOffset="9.6" />
+			<offset x="0.5" y="4.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-2.0" childYOffset="9.8" />
+			<offset x="-1.0" y="4.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-2.0" childYOffset="10.1" />
+			<offset x="-1.0" y="4.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-2.0" childYOffset="10.3" />
+			<offset x="-1.0" y="4.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childYOffset="10.6" />
+			<offset x="-1.0" y="4.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="10.8" />
+			<offset x="0.0" y="4.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="1.0" childYOffset="11.1" />
+			<offset x="0.0" y="4.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="1.0" childYOffset="11.3" />
+			<offset x="0.5" y="4.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-2.0" childYOffset="11.6" />
+			<offset x="0.5" y="5.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-2.0" childYOffset="11.9" />
+			<offset x="-1.0" y="5.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-2.0" childYOffset="12.1" />
+			<offset x="-1.0" y="5.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-2.0" childYOffset="12.4" />
+			<offset x="-1.0" y="5.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childYOffset="12.7" />
+			<offset x="-1.0" y="5.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="13.0" />
+			<offset x="0.0" y="5.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="13.3" />
+			<offset x="0.0" y="5.8" d="1"/>
+			<offset x="0.0" y="6.0" d="16"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="14.6" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="15.6" />
+			<offset x="0.0" y="6.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="16.2" />
+			<offset x="0.0" y="7.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="16.4" />
+			<offset x="0.0" y="7.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="1.3" />
+			<offset x="0.0" y="7.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.06" d="0" childYOffset="1.3" />
+			<offset x="0.0" y="0.0" d="1"/>
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.05" d="4" childYOffset="1.3" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.attack.glow.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="23" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="8" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="23" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="8" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="23" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="8" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="23" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="8" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="0" />
+	</animation>
+
+	<animation name="gidrah.saturn.04.attack.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="1" />
+			<animcolor a="255" d="1"/>
+			<animcolor a="255" d="1"/>
+			<animcolor a="254" d="1"/>
+			<animcolor a="254" d="1"/>
+			<animcolor a="253" d="1"/>
+			<animcolor a="253" d="1"/>
+			<animcolor a="252" d="1"/>
+			<animcolor a="252" d="1"/>
+			<animcolor a="251" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="250" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="249" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="248" d="0"/>
+			<scale scale="0.501" d="1"/>
+			<animcolor a="247" d="0"/>
+			<scale scale="0.501" d="1"/>
+			<animcolor a="246" d="0"/>
+			<scale scale="0.501" d="1"/>
+			<animcolor a="245" d="0"/>
+			<scale scale="0.502" d="1"/>
+			<animcolor a="244" d="0"/>
+			<scale scale="0.502" d="1"/>
+			<animcolor a="242" d="0"/>
+			<scale scale="0.503" d="1"/>
+			<animcolor a="241" d="0"/>
+			<scale scale="0.504" d="1"/>
+			<animcolor a="240" d="0"/>
+			<scale scale="0.504" d="1"/>
+			<animcolor a="238" d="0"/>
+			<scale scale="0.505" d="1"/>
+			<animcolor a="237" d="0"/>
+			<scale scale="0.506" d="1"/>
+			<animcolor a="235" d="0"/>
+			<scale scale="0.507" d="1"/>
+			<animcolor a="233" d="0"/>
+			<scale scale="0.508" d="1"/>
+			<animcolor a="232" d="0"/>
+			<scale scale="0.509" d="1"/>
+			<animcolor a="230" d="0"/>
+			<scale scale="0.51" d="1"/>
+			<animcolor a="229" d="0"/>
+			<scale scale="0.512" d="1"/>
+			<animcolor a="227" d="0"/>
+			<scale scale="0.513" d="1"/>
+			<animcolor a="225" d="0"/>
+			<scale scale="0.515" d="1"/>
+			<animcolor a="223" d="0"/>
+			<scale scale="0.516" d="1"/>
+			<animcolor a="221" d="0"/>
+			<scale scale="0.518" d="1"/>
+			<animcolor a="219" d="0"/>
+			<scale scale="0.519" d="1"/>
+			<animcolor a="218" d="0"/>
+			<scale scale="0.521" d="1"/>
+			<animcolor a="216" d="0"/>
+			<scale scale="0.523" d="1"/>
+			<animcolor a="214" d="0"/>
+			<scale scale="0.525" d="1"/>
+			<animcolor a="212" d="0"/>
+			<scale scale="0.526" d="1"/>
+			<animcolor a="210" d="0"/>
+			<scale scale="0.528" d="1"/>
+			<animcolor a="208" d="0"/>
+			<scale scale="0.531" d="1"/>
+			<animcolor a="206" d="0"/>
+			<scale scale="0.533" d="1"/>
+			<animcolor a="204" d="0"/>
+			<scale scale="0.535" d="1"/>
+			<animcolor a="202" d="0"/>
+			<scale scale="0.537" d="1"/>
+			<animcolor a="200" d="0"/>
+			<scale scale="0.54" d="1"/>
+			<animcolor a="197" d="0"/>
+			<scale scale="0.542" d="1"/>
+			<animcolor a="195" d="0"/>
+			<scale scale="0.544" d="1"/>
+			<animcolor a="193" d="0"/>
+			<scale scale="0.547" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<animcolor a="191" d="0"/>
+			<scale scale="0.55" d="1"/>
+			<animcolor a="189" d="0"/>
+			<scale scale="0.552" d="1"/>
+			<animcolor a="187" d="0"/>
+			<scale scale="0.555" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<animcolor a="185" d="0"/>
+			<scale scale="0.558" d="1"/>
+			<animcolor a="183" d="0"/>
+			<scale scale="0.561" d="1"/>
+			<animcolor a="181" d="0"/>
+			<scale scale="0.564" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="179" d="0"/>
+			<scale scale="0.567" d="1"/>
+			<animcolor a="177" d="0"/>
+			<scale scale="0.57" d="1"/>
+			<animcolor a="175" d="0"/>
+			<scale scale="0.573" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<animcolor a="173" d="0"/>
+			<scale scale="0.577" d="1"/>
+			<animcolor a="171" d="0"/>
+			<scale scale="0.58" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<animcolor a="169" d="0"/>
+			<scale scale="0.584" d="1"/>
+			<animcolor a="167" d="0"/>
+			<scale scale="0.587" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<animcolor a="165" d="0"/>
+			<scale scale="0.591" d="1"/>
+			<animcolor a="163" d="0"/>
+			<scale scale="0.594" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="161" d="0"/>
+			<scale scale="0.598" d="1"/>
+			<animcolor a="159" d="0"/>
+			<scale scale="0.602" d="0"/>
+			<offset x="0.4" y="+0.0" d="1"/>
+			<animcolor a="158" d="0"/>
+			<scale scale="0.606" d="1"/>
+			<animcolor a="156" d="0"/>
+			<scale scale="0.61" d="0"/>
+			<offset x="-0.4" y="+0.0" d="1"/>
+			<animcolor a="154" d="0"/>
+			<scale scale="0.614" d="1"/>
+			<animcolor a="152" d="0"/>
+			<scale scale="0.618" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<animcolor a="151" d="0"/>
+			<scale scale="0.622" d="1"/>
+			<animcolor a="149" d="0"/>
+			<scale scale="0.626" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<animcolor a="147" d="0"/>
+			<scale scale="0.631" d="1"/>
+			<animcolor a="146" d="0"/>
+			<scale scale="0.635" d="0"/>
+			<offset x="0.5" y="+0.0" d="1"/>
+			<animcolor a="144" d="0"/>
+			<scale scale="0.639" d="1"/>
+			<animcolor a="143" d="0"/>
+			<scale scale="0.644" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="142" d="0"/>
+			<scale scale="0.649" d="1"/>
+			<animcolor a="140" d="0"/>
+			<scale scale="0.653" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<animcolor a="139" d="0"/>
+			<scale scale="0.658" d="1"/>
+			<animcolor a="138" d="0"/>
+			<scale scale="0.663" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<animcolor a="137" d="0"/>
+			<scale scale="0.668" d="1"/>
+			<animcolor a="135" d="0"/>
+			<scale scale="0.673" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="0.678" d="1"/>
+			<animcolor a="133" d="0"/>
+			<scale scale="0.683" d="1"/>
+			<animcolor a="133" d="0"/>
+			<scale scale="0.688" d="1"/>
+			<animcolor a="132" d="0"/>
+			<scale scale="0.693" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="131" d="0"/>
+			<scale scale="0.699" d="1"/>
+			<animcolor a="130" d="0"/>
+			<scale scale="0.704" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<animcolor a="130" d="0"/>
+			<scale scale="0.71" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.715" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.721" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.726" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.732" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.738" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.744" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.75" d="3"/>
+			<scale scale="0.75" d="2"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="2"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="2"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="1"/>
+			<animcolor a="123" d="0"/>
+			<scale scale="0.795" d="1"/>
+			<animcolor a="119" d="0"/>
+			<scale scale="0.83" d="1"/>
+			<animcolor a="117" d="0"/>
+			<scale scale="0.855" d="1"/>
+			<animcolor a="115" d="0"/>
+			<scale scale="0.87" d="1"/>
+			<animcolor a="115" d="0"/>
+			<scale scale="0.875" d="1"/>
+			<animcolor a="255" d="0"/>
+			<scale scale="0.5" d="387"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.dead.anim">
+			<frame i="spriteimage.gidrah.saturn.04.ghost.01" d="1" />
+			<animcolor a="254" d="0"/>
+			<scale xscale="0.495" yscale="0.524" d="0"/>
+			<offset x="0.0" y="0.6" d="1"/>
+			<animcolor a="252" d="0"/>
+			<scale xscale="0.49" yscale="0.548" d="0"/>
+			<offset x="0.0" y="1.1" d="1"/>
+			<animcolor a="248" d="0"/>
+			<scale xscale="0.485" yscale="0.571" d="0"/>
+			<offset x="0.0" y="1.7" d="1"/>
+			<animcolor a="243" d="0"/>
+			<scale xscale="0.481" yscale="0.594" d="0"/>
+			<offset x="0.0" y="2.2" d="1"/>
+			<animcolor a="235" d="0"/>
+			<scale xscale="0.476" yscale="0.617" d="0"/>
+			<offset x="0.0" y="2.8" d="1"/>
+			<animcolor a="226" d="0"/>
+			<scale xscale="0.471" yscale="0.639" d="0"/>
+			<offset x="0.0" y="3.3" d="1"/>
+			<animcolor a="216" d="0"/>
+			<scale xscale="0.467" yscale="0.661" d="0"/>
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.ghost.02" d="0" />
+			<animcolor a="205" d="0"/>
+			<scale xscale="0.463" yscale="0.683" d="0"/>
+			<offset x="0.0" y="4.4" d="1"/>
+			<animcolor a="194" d="0"/>
+			<scale xscale="0.458" yscale="0.704" d="0"/>
+			<offset x="0.0" y="4.9" d="1"/>
+			<animcolor a="183" d="0"/>
+			<scale xscale="0.454" yscale="0.725" d="0"/>
+			<offset x="0.0" y="5.4" d="1"/>
+			<animcolor a="173" d="0"/>
+			<scale xscale="0.45" yscale="0.746" d="0"/>
+			<offset x="0.0" y="5.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.ghost.03" d="0" />
+			<animcolor a="163" d="0"/>
+			<scale xscale="0.446" yscale="0.766" d="0"/>
+			<offset x="0.0" y="6.3" d="1"/>
+			<animcolor a="153" d="0"/>
+			<scale xscale="0.441" yscale="0.786" d="0"/>
+			<offset x="0.0" y="6.8" d="1"/>
+			<animcolor a="144" d="0"/>
+			<scale xscale="0.437" yscale="0.805" d="0"/>
+			<offset x="0.0" y="7.3" d="1"/>
+			<animcolor a="136" d="0"/>
+			<scale xscale="0.434" yscale="0.825" d="0"/>
+			<offset x="0.0" y="7.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.ghost.04" d="0" />
+			<animcolor a="128" d="0"/>
+			<scale xscale="0.43" yscale="0.844" d="0"/>
+			<offset x="0.0" y="8.2" d="1"/>
+			<animcolor a="121" d="0"/>
+			<scale xscale="0.426" yscale="0.862" d="0"/>
+			<offset x="0.0" y="8.6" d="1"/>
+			<animcolor a="114" d="0"/>
+			<scale xscale="0.422" yscale="0.88" d="0"/>
+			<offset x="0.0" y="9.1" d="1"/>
+			<animcolor a="108" d="0"/>
+			<scale xscale="0.419" yscale="0.898" d="0"/>
+			<offset x="0.0" y="9.5" d="1"/>
+			<animcolor a="102" d="0"/>
+			<scale xscale="0.415" yscale="0.916" d="0"/>
+			<offset x="0.0" y="9.9" d="1"/>
+			<animcolor a="96" d="0"/>
+			<scale xscale="0.411" yscale="0.933" d="0"/>
+			<offset x="0.0" y="10.3" d="1"/>
+			<animcolor a="91" d="0"/>
+			<scale xscale="0.408" yscale="0.95" d="0"/>
+			<offset x="0.0" y="10.7" d="1"/>
+			<animcolor a="86" d="0"/>
+			<scale xscale="0.405" yscale="0.966" d="0"/>
+			<offset x="0.0" y="11.1" d="1"/>
+			<animcolor a="82" d="0"/>
+			<scale xscale="0.401" yscale="0.982" d="0"/>
+			<offset x="0.0" y="11.5" d="1"/>
+			<animcolor a="78" d="0"/>
+			<scale xscale="0.398" yscale="0.998" d="0"/>
+			<offset x="0.0" y="11.9" d="1"/>
+			<animcolor a="74" d="0"/>
+			<scale xscale="0.395" yscale="1.013" d="0"/>
+			<offset x="0.0" y="12.2" d="1"/>
+			<animcolor a="70" d="0"/>
+			<scale xscale="0.392" yscale="1.028" d="0"/>
+			<offset x="0.0" y="12.6" d="1"/>
+			<animcolor a="66" d="0"/>
+			<scale xscale="0.389" yscale="1.043" d="0"/>
+			<offset x="0.0" y="13.0" d="1"/>
+			<animcolor a="62" d="0"/>
+			<scale xscale="0.386" yscale="1.057" d="0"/>
+			<offset x="0.0" y="13.3" d="1"/>
+			<animcolor a="59" d="0"/>
+			<scale xscale="0.383" yscale="1.071" d="0"/>
+			<offset x="0.0" y="13.6" d="1"/>
+			<animcolor a="56" d="0"/>
+			<scale xscale="0.38" yscale="1.085" d="0"/>
+			<offset x="0.0" y="14.0" d="1"/>
+			<animcolor a="53" d="0"/>
+			<scale xscale="0.377" yscale="1.098" d="0"/>
+			<offset x="0.0" y="14.3" d="1"/>
+			<animcolor a="50" d="0"/>
+			<scale xscale="0.375" yscale="1.111" d="0"/>
+			<offset x="0.0" y="14.6" d="1"/>
+			<animcolor a="47" d="0"/>
+			<scale xscale="0.372" yscale="1.124" d="0"/>
+			<offset x="0.0" y="14.9" d="1"/>
+			<animcolor a="44" d="0"/>
+			<scale xscale="0.37" yscale="1.136" d="0"/>
+			<offset x="0.0" y="15.2" d="1"/>
+			<animcolor a="42" d="0"/>
+			<scale xscale="0.367" yscale="1.148" d="0"/>
+			<offset x="0.0" y="15.5" d="1"/>
+			<animcolor a="39" d="0"/>
+			<scale xscale="0.365" yscale="1.16" d="0"/>
+			<offset x="0.0" y="15.7" d="1"/>
+			<animcolor a="37" d="0"/>
+			<scale xscale="0.363" yscale="1.171" d="0"/>
+			<offset x="0.0" y="16.0" d="1"/>
+			<animcolor a="35" d="0"/>
+			<scale xscale="0.36" yscale="1.182" d="0"/>
+			<offset x="0.0" y="16.3" d="1"/>
+			<animcolor a="32" d="0"/>
+			<scale xscale="0.358" yscale="1.193" d="0"/>
+			<offset x="0.0" y="16.5" d="1"/>
+			<animcolor a="30" d="0"/>
+			<scale xscale="0.356" yscale="1.203" d="0"/>
+			<offset x="0.0" y="16.8" d="1"/>
+			<animcolor a="28" d="0"/>
+			<scale xscale="0.354" yscale="1.213" d="0"/>
+			<offset x="0.0" y="17.0" d="1"/>
+			<animcolor a="26" d="0"/>
+			<scale xscale="0.352" yscale="1.222" d="0"/>
+			<offset x="0.0" y="17.2" d="1"/>
+			<animcolor a="24" d="0"/>
+			<scale xscale="0.35" yscale="1.231" d="0"/>
+			<offset x="0.0" y="17.4" d="1"/>
+			<animcolor a="23" d="0"/>
+			<scale xscale="0.348" yscale="1.24" d="0"/>
+			<offset x="0.0" y="17.7" d="1"/>
+			<animcolor a="21" d="0"/>
+			<scale xscale="0.347" yscale="1.249" d="0"/>
+			<offset x="0.0" y="17.9" d="1"/>
+			<animcolor a="19" d="0"/>
+			<scale xscale="0.345" yscale="1.257" d="0"/>
+			<offset x="0.0" y="18.1" d="1"/>
+			<animcolor a="18" d="0"/>
+			<scale xscale="0.343" yscale="1.265" d="0"/>
+			<offset x="0.0" y="18.2" d="1"/>
+			<animcolor a="16" d="0"/>
+			<scale xscale="0.342" yscale="1.272" d="0"/>
+			<offset x="0.0" y="18.4" d="1"/>
+			<animcolor a="15" d="0"/>
+			<scale xscale="0.34" yscale="1.279" d="0"/>
+			<offset x="0.0" y="18.6" d="1"/>
+			<animcolor a="13" d="0"/>
+			<scale xscale="0.339" yscale="1.286" d="0"/>
+			<offset x="0.0" y="18.7" d="1"/>
+			<animcolor a="12" d="0"/>
+			<scale xscale="0.338" yscale="1.292" d="0"/>
+			<offset x="0.0" y="18.9" d="1"/>
+			<animcolor a="11" d="0"/>
+			<scale xscale="0.337" yscale="1.299" d="0"/>
+			<offset x="0.0" y="19.0" d="1"/>
+			<animcolor a="9" d="0"/>
+			<scale xscale="0.335" yscale="1.304" d="0"/>
+			<offset x="0.0" y="19.2" d="1"/>
+			<animcolor a="8" d="0"/>
+			<scale xscale="0.334" yscale="1.31" d="0"/>
+			<offset x="0.0" y="19.3" d="1"/>
+			<animcolor a="7" d="0"/>
+			<scale xscale="0.333" yscale="1.315" d="0"/>
+			<offset x="0.0" y="19.4" d="1"/>
+			<animcolor a="6" d="0"/>
+			<scale xscale="0.332" yscale="1.319" d="0"/>
+			<offset x="0.0" y="19.5" d="1"/>
+			<animcolor a="5" d="0"/>
+			<scale xscale="0.331" yscale="1.324" d="0"/>
+			<offset x="0.0" y="19.6" d="1"/>
+			<animcolor a="5" d="0"/>
+			<scale xscale="0.331" yscale="1.328" d="0"/>
+			<offset x="0.0" y="19.7" d="1"/>
+			<animcolor a="4" d="0"/>
+			<scale xscale="0.33" yscale="1.331" d="0"/>
+			<offset x="0.0" y="19.8" d="1"/>
+			<animcolor a="3" d="0"/>
+			<scale xscale="0.329" yscale="1.335" d="0"/>
+			<offset x="0.0" y="19.9" d="1"/>
+			<animcolor a="3" d="0"/>
+			<scale xscale="0.329" yscale="1.337" d="0"/>
+			<offset x="0.0" y="20.0" d="1"/>
+			<animcolor a="2" d="0"/>
+			<scale xscale="0.328" yscale="1.34" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale xscale="0.328" yscale="1.342" d="0"/>
+			<offset x="0.0" y="20.1" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale xscale="0.327" yscale="1.344" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale xscale="0.327" yscale="1.346" d="0"/>
+			<offset x="0.0" y="20.2" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale xscale="0.327" yscale="1.347" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale xscale="0.326" yscale="1.348" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale xscale="0.326" yscale="1.348" d="1"/>
+		<event id="1"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.frozen.1.anim">
+		<random>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.frozen.1.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="0" />
+			<animcolor a="125" d="0"/>
+			<scale scale="0.5" d="498"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.frozen.2.anim">
+		<random>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.frozen.2.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="0" />
+			<animcolor a="95" d="0"/>
+			<scale scale="0.58" d="1"/>
+			<scale scale="0.575" d="497"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.frozen.3.anim">
+		<random>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.frozen.3.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="0" />
+			<animcolor a="82" d="0"/>
+			<scale scale="0.64" d="1"/>
+			<scale scale="0.635" d="497"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.frozen.4.anim">
+		<random>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.saturn.04.frozen.4.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="0" />
+			<animcolor a="64" d="0"/>
+			<scale scale="0.7" d="1"/>
+			<scale scale="0.695" d="497"/>
+	</animation>
+
+
+
+
+	<!-- ANGRYGIDRAH.SATURN.04 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.SATURN.04 definition -->
+
+	<gidrah
+		 name="angrygidrah.saturn.04"
+		 inherit="angrygidrah.saturn.04.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.walk.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.04.walk.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.walk.ground.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.04.attack.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.04.attack.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.attack.ground.anim" />
+				<emitter emitter="wraith.emitter" offset="17,25"  />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.dead.anim" />
+				<emitter emitter="gidrah.mars.death.emitter" offset="16,23"  />
+				<emitter emitter="gidrah.mars.death.flash.emitter" offset="16,32"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.walk.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.04.walk.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.04.glow.ground.01" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.frozen.1.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.frozen.1.ground.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="28"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,3" ySortOffset="3" attenuated="false" animation="angrygidrah.saturn.04.frozen.2.anim" />
+								<sprite layer="5" sublayer="1" offset="0,3" ySortOffset="3" attenuated="false" image="spriteimage.gidrah.saturn.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.frozen.2.ground.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="31"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,6" ySortOffset="6" attenuated="false" animation="angrygidrah.saturn.04.frozen.3.anim" />
+								<sprite layer="5" sublayer="1" offset="0,6" ySortOffset="6" attenuated="false" image="spriteimage.gidrah.saturn.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.frozen.3.ground.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="34"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,8" ySortOffset="8" attenuated="false" animation="angrygidrah.saturn.04.frozen.4.anim" />
+								<sprite layer="5" sublayer="1" offset="0,8" ySortOffset="8" attenuated="false" image="spriteimage.gidrah.saturn.04.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="36"  />
+								<sprite layer="4" sublayer="2" offset="0,0" attenuated="false" animation="angrygidrah.saturn.04.frozen.4.ground.anim" />
+				</layers></item>
+		</array></frozenAppearance>
+ 	</gidrah>
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.SATURN.04 -->
+
+	<animation name="angrygidrah.saturn.04.walk.anim">
+		<loop count="5"/>
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="2" childYOffset="0.1" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.3" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.5" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.7" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.8" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.0" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.2" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.3" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.5" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.9" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.4" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.6" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.0" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.3" />
+			<offset x="0.0" y="1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.5" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.8" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.0" />
+			<offset x="0.0" y="1.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.2" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.5" />
+			<offset x="0.0" y="2.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.7" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.0" />
+			<offset x="0.0" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.2" />
+			<offset x="0.0" y="2.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.4" />
+			<offset x="0.0" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.6" />
+			<offset x="0.0" y="2.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.9" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.1" />
+			<offset x="0.0" y="2.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.3" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.5" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.7" />
+			<offset x="0.0" y="3.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="6.8" />
+			<offset x="0.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="7.0" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.3" />
+			<offset x="0.0" y="3.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.5" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.6" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.7" />
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.8" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.9" />
+			<offset x="0.0" y="3.9" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="8.0" />
+			<offset x="0.0" y="4.0" d="4"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.9" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.8" />
+			<offset x="0.0" y="3.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.6" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.4" />
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.9" />
+			<offset x="0.0" y="3.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.6" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.3" />
+			<offset x="0.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="5.9" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.6" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.2" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.8" />
+			<offset x="0.0" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.4" />
+			<offset x="0.0" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.0" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.6" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.2" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.4" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.4" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.1" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.8" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.6" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.1" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+			<offset x="0.0" y="0.0" d="1"/>
+		<repeat id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="2" childYOffset="0.1" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.3" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.5" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="0.7" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="0.8" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.0" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.2" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.3" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.5" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="1.9" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="2.4" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="2.6" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="3.0" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="3.3" />
+			<offset x="0.0" y="1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="3.5" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="3.8" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="4.0" />
+			<offset x="0.0" y="1.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="4.2" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="4.5" />
+			<offset x="0.0" y="2.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="4.7" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.0" />
+			<offset x="0.0" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.2" />
+			<offset x="0.0" y="2.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.4" />
+			<offset x="0.0" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.6" />
+			<offset x="0.0" y="2.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="5.9" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.1" />
+			<offset x="0.0" y="2.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.3" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.5" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.7" />
+			<offset x="0.0" y="3.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="6.8" />
+			<offset x="0.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="7.0" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.04" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="7.3" />
+			<offset x="0.0" y="3.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="0" childYOffset="7.5" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.03" d="1" childYOffset="7.6" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.7" />
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.8" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.9" />
+			<offset x="0.0" y="3.9" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="8.0" />
+			<offset x="0.0" y="4.0" d="4"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.9" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.8" />
+			<offset x="0.0" y="3.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" childYOffset="7.6" />
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.4" />
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.9" />
+			<offset x="0.0" y="3.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.6" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="6.3" />
+			<offset x="0.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="0" childYOffset="5.9" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.6" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="5.2" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.8" />
+			<offset x="0.0" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.4" />
+			<offset x="0.0" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="4.0" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.6" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="3.2" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.4" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.4" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="1.1" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.8" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.6" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="0" childYOffset="0.1" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+			<offset x="0.0" y="0.0" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.walk.glow.anim">
+		<loop count="5"/>
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="20" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.02" d="20" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="20" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.02" d="20" />
+		<repeat id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="17" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.03" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.04" d="20" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.03" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="17" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.02" d="20" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.walk.ground.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="1" />
+			<animcolor a="255" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="254" d="0"/>
+			<scale scale="0.501" d="1"/>
+			<animcolor a="254" d="0"/>
+			<scale scale="0.502" d="1"/>
+			<animcolor a="253" d="0"/>
+			<scale scale="0.504" d="1"/>
+			<animcolor a="251" d="0"/>
+			<scale scale="0.506" d="1"/>
+			<animcolor a="250" d="0"/>
+			<scale scale="0.508" d="1"/>
+			<animcolor a="248" d="0"/>
+			<scale scale="0.511" d="1"/>
+			<animcolor a="246" d="0"/>
+			<scale scale="0.514" d="1"/>
+			<animcolor a="244" d="0"/>
+			<scale scale="0.517" d="1"/>
+			<animcolor a="242" d="0"/>
+			<scale scale="0.521" d="1"/>
+			<animcolor a="239" d="0"/>
+			<scale scale="0.525" d="1"/>
+			<animcolor a="236" d="0"/>
+			<scale scale="0.529" d="1"/>
+			<animcolor a="234" d="0"/>
+			<scale scale="0.534" d="1"/>
+			<animcolor a="231" d="0"/>
+			<scale scale="0.538" d="1"/>
+			<animcolor a="227" d="0"/>
+			<scale scale="0.543" d="1"/>
+			<animcolor a="224" d="0"/>
+			<scale scale="0.548" d="1"/>
+			<animcolor a="221" d="0"/>
+			<scale scale="0.554" d="1"/>
+			<animcolor a="217" d="0"/>
+			<scale scale="0.559" d="1"/>
+			<animcolor a="214" d="0"/>
+			<scale scale="0.565" d="1"/>
+			<animcolor a="210" d="0"/>
+			<scale scale="0.57" d="1"/>
+			<animcolor a="206" d="0"/>
+			<scale scale="0.576" d="1"/>
+			<animcolor a="203" d="0"/>
+			<scale scale="0.582" d="1"/>
+			<animcolor a="199" d="0"/>
+			<scale scale="0.588" d="1"/>
+			<animcolor a="195" d="0"/>
+			<scale scale="0.594" d="1"/>
+			<animcolor a="191" d="0"/>
+			<scale scale="0.6" d="1"/>
+			<animcolor a="187" d="0"/>
+			<scale scale="0.606" d="1"/>
+			<animcolor a="184" d="0"/>
+			<scale scale="0.612" d="1"/>
+			<animcolor a="180" d="0"/>
+			<scale scale="0.618" d="1"/>
+			<animcolor a="176" d="0"/>
+			<scale scale="0.624" d="1"/>
+			<animcolor a="172" d="0"/>
+			<scale scale="0.63" d="1"/>
+			<animcolor a="169" d="0"/>
+			<scale scale="0.635" d="1"/>
+			<animcolor a="165" d="0"/>
+			<scale scale="0.641" d="1"/>
+			<animcolor a="162" d="0"/>
+			<scale scale="0.646" d="1"/>
+			<animcolor a="158" d="0"/>
+			<scale scale="0.652" d="1"/>
+			<animcolor a="155" d="0"/>
+			<scale scale="0.657" d="1"/>
+			<animcolor a="152" d="0"/>
+			<scale scale="0.662" d="1"/>
+			<animcolor a="149" d="0"/>
+			<scale scale="0.666" d="1"/>
+			<animcolor a="146" d="0"/>
+			<scale scale="0.671" d="1"/>
+			<animcolor a="143" d="0"/>
+			<scale scale="0.675" d="1"/>
+			<animcolor a="141" d="0"/>
+			<scale scale="0.679" d="1"/>
+			<animcolor a="138" d="0"/>
+			<scale scale="0.683" d="1"/>
+			<animcolor a="136" d="0"/>
+			<scale scale="0.686" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="0.689" d="1"/>
+			<animcolor a="133" d="0"/>
+			<scale scale="0.692" d="1"/>
+			<animcolor a="131" d="0"/>
+			<scale scale="0.694" d="1"/>
+			<animcolor a="130" d="0"/>
+			<scale scale="0.696" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.698" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.699" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.7" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.7" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.699" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.697" d="1"/>
+			<animcolor a="131" d="0"/>
+			<scale scale="0.694" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="0.69" d="1"/>
+			<animcolor a="137" d="0"/>
+			<scale scale="0.685" d="1"/>
+			<animcolor a="141" d="0"/>
+			<scale scale="0.679" d="1"/>
+			<animcolor a="145" d="0"/>
+			<scale scale="0.672" d="1"/>
+			<animcolor a="150" d="0"/>
+			<scale scale="0.665" d="1"/>
+			<animcolor a="155" d="0"/>
+			<scale scale="0.657" d="1"/>
+			<animcolor a="161" d="0"/>
+			<scale scale="0.648" d="1"/>
+			<animcolor a="166" d="0"/>
+			<scale scale="0.639" d="1"/>
+			<animcolor a="172" d="0"/>
+			<scale scale="0.63" d="1"/>
+			<animcolor a="179" d="0"/>
+			<scale scale="0.62" d="1"/>
+			<animcolor a="185" d="0"/>
+			<scale scale="0.61" d="1"/>
+			<animcolor a="191" d="0"/>
+			<scale scale="0.6" d="1"/>
+			<animcolor a="198" d="0"/>
+			<scale scale="0.59" d="1"/>
+			<animcolor a="204" d="0"/>
+			<scale scale="0.58" d="1"/>
+			<animcolor a="210" d="0"/>
+			<scale scale="0.57" d="1"/>
+			<animcolor a="216" d="0"/>
+			<scale scale="0.561" d="1"/>
+			<animcolor a="222" d="0"/>
+			<scale scale="0.552" d="1"/>
+			<animcolor a="227" d="0"/>
+			<scale scale="0.543" d="1"/>
+			<animcolor a="233" d="0"/>
+			<scale scale="0.535" d="1"/>
+			<animcolor a="237" d="0"/>
+			<scale scale="0.528" d="1"/>
+			<animcolor a="242" d="0"/>
+			<scale scale="0.521" d="1"/>
+			<animcolor a="246" d="0"/>
+			<scale scale="0.515" d="1"/>
+			<animcolor a="249" d="0"/>
+			<scale scale="0.51" d="1"/>
+			<animcolor a="251" d="0"/>
+			<scale scale="0.506" d="1"/>
+			<animcolor a="253" d="0"/>
+			<scale scale="0.503" d="1"/>
+			<animcolor a="255" d="0"/>
+			<scale scale="0.501" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.attack.anim">
+			<frame i="spriteimage.gidrah.saturn.04.01" d="3" childYOffset="1.3" />
+			<frame i="spriteimage.gidrah.saturn.04.05" d="5" childYOffset="1.3" />
+			<frame i="spriteimage.gidrah.saturn.04.06" d="2" childYOffset="1.3" />
+			<frame i="spriteimage.gidrah.saturn.04.06" d="3" childYOffset="1.4" />
+			<frame i="spriteimage.gidrah.saturn.04.07" d="2" childYOffset="1.4" />
+			<frame i="spriteimage.gidrah.saturn.04.07" d="1" childYOffset="1.5" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="1" childYOffset="1.5" />
+			<frame i="spriteimage.gidrah.saturn.04.08" d="3" childYOffset="1.6" />
+			<frame i="spriteimage.gidrah.saturn.04.08" d="1" childYOffset="1.7" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="1.7" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="2" childYOffset="1.8" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="1.9" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="2.0" />
+			<offset x="0.0" y="0.3" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="2.1" />
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childYOffset="2.2" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="1" childYOffset="2.3" />
+			<frame i="spriteimage.gidrah.saturn.04.12" d="0" childYOffset="2.3" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.12" d="1" childYOffset="2.4" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="2.5" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="2.6" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="1" childYOffset="2.7" />
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="2.8" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="1" childYOffset="2.9" />
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childYOffset="3.0" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="1" childYOffset="3.1" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="3.2" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="3.3" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="3.5" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="-0.5" childYOffset="3.6" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="-0.5" childYOffset="3.7" />
+			<offset x="-0.2" y="1.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.12" d="0" childXOffset="-0.5" childYOffset="3.8" />
+			<offset x="-0.2" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.12" d="1" childXOffset="0.5" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childXOffset="0.5" childYOffset="4.1" />
+			<offset x="0.3" y="1.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childXOffset="0.5" childYOffset="4.2" />
+			<offset x="0.3" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="4.4" />
+			<offset x="0.3" y="1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="4.5" />
+			<offset x="0.0" y="1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childYOffset="4.7" />
+			<offset x="0.0" y="1.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="-1.0" childYOffset="4.8" />
+			<offset x="0.0" y="1.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-1.0" childYOffset="5.0" />
+			<offset x="-0.5" y="1.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="1" childXOffset="1.0" childYOffset="5.2" />
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="1.0" childYOffset="5.3" />
+			<offset x="0.5" y="1.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.10" d="0" childXOffset="-1.0" childYOffset="5.5" />
+			<offset x="0.5" y="2.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="-1.0" childYOffset="5.7" />
+			<offset x="-0.5" y="2.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="5.8" />
+			<offset x="-0.5" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="6.0" />
+			<offset x="0.0" y="2.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childXOffset="1.5" childYOffset="6.2" />
+			<offset x="0.0" y="2.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="1.5" childYOffset="6.4" />
+			<offset x="0.8" y="2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="-1.5" childYOffset="6.6" />
+			<offset x="0.8" y="2.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-1.5" childYOffset="6.8" />
+			<offset x="-0.7" y="2.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="1.0" childYOffset="7.0" />
+			<offset x="-0.7" y="2.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="1.0" childYOffset="7.2" />
+			<offset x="0.5" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-1.0" childYOffset="7.4" />
+			<offset x="0.5" y="2.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-1.0" childYOffset="7.6" />
+			<offset x="-0.5" y="3.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="2.0" childYOffset="7.8" />
+			<offset x="-0.5" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="2.0" childYOffset="8.0" />
+			<offset x="1.0" y="3.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="8.2" />
+			<offset x="1.0" y="3.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="8.4" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childXOffset="-2.0" childYOffset="8.7" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="-2.0" childYOffset="8.9" />
+			<offset x="-1.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="1.0" childYOffset="9.1" />
+			<offset x="-1.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="1.0" childYOffset="9.3" />
+			<offset x="0.5" y="3.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-2.0" childYOffset="9.6" />
+			<offset x="0.5" y="4.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-2.0" childYOffset="9.8" />
+			<offset x="-1.0" y="4.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-2.0" childYOffset="10.1" />
+			<offset x="-1.0" y="4.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-2.0" childYOffset="10.3" />
+			<offset x="-1.0" y="4.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childYOffset="10.6" />
+			<offset x="-1.0" y="4.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childYOffset="10.8" />
+			<offset x="0.0" y="4.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.13" d="0" childXOffset="1.0" childYOffset="11.1" />
+			<offset x="0.0" y="4.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="1.0" childYOffset="11.3" />
+			<offset x="0.5" y="4.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-2.0" childYOffset="11.6" />
+			<offset x="0.5" y="5.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-2.0" childYOffset="11.9" />
+			<offset x="-1.0" y="5.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.08" d="0" childXOffset="-2.0" childYOffset="12.1" />
+			<offset x="-1.0" y="5.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childXOffset="-2.0" childYOffset="12.4" />
+			<offset x="-1.0" y="5.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.11" d="0" childYOffset="12.7" />
+			<offset x="-1.0" y="5.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="13.0" />
+			<offset x="0.0" y="5.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="13.3" />
+			<offset x="0.0" y="5.8" d="1"/>
+			<offset x="0.0" y="6.0" d="16"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="1" childYOffset="14.6" />
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="15.6" />
+			<offset x="0.0" y="6.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="16.2" />
+			<offset x="0.0" y="7.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="16.4" />
+			<offset x="0.0" y="7.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.09" d="0" childYOffset="1.3" />
+			<offset x="0.0" y="7.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.06" d="0" childYOffset="1.3" />
+			<offset x="0.0" y="0.0" d="1"/>
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.05" d="4" childYOffset="1.3" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.attack.glow.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="23" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="8" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="23" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="8" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="23" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="8" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.10" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.13" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.08" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.09" d="23" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.06" d="8" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="4" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.04.glow.glow.05" d="0" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.attack.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="1" />
+			<animcolor a="255" d="1"/>
+			<animcolor a="255" d="1"/>
+			<animcolor a="254" d="1"/>
+			<animcolor a="254" d="1"/>
+			<animcolor a="253" d="1"/>
+			<animcolor a="253" d="1"/>
+			<animcolor a="252" d="1"/>
+			<animcolor a="252" d="1"/>
+			<animcolor a="251" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="250" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="249" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="248" d="0"/>
+			<scale scale="0.501" d="1"/>
+			<animcolor a="247" d="0"/>
+			<scale scale="0.501" d="1"/>
+			<animcolor a="246" d="0"/>
+			<scale scale="0.501" d="1"/>
+			<animcolor a="245" d="0"/>
+			<scale scale="0.502" d="1"/>
+			<animcolor a="244" d="0"/>
+			<scale scale="0.502" d="1"/>
+			<animcolor a="242" d="0"/>
+			<scale scale="0.503" d="1"/>
+			<animcolor a="241" d="0"/>
+			<scale scale="0.504" d="1"/>
+			<animcolor a="240" d="0"/>
+			<scale scale="0.504" d="1"/>
+			<animcolor a="238" d="0"/>
+			<scale scale="0.505" d="1"/>
+			<animcolor a="237" d="0"/>
+			<scale scale="0.506" d="1"/>
+			<animcolor a="235" d="0"/>
+			<scale scale="0.507" d="1"/>
+			<animcolor a="233" d="0"/>
+			<scale scale="0.508" d="1"/>
+			<animcolor a="232" d="0"/>
+			<scale scale="0.509" d="1"/>
+			<animcolor a="230" d="0"/>
+			<scale scale="0.51" d="1"/>
+			<animcolor a="229" d="0"/>
+			<scale scale="0.512" d="1"/>
+			<animcolor a="227" d="0"/>
+			<scale scale="0.513" d="1"/>
+			<animcolor a="225" d="0"/>
+			<scale scale="0.515" d="1"/>
+			<animcolor a="223" d="0"/>
+			<scale scale="0.516" d="1"/>
+			<animcolor a="221" d="0"/>
+			<scale scale="0.518" d="1"/>
+			<animcolor a="219" d="0"/>
+			<scale scale="0.519" d="1"/>
+			<animcolor a="218" d="0"/>
+			<scale scale="0.521" d="1"/>
+			<animcolor a="216" d="0"/>
+			<scale scale="0.523" d="1"/>
+			<animcolor a="214" d="0"/>
+			<scale scale="0.525" d="1"/>
+			<animcolor a="212" d="0"/>
+			<scale scale="0.526" d="1"/>
+			<animcolor a="210" d="0"/>
+			<scale scale="0.528" d="1"/>
+			<animcolor a="208" d="0"/>
+			<scale scale="0.531" d="1"/>
+			<animcolor a="206" d="0"/>
+			<scale scale="0.533" d="1"/>
+			<animcolor a="204" d="0"/>
+			<scale scale="0.535" d="1"/>
+			<animcolor a="202" d="0"/>
+			<scale scale="0.537" d="1"/>
+			<animcolor a="200" d="0"/>
+			<scale scale="0.54" d="1"/>
+			<animcolor a="197" d="0"/>
+			<scale scale="0.542" d="1"/>
+			<animcolor a="195" d="0"/>
+			<scale scale="0.544" d="1"/>
+			<animcolor a="193" d="0"/>
+			<scale scale="0.547" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<animcolor a="191" d="0"/>
+			<scale scale="0.55" d="1"/>
+			<animcolor a="189" d="0"/>
+			<scale scale="0.552" d="1"/>
+			<animcolor a="187" d="0"/>
+			<scale scale="0.555" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<animcolor a="185" d="0"/>
+			<scale scale="0.558" d="1"/>
+			<animcolor a="183" d="0"/>
+			<scale scale="0.561" d="1"/>
+			<animcolor a="181" d="0"/>
+			<scale scale="0.564" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="179" d="0"/>
+			<scale scale="0.567" d="1"/>
+			<animcolor a="177" d="0"/>
+			<scale scale="0.57" d="1"/>
+			<animcolor a="175" d="0"/>
+			<scale scale="0.573" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<animcolor a="173" d="0"/>
+			<scale scale="0.577" d="1"/>
+			<animcolor a="171" d="0"/>
+			<scale scale="0.58" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<animcolor a="169" d="0"/>
+			<scale scale="0.584" d="1"/>
+			<animcolor a="167" d="0"/>
+			<scale scale="0.587" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<animcolor a="165" d="0"/>
+			<scale scale="0.591" d="1"/>
+			<animcolor a="163" d="0"/>
+			<scale scale="0.594" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="161" d="0"/>
+			<scale scale="0.598" d="1"/>
+			<animcolor a="159" d="0"/>
+			<scale scale="0.602" d="0"/>
+			<offset x="0.4" y="+0.0" d="1"/>
+			<animcolor a="158" d="0"/>
+			<scale scale="0.606" d="1"/>
+			<animcolor a="156" d="0"/>
+			<scale scale="0.61" d="0"/>
+			<offset x="-0.4" y="+0.0" d="1"/>
+			<animcolor a="154" d="0"/>
+			<scale scale="0.614" d="1"/>
+			<animcolor a="152" d="0"/>
+			<scale scale="0.618" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<animcolor a="151" d="0"/>
+			<scale scale="0.622" d="1"/>
+			<animcolor a="149" d="0"/>
+			<scale scale="0.626" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<animcolor a="147" d="0"/>
+			<scale scale="0.631" d="1"/>
+			<animcolor a="146" d="0"/>
+			<scale scale="0.635" d="0"/>
+			<offset x="0.5" y="+0.0" d="1"/>
+			<animcolor a="144" d="0"/>
+			<scale scale="0.639" d="1"/>
+			<animcolor a="143" d="0"/>
+			<scale scale="0.644" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="142" d="0"/>
+			<scale scale="0.649" d="1"/>
+			<animcolor a="140" d="0"/>
+			<scale scale="0.653" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<animcolor a="139" d="0"/>
+			<scale scale="0.658" d="1"/>
+			<animcolor a="138" d="0"/>
+			<scale scale="0.663" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<animcolor a="137" d="0"/>
+			<scale scale="0.668" d="1"/>
+			<animcolor a="135" d="0"/>
+			<scale scale="0.673" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="0.678" d="1"/>
+			<animcolor a="133" d="0"/>
+			<scale scale="0.683" d="1"/>
+			<animcolor a="133" d="0"/>
+			<scale scale="0.688" d="1"/>
+			<animcolor a="132" d="0"/>
+			<scale scale="0.693" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="131" d="0"/>
+			<scale scale="0.699" d="1"/>
+			<animcolor a="130" d="0"/>
+			<scale scale="0.704" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<animcolor a="130" d="0"/>
+			<scale scale="0.71" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.715" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.721" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.726" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.732" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.738" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.744" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.75" d="3"/>
+			<scale scale="0.75" d="2"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="2"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="2"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="1"/>
+			<scale scale="0.75" d="1"/>
+			<animcolor a="123" d="0"/>
+			<scale scale="0.795" d="1"/>
+			<animcolor a="119" d="0"/>
+			<scale scale="0.83" d="1"/>
+			<animcolor a="117" d="0"/>
+			<scale scale="0.855" d="1"/>
+			<animcolor a="115" d="0"/>
+			<scale scale="0.87" d="1"/>
+			<animcolor a="115" d="0"/>
+			<scale scale="0.875" d="1"/>
+			<animcolor a="255" d="0"/>
+			<scale scale="0.5" d="387"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.dead.anim">
+			<frame i="spriteimage.gidrah.saturn.04.ghost.01" d="1" />
+			<animcolor a="254" d="0"/>
+			<scale xscale="0.495" yscale="0.524" d="0"/>
+			<offset x="0.0" y="0.6" d="1"/>
+			<animcolor a="252" d="0"/>
+			<scale xscale="0.49" yscale="0.548" d="0"/>
+			<offset x="0.0" y="1.1" d="1"/>
+			<animcolor a="248" d="0"/>
+			<scale xscale="0.485" yscale="0.571" d="0"/>
+			<offset x="0.0" y="1.7" d="1"/>
+			<animcolor a="243" d="0"/>
+			<scale xscale="0.481" yscale="0.594" d="0"/>
+			<offset x="0.0" y="2.2" d="1"/>
+			<animcolor a="235" d="0"/>
+			<scale xscale="0.476" yscale="0.617" d="0"/>
+			<offset x="0.0" y="2.8" d="1"/>
+			<animcolor a="226" d="0"/>
+			<scale xscale="0.471" yscale="0.639" d="0"/>
+			<offset x="0.0" y="3.3" d="1"/>
+			<animcolor a="216" d="0"/>
+			<scale xscale="0.467" yscale="0.661" d="0"/>
+			<offset x="0.0" y="3.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.ghost.02" d="0" />
+			<animcolor a="205" d="0"/>
+			<scale xscale="0.463" yscale="0.683" d="0"/>
+			<offset x="0.0" y="4.4" d="1"/>
+			<animcolor a="194" d="0"/>
+			<scale xscale="0.458" yscale="0.704" d="0"/>
+			<offset x="0.0" y="4.9" d="1"/>
+			<animcolor a="183" d="0"/>
+			<scale xscale="0.454" yscale="0.725" d="0"/>
+			<offset x="0.0" y="5.4" d="1"/>
+			<animcolor a="173" d="0"/>
+			<scale xscale="0.45" yscale="0.746" d="0"/>
+			<offset x="0.0" y="5.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.ghost.03" d="0" />
+			<animcolor a="163" d="0"/>
+			<scale xscale="0.446" yscale="0.766" d="0"/>
+			<offset x="0.0" y="6.3" d="1"/>
+			<animcolor a="153" d="0"/>
+			<scale xscale="0.441" yscale="0.786" d="0"/>
+			<offset x="0.0" y="6.8" d="1"/>
+			<animcolor a="144" d="0"/>
+			<scale xscale="0.437" yscale="0.805" d="0"/>
+			<offset x="0.0" y="7.3" d="1"/>
+			<animcolor a="136" d="0"/>
+			<scale xscale="0.434" yscale="0.825" d="0"/>
+			<offset x="0.0" y="7.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.04.ghost.04" d="0" />
+			<animcolor a="128" d="0"/>
+			<scale xscale="0.43" yscale="0.844" d="0"/>
+			<offset x="0.0" y="8.2" d="1"/>
+			<animcolor a="121" d="0"/>
+			<scale xscale="0.426" yscale="0.862" d="0"/>
+			<offset x="0.0" y="8.6" d="1"/>
+			<animcolor a="114" d="0"/>
+			<scale xscale="0.422" yscale="0.88" d="0"/>
+			<offset x="0.0" y="9.1" d="1"/>
+			<animcolor a="108" d="0"/>
+			<scale xscale="0.419" yscale="0.898" d="0"/>
+			<offset x="0.0" y="9.5" d="1"/>
+			<animcolor a="102" d="0"/>
+			<scale xscale="0.415" yscale="0.916" d="0"/>
+			<offset x="0.0" y="9.9" d="1"/>
+			<animcolor a="96" d="0"/>
+			<scale xscale="0.411" yscale="0.933" d="0"/>
+			<offset x="0.0" y="10.3" d="1"/>
+			<animcolor a="91" d="0"/>
+			<scale xscale="0.408" yscale="0.95" d="0"/>
+			<offset x="0.0" y="10.7" d="1"/>
+			<animcolor a="86" d="0"/>
+			<scale xscale="0.405" yscale="0.966" d="0"/>
+			<offset x="0.0" y="11.1" d="1"/>
+			<animcolor a="82" d="0"/>
+			<scale xscale="0.401" yscale="0.982" d="0"/>
+			<offset x="0.0" y="11.5" d="1"/>
+			<animcolor a="78" d="0"/>
+			<scale xscale="0.398" yscale="0.998" d="0"/>
+			<offset x="0.0" y="11.9" d="1"/>
+			<animcolor a="74" d="0"/>
+			<scale xscale="0.395" yscale="1.013" d="0"/>
+			<offset x="0.0" y="12.2" d="1"/>
+			<animcolor a="70" d="0"/>
+			<scale xscale="0.392" yscale="1.028" d="0"/>
+			<offset x="0.0" y="12.6" d="1"/>
+			<animcolor a="66" d="0"/>
+			<scale xscale="0.389" yscale="1.043" d="0"/>
+			<offset x="0.0" y="13.0" d="1"/>
+			<animcolor a="62" d="0"/>
+			<scale xscale="0.386" yscale="1.057" d="0"/>
+			<offset x="0.0" y="13.3" d="1"/>
+			<animcolor a="59" d="0"/>
+			<scale xscale="0.383" yscale="1.071" d="0"/>
+			<offset x="0.0" y="13.6" d="1"/>
+			<animcolor a="56" d="0"/>
+			<scale xscale="0.38" yscale="1.085" d="0"/>
+			<offset x="0.0" y="14.0" d="1"/>
+			<animcolor a="53" d="0"/>
+			<scale xscale="0.377" yscale="1.098" d="0"/>
+			<offset x="0.0" y="14.3" d="1"/>
+			<animcolor a="50" d="0"/>
+			<scale xscale="0.375" yscale="1.111" d="0"/>
+			<offset x="0.0" y="14.6" d="1"/>
+			<animcolor a="47" d="0"/>
+			<scale xscale="0.372" yscale="1.124" d="0"/>
+			<offset x="0.0" y="14.9" d="1"/>
+			<animcolor a="44" d="0"/>
+			<scale xscale="0.37" yscale="1.136" d="0"/>
+			<offset x="0.0" y="15.2" d="1"/>
+			<animcolor a="42" d="0"/>
+			<scale xscale="0.367" yscale="1.148" d="0"/>
+			<offset x="0.0" y="15.5" d="1"/>
+			<animcolor a="39" d="0"/>
+			<scale xscale="0.365" yscale="1.16" d="0"/>
+			<offset x="0.0" y="15.7" d="1"/>
+			<animcolor a="37" d="0"/>
+			<scale xscale="0.363" yscale="1.171" d="0"/>
+			<offset x="0.0" y="16.0" d="1"/>
+			<animcolor a="35" d="0"/>
+			<scale xscale="0.36" yscale="1.182" d="0"/>
+			<offset x="0.0" y="16.3" d="1"/>
+			<animcolor a="32" d="0"/>
+			<scale xscale="0.358" yscale="1.193" d="0"/>
+			<offset x="0.0" y="16.5" d="1"/>
+			<animcolor a="30" d="0"/>
+			<scale xscale="0.356" yscale="1.203" d="0"/>
+			<offset x="0.0" y="16.8" d="1"/>
+			<animcolor a="28" d="0"/>
+			<scale xscale="0.354" yscale="1.213" d="0"/>
+			<offset x="0.0" y="17.0" d="1"/>
+			<animcolor a="26" d="0"/>
+			<scale xscale="0.352" yscale="1.222" d="0"/>
+			<offset x="0.0" y="17.2" d="1"/>
+			<animcolor a="24" d="0"/>
+			<scale xscale="0.35" yscale="1.231" d="0"/>
+			<offset x="0.0" y="17.4" d="1"/>
+			<animcolor a="23" d="0"/>
+			<scale xscale="0.348" yscale="1.24" d="0"/>
+			<offset x="0.0" y="17.7" d="1"/>
+			<animcolor a="21" d="0"/>
+			<scale xscale="0.347" yscale="1.249" d="0"/>
+			<offset x="0.0" y="17.9" d="1"/>
+			<animcolor a="19" d="0"/>
+			<scale xscale="0.345" yscale="1.257" d="0"/>
+			<offset x="0.0" y="18.1" d="1"/>
+			<animcolor a="18" d="0"/>
+			<scale xscale="0.343" yscale="1.265" d="0"/>
+			<offset x="0.0" y="18.2" d="1"/>
+			<animcolor a="16" d="0"/>
+			<scale xscale="0.342" yscale="1.272" d="0"/>
+			<offset x="0.0" y="18.4" d="1"/>
+			<animcolor a="15" d="0"/>
+			<scale xscale="0.34" yscale="1.279" d="0"/>
+			<offset x="0.0" y="18.6" d="1"/>
+			<animcolor a="13" d="0"/>
+			<scale xscale="0.339" yscale="1.286" d="0"/>
+			<offset x="0.0" y="18.7" d="1"/>
+			<animcolor a="12" d="0"/>
+			<scale xscale="0.338" yscale="1.292" d="0"/>
+			<offset x="0.0" y="18.9" d="1"/>
+			<animcolor a="11" d="0"/>
+			<scale xscale="0.337" yscale="1.299" d="0"/>
+			<offset x="0.0" y="19.0" d="1"/>
+			<animcolor a="9" d="0"/>
+			<scale xscale="0.335" yscale="1.304" d="0"/>
+			<offset x="0.0" y="19.2" d="1"/>
+			<animcolor a="8" d="0"/>
+			<scale xscale="0.334" yscale="1.31" d="0"/>
+			<offset x="0.0" y="19.3" d="1"/>
+			<animcolor a="7" d="0"/>
+			<scale xscale="0.333" yscale="1.315" d="0"/>
+			<offset x="0.0" y="19.4" d="1"/>
+			<animcolor a="6" d="0"/>
+			<scale xscale="0.332" yscale="1.319" d="0"/>
+			<offset x="0.0" y="19.5" d="1"/>
+			<animcolor a="5" d="0"/>
+			<scale xscale="0.331" yscale="1.324" d="0"/>
+			<offset x="0.0" y="19.6" d="1"/>
+			<animcolor a="5" d="0"/>
+			<scale xscale="0.331" yscale="1.328" d="0"/>
+			<offset x="0.0" y="19.7" d="1"/>
+			<animcolor a="4" d="0"/>
+			<scale xscale="0.33" yscale="1.331" d="0"/>
+			<offset x="0.0" y="19.8" d="1"/>
+			<animcolor a="3" d="0"/>
+			<scale xscale="0.329" yscale="1.335" d="0"/>
+			<offset x="0.0" y="19.9" d="1"/>
+			<animcolor a="3" d="0"/>
+			<scale xscale="0.329" yscale="1.337" d="0"/>
+			<offset x="0.0" y="20.0" d="1"/>
+			<animcolor a="2" d="0"/>
+			<scale xscale="0.328" yscale="1.34" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale xscale="0.328" yscale="1.342" d="0"/>
+			<offset x="0.0" y="20.1" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale xscale="0.327" yscale="1.344" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale xscale="0.327" yscale="1.346" d="0"/>
+			<offset x="0.0" y="20.2" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale xscale="0.327" yscale="1.347" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale xscale="0.326" yscale="1.348" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale xscale="0.326" yscale="1.348" d="1"/>
+		<event id="1"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.frozen.1.anim">
+		<random>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.frozen.1.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="0" />
+			<animcolor a="125" d="0"/>
+			<scale scale="0.5" d="498"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.frozen.2.anim">
+		<random>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.frozen.2.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="0" />
+			<animcolor a="95" d="0"/>
+			<scale scale="0.58" d="1"/>
+			<scale scale="0.575" d="497"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.frozen.3.anim">
+		<random>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.frozen.3.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="0" />
+			<animcolor a="82" d="0"/>
+			<scale scale="0.64" d="1"/>
+			<scale scale="0.635" d="497"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.frozen.4.anim">
+		<random>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.04.01" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.04.02" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.04.frozen.4.ground.anim">
+			<frame i="spriteimage.gidrah.saturn.04.glow.ground.01" d="0" />
+			<animcolor a="64" d="0"/>
+			<scale scale="0.7" d="1"/>
+			<scale scale="0.695" d="497"/>
+	</animation>
+
+</resources>

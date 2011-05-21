@@ -1,0 +1,2237 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDRAH.TITAN.BOSS ==================================================================================================  -->
+
+
+	<!-- LAYERS for GIDRAH.TITAN.BOSS -->
+
+	<layers name="gidrah.titan.boss.walk.layers" scale="0.55">
+		<sprite id="sedan.body" layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.titan.boss.sedan.walk.anim" />
+		<sprite id="sedan.glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.sedan.blink.glow.anim" />
+		<sprite id="sedan.face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.sedan.blink.anim" />
+		<sprite id="king.body.control" layer="4" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.king.walk.control.anim" />
+		<sprite id="king.body" layer="5" sublayer="1" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.king.walk.body.anim" />
+		<sprite id="king.mouth" layer="5" sublayer="0" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.king.mouth.anim" />
+		<sprite id="king.arms" layer="5" sublayer="0" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.king.arms.anim" />
+		<sprite id="king.head" layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.king.head.anim" />
+		<sprite id="king.face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.king.face.blink.anim" />
+		<sprite id="king.crown" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.king.crown.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.09.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.08.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.07.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.06.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.04.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.05.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.03.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.02.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.01.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.boss.light.10.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.boss.ground.01" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.sedan.ground.01" />
+	</layers>
+
+ 	<layers name="gidrah.titan.boss.attack.layers" scale="0.55">
+		<sprite id="sedan.body" layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.titan.boss.attack.sedan.walk.anim" />
+		<sprite id="sedan.glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.sedan.blink.glow.anim" />
+		<sprite id="sedan.face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.sedan.blink.anim" />
+		<sprite id="king.body.control" layer="4" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.king.walk.control.anim" />
+		<sprite id="king.body" layer="5" sublayer="1" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.king.walk.body.anim" />
+		<sprite id="king.mouth" layer="5" sublayer="0" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.king.mouth.anim" />
+		<sprite id="king.arms" layer="5" sublayer="0" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.attack.king.arms.anim" />
+		<sprite id="king.head.control" layer="4" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.king.head.control.anim" />
+		<sprite id="king.head" layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.attack.king.head.anim" />
+		<sprite id="king.crown" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.king.crown.anim" />
+		<sprite id="king.face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.king.face.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.08.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.07.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.06.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.09.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.05.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.03.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.02.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.01.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.10.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.04.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.boss.ground.01" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.sedan.ground.01" />
+	</layers>
+
+ 
+	<!-- GIDRAH.TITAN.BOSS definition -->
+
+	<gidrah
+		 name="gidrah.titan.boss"
+		 inherit="gidrah.titan.boss.spec"
+		 floor="-4"
+	>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.55">
+ 								<emitter emitter="frozen.boss.sparkle.large.emitter" offset="36,0" ySortOffset="128"  />
+								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.titan.sedan.02" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.sedan.ice.glow.01" />
+								<sprite id="king.body.control" layer="4" sublayer="2" offset="0,-2" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.king.walk.control.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.boss.back.03" />
+								<sprite layer="5" sublayer="0" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.boss.arms.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.boss.01" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.boss.top.05" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.boss.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.boss.ground.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.sedan.ground.01" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<appearance><layers scale="0.55">
+ 				<sprite id="sedan.body" layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.titan.boss.sedan.start.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.sedan.glow.01" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.sedan.top.01" />
+				<sprite id="king.body.control" layer="4" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.king.start.control.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.boss.back.01" />
+				<sprite layer="5" sublayer="0" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.boss.arms.01" />
+				<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.boss.01" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.boss.top.01" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.boss.crown.top.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.boss.ground.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.sedan.ground.01" />
+		</layers></appearance>
+		<deathAppearance><layers scale="0.55">
+ 				<sprite id="sedan.body" layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.titan.boss.sedan.death.anim" />
+				<sprite id="sedan.glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.sedan.death.glow.anim" />
+				<sprite id="sedan.face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.sedan.death.face.anim" />
+				<sprite id="king.body.control" layer="4" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.death.king.body.control.anim" />
+				<sprite id="king.body" layer="5" sublayer="0" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.death.king.body.anim" />
+				<sprite id="king.mouth" layer="5" sublayer="0" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.death.king.mouth.anim" />
+				<sprite id="king.arms" layer="5" sublayer="0" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.death.king.arms.anim" />
+				<sprite id="king.head.control" layer="4" sublayer="2" offset="28,59" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.death.king.head.control.anim" />
+				<sprite id="king.head" layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.death.king.head.anim" />
+				<sprite id="king.face" layer="5" sublayer="0" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.death.king.face.anim" />
+				<sprite id="king.crown" layer="5" sublayer="0" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.death.king.crown.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.08.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.07.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.06.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.09.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.05.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.03.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.02.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.01.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.04.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.10.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.boss.ground.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.sedan.ground.01" />
+		</layers></deathAppearance>
+		<attackAppearance><layers scale="0.55">
+ 				<sprite id="sedan.body" layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.titan.boss.staticAttack.sedan.body.anim" />
+				<sprite id="sedan.glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.sedan.blink.glow.anim" />
+				<sprite id="sedan.face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.sedan.blink.anim" />
+				<sprite id="king.body.control" layer="4" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.king.staticAttack.control.anim" />
+				<sprite id="king.body" layer="5" sublayer="1" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.king.staticAttack.body.anim" />
+				<sprite id="king.mouth" layer="5" sublayer="0" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.king.mouth.anim" />
+				<sprite id="king.arms" layer="5" sublayer="0" offset="0,0" colored="floor-fog" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.attack.king.arms.anim" />
+				<sprite id="king.head.control" layer="4" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.king.head.control.anim" />
+				<sprite id="king.head" layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.titan.boss.attack.king.head.anim" />
+				<sprite id="king.crown" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.king.crown.anim" />
+				<sprite id="king.face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.king.face.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.08.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.07.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.06.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.09.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.05.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.03.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.02.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.01.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.10.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.boss.attack.boss.light.04.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.boss.ground.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.sedan.ground.01" />
+		</layers></attackAppearance>
+	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.TITAN.BOSS -->
+
+	<array name="gidrah.titan.boss.sedan.glow.array">
+		<item>spriteimage.gidrah.titan.sedan.glow.01</item>
+		<item>spriteimage.gidrah.titan.sedan.glow.02</item>
+		<item>spriteimage.gidrah.titan.sedan.glow.03</item>
+		<item>spriteimage.gidrah.titan.sedan.glow.04</item>
+		<item>spriteimage.gidrah.titan.sedan.glow.05</item>
+		<item>spriteimage.gidrah.titan.sedan.glow.06</item>
+		<item>spriteimage.gidrah.titan.sedan.glow.07</item>
+	</array>
+
+	<array name="gidrah.titan.boss.sedan.face.array">
+		<item>spriteimage.gidrah.titan.sedan.top.01</item>
+		<item>spriteimage.gidrah.titan.sedan.top.02</item>
+		<item>spriteimage.gidrah.titan.sedan.top.03</item>
+		<item>spriteimage.gidrah.titan.sedan.top.04</item>
+		<item>spriteimage.gidrah.titan.sedan.top.05</item>
+		<item>spriteimage.gidrah.titan.sedan.top.06</item>
+		<item>spriteimage.gidrah.titan.sedan.top.07</item>
+	</array>
+
+	<array name="gidrah.titan.boss.king.mouth.array">
+		<item>spriteimage.gidrah.titan.boss.glow.01</item>
+		<item>spriteimage.gidrah.titan.boss.glow.02</item>
+		<item>spriteimage.gidrah.titan.boss.glow.02</item>
+		<item>spriteimage.gidrah.titan.boss.glow.02</item>
+	</array>
+
+	<array name="gidrah.titan.boss.king.arms.array">
+		<item>spriteimage.gidrah.titan.boss.arms.01</item>
+		<item>spriteimage.gidrah.titan.boss.arms.02</item>
+		<item>spriteimage.gidrah.titan.boss.arms.03</item>
+		<item>spriteimage.gidrah.titan.boss.arms.04</item>
+		<item>spriteimage.gidrah.titan.boss.arms.05</item>
+	</array>
+
+	<array name="gidrah.titan.boss.king.head.control.array">
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+	</array>
+
+	<array name="gidrah.titan.boss.king.head.array">
+		<item>spriteimage.gidrah.titan.boss.01</item>
+		<item>spriteimage.gidrah.titan.boss.roar.01</item>
+		<item>spriteimage.gidrah.titan.boss.roar.01</item>
+		<item>spriteimage.gidrah.titan.boss.roar.01</item>
+	</array>
+
+	<array name="gidrah.titan.boss.king.face.array">
+		<item>spriteimage.gidrah.titan.boss.top.01</item>
+		<item>spriteimage.gidrah.titan.boss.roar.top.01</item>
+		<item>spriteimage.gidrah.titan.boss.roar.top.01</item>
+		<item>spriteimage.gidrah.titan.boss.roar.top.01</item>
+		<item>spriteimage.gidrah.titan.boss.top.02</item>
+		<item>spriteimage.gidrah.titan.boss.top.03</item>
+		<item>spriteimage.gidrah.titan.boss.top.04</item>
+		<item>spriteimage.gidrah.titan.boss.top.05</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.TITAN.BOSS -->
+
+	<animation name="gidrah.titan.boss.sedan.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.03" d="7" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.03" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.04" d="15" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.04" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="27" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="1" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.07" d="7" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.07" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.08" d="15" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.08" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="27" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="1" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.05" d="7" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.05" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.06" d="15" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.06" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="27" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="1" />
+		<random>
+			<dest id="attack" n="1"/>
+			<dest id="start" n="1"/>
+		</random>
+		<label id="attack"/>
+		<setlayers layers="gidrah.titan.boss.attack.layers"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.sedan.blink.glow.anim">
+		<frameset id="gidrah.titan.boss.sedan.glow.array" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.sedan.blink.anim">
+		<frameset id="gidrah.titan.boss.sedan.face.array" />
+		<label id="start"/>
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="5"/>
+		</random>
+		<label id="blink"/>
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="2" />
+			<notify layer="sedan.glow" idx="1"/>
+			<frame idx="1" d="1" />
+			<notify layer="sedan.glow" idx="2"/>
+			<frame idx="2" d="2" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="1" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="26" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="2" />
+			<notify layer="sedan.glow" idx="2"/>
+			<frame idx="2" d="3" />
+			<notify layer="sedan.glow" idx="1"/>
+			<frame idx="1" d="3" />
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="1" />
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="2" />
+			<notify layer="sedan.glow" idx="1"/>
+			<frame idx="1" d="1" />
+			<notify layer="sedan.glow" idx="2"/>
+			<frame idx="2" d="2" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="1" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="20" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="2" />
+			<notify layer="sedan.glow" idx="2"/>
+			<frame idx="2" d="3" />
+			<notify layer="sedan.glow" idx="1"/>
+			<frame idx="1" d="3" />
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.walk.control.anim">
+			<frame i="spriteimage.particle.dummy.01" d="699" childXOffset="28.0" childYOffset="38.0" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.walk.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="1" childYOffset="1.0" />
+			<offset x="0.0" y="0.6" d="3"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="4" childYOffset="1.0" />
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="2.0" />
+			<offset x="0.0" y="1.1" d="15"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="1" childYOffset="7.0" />
+			<offset x="0.0" y="3.9" d="7"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="6.9" />
+			<offset x="0.0" y="3.8" d="2"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="1" childYOffset="6.7" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="6.4" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="5.1" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="0" />
+			<offset x="0.0" y="0.0" d="15"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="1" childYOffset="1.0" />
+			<offset x="0.0" y="0.6" d="3"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="4" childYOffset="1.0" />
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="2.0" />
+			<offset x="0.0" y="1.1" d="15"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="1" childYOffset="7.0" />
+			<offset x="0.0" y="3.9" d="7"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="6.9" />
+			<offset x="0.0" y="3.8" d="2"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="1" childYOffset="6.7" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="6.4" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="5.1" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="0" />
+			<offset x="0.0" y="0.0" d="15"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="1" childYOffset="1.0" />
+			<offset x="0.0" y="0.6" d="3"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="4" childYOffset="1.0" />
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="2.0" />
+			<offset x="0.0" y="1.1" d="15"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="1" childYOffset="7.0" />
+			<offset x="0.0" y="3.9" d="7"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="6.9" />
+			<offset x="0.0" y="3.8" d="2"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="1" childYOffset="6.7" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="6.4" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" childYOffset="5.1" />
+			<offset x="0.0" y="3.5" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="0" />
+			<offset x="0.0" y="2.8" d="1"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="0" />
+			<offset x="0.0" y="0.0" d="15"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.mouth.anim">
+		<frameset id="gidrah.titan.boss.king.mouth.array" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.arms.anim">
+		<frameset id="gidrah.titan.boss.king.arms.array" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.head.anim">
+			<frame i="spriteimage.gidrah.titan.boss.01" d="699" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.face.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="5"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="1" />
+			<frame i="spriteimage.gidrah.titan.boss.top.02" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.04" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.05" d="23" />
+			<frame i="spriteimage.gidrah.titan.boss.top.05" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.04" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.02" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="5" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="13" />
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="3" />
+			<frame i="spriteimage.gidrah.titan.boss.top.02" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.04" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.05" d="15" />
+			<frame i="spriteimage.gidrah.titan.boss.top.05" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.04" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.02" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="5" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.crown.anim">
+			<frame i="spriteimage.gidrah.titan.boss.crown.top.01" d="699" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.attack.sedan.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.03" d="7" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.03" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.04" d="15" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.04" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="27" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="1" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.07" d="7" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.07" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.08" d="15" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.08" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="27" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="1" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="7" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.05" d="7" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.05" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.06" d="15" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.06" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="27" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="1" />
+		<setlayers layers="gidrah.titan.boss.walk.layers"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.attack.king.mouth.anim">
+		<frameset id="gidrah.titan.boss.king.mouth.array" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.attack.king.head.control.anim">
+		<frameset id="gidrah.titan.boss.king.head.control.array" />
+		<label id="start"/>
+		<sound sound="gidrah-titan-boss-roar.buffer" attenuator="loud.attenuator"/>
+		<sound sound="gidrah-titan-boss-amb.buffer" attenuator="default.attenuator"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="1" childYOffset="24.3" />
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="0.1" childYOffset="27.2" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="0.1" childYOffset="28.9" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-0.1" childYOffset="30.7" />
+			<offset x="0.1" y="4.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.2" childYOffset="32.1" />
+			<offset x="-0.1" y="5.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.2" childYOffset="33.3" />
+			<offset x="-0.1" y="6.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.2" childYOffset="35.8" />
+			<offset x="0.1" y="6.8" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.2" childYOffset="36.7" />
+			<offset x="0.1" y="8.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.3" childYOffset="35.6" />
+			<offset x="-0.1" y="8.6" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.3" childYOffset="36.1" />
+			<offset x="-0.2" y="8.0" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.3" childYOffset="39.0" />
+			<offset x="-0.2" y="8.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.4" childYOffset="39.7" />
+			<offset x="-0.2" y="9.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.4" childYOffset="37.6" />
+			<offset x="0.2" y="10.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.4" childYOffset="38.1" />
+			<offset x="0.2" y="9.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.4" childYOffset="41.6" />
+			<offset x="-0.2" y="9.4" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.5" childYOffset="42.2" />
+			<offset x="-0.2" y="11.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.5" childYOffset="39.4" />
+			<offset x="0.3" y="11.6" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.5" childYOffset="39.8" />
+			<offset x="0.3" y="10.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.5" childYOffset="43.8" />
+			<offset x="0.3" y="10.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.5" childYOffset="44.3" />
+			<offset x="0.3" y="12.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.6" childYOffset="40.9" />
+			<offset x="-0.3" y="12.8" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.6" childYOffset="41.2" />
+			<offset x="-0.3" y="10.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.6" childYOffset="41.5" />
+			<offset x="-0.3" y="11.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.6" childYOffset="41.9" />
+			<offset x="-0.3" y="11.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.6" childYOffset="46.7" />
+			<offset x="0.3" y="11.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.7" childYOffset="47.1" />
+			<offset x="0.4" y="14.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.7" childYOffset="42.8" />
+			<offset x="-0.4" y="14.4" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.7" childYOffset="43.1" />
+			<offset x="-0.4" y="12.0" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.7" childYOffset="48.4" />
+			<offset x="0.4" y="12.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.7" childYOffset="48.8" />
+			<offset x="0.4" y="15.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.8" childYOffset="49.1" />
+			<offset x="-0.4" y="15.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.8" childYOffset="49.5" />
+			<offset x="-0.4" y="15.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.8" childYOffset="44.4" />
+			<offset x="0.4" y="15.7" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.8" childYOffset="44.7" />
+			<offset x="0.4" y="12.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.8" childYOffset="44.9" />
+			<offset x="-0.4" y="13.0" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.8" childYOffset="45.1" />
+			<offset x="-0.4" y="13.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.8" childYOffset="51.2" />
+			<offset x="0.5" y="13.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.9" childYOffset="51.6" />
+			<offset x="0.5" y="16.6" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.9" childYOffset="45.8" />
+			<offset x="-0.5" y="16.8" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.9" childYOffset="46.0" />
+			<offset x="-0.5" y="13.6" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.9" childYOffset="52.5" />
+			<offset x="-0.5" y="13.8" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.9" childYOffset="52.8" />
+			<offset x="-0.5" y="17.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="0.9" childYOffset="46.6" />
+			<offset x="0.5" y="17.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.9" childYOffset="46.8" />
+			<offset x="0.5" y="14.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-0.9" childYOffset="53.6" />
+			<offset x="-0.5" y="14.2" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.0" childYOffset="53.9" />
+			<offset x="-0.5" y="17.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.0" childYOffset="47.4" />
+			<offset x="0.5" y="18.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.0" childYOffset="47.6" />
+			<offset x="0.5" y="14.5" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.0" childYOffset="54.7" />
+			<offset x="0.5" y="14.6" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-1.0" childYOffset="54.9" />
+			<offset x="0.5" y="18.5" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.0" childYOffset="48.1" />
+			<offset x="-0.5" y="18.6" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.0" childYOffset="48.3" />
+			<offset x="-0.6" y="14.9" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.0" childYOffset="48.4" />
+			<offset x="-0.6" y="15.0" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.0" childYOffset="48.6" />
+			<offset x="-0.6" y="15.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.0" childYOffset="56.1" />
+			<offset x="0.6" y="15.2" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-1.1" childYOffset="56.3" />
+			<offset x="0.6" y="19.3" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-1.1" childYOffset="49.0" />
+			<offset x="-0.6" y="19.4" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.1" childYOffset="49.2" />
+			<offset x="-0.6" y="15.4" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.1" childYOffset="56.9" />
+			<offset x="0.6" y="15.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.1" childYOffset="57.1" />
+			<offset x="0.6" y="19.7" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.1" childYOffset="57.3" />
+			<offset x="-0.6" y="19.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.1" childYOffset="57.5" />
+			<offset x="-0.6" y="20.0" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.1" childYOffset="49.9" />
+			<offset x="0.6" y="20.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.1" childYOffset="50.0" />
+			<offset x="0.6" y="15.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.1" childYOffset="50.1" />
+			<offset x="-0.6" y="15.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.1" childYOffset="50.2" />
+			<offset x="-0.6" y="16.0" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.2" childYOffset="58.4" />
+			<offset x="0.6" y="16.1" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-1.2" childYOffset="58.6" />
+			<offset x="0.6" y="20.6" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.2" childYOffset="50.6" />
+			<offset x="-0.6" y="20.7" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.2" childYOffset="50.7" />
+			<offset x="-0.6" y="16.3" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="1" childXOffset="-1.2" childYOffset="59.1" />
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.2" childYOffset="59.2" />
+			<offset x="-0.7" y="20.9" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.2" childYOffset="51.0" />
+			<offset x="0.7" y="21.0" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-1.2" childYOffset="51.1" />
+			<offset x="0.7" y="16.5" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-1.2" childYOffset="59.7" />
+			<offset x="-0.7" y="16.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.2" childYOffset="59.9" />
+			<offset x="-0.7" y="21.3" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.2" childYOffset="51.3" />
+			<offset x="0.7" y="21.4" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.2" childYOffset="51.4" />
+			<offset x="0.7" y="16.7" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="1" childXOffset="1.3" childYOffset="60.3" />
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.3" childYOffset="60.4" />
+			<offset x="0.7" y="21.6" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.3" childYOffset="51.7" />
+			<offset x="-0.7" y="21.7" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.3" childYOffset="51.7" />
+			<offset x="-0.7" y="16.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="1" childXOffset="-1.3" childYOffset="51.8" />
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="1" childXOffset="1.3" childYOffset="51.8" />
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.3" childYOffset="61.1" />
+			<offset x="0.7" y="17.0" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.3" childYOffset="61.2" />
+			<offset x="0.7" y="22.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.3" childYOffset="52.0" />
+			<offset x="-0.7" y="22.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.3" childYOffset="52.1" />
+			<offset x="-0.7" y="17.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.4" childYOffset="61.6" />
+			<offset x="0.7" y="17.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.4" childYOffset="61.7" />
+			<offset x="0.7" y="22.3" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-1.4" childYOffset="61.8" />
+			<offset x="-0.8" y="22.4" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.4" childYOffset="62.0" />
+			<offset x="-0.8" y="22.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.4" childYOffset="52.3" />
+			<offset x="0.8" y="22.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.4" childYOffset="52.3" />
+			<offset x="0.8" y="17.2" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.4" childYOffset="52.3" />
+			<offset x="-0.8" y="17.2" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="1" childXOffset="1.4" childYOffset="52.3" />
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.5" childYOffset="62.5" />
+			<offset x="0.8" y="17.2" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.5" childYOffset="62.6" />
+			<offset x="0.8" y="22.8" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.5" childYOffset="52.4" />
+			<offset x="-0.8" y="22.9" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.5" childYOffset="52.4" />
+			<offset x="-0.8" y="17.3" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="1" childXOffset="-1.5" childYOffset="63.0" />
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.5" childYOffset="63.1" />
+			<offset x="-0.8" y="23.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.5" childYOffset="52.4" />
+			<offset x="0.8" y="23.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.6" childYOffset="52.4" />
+			<offset x="0.8" y="17.3" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.6" childYOffset="63.4" />
+			<offset x="-0.9" y="17.3" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.6" childYOffset="63.5" />
+			<offset x="-0.9" y="23.3" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.6" childYOffset="52.4" />
+			<offset x="0.9" y="23.4" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.6" childYOffset="52.3" />
+			<offset x="0.9" y="17.3" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.6" childYOffset="63.8" />
+			<offset x="0.9" y="17.2" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.7" childYOffset="63.9" />
+			<offset x="0.9" y="23.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.7" childYOffset="52.3" />
+			<offset x="-0.9" y="23.6" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.7" childYOffset="52.2" />
+			<offset x="-0.9" y="17.2" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="1" childXOffset="-1.7" childYOffset="52.2" />
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="1" childXOffset="1.7" childYOffset="52.1" />
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="1.8" childYOffset="64.4" />
+			<offset x="1.0" y="17.1" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.8" childYOffset="64.4" />
+			<offset x="1.0" y="23.8" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-1.8" childYOffset="52.0" />
+			<offset x="-1.0" y="23.9" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.8" childYOffset="51.9" />
+			<offset x="-1.0" y="17.0" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="1.8" childYOffset="64.7" />
+			<offset x="1.0" y="17.0" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.9" childYOffset="64.8" />
+			<offset x="1.0" y="24.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-1.9" childYOffset="64.9" />
+			<offset x="-1.0" y="24.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.9" childYOffset="65.0" />
+			<offset x="-1.0" y="24.2" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.9" childYOffset="51.6" />
+			<offset x="1.1" y="24.2" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-2.0" childYOffset="51.5" />
+			<offset x="1.1" y="16.8" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-2.0" childYOffset="51.4" />
+			<offset x="-1.1" y="16.8" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="2.0" childYOffset="51.3" />
+			<offset x="-1.1" y="16.7" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="2.0" childYOffset="65.5" />
+			<offset x="1.1" y="16.7" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-2.1" childYOffset="65.6" />
+			<offset x="1.1" y="24.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-2.1" childYOffset="51.0" />
+			<offset x="-1.1" y="24.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-2.1" childYOffset="50.9" />
+			<offset x="-1.2" y="16.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="-2.2" childYOffset="65.8" />
+			<offset x="-1.2" y="16.4" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childXOffset="2.2" childYOffset="65.9" />
+			<offset x="-1.2" y="24.7" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="2.2" childYOffset="50.5" />
+			<offset x="1.2" y="24.7" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="-2.3" childYOffset="50.4" />
+			<offset x="1.2" y="16.2" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="-2.3" childYOffset="66.2" />
+			<offset x="-1.2" y="16.1" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="2.3" childYOffset="66.3" />
+			<offset x="-1.3" y="24.9" d="1"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" childXOffset="1.2" childYOffset="55.6" />
+			<offset x="1.3" y="24.9" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childXOffset="0.5" childYOffset="59.2" />
+			<offset x="0.7" y="19.1" d="1"/>
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="0" childYOffset="61.7" />
+			<offset x="0.3" y="21.0" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="0" childYOffset="61.8" />
+			<offset x="0.0" y="22.4" d="4"/>
+			<offset x="0.0" y="22.5" d="1"/>
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="8" childYOffset="61.9" />
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="1" childYOffset="62.0" />
+			<notify layer="king.face" idx="3"/><notify layer="king.mouth" idx="3"/><notify layer="king.head" idx="3"/><notify layer="king.arms" idx="3"/>
+			<frame idx="3" d="3" childYOffset="62.0" />
+			<notify layer="king.face" idx="2"/><notify layer="king.mouth" idx="2"/><notify layer="king.head" idx="2"/><notify layer="king.arms" idx="2"/>
+			<frame idx="2" d="3" childYOffset="62.0" />
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="4" childYOffset="62.0" />
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="1" childYOffset="43.8" />
+		<sound sound="gidrah-titan-boss-snap.buffer" attenuator="loud.attenuator"/>
+		<sound sound="gidrah-titan-boss-snap.amb.buffer" attenuator="default.attenuator"/>
+			<notify layer="king.face" idx="1"/><notify layer="king.mouth" idx="1"/><notify layer="king.head" idx="1"/><notify layer="king.arms" idx="1"/>
+			<frame idx="1" d="0" />
+			<offset x="0.0" y="12.5" d="1"/>
+		<shake amount="32"/>
+		<shoot/>
+			<notify layer="king.face" idx="0"/><notify layer="king.mouth" idx="0"/><notify layer="king.head" idx="0"/><notify layer="king.arms" idx="0"/>
+			<frame idx="0" d="0" />
+			<offset x="0.0" y="-11.5" d="35"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.attack.king.head.anim">
+		<frameset id="gidrah.titan.boss.king.head.array" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.attack.king.face.anim">
+		<frameset id="gidrah.titan.boss.king.face.array" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.attack.king.crown.anim">
+			<frame i="spriteimage.gidrah.titan.boss.crown.top.01" d="699" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.attack.king.arms.anim">
+		<frameset id="gidrah.titan.boss.king.arms.array" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.sedan.start.anim">
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" />
+		<setlayers layers="gidrah.titan.boss.walk.layers"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.start.control.anim">
+			<frame i="spriteimage.particle.dummy.01" d="699" childXOffset="28.0" childYOffset="38.0" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.sedan.death.anim">
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="147" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="16" childYOffset="-2.0" />
+		<emit ox="-8" oy="0" id="gidrah.titan.splat.left"/>
+		<emit ox="8" oy="0" id="gidrah.titan.splat.right"/>
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="429" childYOffset="-2.0" />
+		<event id="1"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.sedan.death.glow.anim">
+		<frameset id="gidrah.titan.boss.sedan.glow.array" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.sedan.death.face.anim">
+		<frameset id="gidrah.titan.boss.sedan.face.array" />
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="17" />
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="2" />
+			<notify layer="sedan.glow" idx="1"/>
+			<frame idx="1" d="1" />
+			<notify layer="sedan.glow" idx="2"/>
+			<frame idx="2" d="2" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="1" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="26" />
+			<notify layer="sedan.glow" idx="3"/>
+			<frame idx="3" d="2" />
+			<notify layer="sedan.glow" idx="2"/>
+			<frame idx="2" d="3" />
+			<notify layer="sedan.glow" idx="1"/>
+			<frame idx="1" d="3" />
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="1" />
+			<notify layer="sedan.glow" idx="0"/>
+			<frame idx="0" d="84" />
+			<notify layer="sedan.glow" idx="4"/>
+			<frame idx="4" d="3" />
+			<notify layer="sedan.glow" idx="5"/>
+			<frame idx="5" d="3" />
+			<notify layer="sedan.glow" idx="6"/>
+			<frame idx="6" d="17" />
+			<notify layer="sedan.glow" idx="2"/>
+			<frame idx="2" d="534" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.death.king.body.control.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="62.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="69.6" />
+			<offset x="0.0" y="13.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="74.3" />
+			<offset x="0.0" y="17.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="77.8" />
+			<offset x="0.0" y="20.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="80.4" />
+			<offset x="0.0" y="21.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="82.5" />
+			<offset x="0.0" y="23.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="84.1" />
+			<offset x="0.0" y="24.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="85.5" />
+			<offset x="0.0" y="25.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="86.6" />
+			<offset x="0.0" y="26.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="87.6" />
+			<offset x="0.0" y="26.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="88.4" />
+			<offset x="0.0" y="27.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="89.0" />
+			<offset x="0.0" y="27.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="89.6" />
+			<offset x="0.0" y="28.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="90.0" />
+			<offset x="0.0" y="28.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="90.4" />
+			<offset x="0.0" y="28.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="90.7" />
+			<offset x="0.0" y="28.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="90.9" />
+			<offset x="0.0" y="29.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="91.1" />
+			<offset x="0.0" y="29.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="91.3" />
+			<offset x="0.0" y="29.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="91.4" />
+			<offset x="0.0" y="29.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="91.5" />
+			<offset x="0.0" y="29.4" d="9"/>
+			<frame i="spriteimage.particle.dummy.01" d="3" childXOffset="28.0" childYOffset="91.4" />
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="91.3" />
+			<offset x="0.0" y="29.3" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="3" childXOffset="28.0" childYOffset="91.2" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="91.1" />
+			<offset x="0.0" y="29.2" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="2" childXOffset="28.0" childYOffset="91.0" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="90.9" />
+			<offset x="0.0" y="29.1" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="90.8" />
+			<offset x="0.0" y="29.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="2" childXOffset="28.0" childYOffset="90.7" />
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="90.6" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="90.5" />
+			<offset x="0.0" y="28.9" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="90.4" />
+			<offset x="0.0" y="28.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="90.3" />
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="90.2" />
+			<offset x="0.0" y="28.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="90.1" />
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="90.0" />
+			<offset x="0.0" y="28.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="89.9" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="89.8" />
+			<offset x="0.0" y="28.5" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="89.7" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="89.6" />
+			<offset x="0.0" y="28.4" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="89.5" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="89.4" />
+			<offset x="0.0" y="28.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="89.3" />
+			<offset x="0.0" y="28.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="89.2" />
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="89.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="89.0" />
+			<offset x="0.0" y="28.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="88.9" />
+			<offset x="0.0" y="28.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="88.8" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="88.7" />
+			<offset x="0.0" y="27.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="88.6" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="88.5" />
+			<offset x="0.0" y="27.8" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="88.4" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="88.3" />
+			<offset x="0.0" y="27.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="88.2" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="88.1" />
+			<offset x="0.0" y="27.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="88.0" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="87.9" />
+			<offset x="0.0" y="27.5" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="87.8" />
+			<offset x="0.0" y="27.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="87.7" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="87.6" />
+			<offset x="0.0" y="27.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="87.5" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="87.4" />
+			<offset x="0.0" y="27.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="87.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="87.2" />
+			<offset x="0.0" y="27.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="87.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="87.0" />
+			<offset x="0.0" y="27.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="86.9" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="86.8" />
+			<offset x="0.0" y="26.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="86.7" />
+			<offset x="0.0" y="26.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="86.6" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="86.5" />
+			<offset x="0.0" y="26.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="86.4" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="86.3" />
+			<offset x="0.0" y="26.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="86.2" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="86.1" />
+			<offset x="0.0" y="26.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="86.0" />
+			<offset x="0.0" y="26.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="85.9" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="85.8" />
+			<offset x="0.0" y="26.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="85.6" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="85.5" />
+			<offset x="0.0" y="26.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="85.4" />
+			<offset x="0.0" y="26.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="85.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="85.2" />
+			<offset x="0.0" y="26.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="85.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="85.0" />
+			<offset x="0.0" y="25.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="84.8" />
+			<offset x="0.0" y="25.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="84.7" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="84.6" />
+			<offset x="0.0" y="25.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="84.5" />
+			<offset x="0.0" y="25.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="84.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="84.2" />
+			<offset x="0.0" y="25.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="84.1" />
+			<offset x="0.0" y="25.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="83.9" />
+			<offset x="0.0" y="25.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="83.8" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="83.7" />
+			<offset x="0.0" y="25.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="83.5" />
+			<offset x="0.0" y="25.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="83.4" />
+			<offset x="0.0" y="25.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="83.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="83.1" />
+			<offset x="0.0" y="24.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="83.0" />
+			<offset x="0.0" y="24.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="82.8" />
+			<offset x="0.0" y="24.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="82.7" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="82.5" />
+			<offset x="0.0" y="24.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="82.4" />
+			<offset x="0.0" y="24.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="82.2" />
+			<offset x="0.0" y="24.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="82.1" />
+			<offset x="0.0" y="24.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="81.9" />
+			<offset x="0.0" y="24.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="81.7" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="86.1" />
+			<offset x="0.0" y="24.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="90.0" />
+			<offset x="0.0" y="26.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="93.7" />
+			<offset x="0.0" y="28.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="97.1" />
+			<offset x="0.0" y="30.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="100.1" />
+			<offset x="0.0" y="32.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="102.8" />
+			<offset x="0.0" y="34.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="105.2" />
+			<offset x="0.0" y="35.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="107.3" />
+			<offset x="0.0" y="37.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="109.0" />
+			<offset x="0.0" y="38.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="110.4" />
+			<offset x="0.0" y="39.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="111.6" />
+			<offset x="0.0" y="39.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="112.4" />
+			<offset x="0.0" y="40.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="112.8" />
+			<offset x="0.0" y="40.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="113.0" />
+			<offset x="0.0" y="41.2" d="1"/>
+			<offset x="0.0" y="41.3" d="10"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="105.9" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="84.5" />
+			<offset x="0.0" y="37.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="48.9" />
+			<offset x="0.0" y="25.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="-1.0" />
+			<offset x="0.0" y="6.0" d="1"/>
+		<shake amount="32"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="28.0" childYOffset="-1.0" />
+			<offset x="0.0" y="-21.4" d="1"/>
+		<emit ox="-40" oy="0" id="titan.boss.fall.emitter"/>
+		<emit ox="-85" oy="0" id="titan.boss.death.remove.fire.emitter"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="-1.0" />
+			<frame i="spriteimage.particle.dummy.01" d="418" childXOffset="28.0" childYOffset="-1.0" />
+		<emit ox="20" oy="40" id="titan.boss.death.remove.explosion.end.emitter"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="-1.0" />
+		<emit ox="10" oy="0" id="titan.boss.death.remove.explosion.sparks.emitter"/>
+			<frame i="spriteimage.particle.dummy.01" d="3" childXOffset="28.0" childYOffset="-1.0" />
+		<emit ox="20" oy="60" id="titan.boss.death.remove.explosion.flash.emitter"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="-1.0" />
+		<shoot/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="28.0" childYOffset="-1.0" />
+		<shake amount="50"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.death.king.body.anim">
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="9" />
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="3" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="127" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="4" />
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="4" />
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="18" />
+			<frame i="spriteimage.gidrah.titan.boss.back.04" d="534" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.death.king.mouth.anim">
+			<frame i="spriteimage.gidrah.titan.boss.glow.02" d="165" />
+			<frame i="spriteimage.gidrah.titan.boss.glow.01" d="96" />
+			<frame i="spriteimage.gidrah.titan.boss.glow.02" d="438" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.death.king.arms.anim">
+			<frame i="spriteimage.gidrah.titan.boss.arms.02" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="38" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="6" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.02" d="5" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="9" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.02" d="5" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="8" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.02" d="5" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="8" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.02" d="5" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="8" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.02" d="5" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="6" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.02" d="3" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="14" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.04" d="3" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.03" d="3" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.02" d="6" />
+			<frame i="spriteimage.gidrah.titan.boss.arms.05" d="534" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.death.king.head.control.anim">
+		<label id="start"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="24.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="27.2" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="28.9" />
+			<offset x="0.0" y="3.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="30.7" />
+			<offset x="0.1" y="4.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="32.1" />
+			<offset x="-0.1" y="5.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="33.3" />
+			<offset x="-0.1" y="6.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="35.8" />
+			<offset x="0.1" y="6.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="36.7" />
+			<offset x="0.1" y="8.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="35.6" />
+			<offset x="-0.1" y="8.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="36.1" />
+			<offset x="-0.2" y="8.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="39.0" />
+			<offset x="-0.2" y="8.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="39.7" />
+			<offset x="-0.2" y="9.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="37.6" />
+			<offset x="0.2" y="10.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="38.1" />
+			<offset x="0.2" y="9.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="41.6" />
+			<offset x="-0.2" y="9.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="42.2" />
+			<offset x="-0.2" y="11.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="39.4" />
+			<offset x="0.2" y="11.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="39.8" />
+			<offset x="0.3" y="10.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="43.8" />
+			<offset x="0.3" y="10.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="44.3" />
+			<offset x="0.3" y="12.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="40.9" />
+			<offset x="-0.3" y="12.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="41.2" />
+			<offset x="-0.3" y="10.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="41.6" />
+			<offset x="-0.3" y="11.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="41.9" />
+			<offset x="-0.3" y="11.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="46.7" />
+			<offset x="0.3" y="11.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="47.1" />
+			<offset x="0.4" y="14.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="42.8" />
+			<offset x="-0.4" y="14.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="43.1" />
+			<offset x="-0.4" y="12.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="48.4" />
+			<offset x="0.4" y="12.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="48.8" />
+			<offset x="0.4" y="15.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="49.1" />
+			<offset x="-0.4" y="15.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.8" childYOffset="49.5" />
+			<offset x="-0.4" y="15.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.8" childYOffset="44.4" />
+			<offset x="0.4" y="15.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.8" childYOffset="44.7" />
+			<offset x="0.4" y="12.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.8" childYOffset="44.9" />
+			<offset x="-0.4" y="13.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.8" childYOffset="45.1" />
+			<offset x="-0.4" y="13.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.8" childYOffset="51.2" />
+			<offset x="0.5" y="13.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.9" childYOffset="51.6" />
+			<offset x="0.5" y="16.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.9" childYOffset="45.8" />
+			<offset x="-0.5" y="16.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.9" childYOffset="46.0" />
+			<offset x="-0.5" y="13.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.9" childYOffset="52.5" />
+			<offset x="-0.5" y="13.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.9" childYOffset="52.8" />
+			<offset x="-0.5" y="17.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.9" childYOffset="46.7" />
+			<offset x="0.5" y="17.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.9" childYOffset="46.9" />
+			<offset x="0.5" y="14.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.9" childYOffset="53.6" />
+			<offset x="-0.5" y="14.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.9" childYOffset="53.9" />
+			<offset x="-0.5" y="17.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.0" childYOffset="47.4" />
+			<offset x="0.5" y="18.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.0" childYOffset="47.6" />
+			<offset x="0.5" y="14.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.0" childYOffset="54.6" />
+			<offset x="0.5" y="14.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.0" childYOffset="54.9" />
+			<offset x="0.5" y="18.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.0" childYOffset="48.1" />
+			<offset x="-0.5" y="18.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.0" childYOffset="48.3" />
+			<offset x="-0.6" y="14.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.0" childYOffset="48.5" />
+			<offset x="-0.6" y="15.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.0" childYOffset="48.6" />
+			<offset x="-0.6" y="15.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.0" childYOffset="56.1" />
+			<offset x="0.6" y="15.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.1" childYOffset="56.3" />
+			<offset x="0.6" y="19.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.1" childYOffset="49.1" />
+			<offset x="-0.6" y="19.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.1" childYOffset="49.2" />
+			<offset x="-0.6" y="15.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.1" childYOffset="56.9" />
+			<offset x="0.6" y="15.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.1" childYOffset="57.1" />
+			<offset x="0.6" y="19.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.1" childYOffset="57.3" />
+			<offset x="-0.6" y="19.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.1" childYOffset="57.5" />
+			<offset x="-0.6" y="20.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.1" childYOffset="49.9" />
+			<offset x="0.6" y="20.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.1" childYOffset="50.0" />
+			<offset x="0.6" y="15.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.1" childYOffset="50.1" />
+			<offset x="-0.6" y="16.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="1.1" childYOffset="50.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.1" childYOffset="58.4" />
+			<offset x="0.6" y="16.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.2" childYOffset="58.6" />
+			<offset x="0.6" y="20.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.2" childYOffset="50.6" />
+			<offset x="-0.6" y="20.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.2" childYOffset="50.7" />
+			<offset x="-0.6" y="16.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-1.2" childYOffset="59.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.2" childYOffset="59.2" />
+			<offset x="-0.6" y="20.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.2" childYOffset="51.0" />
+			<offset x="0.7" y="21.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.2" childYOffset="51.1" />
+			<offset x="0.7" y="16.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.2" childYOffset="59.7" />
+			<offset x="-0.7" y="16.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.2" childYOffset="59.8" />
+			<offset x="-0.7" y="21.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.2" childYOffset="51.4" />
+			<offset x="0.7" y="21.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.2" childYOffset="51.5" />
+			<offset x="0.7" y="16.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="1.3" childYOffset="60.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.3" childYOffset="60.4" />
+			<offset x="0.7" y="21.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.3" childYOffset="51.7" />
+			<offset x="-0.7" y="21.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.3" childYOffset="51.8" />
+			<offset x="-0.7" y="16.9" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="1.3" childYOffset="51.9" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.3" childYOffset="61.1" />
+			<offset x="0.7" y="17.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.3" childYOffset="61.2" />
+			<offset x="0.7" y="22.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.3" childYOffset="52.1" />
+			<offset x="-0.7" y="22.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.3" childYOffset="52.1" />
+			<offset x="-0.7" y="17.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.3" childYOffset="61.6" />
+			<offset x="0.7" y="17.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.4" childYOffset="61.7" />
+			<offset x="0.7" y="22.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.4" childYOffset="61.8" />
+			<offset x="-0.7" y="22.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.4" childYOffset="61.9" />
+			<offset x="-0.8" y="22.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.4" childYOffset="52.3" />
+			<offset x="0.8" y="22.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.4" childYOffset="52.3" />
+			<offset x="0.8" y="17.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.4" childYOffset="52.4" />
+			<offset x="-0.8" y="17.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.4" childYOffset="52.4" />
+			<offset x="-0.8" y="17.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.4" childYOffset="62.5" />
+			<offset x="0.8" y="17.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.5" childYOffset="62.6" />
+			<offset x="0.8" y="22.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.5" childYOffset="52.4" />
+			<offset x="-0.8" y="22.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.5" childYOffset="52.5" />
+			<offset x="-0.8" y="17.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-1.5" childYOffset="62.9" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.5" childYOffset="63.0" />
+			<offset x="-0.8" y="23.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.5" childYOffset="52.5" />
+			<offset x="0.8" y="23.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.5" childYOffset="52.5" />
+			<offset x="0.8" y="17.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.6" childYOffset="63.4" />
+			<offset x="-0.8" y="17.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.6" childYOffset="63.5" />
+			<offset x="-0.9" y="23.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.6" childYOffset="52.4" />
+			<offset x="0.9" y="23.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.6" childYOffset="52.4" />
+			<offset x="0.9" y="17.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="1.6" childYOffset="63.7" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.6" childYOffset="63.8" />
+			<offset x="0.9" y="23.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.7" childYOffset="52.3" />
+			<offset x="-0.9" y="23.6" d="1"/>
+			<offset x="-0.9" y="17.2" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="1.7" childYOffset="52.2" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.7" childYOffset="64.3" />
+			<offset x="0.9" y="17.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.8" childYOffset="64.4" />
+			<offset x="1.0" y="23.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.8" childYOffset="52.1" />
+			<offset x="-1.0" y="23.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.8" childYOffset="52.0" />
+			<offset x="-1.0" y="17.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.8" childYOffset="64.7" />
+			<offset x="1.0" y="17.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.8" childYOffset="64.8" />
+			<offset x="1.0" y="24.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.9" childYOffset="64.9" />
+			<offset x="-1.0" y="24.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="1.9" childYOffset="65.0" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.9" childYOffset="51.7" />
+			<offset x="1.0" y="24.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.9" childYOffset="51.6" />
+			<offset x="1.1" y="16.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-2.0" childYOffset="51.5" />
+			<offset x="-1.1" y="16.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="2.0" childYOffset="51.4" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="2.0" childYOffset="65.4" />
+			<offset x="1.1" y="16.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-2.0" childYOffset="65.5" />
+			<offset x="1.1" y="24.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-2.1" childYOffset="51.1" />
+			<offset x="-1.1" y="24.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-2.1" childYOffset="51.0" />
+			<offset x="-1.1" y="16.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-2.1" childYOffset="65.8" />
+			<offset x="-1.2" y="16.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="2.2" childYOffset="65.9" />
+			<offset x="-1.2" y="24.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="2.2" childYOffset="50.6" />
+			<offset x="1.2" y="24.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-2.2" childYOffset="50.5" />
+			<offset x="1.2" y="16.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-2.3" childYOffset="66.1" />
+			<offset x="-1.2" y="16.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="2.3" childYOffset="66.2" />
+			<offset x="-1.2" y="24.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="2.3" childYOffset="50.1" />
+			<offset x="1.3" y="24.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.8" childYOffset="57.6" />
+			<offset x="1.3" y="16.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="61.7" />
+			<offset x="0.5" y="20.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="61.8" />
+			<offset x="0.0" y="22.4" d="4"/>
+			<offset x="0.0" y="22.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="8" childYOffset="61.9" />
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="62.0" />
+			<frame i="spriteimage.particle.dummy.01" d="3" childYOffset="62.0" />
+			<frame i="spriteimage.particle.dummy.01" d="3" childYOffset="62.0" />
+			<frame i="spriteimage.particle.dummy.01" d="4" childYOffset="62.0" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="43.8" />
+			<offset x="0.0" y="22.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" />
+			<offset x="0.0" y="12.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" />
+			<offset x="0.0" y="-11.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="94" />
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="21.0" />
+		<sound attenuator="loud.attenuator" sound="gidrah.titan.boss.death.buffer"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="21.1" />
+			<offset x="0.0" y="0.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="21.3" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="21.5" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="21.9" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="22.1" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="22.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="22.8" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="23.0" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="23.2" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="23.4" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="23.2" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="23.4" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="23.6" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="23.8" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="24.5" />
+			<offset x="0.0" y="1.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="24.7" />
+			<offset x="0.0" y="1.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="24.3" />
+			<offset x="0.0" y="2.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="24.5" />
+			<offset x="0.0" y="1.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="25.3" />
+			<offset x="0.0" y="1.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="25.6" />
+			<offset x="-0.1" y="2.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="25.0" />
+			<offset x="0.1" y="2.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="25.2" />
+			<offset x="0.1" y="2.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="26.2" />
+			<offset x="-0.1" y="2.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="26.4" />
+			<offset x="-0.1" y="2.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="25.8" />
+			<offset x="0.1" y="3.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="25.9" />
+			<offset x="0.1" y="2.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="27.0" />
+			<offset x="0.1" y="2.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="27.2" />
+			<offset x="0.1" y="3.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="26.5" />
+			<offset x="-0.1" y="3.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="26.6" />
+			<offset x="-0.1" y="3.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="26.8" />
+			<offset x="-0.1" y="3.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="27.0" />
+			<offset x="-0.1" y="3.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="28.3" />
+			<offset x="0.1" y="3.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="28.5" />
+			<offset x="0.1" y="4.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="27.5" />
+			<offset x="-0.1" y="4.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="27.7" />
+			<offset x="-0.1" y="3.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="29.1" />
+			<offset x="0.1" y="3.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="29.3" />
+			<offset x="0.1" y="4.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="29.5" />
+			<offset x="-0.1" y="4.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="29.7" />
+			<offset x="-0.1" y="4.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="28.5" />
+			<offset x="0.1" y="4.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="28.7" />
+			<offset x="0.1" y="4.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="28.9" />
+			<offset x="-0.1" y="4.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="29.1" />
+			<offset x="-0.1" y="4.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="30.7" />
+			<offset x="0.1" y="4.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="30.9" />
+			<offset x="0.1" y="5.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="29.6" />
+			<offset x="-0.1" y="5.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="29.7" />
+			<offset x="-0.1" y="4.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="31.5" />
+			<offset x="-0.1" y="4.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="31.7" />
+			<offset x="-0.1" y="5.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="30.2" />
+			<offset x="0.1" y="5.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="30.4" />
+			<offset x="0.1" y="5.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="32.3" />
+			<offset x="-0.1" y="5.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="32.4" />
+			<offset x="-0.1" y="6.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="30.9" />
+			<offset x="0.1" y="6.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="31.0" />
+			<offset x="0.1" y="5.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="33.0" />
+			<offset x="0.1" y="5.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="33.2" />
+			<offset x="0.1" y="6.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="31.5" />
+			<offset x="-0.1" y="6.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="31.7" />
+			<offset x="-0.1" y="5.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="31.8" />
+			<offset x="-0.2" y="5.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="32.0" />
+			<offset x="-0.2" y="6.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="34.2" />
+			<offset x="0.2" y="6.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="34.4" />
+			<offset x="0.2" y="7.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="32.5" />
+			<offset x="-0.2" y="7.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="32.6" />
+			<offset x="-0.2" y="6.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="34.9" />
+			<offset x="0.2" y="6.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="35.1" />
+			<offset x="0.2" y="7.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="35.3" />
+			<offset x="-0.2" y="7.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="35.5" />
+			<offset x="-0.2" y="7.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="33.4" />
+			<offset x="0.2" y="8.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="33.5" />
+			<offset x="0.2" y="6.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="33.7" />
+			<offset x="-0.2" y="6.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="33.8" />
+			<offset x="-0.2" y="7.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="36.4" />
+			<offset x="0.2" y="7.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="36.6" />
+			<offset x="0.2" y="8.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="34.3" />
+			<offset x="-0.2" y="8.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="34.4" />
+			<offset x="-0.2" y="7.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="37.1" />
+			<offset x="-0.2" y="7.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="37.3" />
+			<offset x="-0.2" y="8.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="34.9" />
+			<offset x="0.2" y="8.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="35.0" />
+			<offset x="0.2" y="7.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="37.8" />
+			<offset x="-0.2" y="7.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="38.0" />
+			<offset x="-0.2" y="9.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="35.4" />
+			<offset x="0.2" y="9.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="35.6" />
+			<offset x="0.2" y="7.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="38.5" />
+			<offset x="0.2" y="8.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="38.7" />
+			<offset x="0.2" y="9.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="36.0" />
+			<offset x="-0.2" y="9.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="36.1" />
+			<offset x="-0.2" y="8.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-0.4" childYOffset="36.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="36.4" />
+			<offset x="-0.2" y="8.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="39.5" />
+			<offset x="0.2" y="8.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="39.7" />
+			<offset x="0.2" y="10.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="36.8" />
+			<offset x="-0.2" y="10.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="37.0" />
+			<offset x="-0.2" y="8.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="40.2" />
+			<offset x="0.2" y="8.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="40.3" />
+			<offset x="0.2" y="10.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="40.5" />
+			<offset x="-0.2" y="10.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="40.7" />
+			<offset x="-0.2" y="10.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="37.6" />
+			<offset x="0.2" y="10.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="37.8" />
+			<offset x="0.2" y="9.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="37.9" />
+			<offset x="-0.3" y="9.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="38.0" />
+			<offset x="-0.3" y="9.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="41.5" />
+			<offset x="0.3" y="9.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="41.6" />
+			<offset x="0.3" y="11.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="38.4" />
+			<offset x="-0.3" y="11.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="38.5" />
+			<offset x="-0.3" y="9.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-0.5" childYOffset="42.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="42.2" />
+			<offset x="-0.3" y="11.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="38.9" />
+			<offset x="0.3" y="11.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="39.0" />
+			<offset x="0.3" y="9.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="42.7" />
+			<offset x="-0.3" y="9.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="42.8" />
+			<offset x="-0.3" y="11.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="39.4" />
+			<offset x="0.3" y="12.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="39.5" />
+			<offset x="0.3" y="10.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="43.3" />
+			<offset x="0.3" y="10.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="43.4" />
+			<offset x="0.3" y="12.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="39.9" />
+			<offset x="-0.3" y="12.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="40.0" />
+			<offset x="-0.3" y="10.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-0.5" childYOffset="40.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="40.2" />
+			<offset x="-0.3" y="10.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="44.1" />
+			<offset x="0.3" y="10.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="44.3" />
+			<offset x="0.3" y="12.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="40.6" />
+			<offset x="-0.3" y="12.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="40.7" />
+			<offset x="-0.3" y="10.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="44.7" />
+			<offset x="0.3" y="10.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="44.8" />
+			<offset x="0.3" y="13.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="45.0" />
+			<offset x="-0.3" y="13.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="45.1" />
+			<offset x="-0.3" y="13.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="41.2" />
+			<offset x="0.3" y="13.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="41.3" />
+			<offset x="0.3" y="11.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="41.4" />
+			<offset x="-0.3" y="11.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.6" childYOffset="41.5" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="45.7" />
+			<offset x="0.3" y="11.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="45.9" />
+			<offset x="0.3" y="13.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="41.8" />
+			<offset x="-0.3" y="13.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="41.9" />
+			<offset x="-0.3" y="11.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-0.6" childYOffset="46.2" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="46.4" />
+			<offset x="-0.3" y="13.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="42.2" />
+			<offset x="0.3" y="13.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="42.3" />
+			<offset x="0.3" y="11.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="46.7" />
+			<offset x="-0.3" y="11.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="46.8" />
+			<offset x="-0.3" y="14.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="42.6" />
+			<offset x="0.3" y="14.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="42.7" />
+			<offset x="0.3" y="11.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.6" childYOffset="47.2" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="47.3" />
+			<offset x="0.3" y="14.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="43.0" />
+			<offset x="-0.3" y="14.5" d="1"/>
+			<offset x="-0.3" y="12.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="43.1" />
+			<offset x="-0.4" y="12.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="43.2" />
+			<offset x="-0.4" y="12.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="47.8" />
+			<offset x="0.4" y="12.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="47.9" />
+			<offset x="0.4" y="14.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="43.5" />
+			<offset x="-0.4" y="14.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="43.5" />
+			<offset x="-0.4" y="12.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="48.2" />
+			<offset x="0.4" y="12.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="48.3" />
+			<offset x="0.4" y="15.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="48.4" />
+			<offset x="-0.4" y="15.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="48.5" />
+			<offset x="-0.4" y="15.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="43.9" />
+			<offset x="0.4" y="15.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="44.0" />
+			<offset x="0.4" y="12.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="44.1" />
+			<offset x="-0.4" y="12.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="44.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="49.0" />
+			<offset x="0.4" y="12.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="49.1" />
+			<offset x="0.4" y="15.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="44.4" />
+			<offset x="-0.4" y="15.4" d="1"/>
+			<offset x="-0.4" y="12.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="49.3" />
+			<offset x="-0.4" y="12.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="49.4" />
+			<offset x="-0.4" y="15.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="44.6" />
+			<offset x="0.4" y="15.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="44.7" />
+			<offset x="0.4" y="13.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="49.6" />
+			<offset x="-0.4" y="13.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="49.7" />
+			<offset x="-0.4" y="15.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="44.8" />
+			<offset x="0.4" y="15.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="44.9" />
+			<offset x="0.4" y="13.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="49.9" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.0" />
+			<offset x="0.4" y="15.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.0" />
+			<offset x="-0.4" y="15.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.1" />
+			<offset x="-0.4" y="13.2" d="1"/>
+			<offset x="-0.4" y="13.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="45.2" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.2" />
+			<offset x="0.4" y="13.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.3" />
+			<offset x="0.4" y="16.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.3" />
+			<offset x="-0.4" y="16.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="45.4" />
+			<offset x="-0.4" y="13.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.4" />
+			<offset x="0.4" y="13.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.5" />
+			<offset x="0.4" y="16.2" d="1"/>
+			<offset x="-0.4" y="16.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="50.6" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="45.5" />
+			<offset x="0.4" y="16.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.5" />
+			<offset x="0.4" y="13.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.6" />
+			<offset x="-0.4" y="13.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="45.6" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.7" />
+			<offset x="0.4" y="13.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.8" />
+			<offset x="0.4" y="16.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.7" />
+			<offset x="-0.4" y="16.4" d="1"/>
+			<offset x="-0.4" y="13.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-0.7" childYOffset="50.8" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.9" />
+			<offset x="-0.4" y="16.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="45.7" />
+			<offset x="0.4" y="16.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.7" />
+			<offset x="0.4" y="13.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.9" />
+			<offset x="-0.4" y="13.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.9" />
+			<offset x="-0.4" y="16.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="45.7" />
+			<offset x="0.4" y="16.4" d="1"/>
+			<offset x="0.4" y="13.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="50.9" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.9" />
+			<offset x="0.4" y="16.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.7" />
+			<offset x="-0.4" y="16.4" d="1"/>
+			<offset x="-0.4" y="13.6" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="45.7" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.8" />
+			<offset x="0.4" y="13.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.8" />
+			<offset x="0.4" y="16.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.6" />
+			<offset x="-0.4" y="16.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="45.6" />
+			<offset x="-0.4" y="13.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.7" />
+			<offset x="0.4" y="13.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.7" />
+			<offset x="0.4" y="16.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.6" />
+			<offset x="-0.4" y="16.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="50.6" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="45.5" />
+			<offset x="0.4" y="16.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.4" />
+			<offset x="0.4" y="13.5" d="1"/>
+			<offset x="-0.4" y="13.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="45.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.3" />
+			<offset x="0.4" y="13.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="50.3" />
+			<offset x="0.4" y="16.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.2" />
+			<offset x="-0.4" y="16.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="45.1" />
+			<offset x="-0.4" y="13.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-0.7" childYOffset="50.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="50.0" />
+			<offset x="-0.4" y="16.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="44.9" />
+			<offset x="0.4" y="15.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="44.9" />
+			<offset x="0.4" y="13.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="49.7" />
+			<offset x="-0.4" y="13.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="49.6" />
+			<offset x="-0.4" y="15.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="44.6" />
+			<offset x="0.4" y="15.7" d="1"/>
+			<offset x="0.4" y="13.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="0.7" childYOffset="49.3" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="49.2" />
+			<offset x="0.4" y="15.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="44.3" />
+			<offset x="-0.4" y="15.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="44.2" />
+			<offset x="-0.4" y="12.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-0.7" childYOffset="44.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="44.0" />
+			<offset x="-0.4" y="12.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.7" childYOffset="48.5" />
+			<offset x="0.4" y="12.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="48.4" />
+			<offset x="0.4" y="15.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.7" childYOffset="43.6" />
+			<offset x="-0.4" y="15.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="43.5" />
+			<offset x="-0.4" y="12.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="47.9" />
+			<offset x="0.4" y="12.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="47.7" />
+			<offset x="0.4" y="14.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="47.5" />
+			<offset x="-0.4" y="14.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="47.3" />
+			<offset x="-0.3" y="14.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="42.8" />
+			<offset x="0.3" y="14.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="42.7" />
+			<offset x="0.3" y="12.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="42.5" />
+			<offset x="-0.3" y="11.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="42.3" />
+			<offset x="-0.3" y="11.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="46.3" />
+			<offset x="0.3" y="11.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="46.1" />
+			<offset x="0.3" y="13.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="41.8" />
+			<offset x="-0.3" y="13.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="41.6" />
+			<offset x="-0.3" y="11.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.6" childYOffset="45.4" />
+			<offset x="-0.3" y="11.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="45.1" />
+			<offset x="-0.3" y="13.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="41.1" />
+			<offset x="0.3" y="13.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="40.9" />
+			<offset x="0.3" y="11.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="44.3" />
+			<offset x="-0.3" y="10.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="44.1" />
+			<offset x="-0.3" y="12.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="40.2" />
+			<offset x="0.3" y="12.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="40.0" />
+			<offset x="0.3" y="10.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.5" childYOffset="43.2" />
+			<offset x="0.3" y="10.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="42.9" />
+			<offset x="0.3" y="12.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="39.3" />
+			<offset x="-0.3" y="12.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.5" childYOffset="39.1" />
+			<offset x="-0.3" y="10.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="38.8" />
+			<offset x="-0.2" y="9.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="38.5" />
+			<offset x="-0.2" y="9.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="41.2" />
+			<offset x="0.2" y="9.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="40.8" />
+			<offset x="0.2" y="11.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.4" childYOffset="37.8" />
+			<offset x="-0.2" y="10.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="37.5" />
+			<offset x="-0.2" y="9.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.4" childYOffset="39.7" />
+			<offset x="0.2" y="9.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="39.3" />
+			<offset x="0.2" y="10.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="38.9" />
+			<offset x="-0.2" y="10.1" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="38.5" />
+			<offset x="-0.2" y="9.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.3" childYOffset="36.1" />
+			<offset x="0.2" y="9.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="35.9" />
+			<offset x="0.2" y="8.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="35.6" />
+			<offset x="-0.1" y="8.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="35.3" />
+			<offset x="-0.1" y="8.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.2" childYOffset="36.5" />
+			<offset x="0.1" y="7.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="36.1" />
+			<offset x="0.1" y="8.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.2" childYOffset="34.6" />
+			<offset x="-0.1" y="8.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="34.3" />
+			<offset x="-0.1" y="7.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.1" childYOffset="34.9" />
+			<offset x="-0.1" y="7.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="34.5" />
+			<offset x="-0.1" y="7.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.1" childYOffset="33.7" />
+			<offset x="0.0" y="7.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="33.5" />
+			<offset x="0.0" y="7.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="33.3" />
+			<offset x="0.0" y="6.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="33.0" />
+			<offset x="0.0" y="6.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="32.7" />
+			<offset x="0.0" y="6.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="32.5" />
+			<offset x="0.0" y="6.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="32.2" />
+			<offset x="0.0" y="6.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="31.9" />
+			<offset x="0.0" y="6.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="31.7" />
+			<offset x="0.0" y="6.0" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="31.5" />
+			<offset x="0.0" y="5.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="31.3" />
+			<offset x="0.0" y="5.8" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="31.1" />
+			<offset x="0.0" y="5.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="31.0" />
+			<offset x="0.0" y="5.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="30.8" />
+			<offset x="0.0" y="5.5" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="30.7" />
+			<offset x="0.0" y="5.4" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="30.6" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="30.5" />
+			<offset x="0.0" y="5.3" d="2"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childYOffset="30.4" />
+			<offset x="0.0" y="5.2" d="13"/>
+			<frame i="spriteimage.particle.dummy.01" d="1" childXOffset="-0.1" childYOffset="31.1" />
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-0.3" childYOffset="35.3" />
+			<offset x="0.0" y="5.6" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.6" childYOffset="41.3" />
+			<offset x="-0.2" y="7.9" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="0.9" childYOffset="43.3" />
+			<offset x="0.3" y="11.2" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.2" childYOffset="51.4" />
+			<offset x="0.5" y="12.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="1.5" childYOffset="72.4" />
+			<offset x="0.7" y="16.7" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.5" childYOffset="72.4" />
+			<offset x="0.8" y="28.3" d="1"/>
+			<frame i="spriteimage.particle.dummy.01" d="0" childXOffset="-1.5" childYOffset="61.9" />
+			<offset x="-0.8" y="28.3" d="1"/>
+			<offset x="-0.8" y="22.5" d="2"/>
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.death.king.face.anim">
+			<frame i="spriteimage.gidrah.titan.boss.roar.top.01" d="165" />
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="24" />
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="3" />
+			<frame i="spriteimage.gidrah.titan.boss.top.02" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.04" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.05" d="15" />
+			<frame i="spriteimage.gidrah.titan.boss.top.05" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.04" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.03" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.02" d="2" />
+			<frame i="spriteimage.gidrah.titan.boss.top.01" d="40" />
+			<frame i="spriteimage.gidrah.titan.boss.roar.top.01" d="438" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.death.king.crown.anim">
+			<frame i="spriteimage.gidrah.titan.boss.crown.top.01" d="699" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.death.king.head.anim">
+			<frame i="spriteimage.gidrah.titan.boss.roar.01" d="165" />
+			<frame i="spriteimage.gidrah.titan.boss.01" d="95" />
+			<frame i="spriteimage.gidrah.titan.boss.01" d="1" />
+			<frame i="spriteimage.gidrah.titan.boss.roar.01" d="438" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.staticAttack.sedan.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="164" />
+			<frame i="spriteimage.gidrah.titan.sedan.01" d="1" childYOffset="-2.0" />
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.titan.sedan.02" d="35" childYOffset="-2.0" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.staticAttack.control.anim">
+			<frame i="spriteimage.particle.dummy.01" d="699" childXOffset="28.0" childYOffset="38.0" />
+	</animation>
+
+	<animation name="gidrah.titan.boss.king.staticAttack.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="3" />
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="4" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="156" />
+			<frame i="spriteimage.gidrah.titan.boss.back.03" d="1" />
+			<frame i="spriteimage.gidrah.titan.boss.back.02" d="1" />
+			<frame i="spriteimage.gidrah.titan.boss.back.01" d="35" />
+		<goto id="start"/>
+	</animation>
+
+</resources>

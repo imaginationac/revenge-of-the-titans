@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Common tiles -->
+<resources>
+
+	<!--  Spawnpoints -->
+	<array name="north.spawnpoints">
+		<item>spawnpoint.north.1</item>
+		<item>spawnpoint.north.2</item>
+		<item>spawnpoint.north.3</item>
+		<item>spawnpoint.north.4</item>
+		<item>spawnpoint.north.5</item>
+	</array>
+	<array name="east.spawnpoints">
+		<item>spawnpoint.east.1</item>
+		<item>spawnpoint.east.2</item>
+		<item>spawnpoint.east.3</item>
+		<item>spawnpoint.east.4</item>
+		<item>spawnpoint.east.5</item>
+	</array>
+	<array name="south.spawnpoints">
+		<item>spawnpoint.south.1</item>
+		<item>spawnpoint.south.2</item>
+		<item>spawnpoint.south.3</item>
+		<item>spawnpoint.south.4</item>
+		<item>spawnpoint.south.5</item>
+	</array>
+	<array name="west.spawnpoints">
+		<item>spawnpoint.west.1</item>
+		<item>spawnpoint.west.2</item>
+		<item>spawnpoint.west.3</item>
+		<item>spawnpoint.west.4</item>
+		<item>spawnpoint.west.5</item>
+	</array>
+
+
+	<animation name="alert.ping.anim">
+		
+		<label id="start"/>
+		
+		<alpha alpha="100" d="0"/>
+		<scale scale="0.425" d="0"/>
+
+		<frame i="spriteimage.hud.alert.ping.01" d="4" />
+
+		<scale scale="+0.02" d="0"/>		
+		<frame i="spriteimage.hud.alert.ping.02" d="4" />
+
+		<scale scale="+0.02" d="0"/>			
+		<frame i="spriteimage.hud.alert.ping.03" d="4" />
+
+		<scale scale="+0.02" d="0"/>			
+		<frame i="spriteimage.hud.alert.ping.04" d="4" />
+
+		<scale scale="+0.02" d="0"/>			
+		<frame i="spriteimage.hud.alert.ping.05" d="4" />
+
+		<scale scale="+0.02" d="0"/>			
+		<frame i="spriteimage.hud.alert.ping.06" d="4" />
+		
+		<scale scale="+0.02"/>
+		<frame i="spriteimage.hud.alert.ping.07" d="4" />
+		
+		<scale scale="+0.02"/>
+		<frame i="spriteimage.hud.alert.ping.08" d="4" />
+		
+		<scale scale="+0.02"/>
+		<frame i="spriteimage.hud.alert.ping.09" d="4" />
+		
+		<scale scale="+0.02"/>
+		<alpha alpha="90" d="4"/>
+
+		<scale scale="+0.02"/>
+		<alpha alpha="75" d="4"/>
+		
+		<scale scale="+0.02"/>
+		<alpha alpha="55" d="4"/>
+
+		<scale scale="+0.02"/>
+		<alpha alpha="30" d="3"/>
+
+		<scale scale="+0.02"/>
+		<alpha alpha="10" d="6"/>
+	
+		<alpha alpha="0" d="10"/>
+	
+		<goto id="start"/>
+
+	</animation>	
+
+
+	<!-- gidrah alert arrow things -->
+
+	<animation name="spawnpoint.north.animation">
+		<angle angle="16384" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.animation" d="0" />
+	</animation>
+	<animation name="spawnpoint.north.back.animation">
+		<angle angle="16384" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.back.animation" d="0" />	
+	</animation>
+
+	<animation name="spawnpoint.south.animation">
+		<angle angle="-16384" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.animation" d="0" />
+	</animation>
+	<animation name="spawnpoint.south.back.animation">
+		<angle angle="-16384" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.back.animation" d="0" />
+	</animation>
+		
+	<animation name="spawnpoint.east.animation">
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.animation" d="0" />		
+		<goto seq="1"/>
+	</animation>
+	<animation name="spawnpoint.east.back.animation">
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.back.animation" d="0" />
+	</animation>
+		
+	<animation name="spawnpoint.west.animation">
+		<angle angle="32768" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.animation" d="0" />
+	</animation>
+	<animation name="spawnpoint.west.back.animation">
+		<angle angle="32768" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.back.animation" d="0" />
+	</animation>
+
+	<animation name="spawnpoint.northeast.animation">
+		<angle angle="8182" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.animation" d="0" />
+	</animation>
+	<animation name="spawnpoint.northeast.back.animation">
+		<angle angle="8192" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.back.animation" d="0" />	
+	</animation>
+
+	<animation name="spawnpoint.northwest.animation">
+		<angle angle="24576" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.animation" d="0" />
+	</animation>
+	<animation name="spawnpoint.northwest.back.animation">
+		<angle angle="24576" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.back.animation" d="0" />	
+	</animation>
+
+	<animation name="spawnpoint.southwest.animation">
+		<angle angle="40960" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.animation" d="0" />
+	</animation>
+	<animation name="spawnpoint.southwest.back.animation">
+		<angle angle="40960" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.back.animation" d="0" />	
+	</animation>
+
+	<animation name="spawnpoint.southeast.animation">
+		<angle angle="57344" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.animation" d="0" />
+	</animation>
+	<animation name="spawnpoint.southeast.back.animation">
+		<angle angle="57344" d="0"/>
+		<scale scale="0.5"/>
+		<frame i="spawnpoint.back.animation" d="0" />	
+	</animation>
+
+
+
+	<animation name="spawnpoint.animation">
+		<frame i="spriteimage.hud.alert.arrow.01" d="16" />
+		<frame i="spriteimage.hud.alert.arrow.02" d="2" />
+		<frame i="spriteimage.hud.alert.arrow.03" d="3" />
+		<frame i="spriteimage.hud.alert.arrow.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="spawnpoint.back.animation">
+		<frame i="spriteimage.hud.alert.arrow.back.01" d="16" />
+		<frame i="spriteimage.hud.alert.arrow.back.02" d="2" />
+		<frame i="spriteimage.hud.alert.arrow.back.03" d="3" />
+		<frame i="spriteimage.hud.alert.arrow.back.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+
+
+	<spawnpoint name="spawnpoint.north.spec" i="916" layer="2" xoffset="0" yoffset="1">
+		<decal scale="0.5" offset="8,-4" attenuated="false" layer="7" image="spriteimage.hud.alert.skull.back.01"/>
+		<decal scale="0.5" offset="8,-4" attenuated="false" layer="7" image="spriteimage.hud.alert.skull.01"/>
+		<decal layer="13" offset="8,-4" attenuated="false" animation="alert.ping.anim"/>
+	</spawnpoint>
+
+	<spawnpoint name="spawnpoint.east.spec" i="917" layer="2" xoffset="1" yoffset="0">
+		<decal scale="0.5" offset="-8,8" attenuated="false" layer="7" image="spriteimage.hud.alert.skull.back.01"/>
+		<decal scale="0.5" offset="-8,8" attenuated="false" layer="7" image="spriteimage.hud.alert.skull.01"/>
+		<decal layer="13" offset="-8,8" attenuated="false" animation="alert.ping.anim"/>
+	</spawnpoint>
+
+	<spawnpoint name="spawnpoint.south.spec" i="918" layer="2" xoffset="0" yoffset="-1">
+		<decal scale="0.5" offset="8,20" attenuated="false" layer="7" image="spriteimage.hud.alert.skull.back.01"/>
+		<decal scale="0.5" offset="8,20" attenuated="false" layer="7" image="spriteimage.hud.alert.skull.01"/>
+		<decal layer="13" offset="8,20" attenuated="false" animation="alert.ping.anim"/>
+	</spawnpoint>
+
+	<spawnpoint name="spawnpoint.west.spec" i="919" layer="2" xoffset="-1" yoffset="0">
+		<decal scale="0.5" offset="24,8" attenuated="false" layer="7" image="spriteimage.hud.alert.skull.back.01"/>
+		<decal scale="0.5" offset="24,8" attenuated="false" layer="7" image="spriteimage.hud.alert.skull.01"/>			
+		<decal layer="13" offset="24,8" attenuated="false" animation="alert.ping.anim"/>
+	</spawnpoint>
+
+
+	<tileset name="common.tileset" description="Common Tiles" default_="">
+		<!-- Easy gidrahs -->
+		<spawnpoint name="spawnpoint.north.1" inherit="spawnpoint.north.spec" i="920" type="1"></spawnpoint>
+		<spawnpoint name="spawnpoint.east.1" inherit="spawnpoint.east.spec" i="921" type="1"></spawnpoint>
+		<spawnpoint name="spawnpoint.south.1" inherit="spawnpoint.south.spec" i="922" type="1"></spawnpoint>
+		<spawnpoint name="spawnpoint.west.1" inherit="spawnpoint.west.spec" i="923" type="1"></spawnpoint>
+		
+		<!-- Medium gidrahs -->
+		<spawnpoint name="spawnpoint.north.2" inherit="spawnpoint.north.spec" i="924" type="2"></spawnpoint>
+		<spawnpoint name="spawnpoint.east.2" inherit="spawnpoint.east.spec" i="925" type="2"></spawnpoint>
+		<spawnpoint name="spawnpoint.south.2" inherit="spawnpoint.south.spec" i="926" type="2"></spawnpoint>
+		<spawnpoint name="spawnpoint.west.2" inherit="spawnpoint.west.spec" i="927" type="2"></spawnpoint>
+		
+		<!-- Hard gidrahs -->
+		<spawnpoint name="spawnpoint.north.3" inherit="spawnpoint.north.spec" i="928" type="3"></spawnpoint>
+		<spawnpoint name="spawnpoint.east.3" inherit="spawnpoint.east.spec" i="929" type="3"></spawnpoint>
+		<spawnpoint name="spawnpoint.south.3" inherit="spawnpoint.south.spec" i="930" type="3"></spawnpoint>
+		<spawnpoint name="spawnpoint.west.3" inherit="spawnpoint.west.spec" i="931" type="3"></spawnpoint>
+
+		<!-- Really hard gidrahs -->
+		<spawnpoint name="spawnpoint.north.4" inherit="spawnpoint.north.spec" i="932" type="4"></spawnpoint>
+		<spawnpoint name="spawnpoint.east.4" inherit="spawnpoint.east.spec" i="933" type="4"></spawnpoint>
+		<spawnpoint name="spawnpoint.south.4" inherit="spawnpoint.south.spec" i="934" type="4"></spawnpoint>
+		<spawnpoint name="spawnpoint.west.4" inherit="spawnpoint.west.spec" i="935" type="4"></spawnpoint>
+
+		<!-- Extra hard gidrahs -->
+		<spawnpoint name="spawnpoint.north.5" inherit="spawnpoint.north.spec" i="936" type="5"></spawnpoint>
+		<spawnpoint name="spawnpoint.east.5" inherit="spawnpoint.east.spec" i="937" type="5"></spawnpoint>
+		<spawnpoint name="spawnpoint.south.5" inherit="spawnpoint.south.spec" i="938" type="5"></spawnpoint>
+		<spawnpoint name="spawnpoint.west.5" inherit="spawnpoint.west.spec" i="939" type="5"></spawnpoint>
+
+		<!-- Player base -->
+		<basepoint name="basepoint.1" i="9040" layer="2" image="tiles.road.5.0" />
+
+		<!-- Crystals -->	
+		
+		<crystal name="crystal.small.1" i="32000" layer="2" size="1" width="1" height="1" crystal="building.crystal.small.01"/>
+		<crystal name="crystal.small.2" i="32001" layer="2" size="1" width="1" height="1" crystal="building.crystal.small.02"/>
+		<crystal name="crystal.small.3" i="32002" layer="2" size="1" width="1" height="1" crystal="building.crystal.small.03"/>
+		<crystal name="crystal.small.4" i="32003" layer="2" size="1" width="1" height="1" crystal="building.crystal.small.04"/>
+		<crystal name="crystal.small.5" i="32004" layer="2" size="1" width="1" height="1" crystal="building.crystal.small.05"/>
+		<crystal name="crystal.small.6" i="32005" layer="2" size="1" width="1" height="1" crystal="building.crystal.small.06"/>
+		<crystal name="crystal.small.7" i="32006" layer="2" size="1" width="1" height="1" crystal="building.crystal.small.07"/>
+		<crystal name="crystal.small.8" i="32007" layer="2" size="1" width="1" height="1" crystal="building.crystal.small.08"/>
+		
+		<crystal name="crystal.medium.1" i="32010" layer="2" size="2" width="1" height="1" crystal="building.crystal.medium.01"/>
+		<crystal name="crystal.medium.2" i="32011" layer="2" size="2" width="1" height="1" crystal="building.crystal.medium.02"/>		
+		<crystal name="crystal.medium.3" i="32012" layer="2" size="2" width="1" height="1" crystal="building.crystal.medium.03"/>
+		<crystal name="crystal.medium.4" i="32013" layer="2" size="2" width="1" height="1" crystal="building.crystal.medium.04"/>
+		<crystal name="crystal.medium.5" i="32014" layer="2" size="2" width="1" height="1" crystal="building.crystal.medium.05"/>
+		<crystal name="crystal.medium.6" i="32015" layer="2" size="2" width="1" height="1" crystal="building.crystal.medium.06"/>
+		<crystal name="crystal.medium.7" i="32016" layer="2" size="2" width="1" height="1" crystal="building.crystal.medium.07"/>
+		<crystal name="crystal.medium.8" i="32017" layer="2" size="2" width="1" height="1" crystal="building.crystal.medium.08"/>
+
+		<crystal name="crystal.large.1" i="32020" layer="2" size="3" width="2" height="1" crystal="building.crystal.large.01"/>		
+		<crystal name="crystal.large.2" i="32021" layer="2" size="3" width="2" height="1" crystal="building.crystal.large.02"/>					
+		<crystal name="crystal.large.3" i="32022" layer="2" size="3" width="2" height="1" crystal="building.crystal.large.03"/>		
+		<crystal name="crystal.large.4" i="32023" layer="2" size="3" width="2" height="1" crystal="building.crystal.large.04"/>	
+		<crystal name="crystal.large.5" i="32024" layer="2" size="3" width="2" height="1" crystal="building.crystal.large.05"/>		
+		<crystal name="crystal.large.6" i="32025" layer="2" size="3" width="2" height="1" crystal="building.crystal.large.06"/>					
+		<crystal name="crystal.large.7" i="32026" layer="2" size="3" width="2" height="1" crystal="building.crystal.large.07"/>		
+		<crystal name="crystal.large.8" i="32027" layer="2" size="3" width="2" height="1" crystal="building.crystal.large.08"/>							
+	
+		<!-- 2Tone Crystals - diff base and glow colors  -->	
+		
+		<crystal name="crystal.2tone.small.1" i="32030" layer="2" size="1" width="1" height="1" crystal="building.crystal.2tone.small.01"/>
+		<crystal name="crystal.2tone.small.2" i="32031" layer="2" size="1" width="1" height="1" crystal="building.crystal.2tone.small.02"/>
+		<crystal name="crystal.2tone.small.3" i="32032" layer="2" size="1" width="1" height="1" crystal="building.crystal.2tone.small.03"/>
+		<crystal name="crystal.2tone.small.4" i="32033" layer="2" size="1" width="1" height="1" crystal="building.crystal.2tone.small.04"/>
+		<crystal name="crystal.2tone.small.5" i="32034" layer="2" size="1" width="1" height="1" crystal="building.crystal.2tone.small.05"/>
+		<crystal name="crystal.2tone.small.6" i="32035" layer="2" size="1" width="1" height="1" crystal="building.crystal.2tone.small.06"/>
+		<crystal name="crystal.2tone.small.7" i="32036" layer="2" size="1" width="1" height="1" crystal="building.crystal.2tone.small.07"/>
+		<crystal name="crystal.2tone.small.8" i="32037" layer="2" size="1" width="1" height="1" crystal="building.crystal.2tone.small.08"/>
+		
+		<crystal name="crystal.2tone.medium.1" i="32040" layer="2" size="2" width="1" height="1" crystal="building.crystal.2tone.medium.01"/>
+		<crystal name="crystal.2tone.medium.2" i="32041" layer="2" size="2" width="1" height="1" crystal="building.crystal.2tone.medium.02"/>		
+		<crystal name="crystal.2tone.medium.3" i="32042" layer="2" size="2" width="1" height="1" crystal="building.crystal.2tone.medium.03"/>
+		<crystal name="crystal.2tone.medium.4" i="32043" layer="2" size="2" width="1" height="1" crystal="building.crystal.2tone.medium.04"/>
+		<crystal name="crystal.2tone.medium.5" i="32044" layer="2" size="2" width="1" height="1" crystal="building.crystal.2tone.medium.05"/>
+		<crystal name="crystal.2tone.medium.6" i="32045" layer="2" size="2" width="1" height="1" crystal="building.crystal.2tone.medium.06"/>
+		<crystal name="crystal.2tone.medium.7" i="32046" layer="2" size="2" width="1" height="1" crystal="building.crystal.2tone.medium.07"/>
+		<crystal name="crystal.2tone.medium.8" i="32047" layer="2" size="2" width="1" height="1" crystal="building.crystal.2tone.medium.08"/>
+
+		<crystal name="crystal.2tone.large.1" i="32050" layer="2" size="3" width="2" height="1" crystal="building.crystal.2tone.large.01"/>		
+		<crystal name="crystal.2tone.large.2" i="32051" layer="2" size="3" width="2" height="1" crystal="building.crystal.2tone.large.02"/>					
+		<crystal name="crystal.2tone.large.3" i="32052" layer="2" size="3" width="2" height="1" crystal="building.crystal.2tone.large.03"/>		
+		<crystal name="crystal.2tone.large.4" i="32053" layer="2" size="3" width="2" height="1" crystal="building.crystal.2tone.large.04"/>	
+		<crystal name="crystal.2tone.large.5" i="32054" layer="2" size="3" width="2" height="1" crystal="building.crystal.2tone.large.05"/>		
+		<crystal name="crystal.2tone.large.6" i="32055" layer="2" size="3" width="2" height="1" crystal="building.crystal.2tone.large.06"/>					
+		<crystal name="crystal.2tone.large.7" i="32056" layer="2" size="3" width="2" height="1" crystal="building.crystal.2tone.large.07"/>		
+		<crystal name="crystal.2tone.large.8" i="32057" layer="2" size="3" width="2" height="1" crystal="building.crystal.2tone.large.08"/>		
+	
+				
+	</tileset>
+
+</resources>

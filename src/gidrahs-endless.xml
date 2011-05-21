@@ -1,0 +1,662 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Endless/survival Gidrahs -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<!-- R&F -->
+	<gidrah
+		name="gidrah.endless.01.spec"
+		points="10"
+		hitPoints="2"
+		strength="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="120"
+		maxSpeed="50"
+		roar="gidrah-earth-01-roar.buffer"
+		amb="gidrah-earth-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="0"
+	>
+		<research>blaster</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.endless.01.spec"
+		angry="true"
+		points="50"
+		strength="5"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="120"
+		maxSpeed="50"
+		roar="gidrah-earth-01-roar.buffer"
+		amb="gidrah-earth-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="0"
+	>
+		<research>blaster</research>
+	</gidrah>
+	
+	<!-- 3-eye -->
+	<gidrah
+		name="gidrah.endless.02.spec"
+		points="10"
+		strength="5"
+		hitPoints="10"
+		armour="0"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="130"
+		maxSpeed="55"
+		roar="gidrah-earth-02-roar.buffer"
+		amb="gidrah-earth-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="5"
+	>
+		<research>biology | coolingtower | battery | scanner</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.endless.02.spec"
+		angry="true"
+		strength="6"
+		points="50"
+		hitPoints="36"
+		armour="0"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="130"
+		maxSpeed="55"
+		roar="gidrah-earth-02-roar.buffer"
+		amb="gidrah-earth-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="5"
+	>
+		<research>biology | coolingtower | battery | scanner</research>
+	</gidrah>
+	
+	<!-- Wormy -->
+	<gidrah
+		name="gidrah.endless.03.spec"
+		points="10"
+		strength="5"
+		armour="4"
+		hitPoints="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="20"
+		maxSpeed="10"
+		minMoves="2"
+		maxMoves="8"
+		minPause="450"
+		maxPause="120"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="3"
+		roar="gidrah-moon-02-roar.buffer"
+		amb="gidrah-moon-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="10"
+	>
+		<research>heavyblaster</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.endless.03.spec"
+		angry="true"
+		points="50"
+		strength="6"
+		armour="4"
+		hitPoints="20"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="20"
+		maxSpeed="10"
+		minMoves="2"
+		maxMoves="8"
+		minPause="450"
+		maxPause="120"
+		deflectEmitter="gidrah.moon.deflect.large.emitter"
+		deflectYOffset="5"
+		roar="gidrah-moon-02-roar.buffer"
+		amb="gidrah-moon-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="10"
+	>
+		<research>heavyblaster</research>
+	</gidrah>
+
+	<!-- Bulb-head -->
+	<gidrah
+		name="gidrah.endless.04.spec"
+		points="10"
+		hitPoints="8"
+		strength="6"
+		armour="0"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="110"
+		maxSpeed="35"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-moon-03-roar.buffer"
+		amb="gidrah-moon-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="15"
+	>
+		<research>heavyblaster</research>
+		<research>psychology</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.endless.04.spec"
+		angry="true"
+		points="50"
+		strength="7"
+		hitPoints="8"
+		armour="8"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		minSpeed="110"
+		maxSpeed="35"
+		deflectEmitter="gidrah.moon.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-moon-03-roar.buffer"
+		amb="gidrah-moon-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="15"
+	>
+		<research>heavyblaster</research>
+		<research>psychology</research>
+		<research>biology</research>
+	</gidrah>
+	
+	<!-- R&F2 -->
+	<gidrah
+		name="gidrah.endless.05.spec"
+		points="10"
+		strength="4"
+		hitPoints="6"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="110"
+		maxSpeed="30"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="1"
+		roar="gidrah-mars-01-roar.buffer"
+		amb="gidrah-mars-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="20"
+	>
+		<research>spreadercannon</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.endless.05.spec"
+		angry="true"
+		strength="5"
+		points="50"
+		armour="4"
+		hitPoints="20"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="110"
+		maxSpeed="30"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-mars-01-roar.buffer"
+		amb="gidrah-mars-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="20"
+	>
+		<research>spreadercannon</research>
+		<research>biology</research>
+	</gidrah>
+	
+	<!-- Spider -->
+	<gidrah
+		name="gidrah.endless.06.spec"
+		points="10"
+		strength="5"
+		armour="0"
+		hitPoints="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		minSpeed="4"
+		maxSpeed="4"
+		minMoves="1"
+		maxMoves="6"
+		minPause="300"
+		maxPause="60"
+		diagonal="true"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="3"
+		roar="gidrah-mars-02-roar.buffer"
+		amb="gidrah-mars-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="24"
+	>
+		<research>multiblaster</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.endless.06.spec"
+		angry="true"
+		strength="6"
+		points="50"
+		armour="4"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		minSpeed="4"
+		maxSpeed="4"
+		minMoves="1"
+		maxMoves="6"
+		minPause="300"
+		maxPause="60"
+		diagonal="true"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="5"
+		roar="gidrah-mars-02-roar.buffer"
+		amb="gidrah-mars-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="24"
+	>
+		<research>multiblaster</research>
+		<research>biology</research>
+	</gidrah>
+
+	<!-- Tick -->
+	<gidrah
+		name="gidrah.endless.07.spec"
+		points="10"
+		strength="6"
+		hitPoints="4"
+		armour="8"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="60"
+		maxSpeed="30"
+		minPause="40"
+		maxPause="15"
+		diagonal="true"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-mars-03-roar.buffer"
+		amb="gidrah-mars-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="28"
+	>
+		<research>blastcannon</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.endless.07.spec"
+		angry="true"
+		strength="7"
+		points="50"
+		hitPoints="16"
+		armour="12"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="60"
+		maxSpeed="30"
+		minPause="40"
+		maxPause="15"
+		diagonal="true"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="7"
+		spawn="gidlet.mars"
+		spawnType="2"
+		spawnRate="8,16"
+		roar="gidrah-mars-03-roar.buffer"
+		amb="gidrah-mars-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="28"
+	>
+		<research>blastcannon</research>
+		<research>clustermines | barracks</research>
+	</gidrah>
+	
+	<!-- Wraith -->
+	<gidrah
+		name="gidrah.endless.08.spec"
+		points="50"
+		strength="7"
+		wraith="true"
+		hitPoints="2"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="120"
+		maxSpeed="60"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-mars-04-roar.buffer"
+		amb="gidrah-mars-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="32"
+	>
+		<research>capacitor</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.endless.08.spec"
+		angry="true"
+		strength="8"
+		wraith="true"
+		points="150"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="120"
+		maxSpeed="60"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-mars-04-roar.buffer"
+		amb="gidrah-mars-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="32"
+	>
+		<research>capacitor</research>
+	</gidrah>
+	
+	<!-- One-eye -->
+	<gidrah
+		name="gidrah.endless.09.spec"
+		points="10"
+		strength="4"
+		armour="0"
+		hitPoints="6"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="20"
+		maxSpeed="10"
+		minMoves="1"
+		maxMoves="10"
+		minPause="450"
+		maxPause="120"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="3"
+		roar="gidrah-saturn-01-roar.buffer"
+		amb="gidrah-saturn-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="32"
+	>
+		<research>reactor</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.endless.09.spec"
+		angry="true"
+		strength="5"
+		points="50"
+		armour="8"
+		hitPoints="12"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="20"
+		maxSpeed="10"
+		minMoves="1"
+		maxMoves="10"
+		minPause="450"
+		maxPause="120"
+		deflectEmitter="gidrah.moon.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-saturn-01-roar.buffer"
+		amb="gidrah-saturn-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="32"
+	>
+		<research>reactor</research>
+		<research>blastcannon | mines</research>
+	</gidrah>
+
+	<!-- Slug -->
+	<gidrah
+		name="gidrah.endless.10.spec"
+		points="10"
+		strength="5"
+		armour="0"
+		hitPoints="24"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		minSpeed="110"
+		maxSpeed="30"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="3"
+		roar="gidrah-saturn-02-roar.buffer"
+		amb="gidrah-saturn-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="40"
+	>
+		<research>assaultcannon</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.endless.10.spec"
+		strength="6"
+		angry="true"
+		points="50"
+		hitPoints="96"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		minSpeed="110"
+		maxSpeed="30"
+		deflectEmitter="gidrah.moon.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-saturn-02-roar.buffer"
+		amb="gidrah-saturn-02-amb.buffer"
+		spawn="gidlet.saturn.01"
+		spawnType="1"
+		spawnRate="120,240"	
+		death="gidrah.02.death.buffer"
+		minLevel="40"
+	>
+		<research>assaultcannon</research>
+		<research>barracks | clustermines</research>
+	</gidrah>
+	
+	<!-- Bombhead -->
+	<gidrah
+		name="gidrah.endless.11.spec"
+		points="10"
+		strength="4"
+		hitPoints="4"
+		armour="12"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		minSpeed="140"
+		maxSpeed="40"
+		exploding="true"
+		explosionRadius="64.0"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-saturn-03-roar.buffer"
+		amb="gidrah-saturn-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		noStunOnAttack="true"
+		minLevel="44"
+	>
+		<research>mines | blastcannon</research>
+		<research>steel</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.endless.11.spec"
+		points="50"
+		strength="8"
+		hitPoints="16"
+		armour="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		minSpeed="140"
+		maxSpeed="40"
+		exploding="true"
+		explosionRadius="128.0"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-saturn-03-roar.buffer"
+		amb="gidrah-saturn-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		noStunOnAttack="true"
+		minLevel="44"
+	>
+		<research>mines | blastcannon</research>
+		<research>steel</research>
+		<research>biology</research>
+	</gidrah>
+
+	<!-- Wraith2 -->
+	<gidrah
+		name="gidrah.endless.12.spec"
+		points="50"
+		strength="6"
+		wraith="true"
+		hitPoints="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="60"
+		maxSpeed="20"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-saturn-04-roar.buffer"
+		amb="gidrah-saturn-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="52"
+	>
+		<research>capacitor</research>
+		<research>decoy</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.endless.12.spec"
+		angry="true"
+		strength="7"
+		wraith="true"
+		points="150"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		minSpeed="60"
+		maxSpeed="20"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-saturn-04-roar.buffer"
+		amb="gidrah-saturn-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="52"
+	>
+		<research>capacitor</research>
+		<research>decoy</research>
+	</gidrah>
+
+	<!-- Flying bomber -->
+	<gidrah
+		name="gidrah.endless.13.spec"
+		points="50"
+		strength="4"
+		hitPoints="2"
+		bounds="0,56,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		flying="true"
+		height="56.0"
+		minSpeed="10"
+		maxSpeed="30"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-saturn-05-roar.buffer"
+		amb="gidrah-saturn-05-amb.buffer"
+		bomb="small.bomb"
+		death="gidrah.05.death.buffer"
+		minLevel="48"
+	>
+		<research>laser</research>
+		<research>steel</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.endless.13.spec"
+		angry="true"
+		strength="8"
+		points="250"
+		hitPoints="6"
+		bounds="0,84,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		flying="true"
+		height="64"
+		minSpeed="10"
+		maxSpeed="30"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-saturn-05-roar.buffer"
+		amb="gidrah-saturn-05-amb.buffer"
+		bomb="large.bomb"
+		death="gidrah.05.death.buffer"
+		minLevel="48"
+	>
+		<research>laser</research>
+		<research>steel</research>
+	</gidrah>
+
+</resources>

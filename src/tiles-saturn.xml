@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Earth tiles -->
+<resources>
+	<tileset name="saturn.tileset" description="Saturn Tiles" default_="">
+
+
+		<include resource="ruins-saturn.xml" />
+
+		<!-- Only easy gidrahs come from mid spawnpoints -->		
+		<spawnpoint name="spawnpoint.mid.saturn" i="32136" layer="2" xoffset="0" yoffset="0" type="1">
+			<random>
+				<array>
+					<item>spawnpoint.mid.saturn.01</item>
+					<item>spawnpoint.mid.saturn.02</item>
+					<item>spawnpoint.mid.saturn.03</item>
+				</array>
+			</random>
+		</spawnpoint>
+
+		<spawnpoint name="spawnpoint.mid.saturn.01" i="32137" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="pool.bubble.large.emitter" offset="1,14"  />
+				<sprite layer="4" sublayer="0" offset="16,14" ySortOffset="14" colored="pool-in" attenuated="true" image="spriteimage.pool.large.back.04" />
+				<sprite layer="4" sublayer="1" offset="16,14" ySortOffset="14" colored="water" attenuated="true" image="spriteimage.pool.large.04" />
+				<sprite layer="9" sublayer="4" offset="16,22" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+		<spawnpoint name="spawnpoint.mid.saturn.02" i="32138" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="pool.bubble.large.emitter" offset="1,14"  />
+				<sprite layer="4" sublayer="0" offset="-13,32" ySortOffset="32" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.01" />
+				<sprite layer="4" sublayer="0" offset="16,14" ySortOffset="14" colored="pool-in" attenuated="true" image="spriteimage.pool.large.back.04" />
+				<sprite layer="4" sublayer="0" offset="4,-4" ySortOffset="-4" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.03" />
+				<sprite layer="4" sublayer="0" offset="48,-8" ySortOffset="-8" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.03" />
+				<sprite layer="4" sublayer="1" offset="-13,32" ySortOffset="32" colored="water" attenuated="true" image="spriteimage.pool.medium.01" />
+				<sprite layer="4" sublayer="1" offset="16,14" ySortOffset="14" colored="water" attenuated="true" image="spriteimage.pool.large.04" />
+				<sprite layer="4" sublayer="1" offset="4,-4" ySortOffset="-4" colored="water" attenuated="true" image="spriteimage.pool.small.03" />
+				<sprite layer="4" sublayer="1" offset="48,-8" ySortOffset="-8" colored="water" attenuated="true" image="spriteimage.pool.medium.03" />
+				<sprite layer="9" sublayer="4" offset="16,22" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+		<spawnpoint name="spawnpoint.mid.saturn.03" i="32139" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="pool.bubble.large.emitter" offset="1,14"  />
+				<sprite layer="4" sublayer="0" offset="16,14" ySortOffset="14" colored="pool-in" attenuated="true" image="spriteimage.pool.large.back.04" />
+				<sprite layer="4" sublayer="0" offset="3,-2" ySortOffset="-2" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="1" offset="16,14" ySortOffset="14" colored="water" attenuated="true" image="spriteimage.pool.large.04" />
+				<sprite layer="4" sublayer="1" offset="3,-2" ySortOffset="-2" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="9" sublayer="4" offset="16,22" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+
+		<!--  STANDARD FLOOR ========================================================================================================================== -->
+			
+
+
+		
+		
+		<!--  ALT FLOOR ========================================================================================================================== -->
+		
+
+		
+		
+		<!--  WALL EDGE FLOOR ========================================================================================================================== -->
+					
+
+		
+		
+		<!-- FLOOR 3 - not used at the mo ============================================================================================================= -->
+		
+
+
+		<!--  OBSTACLES ========================================================================================================================== -->
+
+			
+
+
+
+		<!--  ROADS  ========================================================================================================================== -->
+
+
+
+
+
+	</tileset>
+
+
+
+  
+  	<!-- TRANSITION BETWEEN FLOOR AND ALT FLOOR ========================================================================================================================== -->
+  	
+  
+
+
+</resources>
+

@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
+	Simple sprite animations
+-->
+<resources>
+
+	<include resource="tags.xml"/>
+
+	
+	<property key="deathDelay" value="42"/>
+	<property key="deathStartOffset" value="20"/>
+
+	<property key="1x1fireDelay" value="1"/>
+	<property key="2x2fireDelay" value="5"/>
+	<property key="3x3fireDelay" value="10"/>	
+	<property key="4x4fireDelay" value="15"/>	
+	<property key="5x5fireDelay" value="20"/>
+
+	<property key="1x1deathDelay" value="1"/>
+	<property key="2x2deathDelay" value="20"/>
+	<property key="3x3deathDelay" value="60"/>	
+	<property key="4x4deathDelay" value="90"/>	
+	<property key="5x5deathDelay" value="150"/>
+
+	<property key="obstacleDeathShake" value="6"/>
+
+	<property key="1x1deathShake" value="10"/>
+	<property key="2x2deathShake" value="14"/>
+	<property key="3x3deathShake" value="18"/>	
+	<property key="4x4deathShake" value="22"/>	
+	<property key="5x5deathShake" value="32"/>
+
+
+	<animation name="todo.animation">
+		
+		<frame i="spriteimage.todo.01" d="200" />
+		
+		<label id="start"/>
+		<offset y="0" x="0" d="0"/>
+		<frame i="spriteimage.todo.01" d="30" />
+	
+		<random>
+			<dest id="start" n="5"/>
+			<dest id="blink"/>
+		</random>
+	
+		<label id="blink"/>
+			<frame i="spriteimage.todo.03" d="15" />
+			<frame i="spriteimage.todo.02" d="4" />
+			<random>
+				<dest id="start" n="3"/>
+				<dest id="blink2"/>
+			</random>	
+		<label id="blink2"/>
+			<frame i="spriteimage.todo.01" d="10" />
+			<frame i="spriteimage.todo.02" d="2" />
+			<frame i="spriteimage.todo.03" d="10" />
+			<frame i="spriteimage.todo.02" d="5" />
+		<goto id="start"/>
+		
+	</animation>
+
+
+
+	<!-- Reloading -->
+	<animation name="reload.indicator.animation">
+		<frame i="spriteimage.ammo.reload.glow.01" d="32"/>
+		<loop count="10"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="2"/> 
+		<animcolor a="0" d="16"/>
+		<animcolor a="255" d="0"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="ammo.off.anim">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.ammo.off.01" d="1"/>
+	</animation>
+
+	<animation name="reload.indicator.back.animation">
+		<frame i="spriteimage.ammo.reload.back.01" d="32"/>
+		<loop count="10"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="2"/> 
+		<animcolor a="0" d="16"/>
+		<animcolor a="255" d="0"/>
+		<goto seq="0"/>
+	</animation>
+
+
+	<animation name="reload.large.indicator.animation">
+		<frame i="spriteimage.ammo.large.reload.glow.01" d="32"/>
+		<loop count="10"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="2"/> 
+		<animcolor a="0" d="16"/>
+		<animcolor a="255" d="0"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="ammo.large.off.anim">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.ammo.large.off.01" d="1"/>
+	</animation>
+
+	<animation name="reload.large.indicator.back.animation">
+		<frame i="spriteimage.ammo.large.reload.back.01" d="32"/>
+		<loop count="10"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="2"/> 
+		<animcolor a="0" d="16"/>
+		<animcolor a="255" d="0"/>
+		<goto seq="0"/>
+	</animation>
+
+	
+	<!-- Building shields -->
+
+	<animation name="shield-basic.2x2.animation">
+				
+		<frame i="spriteimage.shield.2x2.01" d="0"/>
+		<animcolor a="+0" d="3" />
+		<frame i="spriteimage.shield.2x2.01" d="0"/>
+		<animcolor a="+11" d="3" />
+		<frame i="spriteimage.shield.2x2.02" d="0"/>
+		<animcolor a="+30" d="3" />
+		<frame i="spriteimage.shield.2x2.02" d="0"/>
+		<animcolor a="+40" d="3" />
+		<frame i="spriteimage.shield.2x2.03" d="0"/>
+		<animcolor a="+42" d="3" />
+		<frame i="spriteimage.shield.2x2.03" d="0"/>
+		<animcolor a="+38" d="3" />
+		<frame i="spriteimage.shield.2x2.04" d="0"/>
+		<animcolor a="+24" d="3" />
+		<frame i="spriteimage.shield.2x2.04" d="0"/>
+		<animcolor a="+5" d="3" />
+		<frame i="spriteimage.shield.2x2.05" d="0"/>
+		<animcolor a="+-5" d="3" />
+		<frame i="spriteimage.shield.2x2.05" d="0"/>
+		<animcolor a="+-11" d="3" />
+		<frame i="spriteimage.shield.2x2.01" d="0"/>
+		<animcolor a="+-15" d="3" />
+		<frame i="spriteimage.shield.2x2.01" d="0"/>
+		<animcolor a="+-18" d="3" />
+		<frame i="spriteimage.shield.2x2.02" d="0"/>
+		<animcolor a="+-20" d="3" />
+		<frame i="spriteimage.shield.2x2.02" d="0"/>
+		<animcolor a="+-22" d="3" />
+		<frame i="spriteimage.shield.2x2.03" d="0"/>
+		<animcolor a="+-22" d="3" />
+		<frame i="spriteimage.shield.2x2.03" d="0"/>
+		<animcolor a="+-21" d="3" />
+		<frame i="spriteimage.shield.2x2.04" d="0"/>
+		<animcolor a="+-19" d="3" />
+		<frame i="spriteimage.shield.2x2.04" d="0"/>
+		<animcolor a="+-17" d="3" />
+		<frame i="spriteimage.shield.2x2.05" d="0"/>
+		<animcolor a="+-12" d="3" />
+		<frame i="spriteimage.shield.2x2.05" d="0"/>
+		<animcolor a="+-7" d="3" />
+
+		<goto seq="0"/>	
+	</animation>
+	<animation name="shield-basic.3x3.animation">
+
+		<frame i="spriteimage.shield.3x3.01" d="0"/>
+		<animcolor a="+0" d="3" />
+		<frame i="spriteimage.shield.3x3.01" d="0"/>
+		<animcolor a="+11" d="3" />
+		<frame i="spriteimage.shield.3x3.02" d="0"/>
+		<animcolor a="+30" d="3" />
+		<frame i="spriteimage.shield.3x3.02" d="0"/>
+		<animcolor a="+40" d="3" />
+		<frame i="spriteimage.shield.3x3.03" d="0"/>
+		<animcolor a="+42" d="3" />
+		<frame i="spriteimage.shield.3x3.03" d="0"/>
+		<animcolor a="+38" d="3" />
+		<frame i="spriteimage.shield.3x3.04" d="0"/>
+		<animcolor a="+24" d="3" />
+		<frame i="spriteimage.shield.3x3.04" d="0"/>
+		<animcolor a="+5" d="3" />
+		<frame i="spriteimage.shield.3x3.05" d="0"/>
+		<animcolor a="+-5" d="3" />
+		<frame i="spriteimage.shield.3x3.05" d="0"/>
+		<animcolor a="+-11" d="3" />
+		<frame i="spriteimage.shield.3x3.01" d="0"/>
+		<animcolor a="+-15" d="3" />
+		<frame i="spriteimage.shield.3x3.01" d="0"/>
+		<animcolor a="+-18" d="3" />
+		<frame i="spriteimage.shield.3x3.02" d="0"/>
+		<animcolor a="+-20" d="3" />
+		<frame i="spriteimage.shield.3x3.02" d="0"/>
+		<animcolor a="+-22" d="3" />
+		<frame i="spriteimage.shield.3x3.03" d="0"/>
+		<animcolor a="+-22" d="3" />
+		<frame i="spriteimage.shield.3x3.03" d="0"/>
+		<animcolor a="+-21" d="3" />
+		<frame i="spriteimage.shield.3x3.04" d="0"/>
+		<animcolor a="+-19" d="3" />
+		<frame i="spriteimage.shield.3x3.04" d="0"/>
+		<animcolor a="+-17" d="3" />
+		<frame i="spriteimage.shield.3x3.05" d="0"/>
+		<animcolor a="+-12" d="3" />
+		<frame i="spriteimage.shield.3x3.05" d="0"/>
+		<animcolor a="+-7" d="3" />
+
+		<goto seq="0"/>
+	</animation>
+	<animation name="shield-basic.4x4.animation">
+		
+		<frame i="spriteimage.shield.4x4.01" d="0"/>
+		<animcolor a="+0" d="3" />
+		<frame i="spriteimage.shield.4x4.01" d="0"/>
+		<animcolor a="+11" d="3" />
+		<frame i="spriteimage.shield.4x4.02" d="0"/>
+		<animcolor a="+30" d="3" />
+		<frame i="spriteimage.shield.4x4.02" d="0"/>
+		<animcolor a="+40" d="3" />
+		<frame i="spriteimage.shield.4x4.03" d="0"/>
+		<animcolor a="+42" d="3" />
+		<frame i="spriteimage.shield.4x4.03" d="0"/>
+		<animcolor a="+38" d="3" />
+		<frame i="spriteimage.shield.4x4.04" d="0"/>
+		<animcolor a="+24" d="3" />
+		<frame i="spriteimage.shield.4x4.04" d="0"/>
+		<animcolor a="+5" d="3" />
+		<frame i="spriteimage.shield.4x4.05" d="0"/>
+		<animcolor a="+-5" d="3" />
+		<frame i="spriteimage.shield.4x4.05" d="0"/>
+		<animcolor a="+-11" d="3" />
+		<frame i="spriteimage.shield.4x4.01" d="0"/>
+		<animcolor a="+-15" d="3" />
+		<frame i="spriteimage.shield.4x4.01" d="0"/>
+		<animcolor a="+-18" d="3" />
+		<frame i="spriteimage.shield.4x4.02" d="0"/>
+		<animcolor a="+-20" d="3" />
+		<frame i="spriteimage.shield.4x4.02" d="0"/>
+		<animcolor a="+-22" d="3" />
+		<frame i="spriteimage.shield.4x4.03" d="0"/>
+		<animcolor a="+-22" d="3" />
+		<frame i="spriteimage.shield.4x4.03" d="0"/>
+		<animcolor a="+-21" d="3" />
+		<frame i="spriteimage.shield.4x4.04" d="0"/>
+		<animcolor a="+-19" d="3" />
+		<frame i="spriteimage.shield.4x4.04" d="0"/>
+		<animcolor a="+-17" d="3" />
+		<frame i="spriteimage.shield.4x4.05" d="0"/>
+		<animcolor a="+-12" d="3" />
+		<frame i="spriteimage.shield.4x4.05" d="0"/>
+		<animcolor a="+-7" d="3" />
+
+		<goto seq="0"/>
+	</animation>
+	<animation name="shield-basic.5x5.animation">
+		
+		<frame i="spriteimage.shield.5x5.01" d="0"/>
+		<animcolor a="+0" d="3" />
+		<frame i="spriteimage.shield.5x5.01" d="0"/>
+		<animcolor a="+11" d="3" />
+		<frame i="spriteimage.shield.5x5.02" d="0"/>
+		<animcolor a="+30" d="3" />
+		<frame i="spriteimage.shield.5x5.02" d="0"/>
+		<animcolor a="+40" d="3" />
+		<frame i="spriteimage.shield.5x5.03" d="0"/>
+		<animcolor a="+42" d="3" />
+		<frame i="spriteimage.shield.5x5.03" d="0"/>
+		<animcolor a="+38" d="3" />
+		<frame i="spriteimage.shield.5x5.04" d="0"/>
+		<animcolor a="+24" d="3" />
+		<frame i="spriteimage.shield.5x5.04" d="0"/>
+		<animcolor a="+5" d="3" />
+		<frame i="spriteimage.shield.5x5.05" d="0"/>
+		<animcolor a="+-5" d="3" />
+		<frame i="spriteimage.shield.5x5.05" d="0"/>
+		<animcolor a="+-11" d="3" />
+		<frame i="spriteimage.shield.5x5.01" d="0"/>
+		<animcolor a="+-15" d="3" />
+		<frame i="spriteimage.shield.5x5.01" d="0"/>
+		<animcolor a="+-18" d="3" />
+		<frame i="spriteimage.shield.5x5.02" d="0"/>
+		<animcolor a="+-20" d="3" />
+		<frame i="spriteimage.shield.5x5.02" d="0"/>
+		<animcolor a="+-22" d="3" />
+		<frame i="spriteimage.shield.5x5.03" d="0"/>
+		<animcolor a="+-22" d="3" />
+		<frame i="spriteimage.shield.5x5.03" d="0"/>
+		<animcolor a="+-21" d="3" />
+		<frame i="spriteimage.shield.5x5.04" d="0"/>
+		<animcolor a="+-19" d="3" />
+		<frame i="spriteimage.shield.5x5.04" d="0"/>
+		<animcolor a="+-17" d="3" />
+		<frame i="spriteimage.shield.5x5.05" d="0"/>
+		<animcolor a="+-12" d="3" />
+		<frame i="spriteimage.shield.5x5.05" d="0"/>
+		<animcolor a="+-7" d="3" />
+
+		<goto seq="0"/>
+	</animation>
+
+	<!-- powerup shield style shields -->
+	<animation name="shield.2x2.animation">
+		<color c="!82,255,255,128"/>
+		<frame i="shield-basic.2x2.animation" d="0"/>
+	</animation>	
+	<animation name="shield.3x3.animation">
+		<color c="!82,255,255,128"/>
+		<frame i="shield-basic.3x3.animation" d="0"/>
+	</animation>	
+	<animation name="shield.4x4.animation">
+		<color c="!82,255,255,128"/>
+		<frame i="shield-basic.4x4.animation" d="0"/>
+	</animation>	
+	<animation name="shield.5x5.animation">
+		<color c="!82,255,255,128"/>
+		<frame i="shield-basic.5x5.animation" d="0"/>
+	</animation>	
+	
+	<!-- shield-generator ("forcefield") style shields -->
+	<animation name="forcefield.2x2.animation">
+		<color c="!133,255,255,43"/>
+		<frame i="shield-basic.2x2.animation" d="0"/>
+	</animation>	
+	<animation name="forcefield.3x3.animation">
+		<color c="!133,255,255,43"/>
+		<frame i="shield-basic.3x3.animation" d="0"/>
+	</animation>	
+	<animation name="forcefield.4x4.animation">
+		<color c="!133,255,255,43"/>
+		<frame i="shield-basic.4x4.animation" d="0"/>
+	</animation>	
+	<animation name="forcefield.5x5.animation">
+		<color c="!133,255,255,43"/>
+		<frame i="shield-basic.5x5.animation" d="0"/>
+	</animation>	
+
+	<!-- world select screen anims -->
+	<animation name="worlds.earth.on.animation">
+		<frame i="spriteimage.worlds.earth.on.01" d="2"/>
+		<frame i="spriteimage.worlds.earth.on.02" d="2"/>
+		<frame i="spriteimage.worlds.earth.on.03" d="2"/>
+	</animation>
+	<animation name="worlds.earth.off.animation">
+		<frame i="spriteimage.worlds.earth.on.02" d="1"/>
+		<frame i="spriteimage.worlds.earth.on.01" d="1"/>
+		<frame i="spriteimage.worlds.earth.off.01" d="2"/>
+	</animation>
+
+	<animation name="worlds.moon.on.animation">
+		<frame i="spriteimage.worlds.moon.on.01" d="2"/>
+		<frame i="spriteimage.worlds.moon.on.02" d="2"/>
+		<frame i="spriteimage.worlds.moon.on.03" d="2"/>
+	</animation>
+	<animation name="worlds.moon.off.animation">
+		<frame i="spriteimage.worlds.moon.on.02" d="1"/>
+		<frame i="spriteimage.worlds.moon.on.01" d="1"/>
+		<frame i="spriteimage.worlds.moon.off.01" d="2"/>
+	</animation>
+	
+	<animation name="worlds.mars.on.animation">
+		<frame i="spriteimage.worlds.mars.on.01" d="2"/>
+		<frame i="spriteimage.worlds.mars.on.02" d="2"/>
+		<frame i="spriteimage.worlds.mars.on.03" d="2"/>
+	</animation>
+	<animation name="worlds.mars.off.animation">
+		<frame i="spriteimage.worlds.mars.on.02" d="1"/>
+		<frame i="spriteimage.worlds.mars.on.01" d="1"/>
+		<frame i="spriteimage.worlds.mars.off.01" d="2"/>
+	</animation>
+	
+	<animation name="worlds.saturn.on.animation">
+		<frame i="spriteimage.worlds.saturn.on.01" d="2"/>
+		<frame i="spriteimage.worlds.saturn.on.02" d="2"/>
+		<frame i="spriteimage.worlds.saturn.on.03" d="2"/>
+	</animation>
+	<animation name="worlds.saturn.off.animation">
+		<frame i="spriteimage.worlds.saturn.on.02" d="1"/>
+		<frame i="spriteimage.worlds.saturn.on.01" d="1"/>
+		<frame i="spriteimage.worlds.saturn.off.01" d="2"/>
+	</animation>
+	
+	<animation name="worlds.titan.on.animation">
+		<frame i="spriteimage.worlds.titan.on.01" d="2"/>
+		<frame i="spriteimage.worlds.titan.on.02" d="2"/>
+		<frame i="spriteimage.worlds.titan.on.03" d="2"/>
+	</animation>
+	<animation name="worlds.titan.off.animation">
+		<frame i="spriteimage.worlds.titan.on.02" d="1"/>
+		<frame i="spriteimage.worlds.titan.on.01" d="1"/>
+		<frame i="spriteimage.worlds.titan.off.01" d="2"/>
+	</animation>
+
+
+	<animation name="earth.level.on.animation">
+		<color c="186,255,0"/>
+		<alpha alpha="195" d="2"/>
+		<alpha alpha="215" d="2"/>
+		<alpha alpha="235" d="2"/>
+		<alpha alpha="255" d="1"/>
+	</animation>
+	<animation name="earth.level.off.animation">
+		<color c="186,255,0"/>
+	</animation>
+	
+	<animation name="earth.level.off.NE.animation">
+		<alpha alpha="175"/>
+		<frame i="spriteimage.level.01" d="0"/>
+		<frame i="earth.level.off.animation" d="1"/>
+	</animation>
+	<animation name="earth.level.off.SE.animation">
+		<alpha alpha="175"/>
+		<frame i="spriteimage.level.02" d="0"/>
+		<frame i="earth.level.off.animation" d="1"/>
+	</animation>
+	<animation name="earth.level.off.SW.animation">
+		<alpha alpha="175"/>
+		<frame i="spriteimage.level.03" d="0"/>
+		<frame i="earth.level.off.animation" d="1"/>
+	</animation>
+	<animation name="earth.level.off.NW.animation">
+		<alpha alpha="175"/>
+		<frame i="spriteimage.level.04" d="0"/>
+		<frame i="earth.level.off.animation" d="1"/>
+	</animation>
+	
+	<animation name="earth.level.on.NE.animation">
+		<alpha alpha="175"/>
+		<frame i="spriteimage.level.01" d="0"/>
+		<frame i="earth.level.on.animation" d="1"/>
+	</animation>
+	<animation name="earth.level.on.SE.animation">
+		<alpha alpha="175"/>
+		<frame i="spriteimage.level.02" d="0"/>
+		<frame i="earth.level.on.animation" d="1"/>
+	</animation>
+	<animation name="earth.level.on.SW.animation">
+		<alpha alpha="175"/>
+		<frame i="spriteimage.level.03" d="0"/>
+		<frame i="earth.level.on.animation" d="1"/>
+	</animation>
+	<animation name="earth.level.on.NW.animation">
+		<alpha alpha="175"/>
+		<frame i="spriteimage.level.04" d="0"/>
+		<frame i="earth.level.on.animation" d="1"/>
+	</animation>
+
+
+	
+
+	<!-- Gidrah attack length -->
+
+	<!--  <delay min="48" max="96"/> bug with delay? -->
+
+	<animation name="gidrah.attack.anim">
+		<animcolor a="255" d="64"/>
+		<return/>
+	</animation>
+
+
+
+	<!-- dead gidrah fade -->
+		
+	<animation name="gidrah.dead.anim">
+		<animcolor a="255" d="8"/>	
+		<animcolor a="150" d="2"/>
+		<animcolor a="225" d="2"/>	
+		<animcolor a="140" d="2"/>
+		<animcolor a="200" d="2"/>	
+		<animcolor a="100" d="2"/>
+		<animcolor a="150" d="2"/>	
+		<animcolor a="80" d="2"/>
+		<animcolor a="100" d="2"/>	
+		<animcolor a="25" d="2"/>
+		<animcolor a="50" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="30" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="10" d="2"/>	
+		<animcolor a="0" d="1"/>
+		<event id="1"/>	
+	</animation>	
+	
+		<!-- dead gidrah fade -->
+		
+	<animation name="gidrah.stun.anim">
+		<animcolor a="255" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="225" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="200" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="150" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="100" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="50" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="30" d="2"/>	
+		<animcolor a="0" d="2"/>
+		<animcolor a="10" d="2"/>	
+		<animcolor a="0" d="1"/>
+	</animation>	
+	
+	<!-- dead boss fade -->
+
+	<animation name="boss.dead.remove.anim">
+		<animcolor a="255" d="1"/>	
+		<loop count="8"/>
+			<animcolor a="+-7" d="2"/>				
+		<repeat seq="2"/>
+		<animcolor a="0" d="1"/>
+		<event id="1"/>
+	</animation>	
+
+
+
+	<!-- dead building fade -->
+
+
+	<animation name="building.1x1.dead.anim"><animcolor a="255" d="=$1x1deathDelay"/><frame i="building.1x1.dead.shake.anim" d="1"/></animation>
+	<animation name="building.1x1.dead.misc.anim"><animcolor a="255" d="=$1x1deathDelay"/><frame i="building.dead.misc.anim" d="1"/></animation>
+	<animation name="building.1x1.dead.base.anim"><frame i="spriteimage.generic.1x1.base.01" d="0"/><animcolor a="255" d="=$1x1deathDelay"/><frame i="building.dead.base.anim" d="1"/></animation>
+	
+	<animation name="building.2x2.dead.anim"><animcolor a="255" d="=$2x2deathDelay"/><frame i="building.2x2.dead.shake.anim" d="1"/></animation>
+	<animation name="building.2x2.dead.misc.anim"><animcolor a="255" d="=$2x2deathDelay"/><frame i="building.dead.misc.anim" d="1"/></animation>
+	<animation name="building.2x2.dead.base.anim"><frame i="spriteimage.generic.2x2.base.01" d="0"/><animcolor a="255" d="=$2x2deathDelay"/><frame i="building.dead.base.anim" d="1"/></animation>
+	
+	<animation name="building.3x3.dead.anim"><animcolor a="255" d="=$3x3deathDelay"/><frame i="building.3x3.dead.shake.anim" d="1"/></animation>
+	<animation name="building.3x3.dead.misc.anim"><animcolor a="255" d="=$3x3deathDelay"/><frame i="building.dead.misc.anim" d="1"/></animation>
+	<animation name="building.3x3.dead.base.anim"><frame i="spriteimage.generic.3x3.base.01" d="0"/><animcolor a="255" d="=$3x3deathDelay"/><frame i="building.dead.base.anim" d="1"/></animation>
+	
+	<animation name="building.4x4.dead.anim"><animcolor a="255" d="=$4x4deathDelay"/><frame i="building.4x4.dead.shake.anim" d="1"/></animation>
+	<animation name="building.4x4.dead.misc.anim"><animcolor a="255" d="=$4x4deathDelay"/><frame i="building.dead.misc.anim" d="1"/></animation>
+	<animation name="building.4x4.dead.base.anim"><frame i="spriteimage.generic.4x4.base.01" d="0"/><animcolor a="255" d="=$4x4deathDelay"/><frame i="building.dead.base.anim" d="1"/></animation>
+	
+	<animation name="building.5x5.dead.anim"><animcolor a="255" d="=$5x5deathDelay"/><frame i="building.5x5.dead.shake.anim" d="1"/></animation>
+	<animation name="building.5x5.dead.misc.anim"><animcolor a="255" d="=$5x5deathDelay"/><frame i="building.dead.misc.anim" d="1"/></animation>
+	<animation name="building.5x5.dead.base.anim"><frame i="spriteimage.generic.5x5.base.01" d="0"/><animcolor a="255" d="=$5x5deathDelay"/><frame i="building.dead.base.anim" d="1"/></animation>
+		
+	<animation name="building.1x1.dead.shake.anim">
+		<animcolor a="255" d="=$deathDelay"/>	
+		<shake amount="=$1x1deathShake"/>
+		<event id="1"/>
+		<animcolor a="0" d="256"/>	
+		<event id="2"/>
+	</animation>
+
+	<animation name="building.2x2.dead.shake.anim">
+		<animcolor a="255" d="=$deathDelay"/>	
+		<shake amount="=$2x2deathShake"/>
+		<event id="1"/>
+		<animcolor a="0" d="256"/>	
+		<event id="2"/>
+	</animation>
+
+	<animation name="building.3x3.dead.shake.anim">
+		<animcolor a="255" d="=$deathDelay"/>	
+		<shake amount="=$3x3deathShake"/>
+		<event id="1"/>
+		<animcolor a="0" d="256"/>	
+		<event id="2"/>
+	</animation>
+
+	<animation name="building.4x4.dead.shake.anim">
+		<animcolor a="255" d="=$deathDelay"/>	
+		<shake amount="=$4x4deathShake"/>
+		<event id="1"/>
+		<animcolor a="0" d="256"/>	
+		<event id="2"/>
+	</animation>
+
+	<animation name="building.5x5.dead.shake.anim">
+		<animcolor a="255" d="=$deathDelay"/>	
+		<shake amount="=$5x5deathShake"/>
+		<event id="1"/>
+		<animcolor a="0" d="256"/>	
+		<event id="2"/>
+	</animation>
+
+
+
+	<animation name="building.dead.misc.anim">
+		<animcolor a="255" d="=$deathDelay"/>
+		<animcolor a="0" d="1"/>		
+	</animation>	
+	
+	<animation name="building.dead.base.anim">
+		<animcolor a="255" d="=$deathDelay"/>	
+		<loop count="63"/>
+			<animcolor a="+-4" d="4"/>				
+		<repeat seq="2"/>
+		<animcolor a="0" d="1"/>		
+	</animation>	
+
+
+	<animation name="obstacle.dead.animation" >
+		<shake amount="=$obstacleDeathShake"/>
+		<animcolor a="255" d="256"/>
+		<event id="1"/>
+		<event id="2"/>
+	</animation>
+
+
+
+	
+	<!-- smoke anims -->
+	
+	<animation name="smoke.alpha.animation">
+		<random>
+			<dest seq="1"/>
+			<dest seq="3"/>
+			<dest seq="5"/>
+			<dest seq="7"/>
+		</random>		
+		<alpha alpha="60"/>
+		<goto seq="8"/>
+		<alpha alpha="70"/>
+		<goto seq="8"/>
+		<alpha alpha="80"/>
+		<goto seq="8"/>
+		<alpha alpha="90"/>
+		<frame i="spriteimage.particle.smoke.16px.02" d="1"/>
+	</animation>
+	
+	<animation name="smoke.dark.animation">
+		<random>
+			<dest seq="1"/>
+			<dest seq="3"/>
+			<dest seq="5"/>
+			<dest seq="7"/>
+		</random>		
+		<alpha alpha="25"/>
+		<goto seq="8"/>
+		<alpha alpha="50"/>
+		<goto seq="8"/>
+		<alpha alpha="75"/>
+		<goto seq="8"/>
+		<alpha alpha="100"/>
+		<frame i="spriteimage.particle.smoke.16px.02" d="1"/>
+	</animation>	
+	
+	<animation name="smoke.glowing.alpha.animation">
+		<random>
+			<dest seq="1"/>
+			<dest seq="3"/>
+			<dest seq="5"/>
+			<dest seq="7"/>
+		</random>		
+		<alpha alpha="15"/>
+		<goto seq="8"/>
+		<alpha alpha="20"/>
+		<goto seq="8"/>
+		<alpha alpha="25"/>
+		<goto seq="8"/>
+		<alpha alpha="30"/>
+		<frame i="spriteimage.particle.glowing.smoke.16px.01" d="1"/>
+	</animation>	
+
+	<animation name="smoke.animation">
+		<random>
+			<dest seq="1"/>
+			<dest seq="2"/>
+		</random>		
+		<frame i="smoke.alpha.animation" d="1"/>
+		<frame i="smoke.glowing.alpha.animation" d="1"/>
+	</animation>
+	
+	
+	
+	<animation name="smoke.dirty.animation">
+		<random>
+			<dest seq="1" n="3"/>
+			<dest seq="2" n="1"/>
+		</random>		
+		<frame i="smoke.dark.animation" d="1"/>
+		<frame i="smoke.glowing.alpha.animation" d="1"/>
+	</animation>	
+	
+	
+	
+	<!-- light anims -->
+
+	<animation name="building.light.red.3px.blink.animation">
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.red.3px.02" d="2"/>
+		<frame i="spriteimage.building.light.red.3px.01" d="4"/>
+		<frame i="spriteimage.building.light.red.3px.02" d="2"/>
+		<frame i="spriteimage.building.light.red.3px.03" d="3"/>
+		<frame i="spriteimage.building.light.red.3px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="8"/>
+		<alpha alpha="32" d="25"/>
+		<goto seq="0"/>
+	</animation>	
+	<animation name="building.light.red.3px.blink.2.animation">
+		<frame i="spriteimage.building.light.red.3px.04" d="0"/>
+		<alpha alpha="64" d="2"/>
+		<alpha alpha="32" d="25"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.red.3px.02" d="2"/>
+		<frame i="spriteimage.building.light.red.3px.01" d="4"/>
+		<frame i="spriteimage.building.light.red.3px.02" d="2"/>
+		<frame i="spriteimage.building.light.red.3px.03" d="3"/>
+		<frame i="spriteimage.building.light.red.3px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="6"/>
+		<goto seq="1"/>
+	</animation>
+
+	<animation name="building.light.red.4px.blink.animation">
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.red.4px.02" d="2"/>
+		<frame i="spriteimage.building.light.red.4px.01" d="4"/>
+		<frame i="spriteimage.building.light.red.4px.02" d="2"/>
+		<frame i="spriteimage.building.light.red.4px.03" d="3"/>
+		<frame i="spriteimage.building.light.red.4px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="8"/>
+		<alpha alpha="32" d="25"/>
+		<goto seq="0"/>
+	</animation>	
+	<animation name="building.light.red.4px.blink.2.animation">
+		<frame i="spriteimage.building.light.red.4px.04" d="0"/>
+		<alpha alpha="64" d="2"/>
+		<alpha alpha="32" d="25"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.red.4px.02" d="2"/>
+		<frame i="spriteimage.building.light.red.4px.01" d="4"/>
+		<frame i="spriteimage.building.light.red.4px.02" d="2"/>
+		<frame i="spriteimage.building.light.red.4px.03" d="3"/>
+		<frame i="spriteimage.building.light.red.4px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="6"/>
+		<goto seq="1"/>
+	</animation>
+
+
+	<animation name="building.light.red.3px.phase.animation">
+		<goto seq="9"/>
+		<alpha alpha="32" d="5"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="128" d="3"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.red.3px.04" d="3"/>
+		<frame i="spriteimage.building.light.red.3px.03" d="4"/>		
+		<frame i="spriteimage.building.light.red.3px.02" d="5"/>
+		<frame i="spriteimage.building.light.red.3px.01" d="6"/>
+		<frame i="spriteimage.building.light.red.3px.02" d="5"/>
+		<frame i="spriteimage.building.light.red.3px.03" d="4"/>
+		<frame i="spriteimage.building.light.red.3px.04" d="3"/>
+		<alpha alpha="128" d="3"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="32" d="5"/>
+		<goto seq="1"/>
+	</animation>		
+
+	<animation name="building.light.red.4px.phase.animation">
+		<goto seq="9"/>
+		<alpha alpha="32" d="5"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="128" d="3"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.red.4px.04" d="3"/>
+		<frame i="spriteimage.building.light.red.4px.03" d="4"/>		
+		<frame i="spriteimage.building.light.red.4px.02" d="5"/>
+		<frame i="spriteimage.building.light.red.4px.01" d="6"/>
+		<frame i="spriteimage.building.light.red.4px.02" d="5"/>
+		<frame i="spriteimage.building.light.red.4px.03" d="4"/>
+		<frame i="spriteimage.building.light.red.4px.04" d="3"/>
+		<alpha alpha="128" d="3"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="32" d="5"/>
+		<goto seq="1"/>
+	</animation>	
+
+	<animation name="building.light.red.5px.phase.animation">
+		<goto seq="9"/>
+		<alpha alpha="32" d="5"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="128" d="3"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.red.5px.04" d="3"/>
+		<frame i="spriteimage.building.light.red.5px.03" d="4"/>		
+		<frame i="spriteimage.building.light.red.5px.02" d="5"/>
+		<frame i="spriteimage.building.light.red.5px.01" d="6"/>
+		<frame i="spriteimage.building.light.red.5px.02" d="5"/>
+		<frame i="spriteimage.building.light.red.5px.03" d="4"/>
+		<frame i="spriteimage.building.light.red.5px.04" d="3"/>
+		<alpha alpha="128" d="3"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="32" d="5"/>
+		<goto seq="1"/>
+	</animation>	
+		
+	<animation name="building.light.white.3px.blink.animation">
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.white.3px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.3px.01" d="4"/>
+		<frame i="spriteimage.building.light.white.3px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.3px.03" d="3"/>
+		<frame i="spriteimage.building.light.white.3px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="8"/>
+		<alpha alpha="32" d="25"/>
+		<goto seq="0"/>
+	</animation>	
+	<animation name="building.light.white.3px.blink.2.animation">
+		<frame i="spriteimage.building.light.white.3px.04" d="0"/>
+		<alpha alpha="64" d="2"/>
+		<alpha alpha="32" d="25"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.white.3px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.3px.01" d="4"/>
+		<frame i="spriteimage.building.light.white.3px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.3px.03" d="3"/>
+		<frame i="spriteimage.building.light.white.3px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="6"/>
+		<goto seq="1"/>
+	</animation>
+	
+	<animation name="building.light.white.4px.blink.animation">
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.white.4px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.4px.01" d="4"/>
+		<frame i="spriteimage.building.light.white.4px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.4px.03" d="3"/>
+		<frame i="spriteimage.building.light.white.4px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="8"/>
+		<alpha alpha="32" d="25"/>
+		<goto seq="0"/>
+	</animation>	
+	
+	
+	<animation name="building.light.white.3px.phase.animation">
+		<goto seq="9"/>
+		<alpha alpha="0" d="54"/>
+		<alpha alpha="32" d="5"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="128" d="3"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.white.3px.04" d="3"/>
+		<frame i="spriteimage.building.light.white.3px.03" d="4"/>		
+		<frame i="spriteimage.building.light.white.3px.02" d="5"/>
+		<frame i="spriteimage.building.light.white.3px.01" d="6"/>
+		<frame i="spriteimage.building.light.white.3px.02" d="5"/>
+		<frame i="spriteimage.building.light.white.3px.03" d="4"/>
+		<frame i="spriteimage.building.light.white.3px.04" d="3"/>
+		<alpha alpha="128" d="3"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="32" d="5"/>
+		<goto seq="1"/>
+	</animation>	
+
+	<animation name="building.light.white.5px.phase.animation">
+		<goto seq="9"/>
+		<alpha alpha="32" d="5"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="128" d="3"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.white.5px.04" d="3"/>
+		<frame i="spriteimage.building.light.white.5px.03" d="4"/>		
+		<frame i="spriteimage.building.light.white.5px.02" d="5"/>
+		<frame i="spriteimage.building.light.white.5px.01" d="6"/>
+		<frame i="spriteimage.building.light.white.5px.02" d="5"/>
+		<frame i="spriteimage.building.light.white.5px.03" d="4"/>
+		<frame i="spriteimage.building.light.white.5px.04" d="3"/>
+		<alpha alpha="128" d="3"/>
+		<alpha alpha="64" d="4"/>
+		<alpha alpha="32" d="5"/>
+		<goto seq="1"/>
+	</animation>	
+
+	<animation name="building.light.white.5px.blink.animation">
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.white.5px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.5px.01" d="4"/>
+		<frame i="spriteimage.building.light.white.5px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.5px.03" d="3"/>
+		<frame i="spriteimage.building.light.white.5px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="8"/>
+		<alpha alpha="32" d="25"/>
+		<goto seq="0"/>
+	</animation>
+	
+	<animation name="building.light.white.5px.blink.2.animation">
+		<frame i="spriteimage.building.light.white.5px.04" d="0"/>
+		<alpha alpha="64" d="2"/>
+		<alpha alpha="32" d="25"/>		
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.white.5px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.5px.01" d="4"/>
+		<frame i="spriteimage.building.light.white.5px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.5px.03" d="3"/>
+		<frame i="spriteimage.building.light.white.5px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="6"/>
+		<goto seq="1"/>
+	</animation>
+
+	<animation name="building.light.white.7px.blink.animation">
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.building.light.white.7px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.7px.01" d="4"/>
+		<frame i="spriteimage.building.light.white.7px.02" d="2"/>
+		<frame i="spriteimage.building.light.white.7px.03" d="3"/>
+		<frame i="spriteimage.building.light.white.7px.04" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="8"/>
+		<alpha alpha="32" d="25"/>
+		<goto seq="0"/>
+	</animation>	
+
+
+	
+	<animation name="light.flash.animation">
+		<alpha alpha="64"/>		
+		<scale scale="+-0.5" d="2"/>				
+		<alpha alpha="128"/>
+		<scale scale="+0.5" d="4"/>
+		<alpha alpha="+-64" d="2"/>
+		<scale scale="+-0.2" />
+		<alpha alpha="+-32" d="3"/>
+		<scale scale="+-0.1" />
+		<alpha alpha="+-16" d="4"/>
+		<scale scale="+-0.1" />
+		<alpha alpha="+-8" d="6"/>
+		<scale scale="+-0.1" />
+		<alpha alpha="+-4" d="8"/>			
+		<alpha alpha="0" d="25"/>
+		<scale scale="+0.5" d="0"/>	
+		<goto seq="0"/>
+	</animation>
+	
+	
+	<animation name="light.red.flash.animation">
+		<alpha alpha="0"/>
+		<frame i="spriteimage.light.red.64px.01" d="0" />
+		<frame i="light.flash.animation" d="1" />
+	</animation>
+	
+	<animation name="light.cyan.flash.animation">
+		<alpha alpha="0"/>
+		<frame i="spriteimage.light.cyan.64px.01" d="0" />
+		<frame i="light.flash.animation" d="1" />
+	</animation>	
+
+	<animation name="light.cyan.flash.large.animation">
+		<scale scale="2.0"/>
+		<frame i="light.cyan.flash.animation" d="1" />
+	</animation>
+
+
+	<animation name="light.red.sweep.animation">
+		<frame i="spriteimage.building.light.sweep.red.01" d="24" />
+		<frame i="spriteimage.building.light.sweep.red.02" d="3"/>
+		<frame i="spriteimage.building.light.sweep.red.03" d="3"/>
+		<frame i="spriteimage.building.light.sweep.red.04" d="3"/>				
+		<frame i="spriteimage.building.light.sweep.red.05" d="24"/>					
+		<frame i="spriteimage.building.light.sweep.red.06" d="3"/>
+		<frame i="spriteimage.building.light.sweep.red.07" d="3"/>
+		<frame i="spriteimage.building.light.sweep.red.08" d="3"/>
+		<goto seq="0"/>
+	</animation>	
+	
+
+	<animation name="searchlight.pulse.animation">
+
+		<loop count="10"/> 
+		<scale xscale="+-0.01" yscale="+-0.005"/>
+		<alpha alpha="+-4" d="2"/>
+		<followplayer rate="4096"/>
+		<repeat seq="1"/> 
+		
+		<loop count="10"/> 
+		<scale xscale="+0.01" yscale="+0.005"/>
+		<alpha alpha="+4" d="2"/>
+		<followplayer rate="4096"/>
+		<repeat seq="6"/> 
+			
+		<goto seq="0"/>
+	</animation>	
+	
+	<animation name="searchlight.red.animation">
+		<scale xscale="1.0" yscale="0.25"/>
+		<alpha alpha="100"/>
+		<frame i="spriteimage.searchlight.red.light.01" d="1"/>
+		<frame i="searchlight.pulse.animation" d="1"/>
+	</animation>	
+	
+	<animation name="beam.phase.animation">
+		<loop count="10"/> 
+		<scale xscale="+-0.01" yscale="+-0.005"/>
+		<alpha alpha="+-4" d="2"/>
+		<repeat seq="1"/> 
+		
+		<loop count="10"/> 
+		<scale xscale="+0.01" yscale="+0.005"/>
+		<alpha alpha="+4" d="2"/>
+		<repeat seq="5"/> 
+			
+		<goto seq="0"/>
+	</animation>
+	
+	<animation name="pool.bubble.anim">
+		<frame i="spriteimage.pool.bubble.01" d="48" />
+		<frame i="spriteimage.pool.bubble.02" d="6" />
+		<frame i="spriteimage.pool.bubble.03" d="6" />
+		<frame i="spriteimage.pool.bubble.04" d="6" />
+		<frame i="spriteimage.pool.bubble.05" d="6" />
+		<frame i="spriteimage.pool.bubble.06" d="6" />
+		<frame i="spriteimage.pool.bubble.07" d="6" />
+		<frame i="spriteimage.pool.bubble.08" d="6" />
+		<frame i="spriteimage.pool.bubble.09" d="6" />
+	</animation>		
+	
+	
+	
+	
+</resources>

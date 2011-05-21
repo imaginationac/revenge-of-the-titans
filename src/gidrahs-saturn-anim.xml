@@ -1,0 +1,1837 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDRAH.SATURN.01 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.SATURN.01 definition -->
+
+	<gidrah
+		 name="gidrah.saturn.01"
+		 inherit="gidrah.saturn.01.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.01.walk.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.01.walk.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.01.walk.face.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.01.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.01.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.01.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.01.dead.anim" />
+				<emitter emitter="gidrah.saturn.death.emitter" offset="16,16"  />
+				<emitter emitter="gidrah.saturn.death.flash.emitter" offset="16,25"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.01.idle.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.01.idle.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.01.idle.face.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.01.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.01.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.01.ice.glow.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.04" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.01.ice.glow.04" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.02" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.01.stun.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.saturn.01.stun.anim" />
+				<emitter emitter="gidrah.saturn.stun.emitter" offset="16,26"  />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.01.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.SATURN.01 -->
+
+	<array name="gidrah.saturn.01.glow.array">
+		<item>spriteimage.gidrah.saturn.01.glow.01</item>
+		<item>spriteimage.gidrah.saturn.01.glow.02</item>
+		<item>spriteimage.gidrah.saturn.01.glow.03</item>
+		<item>spriteimage.gidrah.saturn.01.glow.04</item>
+		<item>spriteimage.gidrah.saturn.01.glow.05</item>
+		<item>spriteimage.gidrah.saturn.01.glow.06</item>
+		<item>spriteimage.gidrah.saturn.01.glow.07</item>
+		<item>spriteimage.gidrah.saturn.01.glow.08</item>
+		<item>spriteimage.gidrah.saturn.01.glow.09</item>
+		<item>spriteimage.gidrah.saturn.01.glow.10</item>
+		<item>spriteimage.gidrah.saturn.01.glow.11</item>
+		<item>spriteimage.gidrah.saturn.01.glow.12</item>
+		<item>spriteimage.gidrah.saturn.01.attack.glow.01</item>
+		<item>spriteimage.gidrah.saturn.01.attack.glow.02</item>
+		<item>spriteimage.gidrah.saturn.01.attack.glow.03</item>
+		<item>spriteimage.gidrah.saturn.01.attack.glow.04</item>
+		<item>spriteimage.gidrah.saturn.01.attack.glow.05</item>
+		<item>spriteimage.gidrah.saturn.01.attack.glow.06</item>
+		<item>spriteimage.gidrah.saturn.01.attack.glow.07</item>
+	</array>
+
+	<array name="gidrah.saturn.01.face.array">
+		<item>spriteimage.gidrah.saturn.01.top.01</item>
+		<item>spriteimage.gidrah.saturn.01.top.02</item>
+		<item>spriteimage.gidrah.saturn.01.top.03</item>
+		<item>spriteimage.gidrah.saturn.01.top.04</item>
+		<item>spriteimage.gidrah.saturn.01.top.05</item>
+		<item>spriteimage.gidrah.saturn.01.top.06</item>
+		<item>spriteimage.gidrah.saturn.01.top.07</item>
+		<item>spriteimage.gidrah.saturn.01.top.08</item>
+		<item>spriteimage.gidrah.saturn.01.top.09</item>
+		<item>spriteimage.gidrah.saturn.01.top.10</item>
+		<item>spriteimage.gidrah.saturn.01.top.11</item>
+		<item>spriteimage.gidrah.saturn.01.top.12</item>
+		<item>spriteimage.gidrah.saturn.01.attack.top.01</item>
+		<item>spriteimage.gidrah.saturn.01.attack.top.02</item>
+		<item>spriteimage.gidrah.saturn.01.attack.top.03</item>
+		<item>spriteimage.gidrah.saturn.01.attack.top.04</item>
+		<item>spriteimage.gidrah.saturn.01.attack.top.05</item>
+		<item>spriteimage.gidrah.saturn.01.attack.top.06</item>
+		<item>spriteimage.gidrah.saturn.01.attack.top.07</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.SATURN.01 -->
+
+	<animation name="gidrah.saturn.01.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.01.01" d="3" />
+		<lock />
+			<frame i="spriteimage.gidrah.saturn.01.02" d="1" />
+			<frame i="spriteimage.gidrah.saturn.01.03" d="1" />
+			<frame i="spriteimage.gidrah.saturn.01.04" d="2" />
+			<frame i="spriteimage.gidrah.saturn.01.04" d="5" />
+			<frame i="spriteimage.gidrah.saturn.01.03" d="2" />
+			<frame i="spriteimage.gidrah.saturn.01.02" d="2" />
+		<unlock />
+			<frame i="spriteimage.gidrah.saturn.01.01" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.01.walk.face.glow.anim">
+		<frameset id="gidrah.saturn.01.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.01.walk.face.anim">
+		<frameset id="gidrah.saturn.01.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="3" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="1" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="2" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="5" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="2" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="2" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="4" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+			<notify layer="glow" idx="0"/><frame idx="0" d="20" />
+		<label id="blink"/>
+			<notify layer="glow" idx="4"/><frame idx="4" d="3" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="1" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="1" />
+			<notify layer="glow" idx="7"/><frame idx="7" d="1" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="6" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="2" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="2" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="7" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="1" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="1" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="7" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="2" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="2" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.01.attack.anim">
+		<label id="bite"/>
+			<frame i="spriteimage.gidrah.saturn.01.01" d="2" />
+			<frame i="spriteimage.gidrah.saturn.01.02" d="4" />
+			<frame i="spriteimage.gidrah.saturn.01.attack.03" d="2" />
+			<frame i="spriteimage.gidrah.saturn.01.attack.04" d="2" />
+			<frame i="spriteimage.gidrah.saturn.01.attack.05" d="23" />
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.saturn.01.02" d="2" />
+			<frame i="spriteimage.gidrah.saturn.01.03" d="2" />
+			<frame i="spriteimage.gidrah.saturn.01.04" d="9" />
+			<frame i="spriteimage.gidrah.saturn.01.03" d="2" />
+			<frame i="spriteimage.gidrah.saturn.01.02" d="3" />
+			<frame i="spriteimage.gidrah.saturn.01.01" d="4" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.saturn.01.attack.face.glow.anim">
+		<frameset id="gidrah.saturn.01.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.01.attack.face.anim">
+		<frameset id="gidrah.saturn.01.face.array" />
+		<label id="bite"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="2" />
+			<notify layer="glow" idx="12"/><frame idx="12" d="2" />
+			<notify layer="glow" idx="13"/><frame idx="13" d="2" />
+			<notify layer="glow" idx="14"/><frame idx="14" d="2" />
+			<notify layer="glow" idx="15"/><frame idx="15" d="2" />
+			<notify layer="glow" idx="16"/><frame idx="16" d="23" />
+			<notify layer="glow" idx="13"/><frame idx="13" d="2" />
+			<notify layer="glow" idx="17"/><frame idx="17" d="2" />
+			<notify layer="glow" idx="18"/><frame idx="18" d="9" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="2" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="3" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="4" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="444" />
+	</animation>
+
+	<animation name="gidrah.saturn.01.dead.anim">
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.saturn.01.ghost.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.01.ghost.02" d="3" />
+			<frame i="spriteimage.gidrah.saturn.01.ghost.03" d="3" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.saturn.01.idle.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.01.01" d="6" />
+			<frame i="spriteimage.gidrah.saturn.01.02" d="4" />
+			<frame i="spriteimage.gidrah.saturn.01.03" d="5" />
+			<frame i="spriteimage.gidrah.saturn.01.03" d="8" />
+			<frame i="spriteimage.gidrah.saturn.01.02" d="4" />
+			<frame i="spriteimage.gidrah.saturn.01.01" d="8" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.01.idle.face.glow.anim">
+		<frameset id="gidrah.saturn.01.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.01.idle.face.anim">
+		<frameset id="gidrah.saturn.01.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="6" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="5" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="8" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="8" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+			<notify layer="glow" idx="0"/><frame idx="0" d="35" />
+		<label id="blink"/>
+			<notify layer="glow" idx="4"/><frame idx="4" d="6" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="5" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="8" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="14" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="3" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="10" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="4" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="2" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="6" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.01.stun.face.glow.anim">
+		<frameset id="gidrah.saturn.01.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.01.stun.anim">
+			<frame i="spriteimage.gidrah.saturn.01.ghost.04" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.saturn.01.stun.face.anim">
+		<frameset id="gidrah.saturn.01.face.array" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="45" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="5" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="449" />
+	</animation>
+
+
+
+
+	<!-- GIDRAH.SATURN.02 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.SATURN.02 definition -->
+
+	<gidrah
+		 name="gidrah.saturn.02"
+		 inherit="gidrah.saturn.02.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.02.walk.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.02.walk.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.02.walk.face.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.02.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.02.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.02.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.02.dead.anim" />
+				<emitter emitter="gidrah.saturn.death.flash.emitter" offset="16,25"  />
+				<emitter emitter="gidrah.saturn.death.emitter" offset="16,16"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.02.idle.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.02.idle.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.02.idle.face.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.02.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.04" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.02.ice.glow.04" />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.02.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.02.ice.glow.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.02.stun.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.saturn.02.stun.anim" />
+				<emitter emitter="gidrah.saturn.stun.emitter" offset="16,24"  />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.02.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.SATURN.02 -->
+
+	<array name="gidrah.saturn.02.glow.array">
+		<item>spriteimage.gidrah.saturn.02.glow.01</item>
+		<item>spriteimage.gidrah.saturn.02.glow.02</item>
+		<item>spriteimage.gidrah.saturn.02.glow.03</item>
+		<item>spriteimage.gidrah.saturn.02.glow.04</item>
+		<item>spriteimage.gidrah.saturn.02.glow.05</item>
+		<item>spriteimage.gidrah.saturn.02.glow.06</item>
+		<item>spriteimage.gidrah.saturn.02.glow.07</item>
+		<item>spriteimage.gidrah.saturn.02.glow.08</item>
+		<item>spriteimage.gidrah.saturn.02.glow.09</item>
+		<item>spriteimage.gidrah.saturn.02.glow.10</item>
+		<item>spriteimage.gidrah.saturn.02.glow.11</item>
+		<item>spriteimage.gidrah.saturn.02.glow.12</item>
+		<item>spriteimage.gidrah.saturn.02.attack.glow.01</item>
+		<item>spriteimage.gidrah.saturn.02.attack.glow.02</item>
+		<item>spriteimage.gidrah.saturn.02.attack.glow.03</item>
+		<item>spriteimage.gidrah.saturn.02.attack.glow.04</item>
+		<item>spriteimage.gidrah.saturn.02.attack.glow.05</item>
+		<item>spriteimage.gidrah.saturn.02.attack.glow.06</item>
+		<item>spriteimage.gidrah.saturn.02.attack.glow.07</item>
+	</array>
+
+	<array name="gidrah.saturn.02.face.array">
+		<item>spriteimage.gidrah.saturn.02.top.01</item>
+		<item>spriteimage.gidrah.saturn.02.top.02</item>
+		<item>spriteimage.gidrah.saturn.02.top.03</item>
+		<item>spriteimage.gidrah.saturn.02.top.04</item>
+		<item>spriteimage.gidrah.saturn.02.top.05</item>
+		<item>spriteimage.gidrah.saturn.02.top.06</item>
+		<item>spriteimage.gidrah.saturn.02.top.07</item>
+		<item>spriteimage.gidrah.saturn.02.top.08</item>
+		<item>spriteimage.gidrah.saturn.02.top.09</item>
+		<item>spriteimage.gidrah.saturn.02.top.10</item>
+		<item>spriteimage.gidrah.saturn.02.top.11</item>
+		<item>spriteimage.gidrah.saturn.02.top.12</item>
+		<item>spriteimage.gidrah.saturn.02.attack.top.01</item>
+		<item>spriteimage.gidrah.saturn.02.attack.top.02</item>
+		<item>spriteimage.gidrah.saturn.02.attack.top.03</item>
+		<item>spriteimage.gidrah.saturn.02.attack.top.04</item>
+		<item>spriteimage.gidrah.saturn.02.attack.top.05</item>
+		<item>spriteimage.gidrah.saturn.02.attack.top.06</item>
+		<item>spriteimage.gidrah.saturn.02.attack.top.07</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.SATURN.02 -->
+
+	<animation name="gidrah.saturn.02.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.02.01" d="3" />
+		<lock />
+			<frame i="spriteimage.gidrah.saturn.02.02" d="1" />
+			<frame i="spriteimage.gidrah.saturn.02.03" d="1" />
+			<frame i="spriteimage.gidrah.saturn.02.04" d="2" />
+			<frame i="spriteimage.gidrah.saturn.02.04" d="5" />
+			<frame i="spriteimage.gidrah.saturn.02.03" d="2" />
+			<frame i="spriteimage.gidrah.saturn.02.02" d="2" />
+		<unlock />
+			<frame i="spriteimage.gidrah.saturn.02.01" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.02.walk.face.glow.anim">
+		<frameset id="gidrah.saturn.02.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.02.walk.face.anim">
+		<frameset id="gidrah.saturn.02.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="3" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="1" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="2" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="5" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="2" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="2" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="4" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+			<notify layer="glow" idx="0"/><frame idx="0" d="20" />
+		<label id="blink"/>
+			<notify layer="glow" idx="4"/><frame idx="4" d="3" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="1" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="1" />
+			<notify layer="glow" idx="7"/><frame idx="7" d="1" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="6" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="2" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="2" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="7" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="1" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="1" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="7" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="2" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="2" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.02.attack.anim">
+		<label id="bite"/>
+			<frame i="spriteimage.gidrah.saturn.02.01" d="2" />
+			<frame i="spriteimage.gidrah.saturn.02.02" d="4" />
+			<frame i="spriteimage.gidrah.saturn.02.attack.03" d="2" />
+			<frame i="spriteimage.gidrah.saturn.02.attack.04" d="2" />
+			<frame i="spriteimage.gidrah.saturn.02.attack.05" d="23" />
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.saturn.02.02" d="2" />
+			<frame i="spriteimage.gidrah.saturn.02.03" d="2" />
+			<frame i="spriteimage.gidrah.saturn.02.04" d="9" />
+			<frame i="spriteimage.gidrah.saturn.02.03" d="2" />
+			<frame i="spriteimage.gidrah.saturn.02.02" d="3" />
+			<frame i="spriteimage.gidrah.saturn.02.01" d="4" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.saturn.02.attack.face.glow.anim">
+		<frameset id="gidrah.saturn.02.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.02.attack.face.anim">
+		<frameset id="gidrah.saturn.02.face.array" />
+		<label id="bite"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="2" />
+			<notify layer="glow" idx="12"/><frame idx="12" d="2" />
+			<notify layer="glow" idx="13"/><frame idx="13" d="2" />
+			<notify layer="glow" idx="14"/><frame idx="14" d="2" />
+			<notify layer="glow" idx="15"/><frame idx="15" d="2" />
+			<notify layer="glow" idx="16"/><frame idx="16" d="23" />
+			<notify layer="glow" idx="13"/><frame idx="13" d="2" />
+			<notify layer="glow" idx="17"/><frame idx="17" d="2" />
+			<notify layer="glow" idx="18"/><frame idx="18" d="9" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="2" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="3" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="4" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="444" />
+	</animation>
+
+	<animation name="gidrah.saturn.02.dead.anim">
+			<frame i="spriteimage.gidrah.saturn.02.ghost.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.02.ghost.02" d="3" />
+			<frame i="spriteimage.gidrah.saturn.02.ghost.03" d="3" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.saturn.02.idle.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.02.01" d="6" />
+			<frame i="spriteimage.gidrah.saturn.02.02" d="4" />
+			<frame i="spriteimage.gidrah.saturn.02.03" d="5" />
+			<frame i="spriteimage.gidrah.saturn.02.03" d="8" />
+			<frame i="spriteimage.gidrah.saturn.02.02" d="4" />
+			<frame i="spriteimage.gidrah.saturn.02.01" d="8" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.02.idle.face.glow.anim">
+		<frameset id="gidrah.saturn.02.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.02.idle.face.anim">
+		<frameset id="gidrah.saturn.02.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="6" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="5" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="8" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="8" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+			<notify layer="glow" idx="0"/><frame idx="0" d="35" />
+		<label id="blink"/>
+			<notify layer="glow" idx="4"/><frame idx="4" d="6" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="5" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="8" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="14" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="4" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="3" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="10" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="4" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="2" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="6" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.02.stun.face.glow.anim">
+		<frameset id="gidrah.saturn.02.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.02.stun.anim">
+			<frame i="spriteimage.gidrah.saturn.02.ghost.04" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.saturn.02.stun.face.anim">
+		<frameset id="gidrah.saturn.02.face.array" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="45" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="5" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="449" />
+	</animation>
+
+
+
+
+	<!-- GIDRAH.SATURN.03 ==================================================================================================  -->
+
+
+	<!-- LAYERS for GIDRAH.SATURN.03 -->
+
+	<layers name="gidrah.saturn.03.explode.layers" scale="0.5">
+		<sprite layer="5" sublayer="0" offset="0,-6" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.explode.head.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+		<sprite id="glow" layer="5" sublayer="1" offset="0,-8" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.03.explode.face.glow.anim" />
+		<emitter emitter="bombhead.explosion.emitter" offset="16,0" ySortOffset="11"  />
+		<sprite id="face" layer="5" sublayer="2" offset="0,-8" attenuated="false" animation="gidrah.saturn.03.explode.face.anim" />
+	</layers>
+
+ 	<layers name="gidrah.saturn.03.fizzle.right.layers" scale="0.5">
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+		<emitter emitter="bombhead.end.right.emitter" offset="-1,0" ySortOffset="37"  />
+		<sprite layer="5" sublayer="0" offset="0,-6" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.fizzle.head.anim" />
+		<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.fuse.lit.glow.anim" />
+		<sprite id="glow" layer="5" sublayer="1" offset="0,-8" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.03.fizzle.face.glow.anim" />
+		<sprite id="face" layer="5" sublayer="2" offset="0,-8" attenuated="false" animation="gidrah.saturn.03.fizzle.face.anim" />
+	</layers>
+
+ 	<layers name="gidrah.saturn.03.fizzle.left.layers" scale="0.5">
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+		<emitter emitter="bombhead.end.left.emitter" offset="32,0" ySortOffset="38"  />
+		<sprite layer="5" sublayer="0" offset="0,-6" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.fizzle.head.anim" />
+		<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.fuse.lit.glow.anim" />
+		<sprite id="glow" layer="5" sublayer="1" offset="0,-8" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.03.fizzle.face.glow.anim" />
+		<sprite id="face" layer="5" sublayer="2" offset="0,-8" attenuated="false" animation="gidrah.saturn.03.fizzle.face.anim" />
+	</layers>
+
+ 
+	<!-- GIDRAH.SATURN.03 definition -->
+
+	<gidrah
+		 name="gidrah.saturn.03"
+		 inherit="gidrah.saturn.03.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.walk.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.blink.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,2" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.fuse.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+		</layers></appearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.03.dead.anim" />
+				<emitter emitter="gidrah.saturn.death.emitter" offset="16,14"  />
+				<emitter emitter="gidrah.saturn.death.flash.emitter" offset="16,23"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.03.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.03.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.03.blink.anim" />
+				<sprite layer="5" sublayer="2" offset="0,2" attenuated="false" animation="gidrah.saturn.03.fuse.glow.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.03.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.03.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.03.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.frozen.2.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="16"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.03.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.03.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.03.stun.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.saturn.03.stun.anim" />
+				<emitter emitter="gidrah.saturn.stun.emitter" offset="16,25"  />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.03.stun.face.anim" />
+		</layers></stunAppearance>
+		<attackAppearanceRight><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.attack.body.right.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.attack.head.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,-2" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.attack.face.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.fuse.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,-2" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.attack.face.anim" />
+		</layers></attackAppearanceRight>
+		<attackAppearanceLeft><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.attack.body.left.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.03.attack.head.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,-2" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.attack.face.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.fuse.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,-2" attenuated="false" doChildOffset="true" animation="gidrah.saturn.03.attack.face.anim" />
+		</layers></attackAppearanceLeft>
+	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.SATURN.03 -->
+
+	<array name="gidrah.saturn.03.glow.array">
+		<item>spriteimage.gidrah.saturn.03.glow.01</item>
+		<item>spriteimage.gidrah.saturn.03.glow.02</item>
+		<item>spriteimage.gidrah.saturn.03.glow.03</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.01</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.02</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.03</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.04</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.05</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.06</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.07</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.08</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.09</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.10</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.11</item>
+	</array>
+
+	<array name="gidrah.saturn.03.face.array">
+		<item>spriteimage.gidrah.saturn.03.top.01</item>
+		<item>spriteimage.gidrah.saturn.03.top.02</item>
+		<item>spriteimage.gidrah.saturn.03.top.03</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.01</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.02</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.03</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.04</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.05</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.06</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.07</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.08</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.09</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.10</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.11</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.SATURN.03 -->
+
+	<animation name="gidrah.saturn.03.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.03.01" d="4" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.03" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.03" d="1" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="4" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.06" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.07" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.07" d="1" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="4" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.04" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.05" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.05" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.blink.glow.anim">
+		<frameset id="gidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.03.blink.anim">
+		<frameset id="gidrah.saturn.03.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="blink"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="9" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="19" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="3" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="7" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="14" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.dead.anim">
+			<frame i="spriteimage.gidrah.saturn.03.ghost.02" d="1" />
+			<animcolor a="242" d="0"/>
+			<scale scale="0.549" d="1"/>
+			<animcolor a="230" d="0"/>
+			<scale scale="0.597" d="1"/>
+			<animcolor a="218" d="0"/>
+			<scale scale="0.644" d="1"/>
+			<animcolor a="207" d="0"/>
+			<scale scale="0.69" d="1"/>
+			<animcolor a="195" d="0"/>
+			<scale scale="0.734" d="1"/>
+			<animcolor a="184" d="0"/>
+			<scale scale="0.778" d="1"/>
+			<animcolor a="174" d="0"/>
+			<scale scale="0.819" d="1"/>
+			<animcolor a="163" d="0"/>
+			<scale scale="0.86" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.ghost.03" d="0" />
+			<animcolor a="153" d="0"/>
+			<scale scale="0.899" d="1"/>
+			<animcolor a="143" d="0"/>
+			<scale scale="0.937" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="0.974" d="1"/>
+			<animcolor a="125" d="0"/>
+			<scale scale="1.01" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.ghost.03" d="0" />
+			<animcolor a="116" d="0"/>
+			<scale scale="1.044" d="1"/>
+			<animcolor a="108" d="0"/>
+			<scale scale="1.077" d="1"/>
+			<animcolor a="100" d="0"/>
+			<scale scale="1.109" d="1"/>
+			<animcolor a="92" d="0"/>
+			<scale scale="1.14" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.ghost.04" d="0" />
+			<animcolor a="84" d="0"/>
+			<scale scale="1.169" d="1"/>
+			<animcolor a="77" d="0"/>
+			<scale scale="1.198" d="1"/>
+			<animcolor a="70" d="0"/>
+			<scale scale="1.224" d="1"/>
+			<animcolor a="64" d="0"/>
+			<scale scale="1.25" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.ghost.05" d="0" />
+			<animcolor a="58" d="0"/>
+			<scale scale="1.274" d="1"/>
+			<animcolor a="52" d="0"/>
+			<scale scale="1.297" d="1"/>
+			<animcolor a="46" d="0"/>
+			<scale scale="1.319" d="1"/>
+			<animcolor a="41" d="0"/>
+			<scale scale="1.34" d="1"/>
+			<animcolor a="36" d="0"/>
+			<scale scale="1.359" d="1"/>
+			<animcolor a="31" d="0"/>
+			<scale scale="1.377" d="1"/>
+			<animcolor a="27" d="0"/>
+			<scale scale="1.394" d="1"/>
+			<animcolor a="23" d="0"/>
+			<scale scale="1.41" d="1"/>
+			<animcolor a="19" d="0"/>
+			<scale scale="1.424" d="1"/>
+			<animcolor a="16" d="0"/>
+			<scale scale="1.437" d="1"/>
+			<animcolor a="13" d="0"/>
+			<scale scale="1.449" d="1"/>
+			<animcolor a="10" d="0"/>
+			<scale scale="1.46" d="1"/>
+			<animcolor a="8" d="0"/>
+			<scale scale="1.469" d="1"/>
+			<animcolor a="6" d="0"/>
+			<scale scale="1.477" d="1"/>
+			<animcolor a="4" d="0"/>
+			<scale scale="1.484" d="1"/>
+			<animcolor a="3" d="0"/>
+			<scale scale="1.49" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale scale="1.494" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale scale="1.498" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale scale="1.499" d="1"/>
+		<event id="1"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.frozen.1.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.03.02" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.03.04" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.frozen.2.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.03.03" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.03.05" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.saturn.03.07" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.explode.head.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.08" d="35" />
+		<shake amount="10"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.08" d="1" />
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.08" d="1" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.explode.face.glow.anim">
+		<frameset id="gidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.03.explode.face.anim">
+		<frameset id="gidrah.saturn.03.face.array" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="4" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="2" />
+			<notify layer="glow" idx="12"/><frame idx="12" d="2" />
+			<notify layer="glow" idx="13"/><frame idx="13" d="15" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="2" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="474" />
+	</animation>
+
+	<animation name="gidrah.saturn.03.fizzle.head.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childXOffset="1.0" childYOffset="-7.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.02" d="9" childXOffset="1.0" childYOffset="-7.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.02" d="1" childXOffset="2.0" childYOffset="-8.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.03" d="9" childXOffset="2.0" childYOffset="-8.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.03" d="1" childXOffset="3.0" childYOffset="-9.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.04" d="9" childXOffset="3.0" childYOffset="-9.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.04" d="1" childXOffset="4.0" childYOffset="-10.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.05" d="9" childXOffset="4.0" childYOffset="-10.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.05" d="1" childXOffset="5.0" childYOffset="-11.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.06" d="9" childXOffset="5.0" childYOffset="-11.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.06" d="1" childXOffset="6.0" childYOffset="-12.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.07" d="10" childXOffset="6.0" childYOffset="-12.0" />
+		<setlayers layers="gidrah.saturn.03.explode.layers"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.fizzle.face.glow.anim">
+		<frameset id="gidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.03.fizzle.face.anim">
+		<frameset id="gidrah.saturn.03.face.array" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="1" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="1" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="10" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="10" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="10" />
+			<notify layer="glow" idx="7"/><frame idx="7" d="10" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="10" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="10" />
+		<setlayers layers="gidrah.saturn.03.explode.layers"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.stun.face.glow.anim">
+		<frameset id="gidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.03.stun.anim">
+			<frame i="spriteimage.gidrah.saturn.03.ghost.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.stun.face.anim">
+		<frameset id="gidrah.saturn.03.face.array" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="45" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="5" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="449" />
+	</animation>
+
+	<animation name="gidrah.saturn.03.attack.body.right.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.back.01" d="1" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<offset x="0.0" y="1.1" d="1"/>
+			<offset x="0.0" y="2.4" d="1"/>
+			<offset x="0.0" y="4.3" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="6.7" d="55"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.back.01" d="25" />
+		<setlayers layers="gidrah.saturn.03.fizzle.right.layers"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.attack.head.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="2.5" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="7.3" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.0" />
+			<offset x="0.0" y="3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.2" />
+			<offset x="0.0" y="5.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.4" />
+			<offset x="0.0" y="5.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.5" />
+			<offset x="0.0" y="5.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.7" />
+			<offset x="0.0" y="5.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="10.8" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.0" />
+			<offset x="0.0" y="5.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.1" />
+			<offset x="0.0" y="5.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.2" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.3" />
+			<offset x="0.0" y="5.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.4" />
+			<offset x="0.0" y="5.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.5" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.6" />
+			<offset x="0.0" y="5.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.7" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.8" />
+			<offset x="0.0" y="5.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="2" childYOffset="11.9" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="12.0" />
+			<offset x="0.0" y="6.0" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="2" childYOffset="12.1" />
+			<offset x="0.0" y="6.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="7" childYOffset="12.2" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="3" childYOffset="12.1" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="12.0" />
+			<offset x="0.0" y="6.0" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="2" childYOffset="11.9" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.8" />
+			<offset x="0.0" y="5.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.7" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.6" />
+			<offset x="0.0" y="5.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.5" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.4" />
+			<offset x="0.0" y="5.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.3" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.2" />
+			<offset x="0.0" y="5.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.1" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.0" />
+			<offset x="0.0" y="5.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="10.8" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.7" />
+			<offset x="0.0" y="5.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="10.6" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.4" />
+			<offset x="0.0" y="5.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.3" />
+			<offset x="0.0" y="5.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.1" />
+			<offset x="0.0" y="5.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="10.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="6.0" />
+			<offset x="0.0" y="5.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-6.0" />
+			<offset x="0.0" y="3.0" d="1"/>
+			<offset x="0.0" y="-3.0" d="4"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="-4.9" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-3.8" />
+			<offset x="0.0" y="-2.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-2.9" />
+			<offset x="0.0" y="-1.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-2.0" />
+			<offset x="0.0" y="-1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-1.2" />
+			<offset x="0.0" y="-1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-0.5" />
+			<offset x="0.0" y="-0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="-0.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="0.7" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="1.2" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="1.6" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="1.8" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="2.2" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<offset x="0.0" y="1.1" d="4"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="1.3" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-1.4" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-6.0" />
+			<offset x="0.0" y="-0.7" d="1"/>
+			<offset x="0.0" y="-3.0" d="415"/>
+	</animation>
+
+	<animation name="gidrah.saturn.03.attack.face.glow.anim">
+		<frameset id="gidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="gidrah.saturn.03.attack.face.anim">
+		<frameset id="gidrah.saturn.03.face.array" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="23" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="2" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="17" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="2" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="455" />
+	</animation>
+
+	<animation name="gidrah.saturn.03.attack.body.left.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.back.01" d="1" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<offset x="0.0" y="1.1" d="1"/>
+			<offset x="0.0" y="2.4" d="1"/>
+			<offset x="0.0" y="4.3" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="6.7" d="55"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.back.01" d="25" />
+		<setlayers layers="gidrah.saturn.03.fizzle.left.layers"/>
+	</animation>
+
+
+
+
+	<!-- ANGRYGIDRAH.SATURN.01 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.SATURN.01 definition -->
+
+	<gidrah
+		 name="angrygidrah.saturn.01"
+		 inherit="angrygidrah.saturn.01.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.01.walk.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.01.walk.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.01.walk.face.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.01.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.01.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.01.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.01.dead.anim" />
+				<emitter emitter="gidrah.saturn.death.large.emitter" offset="16,16"  />
+				<emitter emitter="gidrah.saturn.death.flash.large.emitter" offset="16,25"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.01.idle.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.01.idle.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.01.idle.face.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.01.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.01.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.01.ice.glow.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.04" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.01.ice.glow.04" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.01.02" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.saturn.01.stun.anim" />
+				<emitter emitter="gidrah.saturn.stun.large.emitter" offset="16,26"  />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.01.stun.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.01.ground.01" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.01.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>
+
+
+	<!-- FRAMESETS for ANGRYGIDRAH.SATURN.01 -->
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.SATURN.01 -->
+
+
+
+
+	<!-- ANGRYGIDRAH.SATURN.02 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.SATURN.02 definition -->
+
+	<gidrah
+		 name="angrygidrah.saturn.02"
+		 inherit="angrygidrah.saturn.02.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.02.walk.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.02.walk.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.02.walk.face.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.02.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.02.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.02.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.saturn.02.dead.anim" />
+				<emitter emitter="gidrah.saturn.death.flash.large.emitter" offset="16,25"  />
+				<emitter emitter="gidrah.saturn.death.large.emitter" offset="16,16"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.saturn.02.idle.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.02.idle.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.02.idle.face.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.02.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.04" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.02.ice.glow.04" />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.02.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.02.ice.glow.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.02.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.saturn.02.stun.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.02.ground.01" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.saturn.02.stun.anim" />
+				<emitter emitter="gidrah.saturn.stun.large.emitter" offset="16,24"  />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.saturn.02.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>
+
+
+	<!-- FRAMESETS for ANGRYGIDRAH.SATURN.02 -->
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.SATURN.02 -->
+
+
+
+
+	<!-- ANGRYGIDRAH.SATURN.03 ==================================================================================================  -->
+
+
+	<!-- LAYERS for ANGRYGIDRAH.SATURN.03 -->
+
+	<layers name="angrygidrah.saturn.03.explode.layers" scale="0.75">
+		<sprite layer="5" sublayer="0" offset="0,-6" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.explode.head.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+		<sprite id="glow" layer="5" sublayer="1" offset="0,-8" colored="gidrah-glow" attenuated="false" animation="angrygidrah.saturn.03.explode.face.glow.anim" />
+		<emitter emitter="bombhead.explosion.large.emitter" offset="16,0" ySortOffset="11"  />
+		<sprite id="face" layer="5" sublayer="2" offset="0,-8" attenuated="false" animation="angrygidrah.saturn.03.explode.face.anim" />
+	</layers>
+
+ 	<layers name="angrygidrah.saturn.03.fizzle.right.layers" scale="0.75">
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+		<emitter emitter="bombhead.end.right.large.emitter" offset="-3,0" ySortOffset="32"  />
+		<sprite layer="5" sublayer="0" offset="0,-6" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.fizzle.head.anim" />
+		<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.fuse.lit.glow.anim" />
+		<sprite id="glow" layer="5" sublayer="1" offset="0,-8" colored="gidrah-glow" attenuated="false" animation="angrygidrah.saturn.03.fizzle.face.glow.anim" />
+		<sprite id="face" layer="5" sublayer="2" offset="0,-8" attenuated="false" animation="angrygidrah.saturn.03.fizzle.face.anim" />
+	</layers>
+
+ 	<layers name="angrygidrah.saturn.03.fizzle.left.layers" scale="0.75">
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+		<emitter emitter="bombhead.end.left.large.emitter" offset="26,0" ySortOffset="32"  />
+		<sprite layer="5" sublayer="0" offset="0,-6" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.fizzle.head.anim" />
+		<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.fuse.lit.glow.anim" />
+		<sprite id="glow" layer="5" sublayer="1" offset="0,-8" colored="gidrah-glow" attenuated="false" animation="angrygidrah.saturn.03.fizzle.face.glow.anim" />
+		<sprite id="face" layer="5" sublayer="2" offset="0,-8" attenuated="false" animation="angrygidrah.saturn.03.fizzle.face.anim" />
+	</layers>
+
+ 
+	<!-- ANGRYGIDRAH.SATURN.03 definition -->
+
+	<gidrah
+		 name="angrygidrah.saturn.03"
+		 inherit="angrygidrah.saturn.03.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.walk.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.blink.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,2" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.fuse.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+		</layers></appearance>
+		<deathAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.saturn.03.dead.anim" />
+				<emitter emitter="gidrah.saturn.death.large.emitter" offset="16,14"  />
+				<emitter emitter="gidrah.saturn.death.flash.large.emitter" offset="16,23"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.03.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="angrygidrah.saturn.03.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="angrygidrah.saturn.03.blink.anim" />
+				<sprite layer="5" sublayer="2" offset="0,2" attenuated="false" animation="angrygidrah.saturn.03.fuse.glow.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.03.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.03.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.03.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.frozen.2.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.saturn.03.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.saturn.03.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="angrygidrah.saturn.03.stun.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="angrygidrah.saturn.03.stun.anim" />
+				<emitter emitter="gidrah.saturn.stun.large.emitter" offset="16,25"  />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="angrygidrah.saturn.03.stun.face.anim" />
+		</layers></stunAppearance>
+		<attackAppearanceRight><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.attack.body.right.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.attack.head.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,-2" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.attack.face.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.fuse.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,-2" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.attack.face.anim" />
+		</layers></attackAppearanceRight>
+		<attackAppearanceLeft><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.attack.body.left.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.saturn.03.ground.01" />
+				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.saturn.03.attack.head.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,-2" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.attack.face.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.fuse.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,-2" attenuated="false" doChildOffset="true" animation="angrygidrah.saturn.03.attack.face.anim" />
+		</layers></attackAppearanceLeft>
+	</gidrah>
+
+
+	<!-- FRAMESETS for ANGRYGIDRAH.SATURN.03 -->
+
+	<array name="angrygidrah.saturn.03.glow.array">
+		<item>spriteimage.gidrah.saturn.03.glow.01</item>
+		<item>spriteimage.gidrah.saturn.03.glow.02</item>
+		<item>spriteimage.gidrah.saturn.03.glow.03</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.01</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.02</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.03</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.04</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.05</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.06</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.07</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.08</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.09</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.10</item>
+		<item>spriteimage.gidrah.saturn.03.attack.glow.11</item>
+	</array>
+
+	<array name="angrygidrah.saturn.03.face.array">
+		<item>spriteimage.gidrah.saturn.03.top.01</item>
+		<item>spriteimage.gidrah.saturn.03.top.02</item>
+		<item>spriteimage.gidrah.saturn.03.top.03</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.01</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.02</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.03</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.04</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.05</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.06</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.07</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.08</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.09</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.10</item>
+		<item>spriteimage.gidrah.saturn.03.attack.top.11</item>
+	</array>
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.SATURN.03 -->
+
+	<animation name="angrygidrah.saturn.03.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.saturn.03.01" d="4" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.03" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.03" d="1" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="4" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.06" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.07" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.07" d="1" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="4" />
+			<frame i="spriteimage.gidrah.saturn.03.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.04" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.saturn.03.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.05" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.saturn.03.05" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.blink.glow.anim">
+		<frameset id="angrygidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.blink.anim">
+		<frameset id="angrygidrah.saturn.03.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="blink"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="9" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="19" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="3" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="7" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="14" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.dead.anim">
+			<frame i="spriteimage.gidrah.saturn.03.ghost.02" d="1" />
+			<animcolor a="242" d="0"/>
+			<scale scale="0.824" d="1"/>
+			<animcolor a="230" d="0"/>
+			<scale scale="0.896" d="1"/>
+			<animcolor a="218" d="0"/>
+			<scale scale="0.967" d="1"/>
+			<animcolor a="207" d="0"/>
+			<scale scale="1.035" d="1"/>
+			<animcolor a="195" d="0"/>
+			<scale scale="1.102" d="1"/>
+			<animcolor a="184" d="0"/>
+			<scale scale="1.166" d="1"/>
+			<animcolor a="174" d="0"/>
+			<scale scale="1.229" d="1"/>
+			<animcolor a="163" d="0"/>
+			<scale scale="1.29" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.ghost.03" d="0" />
+			<animcolor a="153" d="0"/>
+			<scale scale="1.349" d="1"/>
+			<animcolor a="143" d="0"/>
+			<scale scale="1.406" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="1.462" d="1"/>
+			<animcolor a="125" d="0"/>
+			<scale scale="1.515" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.ghost.03" d="0" />
+			<animcolor a="116" d="0"/>
+			<scale scale="1.567" d="1"/>
+			<animcolor a="108" d="0"/>
+			<scale scale="1.616" d="1"/>
+			<animcolor a="100" d="0"/>
+			<scale scale="1.664" d="1"/>
+			<animcolor a="92" d="0"/>
+			<scale scale="1.71" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.ghost.04" d="0" />
+			<animcolor a="84" d="0"/>
+			<scale scale="1.754" d="1"/>
+			<animcolor a="77" d="0"/>
+			<scale scale="1.796" d="1"/>
+			<animcolor a="70" d="0"/>
+			<scale scale="1.837" d="1"/>
+			<animcolor a="64" d="0"/>
+			<scale scale="1.875" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.ghost.05" d="0" />
+			<animcolor a="58" d="0"/>
+			<scale scale="1.912" d="1"/>
+			<animcolor a="52" d="0"/>
+			<scale scale="1.946" d="1"/>
+			<animcolor a="46" d="0"/>
+			<scale scale="1.979" d="1"/>
+			<animcolor a="41" d="0"/>
+			<scale scale="2.01" d="1"/>
+			<animcolor a="36" d="0"/>
+			<scale scale="2.039" d="1"/>
+			<animcolor a="31" d="0"/>
+			<scale scale="2.066" d="1"/>
+			<animcolor a="27" d="0"/>
+			<scale scale="2.092" d="1"/>
+			<animcolor a="23" d="0"/>
+			<scale scale="2.115" d="1"/>
+			<animcolor a="19" d="0"/>
+			<scale scale="2.137" d="1"/>
+			<animcolor a="16" d="0"/>
+			<scale scale="2.156" d="1"/>
+			<animcolor a="13" d="0"/>
+			<scale scale="2.174" d="1"/>
+			<animcolor a="10" d="0"/>
+			<scale scale="2.19" d="1"/>
+			<animcolor a="8" d="0"/>
+			<scale scale="2.204" d="1"/>
+			<animcolor a="6" d="0"/>
+			<scale scale="2.216" d="1"/>
+			<animcolor a="4" d="0"/>
+			<scale scale="2.227" d="1"/>
+			<animcolor a="3" d="0"/>
+			<scale scale="2.235" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale scale="2.242" d="1"/>
+			<animcolor a="1" d="0"/>
+			<scale scale="2.246" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale scale="2.249" d="1"/>
+		<event id="1"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.frozen.1.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.03.02" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.03.04" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+		<label id="end"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.frozen.2.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.saturn.03.03" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.saturn.03.05" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.saturn.03.07" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.explode.head.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.08" d="35" />
+		<shake amount="10"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.08" d="1" />
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.08" d="1" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.explode.face.glow.anim">
+		<frameset id="angrygidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.explode.face.anim">
+		<frameset id="angrygidrah.saturn.03.face.array" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="4" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="2" />
+			<notify layer="glow" idx="12"/><frame idx="12" d="2" />
+			<notify layer="glow" idx="13"/><frame idx="13" d="15" />
+			<notify layer="glow" idx="11"/><frame idx="11" d="2" />
+			<notify layer="glow" idx="10"/><frame idx="10" d="474" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.fizzle.head.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childXOffset="1.0" childYOffset="-7.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.02" d="9" childXOffset="1.0" childYOffset="-7.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.02" d="1" childXOffset="2.0" childYOffset="-8.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.03" d="9" childXOffset="2.0" childYOffset="-8.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.03" d="1" childXOffset="3.0" childYOffset="-9.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.04" d="9" childXOffset="3.0" childYOffset="-9.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.04" d="1" childXOffset="4.0" childYOffset="-10.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.05" d="9" childXOffset="4.0" childYOffset="-10.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.05" d="1" childXOffset="5.0" childYOffset="-11.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.06" d="9" childXOffset="5.0" childYOffset="-11.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.06" d="1" childXOffset="6.0" childYOffset="-12.0" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.07" d="10" childXOffset="6.0" childYOffset="-12.0" />
+		<setlayers layers="angrygidrah.saturn.03.explode.layers"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.fizzle.face.glow.anim">
+		<frameset id="angrygidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.fizzle.face.anim">
+		<frameset id="angrygidrah.saturn.03.face.array" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="1" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="1" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="10" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="10" />
+			<notify layer="glow" idx="6"/><frame idx="6" d="10" />
+			<notify layer="glow" idx="7"/><frame idx="7" d="10" />
+			<notify layer="glow" idx="8"/><frame idx="8" d="10" />
+			<notify layer="glow" idx="9"/><frame idx="9" d="10" />
+		<setlayers layers="angrygidrah.saturn.03.explode.layers"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.stun.face.glow.anim">
+		<frameset id="angrygidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.stun.anim">
+			<frame i="spriteimage.gidrah.saturn.03.ghost.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.stun.face.anim">
+		<frameset id="angrygidrah.saturn.03.face.array" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="45" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="5" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="449" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.attack.body.right.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.back.01" d="1" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<offset x="0.0" y="1.6" d="1"/>
+			<offset x="0.0" y="3.6" d="1"/>
+			<offset x="0.0" y="6.4" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="10.0" d="55"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.back.01" d="25" />
+		<setlayers layers="angrygidrah.saturn.03.fizzle.right.layers"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.attack.head.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="3" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="2.5" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="7.3" />
+			<offset x="0.0" y="1.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.0" />
+			<offset x="0.0" y="5.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.2" />
+			<offset x="0.0" y="7.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.4" />
+			<offset x="0.0" y="7.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.5" />
+			<offset x="0.0" y="7.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.7" />
+			<offset x="0.0" y="7.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.8" />
+			<offset x="0.0" y="8.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.0" />
+			<offset x="0.0" y="8.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.1" />
+			<offset x="0.0" y="8.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.2" />
+			<offset x="0.0" y="8.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.3" />
+			<offset x="0.0" y="8.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.4" />
+			<offset x="0.0" y="8.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.5" />
+			<offset x="0.0" y="8.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.6" />
+			<offset x="0.0" y="8.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.7" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.8" />
+			<offset x="0.0" y="8.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.9" />
+			<offset x="0.0" y="8.9" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="12.0" />
+			<offset x="0.0" y="9.0" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="12.1" />
+			<offset x="0.0" y="9.1" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="7" childYOffset="12.2" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="3" childYOffset="12.1" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="12.0" />
+			<offset x="0.0" y="9.0" d="2"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.9" />
+			<offset x="0.0" y="8.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.8" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.7" />
+			<offset x="0.0" y="8.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.6" />
+			<offset x="0.0" y="8.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.5" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.4" />
+			<offset x="0.0" y="8.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.3" />
+			<offset x="0.0" y="8.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="11.2" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.1" />
+			<offset x="0.0" y="8.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="11.0" />
+			<offset x="0.0" y="8.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.8" />
+			<offset x="0.0" y="8.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.7" />
+			<offset x="0.0" y="8.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.6" />
+			<offset x="0.0" y="8.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.4" />
+			<offset x="0.0" y="7.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.3" />
+			<offset x="0.0" y="7.8" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.1" />
+			<offset x="0.0" y="7.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="10.0" />
+			<offset x="0.0" y="7.6" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="6.0" />
+			<offset x="0.0" y="7.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-6.0" />
+			<offset x="0.0" y="4.5" d="1"/>
+			<offset x="0.0" y="-4.5" d="4"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="-4.9" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-3.8" />
+			<offset x="0.0" y="-3.7" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-2.9" />
+			<offset x="0.0" y="-2.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-2.0" />
+			<offset x="0.0" y="-2.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-1.2" />
+			<offset x="0.0" y="-1.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-0.5" />
+			<offset x="0.0" y="-0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="-0.3" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="0.7" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="1.2" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="1.6" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="1.8" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="2.2" />
+			<offset x="0.0" y="1.5" d="1"/>
+			<offset x="0.0" y="1.6" d="1"/>
+			<offset x="0.0" y="1.7" d="3"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="1" childYOffset="1.3" />
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-1.4" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.01" d="0" childYOffset="-6.0" />
+			<offset x="0.0" y="-1.1" d="1"/>
+			<offset x="0.0" y="-4.5" d="415"/>
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.attack.face.glow.anim">
+		<frameset id="angrygidrah.saturn.03.glow.array" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.attack.face.anim">
+		<frameset id="angrygidrah.saturn.03.face.array" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="23" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="2" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="17" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="2" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="455" />
+	</animation>
+
+	<animation name="angrygidrah.saturn.03.attack.body.left.anim">
+			<frame i="spriteimage.gidrah.saturn.03.attack.back.01" d="1" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<offset x="0.0" y="1.6" d="1"/>
+			<offset x="0.0" y="3.6" d="1"/>
+			<offset x="0.0" y="6.4" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="10.0" d="55"/>
+			<frame i="spriteimage.gidrah.saturn.03.attack.back.01" d="25" />
+		<setlayers layers="angrygidrah.saturn.03.fizzle.left.layers"/>
+	</animation>
+
+</resources>

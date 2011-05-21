@@ -1,0 +1,2267 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+	<!-- Powerups! -->
+
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+
+	<property key="powerup_label_yellow_start" value="255,255,255,0" />
+	<property key="powerup_label_yellow_end" value="255,213,100" />	
+
+	<property key="powerup_label_red_start" value="255,200,50,0" />
+	<property key="powerup_label_red_end" value="255,0,0" />	
+
+	<property key="powerup_label_green_start" value="255,255,255,0" />
+	<property key="powerup_label_green_end" value="175,255,95" />	
+	
+	<property key="powerup_label_blue_start" value="255,255,255,0" />
+	<property key="powerup_label_blue_end" value="80,245,255" />	
+
+
+	<!-- Animations -->
+	
+	<!--  57 frames -->
+	
+	<animation name="powerup.animation">
+		
+		<offset x="0" y="+-4" d="0" />
+		<scale xscale="+-0.04" yscale="+0.04" d="0" />
+
+		<frame i="spriteimage.powerup.box.01" childYOffset="-10" d="1" />
+		<offset x="0" y="+-1" d="2" />
+		<frame i="spriteimage.powerup.box.01" childYOffset="-12" d="1" />
+		<offset x="0" y="+-1" d="1" />
+		<frame i="spriteimage.powerup.box.01" childYOffset="-14" d="1" />
+		<offset x="0" y="+-1" d="0" />
+		<frame i="spriteimage.powerup.box.01" childYOffset="-16" d="1" />
+		<offset x="0" y="+-1" d="1" />
+
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="10" />
+
+		<frame i="spriteimage.powerup.box.01" childYOffset="-12" d="1" />
+		<offset x="0" y="+2" d="0" />
+
+		<frame i="spriteimage.powerup.box.01" childYOffset="-10" d="1" />
+		<scale xscale="+-0.02" yscale="+0.02" d="0" />
+		<offset x="0" y="+1" d="0" />
+
+		<frame i="spriteimage.powerup.box.01" childYOffset="-8" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="0" />
+		<offset x="0" y="+1" d="0" />
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+
+		<frame i="spriteimage.powerup.box.01" childYOffset="-6" d="1" />
+		<offset x="0" y="+1" d="1" />
+
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+
+		<frame i="spriteimage.powerup.box.01" childYOffset="-4" d="1" />
+		<offset x="0" y="+1" d="14" />
+
+		<frame i="spriteimage.powerup.box.01" childYOffset="-6" d="1" />
+		<offset x="0" y="+-1" d="4" />
+
+		<frame i="spriteimage.powerup.box.01" childYOffset="-8" d="1" />
+		<offset x="0" y="+-1" d="3" />
+		
+		<goto seq="2" />
+	
+	</animation>
+		
+	<animation name="powerup.ground.animation">
+
+		<frame i="spriteimage.powerup.box.ground.01" d="1" />
+
+		<alpha alpha="120" d="8"/>
+		
+		<scale xscale="+0.02" yscale="+0.02" d="1" />
+		<alpha alpha="140" d="0"/>
+		<scale xscale="+0.02" yscale="+0.02" d="2" />
+		<alpha alpha="160" d="0"/>
+		<scale xscale="+0.02" yscale="+0.02" d="3" />
+		<alpha alpha="180" d="0"/>
+		<scale xscale="+0.02" yscale="+0.02" d="1" />
+		
+		<alpha alpha="200" d="8"/>
+		
+		<!-- bounce up -->
+		
+		<alpha alpha="200" d="2"/>
+		
+		<scale xscale="+-0.02" yscale="+-0.02" d="1" />
+		<alpha alpha="180" d="0"/>
+		<scale xscale="+-0.02" yscale="+-0.02" d="1" />
+		<alpha alpha="160" d="0"/>
+		<scale xscale="+-0.02" yscale="+-0.02" d="3" />
+		<alpha alpha="140" d="0"/>
+		<scale xscale="+-0.02" yscale="+-0.02" d="1" />
+		
+		<alpha alpha="120" d="2"/>
+		
+		<!-- fall down -->
+		
+		<alpha alpha="120" d="24"/>
+		
+		<goto seq="1" />
+	
+	</animation>
+
+	
+	<animation name="bezerk.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.bezerk.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.bezerk.03" d="4" />
+		<frame i="spriteimage.powerup.bezerk.02" d="4" />
+		<frame i="spriteimage.powerup.bezerk.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.bezerk.02" d="5" />
+		<frame i="spriteimage.powerup.bezerk.03" d="7" />
+		<frame i="spriteimage.powerup.bezerk.04" d="12" />
+		<goto seq="1" />
+	
+	</animation>
+	
+	<animation name="smartbomb.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.smartbomb.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.smartbomb.03" d="4" />
+		<frame i="spriteimage.powerup.smartbomb.02" d="4" />
+		<frame i="spriteimage.powerup.smartbomb.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.smartbomb.02" d="5" />
+		<frame i="spriteimage.powerup.smartbomb.03" d="7" />
+		<frame i="spriteimage.powerup.smartbomb.04" d="12" />
+		<goto seq="1" />
+	</animation>
+	<animation name="repair.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.repair.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.repair.03" d="4" />
+		<frame i="spriteimage.powerup.repair.02" d="4" />
+		<frame i="spriteimage.powerup.repair.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.repair.02" d="5" />
+		<frame i="spriteimage.powerup.repair.03" d="7" />
+		<frame i="spriteimage.powerup.repair.04" d="12" />
+		<goto seq="1" />
+	</animation>
+	<animation name="shield.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.shield.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.shield.03" d="4" />
+		<frame i="spriteimage.powerup.shield.02" d="4" />
+		<frame i="spriteimage.powerup.shield.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.shield.02" d="5" />
+		<frame i="spriteimage.powerup.shield.03" d="7" />
+		<frame i="spriteimage.powerup.shield.04" d="12" />
+		<goto seq="1" />
+	</animation>
+	<animation name="freeze.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.freeze.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.freeze.03" d="4" />
+		<frame i="spriteimage.powerup.freeze.02" d="4" />
+		<frame i="spriteimage.powerup.freeze.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.freeze.02" d="5" />
+		<frame i="spriteimage.powerup.freeze.03" d="7" />
+		<frame i="spriteimage.powerup.freeze.04" d="12" />
+		<goto seq="1" />
+	</animation>
+	<animation name="money.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.money.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.money.03" d="4" />
+		<frame i="spriteimage.powerup.money.02" d="4" />
+		<frame i="spriteimage.powerup.money.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.money.02" d="5" />
+		<frame i="spriteimage.powerup.money.03" d="7" />
+		<frame i="spriteimage.powerup.money.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+
+	<animation name="flux.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.flux.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.flux.03" d="4" />
+		<frame i="spriteimage.powerup.flux.02" d="4" />
+		<frame i="spriteimage.powerup.flux.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.flux.02" d="5" />
+		<frame i="spriteimage.powerup.flux.03" d="7" />
+		<frame i="spriteimage.powerup.flux.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+	<animation name="plutonium.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.plutonium.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.plutonium.03" d="4" />
+		<frame i="spriteimage.powerup.plutonium.02" d="4" />
+		<frame i="spriteimage.powerup.plutonium.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.plutonium.02" d="5" />
+		<frame i="spriteimage.powerup.plutonium.03" d="7" />
+		<frame i="spriteimage.powerup.plutonium.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+	<animation name="strengthen.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.strengthen.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.strengthen.03" d="4" />
+		<frame i="spriteimage.powerup.strengthen.02" d="4" />
+		<frame i="spriteimage.powerup.strengthen.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.strengthen.02" d="5" />
+		<frame i="spriteimage.powerup.strengthen.03" d="7" />
+		<frame i="spriteimage.powerup.strengthen.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+	<animation name="radar.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.radar.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.radar.03" d="4" />
+		<frame i="spriteimage.powerup.radar.02" d="4" />
+		<frame i="spriteimage.powerup.radar.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.radar.02" d="5" />
+		<frame i="spriteimage.powerup.radar.03" d="7" />
+		<frame i="spriteimage.powerup.radar.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+	<animation name="nitrogen.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.nitrogen.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.nitrogen.03" d="4" />
+		<frame i="spriteimage.powerup.nitrogen.02" d="4" />
+		<frame i="spriteimage.powerup.nitrogen.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.nitrogen.02" d="5" />
+		<frame i="spriteimage.powerup.nitrogen.03" d="7" />
+		<frame i="spriteimage.powerup.nitrogen.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+	<animation name="lithium.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.lithium.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.lithium.03" d="4" />
+		<frame i="spriteimage.powerup.lithium.02" d="4" />
+		<frame i="spriteimage.powerup.lithium.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.lithium.02" d="5" />
+		<frame i="spriteimage.powerup.lithium.03" d="7" />
+		<frame i="spriteimage.powerup.lithium.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+
+
+	<!--  survival mode powerups -->
+
+
+	<animation name="concrete.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.concrete.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.concrete.03" d="4" />
+		<frame i="spriteimage.powerup.survival.concrete.02" d="4" />
+		<frame i="spriteimage.powerup.survival.concrete.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.survival.concrete.02" d="5" />
+		<frame i="spriteimage.powerup.survival.concrete.03" d="7" />
+		<frame i="spriteimage.powerup.survival.concrete.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+	<animation name="steel.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.steel.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.steel.03" d="4" />
+		<frame i="spriteimage.powerup.survival.steel.02" d="4" />
+		<frame i="spriteimage.powerup.survival.steel.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.survival.steel.02" d="5" />
+		<frame i="spriteimage.powerup.survival.steel.03" d="7" />
+		<frame i="spriteimage.powerup.survival.steel.04" d="12" />
+		<goto seq="1" />
+	</animation>
+
+	<animation name="titanium.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.titanium.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.titanium.03" d="4" />
+		<frame i="spriteimage.powerup.survival.titanium.02" d="4" />
+		<frame i="spriteimage.powerup.survival.titanium.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.survival.titanium.02" d="5" />
+		<frame i="spriteimage.powerup.survival.titanium.03" d="7" />
+		<frame i="spriteimage.powerup.survival.titanium.04" d="12" />
+		<goto seq="1" />
+	</animation>
+	
+	<animation name="nanomesh.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.nanomesh.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.nanomesh.03" d="4" />
+		<frame i="spriteimage.powerup.survival.nanomesh.02" d="4" />
+		<frame i="spriteimage.powerup.survival.nanomesh.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.survival.nanomesh.02" d="5" />
+		<frame i="spriteimage.powerup.survival.nanomesh.03" d="7" />
+		<frame i="spriteimage.powerup.survival.nanomesh.04" d="12" />
+		<goto seq="1" />
+	</animation>	
+	
+	
+	<animation name="mines.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.mines.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.mines.03" d="4" />
+		<frame i="spriteimage.powerup.survival.mines.02" d="4" />
+		<frame i="spriteimage.powerup.survival.mines.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.survival.mines.02" d="5" />
+		<frame i="spriteimage.powerup.survival.mines.03" d="7" />
+		<frame i="spriteimage.powerup.survival.mines.04" d="12" />
+		<goto seq="1" />
+	</animation>		
+	
+	<animation name="clustermines.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.clustermines.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.clustermines.03" d="4" />
+		<frame i="spriteimage.powerup.survival.clustermines.02" d="4" />
+		<frame i="spriteimage.powerup.survival.clustermines.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.survival.clustermines.02" d="5" />
+		<frame i="spriteimage.powerup.survival.clustermines.03" d="7" />
+		<frame i="spriteimage.powerup.survival.clustermines.04" d="12" />
+		<goto seq="1" />
+	</animation>	
+	
+	<animation name="blastmines.powerup.animation">
+
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.blastmines.04" d="8" />
+		
+		<scale xscale="+0.06" yscale="+-0.06" d="1" />
+		<scale xscale="+0.02" yscale="+-0.02" d="2" />
+		<scale xscale="+0.02" yscale="+-0.02" d="3" />
+		<scale xscale="+0.02" yscale="+-0.02" d="1" />
+		
+		<frame i="spriteimage.powerup.survival.blastmines.03" d="4" />
+		<frame i="spriteimage.powerup.survival.blastmines.02" d="4" />
+		<frame i="spriteimage.powerup.survival.blastmines.01" d="2" />
+		
+		<scale xscale="+-0.02" yscale="+0.02" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="1" />
+		<scale xscale="+-0.04" yscale="+0.04" d="3" />
+		<scale xscale="+-0.02" yscale="+0.02" d="3" />
+		
+		<frame i="spriteimage.powerup.survival.blastmines.02" d="5" />
+		<frame i="spriteimage.powerup.survival.blastmines.03" d="7" />
+		<frame i="spriteimage.powerup.survival.blastmines.04" d="12" />
+		<goto seq="1" />
+	</animation>	
+	
+	
+	<!-- Basic unit of difficulty for powerups -->
+	<property key="powerup_difficulty" value="0.025"/>
+	
+	
+	<instance
+		name="50bucks.powerup"
+		class="worm.powerups.MoneyPowerupFeature"
+		hint="hint.powerup"
+		title="$50"
+		collect="collectMoney50.buffer"
+		amount="50"
+		labelColorStart="=$powerup_label_yellow_start"
+		labelColorEnd="=$powerup_label_yellow_end"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3" bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" attenuated="false" animation="money.powerup.animation" />
+
+			</layers>
+		</appearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="money.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+	
+	<instance
+		name="100bucks.powerup"
+		hint="hint.powerup"
+		class="worm.powerups.MoneyPowerupFeature"
+		title="$100"
+		collect="collectMoney100.buffer"
+		amount="100"
+		labelColorStart="=$powerup_label_yellow_start"
+		labelColorEnd="=$powerup_label_yellow_end"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3" bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" attenuated="false" animation="money.powerup.animation" />
+			</layers>
+		</appearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="money.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+	
+	<instance
+		name="250bucks.powerup"
+		hint="hint.powerup"
+		class="worm.powerups.MoneyPowerupFeature"
+		title="$250"
+		collect="collectMoney250.buffer"
+		amount="250"
+		labelColorStart="=$powerup_label_yellow_start"
+		labelColorEnd="=$powerup_label_yellow_end"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3" bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" attenuated="false" animation="money.powerup.animation" />
+			</layers>
+		</appearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="money.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+	
+	<instance
+		name="500bucks.powerup"
+		hint="hint.powerup"
+		class="worm.powerups.MoneyPowerupFeature"
+		title="$500"
+		collect="collectMoney500.buffer"
+		amount="500"
+		labelColorStart="=$powerup_label_yellow_start"
+		labelColorEnd="=$powerup_label_yellow_end"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3" bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" attenuated="false" animation="money.powerup.animation" />
+			</layers>
+		</appearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="money.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+	
+	
+	<instance 
+		name="smartbomb.powerup" 
+		hint="hint.cool_powerup"
+		class="worm.powerups.SmartbombPowerupFeature" 
+		title="SMARTBOMB" 
+		collect="collectSmartbomb.buffer"
+		description="ORBITAL STRIKE. SET IT OFF WITH A CLICK IN THE MIDDLE OF THE ALIENS ADVANCING LINES."
+		shopIndex="1"
+		shopIcon="powerup.smartbomb"	
+		shortcut="true"
+		labelColorStart="=$powerup_label_red_start"
+		labelColorEnd="=$powerup_label_red_end"
+		tooltipGraphic="quicklaunch.key.F1.off.animation"
+		difficulty="=$powerup_difficulty*3"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="smartbomb.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.smartbomb.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="smartbomb.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+		
+	<instance 
+		name="bezerk.powerup" 
+		class="worm.powerups.BezerkPowerupFeature" 
+		hint="hint.cool_powerup"
+		title="BEZERK"
+		collect="collectBezerk.buffer"
+		duration="600"
+		description="GIVES 10 SECONDS OF SUPER POWER TO YOUR TURRETS AND CAPACITORS. WIPE OUT HORDES OF ALIENS IN MOMENTS!"
+		shopIndex="0"
+		shopIcon="powerup.bezerk"
+		shortcut="true"
+		labelColorStart="=$powerup_label_red_start"
+		labelColorEnd="=$powerup_label_red_end"
+		tooltipGraphic="quicklaunch.key.F2.off.animation"
+		difficulty="=$powerup_difficulty*5"
+	>
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.bezerk.01"/>
+			</layers>
+		</shopAppearance>
+		
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="bezerk.powerup.animation" />
+			</layers>
+		</appearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="bezerk.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+
+	</instance>
+
+
+	<instance
+		name="freeze.powerup" 
+		hint="hint.cool_powerup"
+		class="worm.powerups.FreezePowerupFeature"
+		title="FREEZE" 
+		collect="collectFreeze.buffer"
+		description="FREEZES ALL ALIENS FOR 10 SECONDS."
+		duration="600"
+		shopIndex="4"
+		shopIcon="powerup.freeze"		
+		shortcut="true"
+		labelColorStart="=$powerup_label_green_start"
+		labelColorEnd="=$powerup_label_green_end"
+		tooltipGraphic="quicklaunch.key.F3.off.animation"
+		difficulty="=$powerup_difficulty"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="freeze.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.freeze.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="freeze.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+	<instance
+		name="shield.powerup"
+		hint="hint.cool_powerup"
+		class="worm.powerups.ShieldPowerupFeature"
+		title="SUPERSHIELD"
+		collect="collectShield.buffer"
+		description="RENDERS ALL YOUR BUILDINGS INVULNERABLE TO ATTACK FOR 10 SECONDS."
+		duration="600"
+		shopIndex="3"
+		shopIcon="powerup.shield"		
+		shortcut="true"
+		labelColorStart="=$powerup_label_green_start"
+		labelColorEnd="=$powerup_label_green_end"
+		tooltipGraphic="quicklaunch.key.F4.off.animation"
+		difficulty="=$powerup_difficulty"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="shield.powerup.animation" />
+			</layers>
+		</appearance>
+	
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.shield.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="shield.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+	<instance 
+		name="repair.powerup"
+		hint="hint.cool_powerup"
+		class="worm.powerups.RepairPowerupFeature"
+		title="REPAIR"
+		collect="collectRepair.buffer"
+		description="REPAIR ALL YOUR BUILDINGS TO FULL STRUCTURAL INTEGRITY."
+		shopIndex="2"
+		shopIcon="powerup.repair"
+		shortcut="true"
+		labelColorStart="=$powerup_label_green_start"
+		labelColorEnd="=$powerup_label_green_end"
+		tooltipGraphic="quicklaunch.key.F5.off.animation"
+		difficulty="=$powerup_difficulty"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="repair.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.repair.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="repair.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+	<!--  Exotic powerups -->
+
+	<instance 
+		name="capacitor.powerup"
+		hint="hint.exotic_powerup"
+		class="worm.powerups.CapacitorPowerupFeature"
+		title="QUANTUM FLUX"
+		collect="collectCapacitor.buffer"
+		description="INCREASES THE RANGE OF ALL YOUR CAPACITORS. LASTS FOR THE DURATION OF THE LEVEL."
+		shopIndex="6"
+		shopIcon="powerup.flux"
+		labelColorStart="=$powerup_label_blue_start"
+		labelColorEnd="=$powerup_label_blue_end"
+		tooltipGraphic="quicklaunch.key.F7.off.animation"		
+		difficulty="=$powerup_difficulty"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="flux.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.flux.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers scale="0.5">
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="flux.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+	<instance
+		name="reactor.powerup" 
+		hint="hint.exotic_powerup"
+		class="worm.powerups.ReactorPowerupFeature"
+		title="PLUTONIUM" 
+		collect="collectReactor.buffer"
+		description="EQUIVALENT TO ADDING A REACTOR INPUT FOR ALL FACTORIES, TURRETS, AND CAPACITORS. LASTS FOR THE DURATION OF THE LEVEL."
+		shopIndex="8"
+		shopIcon="powerup.plutonium"
+		labelColorStart="=$powerup_label_blue_start"
+		labelColorEnd="=$powerup_label_blue_end"	
+		tooltipGraphic="quicklaunch.key.F8.off.animation"		
+		difficulty="=$powerup_difficulty*3"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="plutonium.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.plutonium.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="plutonium.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+	<instance 
+		name="shieldgenerator.powerup" 
+		hint="hint.exotic_powerup"
+		class="worm.powerups.ShieldGeneratorPowerupFeature" 
+		title="STRENGTHEN" 
+		collect="collectShieldGenerator.buffer"
+		description="GIVES EVERY BUILDING EXTRA SHIELDS. LASTS FOR THE DURATION OF THE LEVEL."
+		shopIndex="10"
+		shopIcon="powerup.strengthen"
+		labelColorStart="=$powerup_label_blue_start"
+		labelColorEnd="=$powerup_label_blue_end"
+		tooltipGraphic="quicklaunch.key.F9.off.animation"		
+		difficulty="=$powerup_difficulty*5"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="strengthen.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.strengthen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="strengthen.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+	<instance
+		name="radar.powerup" 
+		hint="hint.exotic_powerup"
+		class="worm.powerups.ScannerPowerupFeature"
+		title="RADAR"
+		collect="collectScanner.buffer"
+		description="INCREASES THE SCANNING RANGE OF EVERY TURRET. LASTS FOR THE DURATION OF THE LEVEL."
+		shopIndex="9"
+		shopIcon="powerup.radar"
+		labelColorStart="=$powerup_label_blue_start"
+		labelColorEnd="=$powerup_label_blue_end"
+		tooltipGraphic="quicklaunch.key.F10.off.animation"			
+		difficulty="=$powerup_difficulty*5"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="radar.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.radar.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="radar.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+	<instance 
+		name="battery.powerup" 
+		hint="hint.exotic_powerup"
+		class="worm.powerups.BatteryPowerupFeature" 
+		title="LITHIUM IONISER"
+		collect="collectBattery.buffer"
+		description="INCREASE THE BATTERY SIZE OF EVERY TURRET. LASTS FOR THE DURATION OF THE LEVEL."
+		shopIndex="5"
+		shopIcon="powerup.lithium"
+		labelColorStart="=$powerup_label_blue_start"
+		labelColorEnd="=$powerup_label_blue_end"
+		tooltipGraphic="quicklaunch.key.F11.off.animation"	
+		difficulty="=$powerup_difficulty*3"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="lithium.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.lithium.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="lithium.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+	<instance
+		name="cooling.powerup"
+		hint="hint.exotic_powerup"
+		class="worm.powerups.CoolingTowerPowerupFeature" 
+		title="LIQUID NITROGEN"
+		collect="collectCoolingTower.buffer"
+		description="BETTER COOLING ABILITY FOR EVERY TURRET. LASTS FOR THE DURATION OF THE LEVEL."
+		shopIndex="7"
+		shopIcon="powerup.nitrogen"
+		labelColorStart="=$powerup_label_blue_start"
+		labelColorEnd="=$powerup_label_blue_end"
+		tooltipGraphic="quicklaunch.key.F12.off.animation"		
+		difficulty="=$powerup_difficulty*3"
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="nitrogen.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.nitrogen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="nitrogen.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+
+
+
+	<!-- survival mode powerups -->
+
+	<instance 
+		name="concrete.powerup" 
+		hint="hint.barricade_powerup"
+		class="worm.powerups.ResourcePowerupFeature" 
+		title="+25 CONCRETE" 
+		collect="collectShieldGenerator.buffer"
+		labelColorStart="=$powerup_label_green_start"
+		labelColorEnd="=$powerup_label_green_end"
+		resource="building.generic.concrete"
+		amount="25"		
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="concrete.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.strengthen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="concrete.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+	<instance 
+		name="steel.powerup" 
+		hint="hint.barricade_powerup"
+		class="worm.powerups.ResourcePowerupFeature" 
+		title="+20 STEEL" 
+		collect="collectShieldGenerator.buffer"
+		labelColorStart="=$powerup_label_green_start"
+		labelColorEnd="=$powerup_label_green_end"
+		resource="building.generic.steel"
+		amount="20"		
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="steel.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.strengthen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="steel.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+	<instance 
+		name="titanium.powerup" 
+		hint="hint.barricade_powerup"
+		class="worm.powerups.ResourcePowerupFeature" 
+		title="+15 TITANIUM" 
+		collect="collectShieldGenerator.buffer"
+		labelColorStart="=$powerup_label_green_start"
+		labelColorEnd="=$powerup_label_green_end"
+		resource="building.generic.titanium"
+		amount="15"		
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="titanium.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.strengthen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="titanium.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+	<instance 
+		name="nanomesh.powerup" 
+		hint="hint.barricade_powerup"
+		class="worm.powerups.ResourcePowerupFeature" 
+		title="+10 NANOMESH" 
+		collect="collectShieldGenerator.buffer"
+		labelColorStart="=$powerup_label_green_start"
+		labelColorEnd="=$powerup_label_green_end"
+		resource="building.generic.nanomesh"
+		amount="10"		
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="nanomesh.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.strengthen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="nanomesh.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+	<instance 
+		name="mines.powerup" 
+		hint="hint.mines_powerup"
+		class="worm.powerups.ResourcePowerupFeature" 
+		title="+25 MINES" 
+		collect="collectShieldGenerator.buffer"
+		labelColorStart="=$powerup_label_red_start"
+		labelColorEnd="=$powerup_label_red_end"
+		resource="building.generic.mine"
+		amount="25"		
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="mines.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.strengthen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="mines.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+	<instance 
+		name="clustermines.powerup" 
+		hint="hint.mines_powerup"
+		class="worm.powerups.ResourcePowerupFeature" 
+		title="+15 CLUSTERMINES" 
+		collect="collectShieldGenerator.buffer"
+		labelColorStart="=$powerup_label_red_start"
+		labelColorEnd="=$powerup_label_red_end"
+		resource="building.generic.clustermine"
+		amount="15"		
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="clustermines.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.strengthen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="clustermines.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+	<instance 
+		name="blastmines.powerup" 
+		hint="hint.mines_powerup"
+		class="worm.powerups.ResourcePowerupFeature" 
+		title="+5 BLAST MINES" 
+		collect="collectShieldGenerator.buffer"
+		labelColorStart="=$powerup_label_red_start"
+		labelColorEnd="=$powerup_label_red_end"
+		resource="building.generic.blastmine"
+		amount="5"		
+	>
+		<!-- Event 1 on first sprite makes saucer zappable -->
+		<appearance>
+			<layers scale="0.5">
+				<sprite>
+					<animation>
+						<animation>
+							<event id="1"/>
+						</animation>
+					</animation>
+				</sprite>
+				<sprite layer="5" offset="0,16" sublayer="3"  bottomColored="floor-fog" topColored="buildings" attenuated="true" animation="powerup.animation" />
+				<sprite layer="4" colored="shadow" attenuated="true" animation="powerup.ground.animation" />
+				<sprite layer="5" offset="0,16" sublayer="4" doChildOffset="true" animation="blastmines.powerup.animation" />
+			</layers>
+		</appearance>
+
+		<shopAppearance>
+			<layers>
+				<sprite layer="10" image="spriteimage.powerup.large.strengthen.01"/>
+			</layers>
+		</shopAppearance>
+
+		<!-- Event 2 on first sprite removes the saucer -->
+		<collectAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+				<emitter emitter="blastmines.collect.emitter"/>
+			</layers>
+		</collectAppearance>
+		
+		<!-- Event 2 on first sprite removes the saucer -->
+		<vanishAppearance>
+			<layers>
+				<sprite layer="0">
+					<animation>
+						<animation>
+							<event id="2"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>
+		</vanishAppearance>
+	</instance>
+
+	<!-- Powerup collection -->
+
+	<animation name="collect.light.animation">
+		<frame i="spriteimage.particle.light.64px.01" d="1"/>
+		<alpha alpha="0" d="2"/>
+		<alpha alpha="255" d="2"/>
+		<goto seq="1"/>
+	</animation>
+
+		
+		
+	<emitter 
+		name="collect.emitter"
+		appearance="glitter.animation"
+		inherit="ping.emitter"
+		velocity="7.0"
+		acceleration="-0.7"
+	/>
+	<emitter
+		name="collect.red.emitter"
+		inherit="collect.emitter"
+		startHue="0.01"
+		endBrightness="0.5"
+	/>	
+	<emitter
+		name="collect.green.emitter"
+		inherit="collect.emitter"
+		startHue="0.27"
+		endBrightness="0.25"	
+	/>	
+	<emitter
+		name="collect.cyan.emitter"
+		inherit="collect.emitter"
+		startHue="0.5"
+		endBrightness="0.3"	
+	/>	
+	<emitter
+		name="collect.yellow.emitter"
+		inherit="collect.emitter"
+		startHue="0.17"
+		endBrightness="0.3"	
+	/>		
+	<emitter
+		name="collect.purple.emitter"
+		inherit="collect.emitter"
+		startHue="0.77"
+		endBrightness="0.6"	
+	/>	
+		
+	<emitter
+		name="collect.light.emitter"
+		duration="1.0"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.light.64px.02"
+		layer="6"
+		startScale="0.5"
+		scale="2.0"
+		endScale="0.8"
+		particleDuration="8.0"
+		fadeDuration="64.0"
+		startHue="0.27"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.35"
+		endSaturation="1.0"
+		endBrightness="0.3"
+	/>	
+	<emitter
+		name="collect.light.flash.emitter"
+		duration="1.0"
+		particlesPerTick="1.0"
+		appearance="collect.light.animation"
+		layer="6"
+		startScale="0.25"
+		scale="0.75"
+		endScale="0.5"
+		particleDuration="4.0"
+		fadeDuration="16.0"
+		startHue="0.0010"
+		startSaturation="0.0"
+		startBrightness="0.5"
+		endHue="0.0010"
+		endSaturation="0.0"
+		endBrightness="0.25"
+	/>
+	<emitter
+		name="collect.light.red.emitter"
+		inherit="collect.light.emitter"
+		startHue="0.01"
+		endHue="0.0010"	
+		endBrightness="0.8"
+	/>	
+	<emitter
+		name="collect.light.green.emitter"
+		inherit="collect.light.emitter"
+		startHue="0.27"
+		endHue="0.35"
+		endBrightness="0.4"	
+	/>	
+	<emitter
+		name="collect.light.cyan.emitter"
+		inherit="collect.light.emitter"
+		startHue="0.5"
+		endHue="0.52"
+		endBrightness="0.5"	
+	/>	
+	<emitter
+		name="collect.light.yellow.emitter"
+		inherit="collect.light.emitter"
+		startHue="0.17"
+		endHue="0.11"
+		endBrightness="0.5"	
+	/>			
+	<emitter
+		name="collect.light.purple.emitter"
+		inherit="collect.light.emitter"
+		startHue="0.77"
+		endHue="0.68"
+		endBrightness="0.9"	
+	/>		
+				
+	<emitter
+		name="collect.icon.emitter"	
+		duration="2.0"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.powerup.money.01"
+		layer="6"
+		startScale="0.3"
+		scale="0.6"
+		endScale="2.0"
+		gravityY="0.015"
+		particleDuration="20.0"
+		fadeDuration="45.0"
+		angle="90.0"
+		rotate="false"
+		velocity="1"
+		acceleration="-0.5"
+	/>	
+	
+	
+		
+	<!-- rotate="true" -->	
+	
+	<emitter name="money.collect.emitter" inherit="collect.yellow.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.money.01">
+			<chain><emitter inherit="collect.light.yellow.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+	
+	<emitter name="bezerk.collect.emitter" inherit="collect.red.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.bezerk.01">
+			<chain><emitter inherit="collect.light.red.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+	
+	<emitter name="repair.collect.emitter" inherit="collect.green.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.repair.01">
+			<chain><emitter inherit="collect.light.green.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+	
+	<emitter name="shield.collect.emitter" inherit="collect.green.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.shield.01">
+			<chain><emitter inherit="collect.light.green.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+				
+	<emitter name="freeze.collect.emitter" inherit="collect.green.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.freeze.01">
+			<chain><emitter inherit="collect.light.green.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>			
+	
+	<emitter name="smartbomb.collect.emitter" inherit="collect.red.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.smartbomb.01">
+			<chain><emitter inherit="collect.light.red.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+		
+	<emitter name="lithium.collect.emitter" inherit="collect.cyan.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.lithium.01">
+			<chain><emitter inherit="collect.light.cyan.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>			
+				
+	<emitter name="flux.collect.emitter" inherit="collect.cyan.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.flux.01">
+			<chain><emitter inherit="collect.light.cyan.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>			
+	
+	<emitter name="nitrogen.collect.emitter" inherit="collect.cyan.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.nitrogen.01">
+			<chain><emitter inherit="collect.light.cyan.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+	
+	<emitter name="plutonium.collect.emitter" inherit="collect.cyan.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.plutonium.01">
+			<chain><emitter inherit="collect.light.cyan.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+	
+	<emitter name="radar.collect.emitter" inherit="collect.cyan.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.radar.01">
+			<chain><emitter inherit="collect.light.cyan.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>			
+	
+	<emitter name="strengthen.collect.emitter" inherit="collect.cyan.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.strengthen.01">
+			<chain><emitter inherit="collect.light.cyan.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>			
+
+
+
+
+	<emitter name="concrete.collect.emitter" inherit="collect.green.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.survival.concrete.01">
+			<chain><emitter inherit="collect.light.green.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+
+	<emitter name="steel.collect.emitter" inherit="collect.green.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.survival.steel.01">
+			<chain><emitter inherit="collect.light.green.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+				
+	<emitter name="titanium.collect.emitter" inherit="collect.green.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.survival.titanium.01">
+			<chain><emitter inherit="collect.light.green.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+				
+	<emitter name="nanomesh.collect.emitter" inherit="collect.green.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.survival.nanomesh.01">
+			<chain><emitter inherit="collect.light.green.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+
+
+	<emitter name="mines.collect.emitter" inherit="collect.red.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.survival.mines.01">
+			<chain><emitter inherit="collect.light.red.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+
+	<emitter name="clustermines.collect.emitter" inherit="collect.red.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.survival.clustermines.01">
+			<chain><emitter inherit="collect.light.red.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+				
+	<emitter name="blastmines.collect.emitter" inherit="collect.red.emitter">
+		<chain><emitter inherit="collect.icon.emitter" appearance="spriteimage.particle.powerup.survival.blastmines.01">
+			<chain><emitter inherit="collect.light.red.emitter">
+				<slave><emitter inherit="collect.light.flash.emitter"/></slave></emitter></chain></emitter></chain></emitter>
+
+</resources>

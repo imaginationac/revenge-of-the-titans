@@ -1,0 +1,2207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!--  GUI resources -->
+
+<resources>
+	
+	<include resource="tags.xml" />
+	<include resource="gui-keys.xml" />
+
+
+
+	<animation name="hud.phase.20%.animation">
+		
+		<label id="loop"/>
+
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+3" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+2" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+1" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-3" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-2" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+-1" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+			<animcolor a="+0" d="2" />
+
+		<goto id="loop"/>
+								
+	</animation>
+
+
+
+	<!--  standard widgety bits -->
+
+	<area name="titlescreen.spec" 
+		size="320,320"
+		scale="0.625"
+		position="=$SCREEN_X,$SCREEN_Y"
+		noClick="true"
+		layer="-3"
+		>
+		<anchor x="mid" y="mid" d="0"/>
+		<mouseOff>
+			<animation>
+				<scale xscale="1.35" yscale="0.625" d="0"/>
+				<animcolor a="255" d="0"/>
+				<frame i="spriteimage.hud.titlescreen.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+
+	<area name="titlescreen-middle.spec" 
+		size="240,240"
+		scale="0.46875"
+		position="=$SCREEN_X-120,63"
+		noClick="true"
+		layer="-3"
+		>
+		<anchor x="mid" d="-120" /><anchor y="mid" d="-97" />
+		<mouseOff>
+			<animation>
+				<animcolor a="255" d="0"/>
+				<frame i="spriteimage.titlescreen.middle.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area name="titlescreen-left.spec" 
+		inherit="titlescreen-middle.spec"
+		>
+		<anchor x="mid" d="-360" /><anchor y="mid" d="-97" />
+		<mouseOff>
+			<animation>
+				<animcolor a="255" d="0"/>
+				<frame i="spriteimage.titlescreen.left.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area name="titlescreen-right.spec" 
+		inherit="titlescreen-middle.spec"
+		position="=$SCREEN_X+120,63"
+		>
+		<anchor x="mid" d="120" /><anchor y="mid" d="-97" />
+		<mouseOff>
+			<animation>
+				<animcolor a="255" d="0"/>
+				<frame i="spriteimage.titlescreen.right.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area name="titlescreen-logo.spec" 
+		inherit="titlescreen-middle.spec"
+		position="=$SCREEN_X-99,115"
+		size="186,60"
+		mouseOff="spriteimage.titlescreen.logo.01"
+		layer="-2"
+		>
+		<anchor x="mid" d="-93" /><anchor y="mid" d="-65" />
+	</area>
+	
+	
+
+	<area
+		name="dialog.background.spec"
+		noClick="true"
+		layer="-1"
+		bglayer="-2"
+		textLayer="11"
+		position="=$SCREEN_X-160,0"
+		size="320,320"
+		>
+		<anchor x="left" y="bottom" w="right" h="top" d="0"/>
+		<background>
+			<widgetbackground 
+				inherit="dialog-dim.background"
+				topColor="0,0,0,200"
+				bottomColor="0,0,0,150"
+			/>
+		</background>
+	</area>
+
+	<area
+		name="dialog.ingame.background.spec"
+		inherit="dialog.background.spec"
+		>
+		<anchor x="left" y="bottom" w="right" h="top" d="0"/>
+		<background>
+			<widgetbackground 
+				inherit="dialog-dim.background"
+				topColor="0,0,0,170"
+				bottomColor="0,0,0,170"
+			/>
+		</background>
+	</area>
+
+
+
+	<area
+		name="dialog.background.glow.spec"
+		noClick="true"
+		layer="-1"
+		position="=$SCREEN_X-160,$SCREEN_Y-160+$dialog_y_offset"
+		size="320,320"
+		scale="0.625"
+		>
+		<anchor x="mid" d="-160"/>
+		<anchor y="mid" d="=$dialog_y_offset-160" />
+		<mouseOff>
+			<animation>
+				<animcolor a="150" d="0"/>
+				<frame i="spriteimage.hud.titlescreen.overlay.01" d="0"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>	
+
+	<area
+		name="dialog.ingame.background.glow.spec"
+		inherit="dialog.background.glow.spec"
+		position="=$SCREEN_X,$SCREEN_Y+$dialog_y_offset+50"
+		size="8,8"
+		scale="0.625"
+		>
+		<anchor x="mid" d="0"/>
+		<anchor y="mid" d="=$dialog_y_offset+50" />
+	</area>		
+	
+	<area
+		name="dialog.spec"
+		noClick="true"
+		layer="0"
+		bglayer="0"
+		textLayer="11"
+		font="tinyfont.glfont"
+		
+		halign="centered"
+		valign="top"
+		color="dialog-title"
+		textOffset="=0,$dialog_title_offset" 
+	>
+		<background>
+			<widgetbackground inherit="hud_background"
+				color="dialog-top"
+			/>
+		</background>
+	</area>
+
+ 	<area
+		name="dialog.glow.spec"
+		inherit="dialog.spec"
+		bglayer="1" 
+		>
+		<background>
+			<widgetbackground inherit="hud_background_glow"
+				color="dialog-glow"
+				insets="13,22,17,9"
+			/>
+		</background>
+	</area>
+
+	<area
+		name="dialog.closeable.spec"
+		inherit="dialog.spec"
+		>
+		<background>
+			<widgetbackground inherit="hud_background_closeable"
+				color="dialog-top"
+			/>
+		</background>
+	</area>
+ 
+ 	<area
+		name="dialog.red.spec"
+		inherit="dialog.spec"
+		>
+		<background>
+			<widgetbackground inherit="hud_background"
+				color="250,0,0"
+			/>
+		</background>
+	</area>
+ 
+  	<area
+		name="dialog.ingame.spec"
+		inherit="dialog.spec"
+		bglayer="10"
+		textLayer="11" 
+		>
+		<background>
+			<widgetbackground inherit="hud_background_status"
+				color="dialog-top"
+			/>
+		</background>
+	</area>
+ 
+ 	<area
+		name="dialog.ingame.glow.spec"
+		inherit="dialog.spec"
+		bglayer="9" 
+		
+		>
+		<background>
+			<widgetbackground inherit="hud_background_glow"
+				color="dialog-glow"
+				insets="13,22,17,9"
+			/>
+		</background>
+	</area>
+ 
+
+ 
+ 	<area
+		name="dialog.title.spec"
+		noClick="true"
+		textLayer="11"
+		bglayer="10"
+		font="tinyfont.glfont"
+		
+		valign="centered"
+		halign="centered"
+		color="dialog-title" 
+	/>	
+ 
+ 
+	<area
+		name="dialog.message.spec"
+		noClick="true"
+		textLayer="11"
+		font="tinyfont.glfont"
+		
+		valign="centered"
+		halign="centered"
+		color="text"
+	/>			
+
+	<area
+		name="textfield.spec"
+		nextfocus="ok"
+		prevfocus="cancel"	
+		color="0,0,0"
+		font="tinyfont.glfont"
+		 	
+		bglayer="11"
+		textLayer="12"	
+	>
+		<background>
+			<widgetbackground inherit="textfield_background"
+				color="text"
+			/>
+		</background>
+	</area>
+
+	<area
+		name="options.item.bar.spec"
+		font="tinyfont.glfont"
+		
+		textLayer="12"
+		halign="right"
+		valign="centered"
+		textOffset="=$options_bar_label_offset,0"
+		size="=$options_bar_label_w,$options_item_h"
+		color="text"
+	/>	
+
+	<area
+		name="options.item.button.spec"
+		inherit="options.item.bar.spec"
+		halign="left"
+		textOffset="=$options_button_label_offset,0"
+		size="=$options_button_label_w,$options_item_h"
+		color="text"
+	/>	
+
+	<area
+		name="options.widget.spec"
+		offset="-1,-1"
+		size="=$options_item_h,$options_item_h"
+		layer="12"
+ 		scale="0.4"
+	/>	
+ 
+ 	<area
+		name="options.radiobutton.off.spec"
+		inherit="options.widget.spec"
+		disabled="spriteimage.hud.radiobutton.off.disabled.01"
+		mouseoff="spriteimage.hud.radiobutton.off.off.01"
+		mouseon="widget.radiobutton.off.on.animation" 
+	/>	
+ 	
+ 	<area
+		name="options.radiobutton.on.spec"
+		inherit="options.widget.spec"
+		noClick="true"
+		disabled="spriteimage.hud.radiobutton.on.disabled.01"
+		mouseoff="spriteimage.hud.radiobutton.on.off.01"
+		mouseon="widget.radiobutton.on.on.animation" 
+	/>	
+ 	
+    <area
+		name="options.checkbox.off.spec"
+		inherit="options.radiobutton.off.spec"
+        mouseon="widget.cross.on.animation"
+	/>	
+ 	
+ 	<area
+		name="options.checkbox.on.spec"
+		inherit="options.checkbox.off.spec"
+		disabled="spriteimage.hud.checkbox.tick.disabled.01"
+		mouseoff="spriteimage.hud.checkbox.tick.off.01"
+		mouseon="widget.tick.on.animation" 
+	/>	
+    
+	<powerdisplay
+		name="dialog.powerdisplay.spec"
+		gap="=$options_bar_dit_w"
+		layer="12"
+	/>
+
+
+
+	<!-- buttons -->
+
+	<area
+		name="button.spec"
+		bglayer="11"
+		layer="12"
+		textLayer="12"
+		size="=$button_w,$button_h"
+		font="tinyfont.glfont"
+		
+		color="button-text"
+		mouseOnColor="button-text-on"
+		disabledColor="button-text-disabled"
+		
+		valign="centered"
+		halign="centered"
+	>
+		<background>
+			<widgetbackground inherit="button_background"
+				color="button"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="button_background"
+				color="button-on"
+			/>
+		</mouseOnBackground>
+		<disabledBackground>
+			<widgetbackground inherit="button_background"
+				color="button-disabled"
+			/>
+		</disabledBackground>
+	</area>
+
+
+	<area
+		name="button.red.spec"
+		inherit="button.spec"
+		color="button-red-text"
+	>
+		<background>
+			<widgetbackground inherit="button_background"
+				color="button-red"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="button_background"
+				color="button-red-on"
+			/>
+		</mouseOnBackground>
+	</area>
+	
+	<area
+		name="titlescreen.menu.button.spec"
+		textLayer="11"
+		font="tinyfont.glfont"
+		
+		color="!114,255,120"
+		mouseOnColor="!114,255,96,100"
+		valign="centered"
+		halign="centered"
+	/>
+
+	<area
+		name="button.gamescreen.spec"
+		inherit="button.spec"
+		color="button-text"
+		mouseOnColor="button-text-on"
+	>
+		<background>
+			<widgetbackground inherit="button_background"
+				color="button"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="button_background"
+				color="button-on"
+			/>
+		</mouseOnBackground>
+	</area>
+
+
+	<area name="button.continue.spec" 
+		inherit="button.gamescreen.spec"
+		text="CONTINUE"
+		size="=$continue_button_w,$button_h"
+		position="=$continue_button_x,$continue_button_y" 
+	>
+		<anchor x="right" d="=0-$continue_button_w-$continue_button_offset"/>
+	</area>
+
+	<area name="button.back.spec" 
+		inherit="button.gamescreen.spec"
+		text="BACK"
+		size="=$back_button_w,$button_h"
+		position="=$back_button_x,$back_button_y" 
+	>
+		<anchor x="left" d="=$back_button_offset"/>
+	</area>
+
+	<area name="button.abort.spec" 
+		inherit="button.red.spec"
+		text="ABORT"
+		position="=$abort_button_x,$abort_button_y" 
+	>
+		<anchor x="left" d="=$abort_button_x"/>
+	</area>
+
+
+	<area name="button.nag.buy.spec" 
+		inherit="button.gamescreen.spec"
+		size="=$nag_buy_button_w,$nag_buy_button_h"
+		font="smallfont.glfont"
+		
+	/>
+	
+
+
+
+	<animation name="menu.button.off.animation">
+		<color c="button-on" d="0"/>
+		<frame i="menu.button.nocolor.off.animation" d="0"/>
+	</animation>
+	<animation name="menu.button.on.animation">
+		<color c="button-on" d="0"/>
+		<frame i="menu.button.nocolor.on.animation" d="0"/>
+	</animation>
+	<animation name="menu.button.disabled.animation">
+		<color c="button-disabled" d="0"/>
+		<frame i="menu.button.nocolor.disabled.animation" d="0"/>
+	</animation>
+
+	<animation name="menu.button.red.off.animation">
+		<color c="titles.colormap:button-red-text" d="0"/>
+		<frame i="menu.button.nocolor.off.animation" d="0"/>
+	</animation>
+	<animation name="menu.button.red.on.animation">
+		<color c="titles.colormap:button-red-on" d="0"/>
+		<frame i="menu.button.nocolor.on.animation" d="0"/>
+	</animation>
+	<animation name="menu.button.red.disabled.animation">
+		<color c="button-red-disabled" d="0"/>
+		<frame i="menu.button.nocolor.disabled.animation" d="0"/>
+	</animation>
+
+	<animation name="menu.button.nocolor.off.animation">
+		<scale scale="0.5" d="0"/>
+	</animation>
+	<animation name="menu.button.nocolor.on.animation">
+		<scale scale="0.505" d="1"/>
+		<scale scale="0.52" d="2"/>
+		<scale scale="0.55" d="2"/>
+	</animation>
+	<animation name="menu.button.nocolor.disabled.animation">
+		<scale scale="0.5" d="0"/>
+	</animation>
+
+
+	<animation name="menu.medals.off.animation">      		<frame i="spriteimage.menu.button.medals.off.01" d="0"/><frame i="menu.button.off.animation" d="0"/></animation>
+	<animation name="menu.medals.on.animation">       		<frame i="spriteimage.menu.button.medals.on.01" d="0"/><frame i="menu.button.on.animation" d="0"/></animation>
+	<animation name="menu.medals.disabled.animation"> 		<frame i="spriteimage.menu.button.medals.disabled.01" d="0"/><frame i="menu.button.disabled.animation" d="0"/></animation>
+	
+	<animation name="menu.restart.off.animation">      		<frame i="spriteimage.menu.button.restart.off.01" d="0"/><frame i="menu.button.red.off.animation" d="0"/></animation>
+	<animation name="menu.restart.on.animation">       		<frame i="spriteimage.menu.button.restart.on.01" d="0"/><frame i="menu.button.red.on.animation" d="0"/></animation>
+	<animation name="menu.restart.disabled.animation"> 		<frame i="spriteimage.menu.button.restart.disabled.01" d="0"/><frame i="menu.button.red.disabled.animation" d="0"/></animation>
+	
+	<animation name="menu.newlevel.off.animation">      	<frame i="spriteimage.menu.button.newlevel.off.01" d="0"/><frame i="menu.button.red.off.animation" d="0"/></animation>
+	<animation name="menu.newlevel.on.animation">       	<frame i="spriteimage.menu.button.newlevel.on.01" d="0"/><frame i="menu.button.red.on.animation" d="0"/></animation>
+	<animation name="menu.newlevel.disabled.animation"> 	<frame i="spriteimage.menu.button.newlevel.disabled.01" d="0"/><frame i="menu.button.red.disabled.animation" d="0"/></animation>
+	
+	<animation name="menu.levelselect.off.animation">      	<frame i="spriteimage.menu.button.levelselect.off.01" d="0"/><frame i="menu.button.red.off.animation" d="0"/></animation>
+	<animation name="menu.levelselect.on.animation">       	<frame i="spriteimage.menu.button.levelselect.on.01" d="0"/><frame i="menu.button.red.on.animation" d="0"/></animation>
+	<animation name="menu.levelselect.disabled.animation"> 	<frame i="spriteimage.menu.button.levelselect.disabled.01" d="0"/><frame i="menu.button.red.disabled.animation" d="0"/></animation>
+	
+	<animation name="menu.quit.off.animation">      		<frame i="spriteimage.menu.button.quit.off.01" d="0"/><frame i="menu.button.red.off.animation" d="0"/></animation>
+	<animation name="menu.quit.on.animation">       		<frame i="spriteimage.menu.button.quit.on.01" d="0"/><frame i="menu.button.red.on.animation" d="0"/></animation>
+	<animation name="menu.quit.disabled.animation"> 		<frame i="spriteimage.menu.button.quit.disabled.01" d="0"/><frame i="menu.button.red.disabled.animation" d="0"/></animation>
+		
+	<animation name="menu.saveandquit.off.animation">      	<frame i="spriteimage.menu.button.saveandquit.off.01" d="0"/><frame i="menu.button.red.off.animation" d="0"/></animation>
+	<animation name="menu.saveandquit.on.animation">       	<frame i="spriteimage.menu.button.saveandquit.on.01" d="0"/><frame i="menu.button.red.on.animation" d="0"/></animation>
+	<animation name="menu.saveandquit.disabled.animation"> 	<frame i="spriteimage.menu.button.saveandquit.disabled.01" d="0"/><frame i="menu.button.red.disabled.animation" d="0"/></animation>
+
+
+	<animation name="menu.campaign.off.animation">      		<frame i="spriteimage.menu.button.campaign.off.01" d="0"/><frame i="menu.button.off.animation" d="0"/></animation>
+	<animation name="menu.campaign.on.animation">       		<frame i="spriteimage.menu.button.campaign.on.01" d="0"/><frame i="menu.button.on.animation" d="0"/></animation>
+	<animation name="menu.campaign.disabled.animation"> 		<frame i="spriteimage.menu.button.campaign.disabled.01" d="0"/><frame i="menu.button.disabled.animation" d="0"/></animation>
+
+	<animation name="menu.endless.off.animation">      		<frame i="spriteimage.menu.button.endless.off.01" d="0"/><frame i="menu.button.off.animation" d="0"/></animation>
+	<animation name="menu.endless.on.animation">       		<frame i="spriteimage.menu.button.endless.on.01" d="0"/><frame i="menu.button.on.animation" d="0"/></animation>
+	<animation name="menu.endless.disabled.animation"> 		<frame i="spriteimage.menu.button.endless.disabled.01" d="0"/><frame i="menu.button.disabled.animation" d="0"/></animation>
+
+	<animation name="menu.survival.off.animation">      		<frame i="spriteimage.menu.button.survival.off.01" d="0"/><frame i="menu.button.off.animation" d="0"/></animation>
+	<animation name="menu.survival.on.animation">       		<frame i="spriteimage.menu.button.survival.on.01" d="0"/><frame i="menu.button.on.animation" d="0"/></animation>
+	<animation name="menu.survival.disabled.animation"> 		<frame i="spriteimage.menu.button.survival.disabled.01" d="0"/><frame i="menu.button.disabled.animation" d="0"/></animation>
+
+	
+
+	
+	<!-- Options screen widgets -->
+	
+	<animation name="volume.off.animation">
+		<frame i="spriteimage.hud.dit.01" d="1"/>
+	</animation>
+
+	<animation name="volume.on.01.animation">
+		<frame i="spriteimage.hud.dit.02" d="32"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="32"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.02.animation">
+		<frame i="spriteimage.hud.dit.02" d="34"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="30"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.03.animation">
+		<frame i="spriteimage.hud.dit.02" d="36"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="28"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.04.animation">
+		<frame i="spriteimage.hud.dit.02" d="38"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="26"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.05.animation">
+		<frame i="spriteimage.hud.dit.02" d="40"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="24"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.06.animation">
+		<frame i="spriteimage.hud.dit.02" d="42"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="22"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.07.animation">
+		<frame i="spriteimage.hud.dit.02" d="44"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="20"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.08.animation">
+		<frame i="spriteimage.hud.dit.02" d="46"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="18"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.09.animation">
+		<frame i="spriteimage.hud.dit.02" d="48"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="16"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="volume.on.10.animation">
+		<frame i="spriteimage.hud.dit.02" d="50"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.06" d="14"/>
+		<frame i="spriteimage.hud.dit.05" d="2"/>
+		<frame i="spriteimage.hud.dit.04" d="2"/>
+		<frame i="spriteimage.hud.dit.03" d="2"/>
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="widget.tick.on.animation">
+		<frame i="spriteimage.hud.checkbox.tick.off.01" d="1"/>
+		<frame i="spriteimage.hud.checkbox.tick.on.01" d="2"/>
+		<frame i="spriteimage.hud.checkbox.tick.on.02" d="2"/>
+		<frame i="spriteimage.hud.checkbox.tick.on.03" d="0"/>
+	</animation>
+
+	<animation name="widget.cross.on.animation">
+		<frame i="spriteimage.hud.checkbox.cross.off.01" d="1"/>
+		<frame i="spriteimage.hud.checkbox.cross.on.01" d="2"/>
+		<frame i="spriteimage.hud.checkbox.cross.on.02" d="2"/>
+		<frame i="spriteimage.hud.checkbox.cross.on.03" d="0"/>
+	</animation>
+	
+	<animation name="widget.radiobutton.off.on.animation">
+		<frame i="spriteimage.hud.radiobutton.off.on.01" d="2"/>
+		<frame i="spriteimage.hud.radiobutton.off.on.02" d="2"/>
+		<frame i="spriteimage.hud.radiobutton.off.on.03" d="0"/>
+	</animation>	
+	
+	<animation name="widget.radiobutton.on.on.animation">
+		<frame i="spriteimage.hud.radiobutton.on.off.01" d="1"/>
+		<frame i="spriteimage.hud.radiobutton.on.on.01" d="2"/>
+		<frame i="spriteimage.hud.radiobutton.on.on.02" d="2"/>
+		<frame i="spriteimage.hud.radiobutton.on.on.03" d="0"/>
+	</animation>	
+		
+	<animation name="icon.small.fade.animation">
+		<scale scale="0.775" d="3"/>
+		<scale scale="0.75" d="2"/>	
+		<scale scale="0.725" d="1"/>			
+		<scale scale="0.7" d="1"/>			
+		<scale scale="0.675" d="1"/>
+		<scale scale="0.65" d="1"/>			
+	</animation>
+
+	<animation name="icon.fade.animation">
+		<scale scale="1.15" d="3"/>	
+		<scale scale="1.12" d="2"/>	
+		<scale scale="1.09" d="1"/>	
+		<scale scale="1.06" d="1"/>	
+		<scale scale="1.03" d="1"/>	
+		<scale scale="1" d="1"/>
+	</animation>
+
+	<animation name="menu.smiley.on.animation">
+		<frame i="spriteimage.menu.smiley.off.01" d="1"/>
+		<scale scale="1.06" d="1"/>			
+		<scale scale="1.12" d="2"/>	
+		<frame i="spriteimage.menu.smiley.on.01" d="1"/>
+		<scale scale="1.18" d="2"/>	
+		<frame i="spriteimage.menu.smiley.on.02" d="2"/>
+		<frame i="spriteimage.menu.smiley.on.03" d="4"/>
+		<frame i="icon.fade.animation" d="1"/>
+	</animation>
+
+	<animation name="menu.smiley.off.animation">
+		<scale scale="1"/>
+		<frame i="spriteimage.menu.smiley.on.02" d="1"/>
+		<frame i="spriteimage.menu.smiley.on.01" d="1"/>
+		<frame i="spriteimage.menu.smiley.off.01" d="1"/>
+	</animation>
+
+	<animation name="menu.later.on.animation">
+		<frame i="spriteimage.menu.later.off.01" d="1"/>
+		<scale scale="1.06" d="1"/>			
+		<scale scale="1.12" d="2"/>	
+		<frame i="spriteimage.menu.later.on.01" d="1"/>
+		<scale scale="1.18" d="2"/>	
+		<frame i="spriteimage.menu.later.on.02" d="2"/>
+		<frame i="spriteimage.menu.later.on.03" d="4"/>
+		<frame i="icon.fade.animation" d="1"/>
+	</animation>
+
+	<animation name="menu.later.off.animation">
+		<scale scale="1"/>
+		<frame i="spriteimage.menu.later.on.02" d="1"/>
+		<frame i="spriteimage.menu.later.on.01" d="1"/>
+		<frame i="spriteimage.menu.later.off.01" d="1"/>
+	</animation>	
+	
+	<animation name="menu.text.later.on.animation">
+		<frame i="spriteimage.menu.text.later.on.01" d="6"/>
+		<frame i="spriteimage.menu.text.later.on.02" d="6"/>
+		<frame i="spriteimage.menu.text.later.on.03" d="1"/>
+	</animation>
+
+	<animation name="menu.text.later.off.animation">
+		<frame i="spriteimage.menu.text.later.off.01" d="1"/>
+	</animation>	
+
+	
+	
+	<animation name="logo.animation">
+		<frame i="spriteimage.logo.01" d="0"/>
+		<animcolor a="0"/>
+		<loop count="30"/>
+			<animcolor a="+5" d="1"/>
+		<repeat seq="3"/>
+		<animcolor a="160" d="1"/>
+		<animcolor a="180" d="1"/>		
+		<animcolor a="210" d="1"/>	
+		<animcolor a="255" d="1"/>		
+	</animation>		
+	
+	
+	<animation name="mini.arrow.up.anim">
+		<color c="titles.colormap:text-darker" d="0"/>
+		<frame i="spriteimage.mini.arrow.up.01" d="0"/>
+	</animation>	
+	
+	
+	
+		
+	<!-- COMMON BUTTONS ============================================================================================================================ -->
+
+	
+	<area
+		name="buy.button.spec"
+		disabled="spriteimage.hud.icon.buy.disabled.01"
+		size="=$buy_but_w,$text_button_icon_large_h"
+		offset="=$titlescreen_buttons_offset_x,$titlescreen_buttons_offset_y"
+		layer="11"
+		rightFocus="moregames"
+		upFocus="help"
+		nextFocus="moregames"
+		prevFocus="credits"
+		scale="0.5"
+	>
+		<mouseOff>
+			<animation>
+				<frame i="spriteimage.hud.icon.buy.off.01" d="1"/>
+			</animation>
+		</mouseOff>
+		<mouseOn>
+			<animation>
+				<frame i="spriteimage.hud.icon.buy.on.01" d="1"/>
+				<frame i="spriteimage.hud.icon.buy.on.02" d="1"/>
+				<frame i="spriteimage.hud.icon.buy.on.03" d="1"/>
+				<frame i="spriteimage.hud.icon.buy.on.04" d="8"/>
+				<frame i="spriteimage.hud.icon.buy.on.03" d="5"/>
+				<frame i="spriteimage.hud.icon.buy.on.02" d="3"/>
+				<frame i="spriteimage.hud.icon.buy.on.01" d="1"/>					
+			</animation>		
+		</mouseOn>
+	</area>
+	
+	<area
+		name="play.button.spec"
+		disabled="spriteimage.hud.icon.play.disabled.01"
+		size="=$play_but_w,$text_button_icon_large_h"
+		offset="=$titlescreen_buttons_offset_x,$titlescreen_buttons_offset_y"
+		layer="11"
+		leftFocus="moregames"
+		upFocus="credits"
+		nextFocus="help"
+		prevFocus="moregames"
+		scale="0.5"
+	>
+		<mouseOff>
+			<animation>
+				<frame i="spriteimage.hud.icon.play.off.01" d="1"/>
+			</animation>
+		</mouseOff>
+		<mouseOn>
+			<animation>
+				<frame i="spriteimage.hud.icon.play.on.01" d="1"/>
+				<frame i="spriteimage.hud.icon.play.on.02" d="1"/>
+				<frame i="spriteimage.hud.icon.play.on.03" d="1"/>
+				<frame i="spriteimage.hud.icon.play.on.04" d="8"/>
+				<frame i="spriteimage.hud.icon.play.on.03" d="5"/>
+				<frame i="spriteimage.hud.icon.play.on.02" d="3"/>
+				<frame i="spriteimage.hud.icon.play.on.01" d="1"/>					
+			</animation>		
+		</mouseOn>
+	</area>
+
+	
+	<area
+		name="help.button.spec"
+		disabled="spriteimage.hud.icon.help.disabled.01"
+		layer="11"
+		rightFocus="options"
+		downFocus="buy"
+		nextFocus="options"
+		prevFocus="play"
+		scale="0.5"
+		
+		size="=$help_but_w,$text_button_icon_h"
+		offset="=$titlescreen_buttons_offset_x,$titlescreen_buttons_offset_y"
+	>
+		<mouseOff>
+			<animation>
+				<frame i="spriteimage.hud.icon.help.off.01" d="1"/>
+			</animation>
+		</mouseOff>
+		<mouseOn>
+			<animation>
+				<frame i="spriteimage.hud.icon.help.on.01" d="1"/>
+				<frame i="spriteimage.hud.icon.help.on.02" d="1"/>
+				<frame i="spriteimage.hud.icon.help.on.03" d="1"/>
+				<frame i="spriteimage.hud.icon.help.on.04" d="8"/>
+				<frame i="spriteimage.hud.icon.help.on.03" d="5"/>
+				<frame i="spriteimage.hud.icon.help.on.02" d="3"/>
+				<frame i="spriteimage.hud.icon.help.on.01" d="1"/>					
+			</animation>		
+		</mouseOn>
+	</area>
+
+	<area
+		name="options.button.spec"
+		disabled="spriteimage.hud.icon.options.disabled.01"
+		layer="11"
+		leftFocus="buy"
+		rightFocus="play"
+		upFocus="hiscores"
+		nextFocus="play"
+		prevFocus="buy"
+		scale="0.5"
+		
+		size="=$options_but_w,$text_button_icon_h"
+		offset="=$titlescreen_buttons_offset_x,$titlescreen_buttons_offset_y"
+	>
+		<mouseOff>
+			<animation>
+				<frame i="spriteimage.hud.icon.options.off.01" d="1"/>
+			</animation>
+		</mouseOff>
+		<mouseOn>
+			<animation>
+				<frame i="spriteimage.hud.icon.options.on.01" d="1"/>
+				<frame i="spriteimage.hud.icon.options.on.02" d="1"/>
+				<frame i="spriteimage.hud.icon.options.on.03" d="1"/>
+				<frame i="spriteimage.hud.icon.options.on.04" d="8"/>
+				<frame i="spriteimage.hud.icon.options.on.03" d="5"/>
+				<frame i="spriteimage.hud.icon.options.on.02" d="3"/>
+				<frame i="spriteimage.hud.icon.options.on.01" d="1"/>					
+			</animation>		
+		</mouseOn>
+	</area>
+
+	<area
+		name="credits.button.spec"
+		disabled="spriteimage.hud.icon.credits.disabled.01"
+		layer="11"
+		leftFocus="buy"
+		rightFocus="play"
+		upFocus="hiscores"
+		nextFocus="play"
+		prevFocus="buy"
+		scale="0.5"
+		
+		size="=$credits_but_w,$text_button_icon_h"
+		offset="=$titlescreen_buttons_offset_x,$titlescreen_buttons_offset_y"
+	>
+		<mouseOff>
+			<animation>
+				<frame i="spriteimage.hud.icon.credits.off.01" d="1"/>
+			</animation>
+		</mouseOff>
+		<mouseOn>
+			<animation>
+				<frame i="spriteimage.hud.icon.credits.on.01" d="1"/>
+				<frame i="spriteimage.hud.icon.credits.on.02" d="1"/>
+				<frame i="spriteimage.hud.icon.credits.on.03" d="1"/>
+				<frame i="spriteimage.hud.icon.credits.on.04" d="8"/>
+				<frame i="spriteimage.hud.icon.credits.on.03" d="5"/>
+				<frame i="spriteimage.hud.icon.credits.on.02" d="3"/>
+				<frame i="spriteimage.hud.icon.credits.on.01" d="1"/>					
+			</animation>		
+		</mouseOn>
+	</area>
+
+	<area
+		name="moregames.button.spec"
+		disabled="spriteimage.hud.icon.www.disabled.01"
+		layer="11"
+		leftFocus="buy"
+		rightFocus="play"
+		upFocus="hiscores"
+		nextFocus="play"
+		prevFocus="buy"
+		scale="0.5"
+		
+		size="=$moregames_but_w,$text_button_icon_h"
+		offset="=$titlescreen_buttons_offset_x,$titlescreen_buttons_offset_y"
+	>
+		<mouseOff>
+			<animation>
+				<frame i="spriteimage.hud.icon.www.off.01" d="1"/>
+			</animation>
+		</mouseOff>
+		<mouseOn>
+			<animation>
+				<frame i="spriteimage.hud.icon.www.on.01" d="1"/>
+				<frame i="spriteimage.hud.icon.www.on.02" d="1"/>
+				<frame i="spriteimage.hud.icon.www.on.03" d="1"/>
+				<frame i="spriteimage.hud.icon.www.on.04" d="8"/>
+				<frame i="spriteimage.hud.icon.www.on.03" d="5"/>
+				<frame i="spriteimage.hud.icon.www.on.02" d="3"/>
+				<frame i="spriteimage.hud.icon.www.on.01" d="1"/>					
+			</animation>		
+		</mouseOn>
+	</area>
+
+
+
+	
+	<!-- Button positions -->
+
+	
+	<area name="help.default.button.spec" inherit="help.button.spec" 
+		position="=$titlescreen_buttons_x,$titlescreen_buttons_y" >
+		<anchor x="left" d="=$titlescreen_buttons_x"/>
+	</area>
+	
+	<area name="options.default.button.spec" inherit="options.button.spec" 
+		position="=$titlescreen_buttons_x+$help_but_w,$titlescreen_buttons_y" >
+		<anchor x="left" d="=$titlescreen_buttons_x+$help_but_w"/>
+	</area>
+	
+	<area name="credits.default.button.spec" inherit="credits.button.spec" 
+		position="=$titlescreen_buttons_x+$help_but_w+$options_but_w,$titlescreen_buttons_y" >
+		<anchor x="left" d="=$titlescreen_buttons_x+$help_but_w+$options_but_w"/>
+	</area>
+	
+	<area name="moregames.default.button.spec" inherit="moregames.button.spec" 
+		position="=$titlescreen_buttons_x+$help_but_w+$options_but_w+$credits_but_w,$titlescreen_buttons_y" >
+		<anchor x="left" d="=$titlescreen_buttons_x+$help_but_w+$options_but_w+$credits_but_w"/>
+	</area>
+
+	<area name="buy.default.button.spec" inherit="buy.button.spec" 
+		position="=$SCREEN_W-$titlescreen_buttons_x-$buy_but_w-$play_but_w,$titlescreen_buttons_y+1" >
+		<anchor x="right" d="=0-$titlescreen_buttons_x-$buy_but_w-$play_but_w"/>
+	</area>
+	
+	<area name="play.default.button.spec" inherit="play.button.spec" 
+		position="=$SCREEN_W-$titlescreen_buttons_x-$play_but_w,$titlescreen_buttons_y+1" >
+		<anchor x="right" d="=0-$titlescreen_buttons_x-$play_but_w"/>
+	</area>
+
+	<area name="slot.spec" 
+		inherit="button.spec" position="=$titlescreen_slot_x,$titlescreen_slot_y" size="=$titlescreen_slot_w,$titlescreen_slot_h" 
+	>	
+		<anchor x="left" d="=$titlescreen_slot_x"/>
+		<anchor y="top" d="=0-$titlescreen_slot_h"/>
+		<anchor w="right" d="=0-320+$titlescreen_slot_x+$titlescreen_slot_w"/>
+		
+		<background>
+			<widgetbackground inherit="button_background"
+				color="titles.colormap:slot-off"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="button_background"
+				color="titles.colormap:slot-hover"
+			/>
+		</mouseOnBackground>
+	</area>
+	
+	<area
+		name="close.default.button.spec"
+		position="0, 300"
+		size="17, 14"
+		scale="0.5"
+		nextfocus="play"
+		prevfocus="buy"
+		leftfocus="buy"
+		rightfocus="play"
+		upfocus="play"
+		downfocus="play"
+		layer="12"
+	>
+		<mouseOff>	
+			<animation>
+				<frame i="spriteimage.hud.button.close.on.02" d="1"/>
+				<frame i="spriteimage.hud.button.close.on.01" d="1"/>
+				<frame i="spriteimage.hud.button.close.off.01" d="1"/>
+			</animation>
+		</mouseOff>		
+		<mouseOn>
+			<animation>
+				<frame i="spriteimage.hud.button.close.off.01" d="1"/>
+				<frame i="spriteimage.hud.button.close.on.01" d="1"/>
+				<frame i="spriteimage.hud.button.close.on.02" d="2"/>
+				<frame i="spriteimage.hud.button.close.on.03" d="4"/>
+			</animation>
+		</mouseOn>
+	</area>
+
+	<area
+		name="shutdown.default.button.spec"
+		size="19, 20"
+		scale="0.5"
+		nextfocus="play"
+		prevfocus="buy"
+		leftfocus="buy"
+		rightfocus="play"
+		upfocus="play"
+		downfocus="play"
+		layer="12"
+		position="=1,$SCREEN_H-21"
+	>
+		<anchor y="top" d="-21"/>
+		<disabled>	
+			<animation>
+				<frame i="spriteimage.hud.button.shutdown.disabled.01" d="1"/>
+			</animation>
+		</disabled>	
+		<mouseOff>	
+			<animation>
+				<frame i="spriteimage.hud.button.shutdown.off.01" d="1"/>
+			</animation>
+		</mouseOff>		
+		<mouseOn>
+			<animation>
+				<frame i="spriteimage.hud.button.shutdown.off.01" d="1"/>
+				<frame i="spriteimage.hud.button.shutdown.on.01" d="1"/>
+				<frame i="spriteimage.hud.button.shutdown.on.02" d="2"/>
+				<frame i="spriteimage.hud.button.shutdown.on.03" d="4"/>
+			</animation>
+		</mouseOn>
+	</area>
+
+
+	
+	<!--  buttons turned off when active -->
+	
+	<area name="help.active.button.spec" inherit="help.default.button.spec"	mouseOn="-"	mouseOff="spriteimage.hud.icon.help.on.01" noClick="true"	/>		
+	<area name="options.active.button.spec" inherit="options.default.button.spec" mouseOn="-" mouseOff="spriteimage.hud.icon.options.on.01" noClick="true"	/>			
+	<area name="credits.active.button.spec" inherit="credits.default.button.spec" mouseOn="-" mouseOff="spriteimage.hud.icon.credits.on.01" noClick="true"	/>	
+	<area name="moregames.active.button.spec" inherit="moregames.default.button.spec" mouseOn="-" mouseOff="spriteimage.hud.icon.www.on.01" noClick="true"	/>			
+
+		
+		
+	<!-- TITLE SCREEN ============================================================================================================================ -->
+	<instance
+		name="instant.transition"
+		class="net.puppygames.applet.InstantTransition"
+	/>
+	
+	<instance
+		name="title.screen"
+		class="worm.screens.TitleScreen"
+		autocreated="true"
+		slotbounds="=$titlescreen_slot_x,$titlescreen_slot_y,$titlescreen_slot_w,$titlescreen_slot_h"
+		keyboardnavigation="false"
+		stream="title.stream"
+		transition="instant.transition"
+		centre="both"
+	>
+	
+		<area id="version" position="69,82" size="182,12" noclick="true" font="tinyfont.glfont"  color="!0,255,200,255" halign="right">
+			<anchor x="mid" d="-91" /><anchor y="mid" d="-78" />
+		</area>
+			
+		<area id="registration" position="50,30" size="220,50" noclick="true" font="tinyfont.glfont"  halign="centered" valign="centered" color="!114,255,255,255">
+			<anchor x="mid" d="-110" /><anchor y="bottom" d="30" />
+		</area>
+			
+		<hotkey key="ESCAPE" area="exit"/>
+	
+		<!-- standard titlescreen stuff -->
+		
+		<area id="titlescreen-logo" inherit="titlescreen-logo.spec"/>
+		<area id="titlescreen-left" inherit="titlescreen-left.spec"/>
+		<area id="titlescreen-middle" inherit="titlescreen-middle.spec"/>
+		<area id="titlescreen-right" inherit="titlescreen-right.spec"/>
+		
+		<!-- <area id="titlescreen_top" inherit="titlescreen_top.spec"/> -->
+		<area id="credits" inherit="credits.default.button.spec" />
+		<area id="options" inherit="options.default.button.spec" />
+		<area id="slot" inherit="slot.spec" />		
+		<area id="buy" inherit="buy.default.button.spec" />
+		<area id="play" inherit="play.default.button.spec" />
+		<area id="help"	inherit="help.default.button.spec" />
+		<!--<area id="profiles" inherit="profiles.default.button.spec" />-->		
+		<area id="moregames" inherit="moregames.default.button.spec" />
+		<area id="exit" inherit="shutdown.default.button.spec" />
+
+	</instance>
+
+
+
+	<!-- OPTIONS SCREEN ============================================================================================================================ -->
+	
+
+	<instance
+		name="options.screen"
+		class="worm.screens.OptionsScreen"
+		autocreated="true"
+		keyboardnavigation="false"
+		stream="title.stream"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="close"/>
+	
+		<musicVolumePowerDisplay>
+			<powerdisplay inherit="dialog.powerdisplay.spec" scale="0.5" 
+				location="=$options_bar_x,$musicvolume_y" bounds="=$options_bar_x,$musicvolume_y,$options_bar_w,$options_item_h">
+				<bar on="volume.on.01.animation" off="volume.off.animation"/>
+				<bar on="volume.on.02.animation" off="volume.off.animation"/>
+				<bar on="volume.on.03.animation" off="volume.off.animation"/>
+				<bar on="volume.on.04.animation" off="volume.off.animation"/>
+				<bar on="volume.on.05.animation" off="volume.off.animation"/>
+				<bar on="volume.on.06.animation" off="volume.off.animation"/>
+				<bar on="volume.on.07.animation" off="volume.off.animation"/>
+				<bar on="volume.on.08.animation" off="volume.off.animation"/>
+				<bar on="volume.on.09.animation" off="volume.off.animation"/>
+				<bar on="volume.on.10.animation" off="volume.off.animation"/>
+			</powerdisplay>
+		</musicVolumePowerDisplay>
+		
+		<sfxVolumePowerDisplay>
+			<powerdisplay inherit="dialog.powerdisplay.spec" scale="0.5" 
+				location="=$options_bar_x,$sfxvolume_y" bounds="=$options_bar_x,$sfxvolume_y,$options_bar_w,$options_item_h">
+				<bar on="volume.on.01.animation" off="volume.off.animation"/>
+				<bar on="volume.on.02.animation" off="volume.off.animation"/>
+				<bar on="volume.on.03.animation" off="volume.off.animation"/>
+				<bar on="volume.on.04.animation" off="volume.off.animation"/>
+				<bar on="volume.on.05.animation" off="volume.off.animation"/>
+				<bar on="volume.on.06.animation" off="volume.off.animation"/>
+				<bar on="volume.on.07.animation" off="volume.off.animation"/>
+				<bar on="volume.on.08.animation" off="volume.off.animation"/>
+				<bar on="volume.on.09.animation" off="volume.off.animation"/>
+				<bar on="volume.on.10.animation" off="volume.off.animation"/>
+			</powerdisplay>
+		</sfxVolumePowerDisplay>
+		
+		<mouseSpeedPowerDisplay>
+			<powerdisplay inherit="dialog.powerdisplay.spec" scale="0.5" 
+				location="=$options_bar_x,$mousespeed_y" bounds="=$options_bar_x,$mousespeed_y,$options_bar_w,$options_item_h">
+				<bar on="volume.on.01.animation" off="volume.off.animation"/>
+				<bar on="volume.on.02.animation" off="volume.off.animation"/>
+				<bar on="volume.on.03.animation" off="volume.off.animation"/>
+				<bar on="volume.on.04.animation" off="volume.off.animation"/>
+				<bar on="volume.on.05.animation" off="volume.off.animation"/>
+				<bar on="volume.on.06.animation" off="volume.off.animation"/>
+				<bar on="volume.on.07.animation" off="volume.off.animation"/>
+				<bar on="volume.on.08.animation" off="volume.off.animation"/>
+				<bar on="volume.on.09.animation" off="volume.off.animation"/>
+				<bar on="volume.on.10.animation" off="volume.off.animation"/>
+			</powerdisplay>
+		</mouseSpeedPowerDisplay>
+		
+		<area id="musicvolume" text="MUSIC VOLUME" inherit="options.item.bar.spec" position="=$options_bar_x,$musicvolume_y" />
+		<area id="sfxvolume" text="SFX VOLUME" inherit="options.item.bar.spec" position="=$options_bar_x,$sfxvolume_y" />
+		<area id="mousespeed" text="MOUSESPEED" inherit="options.item.bar.spec" position="=$options_bar_x,$mousespeed_y" />
+		
+		<area id="smallscreen" inherit="options.item.button.spec" text="SMALL WINDOW" position="=$options_button_x,$smallscreen_y" />
+		<area id="smallscreen_on" inherit="options.radiobutton.on.spec" position="=$options_button_x,$smallscreen_y" />
+		<area id="smallscreen_off" inherit="options.radiobutton.off.spec" position="=$options_button_x,$smallscreen_y" />
+
+		<area id="mediumscreen" inherit="options.item.button.spec" text="MEDIUM WINDOW" position="=$options_button_x,$mediumscreen_y" />
+		<area id="mediumscreen_on" inherit="options.radiobutton.on.spec" position="=$options_button_x,$mediumscreen_y" />
+		<area id="mediumscreen_off" inherit="options.radiobutton.off.spec" position="=$options_button_x,$mediumscreen_y" />
+
+		<area id="largescreen" inherit="options.item.button.spec" text="LARGE WINDOW" position="=$options_button_x,$largescreen_y" />
+		<area id="largescreen_on" inherit="options.radiobutton.on.spec" position="=$options_button_x,$largescreen_y" />
+		<area id="largescreen_off" inherit="options.radiobutton.off.spec" position="=$options_button_x,$largescreen_y" />
+		
+		<area id="fullscreen" inherit="options.item.button.spec" text="FULLSCREEN" position="=$options_button_x,$fullscreen_y" />
+		<area id="fullscreen_on" inherit="options.radiobutton.on.spec" position="=$options_button_x,$fullscreen_y" />
+		<area id="fullscreen_off" inherit="options.radiobutton.off.spec" position="=$options_button_x,$fullscreen_y" />
+
+		<area id="show_tooltips" inherit="options.item.button.spec" text="SHOW TOOLTIPS" position="=$options_button_x,$show_tooltips_y" />
+		<area id="show_tooltips_on" inherit="options.checkbox.on.spec" position="=$options_button_x,$show_tooltips_y" />
+		<area id="show_tooltips_off" inherit="options.checkbox.off.spec" position="=$options_button_x,$show_tooltips_y" />
+
+		<area id="show_info" inherit="options.item.button.spec" text="SHOW EXTENDED INFO PANEL" position="=$options_button_x,$show_info_y" />
+		<area id="show_info_on" inherit="options.checkbox.on.spec" position="=$options_button_x,$show_info_y" />
+		<area id="show_info_off" inherit="options.checkbox.off.spec" position="=$options_button_x,$show_info_y" />
+			
+		<area id="show_hints" inherit="options.item.button.spec" text="SHOW HINTS &amp; MESSAGES" position="=$options_button_x,$show_hints_y" />
+		<area id="show_hints_on" inherit="options.checkbox.on.spec" position="=$options_button_x,$show_hints_y" />
+		<area id="show_hints_off" inherit="options.checkbox.off.spec"  position="=$options_button_x,$show_hints_y" />
+
+		<area id="auto_difficulty" inherit="options.item.button.spec" text="AUTO-ADJUST DIFFICULTY" position="=$options_button_x,$auto_difficulty_y" />
+		<area id="auto_difficulty_on" inherit="options.checkbox.on.spec" position="=$options_button_x,$auto_difficulty_y" />
+		<area id="auto_difficulty_off" inherit="options.checkbox.off.spec"  position="=$options_button_x,$auto_difficulty_y" />
+
+		<area id="online_hiscores" inherit="options.item.button.spec" text="ONLINE HISCORES" position="=$options_button_x,$online_hiscores_y" />
+		<area id="online_hiscores_on" inherit="options.checkbox.on.spec" position="=$options_button_x,$online_hiscores_y" />
+		<area id="online_hiscores_off" inherit="options.checkbox.off.spec"  position="=$options_button_x,$online_hiscores_y" />
+
+
+		<area id="dialog_background" text="OPTIONS" inherit="dialog.closeable.spec" position="=$options_x,$options_y" size="=$options_w,$options_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$options_x,$options_y" size="=$options_w,$options_h" />
+
+		<area id="close" inherit="close.default.button.spec" position="=$options_x+$options_w+$close_x_offset,$options_y+$options_h+$close_y_offset" />
+		
+		<!-- standard titlescreen stuff -->
+		
+		<area id="titlescreen-logo" inherit="titlescreen-logo.spec"/>
+		<area id="titlescreen-left" inherit="titlescreen-left.spec"/>
+		<area id="titlescreen-middle" inherit="titlescreen-middle.spec"/>
+		<area id="titlescreen-right" inherit="titlescreen-right.spec"/>
+		
+		<area id="credits" inherit="credits.default.button.spec" />
+		<area id="options" inherit="options.active.button.spec" />
+		<area id="buy" inherit="buy.default.button.spec" />
+		<area id="play" inherit="play.default.button.spec" />
+		<area id="help"	inherit="help.default.button.spec" />
+		<!-- <area id="slot" inherit="slot.spec" />	-->	
+		<area id="moregames" inherit="moregames.default.button.spec" />
+		<area id="exit" inherit="shutdown.default.button.spec" enabled="false"/>
+
+	</instance>
+
+
+
+	<!-- HELP ============================================================================================================================ -->
+	
+	<instance
+		name="instructions.screen"
+		class="worm.screens.InstructionsScreen"
+		autocreated="true"
+		keyboardnavigation="false"
+		stream="title.stream"
+		transition="instant.transition"
+		centre="both"
+	>
+		
+		<hotkey key="ESCAPE" area="close"/>
+
+		<area id="message" text="" inherit="dialog.message.spec" position="=$help_msg_x,$help_msg_y" size="=$help_msg_w,$help_msg_h" />
+		
+		<area id="dialog_background" text="HELP" inherit="dialog.closeable.spec" position="=$help_x,$help_y" size="=$help_w,$help_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$help_x,$help_y" size="=$help_w,$help_h" />
+
+		<area id="close" inherit="close.default.button.spec" position="=$help_x+$help_w+$close_x_offset,$help_y+$help_h+$close_y_offset" />
+
+		<area id="hints" position="=$help_x+13,$help_y+37" size="256,142" mouseOff="spriteimage.help.01" scale="0.5" layer="12" noClick="true"/>
+
+		<hints>
+			<array>
+				<item>spriteimage.help.intro.v2.01</item>
+				<item>spriteimage.help.01</item>
+				<item>spriteimage.help.02</item>
+				<item>spriteimage.help.03</item>
+				<item>spriteimage.help.04</item>
+				<item>spriteimage.help.building.01</item>
+				<item>spriteimage.help.info.2.01</item>
+				<item>spriteimage.help.building.02</item>
+				<item>spriteimage.help.building.03</item>
+				<item>spriteimage.help.building.04</item>
+				<item>spriteimage.help.info.01</item>
+				<item>spriteimage.help.info.02</item>
+				<item>spriteimage.help.info.3.02</item>	
+				<item>spriteimage.help.info.03</item>
+				<item>spriteimage.help.info.04</item>
+				<item>spriteimage.help.info.3.01</item>
+				<item>spriteimage.help.info.2.02</item>
+				<item>spriteimage.help.info.2.03</item>
+				<item>spriteimage.help.info.2.04</item>	
+				<item>spriteimage.help.intro.v2.02</item>				
+			</array>
+		</hints>
+		
+		<area id="prev" text="PREV" inherit="button.spec" position="=$help_x+$dialog_padding,$help_y+$dialog_padding" />
+		<area id="next" text="NEXT" inherit="button.spec" position="=$help_x+$help_w-$button_w-$dialog_padding,$help_y+$dialog_padding" />
+		<area id="page_count" text="1/1" inherit="dialog.message.spec" halign="right" color="titles.colormap:text-dark"
+			size="42,20" position="=$help_w/2+$help_x-22,$help_y+$dialog_padding" />
+
+		<!-- standard titlescreen stuff -->
+		
+		<area id="titlescreen-logo" inherit="titlescreen-logo.spec"/>
+		<area id="titlescreen-left" inherit="titlescreen-left.spec"/>
+		<area id="titlescreen-middle" inherit="titlescreen-middle.spec"/>
+		<area id="titlescreen-right" inherit="titlescreen-right.spec"/>
+		
+		<area id="credits" inherit="credits.default.button.spec" />
+		<area id="options" inherit="options.default.button.spec" />
+		<area id="buy" inherit="buy.default.button.spec" />
+		<area id="play" inherit="play.default.button.spec" />
+		<area id="help"	inherit="help.active.button.spec" />
+		<!-- <area id="slot" inherit="slot.spec" />	-->			
+		<area id="moregames" inherit="moregames.default.button.spec" />
+		<area id="exit" inherit="shutdown.default.button.spec" enabled="false"/>
+
+	</instance>
+
+
+
+	<!-- CREDITS ============================================================================================================================ -->
+
+	<instance
+		name="credits.screen"
+		class="worm.screens.CreditsScreen"
+		autocreated="true"
+		keyboardnavigation="false"
+		stream="title.stream"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="close"/>
+
+		<area id="about" position="=$credits_x+170,$credits_y+61" size="32,32" mouseOff="spriteimage.about.puppy.01" scale="0.5" layer="12" noClick="true"/>
+
+		<area id="about-text" inherit="dialog.message.spec" position="=$credits_x+26,$credits_y+13" size="=$credits_w,100" halign="left" mouseoff="spriteimage.about.copyright.01" offset="-6, 92" scale="0.5">
+			<text>
+{color:text-bold font:smallfont.glfont}PUPPYGAMES 2010
+{color:text font:tinyfont.glfont}CASPIAN PRINCE
+CHAZ WILLETS
+DAVE SUNERTON-BURL
+MICHAEL MANNING
+STEVE LEGGET
+
+SPECIAL THANKS TO BRIAN KRAMER
+			</text>
+		</area>
+			<!--  
+		<area id="about-text-1" inherit="dialog.message.spec" position="=$credits_x-17,$credits_y+88" size="150,12" halign="right" text="PUPPY GAMES 2010" mouseoff="spriteimage.about.copyright.01" offset="46, 6" scale="0.5" />
+		<area id="about-text-2" inherit="dialog.message.spec" position="=$credits_x-17,$credits_y+68" size="150,12" halign="right" text="CASPIAN PRINCE" />
+		<area id="about-text-3" inherit="dialog.message.spec" position="=$credits_x-17,$credits_y+57" size="150,12" halign="right" text="CHAZ WILLETS" />
+		<area id="about-text-4" inherit="dialog.message.spec" position="=$credits_x-17,$credits_y+46" size="150,12" halign="right" text="DAVE SUNERTON-BURL" />
+		<area id="about-text-5" inherit="dialog.message.spec" position="=$credits_x,$credits_y+23" size="=$credits_w,12" halign="centered" text="SPECIAL THANKS TO BRIAN KRAMER" />
+		<area id="message" text="" inherit="dialog.message.spec" position="=$credits_msg_x,$credits_msg_y" size="=$credits_msg_w,$credits_msg_h" />
+-->
+		
+		<area id="dialog_background" text="ABOUT" inherit="dialog.closeable.spec" position="=$credits_x,$credits_y" size="=$credits_w,$credits_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$credits_x,$credits_y" size="=$credits_w,$credits_h" />
+		
+		<area id="close" inherit="close.default.button.spec" position="=$credits_x+$credits_w+$close_x_offset,$credits_y+$credits_h+$close_y_offset" />
+		
+		<area id="titlescreen-logo" inherit="titlescreen-logo.spec"/>
+		<area id="titlescreen-left" inherit="titlescreen-left.spec"/>
+		<area id="titlescreen-middle" inherit="titlescreen-middle.spec"/>
+		<area id="titlescreen-right" inherit="titlescreen-right.spec"/>
+		
+		<area id="credits" inherit="credits.active.button.spec" />
+		<area id="options" inherit="options.default.button.spec" />
+		<area id="buy" inherit="buy.default.button.spec" />
+		<area id="play" inherit="play.default.button.spec" />
+		<area id="help"	inherit="help.default.button.spec" />
+		<area id="moregames" inherit="moregames.default.button.spec" />
+		<area id="exit" inherit="shutdown.default.button.spec" enabled="false"/>
+
+	</instance>
+
+
+	<animation name="registered.animation">
+		<scale scale="0.5"/>
+		<frame i="spriteimage.star" d="1"/>
+	</animation>
+
+	<!-- HISCORES ============================================================================================================================
+	
+	<instance class="net.puppygames.applet.screens.HiscoresScreen"
+		name="hiscores.screen"
+		autocreated="true"
+		registeredx="=$hiscores_x+$hiscores_padding+$hiscores_rank_w+9"
+		registeredy="4"
+		registeredappearance="registered.animation"
+		
+		rankx="=$hiscores_x+$hiscores_padding"
+		namex="=$hiscores_x+$hiscores_padding+$hiscores_star_w+$hiscores_rank_w+$hiscores_gap_x"
+		scorex="=$hiscores_x+$hiscores_padding+$hiscores_star_w+$hiscores_rank_w+$hiscores_name_w+$hiscores_gap_x"
+		rankwidth="=$hiscores_rank_w"
+		namewidth="=$hiscores_name_w"
+		pointswidth="=$hiscores_score_w"
+		ypos="=$hiscores_y+$hiscores_h-40"
+		ygap="=$hiscores_gap_y"
+		
+		rankfont="smallfont.glfont"
+		namefont="tinyfont.glfont"
+		scorefont="smallfont.glfont"
+		keyboardnavigation="false"
+		progressbackgroundcolor="34,154,146,224"
+		progressbarcolor="255,255,255,255"
+		stream="hiscores.stream"
+		transition="instant.transition"
+	>
+
+		<area id="dialog_background" text="HISCORES" inherit="dialog.closeable.spec" position="=$hiscores_x,$hiscores_y" size="=$hiscores_w,$hiscores_h" />
+
+		<area id="close" inherit="close.default.button.spec" position="=$hiscores_x+$hiscores_w+$close_x_offset,$hiscores_y+$hiscores_h+$close_y_offset" />
+ 
+ 		<area id="remote_on" text="SHOW LOCAL SCORES" inherit="button.spec" size="=$hiscores_toggle_button_w,$button_h" position="=$hiscores_toggle_button_w/-2+160,$hiscores_y+$dialog_padding" />
+  		<area id="remote_off" text="SHOW ONLINE SCORES" inherit="button.spec" size="=$hiscores_toggle_button_w,$button_h" position="=$hiscores_toggle_button_w/-2+160,$hiscores_y+$dialog_padding" />
+ 
+		<area id="prev" text="PREV" inherit="button.spec" position="=$hiscores_x+$dialog_padding,$hiscores_y+$dialog_padding" />
+		<area id="next" text="NEXT" inherit="button.spec" position="=$hiscores_x+$hiscores_w-$button_w-$dialog_padding,$hiscores_y+$dialog_padding" />
+		
+
+		<area id="titlescreen" inherit="titlescreen.spec"/>
+		<area id="titlescreen_top" inherit="titlescreen_top.spec"/>
+		<area id="credits" inherit="credits.default.button.spec" />
+		<area id="options" inherit="options.default.button.spec" />
+		<area id="buy" inherit="buy.default.button.spec" />
+		<area id="play" inherit="play.default.button.spec" />
+		<area id="help"	inherit="help.default.button.spec" />
+		<area id="hiscores" inherit="hiscores.active.button.spec" />
+		<area id="profiles" inherit="profiles.default.button.spec" />			
+		<area id="moregames" inherit="moregames.default.button.spec" />
+		<area id="exit" inherit="shutdown.default.button.spec" />
+
+	</instance>
+-->
+
+	
+
+
+
+
+	<!-- DIALOGS ============================================================================================================================ -->
+
+
+
+
+	<!--  RESTORE GAME -->
+
+	<instance class="net.puppygames.applet.screens.DialogScreen"
+		name="restore_game.dialog"
+		keyboardnavigation="false"
+		dialog="true"
+		transition="instant.transition"
+		centre="both"
+	>
+		<!-- All dialogs have these hotkeys... -->
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="ok"/>
+		<hotkey key="Y" area="yes"/>
+		<hotkey key="N" area="no"/>
+
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="message" inherit="dialog.message.spec" position="=$dialog_msg_x,$dialog_msg_y" size="=$dialog_msg_w,$dialog_msg_h" />
+		<area id="title" inherit="dialog.spec" position="=$dialog_x,$dialog_y" size="=$dialog_w,$dialog_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$dialog_x,$dialog_y" size="=$dialog_w,$dialog_h" />
+		
+		<area id="yes" text="YES" inherit="button.spec" position="=$button_w/-2+$SCREEN_X-$button_w-$button_gap,$dialog_y+$dialog_padding" />
+		<area id="no" text="NO" inherit="button.spec" position="=$button_w/-2+$SCREEN_X,$dialog_y+$dialog_padding" />
+		<area id="cancel" text="CANCEL" inherit="button.spec" position="=$button_w/-2+$SCREEN_X+$button_w+$button_gap,$dialog_y+$dialog_padding" />
+	
+	</instance>
+
+
+
+	<!-- YES/CANCEL SCREEN ....  restore game, quit from game etc. -->
+
+	<instance class="net.puppygames.applet.screens.DialogScreen"
+		name="yescancel.dialog"
+		keyboardnavigation="false"
+		dialog="true"
+		transition="instant.transition"
+		centre="both"
+		allcaps="true"
+	>
+		<!-- All dialogs have these hotkeys... -->
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="ok"/>
+		<hotkey key="Y" area="yes"/>
+		<hotkey key="N" area="no"/>
+		
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="message" inherit="dialog.message.spec" position="=$dialog_msg_x,$dialog_msg_y+20" size="=$dialog_msg_w,$dialog_msg_h" />
+		<area id="title" inherit="dialog.spec" position="=$dialog_small_x,$dialog_small_y+20" size="=$dialog_small_w,$dialog_small_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$dialog_small_x,$dialog_small_y+20" size="=$dialog_small_w,$dialog_small_h" />
+		
+		<area id="ok" text="OK" inherit="button.spec" position="=$button_gap/-2-$button_w+$SCREEN_X,$dialog_small_y+$dialog_padding+20" />	
+		<area id="cancel" text="CANCEL" inherit="button.spec" position="=$button_gap/2+$SCREEN_X,$dialog_small_y+$dialog_padding+20" />
+	
+	</instance>
+
+	
+
+	<!-- YES/CANCEL SCREEN ....  delete profile dialog -->
+
+	<instance class="net.puppygames.applet.screens.DialogScreen"
+		name="deleteyescancel.dialog"
+		keyboardnavigation="false"
+		dialog="true"
+		transition="instant.transition"
+		centre="both"
+		allcaps="true"
+	>
+		<!-- All dialogs have these hotkeys... -->
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="ok"/>
+		<hotkey key="Y" area="yes"/>
+		<hotkey key="N" area="no"/>
+		
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="message" inherit="dialog.message.spec" position="=$dialog_msg_x,$dialog_msg_y" size="=$dialog_msg_w,$dialog_msg_h" />
+		<area id="title" inherit="dialog.spec" position="=$dialog_x,$dialog_large_y" size="=$dialog_w,$dialog_large_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$dialog_x,$dialog_large_y" size="=$dialog_w,$dialog_large_h" />
+		
+		<area id="ok" text="OK" inherit="button.spec" position="=$button_gap/-2-$button_w+$SCREEN_X,$dialog_large_y+$dialog_padding" />	
+		<area id="cancel" text="CANCEL" inherit="button.spec" position="=$button_gap/2+$SCREEN_X,$dialog_large_y+$dialog_padding" />
+	
+	</instance>
+
+	<!-- PLAYER NAME SCREEN -->
+	
+	<instance class="net.puppygames.applet.screens.EnterNameDialog"
+		name="entername.screen"
+		name_x="4"
+		name_y="4"
+		titleText="PLEASE ENTER YOUR NAME"
+		keyboardnavigation="false"
+		dialog="true"
+		autocreated="true"
+		transition="instant.transition"
+		color="0,0,0,255"
+		allcaps="true"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="ok"/>
+		<hotkey modifier="LCONTROL" key="Z" area="cancel"/>
+		
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="instructions" text="PLEASE TYPE YOUR NAME BELOW" inherit="dialog.message.spec" position="=$dialog_msg_x,$input_msg_y" size="=$dialog_msg_w,$dialog_msg_h" />
+		<area id="title" inherit="dialog.spec" position="=$dialog_x,$dialog_large_y" size="=$dialog_w,$dialog_large_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$dialog_x,$dialog_large_y" size="=$dialog_w,$dialog_large_h" />
+
+		<area id="ok" text="OK" inherit="button.spec" position="=$button_gap/-2-$button_w+$SCREEN_X,$dialog_large_y+$dialog_padding" />	
+		<area id="cancel" text="CANCEL" inherit="button.spec" position="=$button_gap/2+$SCREEN_X,$dialog_large_y+$dialog_padding" />
+
+		<area id="name" color="0,0,0" inherit="textfield.spec" position="=70,$input_y" size="180,16" />
+
+	</instance>			
+	
+
+	<!-- ERROR DIALOG -->
+	
+	<instance class="net.puppygames.applet.screens.DialogScreen"
+		name="error.dialog"
+		keyboardnavigation="false"
+		dialog="true"
+		transition="instant.transition"
+		centre="both"
+		allcaps="true"
+	>
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="cancel"/>
+		
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="title" inherit="dialog.spec" position="=$dialog_x-10,$dialog_large_y+10" size="=$dialog_w+20,$dialog_large_h" />
+		<area id="message" inherit="dialog.message.spec" position="=$dialog_msg_x-10,$dialog_msg_y+10" size="=$dialog_msg_w+20,$dialog_msg_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$dialog_x-10,$dialog_large_y+10" size="=$dialog_w+20,$dialog_large_h" />
+
+		<area id="cancel" text="OK" inherit="button.spec" position="=$button_w/-2+$SCREEN_X,$dialog_large_y+$dialog_padding+10" />	
+	
+	</instance>
+
+
+
+	<!-- SLOT MANAGEMENT -->
+
+
+	<widgetbackground
+		name="slot.background"
+		inherit="button_background"
+		color="titles.colormap:slot-off"
+	/>	
+	<widgetbackground
+		name="slot.selected.background"
+		inherit="button_background"
+		color="titles.colormap:slot-on"
+	/>
+	<widgetbackground
+		name="slot.hovered.background"
+		inherit="button_background"
+		color="titles.colormap:slot-hover"
+	/>
+	
+
+	
+	<instance class="net.puppygames.applet.screens.SlotScreen"
+		name="slot.dialog"
+		dialog="true"
+		keyboardnavigation="false"
+		slotclass="worm.effects.WormSlotEffect"
+		gap="=$slots_gap"
+		color="255,0,0"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="cancel"/>
+
+		<area id="slot_origin" noclick="true" position="=$slots_slot_x,$slots_button_y+$slots_y_offset" />
+		
+		<area id="slots_background" inherit="dialog.spec" text="PROFILES" position="=$slots_x,$slots_y" size="=$slots_w,$slots_h" />
+		<area id="slots_background_glow" inherit="dialog.glow.spec" position="=$slots_x,$slots_y" size="=$slots_w,$slots_h" />
+
+		<area id="message" inherit="dialog.message.spec" text="SELECT A PROFILE AND CLICK OK TO LOAD" position="=$slots_x,$slots_y+$slots_h-38" size="=$slots_w,12" />
+
+		<area id="new" text="NEW" inherit="button.spec" position="=$slots_button_x,$slots_button_y"/>
+		<!-- <area id="rename" text="RENAME" inherit="button.spec" position="=$slots_button_x,1*-$slots_button_gap+$slots_button_y"/> -->
+		<area id="delete" text="DELETE" inherit="button.red.spec" position="=$slots_button_x,1*-$slots_button_gap+$slots_button_y" />
+		<area id="cancel" text="OK" inherit="button.spec" position="=$slots_button_x,$slots_y+$dialog_padding" />
+
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+
+	</instance>
+	
+	<instance class="worm.screens.NagScreen"
+		name="nag.screen"
+		autocreated="true"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="later"/>
+		<hotkey key="RETURN" area="buy"/>
+
+		<nagtext>
+			<array>
+				<item><text>{font:tinyfont.glfont}REGISTER {color:titles.colormap:text-bold}REVENGE OF THE TITANS{color:titles.colormap:text} TODAY USING PROMOTIONAL CODE {color:titles.colormap:text-bold}ROTTROCKS\n{color:titles.colormap:text}AND GET\n\n{font:bigfont.glfont color:titles.colormap:text-bold}50% OFF{font:tinyfont.glfont color:titles.colormap:text}\n\nTHE NORMAL PRICE!*\n\n{color:titles.colormap:text-darker}* OFFER VALID UNTIL NEXT RELEASE</text></item>
+				<item><text>{font:tinyfont.glfont}REGISTER {color:titles.colormap:text-bold}REVENGE OF THE TITANS{color:titles.colormap:text} TODAY USING PROMOTIONAL CODE {color:titles.colormap:text-bold}ZARQUON\n{color:titles.colormap:text}AND GET\n\n{font:bigfont.glfont color:titles.colormap:text-bold}66% OFF{font:tinyfont.glfont color:titles.colormap:text}\n\nTHE NORMAL PRICE!*\n\n{color:titles.colormap:text-darker}* OFFER VALID UNTIL NEXT RELEASE</text></item>
+				<item><text>{font:tinyfont.glfont}REGISTER {color:titles.colormap:text-bold}REVENGE OF THE TITANS{color:titles.colormap:text} TODAY USING PROMOTIONAL CODE {color:titles.colormap:text-bold}OCCULUSREX\n{color:titles.colormap:text}AND GET\n\n{font:bigfont.glfont color:titles.colormap:text-bold}75% OFF{font:tinyfont.glfont color:titles.colormap:text}\n\nTHE NORMAL PRICE!*\n\n{color:titles.colormap:text-darker}* OFFER VALID UNTIL NEXT RELEASE</text></item>
+				<item><text>{font:tinyfont.glfont}REGISTER {color:titles.colormap:text-bold}REVENGE OF THE TITANS{color:titles.colormap:text} TODAY USING PROMOTIONAL CODE {color:titles.colormap:text-bold}HYPERION\n{color:titles.colormap:text}AND GET\n\n{font:bigfont.glfont color:titles.colormap:text-bold}80% OFF{font:tinyfont.glfont color:titles.colormap:text}\n\nTHE NORMAL PRICE!*\n\n{color:titles.colormap:text-darker}* OFFER VALID UNTIL NEXT RELEASE</text></item>
+				<item><text>{font:tinyfont.glfont}REGISTER {color:titles.colormap:text-bold}REVENGE OF THE TITANS{color:titles.colormap:text} TODAY USING PROMOTIONAL CODE {color:titles.colormap:text-bold}QUIRKAFLEEG\n{color:titles.colormap:text}AND GET\n\n{font:bigfont.glfont color:titles.colormap:text-bold}90% OFF{font:tinyfont.glfont color:titles.colormap:text}\n\nTHE NORMAL PRICE!*\n\n{color:titles.colormap:text-darker}* OFFER VALID UNTIL NEXT RELEASE</text></item>
+			</array>		
+		</nagtext>
+		
+		<area id="titlescreen" inherit="titlescreen.spec"><anchor y="mid" d="-50"/><anchor x="mid" d="0"/></area>
+		
+		<area id="nag-text" inherit="dialog.message.spec" leading="-1" position="=$b_nag_x+$b_nag_msg_x,$b_nag_y+$b_nag_msg_y" size="=$b_nag_msg_w,$b_nag_msg_h" valign="top" halign="left" text="">
+ 			<background>
+				<widgetbackground inherit="human-speech-top-left-info.background"
+					color="dialog-glow"
+					insets="24,40,24,22"
+				/>
+			</background>
+ 		</area>
+ 		
+		<area id="signupscreen" layer="0" position="=$b_nag_x+115,$b_nag_y-60" size="32,64" scale="0.5" mouseOff="spriteimage.nag.preorder.gid.01" noClick="true"/>
+ 		<area id="spotlight" layer="-1" position="=$b_nag_x+120,$b_nag_y-60" scale="0.7" mouseOff="spriteimage.story.spotlight.earth.01" noClick="true"/>
+ 	
+
+		<area id="later" text="MAYBE LATER" inherit="button.red.spec" size="=$nag_later_button_w,$button_h" 
+			position="=$continue_button_x,$continue_button_y" 
+		><anchor x="right" d="=0-$nag_later_button_w-$continue_button_offset"/></area>
+		
+		<area id="buy" text="BUY NOW!" inherit="button.nag.buy.spec" position="=$nag_x+$nag_msg_x+$nag_msg_w-$nag_later_button_w,$nag_y+$nag_msg_y" />	
+
+ 		<area id="spotlight" layer="-1" position="=$nag_x+190,$nag_y+10" scale="0.7" mouseOff="spriteimage.story.spotlight.earth.01" noClick="true"/>
+ 		
+	</instance>	
+
+
+	<!-- register screen -->  
+	
+	<instance class="net.puppygames.applet.screens.RegisterScreen"
+		name="register.screen"
+		keyboardnavigation="false"
+		transition="instant.transition"
+		color="0,0,0,255"
+		centre="both"		
+		emailInsets="4,4,12,0"
+		font="tinyfont.glfont"
+	>
+	
+		<hotkey key="ESCAPE" area="later"/>
+		<hotkey key="RETURN" area="register"/>
+		
+		<area id="titlescreen" inherit="titlescreen.spec"/>
+		
+		<area id="instructions" text="{color:titles.colormap:text}IF YOU HAVE BOUGHT REVENGE OF THE TITANS, PLEASE {color:titles.colormap:text-bold}ENTER YOUR EMAIL{color:titles.colormap:text} TO REGISTER AND {color:titles.colormap:text-bold}UNLOCK THE FULL GAME{color:titles.colormap:text}" 
+			inherit="dialog.message.spec" 
+			position="=$reg_msg_x,$reg_msg1_y" size="=$reg_msg_w,$reg_msg1_h" />
+		<area id="instructions2" text="{color:titles.colormap:text}OR ENTER YOUR EMAIL TO GET THE {color:titles.colormap:text-bold}PUPPY GAMES NEWSLETTER!" inherit="dialog.message.spec" 
+			position="=$reg_msg_x,$reg_msg2_y" size="=$reg_msg_w,$reg_msg2_h" />
+
+		<area id="title" text="REGISTER" inherit="dialog.spec" position="=$reg_x,$reg_y" size="=$reg_w,$reg_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$reg_x,$reg_y" size="=$reg_w,$reg_h" />
+
+		<area id="register" text="OK" inherit="button.spec" position="=$button_gap/-2-$button_w+$SCREEN_X,$reg_y+$dialog_padding" />	
+		<area id="later" text="CANCEL" inherit="button.spec" position="=$button_gap/2+$SCREEN_X,$reg_y+$dialog_padding" />
+
+		<area id="email" color="0,0,0" inherit="textfield.spec" position="=70,$reg_input_y" size="180,16" />
+
+		<area id="registerscreen" inherit="titlescreen.spec"/>
+	
+	</instance>
+
+	<instance
+		name="money2500.prize" 
+		class="worm.features.MoneyPrizeFeature"
+		amount="2500"
+	>
+		<screenMessage>SIGN UP FOR THE {color:titles.colormap:text-bold}PUPPYGAMES NEWSLETTER{color:titles.colormap:text} TO GET NEWS OF NEW UPDATES AND RELEASES, AND GET \n{font:bigfont.glfont}{color:titles.colormap:text-bold}$2500!{font:tinyfont.glfont}{color:titles.colormap:text-darker}*\n* NOT REAL MONEY OBVIOUSLY :)</screenMessage>
+		<emailMessage>Thank you for signing up to the Puppygames newsletter! Now enter the code [CODE] into the ZX-Bot to claim your $2500 prize (use copy and paste).</emailMessage>
+		<successMessage>10 MONEY += $2500\n20 VICTORY = ASSURED\n\nBEEP!</successMessage>
+	</instance>
+
+	<instance
+		name="money5000.prize" 
+		class="worm.features.MoneyPrizeFeature"
+		amount="5000"
+	>
+		<screenMessage>SIGN UP FOR THE {color:titles.colormap:text-bold}PUPPYGAMES NEWSLETTER{color:titles.colormap:text} TO GET NEWS OF NEW UPDATES AND RELEASES, AND GET \n{font:bigfont.glfont}{color:titles.colormap:text-bold}$5000!{font:tinyfont.glfont}{color:titles.colormap:text-darker}*\n* NOT REAL MONEY OBVIOUSLY :)</screenMessage>
+		<emailMessage>Thank you for signing up to the Puppygames newsletter! Now enter the code [CODE] into the ZX-Bot to claim your $5000 prize (use copy and paste).</emailMessage>
+		<successMessage>10 MONEY += $5000\n20 VICTORY = ASSURED\n\nBEEP!</successMessage>
+	</instance>
+
+	<instance
+		name="money7500.prize" 
+		class="worm.features.MoneyPrizeFeature"
+		amount="7500"
+	>
+		<screenMessage>SIGN UP FOR THE {color:titles.colormap:text-bold}PUPPYGAMES NEWSLETTER{color:titles.colormap:text} TO GET NEWS OF NEW UPDATES AND RELEASES, AND GET \n{font:bigfont.glfont}{color:titles.colormap:text-bold}$7500!{font:tinyfont.glfont}{color:titles.colormap:text-darker}*\n* NOT REAL MONEY OBVIOUSLY :)</screenMessage>
+		<emailMessage>Thank you for signing up to the Puppygames newsletter! Now enter the code [CODE] into the ZX-Bot to claim your $7500 prize (use copy and paste).</emailMessage>
+		<successMessage>10 MONEY += $7500\n20 VICTORY = ASSURED\n\nBEEP!</successMessage>
+	</instance>
+
+	<instance
+		name="powerupSmartbomb.prize" 
+		class="worm.features.PowerupPrizeFeature"
+		powerup="smartbomb.powerup"
+		amount="3"
+	>
+		<screenMessage>SIGN UP FOR THE {color:titles.colormap:text-bold}PUPPYGAMES NEWSLETTER{color:titles.colormap:text} TO GET NEWS OF NEW UPDATES AND RELEASES, AND GET \n{font:bigfont.glfont}{color:titles.colormap:text-bold}3 SMARTBOMBS!{font:tinyfont.glfont}</screenMessage>
+		<emailMessage>Thank you for signing up to the Puppygames newsletter! Now enter the code [CODE] into the ZX-Bot to claim your smartbombs (use copy and paste).</emailMessage>
+		<successMessage>10 SMARTBOMBS += 3\n20 ALIENS.NUKE()\n\nBEEP!</successMessage>
+	</instance>
+
+	<instance
+		name="powerupBezerk.prize" 
+		class="worm.features.PowerupPrizeFeature"
+		powerup="bezerk.powerup"
+		amount="3"
+	>
+		<screenMessage>SIGN UP FOR THE {color:titles.colormap:text-bold}PUPPYGAMES NEWSLETTER{color:titles.colormap:text} TO GET NEWS OF NEW UPDATES AND RELEASES, AND GET \n{font:bigfont.glfont}{color:titles.colormap:text-bold}3 BEZERK POWERUPS!{font:tinyfont.glfont}</screenMessage>
+		<emailMessage>Thank you for signing up to the Puppygames newsletter! Now enter the code [CODE] into the ZX-Bot to claim your bezerks (use copy and paste).</emailMessage>
+		<successMessage>10 BEZERK += 3\n20 ALIENS.ZAP()\n30 GOTO 20\n\nBEEP!</successMessage>
+	</instance>
+
+	<instance
+		name="powerupMulti.prize" 
+		class="worm.features.MultiPrizeFeature"
+	>
+		<screenMessage>SIGN UP FOR THE {color:titles.colormap:text-bold}PUPPYGAMES NEWSLETTER{color:titles.colormap:text} TO GET NEWS OF NEW UPDATES AND RELEASES, AND GET A\n{font:bigfont.glfont}{color:titles.colormap:text-bold}BONUS POWERUP PACK!{font:tinyfont.glfont}</screenMessage>
+		<emailMessage>Thank you for signing up to the Puppygames newsletter! Now enter the code [CODE] into the ZX-Bot to claim your bonus powerup pack (use copy and paste). This will give you 1 each of every standard powerup for your current campaign!</emailMessage>
+		<successMessage>10 POWERUPS ++\n20 VICTORY = ASSURED\n\nBEEP!</successMessage>
+	</instance>
+
+	<!-- sign up for newsletter screen  -->
+	<instance class="worm.screens.SignUpScreen"
+		name="signup.screen"
+		autocreated="true"
+		keyboardnavigation="false"
+		transition="instant.transition"
+		color="0,0,0,255"
+		centre="both"		
+		emailInsets="4,4,12,0"
+		font="tinyfont.glfont"
+	>
+	
+		<hotkey key="ESCAPE" area="later"/>
+		<hotkey key="RETURN" area="register"/>
+		
+		<area id="titlescreen" inherit="titlescreen.spec"><anchor y="mid" d="-50"/><anchor x="mid" d="0"/></area>
+		
+		<area id="signup-nag" inherit="dialog.message.spec" leading="-1" position="=$b_nag_x+$b_nag_msg_x,$b_nag_y+$b_nag_msg_y" size="=$b_nag_msg_w,$b_nag_msg_h" valign="top" halign="left"
+			text="SIGN UP FOR THE {color:titles.colormap:text-bold}PUPPYGAMES NEWSLETTER{color:titles.colormap:text} 
+			TO GET NEWS OF NEW UPDATES AND RELEASES, AND GET
+			\n{font:bigfont.glfont}{color:titles.colormap:text-bold}$5000!{font:tinyfont.glfont}{color:titles.colormap:text-darker}*
+			\n* NOT REAL MONEY OBVIOUSLY :)" 
+ 		>
+ 			<background>
+				<widgetbackground inherit="human-speech-top-left-info.background"
+					color="dialog-glow"
+					insets="24,40,24,22"
+				/>
+			</background>
+ 		</area>
+ 		
+		<area id="email" color="0,0,0" inherit="textfield.spec" position="=$b_nag_x+$b_nag_msg_x,$b_nag_y+$b_nag_msg_y+28" size="=$b_nag_msg_w,16" />
+		<area id="instruction" scale="0.5" textOffset="12,0" offset="2,4" mouseoff="mini.arrow.up.anim" inherit="dialog.message.spec" halign="left" valign="bottom" text="{color:titles.colormap:text-darker}E-MAIL" position="=$b_nag_x+$b_nag_msg_x,$b_nag_y+$b_nag_msg_y+9" size="=$b_nag_msg_w,12" />
+
+
+		<area id="signup" text="SIGN UP!" inherit="button.nag.buy.spec" position="=$b_nag_x+$b_nag_msg_x+$b_nag_msg_w-$b_nag_later_button_w-2,$b_nag_y+$b_nag_msg_y-5" />	
+
+		<area id="signupscreen" layer="0" position="=$b_nag_x+115,$b_nag_y-60" size="32,64" scale="0.5" mouseOff="spriteimage.nag.preorder.gid.01" noClick="true"/>
+ 		<area id="spotlight" layer="-1" position="=$b_nag_x+120,$b_nag_y-60" scale="0.7" mouseOff="spriteimage.story.spotlight.earth.01" noClick="true"/>
+ 	
+ 	
+ 		<area id="later" text="NO THANKS" inherit="button.red.spec" size="=$b_nag_later_button_w,$button_h" 
+			position="=$continue_button_x,$continue_button_y" 
+		><anchor x="right" d="=0-$b_nag_later_button_w-$continue_button_offset"/></area>	
+	
+		<area id="dontShowAgain" inherit="options.item.button.spec" text="DON'T ASK AGAIN" textOffset="19,0" position="=$continue_button_x,$continue_button_y+3">
+		<anchor x="left" d="=$abort_button_x+2"/></area>
+		<area id="dontShowAgain_on" inherit="options.radiobutton.on.spec" position="=$continue_button_x,$continue_button_y+3">
+		<anchor x="left" d="=$abort_button_x+2"/></area>
+		<area id="dontShowAgain_off" inherit="options.radiobutton.off.spec" position="=$continue_button_x,$continue_button_y+3">
+		<anchor x="left" d="=$abort_button_x+2"/></area>
+	
+	</instance>
+
+
+	<!-- enter bonus code  -->
+	
+	<instance class="worm.screens.UnlockBonusScreen"
+		name="unlockbonus.screen"
+		autocreated="true"
+		keyboardnavigation="false"
+		transition="instant.transition"
+		color="0,0,0,255"
+		centre="both"		
+		codeInsets="4,4,12,0"
+		font="tinyfont.glfont"
+	>
+	
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="ok"/>
+		
+		<area id="titlescreen" inherit="titlescreen.spec"><anchor y="mid" d="-30"/><anchor x="mid" d="0"/></area>
+		
+		<area id="message" inherit="dialog.message.spec" leading="-1" position="=$unlock_bonus_x+$unlock_bonus_msg_x,$unlock_bonus_y+$unlock_bonus_msg_y" size="=$unlock_bonus_msg_w,$unlock_bonus_msg_h" valign="top" halign="left"
+			text="{color:titles.colormap:text}10 CHECK E-MAIL\n
+			      {color:titles.colormap:text}20 INPUT CODE\n
+			      {color:titles.colormap:text}30 {color:titles.colormap:text-bold}UNLOCK BONUS!\n\n
+			      {color:titles.colormap:text}BEEP!\n"
+ 		>
+ 			<background>
+				<widgetbackground inherit="speechbubble-right-2.background.spec"
+					color="dialog-glow"
+					insets="40,22,24,22"
+				/>
+			</background>
+ 		</area>
+ 		
+		<area id="code" color="0,0,0" inherit="textfield.spec" position="=$unlock_bonus_x+$unlock_bonus_msg_x-1,$unlock_bonus_y+$unlock_bonus_msg_y+25" size="=$unlock_bonus_msg_w,16" />
+		<area id="instruction" scale="0.5" textOffset="12,0" offset="2,4" mouseoff="mini.arrow.up.anim" inherit="dialog.message.spec" halign="left" valign="bottom" text="{color:titles.colormap:text-darker}HEX CODE" position="=$unlock_bonus_x+$unlock_bonus_msg_x,$unlock_bonus_y+$unlock_bonus_msg_y+6" size="=$unlock_bonus_msg_w,12" />
+
+
+		<area id="ok" text="UNLOCK!" inherit="button.spec" size="=$unlock_bonus_button_w,$button_h" position="=$unlock_bonus_x+$unlock_bonus_msg_x+$unlock_bonus_msg_w-$unlock_bonus_button_w,$unlock_bonus_y+$unlock_bonus_msg_y" />	
+
+		<area layer="5" scale="0.5" position="=$unlock_bonus_x+$unlock_bonus_bot_x,$unlock_bonus_y+$unlock_bonus_bot_y" mouseoff="spriteimage.character.statbot.earth.01" noClick="true"/>
+		<area layer="1" scale="0.5" position="=$unlock_bonus_x+$unlock_bonus_bot_x,$unlock_bonus_y+$unlock_bonus_bot_y" mouseoff="spriteimage.character.ground.01" noClick="true"/>
+		<area layer="4" scale="0.5" position="=$unlock_bonus_x+$unlock_bonus_bot_x,$unlock_bonus_y+$unlock_bonus_bot_y" mouseoff="statbot.earth.body.idle.anim" noClick="true"/>
+		<area layer="6" scale="0.5" position="=$unlock_bonus_x+$unlock_bonus_bot_x,$unlock_bonus_y+$unlock_bonus_bot_y" mouseoff="statbot.earth.glow.anim" noClick="true"/>
+		<area layer="0" scale="0.5" position="=$unlock_bonus_x+$unlock_bonus_bot_x,$unlock_bonus_y+$unlock_bonus_bot_y" mouseoff="spriteimage.story.spotlight.earth.01" noClick="true"/>
+		<area layer="7" scale="0.5" position="=$unlock_bonus_x+$unlock_bonus_bot_x,$unlock_bonus_y+$unlock_bonus_bot_y" mouseoff="spriteimage.character.statbot.earth.top.06" noClick="true"/>
+		
+ 		<area id="cancel" text="MAYBE LATER" inherit="button.red.spec" size="=$unlock_bonus_later_button_w,$button_h" 
+			position="=$continue_button_x,$continue_button_y" 
+		><anchor x="right" d="=0-$unlock_bonus_later_button_w-$continue_button_offset"/></area>	
+		
+		<area id="dontShowAgain" group="checkboxes" inherit="options.item.button.spec" text="DON'T ASK AGAIN" textOffset="19,0" position="=$continue_button_x,$continue_button_y+3">
+		<anchor x="left" d="=$abort_button_x+2"/></area>
+		<area id="dontShowAgain_on" group="checkboxes" inherit="options.radiobutton.on.spec" position="=$continue_button_x,$continue_button_y+3">
+		<anchor x="left" d="=$abort_button_x+2"/></area>
+		<area id="dontShowAgain_off" group="checkboxes" inherit="options.radiobutton.off.spec" position="=$continue_button_x,$continue_button_y+3">
+		<anchor x="left" d="=$abort_button_x+2"/></area>
+	
+	</instance>
+	
+
+	<!-- register dialogs -->
+
+	<!-- CANCEL SCREEN ....  allow player to cancel registration -->
+
+	<instance class="net.puppygames.applet.screens.DialogScreen"
+		name="cancel.dialog"
+		keyboardnavigation="false"
+		dialog="true"
+		transition="instant.transition"
+		centre="both"
+		allCaps="true"
+	>
+		<hotkey key="ESCAPE" area="cancel"/>
+		
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="message" inherit="dialog.message.spec" position="=$reg_info_msg_x,$reg_info_msg_y" size="=$reg_info_msg_w,$reg_info_msg_h" />
+		<area id="title" inherit="dialog.spec" position="=$reg_info_x,$reg_info_y" size="=$reg_info_w,$reg_info_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$reg_info_x,$reg_info_y" size="=$reg_info_w,$reg_info_h" />
+		
+		<area id="cancel" text="CANCEL" inherit="button.spec" position="=$button_w/-2+$SCREEN_X,$reg_info_y+$dialog_padding" />
+	
+	</instance>
+
+
+	<!-- INFO SCREEN ....  just has an ok button -->
+
+	<instance class="net.puppygames.applet.screens.DialogScreen"
+		name="info.dialog"
+		keyboardnavigation="false"
+		dialog="true"
+		transition="instant.transition"
+		centre="both"
+		allCaps="true"
+	>
+		<hotkey key="RETURN" area="cancel"/>
+		<hotkey key="ESCAPE" area="cancel"/>
+		
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="message" inherit="dialog.message.spec" position="=$reg_info_msg_x,$reg_info_msg_y" size="=$reg_info_msg_w,$reg_info_msg_h" />
+		<area id="title" inherit="dialog.spec" position="=$reg_info_x,$reg_info_y" size="=$reg_info_w,$reg_info_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$reg_info_x,$reg_info_y" size="=$reg_info_w,$reg_info_h" />
+		
+		<area id="cancel" text="OK" inherit="button.spec" position="=$button_w/-2+$SCREEN_X,$reg_info_y+$dialog_padding" />
+	
+	</instance>
+
+
+	<!--  RESEARCH NAG SCREEN -->
+	<instance class="net.puppygames.applet.screens.DialogScreen"
+		name="research-nag.dialog"
+		keyboardnavigation="false"
+		dialog="true"
+		transition="instant.transition"
+		centre="both"
+		allcaps="true"
+	>
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="ok"/>
+		
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="message" inherit="dialog.message.spec" position="=$dialog_msg_x,$dialog_msg_y" size="=$dialog_msg_w,$dialog_msg_h" />
+		<area id="title" inherit="dialog.spec" position="=$dialog_x,$dialog_large_y" size="=$dialog_w,$dialog_large_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$dialog_x,$dialog_large_y" size="=$dialog_w,$dialog_large_h" />
+		
+		<area id="ok" text="BUY NOW!" inherit="button.spec" position="=$button_gap/-2-$button_w+$SCREEN_X,$dialog_large_y+$dialog_padding" />	
+		<area id="cancel" text="LATER" inherit="button.spec" position="=$button_gap/2+$SCREEN_X,$dialog_large_y+$dialog_padding" />
+	
+	</instance>
+
+	
+	<!--  Choose game mode screen -->
+
+	<area
+		name="mode.menu.button.spec"
+		size="=$mode_button_w,$mode_button_h"
+		offset="=$mode_button_w/2,$mode_button_h/2"
+		layer="12"
+		scale="0.5"
+	/>
+	
+	<area
+		name="mode.menu.button.title.spec"
+		inherit="esc.menu.button.title.spec"
+		position="=$dialog_wide_x+($mode_dialog_padding*1.5),$mode_button_text_y"
+		size="=$dialog_wide_w-($mode_dialog_padding*3),$mode_button_text_h"
+		font="smallfont.glfont" 
+		textOffset="77,0"
+		offset="=65,$mode_button_text_h-13"
+	/>
+	
+	<area
+		name="mode.menu.button.desc.spec"
+		inherit="mode.menu.button.title.spec"
+		textOffset="0,0"
+		halign="centered"
+		color="text"
+		size="=$dialog_wide_w-($mode_dialog_padding*3),$mode_button_text_h-17"
+		font="tinyfont.glfont" 
+	/>	
+
+
+
+	<instance class="worm.screens.ChooseGameModeScreen"
+		name="choose-game-mode.screen"
+		keyboardnavigation="false"
+		dialog="true"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="C" area="mode_campaign"/>
+		<hotkey key="E" area="mode_endless"/>
+		<hotkey key="S" area="mode_survival"/>
+		
+		<area id="background" inherit="dialog.background.spec"/>
+		<area id="background_glow" inherit="dialog.background.glow.spec"/>
+		
+		<area id="title" inherit="dialog.ingame.spec" position="=$dialog_wide_x,$mode_dialog_y" size="=$dialog_wide_w,$mode_dialog_h" />
+		<area id="dialog_background_glow" inherit="dialog.glow.spec" position="=$dialog_wide_x,$mode_dialog_y" size="=$dialog_wide_w,$mode_dialog_h" />
+ 		
+		<area id="mode_campaign" inherit="mode.menu.button.spec" position="=$mode_button_1_x,$mode_buttons_y"
+				mouseoff="menu.campaign.off.animation" mouseon="menu.campaign.on.animation" disabled="menu.campaign.disabled.animation"/>
+		<area id="mode_campaign_title" text="CAMPAIGN" mouseoff="hotkey.C.off.animation" inherit="mode.menu.button.title.spec" />	
+		<area id="mode_campaign_desc" text="DEFEND EARTH FROM THE ALIEN INVASION AND TAKE THE FIGHT TO TITAN!" inherit="mode.menu.button.desc.spec" />	
+		
+		<area id="mode_endless" inherit="mode.menu.button.spec" position="=$mode_button_2_x,$mode_buttons_y"
+				mouseoff="menu.endless.off.animation" mouseon="menu.endless.on.animation" disabled="menu.endless.disabled.animation"/>
+		<area id="mode_endless_title" text="ENDLESS" mouseoff="hotkey.E.off.animation" inherit="mode.menu.button.title.spec" />	
+		<area id="mode_endless_desc" text="A NEVER-ENDING SERIES OF INCREASINGLY HECTIC BATTLES!" inherit="mode.menu.button.desc.spec" />	
+		
+		<area id="mode_survival" inherit="mode.menu.button.spec" position="=$mode_button_3_x,$mode_buttons_y"
+				mouseoff="menu.survival.off.animation" mouseon="menu.survival.on.animation" disabled="menu.survival.disabled.animation"/>
+		<area id="mode_survival_title" text="SURVIVAL" mouseoff="hotkey.S.off.animation" inherit="mode.menu.button.title.spec" />	
+		<area id="mode_survival_desc" text="AS THE LAST SURVIVOR HOW LONG CAN YOU HOLD OUT AGAINST THE TITAN HORDES!" inherit="mode.menu.button.desc.spec" />	
+		
+
+		<area id="cancel" text="CANCEL" inherit="button.red.spec" 
+			position="=$SCREEN_X-($button_w/2),$mode_dialog_y+$mode_dialog_padding" />
+
+		<area id="default_msg" text="CHOOSE GAME MODE" group="default_msg" inherit="mode.menu.button.title.spec" color="text-darkest" textOffset="0,-5" halign="centered" font="bigfont.glfont"  />	
+
+	</instance>
+
+
+
+
+
+</resources>

@@ -1,0 +1,1038 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDRAH.TITAN.04 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.TITAN.04 definition -->
+
+	<gidrah
+		 name="gidrah.titan.04"
+		 inherit="gidrah.titan.04.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite id="control" layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.titan.04.fly.control.anim" />
+				<sprite id="body" layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" animation="gidrah.titan.04.fly.body.anim" />
+				<sprite id="glow" layer="5" sublayer="2" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.titan.04.fly.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.titan.04.fly.face.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+		</layers></appearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.titan.04.dead.anim" />
+				<emitter emitter="gidrah.titan.death.emitter" offset="16,143"  />
+				<emitter emitter="gidrah.titan.death.flash.emitter" offset="16,143"  />
+		</layers></deathAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.titan.04.frozen.1.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.01" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="3,0" ySortOffset="118"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.titan.04.frozen.2.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.01" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="2,0" ySortOffset="102"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.titan.04.frozen.3.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.04" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="2,0" ySortOffset="115"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.titan.04.frozen.4.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.07" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="3,0" ySortOffset="102"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.titan.04.frozen.5.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.07" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="0,0" ySortOffset="93"  />
+				</layers></item>
+		</array></frozenAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.TITAN.04 -->
+
+	<array name="gidrah.titan.04.control.array">
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+	</array>
+
+	<array name="gidrah.titan.04.body.array">
+		<item>spriteimage.gidrah.titan.04.01</item>
+		<item>spriteimage.gidrah.titan.04.02</item>
+		<item>spriteimage.gidrah.titan.04.03</item>
+		<item>spriteimage.gidrah.titan.04.04</item>
+		<item>spriteimage.gidrah.titan.04.05</item>
+		<item>spriteimage.gidrah.titan.04.06</item>
+		<item>spriteimage.gidrah.titan.04.07</item>
+		<item>spriteimage.gidrah.titan.04.08</item>
+		<item>spriteimage.gidrah.titan.04.01</item>
+		<item>spriteimage.gidrah.titan.04.01</item>
+		<item>spriteimage.gidrah.titan.04.01</item>
+	</array>
+
+	<array name="gidrah.titan.04.glow.array">
+		<item>spriteimage.gidrah.titan.04.glow.01</item>
+		<item>spriteimage.gidrah.titan.04.glow.02</item>
+		<item>spriteimage.gidrah.titan.04.glow.03</item>
+		<item>spriteimage.gidrah.titan.04.glow.04</item>
+		<item>spriteimage.gidrah.titan.04.glow.05</item>
+		<item>spriteimage.gidrah.titan.04.glow.06</item>
+		<item>spriteimage.gidrah.titan.04.glow.07</item>
+		<item>spriteimage.gidrah.titan.04.glow.08</item>
+		<item>spriteimage.gidrah.titan.04.glow.09</item>
+		<item>spriteimage.gidrah.titan.04.glow.10</item>
+		<item>spriteimage.gidrah.titan.04.glow.11</item>
+	</array>
+
+	<array name="gidrah.titan.04.face.array">
+		<item>spriteimage.gidrah.titan.04.top.01</item>
+		<item>spriteimage.gidrah.titan.04.top.02</item>
+		<item>spriteimage.gidrah.titan.04.top.03</item>
+		<item>spriteimage.gidrah.titan.04.top.04</item>
+		<item>spriteimage.gidrah.titan.04.top.05</item>
+		<item>spriteimage.gidrah.titan.04.top.06</item>
+		<item>spriteimage.gidrah.titan.04.top.07</item>
+		<item>spriteimage.gidrah.titan.04.top.08</item>
+		<item>spriteimage.gidrah.titan.04.top.09</item>
+		<item>spriteimage.gidrah.titan.04.top.10</item>
+		<item>spriteimage.gidrah.titan.04.top.11</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.TITAN.04 -->
+
+	<animation name="gidrah.titan.04.fly.control.anim">
+		<frameset id="gidrah.titan.04.control.array" />
+		<goto id="delay"/>
+			<frame idx="0" d="1" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+		<label id="delay"/>
+			<frame idx="0" d="0" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="55.0" d="5"/>
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="delay" n="5"/>
+			<dest id="start" n="1"/>
+		</random>
+			<frame idx="0" d="1" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+		<label id="start"/>
+			<frame idx="0" d="1" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="0" d="2" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="0" d="2" childYOffset="109.9" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="0" d="0" childYOffset="109.8" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="54.9" d="2"/>
+			<frame idx="0" d="1" childYOffset="109.7" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="0" d="0" childYOffset="109.6" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="54.8" d="1"/>
+			<frame idx="0" d="1" childYOffset="109.5" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="1" d="0" childYOffset="109.4" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="54.7" d="1"/>
+			<frame idx="1" d="1" childYOffset="109.2" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<frame idx="1" d="0" childYOffset="109.1" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="54.6" d="1"/>
+			<frame idx="1" d="1" childYOffset="108.9" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<frame idx="1" d="0" childYOffset="108.8" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="54.5" d="1"/>
+			<frame idx="1" d="0" childYOffset="108.6" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="54.4" d="1"/>
+			<frame idx="1" d="0" childYOffset="108.4" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="54.3" d="1"/>
+			<frame idx="2" d="0" childYOffset="108.1" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="54.2" d="1"/>
+			<frame idx="2" d="0" childYOffset="107.9" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="54.1" d="1"/>
+			<frame idx="2" d="0" childYOffset="107.6" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="53.9" d="1"/>
+			<frame idx="2" d="0" childYOffset="107.3" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="53.8" d="1"/>
+			<frame idx="2" d="0" childYOffset="107.0" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="53.7" d="1"/>
+			<frame idx="2" d="0" childYOffset="106.7" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="53.5" d="1"/>
+			<frame idx="3" d="0" childYOffset="106.3" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="53.3" d="1"/>
+			<frame idx="3" d="0" childYOffset="105.9" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="53.2" d="1"/>
+			<frame idx="3" d="0" childYOffset="105.5" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="53.0" d="1"/>
+			<frame idx="3" d="0" childYOffset="105.1" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="52.8" d="1"/>
+			<frame idx="3" d="0" childYOffset="104.6" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="52.5" d="1"/>
+			<frame idx="3" d="0" childYOffset="104.0" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="52.3" d="1"/>
+			<frame idx="4" d="0" childYOffset="103.5" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="52.0" d="1"/>
+			<frame idx="4" d="0" childYOffset="102.9" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="51.7" d="1"/>
+			<frame idx="4" d="0" childYOffset="102.3" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="51.4" d="1"/>
+			<frame idx="4" d="0" childYOffset="101.6" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="51.1" d="1"/>
+			<frame idx="4" d="0" childYOffset="100.8" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="50.8" d="1"/>
+			<frame idx="4" d="0" childYOffset="100.1" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="50.4" d="1"/>
+			<frame idx="5" d="0" childYOffset="99.2" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="50.0" d="1"/>
+			<frame idx="5" d="0" childYOffset="98.4" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="49.6" d="1"/>
+			<frame idx="5" d="0" childYOffset="97.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="49.2" d="1"/>
+			<frame idx="5" d="0" childYOffset="96.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="48.7" d="1"/>
+			<frame idx="5" d="0" childYOffset="95.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="48.3" d="1"/>
+			<frame idx="5" d="0" childYOffset="94.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="47.8" d="1"/>
+			<frame idx="5" d="0" childYOffset="93.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="47.2" d="1"/>
+			<frame idx="6" d="0" childYOffset="92.5" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="46.7" d="1"/>
+			<frame idx="6" d="0" childYOffset="91.5" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="46.2" d="1"/>
+			<frame idx="6" d="0" childYOffset="90.5" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="45.7" d="1"/>
+			<frame idx="6" d="0" childYOffset="89.6" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="45.3" d="1"/>
+			<frame idx="6" d="0" childYOffset="88.8" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="44.8" d="1"/>
+			<frame idx="6" d="0" childYOffset="88.1" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="44.4" d="1"/>
+			<frame idx="6" d="0" childYOffset="87.4" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="44.0" d="1"/>
+			<frame idx="6" d="0" childYOffset="86.8" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="43.7" d="1"/>
+			<frame idx="6" d="0" childYOffset="86.4" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="43.4" d="1"/>
+			<frame idx="6" d="0" childYOffset="86.0" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="43.2" d="1"/>
+			<frame idx="7" d="0" childYOffset="85.7" />
+			<notify layer="body" idx="7"/><notify layer="face" idx="7"/><notify layer="glow" idx="7"/>
+			<offset x="0.0" y="43.0" d="1"/>
+			<frame idx="7" d="0" childYOffset="85.4" />
+			<notify layer="body" idx="7"/><notify layer="face" idx="7"/><notify layer="glow" idx="7"/>
+			<offset x="0.0" y="42.8" d="1"/>
+		<emit ox="0" oy="105" id="gidrah.titan.flying.emitter"/>
+			<frame idx="7" d="0" childYOffset="85.2" />
+			<notify layer="body" idx="7"/><notify layer="face" idx="7"/><notify layer="glow" idx="7"/>
+			<offset x="0.0" y="42.7" d="1"/>
+			<frame idx="7" d="0" childYOffset="85.1" />
+			<notify layer="body" idx="7"/><notify layer="face" idx="7"/><notify layer="glow" idx="7"/>
+			<offset x="0.0" y="42.6" d="1"/>
+			<frame idx="6" d="0" childYOffset="85.0" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="42.5" d="1"/>
+			<frame idx="4" d="1" childYOffset="85.0" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<frame idx="3" d="1" childYOffset="87.9" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<frame idx="1" d="0" childYOffset="90.3" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="43.9" d="1"/>
+			<frame idx="0" d="0" childYOffset="92.4" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="45.1" d="1"/>
+			<frame idx="0" d="0" childYOffset="94.4" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="46.2" d="1"/>
+			<frame idx="0" d="0" childYOffset="96.2" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="47.2" d="1"/>
+			<frame idx="0" d="0" childYOffset="97.9" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="48.1" d="1"/>
+			<frame idx="0" d="0" childYOffset="99.4" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="48.9" d="1"/>
+			<frame idx="0" d="0" childYOffset="100.9" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="49.7" d="1"/>
+			<frame idx="0" d="0" childYOffset="102.3" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="50.5" d="1"/>
+			<frame idx="0" d="0" childYOffset="103.6" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="51.1" d="1"/>
+			<frame idx="0" d="0" childYOffset="104.8" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="51.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="105.8" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="52.4" d="1"/>
+			<frame idx="0" d="0" childYOffset="106.8" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="52.9" d="1"/>
+			<frame idx="0" d="0" childYOffset="107.7" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="53.4" d="1"/>
+			<frame idx="0" d="0" childYOffset="108.5" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="53.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="109.1" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="54.2" d="1"/>
+			<frame idx="0" d="0" childYOffset="109.6" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="54.5" d="1"/>
+			<frame idx="0" d="0" childYOffset="109.9" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="54.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="54.9" d="1"/>
+		<goto id="delay"/>
+		<label id="blink"/>
+			<frame idx="0" d="0" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="55.0" d="1"/>
+			<frame idx="8" d="3" childYOffset="110.0" />
+			<notify layer="body" idx="8"/><notify layer="face" idx="8"/><notify layer="glow" idx="8"/>
+			<frame idx="9" d="3" childYOffset="110.0" />
+			<notify layer="body" idx="9"/><notify layer="face" idx="9"/><notify layer="glow" idx="9"/>
+			<frame idx="10" d="14" childYOffset="110.0" />
+			<notify layer="body" idx="10"/><notify layer="face" idx="10"/><notify layer="glow" idx="10"/>
+			<frame idx="10" d="4" childYOffset="110.0" />
+			<notify layer="body" idx="10"/><notify layer="face" idx="10"/><notify layer="glow" idx="10"/>
+			<frame idx="9" d="4" childYOffset="110.0" />
+			<notify layer="body" idx="9"/><notify layer="face" idx="9"/><notify layer="glow" idx="9"/>
+			<frame idx="8" d="4" childYOffset="110.0" />
+			<notify layer="body" idx="8"/><notify layer="face" idx="8"/><notify layer="glow" idx="8"/>
+			<frame idx="0" d="3" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.titan.04.fly.body.anim">
+		<frameset id="gidrah.titan.04.body.array" />
+	</animation>
+
+	<animation name="gidrah.titan.04.fly.face.glow.anim">
+		<frameset id="gidrah.titan.04.glow.array" />
+	</animation>
+
+	<animation name="gidrah.titan.04.fly.face.anim">
+		<frameset id="gidrah.titan.04.face.array" />
+	</animation>
+
+	<animation name="gidrah.titan.04.dead.anim">
+		<goto id="start"/>
+			<frame i="spriteimage.gidrah.titan.04.ghost.01" d="1" />
+		<label id="start"/>
+			<animcolor a="135" d="0"/>
+			<offset x="0.0" y="55.0" d="1"/>
+			<animcolor a="159" d="0"/>
+			<offset x="0.0" y="56.1" d="1"/>
+			<animcolor a="199" d="0"/>
+			<offset x="0.0" y="58.3" d="1"/>
+			<animcolor a="255" d="0"/>
+			<offset x="0.0" y="62.5" d="1"/>
+			<frame i="spriteimage.gidrah.titan.04.ghost.02" d="0" />
+			<animcolor a="63" d="1"/>
+			<offset x="0.0" y="62.4" d="1"/>
+			<animcolor a="138" d="1"/>
+			<frame i="spriteimage.gidrah.titan.04.ghost.03" d="0" />
+			<offset x="0.0" y="62.3" d="1"/>
+			<animcolor a="40" d="0"/>
+			<offset x="0.0" y="62.2" d="1"/>
+			<offset x="0.0" y="62.0" d="1"/>
+			<animcolor a="102" d="0"/>
+			<offset x="0.0" y="61.9" d="1"/>
+			<frame i="spriteimage.gidrah.titan.04.ghost.04" d="0" />
+			<offset x="0.0" y="61.7" d="1"/>
+			<animcolor a="27" d="0"/>
+			<offset x="0.0" y="61.5" d="1"/>
+			<offset x="0.0" y="61.2" d="1"/>
+			<animcolor a="79" d="0"/>
+			<offset x="0.0" y="61.0" d="1"/>
+			<offset x="0.0" y="60.7" d="1"/>
+			<animcolor a="14" d="0"/>
+			<offset x="0.0" y="60.3" d="1"/>
+			<offset x="0.0" y="60.0" d="1"/>
+			<animcolor a="65" d="0"/>
+			<offset x="0.0" y="59.6" d="1"/>
+			<offset x="0.0" y="59.2" d="1"/>
+			<animcolor a="7" d="0"/>
+			<offset x="0.0" y="58.7" d="1"/>
+			<offset x="0.0" y="58.2" d="1"/>
+			<animcolor a="52" d="0"/>
+			<offset x="0.0" y="57.7" d="1"/>
+			<offset x="0.0" y="57.1" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="56.5" d="1"/>
+			<offset x="0.0" y="55.8" d="1"/>
+			<animcolor a="50" d="0"/>
+			<offset x="0.0" y="55.1" d="1"/>
+			<offset x="0.0" y="54.3" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="53.5" d="1"/>
+			<offset x="0.0" y="52.6" d="1"/>
+			<animcolor a="44" d="0"/>
+			<offset x="0.0" y="51.6" d="1"/>
+			<offset x="0.0" y="50.6" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="49.5" d="1"/>
+			<offset x="0.0" y="48.4" d="1"/>
+			<animcolor a="39" d="0"/>
+			<offset x="0.0" y="47.1" d="1"/>
+			<offset x="0.0" y="45.8" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="44.3" d="1"/>
+			<offset x="0.0" y="42.8" d="1"/>
+			<animcolor a="33" d="0"/>
+			<offset x="0.0" y="41.1" d="1"/>
+			<offset x="0.0" y="39.3" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="37.3" d="1"/>
+			<offset x="0.0" y="35.2" d="1"/>
+			<animcolor a="26" d="0"/>
+			<offset x="0.0" y="32.8" d="1"/>
+			<offset x="0.0" y="30.2" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="27.3" d="1"/>
+			<animcolor a="17" d="0"/>
+			<offset x="0.0" y="24.1" d="1"/>
+			<offset x="0.0" y="20.4" d="1"/>
+			<offset x="0.0" y="16.1" d="1"/>
+			<offset x="0.0" y="11.1" d="1"/>
+		<event id="1"/>
+	</animation>
+
+	<animation name="gidrah.titan.04.frozen.1.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="110.0" />
+			<offset x="0.0" y="55.0" d="498"/>
+	</animation>
+
+	<animation name="gidrah.titan.04.frozen.2.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="95.0" />
+			<offset x="0.0" y="47.5" d="498"/>
+	</animation>
+
+	<animation name="gidrah.titan.04.frozen.3.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="105.7" />
+			<offset x="0.0" y="52.9" d="498"/>
+	</animation>
+
+	<animation name="gidrah.titan.04.frozen.4.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="93.6" />
+			<offset x="0.0" y="46.8" d="498"/>
+	</animation>
+
+	<animation name="gidrah.titan.04.frozen.5.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="86.4" />
+			<offset x="0.0" y="43.2" d="498"/>
+	</animation>
+
+
+
+
+	<!-- ANGRYGIDRAH.TITAN.04 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.TITAN.04 definition -->
+
+	<gidrah
+		 name="angrygidrah.titan.04"
+		 inherit="angrygidrah.titan.04.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.75">
+ 				<sprite id="control" layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="angrygidrah.titan.04.fly.control.anim" />
+				<sprite id="body" layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" animation="angrygidrah.titan.04.fly.body.anim" />
+				<sprite id="glow" layer="5" sublayer="2" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="angrygidrah.titan.04.fly.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="angrygidrah.titan.04.fly.face.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+		</layers></appearance>
+		<deathAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.titan.04.dead.anim" />
+				<emitter emitter="gidrah.titan.death.large.emitter" offset="16,143"  />
+				<emitter emitter="gidrah.titan.death.flash.large.emitter" offset="16,143"  />
+		</layers></deathAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.titan.04.frozen.1.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.01" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="3,0" ySortOffset="118"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.titan.04.frozen.2.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.01" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="2,0" ySortOffset="102"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.titan.04.frozen.3.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.04" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="2,0" ySortOffset="115"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.titan.04.frozen.4.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.07" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="3,0" ySortOffset="102"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="angrygidrah.titan.04.frozen.5.anim" />
+								<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.titan.04.07" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.titan.04.ice.glow.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.titan.04.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="0,0" ySortOffset="93"  />
+				</layers></item>
+		</array></frozenAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for ANGRYGIDRAH.TITAN.04 -->
+
+	<array name="angrygidrah.titan.04.control.array">
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+		<item>spriteimage.particle.dummy.01</item>
+	</array>
+
+	<array name="angrygidrah.titan.04.body.array">
+		<item>spriteimage.gidrah.titan.04.01</item>
+		<item>spriteimage.gidrah.titan.04.02</item>
+		<item>spriteimage.gidrah.titan.04.03</item>
+		<item>spriteimage.gidrah.titan.04.04</item>
+		<item>spriteimage.gidrah.titan.04.05</item>
+		<item>spriteimage.gidrah.titan.04.06</item>
+		<item>spriteimage.gidrah.titan.04.07</item>
+		<item>spriteimage.gidrah.titan.04.08</item>
+		<item>spriteimage.gidrah.titan.04.01</item>
+		<item>spriteimage.gidrah.titan.04.01</item>
+		<item>spriteimage.gidrah.titan.04.01</item>
+	</array>
+
+	<array name="angrygidrah.titan.04.glow.array">
+		<item>spriteimage.gidrah.titan.04.glow.01</item>
+		<item>spriteimage.gidrah.titan.04.glow.02</item>
+		<item>spriteimage.gidrah.titan.04.glow.03</item>
+		<item>spriteimage.gidrah.titan.04.glow.04</item>
+		<item>spriteimage.gidrah.titan.04.glow.05</item>
+		<item>spriteimage.gidrah.titan.04.glow.06</item>
+		<item>spriteimage.gidrah.titan.04.glow.07</item>
+		<item>spriteimage.gidrah.titan.04.glow.08</item>
+		<item>spriteimage.gidrah.titan.04.glow.09</item>
+		<item>spriteimage.gidrah.titan.04.glow.10</item>
+		<item>spriteimage.gidrah.titan.04.glow.11</item>
+	</array>
+
+	<array name="angrygidrah.titan.04.face.array">
+		<item>spriteimage.gidrah.titan.04.top.01</item>
+		<item>spriteimage.gidrah.titan.04.top.02</item>
+		<item>spriteimage.gidrah.titan.04.top.03</item>
+		<item>spriteimage.gidrah.titan.04.top.04</item>
+		<item>spriteimage.gidrah.titan.04.top.05</item>
+		<item>spriteimage.gidrah.titan.04.top.06</item>
+		<item>spriteimage.gidrah.titan.04.top.07</item>
+		<item>spriteimage.gidrah.titan.04.top.08</item>
+		<item>spriteimage.gidrah.titan.04.top.09</item>
+		<item>spriteimage.gidrah.titan.04.top.10</item>
+		<item>spriteimage.gidrah.titan.04.top.11</item>
+	</array>
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.TITAN.04 -->
+
+	<animation name="angrygidrah.titan.04.fly.control.anim">
+		<frameset id="angrygidrah.titan.04.control.array" />
+		<goto id="delay"/>
+			<frame idx="0" d="1" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+		<label id="delay"/>
+			<frame idx="0" d="0" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="82.5" d="5"/>
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="delay" n="5"/>
+			<dest id="start" n="1"/>
+		</random>
+			<frame idx="0" d="1" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+		<label id="start"/>
+			<frame idx="0" d="1" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="0" d="2" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="0" d="1" childYOffset="109.9" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="82.4" d="1"/>
+			<frame idx="0" d="2" childYOffset="109.8" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="0" d="0" childYOffset="109.7" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="82.3" d="1"/>
+			<frame idx="0" d="1" childYOffset="109.6" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<frame idx="0" d="0" childYOffset="109.5" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="82.2" d="1"/>
+			<frame idx="1" d="0" childYOffset="109.4" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="82.1" d="1"/>
+			<frame idx="1" d="0" childYOffset="109.2" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="82.0" d="1"/>
+			<frame idx="1" d="0" childYOffset="109.1" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="81.9" d="1"/>
+			<frame idx="1" d="0" childYOffset="108.9" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="81.8" d="1"/>
+			<frame idx="1" d="0" childYOffset="108.8" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="81.7" d="1"/>
+			<frame idx="1" d="0" childYOffset="108.6" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="81.6" d="1"/>
+			<frame idx="1" d="0" childYOffset="108.4" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="81.4" d="1"/>
+			<frame idx="2" d="0" childYOffset="108.1" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="81.3" d="1"/>
+			<frame idx="2" d="0" childYOffset="107.9" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="81.1" d="1"/>
+			<frame idx="2" d="0" childYOffset="107.6" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="80.9" d="1"/>
+			<frame idx="2" d="0" childYOffset="107.3" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="80.7" d="1"/>
+			<frame idx="2" d="0" childYOffset="107.0" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="80.5" d="1"/>
+			<frame idx="2" d="0" childYOffset="106.7" />
+			<notify layer="body" idx="2"/><notify layer="face" idx="2"/><notify layer="glow" idx="2"/>
+			<offset x="0.0" y="80.3" d="1"/>
+			<frame idx="3" d="0" childYOffset="106.3" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="80.0" d="1"/>
+			<frame idx="3" d="0" childYOffset="105.9" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="79.7" d="1"/>
+			<frame idx="3" d="0" childYOffset="105.5" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="79.4" d="1"/>
+			<frame idx="3" d="0" childYOffset="105.1" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="79.1" d="1"/>
+			<frame idx="3" d="0" childYOffset="104.6" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="78.8" d="1"/>
+			<frame idx="3" d="0" childYOffset="104.0" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<offset x="0.0" y="78.4" d="1"/>
+			<frame idx="4" d="0" childYOffset="103.5" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="78.0" d="1"/>
+			<frame idx="4" d="0" childYOffset="102.9" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="77.6" d="1"/>
+			<frame idx="4" d="0" childYOffset="102.3" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="77.2" d="1"/>
+			<frame idx="4" d="0" childYOffset="101.6" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="76.7" d="1"/>
+			<frame idx="4" d="0" childYOffset="100.8" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="76.2" d="1"/>
+			<frame idx="4" d="0" childYOffset="100.1" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<offset x="0.0" y="75.6" d="1"/>
+			<frame idx="5" d="0" childYOffset="99.2" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="75.1" d="1"/>
+			<frame idx="5" d="0" childYOffset="98.4" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="74.4" d="1"/>
+			<frame idx="5" d="0" childYOffset="97.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="73.8" d="1"/>
+			<frame idx="5" d="0" childYOffset="96.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="73.1" d="1"/>
+			<frame idx="5" d="0" childYOffset="95.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="72.4" d="1"/>
+			<frame idx="5" d="0" childYOffset="94.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="71.6" d="1"/>
+			<frame idx="5" d="0" childYOffset="93.5" />
+			<notify layer="body" idx="5"/><notify layer="face" idx="5"/><notify layer="glow" idx="5"/>
+			<offset x="0.0" y="70.9" d="1"/>
+			<frame idx="6" d="0" childYOffset="92.5" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="70.1" d="1"/>
+			<frame idx="6" d="0" childYOffset="91.5" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="69.3" d="1"/>
+			<frame idx="6" d="0" childYOffset="90.5" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="68.6" d="1"/>
+			<frame idx="6" d="0" childYOffset="89.6" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="67.9" d="1"/>
+			<frame idx="6" d="0" childYOffset="88.8" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="67.2" d="1"/>
+			<frame idx="6" d="0" childYOffset="88.1" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="66.6" d="1"/>
+			<frame idx="6" d="0" childYOffset="87.4" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="66.0" d="1"/>
+			<frame idx="6" d="0" childYOffset="86.8" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="65.6" d="1"/>
+			<frame idx="6" d="0" childYOffset="86.4" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="65.1" d="1"/>
+			<frame idx="6" d="0" childYOffset="86.0" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="64.8" d="1"/>
+			<frame idx="7" d="0" childYOffset="85.7" />
+			<notify layer="body" idx="7"/><notify layer="face" idx="7"/><notify layer="glow" idx="7"/>
+			<offset x="0.0" y="64.5" d="1"/>
+			<frame idx="7" d="0" childYOffset="85.4" />
+			<notify layer="body" idx="7"/><notify layer="face" idx="7"/><notify layer="glow" idx="7"/>
+			<offset x="0.0" y="64.2" d="1"/>
+		<emit ox="0" oy="105" id="gidrah.titan.flying.large.emitter"/>
+			<frame idx="7" d="0" childYOffset="85.2" />
+			<notify layer="body" idx="7"/><notify layer="face" idx="7"/><notify layer="glow" idx="7"/>
+			<offset x="0.0" y="64.1" d="1"/>
+			<frame idx="7" d="0" childYOffset="85.1" />
+			<notify layer="body" idx="7"/><notify layer="face" idx="7"/><notify layer="glow" idx="7"/>
+			<offset x="0.0" y="63.9" d="1"/>
+			<frame idx="6" d="0" childYOffset="85.0" />
+			<notify layer="body" idx="6"/><notify layer="face" idx="6"/><notify layer="glow" idx="6"/>
+			<offset x="0.0" y="63.8" d="1"/>
+			<frame idx="4" d="1" childYOffset="85.0" />
+			<notify layer="body" idx="4"/><notify layer="face" idx="4"/><notify layer="glow" idx="4"/>
+			<frame idx="3" d="1" childYOffset="87.9" />
+			<notify layer="body" idx="3"/><notify layer="face" idx="3"/><notify layer="glow" idx="3"/>
+			<frame idx="1" d="0" childYOffset="90.3" />
+			<notify layer="body" idx="1"/><notify layer="face" idx="1"/><notify layer="glow" idx="1"/>
+			<offset x="0.0" y="65.9" d="1"/>
+			<frame idx="0" d="0" childYOffset="92.4" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="67.7" d="1"/>
+			<frame idx="0" d="0" childYOffset="94.4" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="69.3" d="1"/>
+			<frame idx="0" d="0" childYOffset="96.2" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="70.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="97.9" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="72.1" d="1"/>
+			<frame idx="0" d="0" childYOffset="99.4" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="73.4" d="1"/>
+			<frame idx="0" d="0" childYOffset="100.9" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="74.6" d="1"/>
+			<frame idx="0" d="0" childYOffset="102.3" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="75.7" d="1"/>
+			<frame idx="0" d="0" childYOffset="103.6" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="76.7" d="1"/>
+			<frame idx="0" d="0" childYOffset="104.8" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="77.7" d="1"/>
+			<frame idx="0" d="0" childYOffset="105.8" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="78.6" d="1"/>
+			<frame idx="0" d="0" childYOffset="106.8" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="79.4" d="1"/>
+			<frame idx="0" d="0" childYOffset="107.7" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="80.1" d="1"/>
+			<frame idx="0" d="0" childYOffset="108.5" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="80.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="109.1" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="81.3" d="1"/>
+			<frame idx="0" d="0" childYOffset="109.6" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="81.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="109.9" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="82.2" d="1"/>
+			<frame idx="0" d="0" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="82.4" d="1"/>
+		<goto id="delay"/>
+		<label id="blink"/>
+			<frame idx="0" d="0" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+			<offset x="0.0" y="82.5" d="1"/>
+			<frame idx="8" d="3" childYOffset="110.0" />
+			<notify layer="body" idx="8"/><notify layer="face" idx="8"/><notify layer="glow" idx="8"/>
+			<frame idx="9" d="3" childYOffset="110.0" />
+			<notify layer="body" idx="9"/><notify layer="face" idx="9"/><notify layer="glow" idx="9"/>
+			<frame idx="10" d="14" childYOffset="110.0" />
+			<notify layer="body" idx="10"/><notify layer="face" idx="10"/><notify layer="glow" idx="10"/>
+			<frame idx="10" d="4" childYOffset="110.0" />
+			<notify layer="body" idx="10"/><notify layer="face" idx="10"/><notify layer="glow" idx="10"/>
+			<frame idx="9" d="4" childYOffset="110.0" />
+			<notify layer="body" idx="9"/><notify layer="face" idx="9"/><notify layer="glow" idx="9"/>
+			<frame idx="8" d="4" childYOffset="110.0" />
+			<notify layer="body" idx="8"/><notify layer="face" idx="8"/><notify layer="glow" idx="8"/>
+			<frame idx="0" d="3" childYOffset="110.0" />
+			<notify layer="body" idx="0"/><notify layer="face" idx="0"/><notify layer="glow" idx="0"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="angrygidrah.titan.04.fly.body.anim">
+		<frameset id="angrygidrah.titan.04.body.array" />
+	</animation>
+
+	<animation name="angrygidrah.titan.04.fly.face.glow.anim">
+		<frameset id="angrygidrah.titan.04.glow.array" />
+	</animation>
+
+	<animation name="angrygidrah.titan.04.fly.face.anim">
+		<frameset id="angrygidrah.titan.04.face.array" />
+	</animation>
+
+	<animation name="angrygidrah.titan.04.dead.anim">
+		<goto id="start"/>
+			<frame i="spriteimage.gidrah.titan.04.ghost.01" d="1" />
+		<label id="start"/>
+			<animcolor a="135" d="0"/>
+			<offset x="0.0" y="82.5" d="1"/>
+			<animcolor a="159" d="0"/>
+			<offset x="0.0" y="84.1" d="1"/>
+			<animcolor a="199" d="0"/>
+			<offset x="0.0" y="87.4" d="1"/>
+			<animcolor a="255" d="0"/>
+			<offset x="0.0" y="93.7" d="1"/>
+			<frame i="spriteimage.gidrah.titan.04.ghost.02" d="0" />
+			<animcolor a="63" d="1"/>
+			<offset x="0.0" y="93.6" d="1"/>
+			<animcolor a="138" d="0"/>
+			<offset x="0.0" y="93.5" d="1"/>
+			<frame i="spriteimage.gidrah.titan.04.ghost.03" d="0" />
+			<offset x="0.0" y="93.4" d="1"/>
+			<animcolor a="40" d="0"/>
+			<offset x="0.0" y="93.2" d="1"/>
+			<offset x="0.0" y="93.0" d="1"/>
+			<animcolor a="102" d="0"/>
+			<offset x="0.0" y="92.8" d="1"/>
+			<frame i="spriteimage.gidrah.titan.04.ghost.04" d="0" />
+			<offset x="0.0" y="92.5" d="1"/>
+			<animcolor a="27" d="0"/>
+			<offset x="0.0" y="92.2" d="1"/>
+			<offset x="0.0" y="91.8" d="1"/>
+			<animcolor a="79" d="0"/>
+			<offset x="0.0" y="91.4" d="1"/>
+			<offset x="0.0" y="91.0" d="1"/>
+			<animcolor a="14" d="0"/>
+			<offset x="0.0" y="90.5" d="1"/>
+			<offset x="0.0" y="90.0" d="1"/>
+			<animcolor a="65" d="0"/>
+			<offset x="0.0" y="89.4" d="1"/>
+			<offset x="0.0" y="88.8" d="1"/>
+			<animcolor a="7" d="0"/>
+			<offset x="0.0" y="88.1" d="1"/>
+			<offset x="0.0" y="87.3" d="1"/>
+			<animcolor a="52" d="0"/>
+			<offset x="0.0" y="86.5" d="1"/>
+			<offset x="0.0" y="85.6" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="84.7" d="1"/>
+			<offset x="0.0" y="83.7" d="1"/>
+			<animcolor a="50" d="0"/>
+			<offset x="0.0" y="82.6" d="1"/>
+			<offset x="0.0" y="81.5" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="80.2" d="1"/>
+			<offset x="0.0" y="78.9" d="1"/>
+			<animcolor a="44" d="0"/>
+			<offset x="0.0" y="77.5" d="1"/>
+			<offset x="0.0" y="75.9" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="74.3" d="1"/>
+			<offset x="0.0" y="72.6" d="1"/>
+			<animcolor a="39" d="0"/>
+			<offset x="0.0" y="70.7" d="1"/>
+			<offset x="0.0" y="68.7" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="66.5" d="1"/>
+			<offset x="0.0" y="64.2" d="1"/>
+			<animcolor a="33" d="0"/>
+			<offset x="0.0" y="61.6" d="1"/>
+			<offset x="0.0" y="58.9" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="56.0" d="1"/>
+			<offset x="0.0" y="52.7" d="1"/>
+			<animcolor a="26" d="0"/>
+			<offset x="0.0" y="49.2" d="1"/>
+			<offset x="0.0" y="45.3" d="1"/>
+			<animcolor a="0" d="0"/>
+			<offset x="0.0" y="41.0" d="1"/>
+			<animcolor a="17" d="0"/>
+			<offset x="0.0" y="36.1" d="1"/>
+			<offset x="0.0" y="30.6" d="1"/>
+			<offset x="0.0" y="24.2" d="1"/>
+			<offset x="0.0" y="16.6" d="1"/>
+		<event id="1"/>
+	</animation>
+
+	<animation name="angrygidrah.titan.04.frozen.1.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="110.0" />
+			<offset x="0.0" y="82.5" d="498"/>
+	</animation>
+
+	<animation name="angrygidrah.titan.04.frozen.2.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="95.0" />
+			<offset x="0.0" y="71.2" d="498"/>
+	</animation>
+
+	<animation name="angrygidrah.titan.04.frozen.3.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="105.7" />
+			<offset x="0.0" y="79.3" d="498"/>
+	</animation>
+
+	<animation name="angrygidrah.titan.04.frozen.4.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="93.6" />
+			<offset x="0.0" y="70.2" d="498"/>
+	</animation>
+
+	<animation name="angrygidrah.titan.04.frozen.5.anim">
+			<frame i="spriteimage.particle.dummy.01" d="1" childYOffset="86.4" />
+			<offset x="0.0" y="64.8" d="498"/>
+	</animation>
+
+</resources>

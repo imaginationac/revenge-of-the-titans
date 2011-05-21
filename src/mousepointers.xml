@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
+	Mousepointer stuff
+-->
+<resources>
+
+	<include resource="tags.xml"/>
+
+	<animation name="mousepointer.outofrange.animation">
+		<frame i="spriteimage.crosshair.default.01" d="0"/>
+	</animation>
+	<animation name="mousepointer.offtarget.animation">
+		<frame i="spriteimage.crosshair.normal.03" d="2" />
+		<frame i="spriteimage.crosshair.normal.02" d="2" />
+		<frame i="spriteimage.crosshair.normal.01" d="1" />
+	</animation>
+	<animation name="mousepointer.ontarget.animation">
+		<frame i="spriteimage.crosshair.normal.02" d="2" />
+		<frame i="spriteimage.crosshair.normal.03" d="2" />
+		<frame i="spriteimage.crosshair.normal.04" d="1" />
+	</animation>
+
+	<animation name="mousepointer.outofrange.back.animation">
+		<frame i="spriteimage.crosshair.default.back.01" d="0"/>
+	</animation>
+	<animation name="mousepointer.offtarget.back.animation">
+		<frame i="spriteimage.crosshair.normal.back.03" d="2" />
+		<frame i="spriteimage.crosshair.normal.back.02" d="2" />
+		<frame i="spriteimage.crosshair.normal.back.01" d="1" />
+	</animation>
+	<animation name="mousepointer.ontarget.back.animation">
+		<frame i="spriteimage.crosshair.normal.back.02" d="2" />
+		<frame i="spriteimage.crosshair.normal.back.03" d="2" />
+		<frame i="spriteimage.crosshair.normal.back.04" d="1" />
+	</animation>
+
+	<animation name="mousepointer.bezerk.outofrange.animation">
+		<frame i="spriteimage.crosshair.bezerk.03" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.02" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.01" d="1" />
+	</animation>
+	<animation name="mousepointer.bezerk.offtarget.animation">
+		<frame i="spriteimage.crosshair.bezerk.03" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.02" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.01" d="1" />
+	</animation>
+	<animation name="mousepointer.bezerk.ontarget.animation">
+		<frame i="spriteimage.crosshair.bezerk.02" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.03" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.04" d="1" />
+	</animation>
+
+	<animation name="mousepointer.bezerk.outofrange.back.animation">
+		<frame i="spriteimage.crosshair.bezerk.back.03" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.back.02" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.back.01" d="1" />
+	</animation>
+	<animation name="mousepointer.bezerk.offtarget.back.animation">
+		<frame i="spriteimage.crosshair.bezerk.back.03" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.back.02" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.back.01" d="1" />
+	</animation>
+	<animation name="mousepointer.bezerk.ontarget.back.animation">
+		<frame i="spriteimage.crosshair.bezerk.back.02" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.back.03" d="2" />
+		<frame i="spriteimage.crosshair.bezerk.back.04" d="1" />
+	</animation>
+	
+	<animation name="mousepointer.default.animation">
+		<frame i="spriteimage.crosshair.default.01" d="0"/>
+	</animation>
+	<animation name="mousepointer.default.back.animation">
+		<frame i="spriteimage.crosshair.default.back.01" d="0"/>
+	</animation>
+	
+	<animation name="mousepointer.cantbuild.animation">
+		<frame i="spriteimage.crosshair.cantbuild.01" d="16" />
+		<frame i="spriteimage.crosshair.cantbuild.02" d="2" />
+		<frame i="spriteimage.crosshair.cantbuild.03" d="3" />
+		<frame i="spriteimage.crosshair.cantbuild.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	<animation name="mousepointer.cantbuild.back.animation">
+		<frame i="spriteimage.crosshair.cantbuild.back.01" d="16" />
+		<frame i="spriteimage.crosshair.cantbuild.back.02" d="2" />
+		<frame i="spriteimage.crosshair.cantbuild.back.03" d="3" />
+		<frame i="spriteimage.crosshair.cantbuild.back.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	
+	<animation name="mousepointer.reload.animation">
+		<frame i="spriteimage.crosshair.reload.01" d="16" />
+		<frame i="spriteimage.crosshair.reload.02" d="2" />
+		<frame i="spriteimage.crosshair.reload.03" d="3" />
+		<frame i="spriteimage.crosshair.reload.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	<animation name="mousepointer.reload.back.animation">
+		<frame i="spriteimage.crosshair.reload.back.01" d="16" />
+		<frame i="spriteimage.crosshair.reload.back.02" d="2" />
+		<frame i="spriteimage.crosshair.reload.back.03" d="3" />
+		<frame i="spriteimage.crosshair.reload.back.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+		
+	<animation name="mousepointer.pickup.animation">
+		<frame i="spriteimage.crosshair.collect.01" d="16" />
+		<frame i="spriteimage.crosshair.collect.02" d="2" />
+		<frame i="spriteimage.crosshair.collect.03" d="3" />
+		<frame i="spriteimage.crosshair.collect.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	<animation name="mousepointer.pickup.back.animation">
+		<frame i="spriteimage.crosshair.collect.back.01" d="16" />
+		<frame i="spriteimage.crosshair.collect.back.02" d="2" />
+		<frame i="spriteimage.crosshair.collect.back.03" d="3" />
+		<frame i="spriteimage.crosshair.collect.back.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	
+	<animation name="mousepointer.smartbomb.animation">
+		<frame i="spriteimage.crosshair.smartbomb.01" d="16" />
+		<frame i="spriteimage.crosshair.smartbomb.02" d="2" />
+		<frame i="spriteimage.crosshair.smartbomb.03" d="3" />
+		<frame i="spriteimage.crosshair.smartbomb.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	<animation name="mousepointer.smartbomb.back.animation">
+		<frame i="spriteimage.crosshair.smartbomb.back.01" d="16" />
+		<frame i="spriteimage.crosshair.smartbomb.back.02" d="2" />
+		<frame i="spriteimage.crosshair.smartbomb.back.03" d="3" />
+		<frame i="spriteimage.crosshair.smartbomb.back.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="mousepointer.blastmine.animation">
+		<frame i="spriteimage.crosshair.blastmine.01" d="16" />
+		<frame i="spriteimage.crosshair.blastmine.02" d="2" />
+		<frame i="spriteimage.crosshair.blastmine.03" d="3" />
+		<frame i="spriteimage.crosshair.blastmine.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	<animation name="mousepointer.blastmine.back.animation">
+		<frame i="spriteimage.crosshair.blastmine.back.01" d="16" />
+		<frame i="spriteimage.crosshair.blastmine.back.02" d="2" />
+		<frame i="spriteimage.crosshair.blastmine.back.03" d="3" />
+		<frame i="spriteimage.crosshair.blastmine.back.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="mousepointer.sell.on.animation">
+		<frame i="spriteimage.crosshair.sell.01" d="16" />
+		<frame i="spriteimage.crosshair.sell.02" d="2" />
+		<frame i="spriteimage.crosshair.sell.03" d="3" />
+		<frame i="spriteimage.crosshair.sell.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	<animation name="mousepointer.sell.on.back.animation">
+		<frame i="spriteimage.crosshair.sell.back.01" d="16" />
+		<frame i="spriteimage.crosshair.sell.back.02" d="2" />
+		<frame i="spriteimage.crosshair.sell.back.03" d="3" />
+		<frame i="spriteimage.crosshair.sell.back.04" d="16" />
+		<goto seq="0"/>
+	</animation>
+	
+	<animation name="mousepointer.sell.off.animation">
+		<frame i="spriteimage.crosshair.sell.01" d="16" />
+		<goto seq="0"/>
+	</animation>
+	<animation name="mousepointer.sell.off.back.animation">
+		<frame i="spriteimage.crosshair.sell.back.01" d="16" />
+		<goto seq="0"/>
+	</animation>
+	
+	<layers name="mousepointer.default.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.default.animation"/>
+		<sprite layer="0" animation="mousepointer.default.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.outofrange.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.outofrange.animation"/>
+		<sprite layer="0" animation="mousepointer.outofrange.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.offtarget.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.offtarget.animation"/>
+		<sprite layer="0" animation="mousepointer.offtarget.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.ontarget.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.ontarget.animation"/>
+		<sprite layer="0" animation="mousepointer.ontarget.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.bezerk.outofrange.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.bezerk.outofrange.animation"/>
+		<sprite layer="0" animation="mousepointer.bezerk.outofrange.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.bezerk.offtarget.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.bezerk.offtarget.animation"/>
+		<sprite layer="0" animation="mousepointer.bezerk.offtarget.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.bezerk.ontarget.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.bezerk.ontarget.animation"/>
+		<sprite layer="0" animation="mousepointer.bezerk.ontarget.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.cantbuild.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.cantbuild.animation"/>
+		<sprite layer="0" animation="mousepointer.cantbuild.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.reload.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.reload.animation"/>
+		<sprite layer="0" animation="mousepointer.reload.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.pickup.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.pickup.animation"/>
+		<sprite layer="0" animation="mousepointer.pickup.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.smartbomb.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.smartbomb.animation"/>
+		<sprite layer="0" animation="mousepointer.smartbomb.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.blastmine.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.blastmine.animation"/>
+		<sprite layer="0" animation="mousepointer.blastmine.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.sell.off.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.sell.off.animation"/>
+		<sprite layer="0" animation="mousepointer.sell.off.back.animation"/>
+	</layers>
+	
+	<layers name="mousepointer.sell.on.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.sell.on.animation"/>
+		<sprite layer="0" animation="mousepointer.sell.on.back.animation"/>
+	</layers>
+	
+	
+</resources>
+
+
+
+
+
+
+
+

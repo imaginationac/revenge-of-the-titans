@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Transition tiles -->
+<resources>
+	<tileset name="transition.tileset" description="Transition Tiles" default_="">
+		<floor name="edge.transition.0.0" i="601" image="tiles-transition.0.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.0" i="602" image="tiles-transition.1.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.0" i="603" image="tiles-transition.2.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.0" i="604" image="tiles-transition.3.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.0" i="605" image="tiles-transition.4.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.0" i="606" image="tiles-transition.5.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.0" i="607" image="tiles-transition.6.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.0" i="608" image="tiles-transition.7.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.0" i="609" image="tiles-transition.8.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.0" i="610" image="tiles-transition.9.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.0" i="611" image="tiles-transition.10.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.0" i="612" image="tiles-transition.11.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.0" i="613" image="tiles-transition.12.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.0" i="614" image="tiles-transition.13.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.0" i="615" image="tiles-transition.14.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.0" i="616" image="tiles-transition.15.0" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.1" i="617" image="tiles-transition.0.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.1" i="618" image="tiles-transition.1.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.1" i="619" image="tiles-transition.2.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.1" i="620" image="tiles-transition.3.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.1" i="621" image="tiles-transition.4.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.1" i="622" image="tiles-transition.5.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.1" i="623" image="tiles-transition.6.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.1" i="624" image="tiles-transition.7.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.1" i="625" image="tiles-transition.8.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.1" i="626" image="tiles-transition.9.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.1" i="627" image="tiles-transition.10.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.1" i="628" image="tiles-transition.11.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.1" i="629" image="tiles-transition.12.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.1" i="630" image="tiles-transition.13.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.1" i="631" image="tiles-transition.14.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.1" i="632" image="tiles-transition.15.1" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.2" i="633" image="tiles-transition.0.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.2" i="634" image="tiles-transition.1.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.2" i="635" image="tiles-transition.2.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.2" i="636" image="tiles-transition.3.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.2" i="637" image="tiles-transition.4.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.2" i="638" image="tiles-transition.5.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.2" i="639" image="tiles-transition.6.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.2" i="640" image="tiles-transition.7.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.2" i="641" image="tiles-transition.8.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.2" i="642" image="tiles-transition.9.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.2" i="643" image="tiles-transition.10.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.2" i="644" image="tiles-transition.11.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.2" i="645" image="tiles-transition.12.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.2" i="646" image="tiles-transition.13.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.2" i="647" image="tiles-transition.14.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.2" i="648" image="tiles-transition.15.2" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.3" i="649" image="tiles-transition.0.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.3" i="650" image="tiles-transition.1.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.3" i="651" image="tiles-transition.2.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.3" i="652" image="tiles-transition.3.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.3" i="653" image="tiles-transition.4.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.3" i="654" image="tiles-transition.5.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.3" i="655" image="tiles-transition.6.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.3" i="656" image="tiles-transition.7.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.3" i="657" image="tiles-transition.8.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.3" i="658" image="tiles-transition.9.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.3" i="659" image="tiles-transition.10.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.3" i="660" image="tiles-transition.11.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.3" i="661" image="tiles-transition.12.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.3" i="662" image="tiles-transition.13.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.3" i="663" image="tiles-transition.14.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.3" i="664" image="tiles-transition.15.3" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.4" i="665" image="tiles-transition.0.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.4" i="666" image="tiles-transition.1.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.4" i="667" image="tiles-transition.2.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.4" i="668" image="tiles-transition.3.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.4" i="669" image="tiles-transition.4.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.4" i="670" image="tiles-transition.5.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.4" i="671" image="tiles-transition.6.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.4" i="672" image="tiles-transition.7.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.4" i="673" image="tiles-transition.8.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.4" i="674" image="tiles-transition.9.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.4" i="675" image="tiles-transition.10.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.4" i="676" image="tiles-transition.11.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.4" i="677" image="tiles-transition.12.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.4" i="678" image="tiles-transition.13.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.4" i="679" image="tiles-transition.14.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.4" i="680" image="tiles-transition.15.4" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.5" i="681" image="tiles-transition.0.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.5" i="682" image="tiles-transition.1.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.5" i="683" image="tiles-transition.2.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.5" i="684" image="tiles-transition.3.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.5" i="685" image="tiles-transition.4.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.5" i="686" image="tiles-transition.5.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.5" i="687" image="tiles-transition.6.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.5" i="688" image="tiles-transition.7.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.5" i="689" image="tiles-transition.8.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.5" i="690" image="tiles-transition.9.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.5" i="691" image="tiles-transition.10.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.5" i="692" image="tiles-transition.11.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.5" i="693" image="tiles-transition.12.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.5" i="694" image="tiles-transition.13.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.5" i="695" image="tiles-transition.14.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.5" i="696" image="tiles-transition.15.5" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.6" i="697" image="tiles-transition.0.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.6" i="698" image="tiles-transition.1.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.6" i="699" image="tiles-transition.2.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.6" i="700" image="tiles-transition.3.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.6" i="701" image="tiles-transition.4.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.6" i="702" image="tiles-transition.5.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.6" i="703" image="tiles-transition.6.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.6" i="704" image="tiles-transition.7.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.6" i="705" image="tiles-transition.8.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.6" i="706" image="tiles-transition.9.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.6" i="707" image="tiles-transition.10.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.6" i="708" image="tiles-transition.11.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.6" i="709" image="tiles-transition.12.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.6" i="710" image="tiles-transition.13.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.6" i="711" image="tiles-transition.14.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.6" i="712" image="tiles-transition.15.6" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.7" i="713" image="tiles-transition.0.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.7" i="714" image="tiles-transition.1.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.7" i="715" image="tiles-transition.2.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.7" i="716" image="tiles-transition.3.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.7" i="717" image="tiles-transition.4.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.7" i="718" image="tiles-transition.5.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.7" i="719" image="tiles-transition.6.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.7" i="720" image="tiles-transition.7.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.7" i="721" image="tiles-transition.8.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.7" i="722" image="tiles-transition.9.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.7" i="723" image="tiles-transition.10.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.7" i="724" image="tiles-transition.11.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.7" i="725" image="tiles-transition.12.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.7" i="726" image="tiles-transition.13.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.7" i="727" image="tiles-transition.14.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.7" i="728" image="tiles-transition.15.7" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.8" i="729" image="tiles-transition.0.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.8" i="730" image="tiles-transition.1.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.8" i="731" image="tiles-transition.2.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.8" i="732" image="tiles-transition.3.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.8" i="733" image="tiles-transition.4.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.8" i="734" image="tiles-transition.5.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.8" i="735" image="tiles-transition.6.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.8" i="736" image="tiles-transition.7.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.8" i="737" image="tiles-transition.8.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.8" i="738" image="tiles-transition.9.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.8" i="739" image="tiles-transition.10.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.8" i="740" image="tiles-transition.11.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.8" i="741" image="tiles-transition.12.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.8" i="742" image="tiles-transition.13.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.8" i="743" image="tiles-transition.14.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.8" i="744" image="tiles-transition.15.8" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.9" i="745" image="tiles-transition.0.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.9" i="746" image="tiles-transition.1.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.9" i="747" image="tiles-transition.2.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.9" i="748" image="tiles-transition.3.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.9" i="749" image="tiles-transition.4.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.9" i="750" image="tiles-transition.5.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.9" i="751" image="tiles-transition.6.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.9" i="752" image="tiles-transition.7.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.9" i="753" image="tiles-transition.8.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.9" i="754" image="tiles-transition.9.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.9" i="755" image="tiles-transition.10.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.9" i="756" image="tiles-transition.11.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.9" i="757" image="tiles-transition.12.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.9" i="758" image="tiles-transition.13.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.9" i="759" image="tiles-transition.14.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.9" i="760" image="tiles-transition.15.9" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.10" i="761" image="tiles-transition.0.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.10" i="762" image="tiles-transition.1.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.10" i="763" image="tiles-transition.2.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.10" i="764" image="tiles-transition.3.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.10" i="765" image="tiles-transition.4.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.10" i="766" image="tiles-transition.5.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.10" i="767" image="tiles-transition.6.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.10" i="768" image="tiles-transition.7.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.10" i="769" image="tiles-transition.8.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.10" i="770" image="tiles-transition.9.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.10" i="771" image="tiles-transition.10.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.10" i="772" image="tiles-transition.11.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.10" i="773" image="tiles-transition.12.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.10" i="774" image="tiles-transition.13.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.10" i="775" image="tiles-transition.14.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.10" i="776" image="tiles-transition.15.10" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.11" i="777" image="tiles-transition.0.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.11" i="778" image="tiles-transition.1.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.11" i="779" image="tiles-transition.2.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.11" i="780" image="tiles-transition.3.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.11" i="781" image="tiles-transition.4.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.11" i="782" image="tiles-transition.5.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.11" i="783" image="tiles-transition.6.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.11" i="784" image="tiles-transition.7.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.11" i="785" image="tiles-transition.8.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.11" i="786" image="tiles-transition.9.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.11" i="787" image="tiles-transition.10.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.11" i="788" image="tiles-transition.11.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.11" i="789" image="tiles-transition.12.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.11" i="790" image="tiles-transition.13.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.11" i="791" image="tiles-transition.14.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.11" i="792" image="tiles-transition.15.11" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.12" i="793" image="tiles-transition.0.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.12" i="794" image="tiles-transition.1.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.12" i="795" image="tiles-transition.2.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.12" i="796" image="tiles-transition.3.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.12" i="797" image="tiles-transition.4.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.12" i="798" image="tiles-transition.5.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.12" i="799" image="tiles-transition.6.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.12" i="800" image="tiles-transition.7.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.12" i="801" image="tiles-transition.8.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.12" i="802" image="tiles-transition.9.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.12" i="803" image="tiles-transition.10.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.12" i="804" image="tiles-transition.11.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.12" i="805" image="tiles-transition.12.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.12" i="806" image="tiles-transition.13.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.12" i="807" image="tiles-transition.14.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.12" i="808" image="tiles-transition.15.12" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.13" i="809" image="tiles-transition.0.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.13" i="810" image="tiles-transition.1.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.13" i="811" image="tiles-transition.2.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.13" i="812" image="tiles-transition.3.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.13" i="813" image="tiles-transition.4.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.13" i="814" image="tiles-transition.5.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.13" i="815" image="tiles-transition.6.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.13" i="816" image="tiles-transition.7.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.13" i="817" image="tiles-transition.8.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.13" i="818" image="tiles-transition.9.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.13" i="819" image="tiles-transition.10.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.13" i="820" image="tiles-transition.11.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.13" i="821" image="tiles-transition.12.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.13" i="822" image="tiles-transition.13.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.13" i="823" image="tiles-transition.14.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.13" i="824" image="tiles-transition.15.13" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.14" i="825" image="tiles-transition.0.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.14" i="826" image="tiles-transition.1.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.14" i="827" image="tiles-transition.2.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.14" i="828" image="tiles-transition.3.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.14" i="829" image="tiles-transition.4.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.14" i="830" image="tiles-transition.5.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.14" i="831" image="tiles-transition.6.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.14" i="832" image="tiles-transition.7.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.14" i="833" image="tiles-transition.8.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.14" i="834" image="tiles-transition.9.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.14" i="835" image="tiles-transition.10.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.14" i="836" image="tiles-transition.11.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.14" i="837" image="tiles-transition.12.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.14" i="838" image="tiles-transition.13.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.14" i="839" image="tiles-transition.14.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.14" i="840" image="tiles-transition.15.14" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.0.15" i="841" image="tiles-transition.0.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.1.15" i="842" image="tiles-transition.1.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.2.15" i="843" image="tiles-transition.2.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.3.15" i="844" image="tiles-transition.3.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.4.15" i="845" image="tiles-transition.4.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.5.15" i="846" image="tiles-transition.5.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.6.15" i="847" image="tiles-transition.6.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.7.15" i="848" image="tiles-transition.7.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.8.15" i="849" image="tiles-transition.8.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.9.15" i="850" image="tiles-transition.9.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.10.15" i="851" image="tiles-transition.10.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.11.15" i="852" image="tiles-transition.11.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.12.15" i="853" image="tiles-transition.12.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.13.15" i="854" image="tiles-transition.13.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.14.15" i="855" image="tiles-transition.14.15" layer="2" colored="floor" attenuated="true"/>
+		<floor name="edge.transition.15.15" i="856" image="tiles-transition.15.15" layer="2" colored="floor" attenuated="true"/>
+	</tileset>
+</resources>
+
+

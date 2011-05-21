@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Endless mode -->
+<resources>
+
+	<include resource="tags.xml"/>
+	
+	<!-- Rank and file gidrahs -->
+	<array
+		name="endless.gidrahs.0"
+	>
+		<item>gidrah.earth.01</item>
+		<item>gidrah.moon.01</item>
+		<item>gidrah.mars.01</item>
+		<item>gidrah.mars.02</item>
+		<item>gidrah.saturn.01</item>
+	</array>	
+	
+	<!-- Rank and file gidrahs -->
+	<array
+		name="endless.angrygidrahs.0"
+	>
+		<item>angrygidrah.earth.01</item>
+		<item>angrygidrah.moon.01</item>
+		<item>angrygidrah.mars.01</item>
+		<item>angrygidrah.mars.02</item>
+		<item>angrygidrah.saturn.01</item>
+	</array>	
+	
+	<!-- Tougher gidrahs -->
+	<array
+		name="endless.gidrahs.1"
+	>
+		<item>gidrah.earth.02</item>
+		<item>gidrah.moon.02</item>
+		<item>gidrah.saturn.02</item>
+	</array>	
+	
+	<!-- Tougher gidrahs -->
+	<array
+		name="endless.angrygidrahs.1"
+	>
+		<item>angrygidrah.earth.02</item>
+		<item>angrygidrah.moon.02</item>
+		<item>angrygidrah.saturn.02</item>
+	</array>	
+	
+	<!-- Difficult gidrahs -->
+	<array
+		name="endless.gidrahs.2"
+	>
+		<item>gidrah.moon.03</item>
+		<item>gidrah.mars.04</item>
+		<item>gidrah.saturn.03</item>
+		<item>gidrah.titan.02</item>
+	</array>	
+	
+	<!-- Difficult gidrahs -->
+	<array
+		name="endless.angrygidrahs.2"
+	>
+		<item>angrygidrah.moon.03</item>
+		<item>angrygidrah.mars.04</item>
+		<item>angrygidrah.saturn.03</item>
+		<item>angrygidrah.titan.02</item>
+	</array>	
+	
+	<!-- Exotic gidrahs -->
+	<array
+		name="endless.gidrahs.3"
+	>
+		<item>gidrah.mars.04</item>
+		<item>gidrah.saturn.04</item>
+		<item>gidrah.saturn.05</item>
+		<item>gidrah.titan.03</item>
+		<item>gidrah.titan.04</item>
+		<item>gidrah.titan.05</item>
+	</array>	
+	
+	<!-- Exotic gidrahs -->
+	<array
+		name="endless.angrygidrahs.3"
+	>
+		<item>angrygidrah.mars.04</item>
+		<item>angrygidrah.saturn.04</item>
+		<item>angrygidrah.saturn.05</item>
+		<item>angrygidrah.titan.03</item>
+		<item>angrygidrah.titan.04</item>
+		<item>angrygidrah.titan.05</item>
+	</array>	
+	
+	<!-- Story settings -->
+	<setting
+		name="endless.setting.spec"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+100"/>
+					<scale xscale="1.1" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.earth.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+	<setting
+		name="endless.intro.setting.spec"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+140"/>
+					<scale xscale="1.1" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.earth.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+	<setting name="endless.intro.setting" inherit="endless.intro.setting.spec" >
+		<actor character="endless.stats.char" position="140,60" bounds="60,150,200,20" expand="up" mirrored="false" />
+	</setting>
+
+	<!-- General setting - ordinary levels where aliens come from 1, 2 or 3 directions-->
+	<setting name="endless.setting" inherit="endless.setting.spec" >
+		<actor character="endless.stats.char" position="110,35" bounds="30,130,260,20" expand="up" mirrored="false" />
+	</setting>
+
+	<!-- General setting - when player is surrounded -->
+	<setting name="endless.surrounded.setting" inherit="endless.setting.spec" >
+		<actor character="endless.stats.char" position="110,35" bounds="30,130,260,20" expand="up" mirrored="false" />
+	</setting>
+
+	<!-- Boss setting -->
+	<setting name="endless.boss.setting" inherit="endless.setting.spec" >
+		<actor character="endless.stats.char" position="110,35" bounds="30,130,260,20" expand="up" mirrored="false" />
+	</setting>
+
+	<!-- Player is surrounded, boss coming too -->
+	<setting name="endless.surrounded-boss.setting" inherit="endless.setting.spec" >
+		<actor character="endless.stats.char" position="110,35" bounds="30,130,260,20" expand="up" mirrored="false" />
+	</setting>
+
+	<setting name="endless.tech.setting" inherit="endless.setting.spec">
+		<actor character="endless.tech-left.char" 			position="55,79" 	bounds="115,130,150,25" expand="down" />
+		
+		<actor character="endless.tech.physics.char" 		position="90,183" 	bounds="150,175,130,85"	expand="down" fade="true"/>
+		<actor character="endless.tech.biology.char" 		position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.chemistry.char" 		position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.efficiency.char" 	position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.psychology.char" 	position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.nuclear.char" 		position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.explosives.char" 	position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.textiles.char" 		position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.automation.char" 	position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.barometrics.char" 	position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.optics.char" 		position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.ballistics.char" 	position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.robotics.char" 		position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.forcefields.char" 	position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.anatomy.char" 		position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+		<actor character="endless.tech.extraction.char" 	position="90,183" 	bounds="150,175,130,85" expand="down" fade="true"/>
+	</setting>
+
+	<setting name="endless.building.setting" inherit="endless.setting.spec" >
+		<actor character="endless.custerd.char"				position="215,60" bounds="160,145,135,10" expand="up" mirrored="true" />
+		<actor character="endless.tech.char" 				position="215,60" bounds="160,155,135,10" expand="up" mirrored="true" />
+		
+		<actor character="endless.scanner.char" 			position="83,210" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.reactor.char" 			position="83,205" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.battery.char" 			position="83,220" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.cooling.char" 			position="83,210" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.warehouse.char" 			position="83,210" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.collector.char" 			position="83,210" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.barracks.char" 			position="83,210" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.shieldgenerator.char" 	position="83,200" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.autoloader.char" 			position="83,200" 	bounds="30,190,115,100" expand="down" fade="true"/>
+			
+		<actor character="endless.concrete.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="endless.steel.char" 				position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="endless.titanium.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="endless.nanomesh.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+
+		<actor character="endless.mine.char" 				position="83,235" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.clustermines.char" 		position="83,230" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.blastmine.char" 			position="83,225" 	bounds="30,190,115,100" expand="down" fade="true"/>
+		<actor character="endless.decoy.char" 				position="83,215" 	bounds="30,190,115,100" expand="down" fade="true"/>
+
+	</setting>
+
+	<setting name="endless.weapon.setting" inherit="endless.setting.spec" >
+		<actor character="endless.custerd-left.char" 	position="58,73" 	bounds="128,83,150,60" expand="down" />
+		<actor character="endless.tech-left.char" 		position="60,65" 	bounds="128,83,150,60" expand="down" />
+		
+		<actor character="endless.blaster.char" 		position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.factory.char" 		position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.capacitor.char" 		position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.heavyblaster.char" 	position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.shotgun.char" 		position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.multiblaster.char" 	position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.blastcannon.char" 	position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.assault.char" 		position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.rocket.char" 		position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.laser.char" 			position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>
+		<actor character="endless.disruptor.char" 		position="230,235" 	bounds="35,163,250,125" expand="down" fade="true"/>		
+	</setting>
+
+	<story name="endless.intro" setting="endless.intro.setting">
+		<char id="endless.stats.char">[stats]</char>
+	</story>
+
+	<story name="endless.story" setting="endless.setting">
+		<char id="endless.stats.char">[stats]</char>
+	</story>
+
+	<story name="endless.surrounded.story" setting="endless.surrounded.setting">
+		<char id="endless.stats.char">[stats]</char>
+	</story>
+
+	<story name="endless.boss.story" setting="endless.boss.setting">
+		<char id="endless.stats.char">[stats]</char>
+	</story>
+
+	<story name="endless.surrounded-boss.story" setting="endless.surrounded-boss.setting">
+		<char id="endless.stats.char">[stats]</char>
+	</story>
+
+	
+
+
+</resources>

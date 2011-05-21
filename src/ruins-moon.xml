@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+		<ruin name="moon.ruin.3x2.04" i="11501" layer="2" ruin="true" width="3" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="51,0" ySortOffset="35"  />
+				<emitter emitter="ruins.inside.fire.emitter" offset="19,0" ySortOffset="14"  />
+				<sprite layer="4" sublayer="2" offset="48,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.3x2.04.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="20,13" ySortOffset="13" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.back.03" />
+				<sprite layer="5" sublayer="0" offset="10,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.back.04" />
+				<sprite layer="5" sublayer="4" offset="10,34" ySortOffset="34" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="73,25" ySortOffset="25" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.01" />
+				<sprite layer="5" sublayer="4" offset="20,13" ySortOffset="13" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.03" />
+				<sprite layer="5" sublayer="4" offset="65,4" ySortOffset="4" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="10,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.04" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.3x2.03" i="11502" layer="2" ruin="true" width="3" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="46,0" ySortOffset="36"  />
+				<sprite layer="4" sublayer="2" offset="48,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.3x2.03.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="29,19" ySortOffset="19" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.back.02" />
+				<sprite layer="5" sublayer="4" offset="7,35" ySortOffset="35" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="29,19" ySortOffset="19" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.02" />
+				<sprite layer="5" sublayer="4" offset="8,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.03" />
+				<sprite layer="5" sublayer="4" offset="54,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.14" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.3x2.02" i="11503" layer="2" ruin="true" width="3" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="52,0" ySortOffset="22"  />
+				<sprite layer="4" sublayer="2" offset="48,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.3x2.02.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="21,4" ySortOffset="4" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.back.01" />
+				<sprite layer="5" sublayer="4" offset="55,36" ySortOffset="36" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="2,25" ySortOffset="25" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.08" />
+				<sprite layer="5" sublayer="4" offset="21,4" ySortOffset="4" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.01" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.3x2.01" i="11504" layer="2" ruin="true" width="3" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="65,0" ySortOffset="17"  />
+				<sprite layer="4" sublayer="2" offset="48,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.3x2.01.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="53,1" ySortOffset="1" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.back.03" />
+				<sprite layer="5" sublayer="4" offset="63,36" ySortOffset="36" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="3,19" ySortOffset="19" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.08" />
+				<sprite layer="5" sublayer="4" offset="11,5" ySortOffset="5" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="53,1" ySortOffset="1" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.03" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.4x2.01" i="11505" layer="2" ruin="true" width="4" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="46,0" ySortOffset="43"  />
+				<sprite layer="4" sublayer="2" offset="64,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.4x2.01.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="30,20" ySortOffset="20" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.back.04" />
+				<sprite layer="5" sublayer="4" offset="83,35" ySortOffset="35" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="18,34" ySortOffset="34" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="30,20" ySortOffset="20" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.04" />
+				<sprite layer="5" sublayer="4" offset="12,4" ySortOffset="4" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.13" />
+				<sprite layer="5" sublayer="4" offset="77,3" ySortOffset="3" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.09" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.02" i="11506" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.02.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="46,44" ySortOffset="44" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.04" />
+				<sprite layer="5" sublayer="4" offset="0,21" ySortOffset="21" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.07" />
+				<sprite layer="5" sublayer="4" offset="16,-2" ySortOffset="-2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.12" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.01" i="11507" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.01.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="28,44" ySortOffset="44" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="-1,15" ySortOffset="15" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.08" />
+				<sprite layer="5" sublayer="4" offset="22,-1" ySortOffset="-1" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.13" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.03" i="11508" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="29,0" ySortOffset="37"  />
+				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.03.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="-3,14" ySortOffset="14" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.back.03" />
+				<sprite layer="5" sublayer="4" offset="39,50" ySortOffset="50" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="6,41" ySortOffset="41" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.03" />
+				<sprite layer="5" sublayer="4" offset="-3,14" ySortOffset="14" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.03" />
+				<sprite layer="5" sublayer="4" offset="45,1" ySortOffset="1" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.01" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.4x2.02" i="11509" layer="2" ruin="true" width="4" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="53,0" ySortOffset="38"  />
+				<sprite layer="4" sublayer="2" offset="64,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.4x2.02.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="20,20" ySortOffset="20" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.back.01" />
+				<sprite layer="5" sublayer="4" offset="100,38" ySortOffset="38" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="2,36" ySortOffset="36" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.16" />
+				<sprite layer="5" sublayer="4" offset="20,20" ySortOffset="20" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.01" />
+				<sprite layer="5" sublayer="4" offset="84,5" ySortOffset="5" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.13" />
+				<sprite layer="5" sublayer="4" offset="11,5" ySortOffset="5" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.14" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.4x2.03" i="11510" layer="2" ruin="true" width="4" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="64,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.4x2.03.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="4,34" ySortOffset="34" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="28,23" ySortOffset="23" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.xlarge.03" />
+				<sprite layer="5" sublayer="4" offset="90,10" ySortOffset="10" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.13" />
+				<sprite layer="5" sublayer="4" offset="5,4" ySortOffset="4" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.07" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.4x2.04" i="11511" layer="2" ruin="true" width="4" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="64,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.4x2.04.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="10,39" ySortOffset="39" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.02" />
+				<sprite layer="5" sublayer="4" offset="12,20" ySortOffset="20" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.xlarge.02" />
+				<sprite layer="5" sublayer="4" offset="86,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.15" />
+				<sprite layer="5" sublayer="4" offset="16,1" ySortOffset="1" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.10" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.4x2.05" i="11512" layer="2" ruin="true" width="4" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="46,0" ySortOffset="36"  />
+				<sprite layer="4" sublayer="2" offset="64,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.4x2.05.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="3,17" ySortOffset="17" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.xlarge.back.01" />
+				<sprite layer="5" sublayer="4" offset="100,44" ySortOffset="44" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="7,43" ySortOffset="43" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.03" />
+				<sprite layer="5" sublayer="4" offset="3,17" ySortOffset="17" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.xlarge.01" />
+				<sprite layer="5" sublayer="4" offset="4,4" ySortOffset="4" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="59,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.large.06" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.4x2.06" i="11513" layer="2" ruin="true" width="4" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="25,0" ySortOffset="16"  />
+				<emitter emitter="ruins.inside.fire.emitter" offset="87,0" ySortOffset="13"  />
+				<sprite layer="4" sublayer="2" offset="64,27" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.4x2.06.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="82,3" ySortOffset="3" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.back.02" />
+				<sprite layer="5" sublayer="0" offset="13,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.back.03" />
+				<sprite layer="5" sublayer="4" offset="10,37" ySortOffset="37" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.03" />
+				<sprite layer="5" sublayer="4" offset="94,31" ySortOffset="31" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.15" />
+				<sprite layer="5" sublayer="4" offset="17,11" ySortOffset="11" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.xlarge.03" />
+				<sprite layer="5" sublayer="4" offset="82,3" ySortOffset="3" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.02" />
+				<sprite layer="5" sublayer="4" offset="13,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.03" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.04" i="11514" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.04.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="3,45" ySortOffset="45" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.03" />
+				<sprite layer="5" sublayer="4" offset="15,34" ySortOffset="34" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="7,5" ySortOffset="5" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.13" />
+				<sprite layer="5" sublayer="4" offset="31,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.15" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.05" i="11515" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="16,0" ySortOffset="41"  />
+				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.05.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="7,30" ySortOffset="30" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.back.04" />
+				<sprite layer="5" sublayer="4" offset="7,30" ySortOffset="30" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.04" />
+				<sprite layer="5" sublayer="4" offset="23,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.06" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.06" i="11516" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="18,0" ySortOffset="50"  />
+				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.06.shadowmap" />
+				<sprite layer="5" sublayer="0" offset="6,37" ySortOffset="37" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.back.01" />
+				<sprite layer="5" sublayer="4" offset="6,37" ySortOffset="37" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.01" />
+				<sprite layer="5" sublayer="4" offset="43,27" ySortOffset="27" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.04" />
+				<sprite layer="5" sublayer="4" offset="16,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.05" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.07" i="11517" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.07.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="41,35" ySortOffset="35" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.01" />
+				<sprite layer="5" sublayer="4" offset="10,19" ySortOffset="19" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.05" />
+				<sprite layer="5" sublayer="4" offset="24,2" ySortOffset="2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.12" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.08" i="11518" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.08.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="37,46" ySortOffset="46" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="21,10" ySortOffset="10" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.05" />
+				<sprite layer="5" sublayer="4" offset="1,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.16" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.09" i="11519" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.09.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="44,38" ySortOffset="38" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.04" />
+				<sprite layer="5" sublayer="4" offset="13,23" ySortOffset="23" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.06" />
+				<sprite layer="5" sublayer="4" offset="30,-2" ySortOffset="-2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="4,-2" ySortOffset="-2" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.02" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x2.10" i="11520" layer="2" ruin="true" width="2" height="2" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,31" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x2.10.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="27,32" ySortOffset="32" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="2,22" ySortOffset="22" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.16" />
+				<sprite layer="5" sublayer="4" offset="17,5" ySortOffset="5" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.10" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x1.01" i="11521" layer="2" ruin="true" width="2" height="1" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x1.01.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="10,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="26,3" ySortOffset="3" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+				<sprite layer="5" sublayer="4" offset="12,-3" ySortOffset="-3" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x1.02" i="11522" layer="2" ruin="true" width="2" height="1" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x1.02.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="8,8" ySortOffset="8" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="25,-1" ySortOffset="-1" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.13" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x1.03" i="11523" layer="2" ruin="true" width="2" height="1" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x1.03.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="13,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="26,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x1.04" i="11524" layer="2" ruin="true" width="2" height="1" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x1.04.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="10,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.13" />
+				<sprite layer="5" sublayer="4" offset="39,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x1.05" i="11525" layer="2" ruin="true" width="2" height="1" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x1.05.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="9,17" ySortOffset="17" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="30,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.15" />
+				<sprite layer="5" sublayer="4" offset="7,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+		</layers></layers></ruin>
+
+		<ruin name="moon.ruin.2x1.06" i="11526" layer="2" ruin="true" width="2" height="1" roads="true"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.moon.ruin.2x1.06.shadowmap" />
+				<sprite layer="5" sublayer="4" offset="39,7" ySortOffset="7" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.small.05" />
+				<sprite layer="5" sublayer="4" offset="5,0" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.moon.ruin.building.11" />
+		</layers></layers></ruin>
+
+</resources>

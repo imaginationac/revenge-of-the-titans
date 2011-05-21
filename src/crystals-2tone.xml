@@ -1,0 +1,644 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+	<instance
+		 name="building.crystal.2tone.large.01"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.medium.building.spec"
+		 floor="-4"
+		 size="2"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="50,17" ySortOffset="17" colored="crystal-glow" attenuated="false" animation="crystal.small.top.08.anim" />
+			<sprite layer="5" sublayer="4" offset="50,17" ySortOffset="17" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.08" />
+			<sprite layer="5" sublayer="5" offset="40,5" ySortOffset="5" colored="crystal-glow" attenuated="false" animation="crystal.small.top.05.anim" />
+			<sprite layer="5" sublayer="4" offset="40,5" ySortOffset="5" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="5" sublayer="5" offset="26,11" ySortOffset="11" colored="crystal-glow" attenuated="false" animation="crystal.medium.top.01.anim" />
+			<emitter emitter="crystal.sparkle.emitter" offset="29,0" ySortOffset="24"  />
+			<sprite layer="5" sublayer="4" offset="26,11" ySortOffset="11" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.medium.01" />
+			<sprite layer="5" sublayer="5" offset="9,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="9,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.01.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="9,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="26,11" ySortOffset="11" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.medium.01" />
+			<sprite layer="5" sublayer="4" offset="40,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="5" sublayer="4" offset="50,17" ySortOffset="17" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.08" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.01.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.medium.01"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="14,17" ySortOffset="17" colored="crystal-glow" attenuated="false" animation="crystal.small.top.09.anim" />
+			<sprite layer="5" sublayer="4" offset="14,17" ySortOffset="17" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="5" sublayer="5" offset="25,28" ySortOffset="28" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="25,28" ySortOffset="28" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="20,11" ySortOffset="11" colored="crystal-glow" attenuated="false" animation="crystal.small.top.03.anim" />
+			<sprite layer="5" sublayer="4" offset="20,11" ySortOffset="11" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.03" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.01.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="25,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="14,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="5" sublayer="4" offset="20,10" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.03" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.01.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.medium.02"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="11,24" ySortOffset="24" colored="crystal-glow" attenuated="false" animation="crystal.small.top.09.anim" />
+			<sprite layer="5" sublayer="4" offset="11,24" ySortOffset="24" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="5" sublayer="5" offset="27,24" ySortOffset="24" colored="crystal-glow" attenuated="false" animation="crystal.small.top.02.anim" />
+			<sprite layer="5" sublayer="4" offset="27,24" ySortOffset="24" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="5" offset="17,10" ySortOffset="10" colored="crystal-glow" attenuated="false" animation="crystal.small.top.04.anim" />
+			<sprite layer="5" sublayer="4" offset="17,10" ySortOffset="10" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.02.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="27,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="4" offset="11,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="5" sublayer="4" offset="17,9" ySortOffset="9" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.02.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.medium.03"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="9,31" ySortOffset="31" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="9,31" ySortOffset="31" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="14,11" ySortOffset="11" colored="crystal-glow" attenuated="false" animation="crystal.small.top.05.anim" />
+			<sprite layer="5" sublayer="4" offset="14,11" ySortOffset="11" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="5" sublayer="5" offset="20,19" ySortOffset="19" colored="crystal-glow" attenuated="false" animation="crystal.small.top.10.anim" />
+			<sprite layer="5" sublayer="4" offset="20,19" ySortOffset="19" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.10" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.03.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="14,10" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="5" sublayer="4" offset="9,30" ySortOffset="30" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="20,18" ySortOffset="18" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.10" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.03.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.medium.04"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="11,17" ySortOffset="17" colored="crystal-glow" attenuated="false" animation="crystal.small.top.11.anim" />
+			<sprite layer="5" sublayer="4" offset="11,17" ySortOffset="17" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.11" />
+			<sprite layer="5" sublayer="5" offset="26,26" ySortOffset="26" colored="crystal-glow" attenuated="false" animation="crystal.small.top.02.anim" />
+			<sprite layer="5" sublayer="4" offset="26,26" ySortOffset="26" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="5" offset="17,9" ySortOffset="9" colored="crystal-glow" attenuated="false" animation="crystal.small.top.06.anim" />
+			<sprite layer="5" sublayer="4" offset="17,9" ySortOffset="9" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.06" />
+			<sprite layer="3" sublayer="2" offset="15,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.04.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="17,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.06" />
+			<sprite layer="5" sublayer="4" offset="11,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.11" />
+			<sprite layer="5" sublayer="4" offset="26,25" ySortOffset="25" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="3" sublayer="2" offset="15,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.04.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.medium.05"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="9,24" ySortOffset="24" colored="crystal-glow" attenuated="false" animation="crystal.small.top.04.anim" />
+			<sprite layer="5" sublayer="4" offset="9,24" ySortOffset="24" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="5" sublayer="5" offset="7,11" ySortOffset="11" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="7,11" ySortOffset="11" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="22,14" ySortOffset="14" colored="crystal-glow" attenuated="false" animation="crystal.small.top.12.anim" />
+			<sprite layer="5" sublayer="4" offset="22,14" ySortOffset="14" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.12" />
+			<sprite layer="3" sublayer="2" offset="15,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.05.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="9,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="5" sublayer="4" offset="7,10" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="22,13" ySortOffset="13" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.12" />
+			<sprite layer="3" sublayer="2" offset="15,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.05.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.large.02"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.medium.building.spec"
+		 floor="-4"
+		 size="2"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="27,14" ySortOffset="14" colored="crystal-glow" attenuated="false" animation="crystal.medium.top.02.anim" />
+			<emitter emitter="crystal.sparkle.emitter" offset="28,0" ySortOffset="24"  />
+			<sprite layer="5" sublayer="4" offset="27,14" ySortOffset="14" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.medium.02" />
+			<sprite layer="5" sublayer="5" offset="10,5" ySortOffset="5" colored="crystal-glow" attenuated="false" animation="crystal.small.top.08.anim" />
+			<sprite layer="5" sublayer="4" offset="10,5" ySortOffset="5" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.08" />
+			<sprite layer="5" sublayer="5" offset="53,22" ySortOffset="22" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="53,22" ySortOffset="22" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="51,5" ySortOffset="5" colored="crystal-glow" attenuated="false" animation="crystal.small.top.04.anim" />
+			<sprite layer="5" sublayer="4" offset="51,5" ySortOffset="5" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.02.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="51,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="5" sublayer="4" offset="53,22" ySortOffset="22" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="10,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.08" />
+			<sprite layer="5" sublayer="4" offset="27,14" ySortOffset="14" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.medium.02" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.02.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.large.03"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.medium.building.spec"
+		 floor="-4"
+		 size="2"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="37,14" ySortOffset="14" colored="crystal-glow" attenuated="false" animation="crystal.medium.top.03.anim" />
+			<sprite layer="5" sublayer="4" offset="37,14" ySortOffset="14" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.medium.03" />
+			<emitter emitter="crystal.sparkle.emitter" offset="37,0" ySortOffset="27"  />
+			<sprite layer="5" sublayer="5" offset="16,8" ySortOffset="8" colored="crystal-glow" attenuated="false" animation="crystal.small.top.11.anim" />
+			<sprite layer="5" sublayer="4" offset="16,8" ySortOffset="8" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.11" />
+			<sprite layer="5" sublayer="5" offset="50,5" ySortOffset="5" colored="crystal-glow" attenuated="false" animation="crystal.small.top.04.anim" />
+			<sprite layer="5" sublayer="4" offset="50,5" ySortOffset="5" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.03.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="37,14" ySortOffset="14" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.medium.03" />
+			<sprite layer="5" sublayer="4" offset="16,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.11" />
+			<sprite layer="5" sublayer="4" offset="50,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.03.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.large.04"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.medium.building.spec"
+		 floor="-4"
+		 size="2"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="12,7" ySortOffset="7" colored="crystal-glow" attenuated="false" animation="crystal.small.top.09.anim" />
+			<sprite layer="5" sublayer="4" offset="12,7" ySortOffset="7" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="5" sublayer="5" offset="55,25" ySortOffset="25" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="55,25" ySortOffset="25" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="38,7" ySortOffset="7" colored="crystal-glow" attenuated="false" animation="crystal.medium.top.04.anim" />
+			<emitter emitter="crystal.sparkle.emitter" offset="36,0" ySortOffset="18"  />
+			<sprite layer="5" sublayer="4" offset="38,7" ySortOffset="7" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.medium.04" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.04.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="38,7" ySortOffset="7" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.medium.04" />
+			<sprite layer="5" sublayer="4" offset="55,25" ySortOffset="25" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="12,7" ySortOffset="7" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.04.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.large.05"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.medium.building.spec"
+		 floor="-4"
+		 size="2"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="15,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.small.top.11.anim" />
+			<sprite layer="5" sublayer="4" offset="15,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.11" />
+			<sprite layer="5" sublayer="5" offset="45,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.medium.top.05.anim" />
+			<sprite layer="5" sublayer="4" offset="45,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.medium.05" />
+			<emitter emitter="crystal.sparkle.emitter" offset="46,0" ySortOffset="16"  />
+			<sprite layer="5" sublayer="5" offset="8,23" ySortOffset="23" colored="crystal-glow" attenuated="false" animation="crystal.small.top.05.anim" />
+			<sprite layer="5" sublayer="4" offset="8,23" ySortOffset="23" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.05.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="45,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.medium.05" />
+			<sprite layer="5" sublayer="4" offset="15,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.11" />
+			<sprite layer="5" sublayer="4" offset="8,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.05.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.large.06"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.medium.building.spec"
+		 floor="-4"
+		 size="2"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="16,18" ySortOffset="18" colored="crystal-glow" attenuated="false" animation="crystal.small.top.11.anim" />
+			<sprite layer="5" sublayer="4" offset="16,18" ySortOffset="18" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.11" />
+			<sprite layer="5" sublayer="5" offset="11,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="11,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="42,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.medium.top.06.anim" />
+			<emitter emitter="crystal.sparkle.emitter" offset="44,0" ySortOffset="17"  />
+			<sprite layer="5" sublayer="4" offset="42,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.medium.06" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.06.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="16,18" ySortOffset="18" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.11" />
+			<sprite layer="5" sublayer="4" offset="11,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="42,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.medium.06" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.06.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.large.07"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.medium.building.spec"
+		 floor="-4"
+		 size="2"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="15,26" ySortOffset="26" colored="crystal-glow" attenuated="false" animation="crystal.small.top.03.anim" />
+			<sprite layer="5" sublayer="4" offset="15,26" ySortOffset="26" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.03" />
+			<sprite layer="5" sublayer="5" offset="23,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.medium.top.01.anim" />
+			<emitter emitter="crystal.sparkle.emitter" offset="26,0" ySortOffset="19"  />
+			<sprite layer="5" sublayer="4" offset="23,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.medium.01" />
+			<sprite layer="5" sublayer="5" offset="49,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.small.top.09.anim" />
+			<sprite layer="5" sublayer="4" offset="49,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.07.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="23,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.medium.01" />
+			<sprite layer="5" sublayer="4" offset="15,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.03" />
+			<sprite layer="5" sublayer="4" offset="49,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.07.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.large.08"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.medium.building.spec"
+		 floor="-4"
+		 size="2"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="58,23" ySortOffset="23" colored="crystal-glow" attenuated="false" animation="crystal.small.top.02.anim" />
+			<sprite layer="5" sublayer="4" offset="58,23" ySortOffset="23" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="5" offset="38,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.medium.top.04.anim" />
+			<emitter emitter="crystal.sparkle.emitter" offset="36,0" ySortOffset="17"  />
+			<sprite layer="5" sublayer="4" offset="38,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.medium.04" />
+			<sprite layer="5" sublayer="5" offset="10,6" ySortOffset="6" colored="crystal-glow" attenuated="false" animation="crystal.small.top.10.anim" />
+			<sprite layer="5" sublayer="4" offset="10,6" ySortOffset="6" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.10" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.08.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="58,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="4" offset="10,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.10" />
+			<sprite layer="5" sublayer="4" offset="38,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.medium.04" />
+			<sprite layer="3" sublayer="2" offset="32,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.large.08.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.medium.06"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="10,18" ySortOffset="18" colored="crystal-glow" attenuated="false" animation="crystal.small.top.10.anim" />
+			<sprite layer="5" sublayer="4" offset="10,18" ySortOffset="18" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.10" />
+			<sprite layer="5" sublayer="5" offset="18,12" ySortOffset="12" colored="crystal-glow" attenuated="false" animation="crystal.small.top.06.anim" />
+			<sprite layer="5" sublayer="4" offset="18,12" ySortOffset="12" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.06" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.06.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="10,17" ySortOffset="17" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.10" />
+			<sprite layer="5" sublayer="4" offset="18,11" ySortOffset="11" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.06" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.06.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.medium.07"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="19,24" ySortOffset="24" colored="crystal-glow" attenuated="false" animation="crystal.small.top.08.anim" />
+			<sprite layer="5" sublayer="4" offset="19,24" ySortOffset="24" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.08" />
+			<sprite layer="5" sublayer="5" offset="4,17" ySortOffset="17" colored="crystal-glow" attenuated="false" animation="crystal.small.top.07.anim" />
+			<sprite layer="5" sublayer="4" offset="4,17" ySortOffset="17" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.07" />
+			<sprite layer="5" sublayer="5" offset="10,10" ySortOffset="10" colored="crystal-glow" attenuated="false" animation="crystal.small.top.05.anim" />
+			<sprite layer="5" sublayer="4" offset="10,10" ySortOffset="10" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.07.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="4,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.07" />
+			<sprite layer="5" sublayer="4" offset="19,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.08" />
+			<sprite layer="5" sublayer="4" offset="10,9" ySortOffset="9" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.07.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.medium.08"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="7,24" ySortOffset="24" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="7,24" ySortOffset="24" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="19,16" ySortOffset="16" colored="crystal-glow" attenuated="false" animation="crystal.small.top.09.anim" />
+			<sprite layer="5" sublayer="4" offset="19,16" ySortOffset="16" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="5" sublayer="5" offset="10,10" ySortOffset="10" colored="crystal-glow" attenuated="false" animation="crystal.small.top.05.anim" />
+			<sprite layer="5" sublayer="4" offset="10,10" ySortOffset="10" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.08.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="7,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="19,15" ySortOffset="15" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.09" />
+			<sprite layer="5" sublayer="4" offset="10,9" ySortOffset="9" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.medium.08.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.small.01"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="16,20" ySortOffset="20" colored="crystal-glow" attenuated="false" animation="crystal.small.top.02.anim" />
+			<sprite layer="5" sublayer="4" offset="16,20" ySortOffset="20" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="5" offset="20,7" ySortOffset="7" colored="crystal-glow" attenuated="false" animation="crystal.small.top.03.anim" />
+			<sprite layer="5" sublayer="4" offset="20,7" ySortOffset="7" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.03" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.01.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="20,7" ySortOffset="7" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.03" />
+			<sprite layer="5" sublayer="4" offset="16,20" ySortOffset="20" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.01.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.small.02"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="15,23" ySortOffset="23" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="15,23" ySortOffset="23" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="18,7" ySortOffset="7" colored="crystal-glow" attenuated="false" animation="crystal.small.top.04.anim" />
+			<sprite layer="5" sublayer="4" offset="18,7" ySortOffset="7" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.02.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="15,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="18,7" ySortOffset="7" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.02.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.small.03"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="18,25" ySortOffset="25" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="18,25" ySortOffset="25" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="13,9" ySortOffset="9" colored="crystal-glow" attenuated="false" animation="crystal.small.top.05.anim" />
+			<sprite layer="5" sublayer="4" offset="13,9" ySortOffset="9" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.03.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="13,9" ySortOffset="9" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.05" />
+			<sprite layer="5" sublayer="4" offset="18,25" ySortOffset="25" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.03.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.small.04"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="14,18" ySortOffset="18" colored="crystal-glow" attenuated="false" animation="crystal.small.top.02.anim" />
+			<sprite layer="5" sublayer="4" offset="14,18" ySortOffset="18" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="5" offset="19,8" ySortOffset="8" colored="crystal-glow" attenuated="false" animation="crystal.small.top.06.anim" />
+			<sprite layer="5" sublayer="4" offset="19,8" ySortOffset="8" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.06" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.04.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="14,18" ySortOffset="18" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="4" offset="19,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.06" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.04.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.small.05"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="16,13" ySortOffset="13" colored="crystal-glow" attenuated="false" animation="crystal.small.top.04.anim" />
+			<sprite layer="5" sublayer="4" offset="16,13" ySortOffset="13" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.05.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="16,13" ySortOffset="13" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.04" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.05.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.small.06"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="13,18" ySortOffset="18" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="13,18" ySortOffset="18" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="19,8" ySortOffset="8" colored="crystal-glow" attenuated="false" animation="crystal.small.top.03.anim" />
+			<sprite layer="5" sublayer="4" offset="19,8" ySortOffset="8" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.03" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.06.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="13,18" ySortOffset="18" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="19,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.03" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.06.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.small.07"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="11,21" ySortOffset="21" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="11,21" ySortOffset="21" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="5" offset="24,7" ySortOffset="7" colored="crystal-glow" attenuated="false" animation="crystal.small.top.02.anim" />
+			<sprite layer="5" sublayer="4" offset="24,7" ySortOffset="7" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.07.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="11,21" ySortOffset="21" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="24,7" ySortOffset="7" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.07.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+	<instance
+		 name="building.crystal.2tone.small.08"
+		 class="worm.buildings.CrystalFeature"
+		 inherit="crystal.small.building.spec"
+		 floor="-4"
+		 size="1"
+	>
+		<appearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="5" offset="21,20" ySortOffset="20" colored="crystal-glow" attenuated="false" animation="crystal.small.top.02.anim" />
+			<sprite layer="5" sublayer="4" offset="21,20" ySortOffset="20" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="5" sublayer="5" offset="13,7" ySortOffset="7" colored="crystal-glow" attenuated="false" animation="crystal.small.top.01.anim" />
+			<sprite layer="5" sublayer="4" offset="13,7" ySortOffset="7" bottomColored="floor-fog" topColored="crystal" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.08.shadowmap" />
+		</layers></appearance>
+
+		<deathAppearance><layers scale="0.5">
+ 			<sprite layer="5" sublayer="4" offset="13,7" ySortOffset="7" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.01" />
+			<sprite layer="5" sublayer="4" offset="21,20" ySortOffset="20" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.crystal.small.02" />
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.building.crystal.small.08.shadowmap" />
+		</layers></deathAppearance>
+
+	</instance>
+
+</resources>

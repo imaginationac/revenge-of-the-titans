@@ -1,0 +1,1740 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Earth tiles -->
+<resources>
+	<tileset name="titan.tileset" description="titan Tiles" default_="">
+
+
+	<include resource="ruins-titan.xml" />
+
+	
+
+
+
+	<emitter
+		name="titan.nodule.flash.emitter"
+		duration="0"
+		delay="1.0"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.light.64px.half.01"
+		layer="6"
+		startScale="0.75"
+		scale="1.0"
+		endScale="1.25, 1.5"
+		particleDuration="4.0, 6.0"
+		fadeDuration="16.0, 24.0"
+		startHue="0.8"
+		startSaturation="0,0.5"
+		startBrightness="1.0"
+		endHue="0.75"
+		endSaturation="1.0"
+		endBrightness="1.0"
+		doYOffset="true"
+	/>
+	
+	<emitter
+		name="titan.nodule.flare.light.emitter"
+		duration="1.0"
+		delay="20"
+		velocity="140"
+		gravityY="-0.005, -0.01"
+		acceleration="-115"
+		angle="90"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.light.64px.02"
+		layer="6"
+		startScale="0.75,1.0"
+		scale="1.2,1.4"
+		endScale="1.75,2.0"
+		particleDuration="16"
+		fadeDuration="24.0, 48.0"
+		startHue="0.8"
+		startSaturation="0.5, 1.0"
+		startBrightness="0.5,0.75"
+		endHue="0.75"
+		endSaturation="1.0"
+		endBrightness="0.5"
+		doYOffset="true"
+	/>
+
+		<emitter
+			name="titan.nodule.flare.flare.emitter"
+			duration="1.0"
+			particlesPerTick="1.0"
+			appearance="spriteimage.particle.glowing.4px.01"
+			layer="5"
+			subLayer="6"
+			velocity="22.5"
+			acceleration="-1.0"
+			angle="90.0"
+			startScale="0.8, 1.0"
+			scale="0.7, 0.8"
+			endScale="0.6"
+			gravityX="-0.005, 0.005"
+			gravityY="-0.005, -0.01"
+			particleDuration="20.0, 25.0"
+			fadeDuration="200.0"
+			startHue="0.775"
+			startSaturation="1.0"
+			startBrightness="1.0"
+			endHue="0.725"
+			endSaturation="0"
+			endBrightness="0.5"
+			
+			rotate="true"
+			relativeRotate="true"
+			emitterScale="0.65"
+			doYOffset="true"
+		/>
+
+
+		<emitter
+			name="titan.nodule.flare.smoke.emitter"
+			duration="1.0"
+			particlesPerTick="4.0, 8.0"
+			appearance="smoke.glowing.alpha.animation"
+			layer="5"
+			velocity="1.0, 3.0"
+			acceleration="-0.05, -0.1"
+			radius="0.0, 16.0"
+			startScale="0.5, 0.6"
+			scale="0.7, 0.8"
+			endScale="1.5, 2.5"
+			gravityX="-0.01, 0.01"
+			gravityY="-0.005, -0.01"
+			particleDuration="8.0, 24.0"
+			fadeDuration="24.0, 60.0"
+			startHue="0.8"
+			startSaturation="0.0, 1.0"
+			startBrightness="1.0"
+			endHue="0.75"
+			endSaturation="0.0, 1.0"
+			endBrightness="0.5, 1.0"
+			angle="80.0, 100.0"
+			delay="1.0"
+			rotate="true"
+			relativeRotate="true"
+			emitterScale="0.4"
+			doYOffset="true"
+		/>
+
+
+		<emitter
+			name="titan.nodule.trail.emitter"
+			duration="25.0"
+			particlesPerTick="1.0"
+			appearance="spriteimage.particle.glowing.3px.01"
+			layer="5"
+			subLayer="6"
+			startScale="0.8"
+			scale="0.7"
+			endScale="0.6"
+			particleDuration="4.0"
+			fadeDuration="6.0"
+			startHue="0.75"
+			startSaturation="1.0"
+			startBrightness="1.0"
+			endHue="0.725"
+			endSaturation="1.0"
+			endBrightness="0.2"
+			interpolation="2"
+			emitterScale="0.7"
+		/>
+
+		<emitter
+			name="titan.nodule.cannon.fire.emitter"
+			duration="1.0"
+			particlesPerTick="1.0"
+			appearance="gidrah.cannon.bullet.animation"
+			layer="5"
+			subLayer="6"
+			velocity="13"
+			acceleration="0"
+			angle="90.0"
+			startScale="0.7"
+			scale="0.7"
+			endScale="0.7"
+			particleDuration="200.0"
+			fadeDuration="200.0"
+			
+			rotate="true"
+			relativeRotate="false"
+			emitterScale="1.0"
+			doYOffset="true"
+		/>
+	
+
+		<emitter
+			name="titan.nodule.flare.aftersmoke.emitter"
+			duration="3.0"
+			particlesPerTick="2.0, 4.0"
+			appearance="smoke.glowing.alpha.animation"
+			layer="5"
+			subLayer="6"
+			velocity="0.75, 1.75"
+			acceleration="-0.02, -0.04"
+			radius="0.0, 5.0"
+			startScale="0.3, 0.5"
+			scale="0.6, 0.9"
+			endScale="1.25, 2.0"
+			gravityX="-0.002, 0.002"
+			gravityY="-0.001, -0.005"
+			particleDuration="8.0, 24.0"
+			fadeDuration="40.0, 80.0"
+			startHue="0.8"
+			startSaturation="0.5, 1.0"
+			startBrightness="1.0"
+			endHue="0.75"
+			endSaturation="1.0"
+			endBrightness="0.5, 1.0"
+			angle="80.0, 100.0"
+			delay="1.0"
+			rotate="true"
+			relativeRotate="true"
+			emitterScale="0.4"
+			doYOffset="true"
+		/>
+
+		<emitter
+			name="titan.nodule.cannon.aftersmoke.emitter"
+			inherit="titan.nodule.flare.aftersmoke.emitter"
+			emitterScale="0.8"
+			velocity="1.0, 2.0"
+			angle="85.0, 95.0"
+			gravityX="-0.005, 0.005"
+		/>
+
+
+
+	<emitter
+		name="titan.nodule.flare.control.emitter"
+		appearance="spriteimage.particle.dummy.01"
+		infinite="true"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		duration="2"
+		delayAfter="499"
+		particleDuration="1"
+		fadeDuration="0"
+	/>
+
+	<emitter
+		name="titan.nodule.flare.control.2.emitter"
+		appearance="spriteimage.particle.dummy.01"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		duration="2"
+		delay="50"
+		particleDuration="1"
+		fadeDuration="0"
+	/>
+	
+	<emitter name="titan.nodule.flare.1.emitter" inherit="titan.nodule.flare.control.emitter">
+		<slave><emitter inherit="titan.nodule.flare.control.2.emitter" delay="85">
+			<slave><emitter inherit="titan.nodule.flare.light.emitter" angle="120">
+				<slave><emitter inherit="titan.nodule.flare.smoke.emitter" angle="115,135"/></slave>
+				<chain><emitter inherit="titan.nodule.flash.emitter" angle="30">
+					<slave><emitter inherit="titan.nodule.flare.aftersmoke.emitter" angle="110,130"/></slave>
+					<chain><emitter inherit="titan.nodule.flare.flare.emitter" angle="120">
+						<slave><emitter inherit="titan.nodule.trail.emitter"/>
+	</slave></emitter></chain></emitter></chain></emitter></slave></emitter></slave></emitter>
+
+	<emitter name="titan.nodule.flare.2.emitter" inherit="titan.nodule.flare.control.emitter">
+		<slave><emitter inherit="titan.nodule.flare.control.2.emitter" delay="385">
+			<slave><emitter inherit="titan.nodule.flare.light.emitter" >
+				<slave><emitter inherit="titan.nodule.flare.smoke.emitter"/></slave>
+				<chain><emitter inherit="titan.nodule.flash.emitter" >
+					<slave><emitter inherit="titan.nodule.flare.aftersmoke.emitter"/></slave>
+					<chain><emitter inherit="titan.nodule.flare.flare.emitter" >
+						<slave><emitter inherit="titan.nodule.trail.emitter"/>
+	</slave></emitter></chain></emitter></chain></emitter></slave></emitter></slave></emitter>
+	
+	<emitter name="titan.nodule.flare.3.emitter" inherit="titan.nodule.flare.control.emitter">
+		<slave><emitter inherit="titan.nodule.flare.control.2.emitter" delay="200">
+			<slave><emitter inherit="titan.nodule.flare.light.emitter" >
+				<slave><emitter inherit="titan.nodule.flare.smoke.emitter"/></slave>
+				<chain><emitter inherit="titan.nodule.flash.emitter" >
+					<slave><emitter inherit="titan.nodule.flare.aftersmoke.emitter"/></slave>
+					<chain><emitter inherit="titan.nodule.flare.flare.emitter" >
+						<slave><emitter inherit="titan.nodule.trail.emitter"/>
+	</slave></emitter></chain></emitter></chain></emitter></slave></emitter></slave></emitter>
+
+	<emitter name="titan.nodule.flare.4.emitter" inherit="titan.nodule.flare.control.emitter">
+		<slave><emitter inherit="titan.nodule.flare.control.2.emitter" delay="350">
+			<slave><emitter inherit="titan.nodule.flare.light.emitter" angle="60">
+				<slave><emitter inherit="titan.nodule.flare.smoke.emitter" angle="50,70"/></slave>
+				<chain><emitter inherit="titan.nodule.flash.emitter" angle="-30">
+					<slave><emitter inherit="titan.nodule.flare.aftersmoke.emitter" angle="50,70"/></slave>
+					<chain><emitter inherit="titan.nodule.flare.flare.emitter" angle="60">
+						<slave><emitter inherit="titan.nodule.trail.emitter"/>
+	</slave></emitter></chain></emitter></chain></emitter></slave></emitter></slave></emitter>
+
+
+			
+	<emitter
+		name="titan.nodule.cannon.control.emitter"
+		appearance="spriteimage.particle.dummy.01"
+		infinite="true"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		duration="2"
+		delayAfter="699"
+		particleDuration="1"
+		fadeDuration="0"
+	/>
+	
+	<emitter
+		name="titan.nodule.cannon.control.2.emitter"
+		appearance="spriteimage.particle.dummy.01"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		duration="2"
+		delay="30"
+		particleDuration="1"
+		fadeDuration="0"
+	/>
+
+
+	<emitter name="titan.nodule.cannon.emitter" inherit="titan.nodule.flash.emitter" emitterScale="1.0" >
+		<slave><emitter inherit="titan.nodule.cannon.aftersmoke.emitter"/></slave>
+		<chain><emitter inherit="titan.nodule.cannon.fire.emitter">
+			<slave><emitter inherit="titan.nodule.trail.emitter" emitterScale="1.0" endSaturation="1" infinite="true"
+				appearance="spriteimage.particle.glowing.4px.01" endBrightness="0.1,0.2" particleDuration="6" fadeDuration="20,30" infintite="true"/>
+	</slave></emitter></chain></emitter>
+
+	<emitter name="titan.nodule.cannon.1.emitter" inherit="titan.nodule.cannon.control.emitter">
+		<slave><emitter inherit="titan.nodule.cannon.control.2.emitter" delay="30">
+			<slave><emitter inherit="titan.nodule.cannon.emitter"/></slave></emitter>
+	</slave></emitter>
+
+	<emitter name="titan.nodule.cannon.2.emitter" inherit="titan.nodule.cannon.control.emitter">
+		<slave><emitter inherit="titan.nodule.cannon.control.2.emitter" delay="70">
+			<slave><emitter inherit="titan.nodule.cannon.emitter"/></slave></emitter>
+	</slave></emitter>
+	
+	<emitter name="titan.nodule.cannon.3.emitter" inherit="titan.nodule.cannon.control.emitter">
+		<slave><emitter inherit="titan.nodule.cannon.control.2.emitter" delay="110">
+			<slave><emitter inherit="titan.nodule.cannon.emitter"/></slave></emitter>
+	</slave></emitter>
+
+
+	<animation name="gidrah.cannon.bullet.animation">
+		<frame i="spriteimage.bullet.gidrah.large.01" d="1"/>			
+		<frame i="spriteimage.bullet.gidrah.large.02" d="1"/>
+		<frame i="spriteimage.bullet.gidrah.large.03" d="1"/>
+		<frame i="spriteimage.bullet.gidrah.large.04" d="1"/>
+		<frame i="spriteimage.bullet.gidrah.large.05" d="1"/>
+	</animation>
+
+
+
+	<animation name="titan.spot.anim">
+		
+		<animcolor a="0"/>
+		<frame i="spriteimage.titan.nodule.searchlight.01" d="0"/>	
+		<angle angle="16384" d="0"/>
+		<scale xscale="1.35" yscale="1.0" d="1"/>
+	
+		<random>
+			<dest id="start1"/>
+			<dest id="start2"/>
+			<dest id="start3"/>
+			<dest id="start4"/>
+			<dest id="start5"/>
+			<dest id="start6"/>
+			<dest id="start7"/>
+			<dest id="start8"/>								
+		</random>	
+			
+			<label id="start"/>
+	
+			<angle angle="+3" d="2"/>
+			<angle angle="+4" d="2"/>
+			<angle angle="+6" d="2"/>
+			<angle angle="+8" d="2"/>
+			<angle angle="+11" d="2"/>
+			<angle angle="+15" d="2"/>
+			<angle angle="+20" d="2"/>
+			<angle angle="+30" d="2"/>
+			
+			<label id="start1"/>
+			<animcolor a="255" d="0"/>
+			<loop count="40"/>
+			<label id="loop1"/>
+				<angle angle="+32" d="2"/>
+			<repeat id="loop1"/>
+
+			<label id="start2"/>
+			<animcolor a="255" d="0"/>			
+			<loop count="40"/>
+			<label id="loop2"/>
+				<angle angle="+32" d="2"/>
+			<repeat id="loop2"/>
+
+			<label id="start3"/>
+			<animcolor a="255" d="0"/>			
+			<loop count="40"/>
+			<label id="loop3"/>
+				<angle angle="+32" d="2"/>
+			<repeat id="loop3"/>
+
+			<label id="start4"/>
+			<animcolor a="255" d="0"/>
+			<loop count="40"/>
+			<label id="loop4"/>
+				<angle angle="+32" d="2"/>
+			<repeat id="loop4"/>			
+	
+
+			<angle angle="+30" d="2"/>
+			<angle angle="+20" d="2"/>
+			<angle angle="+15" d="2"/>
+			<angle angle="+11" d="2"/>
+			<angle angle="+8" d="2"/>
+			<angle angle="+6" d="2"/>
+			<angle angle="+4" d="2"/>
+			<angle angle="+3" d="2"/>
+
+			<angle angle="+-3" d="2"/>
+			<angle angle="+-4" d="2"/>
+			<angle angle="+-6" d="2"/>
+			<angle angle="+-8" d="2"/>
+			<angle angle="+-11" d="2"/>
+			<angle angle="+-15" d="2"/>
+			<angle angle="+-20" d="2"/>
+			<angle angle="+-30" d="2"/>
+
+			<label id="start5"/>
+			<animcolor a="255" d="0"/>
+			<loop count="40"/>
+			<label id="loop5"/>
+				<angle angle="+-32" d="2"/>
+			<repeat id="loop5"/>
+
+			<label id="start6"/>
+			<animcolor a="255" d="0"/>			
+			<loop count="40"/>
+			<label id="loop6"/>
+				<angle angle="+-32" d="2"/>
+			<repeat id="loop6"/>
+
+			<label id="start7"/>
+			<animcolor a="255" d="0"/>			
+			<loop count="40"/>
+			<label id="loop7"/>
+				<angle angle="+-32" d="2"/>
+			<repeat id="loop7"/>
+
+			<label id="start8"/>
+			<animcolor a="255" d="0"/>
+			<loop count="40"/>
+			<label id="loop8"/>
+				<angle angle="+-32" d="2"/>
+			<repeat id="loop8"/>	
+
+			<angle angle="+-30" d="2"/>
+			<angle angle="+-20" d="2"/>
+			<angle angle="+-15" d="2"/>
+			<angle angle="+-11" d="2"/>
+			<angle angle="+-8" d="2"/>
+			<angle angle="+-6" d="2"/>
+			<angle angle="+-4" d="2"/>
+			<angle angle="+-3" d="2"/>
+
+			<goto id="start"/>	
+	</animation>	
+	
+	
+	
+	
+	<emitter
+		name="titan.nodule.large.emitter"
+		duration="1.0"
+		infinite="true"
+		particlesPerTick="1.0"
+		appearance="spriteimage.particle.light.64px.02"
+		layer="6"
+		subLayer="6"
+		velocity="0.0"
+		startScale="0.5"
+		scale="2.0,3.0"
+		endScale="0.5"
+		particleDuration="30.0"
+		fadeDuration="75.0"
+		startHue="0.75"
+		startSaturation="0.0"
+		startBrightness="0.0"
+		endHue="0.75"
+		endSaturation="1.0"
+		endBrightness="0.1,0.3"
+		delay="0.0"
+		delayAfter="191.0"
+		emitterScale="1.0"
+		doYOffset="true"
+	/>
+
+		<animation name="titan.nodule.glow.large.anim">
+			<frame i="spriteimage.titan.nodule.large.glow.01" d="0" />
+			<label id="start"/>	
+			<animcolor a="127" d="3" />
+			<animcolor a="128" d="3" />
+			<animcolor a="132" d="3" />
+			<animcolor a="138" d="3" />
+			<animcolor a="147" d="3" />
+			<animcolor a="159" d="3" />
+			<animcolor a="173" d="3" />
+			<animcolor a="189" d="3" />
+			<animcolor a="209" d="3" />
+			<animcolor a="230" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="253" d="3" />
+			<animcolor a="249" d="3" />
+			<animcolor a="245" d="3" />
+			<animcolor a="240" d="3" />
+			<animcolor a="235" d="3" />
+			<animcolor a="230" d="3" />
+			<animcolor a="224" d="3" />
+			<animcolor a="218" d="3" />
+			<animcolor a="212" d="3" />
+			<animcolor a="206" d="3" />
+			<animcolor a="199" d="3" />
+			<animcolor a="193" d="3" />
+			<animcolor a="187" d="3" />
+			<animcolor a="181" d="3" />
+			<animcolor a="175" d="3" />
+			<animcolor a="170" d="3" />
+			<animcolor a="165" d="3" />
+			<animcolor a="160" d="3" />
+			<animcolor a="156" d="3" />
+			<animcolor a="152" d="3" />
+			<animcolor a="148" d="3" />
+			<animcolor a="145" d="3" />
+			<animcolor a="142" d="3" />
+			<animcolor a="139" d="3" />
+			<animcolor a="137" d="3" />
+			<animcolor a="135" d="3" />
+			<animcolor a="133" d="3" />
+			<animcolor a="131" d="3" />
+			<animcolor a="130" d="3" />
+			<animcolor a="129" d="3" />
+			<animcolor a="128" d="3" />
+			<animcolor a="128" d="3" />
+			<animcolor a="127" d="57" />
+			<goto id="start"/>
+		</animation>		
+		
+		<animation name="titan.nodule.glow.small.anim">
+			<frame i="spriteimage.titan.nodule.small.glow.01" d="0" />
+			<label id="start"/>	
+			<animcolor a="127" d="3" />
+			<animcolor a="128" d="3" />
+			<animcolor a="132" d="3" />
+			<animcolor a="138" d="3" />
+			<animcolor a="147" d="3" />
+			<animcolor a="159" d="3" />
+			<animcolor a="173" d="3" />
+			<animcolor a="189" d="3" />
+			<animcolor a="209" d="3" />
+			<animcolor a="230" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="253" d="3" />
+			<animcolor a="246" d="3" />
+			<animcolor a="239" d="3" />
+			<animcolor a="231" d="3" />
+			<animcolor a="223" d="3" />
+			<animcolor a="213" d="3" />
+			<animcolor a="204" d="3" />
+			<animcolor a="195" d="3" />
+			<animcolor a="185" d="3" />
+			<animcolor a="176" d="3" />
+			<animcolor a="168" d="3" />
+			<animcolor a="161" d="3" />
+			<animcolor a="154" d="3" />
+			<animcolor a="149" d="3" />
+			<animcolor a="144" d="3" />
+			<animcolor a="139" d="3" />
+			<animcolor a="136" d="3" />
+			<animcolor a="133" d="3" />
+			<animcolor a="131" d="3" />
+			<animcolor a="129" d="3" />
+			<animcolor a="128" d="3" />
+			<animcolor a="127" d="25" />
+			<goto id="start"/>
+		</animation>	
+
+
+
+
+	<!-- shroom explosion -->
+	
+<emitter
+	name="shroom.explosion.emitter"
+	duration="2.0"
+	particlesPerTick="1.0"
+	appearance="spriteimage.particle.dummy.01"
+	velocity="3.5"
+	acceleration="-3.5"
+	particleDuration="200.0"
+	fadeDuration="1.0"
+	angle="180.0"
+	rotate="true"
+>
+	<slave>
+		<emitter
+			duration="200.0"
+			particlesPerTick="-1.0, 1.0"
+			appearance="smoke.glowing.alpha.animation"
+			layer="5"
+			subLayer="6"
+			velocity="0.0, 7.0"
+			acceleration="-50.0"
+			startScale="0.1, 0.2"
+			scale="0.4, 0.5"
+			endScale="0.8, 1.25"
+			gravityX="-0.001, 0.001"
+			gravityY="0.002, 0.008"
+			particleDuration="50.0, 90.0"
+			fadeDuration="80.0, 100.0"
+			startHue="0.275"
+			startSaturation="1.0"
+			startBrightness="0.75"
+			endHue="0.275"
+			endSaturation="1.0"
+			endBrightness="0.5"
+			angle="0.0"
+			delay="1.0"
+			rotate="true"
+			relativeRotate="true"
+			emitterScale="0.8"
+			doYOffset="true"
+		/>
+	</slave>
+	<chain>
+		<emitter
+					duration="2.0"
+					particlesPerTick="15.0, 30.0"
+					appearance="glitter.animation"
+					layer="5"
+					subLayer="6"
+					velocity="5.0, 14.0"
+					acceleration="-0.5"
+					startScale="0.5"
+					scale="0.5"
+					endScale="0.4"
+					gravityX="-0.007, 0.007"
+					gravityY="-0.001, -0.005"
+					particleDuration="90.0, 100.0"
+					fadeDuration="10.0, 90.0"
+					startHue="0.8"
+					startSaturation="1.0"
+					startBrightness="1.0"
+					endHue="0.275"
+					endSaturation="1.0"
+					endBrightness="0.5"
+					angle="80.0, 100.0"
+					rotate="true"
+					emitterScale="0.65"
+					doYOffset="true"
+				>
+					<chain>
+						<emitter
+							duration="1.0"
+							particlesPerTick="1.0"
+							appearance="spriteimage.particle.light.64px.half.01"
+							layer="5"
+							subLayer="6"
+							startScale="0.5"
+							scale="1.5"
+							endScale="2.0"
+							particleDuration="40.0"
+							fadeDuration="60.0"
+							startHue="0.8"
+							startSaturation="1.0"
+							startBrightness="1.0"
+							endHue="0.275"
+							endSaturation="1.0"
+							endBrightness="0.5"
+							emitterScale="0.75"
+						>
+							<slave>
+								<emitter
+									duration="1.0"
+									particlesPerTick="1.0"
+									appearance="collect.light.animation"
+									layer="6"
+									velocity="10.0"
+									acceleration="-10.0"
+									startScale="0.25"
+									scale="1.0"
+									endScale="0.5"
+									particleDuration="8.0"
+									fadeDuration="16.0"
+									startHue="0.8"
+									startSaturation="0.75"
+									startBrightness="1.0"
+									endHue="0.75"
+									endSaturation="1.0"
+									endBrightness="1.0"
+									angle="90.0"
+									emitterScale="0.5"
+								/>
+							</slave>
+						</emitter>
+					</chain>
+				</emitter>
+			</chain>
+		</emitter>
+
+
+
+
+
+		<!-- Only easy gidrahs come from mid spawnpoints -->		
+		
+	<animation name="titan.spawnpoint.center.glow.anim">
+		<label id="start1"/>
+		<animcolor a="0" d="3" />
+		<random>
+			<dest id="start1" n="1"/>
+			<dest id="start2" n="7"/>
+		</random>
+		<label id="start2"/>
+			<animcolor a="113" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="230" d="2" />
+			<animcolor a="205" d="2" />
+			<animcolor a="181" d="2" />
+			<animcolor a="158" d="2" />
+			<animcolor a="137" d="2" />
+			<animcolor a="118" d="2" />
+			<animcolor a="101" d="2" />
+			<animcolor a="87" d="2" />
+			<animcolor a="74" d="2" />
+			<animcolor a="63" d="2" />
+			<animcolor a="53" d="2" />
+			
+		<random>
+			<dest id="start1" n="1"/>
+			<dest id="end1" n="1"/>
+		</random>	
+		<label id="end1"/>	
+			<animcolor a="45" d="2" />
+			<animcolor a="38" d="2" />
+			<animcolor a="31" d="2" />
+			<animcolor a="26" d="2" />
+			<animcolor a="21" d="2" />
+			<animcolor a="17" d="2" />
+			<animcolor a="13" d="2" />
+			<animcolor a="10" d="2" />
+			<animcolor a="8" d="2" />
+			<animcolor a="6" d="2" />
+			<animcolor a="4" d="2" />
+			<animcolor a="2" d="2" />
+			<animcolor a="1" d="2" />
+			<animcolor a="1" d="2" />
+		<label id="end2"/>	
+			<animcolor a="0" d="7" />
+		
+		<random>
+			<dest id="start2" n="1"/>
+			<dest id="end2" n="2"/>
+		</random>	
+	</animation>
+
+
+		<animation name="titan.spawnpoint.1.glow.anim">
+			<frame i="spriteimage.spawnpoint.titan.glow.01" d="0" />
+			<frame i="titan.spawnpoint.center.glow.anim" d="0" />
+		</animation>		
+		<animation name="titan.spawnpoint.2.glow.anim">
+			<frame i="spriteimage.spawnpoint.titan.glow.02" d="0" />
+			<frame i="titan.spawnpoint.center.glow.anim" d="0" />
+		</animation>	
+		<animation name="titan.spawnpoint.3.glow.anim">
+			<frame i="spriteimage.spawnpoint.titan.glow.03" d="0" />
+			<frame i="titan.spawnpoint.center.glow.anim" d="0" />
+		</animation>			
+	
+		<animation name="titan.spawnpoint.small.glow.anim">
+			<frame i="spriteimage.spawnpoint.titan.light.01" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>		
+
+		<animation name="titan.spawnpoint.glow.anim">
+			<frame i="spriteimage.spawnpoint.titan.light.02" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>	
+	
+		
+		<spawnpoint name="spawnpoint.mid.titan" i="32140" layer="2" xoffset="0" yoffset="0" type="1">
+			<random>
+				<array>
+					<item>spawnpoint.mid.titan.01</item>
+					<item>spawnpoint.mid.titan.02</item>
+					<item>spawnpoint.mid.titan.03</item>
+				</array>
+			</random>
+		</spawnpoint>
+
+		<spawnpoint name="spawnpoint.mid.titan.01" i="32141" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="spawner.titan.emitter" offset="17,2" ySortOffset="6"  />
+				<sprite layer="3" sublayer="3" attenuated="true" image="spriteimage.spawnpoint.titan.back.01" colored="road-out"/>
+				<sprite layer="3" sublayer="4" attenuated="false" animation="titan.spawnpoint.1.glow.anim" colored="road-in"/>
+				
+				<sprite layer="3" sublayer="4" offset="-15,-11" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="46,-6" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="26,31" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="5,-14" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="-22,3" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				
+				<sprite layer="3" sublayer="4" offset="-5,32" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="9,30" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="46,-6" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="40,24" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="48,10" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+
+				<sprite layer="9" sublayer="4" offset="16,22" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+		<spawnpoint name="spawnpoint.mid.titan.02" i="32142" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="spawner.titan.emitter" offset="17,2" ySortOffset="6"  />
+				<sprite layer="3" sublayer="3" attenuated="true" image="spriteimage.spawnpoint.titan.back.02" colored="road-out"/>
+				<sprite layer="3" sublayer="4" attenuated="false" animation="titan.spawnpoint.2.glow.anim" colored="road-in"/>
+				
+				<sprite layer="3" sublayer="4" offset="-1,29" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="-19,-5" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="38,-11" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="18,-14" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="45,3" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				
+				<sprite layer="3" sublayer="4" offset="-24,10" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="-16,24" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="17,29" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="31,30" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+
+				<sprite layer="9" sublayer="4" offset="16,22" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+		<spawnpoint name="spawnpoint.mid.titan.03" i="32143" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="spawner.titan.emitter" offset="17,2" ySortOffset="6"  />
+				<sprite layer="3" sublayer="3" attenuated="true" image="spriteimage.spawnpoint.titan.back.03" colored="road-out"/>
+				<sprite layer="3" sublayer="4" attenuated="false" animation="titan.spawnpoint.3.glow.anim" colored="road-in"/>
+				
+				<sprite layer="3" sublayer="4" offset="-23,15" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="8,30" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="-13,-10" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="44,-5" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="5,-10" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="28,-12" attenuated="false" animation="titan.spawnpoint.glow.anim" colored="road-in"/>
+				
+				<sprite layer="3" sublayer="4" offset="38,23" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+				<sprite layer="3" sublayer="4" offset="46,9" attenuated="false" animation="titan.spawnpoint.small.glow.anim" colored="road-in"/>
+
+				<sprite layer="9" sublayer="4" offset="16,22" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+
+		<!--  STANDARD FLOOR ========================================================================================================================== -->
+			
+
+
+		
+		
+		<!--  ALT FLOOR ========================================================================================================================== -->
+		
+
+		
+		<!--  WALL EDGE FLOOR ========================================================================================================================== -->
+					
+		<floor name="titan.floor.2" i="31200" image="tiles.floor.1.2" colored="floor">
+			<random>
+				<array>
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					<item>titan.floor.2.1.01</item>
+					<item>titan.floor.2.1.02</item>
+					<item>titan.floor.2.1.03</item>
+					<item>titan.floor.2.1.04</item>
+
+					
+					<item>titan.floor.2.2.01</item>
+					<item>titan.floor.2.2.02</item>
+					<item>titan.floor.2.2.03</item>
+					<item>titan.floor.2.2.04</item>
+					<item>titan.floor.2.2.05</item>
+					<item>titan.floor.2.2.06</item>
+					<item>titan.floor.2.2.07</item>
+					<item>titan.floor.2.2.08</item>					
+
+					<item>titan.floor.2.2.01</item>
+					<item>titan.floor.2.2.02</item>
+					<item>titan.floor.2.2.03</item>
+					<item>titan.floor.2.2.04</item>
+					<item>titan.floor.2.2.05</item>
+					<item>titan.floor.2.2.06</item>
+					<item>titan.floor.2.2.07</item>
+					<item>titan.floor.2.2.08</item>		
+
+
+					<item>titan.floor.2.3.01</item>
+					<item>titan.floor.2.3.02</item>
+					<item>titan.floor.2.3.03</item>
+					<item>titan.floor.2.3.04</item>
+					<item>titan.floor.2.3.05</item>
+					<item>titan.floor.2.3.06</item>
+					<item>titan.floor.2.3.07</item>
+					<item>titan.floor.2.3.08</item>		
+					
+				</array>
+			</random>
+		</floor>
+
+
+		<floor name="titan.floor.2.1.01" i="31201" image="tiles.floor.2.1" colored="floor"/>
+		<floor name="titan.floor.2.1.02" i="31202" image="tiles.floor.3.1" colored="floor"/>
+		<floor name="titan.floor.2.1.03" i="31203" image="tiles.floor.4.1" colored="floor"/>
+		<floor name="titan.floor.2.1.04" i="31204" image="tiles.floor.5.1" colored="floor"/>
+
+		<!-- cliff edge floor tex plus 1 scree tex -->
+
+		<floor name="titan.floor.2.2.01" i="31211" image="tiles.floor.0.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="6,6" image="spriteimage.titan.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="6,6" ySortOffset="6" image="spriteimage.titan.scree.tiny.01" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="titan.floor.2.2.02" i="31212" image="tiles.floor.1.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="2,8" image="spriteimage.titan.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,8" ySortOffset="8" image="spriteimage.titan.scree.tiny.02" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.2.03" i="31213" image="tiles.floor.2.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,10" image="spriteimage.titan.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,10" ySortOffset="10" image="spriteimage.titan.scree.tiny.03" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.2.04" i="31214" image="tiles.floor.3.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="22,12" image="spriteimage.titan.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="22,12" ySortOffset="12" image="spriteimage.titan.scree.tiny.04" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.2.05" i="31215" image="tiles.floor.4.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,22" image="spriteimage.titan.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,22" ySortOffset="22" image="spriteimage.titan.scree.tiny.01" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="titan.floor.2.2.06" i="31216" image="tiles.floor.5.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="23,29" image="spriteimage.titan.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="23,29" ySortOffset="29" image="spriteimage.titan.scree.tiny.02" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.2.07" i="31217" image="tiles.floor.6.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="3,27" image="spriteimage.titan.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="3,27" ySortOffset="27" image="spriteimage.titan.scree.tiny.03" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.2.08" i="31218" image="tiles.floor.7.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="9,21" image="spriteimage.titan.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="9,21" ySortOffset="21" image="spriteimage.titan.scree.tiny.04" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>	
+
+
+		<!-- cliff edge floor tex plus 2 scree tex -->
+		
+		<floor name="titan.floor.2.3.01" i="31231" image="tiles.floor.0.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="6,6" image="spriteimage.titan.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="6,6" ySortOffset="6" image="spriteimage.titan.scree.tiny.01" colored="cliff-glow"  attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="16,2" image="spriteimage.titan.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="16,2" ySortOffset="2" image="spriteimage.titan.scree.tiny.01" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="titan.floor.2.3.02" i="31232" image="tiles.floor.1.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="2,8" image="spriteimage.titan.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,8" ySortOffset="8" image="spriteimage.titan.scree.tiny.02" colored="cliff-glow" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="10,4" image="spriteimage.titan.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="10,4" ySortOffset="4" image="spriteimage.titan.scree.tiny.02" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.3.03" i="31233" image="tiles.floor.2.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,10" image="spriteimage.titan.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,10" ySortOffset="10" image="spriteimage.titan.scree.tiny.03" colored="cliff-glow" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="36,12" image="spriteimage.titan.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="36,12" ySortOffset="12" image="spriteimage.titan.scree.tiny.03" colored="cliff-glow" attenuated="true" />		
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.3.04" i="31234" image="tiles.floor.3.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="22,12" image="spriteimage.titan.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="22,12" ySortOffset="12" image="spriteimage.titan.scree.tiny.04" colored="cliff-glow" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="32,10" image="spriteimage.titan.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="32,10" ySortOffset="10" image="spriteimage.titan.scree.tiny.04" colored="cliff-glow" attenuated="true" />			
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.3.05" i="31235" image="tiles.floor.4.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,22" image="spriteimage.titan.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,22" ySortOffset="22" image="spriteimage.titan.scree.tiny.01" colored="cliff-glow" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="40,12" image="spriteimage.titan.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="40,12" ySortOffset="12" image="spriteimage.titan.scree.tiny.01" colored="cliff-glow" attenuated="true" />			
+		</layers></layers></floor>
+		<floor name="titan.floor.2.3.06" i="31236" image="tiles.floor.5.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="23,29" image="spriteimage.titan.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="23,29" ySortOffset="29" image="spriteimage.titan.scree.tiny.02" colored="cliff-glow" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="16,20" image="spriteimage.titan.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="16,20" ySortOffset="20" image="spriteimage.titan.scree.tiny.02" colored="cliff-glow" attenuated="true" />			
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.3.07" i="31237" image="tiles.floor.6.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="3,27" image="spriteimage.titan.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="3,27" ySortOffset="27" image="spriteimage.titan.scree.tiny.03" colored="cliff-glow" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="5,43" image="spriteimage.titan.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="5,43" ySortOffset="43" image="spriteimage.titan.scree.tiny.03" colored="cliff-glow" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="titan.floor.2.3.08" i="31238" image="tiles.floor.7.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="9,21" image="spriteimage.titan.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="9,21" ySortOffset="21" image="spriteimage.titan.scree.tiny.04" colored="cliff-glow" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="2,27" image="spriteimage.titan.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,27" ySortOffset="27" image="spriteimage.titan.scree.tiny.04" colored="cliff-glow" attenuated="true" />			
+		</layers></layers></floor>			
+		
+		
+		
+		
+		
+		<!-- FLOOR 3 - not used at the mo ============================================================================================================= -->
+		
+
+
+		<!--  OBSTACLES ========================================================================================================================== -->
+
+			
+		<obstacle name="titan.shroom.1.01" i="21400" layer="2" obstacle="titan.obstacle.1.01"/>
+		<obstacle name="titan.shroom.1.02" i="21401" layer="2" obstacle="titan.obstacle.1.02"/>
+		<obstacle name="titan.shroom.1.03" i="21402" layer="2" obstacle="titan.obstacle.1.03"/>
+		<obstacle name="titan.shroom.1.04" i="21403" layer="2" obstacle="titan.obstacle.1.04"/>
+		<obstacle name="titan.shroom.1.05" i="21404" layer="2" obstacle="titan.obstacle.1.05"/>
+		<obstacle name="titan.shroom.1.06" i="21405" layer="2" obstacle="titan.obstacle.1.06"/>
+		<obstacle name="titan.shroom.1.07" i="21406" layer="2" obstacle="titan.obstacle.1.07"/>
+		<obstacle name="titan.shroom.1.08" i="21407" layer="2" obstacle="titan.obstacle.1.08"/>
+		<obstacle name="titan.shroom.1.09" i="21408" layer="2" obstacle="titan.obstacle.1.09"/>
+		<obstacle name="titan.shroom.1.10" i="21409" layer="2" obstacle="titan.obstacle.1.10"/>		
+
+
+		<!--  ROADS  ========================================================================================================================== -->
+
+	<animation name="titan.road.glow.anim">
+		<label id="start"/>
+		<animcolor a="0" d="7"/>
+		<random>
+			<dest id="on1" n="1"/>
+			<dest id="start" n="20"/>
+		</random>
+		<label id="on1"/>
+			<animcolor a="0" d="2" />
+			<animcolor a="113" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="230" d="2" />
+			<animcolor a="205" d="2" />
+			<animcolor a="181" d="2" />
+			<animcolor a="158" d="2" />
+			<animcolor a="137" d="2" />
+			<animcolor a="118" d="2" />
+			<animcolor a="101" d="2" />
+			<animcolor a="87" d="2" />
+			<animcolor a="74" d="2" />
+			<animcolor a="63" d="2" />
+			<animcolor a="53" d="2" />
+			<animcolor a="45" d="2" />
+			<animcolor a="38" d="2" />
+			<animcolor a="31" d="2" />
+			<animcolor a="26" d="2" />
+			<animcolor a="21" d="2" />
+			<animcolor a="17" d="2" />
+			<animcolor a="13" d="2" />
+			<animcolor a="10" d="2" />
+			<animcolor a="8" d="2" />
+			<animcolor a="6" d="2" />
+			<animcolor a="4" d="2" />
+			<animcolor a="2" d="2" />
+			<animcolor a="1" d="2" />
+			<animcolor a="1" d="2" />
+			<animcolor a="0" d="2" />
+		<goto id="start"/>
+	</animation>
+
+
+		<animation name="road.titan.glow.7.0.anim">
+			<frame i="tiles.road.titan.glow.7.0" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+
+		<animation name="road.titan.glow.1.1.anim">
+			<frame i="tiles.road.titan.glow.1.1" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.3.1.anim">
+			<frame i="tiles.road.titan.glow.3.1" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.4.1.anim">
+			<frame i="tiles.road.titan.glow.4.1" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.5.1.anim">
+			<frame i="tiles.road.titan.glow.5.1" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.7.1.anim">
+			<frame i="tiles.road.titan.glow.7.1" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.8.1.anim">
+			<frame i="tiles.road.titan.glow.8.1" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+
+		
+		<animation name="road.titan.glow.3.2.anim">
+			<frame i="tiles.road.titan.glow.3.2" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.4.2.anim">
+			<frame i="tiles.road.titan.glow.4.2" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.5.2.anim">
+			<frame i="tiles.road.titan.glow.5.2" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.6.2.anim">
+			<frame i="tiles.road.titan.glow.6.2" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.7.2.anim">
+			<frame i="tiles.road.titan.glow.7.2" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.8.2.anim">
+			<frame i="tiles.road.titan.glow.8.2" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.9.2.anim">
+			<frame i="tiles.road.titan.glow.9.2" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		
+
+		<animation name="road.titan.glow.3.3.anim">
+			<frame i="tiles.road.titan.glow.3.3" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.4.3.anim">
+			<frame i="tiles.road.titan.glow.4.3" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.5.3.anim">
+			<frame i="tiles.road.titan.glow.5.3" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.6.3.anim">
+			<frame i="tiles.road.titan.glow.6.3" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.7.3.anim">
+			<frame i="tiles.road.titan.glow.7.3" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.8.3.anim">
+			<frame i="tiles.road.titan.glow.8.3" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.9.3.anim">
+			<frame i="tiles.road.titan.glow.9.3" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+
+
+		<animation name="road.titan.glow.1.4.anim">
+			<frame i="tiles.road.titan.glow.1.4" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.2.4.anim">
+			<frame i="tiles.road.titan.glow.2.4" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.4.4.anim">
+			<frame i="tiles.road.titan.glow.4.4" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.5.4.anim">
+			<frame i="tiles.road.titan.glow.5.4" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.7.4.anim">
+			<frame i="tiles.road.titan.glow.7.4" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+		<animation name="road.titan.glow.8.4.anim">
+			<frame i="tiles.road.titan.glow.8.4" d="0" />
+			<frame i="titan.road.glow.anim" d="0" />
+		</animation>
+
+
+
+		<detail name="titan.road.0" i="31600" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.0.0" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.1" i="31601" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.1.0" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.2" i="31602" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.2.0" colored="road-out"/>
+		</layers></layers></detail>
+		
+		<detail name="titan.road.3" i="31603" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.3.0" colored="road-out"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>titan.road.3</item>
+					<item>titan.road.3.01</item>
+					<item>titan.road.3.02</item>
+					<item>titan.road.3.03</item>
+				</array>
+			</random>
+		</detail>
+		
+		<detail name="titan.road.4" i="31604" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.4.0" colored="road-out"/>
+		</layers></layers></detail>
+		
+		<!--  vertical -->
+		
+		<detail name="titan.road.5" i="31605" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.5.0" colored="road-out"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>titan.road.5</item>
+					<item>titan.road.5.01</item>
+					<item>titan.road.5.02</item>
+					<item>titan.road.5.03</item>
+					<item>titan.road.5.04</item>
+					<item>titan.road.5.05</item>
+					<item>titan.road.5.06</item>
+					<item>titan.road.5.07</item>
+					<item>titan.road.5.08</item>
+					<item>titan.road.5.09</item>
+					<item>titan.road.5.10</item>
+				</array>
+			</random>
+		</detail>
+	
+
+		
+		<detail name="titan.road.6" i="31606" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.6.0" colored="road-out"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>titan.road.6</item>
+					<item>titan.road.6.01</item>
+					<item>titan.road.6.02</item>
+					<item>titan.road.6.03</item>
+				</array>
+			</random>
+		</detail>
+	
+		<detail name="titan.road.7" i="31607" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.7.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.7.0.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.8" i="31608" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.8.0" colored="road-out"/>
+		</layers></layers></detail>
+		
+		<detail name="titan.road.9" i="31609" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.9.0" colored="road-out"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>titan.road.9</item>
+					<item>titan.road.9.01</item>
+					<item>titan.road.9.02</item>
+					<item>titan.road.9.03</item>
+				</array>
+			</random>
+		</detail>
+		
+		<!--  horizontal -->
+		
+		<detail name="titan.road.10" i="31610" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.0.1" colored="road-out"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>titan.road.10</item>
+					<item>titan.road.10.01</item>
+					<item>titan.road.10.02</item>
+					<item>titan.road.10.03</item>
+					<item>titan.road.10.04</item>
+					<item>titan.road.10.05</item>
+					<item>titan.road.10.06</item>
+					<item>titan.road.10.07</item>
+					<item>titan.road.10.08</item>
+					<item>titan.road.10.09</item>
+					<item>titan.road.10.10</item>
+				</array>
+			</random>
+		</detail>
+		
+		
+		
+		<detail name="titan.road.11" i="31611" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.1.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.1.1.anim" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="titan.road.12" i="31612" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.2.1" colored="road-out"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>titan.road.12</item>
+					<item>titan.road.12.01</item>
+					<item>titan.road.12.02</item>
+					<item>titan.road.12.03</item>
+				</array>
+			</random>
+		</detail>
+		
+		<detail name="titan.road.13" i="31613" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.3.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.3.1.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.14" i="31614" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.4.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.4.1.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.15" i="31615" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.5.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.5.1.anim" colored="road-in"/>
+		</layers></layers></detail>
+
+
+		<!--  random horizontal -->
+
+
+
+		<detail name="titan.road.10.01" i="31620" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.0.3" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.10.02" i="31621" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.1.3" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.10.03" i="31622" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.2.3" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.10.04" i="31623" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.3.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.3.3.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.10.05" i="31624" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.4.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.4.3.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.10.06" i="31625" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.5.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.5.3.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.10.07" i="31626" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.6.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.6.3.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.10.08" i="31627" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.7.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.7.3.anim" colored="road-in"/>
+		</layers></layers></detail>		
+		<detail name="titan.road.10.09" i="31628" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.8.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.8.3.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.10.10" i="31629" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.9.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.9.3.anim" colored="road-in"/>
+		</layers></layers></detail>				
+		
+
+		<!--  random vertical -->
+
+		<detail name="titan.road.5.01" i="31640" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.0.2" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.02" i="31641" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.1.2" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.03" i="31642" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.2.2" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.04" i="31643" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.3.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.3.2.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.05" i="31644" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.4.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.4.2.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.06" i="31645" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.5.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.5.2.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.07" i="31646" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.6.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.6.2.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.08" i="31647" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.7.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.7.2.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.09" i="31648" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.8.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.8.2.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.5.10" i="31649" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.9.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.9.2.anim" colored="road-in"/>
+		</layers></layers></detail>
+
+
+
+		<!--  random corners -->
+
+		<detail name="titan.road.3.01" i="31650" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.0.4" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.3.02" i="31651" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.1.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.1.4.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.3.03" i="31652" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.2.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.2.4.anim" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="titan.road.6.01" i="31653" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.3.4" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.6.02" i="31654" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.4.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.4.4.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.6.03" i="31655" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.5.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.5.4.anim" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="titan.road.9.01" i="31656" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.6.4" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.9.02" i="31657" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.7.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.7.4.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.9.03" i="31658" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.8.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.8.4.anim" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="titan.road.12.01" i="31659" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.6.1" colored="road-out"/>
+		</layers></layers></detail>
+		<detail name="titan.road.12.02" i="31660" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.7.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.7.1.anim" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="titan.road.12.03" i="31661" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.titan.back.8.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="false" animation="road.titan.glow.8.1.anim" colored="road-in"/>
+		</layers></layers></detail>
+
+	</tileset>
+
+
+
+  	<!-- WALLS ========================================================================================================================== -->
+
+
+
+		<wall name="titan.wall.master.1" i="10081" layer="2">
+			<random>
+				<array>
+					<item>titan.wall.small.1.01</item>
+					<item>titan.wall.small.1.02</item>
+					<item>titan.wall.small.1.03</item>	
+					<item>titan.wall.small.1.04</item>
+					<item>titan.wall.small.1.05</item>
+					<item>titan.wall.small.1.06</item>
+					<item>titan.wall.small.1.07</item>	
+					<item>titan.wall.small.1.08</item>
+					<item>titan.wall.small.2.01</item>
+					<item>titan.wall.small.2.02</item>
+					<item>titan.wall.small.2.03</item>	
+					<item>titan.wall.small.2.04</item>
+					<item>titan.wall.small.2.05</item>
+					<item>titan.wall.small.2.06</item>
+					<item>titan.wall.small.2.07</item>	
+					<item>titan.wall.small.2.08</item>
+					<item>titan.wall.small.3.01</item>
+					<item>titan.wall.small.3.02</item>
+					<item>titan.wall.small.3.03</item>	
+					<item>titan.wall.small.3.04</item>
+					<item>titan.wall.small.3.05</item>
+					<item>titan.wall.small.3.06</item>
+					<item>titan.wall.small.3.07</item>	
+					<item>titan.wall.small.3.08</item>																				
+				</array>
+			</random>
+		</wall>
+
+		<wall name="titan.wall.master.2" i="10082" layer="2">
+			<random>
+				<array>
+					<item>titan.wall.small.1.01</item>
+					<item>titan.wall.small.1.02</item>
+					<item>titan.wall.small.1.03</item>	
+					<item>titan.wall.small.1.04</item>
+					<item>titan.wall.small.1.05</item>
+					<item>titan.wall.small.1.06</item>
+					<item>titan.wall.small.1.07</item>	
+					<item>titan.wall.small.1.08</item>
+					<item>titan.wall.small.2.01</item>
+					<item>titan.wall.small.2.02</item>
+					<item>titan.wall.small.2.03</item>	
+					<item>titan.wall.small.2.04</item>
+					<item>titan.wall.small.2.05</item>
+					<item>titan.wall.small.2.06</item>
+					<item>titan.wall.small.2.07</item>	
+					<item>titan.wall.small.2.08</item>
+					<item>titan.wall.small.3.01</item>
+					<item>titan.wall.small.3.02</item>
+					<item>titan.wall.small.3.03</item>	
+					<item>titan.wall.small.3.04</item>
+					<item>titan.wall.small.3.05</item>
+					<item>titan.wall.small.3.06</item>
+					<item>titan.wall.small.3.07</item>	
+					<item>titan.wall.small.3.08</item>	
+					
+					<item>titan.wall.medium.1.01</item>																									
+					<item>titan.wall.medium.1.02</item>					
+					<item>titan.wall.medium.1.03</item>					
+					<item>titan.wall.medium.1.04</item>					
+					<item>titan.wall.medium.1.05</item>					
+					<item>titan.wall.medium.1.06</item>					
+					<item>titan.wall.medium.1.07</item>					
+					<item>titan.wall.medium.1.08</item>	
+					<item>titan.wall.medium.2.01</item>																									
+					<item>titan.wall.medium.2.02</item>					
+					<item>titan.wall.medium.2.03</item>					
+					<item>titan.wall.medium.2.04</item>					
+					<item>titan.wall.medium.2.05</item>					
+					<item>titan.wall.medium.2.06</item>					
+					<item>titan.wall.medium.2.07</item>					
+					<item>titan.wall.medium.2.08</item>	
+
+					<item>titan.wall.medium.1.01</item>																									
+					<item>titan.wall.medium.1.02</item>					
+					<item>titan.wall.medium.1.03</item>					
+					<item>titan.wall.medium.1.04</item>					
+					<item>titan.wall.medium.1.05</item>					
+					<item>titan.wall.medium.1.06</item>					
+					<item>titan.wall.medium.1.07</item>					
+					<item>titan.wall.medium.1.08</item>	
+					<item>titan.wall.medium.2.01</item>																									
+					<item>titan.wall.medium.2.02</item>					
+					<item>titan.wall.medium.2.03</item>					
+					<item>titan.wall.medium.2.04</item>					
+					<item>titan.wall.medium.2.05</item>					
+					<item>titan.wall.medium.2.06</item>					
+					<item>titan.wall.medium.2.07</item>					
+					<item>titan.wall.medium.2.08</item>	
+					
+					<item>titan.wall.medium.1.01</item>																									
+					<item>titan.wall.medium.1.02</item>					
+					<item>titan.wall.medium.1.03</item>					
+					<item>titan.wall.medium.1.04</item>					
+					<item>titan.wall.medium.1.05</item>					
+					<item>titan.wall.medium.1.06</item>					
+					<item>titan.wall.medium.1.07</item>					
+					<item>titan.wall.medium.1.08</item>	
+					<item>titan.wall.medium.2.01</item>																									
+					<item>titan.wall.medium.2.02</item>					
+					<item>titan.wall.medium.2.03</item>					
+					<item>titan.wall.medium.2.04</item>					
+					<item>titan.wall.medium.2.05</item>					
+					<item>titan.wall.medium.2.06</item>					
+					<item>titan.wall.medium.2.07</item>					
+					<item>titan.wall.medium.2.08</item>											
+				</array>
+			</random>
+		</wall>
+
+		<wall name="titan.wall.master.3" i="10083" layer="2">
+			<random>
+				<array>
+					<item>titan.wall.medium.1.01</item>																									
+					<item>titan.wall.medium.1.02</item>					
+					<item>titan.wall.medium.1.03</item>					
+					<item>titan.wall.medium.1.04</item>					
+					<item>titan.wall.medium.1.05</item>					
+					<item>titan.wall.medium.1.06</item>					
+					<item>titan.wall.medium.1.07</item>					
+					<item>titan.wall.medium.1.08</item>	
+					<item>titan.wall.medium.2.01</item>																									
+					<item>titan.wall.medium.2.02</item>					
+					<item>titan.wall.medium.2.03</item>					
+					<item>titan.wall.medium.2.04</item>					
+					<item>titan.wall.medium.2.05</item>					
+					<item>titan.wall.medium.2.06</item>					
+					<item>titan.wall.medium.2.07</item>					
+					<item>titan.wall.medium.2.08</item>	
+					
+					<item>titan.wall.cliff.01</item> 
+					<item>titan.wall.cliff.02</item>
+					<item>titan.wall.cliff.03</item>
+					<item>titan.wall.cliff.04</item>
+					<item>titan.wall.cliff.05</item>
+					<item>titan.wall.cliff.06</item>
+					<item>titan.wall.cliff.07</item>					
+					<item>titan.wall.cliff.08</item> 
+					<item>titan.wall.cliff.09</item>
+					<item>titan.wall.cliff.10</item>
+					<item>titan.wall.cliff.11</item>
+					<item>titan.wall.cliff.12</item>
+					<item>titan.wall.cliff.13</item>
+					<item>titan.wall.cliff.14</item>																			
+				</array>
+			</random>
+		</wall>
+
+
+		<wall name="titan.cave.master.1" i="10085" layer="2">
+			<random>
+				<array>
+					<item>titan.cave.internal.test</item> 
+				</array>
+			</random>
+		</wall>
+
+
+	<tileset name="titan.walls" description="titan Walls" default_="">
+		<wall name="titan.wall.1" inherit="titan.wall.master.1" i="10101" layer="2" />
+		<wall name="titan.wall.2" inherit="titan.wall.master.1" i="10102" layer="2" />
+		<wall name="titan.wall.3" inherit="titan.wall.master.1" i="10103" layer="2" />
+		<wall name="titan.wall.4" inherit="titan.wall.master.1" i="10104" layer="2" />
+		<wall name="titan.wall.5" inherit="titan.wall.master.1" i="10105" layer="2" />		
+		<wall name="titan.wall.6" inherit="titan.wall.master.1" i="10106" layer="2" />	
+		<wall name="titan.wall.7" inherit="titan.wall.master.1" i="10107" layer="2" />
+		<wall name="titan.wall.8" inherit="titan.wall.master.1" i="10108" layer="2" />		
+		<wall name="titan.wall.9" inherit="titan.wall.master.2" i="10109" layer="2" />	
+	</tileset>	
+	
+	<tileset name="titan.internalWalls" description="titan Internal Walls" default_="">
+		<wall name="titan.internalWall.1" inherit="titan.wall.master.3" i="19011" layer="2" />
+		<wall name="titan.internalWall.2" inherit="titan.wall.master.3" i="19012" layer="2" />
+		<wall name="titan.internalWall.3" inherit="titan.wall.master.3" i="19013" layer="2" />	
+		<wall name="titan.internalWall.4" inherit="titan.wall.master.3" i="19014" layer="2" />
+		<wall name="titan.internalWall.5" inherit="titan.wall.master.3" i="19015" layer="2" />
+		<wall name="titan.internalWall.6" inherit="titan.wall.master.3" i="19016" layer="2" />
+		<wall name="titan.internalWall.7" inherit="titan.wall.master.3" i="19017" layer="2" />		
+		<wall name="titan.internalWall.8" inherit="titan.cave.master.1" i="19018" layer="2" />
+		<wall name="titan.internalWall.9" inherit="titan.cave.master.1" i="19019" layer="2" />
+	</tileset>
+
+ 
+	<wall name="titan.wall.spec" image="tiles.floor.1.0" colored="floor" i="10110"/>
+	<wall name="titan.wall.cliff.spec" image="tiles.floor.1.0" colored="floor" i="10111"/>
+	<wall name="titan.wall.internal.spec" image="tiles.floor.1.0" colored="floor" i="10112"/>
+	<wall name="titan.cave.internal.spec" image="tiles.floor.1.0" colored="shadow" i="10113"/>
+
+	<include resource="rocks-titan-anim.xml"/>
+	<include resource="rocks-titan.xml"/>
+
+
+	<wall name="titan.cave.internal.test" inherit="titan.cave.internal.spec" i="10180"><layers><layers scale="0.5"></layers></layers></wall>
+
+
+  
+  	<!-- TRANSITION BETWEEN FLOOR AND ALT FLOOR ========================================================================================================================== -->
+  	
+  
+
+
+</resources>
+

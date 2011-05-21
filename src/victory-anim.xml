@@ -1,0 +1,3416 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- parallax scroll and fade in -->
+
+<resources>	
+
+
+	<!-- scroll / fade into view -->
+
+    <animation name="victory.eye.scroll.anim">
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<animcolor a="0" d="0" />
+		<offset x="0" y="100.0" d="4" />
+		<offset x="0" y="99.0" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<animcolor a="3" d="0" />
+		<offset x="0" y="98.0" d="4" />
+		<animcolor a="7" d="0" />
+		<offset x="0" y="97.01" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<animcolor a="12" d="0" />
+		<offset x="0" y="96.02" d="4" />
+		<animcolor a="18" d="0" />
+		<offset x="0" y="95.04" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<animcolor a="26" d="0" />
+		<offset x="0" y="94.06" d="4" />
+		<animcolor a="35" d="0" />
+		<offset x="0" y="93.09" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<animcolor a="44" d="0" />
+		<offset x="0" y="92.12" d="4" />
+		<animcolor a="55" d="0" />
+		<offset x="0" y="91.16" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<animcolor a="66" d="0" />
+		<offset x="0" y="90.2" d="4" />
+		<animcolor a="77" d="0" />
+		<offset x="0" y="89.25" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<animcolor a="89" d="0" />
+		<offset x="0" y="88.3" d="4" />
+		<animcolor a="102" d="0" />
+		<offset x="0" y="87.36" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<animcolor a="114" d="0" />
+		<offset x="0" y="86.42" d="4" />
+		<animcolor a="127" d="0" />
+		<offset x="0" y="85.49" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<animcolor a="140" d="0" />
+		<offset x="0" y="84.57" d="4" />
+		<animcolor a="152" d="0" />
+		<offset x="0" y="83.64" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<animcolor a="165" d="0" />
+		<offset x="0" y="82.73" d="4" />
+		<animcolor a="177" d="0" />
+		<offset x="0" y="81.82" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<animcolor a="188" d="0" />
+		<offset x="0" y="80.91" d="4" />
+		<animcolor a="199" d="0" />
+		<offset x="0" y="80.01" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<animcolor a="210" d="0" />
+		<offset x="0" y="79.11" d="4" />
+		<animcolor a="219" d="0" />
+		<offset x="0" y="78.22" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<animcolor a="228" d="0" />
+		<offset x="0" y="77.33" d="4" />
+		<animcolor a="236" d="0" />
+		<offset x="0" y="76.45" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<animcolor a="242" d="0" />
+		<offset x="0" y="75.58" d="4" />
+		<animcolor a="247" d="0" />
+		<offset x="0" y="74.71" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<animcolor a="251" d="0" />
+		<offset x="0" y="73.84" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="72.98" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<animcolor a="255" d="0" />
+		<offset x="0" y="72.12" d="4" />
+		<offset x="0" y="71.27" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="70.42" d="4" />
+		<offset x="0" y="69.58" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="68.75" d="4" />
+		<offset x="0" y="67.92" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="67.09" d="4" />
+		<offset x="0" y="66.27" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="65.46" d="4" />
+		<offset x="0" y="64.64" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="63.84" d="4" />
+		<offset x="0" y="63.04" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="62.24" d="4" />
+		<offset x="0" y="61.45" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="60.67" d="4" />
+		<offset x="0" y="59.89" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="59.11" d="4" />
+		<offset x="0" y="58.34" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="57.58" d="4" />
+		<offset x="0" y="56.82" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="56.06" d="4" />
+		<offset x="0" y="55.31" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="54.57" d="4" />
+		<offset x="0" y="53.83" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="53.09" d="4" />
+		<offset x="0" y="52.36" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="51.64" d="4" />
+		<offset x="0" y="50.92" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="50.2" d="4" />
+		<offset x="0" y="49.49" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="48.79" d="4" />
+		<offset x="0" y="48.09" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="47.4" d="4" />
+		<offset x="0" y="46.71" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="46.02" d="4" />
+		<offset x="0" y="45.34" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="44.67" d="4" />
+		<offset x="0" y="44.0" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="43.33" d="4" />
+		<offset x="0" y="42.68" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="42.02" d="4" />
+		<offset x="0" y="41.37" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="40.73" d="4" />
+		<offset x="0" y="40.09" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="39.46" d="4" />
+		<offset x="0" y="38.83" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="38.2" d="4" />
+		<offset x="0" y="37.58" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="36.97" d="4" />
+		<offset x="0" y="36.36" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="35.76" d="4" />
+		<offset x="0" y="35.16" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="34.57" d="4" />
+		<offset x="0" y="33.98" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="33.4" d="4" />
+		<offset x="0" y="32.82" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="32.24" d="4" />
+		<offset x="0" y="31.68" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="31.11" d="4" />
+		<offset x="0" y="30.55" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="30.0" d="4" />
+		<offset x="0" y="29.45" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="28.91" d="4" />
+		<offset x="0" y="28.37" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="27.84" d="4" />
+		<offset x="0" y="27.31" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="26.79" d="4" />
+		<offset x="0" y="26.27" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="25.76" d="4" />
+		<offset x="0" y="25.25" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="24.75" d="4" />
+		<offset x="0" y="24.25" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="23.76" d="4" />
+		<offset x="0" y="23.27" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="22.79" d="4" />
+		<offset x="0" y="22.31" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="21.84" d="4" />
+		<offset x="0" y="21.37" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="20.91" d="4" />
+		<offset x="0" y="20.45" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="20.0" d="4" />
+		<offset x="0" y="19.56" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="19.11" d="4" />
+		<offset x="0" y="18.68" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="18.24" d="4" />
+		<offset x="0" y="17.82" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="17.4" d="4" />
+		<offset x="0" y="16.98" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="16.57" d="4" />
+		<offset x="0" y="16.16" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="15.76" d="4" />
+		<offset x="0" y="15.36" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="14.97" d="4" />
+		<offset x="0" y="14.59" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="14.2" d="4" />
+		<offset x="0" y="13.83" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="13.46" d="4" />
+		<offset x="0" y="13.09" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="12.73" d="4" />
+		<offset x="0" y="12.37" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="12.02" d="4" />
+		<offset x="0" y="11.68" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="11.34" d="4" />
+		<offset x="0" y="11.0" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="10.67" d="4" />
+		<offset x="0" y="10.34" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="10.02" d="4" />
+		<offset x="0" y="9.71" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="9.4" d="4" />
+		<offset x="0" y="9.09" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="8.79" d="4" />
+		<offset x="0" y="8.49" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="8.2" d="4" />
+		<offset x="0" y="7.92" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="7.64" d="4" />
+		<offset x="0" y="7.36" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="7.09" d="4" />
+		<offset x="0" y="6.83" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="6.57" d="4" />
+		<offset x="0" y="6.31" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="6.06" d="4" />
+		<offset x="0" y="5.82" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="5.58" d="4" />
+		<offset x="0" y="5.34" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="5.11" d="4" />
+		<offset x="0" y="4.89" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="4.67" d="4" />
+		<offset x="0" y="4.45" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="4.24" d="4" />
+		<offset x="0" y="4.04" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="3.84" d="4" />
+		<offset x="0" y="3.65" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="3.46" d="4" />
+		<offset x="0" y="3.27" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="3.09" d="4" />
+		<offset x="0" y="2.92" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="2.75" d="4" />
+		<offset x="0" y="2.59" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="2.43" d="4" />
+		<offset x="0" y="2.27" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="2.12" d="4" />
+		<offset x="0" y="1.98" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="1.84" d="4" />
+		<offset x="0" y="1.71" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="1.58" d="4" />
+		<offset x="0" y="1.45" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="1.34" d="4" />
+		<offset x="0" y="1.22" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="1.11" d="4" />
+		<offset x="0" y="1.01" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="0.91" d="4" />
+		<offset x="0" y="0.82" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="0.73" d="4" />
+		<offset x="0" y="0.65" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="0.57" d="4" />
+		<offset x="0" y="0.49" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="0.43" d="4" />
+		<offset x="0" y="0.36" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="0.31" d="4" />
+		<offset x="0" y="0.25" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="0.2" d="4" />
+		<offset x="0" y="0.16" d="4" />
+		<frame i="spriteimage.victory.eye.01" d="0"/>
+		<offset x="0" y="0.12" d="4" />
+		<offset x="0" y="0.09" d="4" />
+		<frame i="spriteimage.victory.eye.04" d="0"/>
+		<offset x="0" y="0.06" d="4" />
+		<offset x="0" y="0.04" d="4" />
+		<frame i="spriteimage.victory.eye.05" d="0"/>
+		<offset x="0" y="0.02" d="4" />
+		<offset x="0" y="0.01" d="4" />
+		<frame i="spriteimage.victory.eye.06" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+	    <return/>
+	</animation>
+
+    <animation name="victory.eyes.scroll.anim">
+		<animcolor a="0" d="0" />
+		<offset x="0" y="100.0" d="4" />
+		<offset x="0" y="99.0" d="4" />
+		<animcolor a="3" d="0" />
+		<offset x="0" y="98.0" d="4" />
+		<animcolor a="7" d="0" />
+		<offset x="0" y="97.01" d="4" />
+		<animcolor a="12" d="0" />
+		<offset x="0" y="96.02" d="4" />
+		<animcolor a="18" d="0" />
+		<offset x="0" y="95.04" d="4" />
+		<animcolor a="26" d="0" />
+		<offset x="0" y="94.06" d="4" />
+		<animcolor a="35" d="0" />
+		<offset x="0" y="93.09" d="4" />
+		<animcolor a="44" d="0" />
+		<offset x="0" y="92.12" d="4" />
+		<animcolor a="55" d="0" />
+		<offset x="0" y="91.16" d="4" />
+		<animcolor a="66" d="0" />
+		<offset x="0" y="90.2" d="4" />
+		<animcolor a="77" d="0" />
+		<offset x="0" y="89.25" d="4" />
+		<animcolor a="89" d="0" />
+		<offset x="0" y="88.3" d="4" />
+		<animcolor a="102" d="0" />
+		<offset x="0" y="87.36" d="4" />
+		<animcolor a="114" d="0" />
+		<offset x="0" y="86.42" d="4" />
+		<animcolor a="127" d="0" />
+		<offset x="0" y="85.49" d="4" />
+		<animcolor a="140" d="0" />
+		<offset x="0" y="84.57" d="4" />
+		<animcolor a="152" d="0" />
+		<offset x="0" y="83.64" d="4" />
+		<animcolor a="165" d="0" />
+		<offset x="0" y="82.73" d="4" />
+		<animcolor a="177" d="0" />
+		<offset x="0" y="81.82" d="4" />
+		<animcolor a="188" d="0" />
+		<offset x="0" y="80.91" d="4" />
+		<animcolor a="199" d="0" />
+		<offset x="0" y="80.01" d="4" />
+		<animcolor a="210" d="0" />
+		<offset x="0" y="79.11" d="4" />
+		<animcolor a="219" d="0" />
+		<offset x="0" y="78.22" d="4" />
+		<animcolor a="228" d="0" />
+		<offset x="0" y="77.33" d="4" />
+		<animcolor a="236" d="0" />
+		<offset x="0" y="76.45" d="4" />
+		<animcolor a="242" d="0" />
+		<offset x="0" y="75.58" d="4" />
+		<animcolor a="247" d="0" />
+		<offset x="0" y="74.71" d="4" />
+		<animcolor a="251" d="0" />
+		<offset x="0" y="73.84" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="72.98" d="4" />
+		<animcolor a="255" d="0" />
+		<offset x="0" y="72.12" d="4" />
+		<offset x="0" y="71.27" d="4" />
+		<offset x="0" y="70.42" d="4" />
+		<offset x="0" y="69.58" d="4" />
+		<offset x="0" y="68.75" d="4" />
+		<offset x="0" y="67.92" d="4" />
+		<offset x="0" y="67.09" d="4" />
+		<offset x="0" y="66.27" d="4" />
+		<offset x="0" y="65.46" d="4" />
+		<offset x="0" y="64.64" d="4" />
+		<offset x="0" y="63.84" d="4" />
+		<offset x="0" y="63.04" d="4" />
+		<offset x="0" y="62.24" d="4" />
+		<offset x="0" y="61.45" d="4" />
+		<offset x="0" y="60.67" d="4" />
+		<offset x="0" y="59.89" d="4" />
+		<offset x="0" y="59.11" d="4" />
+		<offset x="0" y="58.34" d="4" />
+		<offset x="0" y="57.58" d="4" />
+		<offset x="0" y="56.82" d="4" />
+		<offset x="0" y="56.06" d="4" />
+		<offset x="0" y="55.31" d="4" />
+		<offset x="0" y="54.57" d="4" />
+		<offset x="0" y="53.83" d="4" />
+		<offset x="0" y="53.09" d="4" />
+		<offset x="0" y="52.36" d="4" />
+		<offset x="0" y="51.64" d="4" />
+		<offset x="0" y="50.92" d="4" />
+		<offset x="0" y="50.2" d="4" />
+		<offset x="0" y="49.49" d="4" />
+		<offset x="0" y="48.79" d="4" />
+		<offset x="0" y="48.09" d="4" />
+		<offset x="0" y="47.4" d="4" />
+		<offset x="0" y="46.71" d="4" />
+		<offset x="0" y="46.02" d="4" />
+		<offset x="0" y="45.34" d="4" />
+		<offset x="0" y="44.67" d="4" />
+		<offset x="0" y="44.0" d="4" />
+		<offset x="0" y="43.33" d="4" />
+		<offset x="0" y="42.68" d="4" />
+		<offset x="0" y="42.02" d="4" />
+		<offset x="0" y="41.37" d="4" />
+		<offset x="0" y="40.73" d="4" />
+		<offset x="0" y="40.09" d="4" />
+		<offset x="0" y="39.46" d="4" />
+		<offset x="0" y="38.83" d="4" />
+		<offset x="0" y="38.2" d="4" />
+		<offset x="0" y="37.58" d="4" />
+		<offset x="0" y="36.97" d="4" />
+		<offset x="0" y="36.36" d="4" />
+		<offset x="0" y="35.76" d="4" />
+		<offset x="0" y="35.16" d="4" />
+		<offset x="0" y="34.57" d="4" />
+		<offset x="0" y="33.98" d="4" />
+		<offset x="0" y="33.4" d="4" />
+		<offset x="0" y="32.82" d="4" />
+		<offset x="0" y="32.24" d="4" />
+		<offset x="0" y="31.68" d="4" />
+		<offset x="0" y="31.11" d="4" />
+		<offset x="0" y="30.55" d="4" />
+		<offset x="0" y="30.0" d="4" />
+		<offset x="0" y="29.45" d="4" />
+		<offset x="0" y="28.91" d="4" />
+		<offset x="0" y="28.37" d="4" />
+		<offset x="0" y="27.84" d="4" />
+		<offset x="0" y="27.31" d="4" />
+		<offset x="0" y="26.79" d="4" />
+		<offset x="0" y="26.27" d="4" />
+		<offset x="0" y="25.76" d="4" />
+		<offset x="0" y="25.25" d="4" />
+		<offset x="0" y="24.75" d="4" />
+		<offset x="0" y="24.25" d="4" />
+		<offset x="0" y="23.76" d="4" />
+		<offset x="0" y="23.27" d="4" />
+		<offset x="0" y="22.79" d="4" />
+		<offset x="0" y="22.31" d="4" />
+		<offset x="0" y="21.84" d="4" />
+		<offset x="0" y="21.37" d="4" />
+		<offset x="0" y="20.91" d="4" />
+		<offset x="0" y="20.45" d="4" />
+		<offset x="0" y="20.0" d="4" />
+		<offset x="0" y="19.56" d="4" />
+		<offset x="0" y="19.11" d="4" />
+		<offset x="0" y="18.68" d="4" />
+		<offset x="0" y="18.24" d="4" />
+		<offset x="0" y="17.82" d="4" />
+		<offset x="0" y="17.4" d="4" />
+		<offset x="0" y="16.98" d="4" />
+		<offset x="0" y="16.57" d="4" />
+		<offset x="0" y="16.16" d="4" />
+		<offset x="0" y="15.76" d="4" />
+		<offset x="0" y="15.36" d="4" />
+		<offset x="0" y="14.97" d="4" />
+		<offset x="0" y="14.59" d="4" />
+		<offset x="0" y="14.2" d="4" />
+		<offset x="0" y="13.83" d="4" />
+		<offset x="0" y="13.46" d="4" />
+		<offset x="0" y="13.09" d="4" />
+		<offset x="0" y="12.73" d="4" />
+		<offset x="0" y="12.37" d="4" />
+		<offset x="0" y="12.02" d="4" />
+		<offset x="0" y="11.68" d="4" />
+		<offset x="0" y="11.34" d="4" />
+		<offset x="0" y="11.0" d="4" />
+		<offset x="0" y="10.67" d="4" />
+		<offset x="0" y="10.34" d="4" />
+		<offset x="0" y="10.02" d="4" />
+		<offset x="0" y="9.71" d="4" />
+		<offset x="0" y="9.4" d="4" />
+		<offset x="0" y="9.09" d="4" />
+		<offset x="0" y="8.79" d="4" />
+		<offset x="0" y="8.49" d="4" />
+		<offset x="0" y="8.2" d="4" />
+		<offset x="0" y="7.92" d="4" />
+		<offset x="0" y="7.64" d="4" />
+		<offset x="0" y="7.36" d="4" />
+		<offset x="0" y="7.09" d="4" />
+		<offset x="0" y="6.83" d="4" />
+		<offset x="0" y="6.57" d="4" />
+		<offset x="0" y="6.31" d="4" />
+		<offset x="0" y="6.06" d="4" />
+		<offset x="0" y="5.82" d="4" />
+		<offset x="0" y="5.58" d="4" />
+		<offset x="0" y="5.34" d="4" />
+		<offset x="0" y="5.11" d="4" />
+		<offset x="0" y="4.89" d="4" />
+		<offset x="0" y="4.67" d="4" />
+		<offset x="0" y="4.45" d="4" />
+		<offset x="0" y="4.24" d="4" />
+		<offset x="0" y="4.04" d="4" />
+		<offset x="0" y="3.84" d="4" />
+		<offset x="0" y="3.65" d="4" />
+		<offset x="0" y="3.46" d="4" />
+		<offset x="0" y="3.27" d="4" />
+		<offset x="0" y="3.09" d="4" />
+		<offset x="0" y="2.92" d="4" />
+		<offset x="0" y="2.75" d="4" />
+		<offset x="0" y="2.59" d="4" />
+		<offset x="0" y="2.43" d="4" />
+		<offset x="0" y="2.27" d="4" />
+		<offset x="0" y="2.12" d="4" />
+		<offset x="0" y="1.98" d="4" />
+		<offset x="0" y="1.84" d="4" />
+		<offset x="0" y="1.71" d="4" />
+		<offset x="0" y="1.58" d="4" />
+		<offset x="0" y="1.45" d="4" />
+		<offset x="0" y="1.34" d="4" />
+		<offset x="0" y="1.22" d="4" />
+		<offset x="0" y="1.11" d="4" />
+		<offset x="0" y="1.01" d="4" />
+		<offset x="0" y="0.91" d="4" />
+		<offset x="0" y="0.82" d="4" />
+		<offset x="0" y="0.73" d="4" />
+		<offset x="0" y="0.65" d="4" />
+		<offset x="0" y="0.57" d="4" />
+		<offset x="0" y="0.49" d="4" />
+		<offset x="0" y="0.43" d="4" />
+		<offset x="0" y="0.36" d="4" />
+		<offset x="0" y="0.31" d="4" />
+		<offset x="0" y="0.25" d="4" />
+		<offset x="0" y="0.2" d="4" />
+		<offset x="0" y="0.16" d="4" />
+		<offset x="0" y="0.12" d="4" />
+		<offset x="0" y="0.09" d="4" />
+		<offset x="0" y="0.06" d="4" />
+		<offset x="0" y="0.04" d="4" />
+		<offset x="0" y="0.02" d="4" />
+		<offset x="0" y="0.01" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+	    <return/>
+	</animation>
+
+    <animation name="victory.flag.scroll.anim">
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<animcolor a="0" d="0" />
+		<offset x="0" y="100.0" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="99.0" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<animcolor a="1" d="0" />
+		<offset x="0" y="98.0" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<animcolor a="2" d="0" />
+		<offset x="0" y="97.01" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<animcolor a="4" d="0" />
+		<offset x="0" y="96.02" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<animcolor a="7" d="0" />
+		<offset x="0" y="95.04" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<animcolor a="10" d="0" />
+		<offset x="0" y="94.06" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<animcolor a="13" d="0" />
+		<offset x="0" y="93.09" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<animcolor a="17" d="0" />
+		<offset x="0" y="92.12" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<animcolor a="21" d="0" />
+		<offset x="0" y="91.16" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<animcolor a="26" d="0" />
+		<offset x="0" y="90.2" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<animcolor a="31" d="0" />
+		<offset x="0" y="89.25" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<animcolor a="37" d="0" />
+		<offset x="0" y="88.3" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<animcolor a="42" d="0" />
+		<offset x="0" y="87.36" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<animcolor a="48" d="0" />
+		<offset x="0" y="86.42" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<animcolor a="55" d="0" />
+		<offset x="0" y="85.49" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<animcolor a="61" d="0" />
+		<offset x="0" y="84.57" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<animcolor a="68" d="0" />
+		<offset x="0" y="83.64" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<animcolor a="75" d="0" />
+		<offset x="0" y="82.73" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<animcolor a="82" d="0" />
+		<offset x="0" y="81.82" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<animcolor a="89" d="0" />
+		<offset x="0" y="80.91" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<animcolor a="97" d="0" />
+		<offset x="0" y="80.01" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<animcolor a="104" d="0" />
+		<offset x="0" y="79.11" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<animcolor a="112" d="0" />
+		<offset x="0" y="78.22" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<animcolor a="119" d="0" />
+		<offset x="0" y="77.33" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<animcolor a="127" d="0" />
+		<offset x="0" y="76.45" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<animcolor a="135" d="0" />
+		<offset x="0" y="75.58" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<animcolor a="142" d="0" />
+		<offset x="0" y="74.71" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<animcolor a="150" d="0" />
+		<offset x="0" y="73.84" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<animcolor a="157" d="0" />
+		<offset x="0" y="72.98" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<animcolor a="165" d="0" />
+		<offset x="0" y="72.12" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<animcolor a="172" d="0" />
+		<offset x="0" y="71.27" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<animcolor a="179" d="0" />
+		<offset x="0" y="70.42" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<animcolor a="186" d="0" />
+		<offset x="0" y="69.58" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<animcolor a="193" d="0" />
+		<offset x="0" y="68.75" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<animcolor a="199" d="0" />
+		<offset x="0" y="67.92" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<animcolor a="206" d="0" />
+		<offset x="0" y="67.09" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<animcolor a="212" d="0" />
+		<offset x="0" y="66.27" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<animcolor a="217" d="0" />
+		<offset x="0" y="65.46" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<animcolor a="223" d="0" />
+		<offset x="0" y="64.64" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<animcolor a="228" d="0" />
+		<offset x="0" y="63.84" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<animcolor a="233" d="0" />
+		<offset x="0" y="63.04" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<animcolor a="237" d="0" />
+		<offset x="0" y="62.24" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<animcolor a="241" d="0" />
+		<offset x="0" y="61.45" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<animcolor a="244" d="0" />
+		<offset x="0" y="60.67" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<animcolor a="247" d="0" />
+		<offset x="0" y="59.89" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<animcolor a="250" d="0" />
+		<offset x="0" y="59.11" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<animcolor a="252" d="0" />
+		<offset x="0" y="58.34" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<animcolor a="253" d="0" />
+		<offset x="0" y="57.58" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<animcolor a="254" d="0" />
+		<offset x="0" y="56.82" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<animcolor a="255" d="0" />
+		<offset x="0" y="56.06" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="55.31" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="54.57" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="53.83" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="53.09" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="52.36" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="51.64" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="50.92" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="50.2" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="49.49" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="48.79" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="48.09" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="47.4" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="46.71" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="46.02" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="45.34" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="44.67" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="44.0" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="43.33" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="42.68" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="42.02" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="41.37" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="40.73" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="40.09" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="39.46" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="38.83" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="38.2" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="37.58" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="36.97" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="36.36" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="35.76" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="35.16" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="34.57" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="33.98" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="33.4" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="32.82" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="32.24" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="31.68" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="31.11" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="30.55" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="30.0" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="29.45" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="28.91" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="28.37" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="27.84" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="27.31" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="26.79" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="26.27" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="25.76" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="25.25" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="24.75" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="24.25" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="23.76" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="23.27" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="22.79" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="22.31" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="21.84" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="21.37" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="20.91" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="20.45" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="20.0" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="19.56" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="19.11" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="18.68" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="18.24" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="17.82" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="17.4" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="16.98" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="16.57" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="16.16" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="15.76" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="15.36" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="14.97" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="14.59" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="14.2" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="13.83" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="13.46" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="13.09" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="12.73" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="12.37" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="12.02" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="11.68" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="11.34" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="11.0" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="10.67" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="10.34" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="10.02" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="9.71" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="9.4" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="9.09" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="8.79" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="8.49" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="8.2" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="7.92" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="7.64" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="7.36" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="7.09" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="6.83" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="6.57" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="6.31" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="6.06" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="5.82" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="5.58" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="5.34" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="5.11" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="4.89" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="4.67" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="4.45" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="4.24" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="4.04" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="3.84" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="3.65" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="3.46" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="3.27" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="3.09" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="2.92" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="2.75" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="2.59" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="2.43" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="2.27" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="2.12" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="1.98" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="1.84" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="1.71" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="1.58" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="1.45" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="1.34" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="1.22" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="1.11" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="1.01" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="0.91" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="0.82" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="0.73" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="0.65" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="0.57" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="0.49" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="0.43" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="0.36" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="0.31" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="0.25" d="4" />
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<offset x="0" y="0.2" d="4" />
+		<frame i="spriteimage.victory.flag.02" d="0"/>
+		<offset x="0" y="0.16" d="4" />
+		<frame i="spriteimage.victory.flag.03" d="0"/>
+		<offset x="0" y="0.12" d="4" />
+		<frame i="spriteimage.victory.flag.04" d="0"/>
+		<offset x="0" y="0.09" d="4" />
+		<frame i="spriteimage.victory.flag.05" d="0"/>
+		<offset x="0" y="0.06" d="4" />
+		<frame i="spriteimage.victory.flag.06" d="0"/>
+		<offset x="0" y="0.04" d="4" />
+		<frame i="spriteimage.victory.flag.07" d="0"/>
+		<offset x="0" y="0.02" d="4" />
+		<frame i="spriteimage.victory.flag.08" d="0"/>
+		<offset x="0" y="0.01" d="4" />
+		<frame i="spriteimage.victory.flag.09" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+		<frame i="spriteimage.victory.flag.10" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+	    <return/>
+	</animation>
+
+
+
+	<animation name="victory.top.mask.anim">
+		<offset x="0" y="100.0" d="4" />
+		<offset x="0" y="99.0" d="4" />
+		<offset x="0" y="98.0" d="4" />
+		<offset x="0" y="97.01" d="4" />
+		<offset x="0" y="96.02" d="4" />
+		<offset x="0" y="95.04" d="4" />
+		<offset x="0" y="94.06" d="4" />
+		<offset x="0" y="93.09" d="4" />
+		<offset x="0" y="92.12" d="4" />
+		<offset x="0" y="91.16" d="4" />
+		<offset x="0" y="90.2" d="4" />
+		<offset x="0" y="89.25" d="4" />
+		<offset x="0" y="88.3" d="4" />
+		<offset x="0" y="87.36" d="4" />
+		<offset x="0" y="86.42" d="4" />
+		<offset x="0" y="85.49" d="4" />
+		<offset x="0" y="84.57" d="4" />
+		<offset x="0" y="83.64" d="4" />
+		<offset x="0" y="82.73" d="4" />
+		<offset x="0" y="81.82" d="4" />
+		<offset x="0" y="80.91" d="4" />
+		<offset x="0" y="80.01" d="4" />
+		<offset x="0" y="79.11" d="4" />
+		<offset x="0" y="78.22" d="4" />
+		<offset x="0" y="77.33" d="4" />
+		<offset x="0" y="76.45" d="4" />
+		<offset x="0" y="75.58" d="4" />
+		<offset x="0" y="74.71" d="4" />
+		<offset x="0" y="73.84" d="4" />
+		<offset x="0" y="72.98" d="4" />
+		<offset x="0" y="72.12" d="4" />
+		<offset x="0" y="71.27" d="4" />
+		<offset x="0" y="70.42" d="4" />
+		<offset x="0" y="69.58" d="4" />
+		<offset x="0" y="68.75" d="4" />
+		<offset x="0" y="67.92" d="4" />
+		<offset x="0" y="67.09" d="4" />
+		<offset x="0" y="66.27" d="4" />
+		<offset x="0" y="65.46" d="4" />
+		<offset x="0" y="64.64" d="4" />
+		<offset x="0" y="63.84" d="4" />
+		<offset x="0" y="63.04" d="4" />
+		<offset x="0" y="62.24" d="4" />
+		<offset x="0" y="61.45" d="4" />
+		<offset x="0" y="60.67" d="4" />
+		<offset x="0" y="59.89" d="4" />
+		<offset x="0" y="59.11" d="4" />
+		<offset x="0" y="58.34" d="4" />
+		<offset x="0" y="57.58" d="4" />
+		<offset x="0" y="56.82" d="4" />
+		<offset x="0" y="56.06" d="4" />
+		<offset x="0" y="55.31" d="4" />
+		<offset x="0" y="54.57" d="4" />
+		<offset x="0" y="53.83" d="4" />
+		<offset x="0" y="53.09" d="4" />
+		<offset x="0" y="52.36" d="4" />
+		<offset x="0" y="51.64" d="4" />
+		<offset x="0" y="50.92" d="4" />
+		<offset x="0" y="50.2" d="4" />
+		<offset x="0" y="49.49" d="4" />
+		<offset x="0" y="48.79" d="4" />
+		<offset x="0" y="48.09" d="4" />
+		<offset x="0" y="47.4" d="4" />
+		<offset x="0" y="46.71" d="4" />
+		<offset x="0" y="46.02" d="4" />
+		<offset x="0" y="45.34" d="4" />
+		<offset x="0" y="44.67" d="4" />
+		<offset x="0" y="44.0" d="4" />
+		<offset x="0" y="43.33" d="4" />
+		<offset x="0" y="42.68" d="4" />
+		<offset x="0" y="42.02" d="4" />
+		<offset x="0" y="41.37" d="4" />
+		<offset x="0" y="40.73" d="4" />
+		<offset x="0" y="40.09" d="4" />
+		<offset x="0" y="39.46" d="4" />
+		<offset x="0" y="38.83" d="4" />
+		<offset x="0" y="38.2" d="4" />
+		<offset x="0" y="37.58" d="4" />
+		<offset x="0" y="36.97" d="4" />
+		<offset x="0" y="36.36" d="4" />
+		<offset x="0" y="35.76" d="4" />
+		<offset x="0" y="35.16" d="4" />
+		<offset x="0" y="34.57" d="4" />
+		<offset x="0" y="33.98" d="4" />
+		<offset x="0" y="33.4" d="4" />
+		<offset x="0" y="32.82" d="4" />
+		<offset x="0" y="32.24" d="4" />
+		<offset x="0" y="31.68" d="4" />
+		<offset x="0" y="31.11" d="4" />
+		<offset x="0" y="30.55" d="4" />
+		<offset x="0" y="30.0" d="4" />
+		<offset x="0" y="29.45" d="4" />
+		<offset x="0" y="28.91" d="4" />
+		<offset x="0" y="28.37" d="4" />
+		<offset x="0" y="27.84" d="4" />
+		<offset x="0" y="27.31" d="4" />
+		<offset x="0" y="26.79" d="4" />
+		<offset x="0" y="26.27" d="4" />
+		<offset x="0" y="25.76" d="4" />
+		<offset x="0" y="25.25" d="4" />
+		<offset x="0" y="24.75" d="4" />
+		<offset x="0" y="24.25" d="4" />
+		<offset x="0" y="23.76" d="4" />
+		<offset x="0" y="23.27" d="4" />
+		<offset x="0" y="22.79" d="4" />
+		<offset x="0" y="22.31" d="4" />
+		<offset x="0" y="21.84" d="4" />
+		<offset x="0" y="21.37" d="4" />
+		<offset x="0" y="20.91" d="4" />
+		<offset x="0" y="20.45" d="4" />
+		<offset x="0" y="20.0" d="4" />
+		<offset x="0" y="19.56" d="4" />
+		<offset x="0" y="19.11" d="4" />
+		<offset x="0" y="18.68" d="4" />
+		<offset x="0" y="18.24" d="4" />
+		<offset x="0" y="17.82" d="4" />
+		<offset x="0" y="17.4" d="4" />
+		<offset x="0" y="16.98" d="4" />
+		<offset x="0" y="16.57" d="4" />
+		<offset x="0" y="16.16" d="4" />
+		<offset x="0" y="15.76" d="4" />
+		<offset x="0" y="15.36" d="4" />
+		<offset x="0" y="14.97" d="4" />
+		<offset x="0" y="14.59" d="4" />
+		<offset x="0" y="14.2" d="4" />
+		<offset x="0" y="13.83" d="4" />
+		<offset x="0" y="13.46" d="4" />
+		<offset x="0" y="13.09" d="4" />
+		<offset x="0" y="12.73" d="4" />
+		<offset x="0" y="12.37" d="4" />
+		<offset x="0" y="12.02" d="4" />
+		<offset x="0" y="11.68" d="4" />
+		<offset x="0" y="11.34" d="4" />
+		<offset x="0" y="11.0" d="4" />
+		<offset x="0" y="10.67" d="4" />
+		<offset x="0" y="10.34" d="4" />
+		<offset x="0" y="10.02" d="4" />
+		<offset x="0" y="9.71" d="4" />
+		<offset x="0" y="9.4" d="4" />
+		<offset x="0" y="9.09" d="4" />
+		<offset x="0" y="8.79" d="4" />
+		<offset x="0" y="8.49" d="4" />
+		<offset x="0" y="8.2" d="4" />
+		<offset x="0" y="7.92" d="4" />
+		<offset x="0" y="7.64" d="4" />
+		<offset x="0" y="7.36" d="4" />
+		<offset x="0" y="7.09" d="4" />
+		<offset x="0" y="6.83" d="4" />
+		<offset x="0" y="6.57" d="4" />
+		<offset x="0" y="6.31" d="4" />
+		<offset x="0" y="6.06" d="4" />
+		<offset x="0" y="5.82" d="4" />
+		<offset x="0" y="5.58" d="4" />
+		<offset x="0" y="5.34" d="4" />
+		<offset x="0" y="5.11" d="4" />
+		<offset x="0" y="4.89" d="4" />
+		<offset x="0" y="4.67" d="4" />
+		<offset x="0" y="4.45" d="4" />
+		<offset x="0" y="4.24" d="4" />
+		<offset x="0" y="4.04" d="4" />
+		<offset x="0" y="3.84" d="4" />
+		<offset x="0" y="3.65" d="4" />
+		<offset x="0" y="3.46" d="4" />
+		<offset x="0" y="3.27" d="4" />
+		<offset x="0" y="3.09" d="4" />
+		<offset x="0" y="2.92" d="4" />
+		<offset x="0" y="2.75" d="4" />
+		<offset x="0" y="2.59" d="4" />
+		<offset x="0" y="2.43" d="4" />
+		<offset x="0" y="2.27" d="4" />
+		<offset x="0" y="2.12" d="4" />
+		<offset x="0" y="1.98" d="4" />
+		<offset x="0" y="1.84" d="4" />
+		<offset x="0" y="1.71" d="4" />
+		<offset x="0" y="1.58" d="4" />
+		<offset x="0" y="1.45" d="4" />
+		<offset x="0" y="1.34" d="4" />
+		<offset x="0" y="1.22" d="4" />
+		<offset x="0" y="1.11" d="4" />
+		<offset x="0" y="1.01" d="4" />
+		<offset x="0" y="0.91" d="4" />
+		<offset x="0" y="0.82" d="4" />
+		<offset x="0" y="0.73" d="4" />
+		<offset x="0" y="0.65" d="4" />
+		<offset x="0" y="0.57" d="4" />
+		<offset x="0" y="0.49" d="4" />
+		<offset x="0" y="0.43" d="4" />
+		<offset x="0" y="0.36" d="4" />
+		<offset x="0" y="0.31" d="4" />
+		<offset x="0" y="0.25" d="4" />
+		<offset x="0" y="0.2" d="4" />
+		<animcolor a="246" d="0" />
+		<offset x="0" y="0.16" d="4" />
+		<animcolor a="222" d="0" />
+		<offset x="0" y="0.12" d="4" />
+		<animcolor a="188" d="0" />
+		<offset x="0" y="0.09" d="4" />
+		<animcolor a="148" d="0" />
+		<offset x="0" y="0.06" d="4" />
+		<animcolor a="106" d="0" />
+		<offset x="0" y="0.04" d="4" />
+		<animcolor a="66" d="0" />
+		<offset x="0" y="0.02" d="4" />
+		<animcolor a="32" d="0" />
+		<offset x="0" y="0.01" d="4" />
+		<animcolor a="8" d="0" />
+		<offset x="0" y="0.0" d="4" />
+		<animcolor a="0" d="0" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+	    <return/>
+	</animation>
+
+
+	<animation name="victory.top.anim">
+		<animcolor a="0" d="0" />
+		<offset x="0" y="100.0" d="4" />
+		<offset x="0" y="99.0" d="4" />
+		<offset x="0" y="98.0" d="4" />
+		<offset x="0" y="97.01" d="4" />
+		<offset x="0" y="96.02" d="4" />
+		<offset x="0" y="95.04" d="4" />
+		<offset x="0" y="94.06" d="4" />
+		<offset x="0" y="93.09" d="4" />
+		<offset x="0" y="92.12" d="4" />
+		<offset x="0" y="91.16" d="4" />
+		<offset x="0" y="90.2" d="4" />
+		<offset x="0" y="89.25" d="4" />
+		<offset x="0" y="88.3" d="4" />
+		<offset x="0" y="87.36" d="4" />
+		<offset x="0" y="86.42" d="4" />
+		<offset x="0" y="85.49" d="4" />
+		<offset x="0" y="84.57" d="4" />
+		<offset x="0" y="83.64" d="4" />
+		<offset x="0" y="82.73" d="4" />
+		<offset x="0" y="81.82" d="4" />
+		<offset x="0" y="80.91" d="4" />
+		<offset x="0" y="80.01" d="4" />
+		<offset x="0" y="79.11" d="4" />
+		<offset x="0" y="78.22" d="4" />
+		<offset x="0" y="77.33" d="4" />
+		<offset x="0" y="76.45" d="4" />
+		<offset x="0" y="75.58" d="4" />
+		<offset x="0" y="74.71" d="4" />
+		<offset x="0" y="73.84" d="4" />
+		<offset x="0" y="72.98" d="4" />
+		<offset x="0" y="72.12" d="4" />
+		<offset x="0" y="71.27" d="4" />
+		<offset x="0" y="70.42" d="4" />
+		<offset x="0" y="69.58" d="4" />
+		<offset x="0" y="68.75" d="4" />
+		<offset x="0" y="67.92" d="4" />
+		<offset x="0" y="67.09" d="4" />
+		<offset x="0" y="66.27" d="4" />
+		<offset x="0" y="65.46" d="4" />
+		<offset x="0" y="64.64" d="4" />
+		<offset x="0" y="63.84" d="4" />
+		<offset x="0" y="63.04" d="4" />
+		<offset x="0" y="62.24" d="4" />
+		<offset x="0" y="61.45" d="4" />
+		<offset x="0" y="60.67" d="4" />
+		<offset x="0" y="59.89" d="4" />
+		<offset x="0" y="59.11" d="4" />
+		<offset x="0" y="58.34" d="4" />
+		<offset x="0" y="57.58" d="4" />
+		<offset x="0" y="56.82" d="4" />
+		<offset x="0" y="56.06" d="4" />
+		<animcolor a="1" d="0" />
+		<offset x="0" y="55.31" d="4" />
+		<offset x="0" y="54.57" d="4" />
+		<offset x="0" y="53.83" d="4" />
+		<animcolor a="2" d="0" />
+		<offset x="0" y="53.09" d="4" />
+		<animcolor a="3" d="0" />
+		<offset x="0" y="52.36" d="4" />
+		<offset x="0" y="51.64" d="4" />
+		<animcolor a="4" d="0" />
+		<offset x="0" y="50.92" d="4" />
+		<animcolor a="5" d="0" />
+		<offset x="0" y="50.2" d="4" />
+		<offset x="0" y="49.49" d="4" />
+		<animcolor a="6" d="0" />
+		<offset x="0" y="48.79" d="4" />
+		<animcolor a="7" d="0" />
+		<offset x="0" y="48.09" d="4" />
+		<animcolor a="8" d="0" />
+		<offset x="0" y="47.4" d="4" />
+		<animcolor a="9" d="0" />
+		<offset x="0" y="46.71" d="4" />
+		<animcolor a="10" d="0" />
+		<offset x="0" y="46.02" d="4" />
+		<animcolor a="11" d="0" />
+		<offset x="0" y="45.34" d="4" />
+		<animcolor a="12" d="0" />
+		<offset x="0" y="44.67" d="4" />
+		<animcolor a="14" d="0" />
+		<offset x="0" y="44.0" d="4" />
+		<animcolor a="15" d="0" />
+		<offset x="0" y="43.33" d="4" />
+		<animcolor a="16" d="0" />
+		<offset x="0" y="42.68" d="4" />
+		<animcolor a="17" d="0" />
+		<offset x="0" y="42.02" d="4" />
+		<animcolor a="19" d="0" />
+		<offset x="0" y="41.37" d="4" />
+		<animcolor a="20" d="0" />
+		<offset x="0" y="40.73" d="4" />
+		<animcolor a="22" d="0" />
+		<offset x="0" y="40.09" d="4" />
+		<animcolor a="23" d="0" />
+		<offset x="0" y="39.46" d="4" />
+		<animcolor a="25" d="0" />
+		<offset x="0" y="38.83" d="4" />
+		<animcolor a="26" d="0" />
+		<offset x="0" y="38.2" d="4" />
+		<animcolor a="28" d="0" />
+		<offset x="0" y="37.58" d="4" />
+		<animcolor a="30" d="0" />
+		<offset x="0" y="36.97" d="4" />
+		<animcolor a="31" d="0" />
+		<offset x="0" y="36.36" d="4" />
+		<animcolor a="33" d="0" />
+		<offset x="0" y="35.76" d="4" />
+		<animcolor a="35" d="0" />
+		<offset x="0" y="35.16" d="4" />
+		<animcolor a="37" d="0" />
+		<offset x="0" y="34.57" d="4" />
+		<animcolor a="38" d="0" />
+		<offset x="0" y="33.98" d="4" />
+		<animcolor a="40" d="0" />
+		<offset x="0" y="33.4" d="4" />
+		<animcolor a="42" d="0" />
+		<offset x="0" y="32.82" d="4" />
+		<animcolor a="44" d="0" />
+		<offset x="0" y="32.24" d="4" />
+		<animcolor a="46" d="0" />
+		<offset x="0" y="31.68" d="4" />
+		<animcolor a="48" d="0" />
+		<offset x="0" y="31.11" d="4" />
+		<animcolor a="50" d="0" />
+		<offset x="0" y="30.55" d="4" />
+		<animcolor a="52" d="0" />
+		<offset x="0" y="30.0" d="4" />
+		<animcolor a="54" d="0" />
+		<offset x="0" y="29.45" d="4" />
+		<animcolor a="56" d="0" />
+		<offset x="0" y="28.91" d="4" />
+		<animcolor a="58" d="0" />
+		<offset x="0" y="28.37" d="4" />
+		<animcolor a="61" d="0" />
+		<offset x="0" y="27.84" d="4" />
+		<animcolor a="63" d="0" />
+		<offset x="0" y="27.31" d="4" />
+		<animcolor a="65" d="0" />
+		<offset x="0" y="26.79" d="4" />
+		<animcolor a="67" d="0" />
+		<offset x="0" y="26.27" d="4" />
+		<animcolor a="69" d="0" />
+		<offset x="0" y="25.76" d="4" />
+		<animcolor a="72" d="0" />
+		<offset x="0" y="25.25" d="4" />
+		<animcolor a="74" d="0" />
+		<offset x="0" y="24.75" d="4" />
+		<animcolor a="76" d="0" />
+		<offset x="0" y="24.25" d="4" />
+		<animcolor a="78" d="0" />
+		<offset x="0" y="23.76" d="4" />
+		<animcolor a="81" d="0" />
+		<offset x="0" y="23.27" d="4" />
+		<animcolor a="83" d="0" />
+		<offset x="0" y="22.79" d="4" />
+		<animcolor a="85" d="0" />
+		<offset x="0" y="22.31" d="4" />
+		<animcolor a="88" d="0" />
+		<offset x="0" y="21.84" d="4" />
+		<animcolor a="90" d="0" />
+		<offset x="0" y="21.37" d="4" />
+		<animcolor a="93" d="0" />
+		<offset x="0" y="20.91" d="4" />
+		<animcolor a="95" d="0" />
+		<offset x="0" y="20.45" d="4" />
+		<animcolor a="97" d="0" />
+		<offset x="0" y="20.0" d="4" />
+		<animcolor a="100" d="0" />
+		<offset x="0" y="19.56" d="4" />
+		<animcolor a="102" d="0" />
+		<offset x="0" y="19.11" d="4" />
+		<animcolor a="105" d="0" />
+		<offset x="0" y="18.68" d="4" />
+		<animcolor a="107" d="0" />
+		<offset x="0" y="18.24" d="4" />
+		<animcolor a="110" d="0" />
+		<offset x="0" y="17.82" d="4" />
+		<animcolor a="112" d="0" />
+		<offset x="0" y="17.4" d="4" />
+		<animcolor a="115" d="0" />
+		<offset x="0" y="16.98" d="4" />
+		<animcolor a="117" d="0" />
+		<offset x="0" y="16.57" d="4" />
+		<animcolor a="120" d="0" />
+		<offset x="0" y="16.16" d="4" />
+		<animcolor a="122" d="0" />
+		<offset x="0" y="15.76" d="4" />
+		<animcolor a="125" d="0" />
+		<offset x="0" y="15.36" d="4" />
+		<animcolor a="127" d="0" />
+		<offset x="0" y="14.97" d="4" />
+		<animcolor a="129" d="0" />
+		<offset x="0" y="14.59" d="4" />
+		<animcolor a="132" d="0" />
+		<offset x="0" y="14.2" d="4" />
+		<animcolor a="134" d="0" />
+		<offset x="0" y="13.83" d="4" />
+		<animcolor a="137" d="0" />
+		<offset x="0" y="13.46" d="4" />
+		<animcolor a="139" d="0" />
+		<offset x="0" y="13.09" d="4" />
+		<animcolor a="142" d="0" />
+		<offset x="0" y="12.73" d="4" />
+		<animcolor a="144" d="0" />
+		<offset x="0" y="12.37" d="4" />
+		<animcolor a="147" d="0" />
+		<offset x="0" y="12.02" d="4" />
+		<animcolor a="149" d="0" />
+		<offset x="0" y="11.68" d="4" />
+		<animcolor a="152" d="0" />
+		<offset x="0" y="11.34" d="4" />
+		<animcolor a="154" d="0" />
+		<offset x="0" y="11.0" d="4" />
+		<animcolor a="157" d="0" />
+		<offset x="0" y="10.67" d="4" />
+		<animcolor a="159" d="0" />
+		<offset x="0" y="10.34" d="4" />
+		<animcolor a="161" d="0" />
+		<offset x="0" y="10.02" d="4" />
+		<animcolor a="164" d="0" />
+		<offset x="0" y="9.71" d="4" />
+		<animcolor a="166" d="0" />
+		<offset x="0" y="9.4" d="4" />
+		<animcolor a="169" d="0" />
+		<offset x="0" y="9.09" d="4" />
+		<animcolor a="171" d="0" />
+		<offset x="0" y="8.79" d="4" />
+		<animcolor a="173" d="0" />
+		<offset x="0" y="8.49" d="4" />
+		<animcolor a="176" d="0" />
+		<offset x="0" y="8.2" d="4" />
+		<animcolor a="178" d="0" />
+		<offset x="0" y="7.92" d="4" />
+		<animcolor a="180" d="0" />
+		<offset x="0" y="7.64" d="4" />
+		<animcolor a="182" d="0" />
+		<offset x="0" y="7.36" d="4" />
+		<animcolor a="185" d="0" />
+		<offset x="0" y="7.09" d="4" />
+		<animcolor a="187" d="0" />
+		<offset x="0" y="6.83" d="4" />
+		<animcolor a="189" d="0" />
+		<offset x="0" y="6.57" d="4" />
+		<animcolor a="191" d="0" />
+		<offset x="0" y="6.31" d="4" />
+		<animcolor a="193" d="0" />
+		<offset x="0" y="6.06" d="4" />
+		<animcolor a="196" d="0" />
+		<offset x="0" y="5.82" d="4" />
+		<animcolor a="198" d="0" />
+		<offset x="0" y="5.58" d="4" />
+		<animcolor a="200" d="0" />
+		<offset x="0" y="5.34" d="4" />
+		<animcolor a="202" d="0" />
+		<offset x="0" y="5.11" d="4" />
+		<animcolor a="204" d="0" />
+		<offset x="0" y="4.89" d="4" />
+		<animcolor a="206" d="0" />
+		<offset x="0" y="4.67" d="4" />
+		<animcolor a="208" d="0" />
+		<offset x="0" y="4.45" d="4" />
+		<animcolor a="210" d="0" />
+		<offset x="0" y="4.24" d="4" />
+		<animcolor a="212" d="0" />
+		<offset x="0" y="4.04" d="4" />
+		<animcolor a="214" d="0" />
+		<offset x="0" y="3.84" d="4" />
+		<animcolor a="216" d="0" />
+		<offset x="0" y="3.65" d="4" />
+		<animcolor a="217" d="0" />
+		<offset x="0" y="3.46" d="4" />
+		<animcolor a="219" d="0" />
+		<offset x="0" y="3.27" d="4" />
+		<animcolor a="221" d="0" />
+		<offset x="0" y="3.09" d="4" />
+		<animcolor a="223" d="0" />
+		<offset x="0" y="2.92" d="4" />
+		<animcolor a="224" d="0" />
+		<offset x="0" y="2.75" d="4" />
+		<animcolor a="226" d="0" />
+		<offset x="0" y="2.59" d="4" />
+		<animcolor a="228" d="0" />
+		<offset x="0" y="2.43" d="4" />
+		<animcolor a="229" d="0" />
+		<offset x="0" y="2.27" d="4" />
+		<animcolor a="231" d="0" />
+		<offset x="0" y="2.12" d="4" />
+		<animcolor a="232" d="0" />
+		<offset x="0" y="1.98" d="4" />
+		<animcolor a="234" d="0" />
+		<offset x="0" y="1.84" d="4" />
+		<animcolor a="235" d="0" />
+		<offset x="0" y="1.71" d="4" />
+		<animcolor a="237" d="0" />
+		<offset x="0" y="1.58" d="4" />
+		<animcolor a="238" d="0" />
+		<offset x="0" y="1.45" d="4" />
+		<animcolor a="239" d="0" />
+		<offset x="0" y="1.34" d="4" />
+		<animcolor a="240" d="0" />
+		<offset x="0" y="1.22" d="4" />
+		<animcolor a="242" d="0" />
+		<offset x="0" y="1.11" d="4" />
+		<animcolor a="243" d="0" />
+		<offset x="0" y="1.01" d="4" />
+		<animcolor a="244" d="0" />
+		<offset x="0" y="0.91" d="4" />
+		<animcolor a="245" d="0" />
+		<offset x="0" y="0.82" d="4" />
+		<animcolor a="246" d="0" />
+		<offset x="0" y="0.73" d="4" />
+		<animcolor a="247" d="0" />
+		<offset x="0" y="0.65" d="4" />
+		<animcolor a="248" d="0" />
+		<offset x="0" y="0.57" d="4" />
+		<animcolor a="249" d="0" />
+		<offset x="0" y="0.49" d="4" />
+		<offset x="0" y="0.43" d="4" />
+		<animcolor a="250" d="0" />
+		<offset x="0" y="0.36" d="4" />
+		<animcolor a="251" d="0" />
+		<offset x="0" y="0.31" d="4" />
+		<offset x="0" y="0.25" d="4" />
+		<animcolor a="252" d="0" />
+		<offset x="0" y="0.2" d="4" />
+		<animcolor a="253" d="0" />
+		<offset x="0" y="0.16" d="4" />
+		<offset x="0" y="0.12" d="4" />
+		<offset x="0" y="0.09" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="0.06" d="4" />
+		<offset x="0" y="0.04" d="4" />
+		<offset x="0" y="0.02" d="4" />
+		<offset x="0" y="0.01" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<animcolor a="255" d="0" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<return/>
+	</animation>
+
+
+
+
+	<animation name="victory.mid.mask.anim">
+		<offset x="0" y="75.0" d="4" />
+		<offset x="0" y="74.25" d="4" />
+		<offset x="0" y="73.5" d="4" />
+		<offset x="0" y="72.76" d="4" />
+		<offset x="0" y="72.02" d="4" />
+		<offset x="0" y="71.28" d="4" />
+		<offset x="0" y="70.55" d="4" />
+		<offset x="0" y="69.82" d="4" />
+		<offset x="0" y="69.09" d="4" />
+		<offset x="0" y="68.37" d="4" />
+		<offset x="0" y="67.65" d="4" />
+		<offset x="0" y="66.94" d="4" />
+		<offset x="0" y="66.23" d="4" />
+		<offset x="0" y="65.52" d="4" />
+		<offset x="0" y="64.82" d="4" />
+		<offset x="0" y="64.12" d="4" />
+		<offset x="0" y="63.42" d="4" />
+		<offset x="0" y="62.73" d="4" />
+		<offset x="0" y="62.05" d="4" />
+		<offset x="0" y="61.36" d="4" />
+		<offset x="0" y="60.68" d="4" />
+		<offset x="0" y="60.01" d="4" />
+		<offset x="0" y="59.33" d="4" />
+		<offset x="0" y="58.67" d="4" />
+		<offset x="0" y="58.0" d="4" />
+		<offset x="0" y="57.34" d="4" />
+		<offset x="0" y="56.68" d="4" />
+		<offset x="0" y="56.03" d="4" />
+		<offset x="0" y="55.38" d="4" />
+		<offset x="0" y="54.73" d="4" />
+		<offset x="0" y="54.09" d="4" />
+		<offset x="0" y="53.45" d="4" />
+		<offset x="0" y="52.82" d="4" />
+		<offset x="0" y="52.19" d="4" />
+		<offset x="0" y="51.56" d="4" />
+		<offset x="0" y="50.94" d="4" />
+		<offset x="0" y="50.32" d="4" />
+		<offset x="0" y="49.7" d="4" />
+		<offset x="0" y="49.09" d="4" />
+		<offset x="0" y="48.48" d="4" />
+		<offset x="0" y="47.88" d="4" />
+		<offset x="0" y="47.28" d="4" />
+		<offset x="0" y="46.68" d="4" />
+		<offset x="0" y="46.09" d="4" />
+		<offset x="0" y="45.5" d="4" />
+		<offset x="0" y="44.92" d="4" />
+		<offset x="0" y="44.33" d="4" />
+		<offset x="0" y="43.76" d="4" />
+		<offset x="0" y="43.18" d="4" />
+		<offset x="0" y="42.61" d="4" />
+		<offset x="0" y="42.05" d="4" />
+		<offset x="0" y="41.48" d="4" />
+		<offset x="0" y="40.93" d="4" />
+		<offset x="0" y="40.37" d="4" />
+		<offset x="0" y="39.82" d="4" />
+		<offset x="0" y="39.27" d="4" />
+		<offset x="0" y="38.73" d="4" />
+		<offset x="0" y="38.19" d="4" />
+		<offset x="0" y="37.65" d="4" />
+		<offset x="0" y="37.12" d="4" />
+		<offset x="0" y="36.59" d="4" />
+		<offset x="0" y="36.07" d="4" />
+		<offset x="0" y="35.55" d="4" />
+		<offset x="0" y="35.03" d="4" />
+		<offset x="0" y="34.52" d="4" />
+		<offset x="0" y="34.01" d="4" />
+		<offset x="0" y="33.5" d="4" />
+		<offset x="0" y="33.0" d="4" />
+		<offset x="0" y="32.5" d="4" />
+		<offset x="0" y="32.01" d="4" />
+		<offset x="0" y="31.52" d="4" />
+		<offset x="0" y="31.03" d="4" />
+		<offset x="0" y="30.55" d="4" />
+		<offset x="0" y="30.07" d="4" />
+		<offset x="0" y="29.59" d="4" />
+		<offset x="0" y="29.12" d="4" />
+		<offset x="0" y="28.65" d="4" />
+		<offset x="0" y="28.19" d="4" />
+		<offset x="0" y="27.73" d="4" />
+		<offset x="0" y="27.27" d="4" />
+		<offset x="0" y="26.82" d="4" />
+		<offset x="0" y="26.37" d="4" />
+		<offset x="0" y="25.93" d="4" />
+		<offset x="0" y="25.48" d="4" />
+		<offset x="0" y="25.05" d="4" />
+		<offset x="0" y="24.61" d="4" />
+		<offset x="0" y="24.18" d="4" />
+		<offset x="0" y="23.76" d="4" />
+		<offset x="0" y="23.33" d="4" />
+		<offset x="0" y="22.92" d="4" />
+		<offset x="0" y="22.5" d="4" />
+		<offset x="0" y="22.09" d="4" />
+		<offset x="0" y="21.68" d="4" />
+		<offset x="0" y="21.28" d="4" />
+		<offset x="0" y="20.88" d="4" />
+		<offset x="0" y="20.48" d="4" />
+		<offset x="0" y="20.09" d="4" />
+		<offset x="0" y="19.7" d="4" />
+		<offset x="0" y="19.32" d="4" />
+		<offset x="0" y="18.94" d="4" />
+		<offset x="0" y="18.56" d="4" />
+		<offset x="0" y="18.19" d="4" />
+		<offset x="0" y="17.82" d="4" />
+		<offset x="0" y="17.45" d="4" />
+		<offset x="0" y="17.09" d="4" />
+		<offset x="0" y="16.73" d="4" />
+		<offset x="0" y="16.38" d="4" />
+		<offset x="0" y="16.03" d="4" />
+		<offset x="0" y="15.68" d="4" />
+		<offset x="0" y="15.34" d="4" />
+		<offset x="0" y="15.0" d="4" />
+		<offset x="0" y="14.67" d="4" />
+		<offset x="0" y="14.33" d="4" />
+		<offset x="0" y="14.01" d="4" />
+		<offset x="0" y="13.68" d="4" />
+		<offset x="0" y="13.36" d="4" />
+		<offset x="0" y="13.05" d="4" />
+		<offset x="0" y="12.73" d="4" />
+		<offset x="0" y="12.43" d="4" />
+		<offset x="0" y="12.12" d="4" />
+		<offset x="0" y="11.82" d="4" />
+		<offset x="0" y="11.52" d="4" />
+		<offset x="0" y="11.23" d="4" />
+		<offset x="0" y="10.94" d="4" />
+		<offset x="0" y="10.65" d="4" />
+		<offset x="0" y="10.37" d="4" />
+		<offset x="0" y="10.09" d="4" />
+		<offset x="0" y="9.82" d="4" />
+		<offset x="0" y="9.55" d="4" />
+		<offset x="0" y="9.28" d="4" />
+		<offset x="0" y="9.02" d="4" />
+		<offset x="0" y="8.76" d="4" />
+		<offset x="0" y="8.5" d="4" />
+		<offset x="0" y="8.25" d="4" />
+		<offset x="0" y="8.0" d="4" />
+		<offset x="0" y="7.76" d="4" />
+		<offset x="0" y="7.52" d="4" />
+		<offset x="0" y="7.28" d="4" />
+		<offset x="0" y="7.05" d="4" />
+		<offset x="0" y="6.82" d="4" />
+		<offset x="0" y="6.59" d="4" />
+		<offset x="0" y="6.37" d="4" />
+		<offset x="0" y="6.15" d="4" />
+		<offset x="0" y="5.94" d="4" />
+		<offset x="0" y="5.73" d="4" />
+		<offset x="0" y="5.52" d="4" />
+		<offset x="0" y="5.32" d="4" />
+		<offset x="0" y="5.12" d="4" />
+		<offset x="0" y="4.93" d="4" />
+		<offset x="0" y="4.73" d="4" />
+		<offset x="0" y="4.55" d="4" />
+		<offset x="0" y="4.36" d="4" />
+		<offset x="0" y="4.18" d="4" />
+		<offset x="0" y="4.01" d="4" />
+		<offset x="0" y="3.84" d="4" />
+		<offset x="0" y="3.67" d="4" />
+		<offset x="0" y="3.5" d="4" />
+		<offset x="0" y="3.34" d="4" />
+		<offset x="0" y="3.18" d="4" />
+		<offset x="0" y="3.03" d="4" />
+		<offset x="0" y="2.88" d="4" />
+		<offset x="0" y="2.73" d="4" />
+		<offset x="0" y="2.59" d="4" />
+		<offset x="0" y="2.45" d="4" />
+		<offset x="0" y="2.32" d="4" />
+		<offset x="0" y="2.19" d="4" />
+		<offset x="0" y="2.06" d="4" />
+		<offset x="0" y="1.94" d="4" />
+		<offset x="0" y="1.82" d="4" />
+		<offset x="0" y="1.7" d="4" />
+		<offset x="0" y="1.59" d="4" />
+		<offset x="0" y="1.48" d="4" />
+		<offset x="0" y="1.38" d="4" />
+		<offset x="0" y="1.28" d="4" />
+		<offset x="0" y="1.18" d="4" />
+		<offset x="0" y="1.09" d="4" />
+		<offset x="0" y="1.0" d="4" />
+		<offset x="0" y="0.92" d="4" />
+		<offset x="0" y="0.84" d="4" />
+		<offset x="0" y="0.76" d="4" />
+		<offset x="0" y="0.68" d="4" />
+		<offset x="0" y="0.61" d="4" />
+		<offset x="0" y="0.55" d="4" />
+		<offset x="0" y="0.48" d="4" />
+		<offset x="0" y="0.43" d="4" />
+		<offset x="0" y="0.37" d="4" />
+		<offset x="0" y="0.32" d="4" />
+		<offset x="0" y="0.27" d="4" />
+		<offset x="0" y="0.23" d="4" />
+		<offset x="0" y="0.19" d="4" />
+		<offset x="0" y="0.15" d="4" />
+		<animcolor a="246" d="0" />
+		<offset x="0" y="0.12" d="4" />
+		<animcolor a="222" d="0" />
+		<offset x="0" y="0.09" d="4" />
+		<animcolor a="188" d="0" />
+		<offset x="0" y="0.07" d="4" />
+		<animcolor a="148" d="0" />
+		<offset x="0" y="0.05" d="4" />
+		<animcolor a="106" d="0" />
+		<offset x="0" y="0.03" d="4" />
+		<animcolor a="66" d="0" />
+		<offset x="0" y="0.02" d="4" />
+		<animcolor a="32" d="0" />
+		<offset x="0" y="0.01" d="4" />
+		<animcolor a="8" d="0" />
+		<offset x="0" y="0.0" d="4" />
+		<animcolor a="0" d="0" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<return/>
+	</animation>
+
+	<animation name="victory.mid.anim">
+		<animcolor a="0" d="0" />
+		<offset x="0" y="75.0" d="4" />
+		<offset x="0" y="74.25" d="4" />
+		<offset x="0" y="73.5" d="4" />
+		<offset x="0" y="72.76" d="4" />
+		<offset x="0" y="72.02" d="4" />
+		<offset x="0" y="71.28" d="4" />
+		<offset x="0" y="70.55" d="4" />
+		<offset x="0" y="69.82" d="4" />
+		<offset x="0" y="69.09" d="4" />
+		<offset x="0" y="68.37" d="4" />
+		<offset x="0" y="67.65" d="4" />
+		<offset x="0" y="66.94" d="4" />
+		<offset x="0" y="66.23" d="4" />
+		<offset x="0" y="65.52" d="4" />
+		<offset x="0" y="64.82" d="4" />
+		<offset x="0" y="64.12" d="4" />
+		<offset x="0" y="63.42" d="4" />
+		<offset x="0" y="62.73" d="4" />
+		<offset x="0" y="62.05" d="4" />
+		<offset x="0" y="61.36" d="4" />
+		<offset x="0" y="60.68" d="4" />
+		<offset x="0" y="60.01" d="4" />
+		<offset x="0" y="59.33" d="4" />
+		<offset x="0" y="58.67" d="4" />
+		<animcolor a="1" d="0" />
+		<offset x="0" y="58.0" d="4" />
+		<offset x="0" y="57.34" d="4" />
+		<offset x="0" y="56.68" d="4" />
+		<animcolor a="2" d="0" />
+		<offset x="0" y="56.03" d="4" />
+		<offset x="0" y="55.38" d="4" />
+		<animcolor a="3" d="0" />
+		<offset x="0" y="54.73" d="4" />
+		<offset x="0" y="54.09" d="4" />
+		<animcolor a="4" d="0" />
+		<offset x="0" y="53.45" d="4" />
+		<animcolor a="5" d="0" />
+		<offset x="0" y="52.82" d="4" />
+		<animcolor a="6" d="0" />
+		<offset x="0" y="52.19" d="4" />
+		<offset x="0" y="51.56" d="4" />
+		<animcolor a="7" d="0" />
+		<offset x="0" y="50.94" d="4" />
+		<animcolor a="8" d="0" />
+		<offset x="0" y="50.32" d="4" />
+		<animcolor a="9" d="0" />
+		<offset x="0" y="49.7" d="4" />
+		<animcolor a="10" d="0" />
+		<offset x="0" y="49.09" d="4" />
+		<animcolor a="11" d="0" />
+		<offset x="0" y="48.48" d="4" />
+		<animcolor a="12" d="0" />
+		<offset x="0" y="47.88" d="4" />
+		<animcolor a="13" d="0" />
+		<offset x="0" y="47.28" d="4" />
+		<animcolor a="14" d="0" />
+		<offset x="0" y="46.68" d="4" />
+		<animcolor a="16" d="0" />
+		<offset x="0" y="46.09" d="4" />
+		<animcolor a="17" d="0" />
+		<offset x="0" y="45.5" d="4" />
+		<animcolor a="18" d="0" />
+		<offset x="0" y="44.92" d="4" />
+		<animcolor a="19" d="0" />
+		<offset x="0" y="44.33" d="4" />
+		<animcolor a="21" d="0" />
+		<offset x="0" y="43.76" d="4" />
+		<animcolor a="22" d="0" />
+		<offset x="0" y="43.18" d="4" />
+		<animcolor a="24" d="0" />
+		<offset x="0" y="42.61" d="4" />
+		<animcolor a="25" d="0" />
+		<offset x="0" y="42.05" d="4" />
+		<animcolor a="27" d="0" />
+		<offset x="0" y="41.48" d="4" />
+		<animcolor a="28" d="0" />
+		<offset x="0" y="40.93" d="4" />
+		<animcolor a="30" d="0" />
+		<offset x="0" y="40.37" d="4" />
+		<animcolor a="31" d="0" />
+		<offset x="0" y="39.82" d="4" />
+		<animcolor a="33" d="0" />
+		<offset x="0" y="39.27" d="4" />
+		<animcolor a="35" d="0" />
+		<offset x="0" y="38.73" d="4" />
+		<animcolor a="36" d="0" />
+		<offset x="0" y="38.19" d="4" />
+		<animcolor a="38" d="0" />
+		<offset x="0" y="37.65" d="4" />
+		<animcolor a="40" d="0" />
+		<offset x="0" y="37.12" d="4" />
+		<animcolor a="42" d="0" />
+		<offset x="0" y="36.59" d="4" />
+		<animcolor a="43" d="0" />
+		<offset x="0" y="36.07" d="4" />
+		<animcolor a="45" d="0" />
+		<offset x="0" y="35.55" d="4" />
+		<animcolor a="47" d="0" />
+		<offset x="0" y="35.03" d="4" />
+		<animcolor a="49" d="0" />
+		<offset x="0" y="34.52" d="4" />
+		<animcolor a="51" d="0" />
+		<offset x="0" y="34.01" d="4" />
+		<animcolor a="53" d="0" />
+		<offset x="0" y="33.5" d="4" />
+		<animcolor a="55" d="0" />
+		<offset x="0" y="33.0" d="4" />
+		<animcolor a="57" d="0" />
+		<offset x="0" y="32.5" d="4" />
+		<animcolor a="59" d="0" />
+		<offset x="0" y="32.01" d="4" />
+		<animcolor a="61" d="0" />
+		<offset x="0" y="31.52" d="4" />
+		<animcolor a="63" d="0" />
+		<offset x="0" y="31.03" d="4" />
+		<animcolor a="65" d="0" />
+		<offset x="0" y="30.55" d="4" />
+		<animcolor a="67" d="0" />
+		<offset x="0" y="30.07" d="4" />
+		<animcolor a="69" d="0" />
+		<offset x="0" y="29.59" d="4" />
+		<animcolor a="71" d="0" />
+		<offset x="0" y="29.12" d="4" />
+		<animcolor a="73" d="0" />
+		<offset x="0" y="28.65" d="4" />
+		<animcolor a="76" d="0" />
+		<offset x="0" y="28.19" d="4" />
+		<animcolor a="78" d="0" />
+		<offset x="0" y="27.73" d="4" />
+		<animcolor a="80" d="0" />
+		<offset x="0" y="27.27" d="4" />
+		<animcolor a="82" d="0" />
+		<offset x="0" y="26.82" d="4" />
+		<animcolor a="84" d="0" />
+		<offset x="0" y="26.37" d="4" />
+		<animcolor a="87" d="0" />
+		<offset x="0" y="25.93" d="4" />
+		<animcolor a="89" d="0" />
+		<offset x="0" y="25.48" d="4" />
+		<animcolor a="91" d="0" />
+		<offset x="0" y="25.05" d="4" />
+		<animcolor a="93" d="0" />
+		<offset x="0" y="24.61" d="4" />
+		<animcolor a="96" d="0" />
+		<offset x="0" y="24.18" d="4" />
+		<animcolor a="98" d="0" />
+		<offset x="0" y="23.76" d="4" />
+		<animcolor a="100" d="0" />
+		<offset x="0" y="23.33" d="4" />
+		<animcolor a="102" d="0" />
+		<offset x="0" y="22.92" d="4" />
+		<animcolor a="105" d="0" />
+		<offset x="0" y="22.5" d="4" />
+		<animcolor a="107" d="0" />
+		<offset x="0" y="22.09" d="4" />
+		<animcolor a="109" d="0" />
+		<offset x="0" y="21.68" d="4" />
+		<animcolor a="112" d="0" />
+		<offset x="0" y="21.28" d="4" />
+		<animcolor a="114" d="0" />
+		<offset x="0" y="20.88" d="4" />
+		<animcolor a="116" d="0" />
+		<offset x="0" y="20.48" d="4" />
+		<animcolor a="119" d="0" />
+		<offset x="0" y="20.09" d="4" />
+		<animcolor a="121" d="0" />
+		<offset x="0" y="19.7" d="4" />
+		<animcolor a="123" d="0" />
+		<offset x="0" y="19.32" d="4" />
+		<animcolor a="126" d="0" />
+		<offset x="0" y="18.94" d="4" />
+		<animcolor a="128" d="0" />
+		<offset x="0" y="18.56" d="4" />
+		<animcolor a="131" d="0" />
+		<offset x="0" y="18.19" d="4" />
+		<animcolor a="133" d="0" />
+		<offset x="0" y="17.82" d="4" />
+		<animcolor a="135" d="0" />
+		<offset x="0" y="17.45" d="4" />
+		<animcolor a="138" d="0" />
+		<offset x="0" y="17.09" d="4" />
+		<animcolor a="140" d="0" />
+		<offset x="0" y="16.73" d="4" />
+		<animcolor a="142" d="0" />
+		<offset x="0" y="16.38" d="4" />
+		<animcolor a="145" d="0" />
+		<offset x="0" y="16.03" d="4" />
+		<animcolor a="147" d="0" />
+		<offset x="0" y="15.68" d="4" />
+		<animcolor a="149" d="0" />
+		<offset x="0" y="15.34" d="4" />
+		<animcolor a="152" d="0" />
+		<offset x="0" y="15.0" d="4" />
+		<animcolor a="154" d="0" />
+		<offset x="0" y="14.67" d="4" />
+		<animcolor a="156" d="0" />
+		<offset x="0" y="14.33" d="4" />
+		<animcolor a="158" d="0" />
+		<offset x="0" y="14.01" d="4" />
+		<animcolor a="161" d="0" />
+		<offset x="0" y="13.68" d="4" />
+		<animcolor a="163" d="0" />
+		<offset x="0" y="13.36" d="4" />
+		<animcolor a="165" d="0" />
+		<offset x="0" y="13.05" d="4" />
+		<animcolor a="167" d="0" />
+		<offset x="0" y="12.73" d="4" />
+		<animcolor a="170" d="0" />
+		<offset x="0" y="12.43" d="4" />
+		<animcolor a="172" d="0" />
+		<offset x="0" y="12.12" d="4" />
+		<animcolor a="174" d="0" />
+		<offset x="0" y="11.82" d="4" />
+		<animcolor a="176" d="0" />
+		<offset x="0" y="11.52" d="4" />
+		<animcolor a="178" d="0" />
+		<offset x="0" y="11.23" d="4" />
+		<animcolor a="181" d="0" />
+		<offset x="0" y="10.94" d="4" />
+		<animcolor a="183" d="0" />
+		<offset x="0" y="10.65" d="4" />
+		<animcolor a="185" d="0" />
+		<offset x="0" y="10.37" d="4" />
+		<animcolor a="187" d="0" />
+		<offset x="0" y="10.09" d="4" />
+		<animcolor a="189" d="0" />
+		<offset x="0" y="9.82" d="4" />
+		<animcolor a="191" d="0" />
+		<offset x="0" y="9.55" d="4" />
+		<animcolor a="193" d="0" />
+		<offset x="0" y="9.28" d="4" />
+		<animcolor a="195" d="0" />
+		<offset x="0" y="9.02" d="4" />
+		<animcolor a="197" d="0" />
+		<offset x="0" y="8.76" d="4" />
+		<animcolor a="199" d="0" />
+		<offset x="0" y="8.5" d="4" />
+		<animcolor a="201" d="0" />
+		<offset x="0" y="8.25" d="4" />
+		<animcolor a="203" d="0" />
+		<offset x="0" y="8.0" d="4" />
+		<animcolor a="205" d="0" />
+		<offset x="0" y="7.76" d="4" />
+		<animcolor a="207" d="0" />
+		<offset x="0" y="7.52" d="4" />
+		<animcolor a="209" d="0" />
+		<offset x="0" y="7.28" d="4" />
+		<animcolor a="211" d="0" />
+		<offset x="0" y="7.05" d="4" />
+		<animcolor a="212" d="0" />
+		<offset x="0" y="6.82" d="4" />
+		<animcolor a="214" d="0" />
+		<offset x="0" y="6.59" d="4" />
+		<animcolor a="216" d="0" />
+		<offset x="0" y="6.37" d="4" />
+		<animcolor a="218" d="0" />
+		<offset x="0" y="6.15" d="4" />
+		<animcolor a="219" d="0" />
+		<offset x="0" y="5.94" d="4" />
+		<animcolor a="221" d="0" />
+		<offset x="0" y="5.73" d="4" />
+		<animcolor a="223" d="0" />
+		<offset x="0" y="5.52" d="4" />
+		<animcolor a="224" d="0" />
+		<offset x="0" y="5.32" d="4" />
+		<animcolor a="226" d="0" />
+		<offset x="0" y="5.12" d="4" />
+		<animcolor a="227" d="0" />
+		<offset x="0" y="4.93" d="4" />
+		<animcolor a="229" d="0" />
+		<offset x="0" y="4.73" d="4" />
+		<animcolor a="230" d="0" />
+		<offset x="0" y="4.55" d="4" />
+		<animcolor a="232" d="0" />
+		<offset x="0" y="4.36" d="4" />
+		<animcolor a="233" d="0" />
+		<offset x="0" y="4.18" d="4" />
+		<animcolor a="235" d="0" />
+		<offset x="0" y="4.01" d="4" />
+		<animcolor a="236" d="0" />
+		<offset x="0" y="3.84" d="4" />
+		<animcolor a="237" d="0" />
+		<offset x="0" y="3.67" d="4" />
+		<animcolor a="238" d="0" />
+		<offset x="0" y="3.5" d="4" />
+		<animcolor a="240" d="0" />
+		<offset x="0" y="3.34" d="4" />
+		<animcolor a="241" d="0" />
+		<offset x="0" y="3.18" d="4" />
+		<animcolor a="242" d="0" />
+		<offset x="0" y="3.03" d="4" />
+		<animcolor a="243" d="0" />
+		<offset x="0" y="2.88" d="4" />
+		<animcolor a="244" d="0" />
+		<offset x="0" y="2.73" d="4" />
+		<animcolor a="245" d="0" />
+		<offset x="0" y="2.59" d="4" />
+		<animcolor a="246" d="0" />
+		<offset x="0" y="2.45" d="4" />
+		<animcolor a="247" d="0" />
+		<offset x="0" y="2.32" d="4" />
+		<animcolor a="248" d="0" />
+		<offset x="0" y="2.19" d="4" />
+		<offset x="0" y="2.06" d="4" />
+		<animcolor a="249" d="0" />
+		<offset x="0" y="1.94" d="4" />
+		<animcolor a="250" d="0" />
+		<offset x="0" y="1.82" d="4" />
+		<animcolor a="251" d="0" />
+		<offset x="0" y="1.7" d="4" />
+		<offset x="0" y="1.59" d="4" />
+		<animcolor a="252" d="0" />
+		<offset x="0" y="1.48" d="4" />
+		<offset x="0" y="1.38" d="4" />
+		<animcolor a="253" d="0" />
+		<offset x="0" y="1.28" d="4" />
+		<offset x="0" y="1.18" d="4" />
+		<offset x="0" y="1.09" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="1.0" d="4" />
+		<offset x="0" y="0.92" d="4" />
+		<offset x="0" y="0.84" d="4" />
+		<offset x="0" y="0.76" d="4" />
+		<offset x="0" y="0.68" d="4" />
+		<animcolor a="255" d="0" />
+		<offset x="0" y="0.61" d="4" />
+		<offset x="0" y="0.55" d="4" />
+		<offset x="0" y="0.48" d="4" />
+		<offset x="0" y="0.43" d="4" />
+		<offset x="0" y="0.37" d="4" />
+		<offset x="0" y="0.32" d="4" />
+		<offset x="0" y="0.27" d="4" />
+		<offset x="0" y="0.23" d="4" />
+		<offset x="0" y="0.19" d="4" />
+		<offset x="0" y="0.15" d="4" />
+		<offset x="0" y="0.12" d="4" />
+		<offset x="0" y="0.09" d="4" />
+		<offset x="0" y="0.07" d="4" />
+		<offset x="0" y="0.05" d="4" />
+		<offset x="0" y="0.03" d="4" />
+		<offset x="0" y="0.02" d="4" />
+		<offset x="0" y="0.01" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<return/>
+	</animation>
+
+	<animation name="victory.back.anim">
+		<animcolor a="0" d="0" />
+		<offset x="0" y="25.0" d="4" />
+		<offset x="0" y="24.75" d="4" />
+		<offset x="0" y="24.5" d="4" />
+		<animcolor a="1" d="0" />
+		<offset x="0" y="24.25" d="4" />
+		<offset x="0" y="24.01" d="4" />
+		<animcolor a="2" d="0" />
+		<offset x="0" y="23.76" d="4" />
+		<animcolor a="4" d="0" />
+		<offset x="0" y="23.52" d="4" />
+		<animcolor a="5" d="0" />
+		<offset x="0" y="23.27" d="4" />
+		<animcolor a="7" d="0" />
+		<offset x="0" y="23.03" d="4" />
+		<animcolor a="8" d="0" />
+		<offset x="0" y="22.79" d="4" />
+		<animcolor a="10" d="0" />
+		<offset x="0" y="22.55" d="4" />
+		<animcolor a="13" d="0" />
+		<offset x="0" y="22.31" d="4" />
+		<animcolor a="15" d="0" />
+		<offset x="0" y="22.08" d="4" />
+		<animcolor a="18" d="0" />
+		<offset x="0" y="21.84" d="4" />
+		<animcolor a="20" d="0" />
+		<offset x="0" y="21.61" d="4" />
+		<animcolor a="23" d="0" />
+		<offset x="0" y="21.37" d="4" />
+		<animcolor a="26" d="0" />
+		<offset x="0" y="21.14" d="4" />
+		<animcolor a="29" d="0" />
+		<offset x="0" y="20.91" d="4" />
+		<animcolor a="32" d="0" />
+		<offset x="0" y="20.68" d="4" />
+		<animcolor a="36" d="0" />
+		<offset x="0" y="20.45" d="4" />
+		<animcolor a="39" d="0" />
+		<offset x="0" y="20.23" d="4" />
+		<animcolor a="43" d="0" />
+		<offset x="0" y="20.0" d="4" />
+		<animcolor a="47" d="0" />
+		<offset x="0" y="19.78" d="4" />
+		<animcolor a="51" d="0" />
+		<offset x="0" y="19.56" d="4" />
+		<animcolor a="55" d="0" />
+		<offset x="0" y="19.33" d="4" />
+		<animcolor a="59" d="0" />
+		<offset x="0" y="19.11" d="4" />
+		<animcolor a="63" d="0" />
+		<offset x="0" y="18.89" d="4" />
+		<animcolor a="67" d="0" />
+		<offset x="0" y="18.68" d="4" />
+		<animcolor a="71" d="0" />
+		<offset x="0" y="18.46" d="4" />
+		<animcolor a="76" d="0" />
+		<offset x="0" y="18.24" d="4" />
+		<animcolor a="80" d="0" />
+		<offset x="0" y="18.03" d="4" />
+		<animcolor a="85" d="0" />
+		<offset x="0" y="17.82" d="4" />
+		<animcolor a="89" d="0" />
+		<offset x="0" y="17.61" d="4" />
+		<animcolor a="94" d="0" />
+		<offset x="0" y="17.4" d="4" />
+		<animcolor a="99" d="0" />
+		<offset x="0" y="17.19" d="4" />
+		<animcolor a="103" d="0" />
+		<offset x="0" y="16.98" d="4" />
+		<animcolor a="108" d="0" />
+		<offset x="0" y="16.77" d="4" />
+		<animcolor a="113" d="0" />
+		<offset x="0" y="16.57" d="4" />
+		<animcolor a="117" d="0" />
+		<offset x="0" y="16.36" d="4" />
+		<animcolor a="122" d="0" />
+		<offset x="0" y="16.16" d="4" />
+		<animcolor a="127" d="0" />
+		<offset x="0" y="15.96" d="4" />
+		<animcolor a="132" d="0" />
+		<offset x="0" y="15.76" d="4" />
+		<animcolor a="137" d="0" />
+		<offset x="0" y="15.56" d="4" />
+		<animcolor a="141" d="0" />
+		<offset x="0" y="15.36" d="4" />
+		<animcolor a="146" d="0" />
+		<offset x="0" y="15.17" d="4" />
+		<animcolor a="151" d="0" />
+		<offset x="0" y="14.97" d="4" />
+		<animcolor a="155" d="0" />
+		<offset x="0" y="14.78" d="4" />
+		<animcolor a="160" d="0" />
+		<offset x="0" y="14.59" d="4" />
+		<animcolor a="165" d="0" />
+		<offset x="0" y="14.39" d="4" />
+		<animcolor a="169" d="0" />
+		<offset x="0" y="14.2" d="4" />
+		<animcolor a="174" d="0" />
+		<offset x="0" y="14.02" d="4" />
+		<animcolor a="178" d="0" />
+		<offset x="0" y="13.83" d="4" />
+		<animcolor a="183" d="0" />
+		<offset x="0" y="13.64" d="4" />
+		<animcolor a="187" d="0" />
+		<offset x="0" y="13.46" d="4" />
+		<animcolor a="191" d="0" />
+		<offset x="0" y="13.27" d="4" />
+		<animcolor a="195" d="0" />
+		<offset x="0" y="13.09" d="4" />
+		<animcolor a="199" d="0" />
+		<offset x="0" y="12.91" d="4" />
+		<animcolor a="203" d="0" />
+		<offset x="0" y="12.73" d="4" />
+		<animcolor a="207" d="0" />
+		<offset x="0" y="12.55" d="4" />
+		<animcolor a="211" d="0" />
+		<offset x="0" y="12.37" d="4" />
+		<animcolor a="215" d="0" />
+		<offset x="0" y="12.2" d="4" />
+		<animcolor a="218" d="0" />
+		<offset x="0" y="12.02" d="4" />
+		<animcolor a="222" d="0" />
+		<offset x="0" y="11.85" d="4" />
+		<animcolor a="225" d="0" />
+		<offset x="0" y="11.68" d="4" />
+		<animcolor a="228" d="0" />
+		<offset x="0" y="11.51" d="4" />
+		<animcolor a="231" d="0" />
+		<offset x="0" y="11.34" d="4" />
+		<animcolor a="234" d="0" />
+		<offset x="0" y="11.17" d="4" />
+		<animcolor a="236" d="0" />
+		<offset x="0" y="11.0" d="4" />
+		<animcolor a="239" d="0" />
+		<offset x="0" y="10.83" d="4" />
+		<animcolor a="241" d="0" />
+		<offset x="0" y="10.67" d="4" />
+		<animcolor a="244" d="0" />
+		<offset x="0" y="10.51" d="4" />
+		<animcolor a="246" d="0" />
+		<offset x="0" y="10.34" d="4" />
+		<animcolor a="247" d="0" />
+		<offset x="0" y="10.18" d="4" />
+		<animcolor a="249" d="0" />
+		<offset x="0" y="10.02" d="4" />
+		<animcolor a="250" d="0" />
+		<offset x="0" y="9.86" d="4" />
+		<animcolor a="252" d="0" />
+		<offset x="0" y="9.71" d="4" />
+		<animcolor a="253" d="0" />
+		<offset x="0" y="9.55" d="4" />
+		<offset x="0" y="9.4" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="9.24" d="4" />
+		<offset x="0" y="9.09" d="4" />
+		<animcolor a="255" d="0" />
+		<offset x="0" y="8.94" d="4" />
+		<offset x="0" y="8.79" d="4" />
+		<offset x="0" y="8.64" d="4" />
+		<offset x="0" y="8.49" d="4" />
+		<offset x="0" y="8.35" d="4" />
+		<offset x="0" y="8.2" d="4" />
+		<offset x="0" y="8.06" d="4" />
+		<offset x="0" y="7.92" d="4" />
+		<offset x="0" y="7.78" d="4" />
+		<offset x="0" y="7.64" d="4" />
+		<offset x="0" y="7.5" d="4" />
+		<offset x="0" y="7.36" d="4" />
+		<offset x="0" y="7.23" d="4" />
+		<offset x="0" y="7.09" d="4" />
+		<offset x="0" y="6.96" d="4" />
+		<offset x="0" y="6.83" d="4" />
+		<offset x="0" y="6.7" d="4" />
+		<offset x="0" y="6.57" d="4" />
+		<offset x="0" y="6.44" d="4" />
+		<offset x="0" y="6.31" d="4" />
+		<offset x="0" y="6.19" d="4" />
+		<offset x="0" y="6.06" d="4" />
+		<offset x="0" y="5.94" d="4" />
+		<offset x="0" y="5.82" d="4" />
+		<offset x="0" y="5.7" d="4" />
+		<offset x="0" y="5.58" d="4" />
+		<offset x="0" y="5.46" d="4" />
+		<offset x="0" y="5.34" d="4" />
+		<offset x="0" y="5.23" d="4" />
+		<offset x="0" y="5.11" d="4" />
+		<offset x="0" y="5.0" d="4" />
+		<offset x="0" y="4.89" d="4" />
+		<offset x="0" y="4.78" d="4" />
+		<offset x="0" y="4.67" d="4" />
+		<offset x="0" y="4.56" d="4" />
+		<offset x="0" y="4.45" d="4" />
+		<offset x="0" y="4.35" d="4" />
+		<offset x="0" y="4.24" d="4" />
+		<offset x="0" y="4.14" d="4" />
+		<offset x="0" y="4.04" d="4" />
+		<offset x="0" y="3.94" d="4" />
+		<offset x="0" y="3.84" d="4" />
+		<offset x="0" y="3.74" d="4" />
+		<offset x="0" y="3.65" d="4" />
+		<offset x="0" y="3.55" d="4" />
+		<offset x="0" y="3.46" d="4" />
+		<offset x="0" y="3.36" d="4" />
+		<offset x="0" y="3.27" d="4" />
+		<offset x="0" y="3.18" d="4" />
+		<offset x="0" y="3.09" d="4" />
+		<offset x="0" y="3.01" d="4" />
+		<offset x="0" y="2.92" d="4" />
+		<offset x="0" y="2.83" d="4" />
+		<offset x="0" y="2.75" d="4" />
+		<offset x="0" y="2.67" d="4" />
+		<offset x="0" y="2.59" d="4" />
+		<offset x="0" y="2.51" d="4" />
+		<offset x="0" y="2.43" d="4" />
+		<offset x="0" y="2.35" d="4" />
+		<offset x="0" y="2.27" d="4" />
+		<offset x="0" y="2.2" d="4" />
+		<offset x="0" y="2.12" d="4" />
+		<offset x="0" y="2.05" d="4" />
+		<offset x="0" y="1.98" d="4" />
+		<offset x="0" y="1.91" d="4" />
+		<offset x="0" y="1.84" d="4" />
+		<offset x="0" y="1.77" d="4" />
+		<offset x="0" y="1.71" d="4" />
+		<offset x="0" y="1.64" d="4" />
+		<offset x="0" y="1.58" d="4" />
+		<offset x="0" y="1.52" d="4" />
+		<offset x="0" y="1.45" d="4" />
+		<offset x="0" y="1.39" d="4" />
+		<offset x="0" y="1.34" d="4" />
+		<offset x="0" y="1.28" d="4" />
+		<offset x="0" y="1.22" d="4" />
+		<offset x="0" y="1.17" d="4" />
+		<offset x="0" y="1.11" d="4" />
+		<offset x="0" y="1.06" d="4" />
+		<offset x="0" y="1.01" d="4" />
+		<offset x="0" y="0.96" d="4" />
+		<offset x="0" y="0.91" d="4" />
+		<offset x="0" y="0.86" d="4" />
+		<offset x="0" y="0.82" d="4" />
+		<offset x="0" y="0.77" d="4" />
+		<offset x="0" y="0.73" d="4" />
+		<offset x="0" y="0.69" d="4" />
+		<offset x="0" y="0.65" d="4" />
+		<offset x="0" y="0.61" d="4" />
+		<offset x="0" y="0.57" d="4" />
+		<offset x="0" y="0.53" d="4" />
+		<offset x="0" y="0.49" d="4" />
+		<offset x="0" y="0.46" d="4" />
+		<offset x="0" y="0.43" d="4" />
+		<offset x="0" y="0.39" d="4" />
+		<offset x="0" y="0.36" d="4" />
+		<offset x="0" y="0.33" d="4" />
+		<offset x="0" y="0.31" d="4" />
+		<offset x="0" y="0.28" d="4" />
+		<offset x="0" y="0.25" d="4" />
+		<offset x="0" y="0.23" d="4" />
+		<offset x="0" y="0.2" d="4" />
+		<offset x="0" y="0.18" d="4" />
+		<offset x="0" y="0.16" d="4" />
+		<offset x="0" y="0.14" d="4" />
+		<offset x="0" y="0.12" d="4" />
+		<offset x="0" y="0.11" d="4" />
+		<offset x="0" y="0.09" d="4" />
+		<offset x="0" y="0.08" d="4" />
+		<offset x="0" y="0.06" d="4" />
+		<offset x="0" y="0.05" d="4" />
+		<offset x="0" y="0.04" d="4" />
+		<offset x="0" y="0.03" d="4" />
+		<offset x="0" y="0.02" d="4" />
+		<offset x="0" y="0.02" d="4" />
+		<offset x="0" y="0.01" d="4" />
+		<offset x="0" y="0.01" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+		<return/>
+	</animation>
+
+	<animation name="victory.front.fade.anim">
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="25.0" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="24.75" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="24.5" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="24.25" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="24.01" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="23.76" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="23.52" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="23.27" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="23.03" d="4" />
+		<scale xscale="1.0" yscale="1.0" d="0"/>
+		<offset x="0" y="22.79" d="4" />
+		<scale xscale="1.0" yscale="0.99" d="0"/>
+		<offset x="0" y="22.55" d="4" />
+		<scale xscale="1.0" yscale="0.99" d="0"/>
+		<offset x="0" y="22.31" d="4" />
+		<scale xscale="1.0" yscale="0.99" d="0"/>
+		<offset x="0" y="22.08" d="4" />
+		<scale xscale="1.0" yscale="0.99" d="0"/>
+		<offset x="0" y="21.84" d="4" />
+		<scale xscale="1.0" yscale="0.99" d="0"/>
+		<offset x="0" y="21.61" d="4" />
+		<scale xscale="1.0" yscale="0.99" d="0"/>
+		<offset x="0" y="21.37" d="4" />
+		<scale xscale="1.0" yscale="0.99" d="0"/>
+		<offset x="0" y="21.14" d="4" />
+		<scale xscale="1.0" yscale="0.99" d="0"/>
+		<offset x="0" y="20.91" d="4" />
+		<scale xscale="1.0" yscale="0.98" d="0"/>
+		<offset x="0" y="20.68" d="4" />
+		<scale xscale="1.0" yscale="0.98" d="0"/>
+		<offset x="0" y="20.45" d="4" />
+		<scale xscale="1.0" yscale="0.98" d="0"/>
+		<offset x="0" y="20.23" d="4" />
+		<scale xscale="1.0" yscale="0.98" d="0"/>
+		<offset x="0" y="20.0" d="4" />
+		<scale xscale="1.0" yscale="0.98" d="0"/>
+		<offset x="0" y="19.78" d="4" />
+		<scale xscale="1.0" yscale="0.97" d="0"/>
+		<offset x="0" y="19.56" d="4" />
+		<scale xscale="1.0" yscale="0.97" d="0"/>
+		<offset x="0" y="19.33" d="4" />
+		<scale xscale="1.0" yscale="0.97" d="0"/>
+		<offset x="0" y="19.11" d="4" />
+		<scale xscale="1.0" yscale="0.97" d="0"/>
+		<offset x="0" y="18.89" d="4" />
+		<scale xscale="1.0" yscale="0.96" d="0"/>
+		<offset x="0" y="18.68" d="4" />
+		<scale xscale="1.0" yscale="0.96" d="0"/>
+		<offset x="0" y="18.46" d="4" />
+		<scale xscale="1.0" yscale="0.96" d="0"/>
+		<offset x="0" y="18.24" d="4" />
+		<scale xscale="1.0" yscale="0.96" d="0"/>
+		<offset x="0" y="18.03" d="4" />
+		<scale xscale="1.0" yscale="0.95" d="0"/>
+		<offset x="0" y="17.82" d="4" />
+		<scale xscale="1.0" yscale="0.95" d="0"/>
+		<offset x="0" y="17.61" d="4" />
+		<scale xscale="1.0" yscale="0.95" d="0"/>
+		<offset x="0" y="17.4" d="4" />
+		<scale xscale="1.0" yscale="0.95" d="0"/>
+		<offset x="0" y="17.19" d="4" />
+		<scale xscale="1.0" yscale="0.94" d="0"/>
+		<offset x="0" y="16.98" d="4" />
+		<scale xscale="1.0" yscale="0.94" d="0"/>
+		<offset x="0" y="16.77" d="4" />
+		<scale xscale="1.0" yscale="0.94" d="0"/>
+		<offset x="0" y="16.57" d="4" />
+		<scale xscale="1.0" yscale="0.93" d="0"/>
+		<offset x="0" y="16.36" d="4" />
+		<scale xscale="1.0" yscale="0.93" d="0"/>
+		<offset x="0" y="16.16" d="4" />
+		<scale xscale="1.0" yscale="0.93" d="0"/>
+		<offset x="0" y="15.96" d="4" />
+		<scale xscale="1.0" yscale="0.92" d="0"/>
+		<offset x="0" y="15.76" d="4" />
+		<scale xscale="1.0" yscale="0.92" d="0"/>
+		<offset x="0" y="15.56" d="4" />
+		<scale xscale="1.0" yscale="0.92" d="0"/>
+		<offset x="0" y="15.36" d="4" />
+		<scale xscale="1.0" yscale="0.91" d="0"/>
+		<offset x="0" y="15.17" d="4" />
+		<scale xscale="1.0" yscale="0.91" d="0"/>
+		<offset x="0" y="14.97" d="4" />
+		<scale xscale="1.0" yscale="0.91" d="0"/>
+		<offset x="0" y="14.78" d="4" />
+		<scale xscale="1.0" yscale="0.9" d="0"/>
+		<offset x="0" y="14.59" d="4" />
+		<scale xscale="1.0" yscale="0.9" d="0"/>
+		<offset x="0" y="14.39" d="4" />
+		<scale xscale="1.0" yscale="0.89" d="0"/>
+		<offset x="0" y="14.2" d="4" />
+		<scale xscale="1.0" yscale="0.89" d="0"/>
+		<offset x="0" y="14.02" d="4" />
+		<scale xscale="1.0" yscale="0.89" d="0"/>
+		<offset x="0" y="13.83" d="4" />
+		<scale xscale="1.0" yscale="0.88" d="0"/>
+		<offset x="0" y="13.64" d="4" />
+		<scale xscale="1.0" yscale="0.88" d="0"/>
+		<offset x="0" y="13.46" d="4" />
+		<scale xscale="1.0" yscale="0.87" d="0"/>
+		<offset x="0" y="13.27" d="4" />
+		<scale xscale="1.0" yscale="0.87" d="0"/>
+		<offset x="0" y="13.09" d="4" />
+		<scale xscale="1.0" yscale="0.86" d="0"/>
+		<offset x="0" y="12.91" d="4" />
+		<scale xscale="1.0" yscale="0.86" d="0"/>
+		<offset x="0" y="12.73" d="4" />
+		<scale xscale="1.0" yscale="0.86" d="0"/>
+		<offset x="0" y="12.55" d="4" />
+		<scale xscale="1.0" yscale="0.85" d="0"/>
+		<offset x="0" y="12.37" d="4" />
+		<scale xscale="1.0" yscale="0.85" d="0"/>
+		<offset x="0" y="12.2" d="4" />
+		<scale xscale="1.0" yscale="0.84" d="0"/>
+		<offset x="0" y="12.02" d="4" />
+		<scale xscale="1.0" yscale="0.84" d="0"/>
+		<offset x="0" y="11.85" d="4" />
+		<scale xscale="1.0" yscale="0.83" d="0"/>
+		<offset x="0" y="11.68" d="4" />
+		<scale xscale="1.0" yscale="0.83" d="0"/>
+		<offset x="0" y="11.51" d="4" />
+		<scale xscale="1.0" yscale="0.82" d="0"/>
+		<offset x="0" y="11.34" d="4" />
+		<scale xscale="1.0" yscale="0.82" d="0"/>
+		<offset x="0" y="11.17" d="4" />
+		<scale xscale="1.0" yscale="0.82" d="0"/>
+		<offset x="0" y="11.0" d="4" />
+		<scale xscale="1.0" yscale="0.81" d="0"/>
+		<offset x="0" y="10.83" d="4" />
+		<scale xscale="1.0" yscale="0.81" d="0"/>
+		<offset x="0" y="10.67" d="4" />
+		<scale xscale="1.0" yscale="0.8" d="0"/>
+		<offset x="0" y="10.51" d="4" />
+		<scale xscale="1.0" yscale="0.8" d="0"/>
+		<offset x="0" y="10.34" d="4" />
+		<scale xscale="1.0" yscale="0.79" d="0"/>
+		<offset x="0" y="10.18" d="4" />
+		<scale xscale="1.0" yscale="0.79" d="0"/>
+		<offset x="0" y="10.02" d="4" />
+		<scale xscale="1.0" yscale="0.78" d="0"/>
+		<offset x="0" y="9.86" d="4" />
+		<scale xscale="1.0" yscale="0.78" d="0"/>
+		<offset x="0" y="9.71" d="4" />
+		<scale xscale="1.0" yscale="0.77" d="0"/>
+		<offset x="0" y="9.55" d="4" />
+		<scale xscale="1.0" yscale="0.77" d="0"/>
+		<offset x="0" y="9.4" d="4" />
+		<scale xscale="1.0" yscale="0.76" d="0"/>
+		<offset x="0" y="9.24" d="4" />
+		<scale xscale="1.0" yscale="0.76" d="0"/>
+		<offset x="0" y="9.09" d="4" />
+		<scale xscale="1.0" yscale="0.75" d="0"/>
+		<offset x="0" y="8.94" d="4" />
+		<scale xscale="1.0" yscale="0.75" d="0"/>
+		<offset x="0" y="8.79" d="4" />
+		<scale xscale="1.0" yscale="0.74" d="0"/>
+		<offset x="0" y="8.64" d="4" />
+		<scale xscale="1.0" yscale="0.74" d="0"/>
+		<offset x="0" y="8.49" d="4" />
+		<scale xscale="1.0" yscale="0.73" d="0"/>
+		<offset x="0" y="8.35" d="4" />
+		<scale xscale="1.0" yscale="0.73" d="0"/>
+		<offset x="0" y="8.2" d="4" />
+		<scale xscale="1.0" yscale="0.72" d="0"/>
+		<offset x="0" y="8.06" d="4" />
+		<scale xscale="1.0" yscale="0.72" d="0"/>
+		<offset x="0" y="7.92" d="4" />
+		<scale xscale="1.0" yscale="0.71" d="0"/>
+		<offset x="0" y="7.78" d="4" />
+		<scale xscale="1.0" yscale="0.71" d="0"/>
+		<offset x="0" y="7.64" d="4" />
+		<scale xscale="1.0" yscale="0.7" d="0"/>
+		<offset x="0" y="7.5" d="4" />
+		<scale xscale="1.0" yscale="0.69" d="0"/>
+		<offset x="0" y="7.36" d="4" />
+		<scale xscale="1.0" yscale="0.69" d="0"/>
+		<offset x="0" y="7.23" d="4" />
+		<scale xscale="1.0" yscale="0.68" d="0"/>
+		<offset x="0" y="7.09" d="4" />
+		<scale xscale="1.0" yscale="0.68" d="0"/>
+		<offset x="0" y="6.96" d="4" />
+		<scale xscale="1.0" yscale="0.67" d="0"/>
+		<offset x="0" y="6.83" d="4" />
+		<scale xscale="1.0" yscale="0.67" d="0"/>
+		<offset x="0" y="6.7" d="4" />
+		<scale xscale="1.0" yscale="0.66" d="0"/>
+		<offset x="0" y="6.57" d="4" />
+		<scale xscale="1.0" yscale="0.66" d="0"/>
+		<offset x="0" y="6.44" d="4" />
+		<scale xscale="1.0" yscale="0.65" d="0"/>
+		<offset x="0" y="6.31" d="4" />
+		<scale xscale="1.0" yscale="0.65" d="0"/>
+		<offset x="0" y="6.19" d="4" />
+		<scale xscale="1.0" yscale="0.64" d="0"/>
+		<offset x="0" y="6.06" d="4" />
+		<scale xscale="1.0" yscale="0.64" d="0"/>
+		<offset x="0" y="5.94" d="4" />
+		<scale xscale="1.0" yscale="0.63" d="0"/>
+		<offset x="0" y="5.82" d="4" />
+		<scale xscale="1.0" yscale="0.63" d="0"/>
+		<offset x="0" y="5.7" d="4" />
+		<scale xscale="1.0" yscale="0.62" d="0"/>
+		<offset x="0" y="5.58" d="4" />
+		<scale xscale="1.0" yscale="0.62" d="0"/>
+		<offset x="0" y="5.46" d="4" />
+		<scale xscale="1.0" yscale="0.61" d="0"/>
+		<offset x="0" y="5.34" d="4" />
+		<scale xscale="1.0" yscale="0.61" d="0"/>
+		<offset x="0" y="5.23" d="4" />
+		<scale xscale="1.0" yscale="0.6" d="0"/>
+		<offset x="0" y="5.11" d="4" />
+		<scale xscale="1.0" yscale="0.59" d="0"/>
+		<animcolor a="254" d="0" />
+		<offset x="0" y="5.0" d="4" />
+		<scale xscale="1.0" yscale="0.59" d="0"/>
+		<offset x="0" y="4.89" d="4" />
+		<scale xscale="1.0" yscale="0.58" d="0"/>
+		<offset x="0" y="4.78" d="4" />
+		<scale xscale="1.0" yscale="0.58" d="0"/>
+		<animcolor a="253" d="0" />
+		<offset x="0" y="4.67" d="4" />
+		<scale xscale="1.0" yscale="0.57" d="0"/>
+		<animcolor a="252" d="0" />
+		<offset x="0" y="4.56" d="4" />
+		<scale xscale="1.0" yscale="0.57" d="0"/>
+		<animcolor a="251" d="0" />
+		<offset x="0" y="4.45" d="4" />
+		<scale xscale="1.0" yscale="0.56" d="0"/>
+		<animcolor a="250" d="0" />
+		<offset x="0" y="4.35" d="4" />
+		<scale xscale="1.0" yscale="0.56" d="0"/>
+		<animcolor a="249" d="0" />
+		<offset x="0" y="4.24" d="4" />
+		<scale xscale="1.0" yscale="0.55" d="0"/>
+		<animcolor a="247" d="0" />
+		<offset x="0" y="4.14" d="4" />
+		<scale xscale="1.0" yscale="0.55" d="0"/>
+		<animcolor a="246" d="0" />
+		<offset x="0" y="4.04" d="4" />
+		<scale xscale="1.0" yscale="0.54" d="0"/>
+		<animcolor a="244" d="0" />
+		<offset x="0" y="3.94" d="4" />
+		<scale xscale="1.0" yscale="0.54" d="0"/>
+		<animcolor a="242" d="0" />
+		<offset x="0" y="3.84" d="4" />
+		<scale xscale="1.0" yscale="0.53" d="0"/>
+		<animcolor a="240" d="0" />
+		<offset x="0" y="3.74" d="4" />
+		<scale xscale="1.0" yscale="0.53" d="0"/>
+		<animcolor a="238" d="0" />
+		<offset x="0" y="3.65" d="4" />
+		<scale xscale="1.0" yscale="0.52" d="0"/>
+		<animcolor a="236" d="0" />
+		<offset x="0" y="3.55" d="4" />
+		<scale xscale="1.0" yscale="0.52" d="0"/>
+		<animcolor a="233" d="0" />
+		<offset x="0" y="3.46" d="4" />
+		<scale xscale="1.0" yscale="0.51" d="0"/>
+		<animcolor a="231" d="0" />
+		<offset x="0" y="3.36" d="4" />
+		<scale xscale="1.0" yscale="0.51" d="0"/>
+		<animcolor a="228" d="0" />
+		<offset x="0" y="3.27" d="4" />
+		<scale xscale="1.0" yscale="0.5" d="0"/>
+		<animcolor a="225" d="0" />
+		<offset x="0" y="3.18" d="4" />
+		<scale xscale="1.0" yscale="0.5" d="0"/>
+		<animcolor a="222" d="0" />
+		<offset x="0" y="3.09" d="4" />
+		<scale xscale="1.0" yscale="0.49" d="0"/>
+		<animcolor a="219" d="0" />
+		<offset x="0" y="3.01" d="4" />
+		<scale xscale="1.0" yscale="0.49" d="0"/>
+		<animcolor a="216" d="0" />
+		<offset x="0" y="2.92" d="4" />
+		<scale xscale="1.0" yscale="0.48" d="0"/>
+		<animcolor a="213" d="0" />
+		<offset x="0" y="2.83" d="4" />
+		<scale xscale="1.0" yscale="0.48" d="0"/>
+		<animcolor a="210" d="0" />
+		<offset x="0" y="2.75" d="4" />
+		<scale xscale="1.0" yscale="0.48" d="0"/>
+		<animcolor a="206" d="0" />
+		<offset x="0" y="2.67" d="4" />
+		<scale xscale="1.0" yscale="0.47" d="0"/>
+		<animcolor a="203" d="0" />
+		<offset x="0" y="2.59" d="4" />
+		<scale xscale="1.0" yscale="0.47" d="0"/>
+		<animcolor a="199" d="0" />
+		<offset x="0" y="2.51" d="4" />
+		<scale xscale="1.0" yscale="0.46" d="0"/>
+		<animcolor a="196" d="0" />
+		<offset x="0" y="2.43" d="4" />
+		<scale xscale="1.0" yscale="0.46" d="0"/>
+		<animcolor a="192" d="0" />
+		<offset x="0" y="2.35" d="4" />
+		<scale xscale="1.0" yscale="0.45" d="0"/>
+		<animcolor a="188" d="0" />
+		<offset x="0" y="2.27" d="4" />
+		<scale xscale="1.0" yscale="0.45" d="0"/>
+		<animcolor a="185" d="0" />
+		<offset x="0" y="2.2" d="4" />
+		<scale xscale="1.0" yscale="0.44" d="0"/>
+		<animcolor a="181" d="0" />
+		<offset x="0" y="2.12" d="4" />
+		<scale xscale="1.0" yscale="0.44" d="0"/>
+		<animcolor a="177" d="0" />
+		<offset x="0" y="2.05" d="4" />
+		<scale xscale="1.0" yscale="0.44" d="0"/>
+		<animcolor a="173" d="0" />
+		<offset x="0" y="1.98" d="4" />
+		<scale xscale="1.0" yscale="0.43" d="0"/>
+		<animcolor a="169" d="0" />
+		<offset x="0" y="1.91" d="4" />
+		<scale xscale="1.0" yscale="0.43" d="0"/>
+		<animcolor a="165" d="0" />
+		<offset x="0" y="1.84" d="4" />
+		<scale xscale="1.0" yscale="0.42" d="0"/>
+		<animcolor a="161" d="0" />
+		<offset x="0" y="1.77" d="4" />
+		<scale xscale="1.0" yscale="0.42" d="0"/>
+		<animcolor a="157" d="0" />
+		<offset x="0" y="1.71" d="4" />
+		<scale xscale="1.0" yscale="0.41" d="0"/>
+		<animcolor a="152" d="0" />
+		<offset x="0" y="1.64" d="4" />
+		<scale xscale="1.0" yscale="0.41" d="0"/>
+		<animcolor a="148" d="0" />
+		<offset x="0" y="1.58" d="4" />
+		<scale xscale="1.0" yscale="0.41" d="0"/>
+		<animcolor a="144" d="0" />
+		<offset x="0" y="1.52" d="4" />
+		<scale xscale="1.0" yscale="0.4" d="0"/>
+		<animcolor a="140" d="0" />
+		<offset x="0" y="1.45" d="4" />
+		<scale xscale="1.0" yscale="0.4" d="0"/>
+		<animcolor a="135" d="0" />
+		<offset x="0" y="1.39" d="4" />
+		<scale xscale="1.0" yscale="0.39" d="0"/>
+		<animcolor a="131" d="0" />
+		<offset x="0" y="1.34" d="4" />
+		<scale xscale="1.0" yscale="0.39" d="0"/>
+		<animcolor a="127" d="0" />
+		<offset x="0" y="1.28" d="4" />
+		<scale xscale="1.0" yscale="0.39" d="0"/>
+		<animcolor a="123" d="0" />
+		<offset x="0" y="1.22" d="4" />
+		<scale xscale="1.0" yscale="0.38" d="0"/>
+		<animcolor a="119" d="0" />
+		<offset x="0" y="1.17" d="4" />
+		<scale xscale="1.0" yscale="0.38" d="0"/>
+		<animcolor a="114" d="0" />
+		<offset x="0" y="1.11" d="4" />
+		<scale xscale="1.0" yscale="0.38" d="0"/>
+		<animcolor a="110" d="0" />
+		<offset x="0" y="1.06" d="4" />
+		<scale xscale="1.0" yscale="0.37" d="0"/>
+		<animcolor a="106" d="0" />
+		<offset x="0" y="1.01" d="4" />
+		<scale xscale="1.0" yscale="0.37" d="0"/>
+		<animcolor a="102" d="0" />
+		<offset x="0" y="0.96" d="4" />
+		<scale xscale="1.0" yscale="0.37" d="0"/>
+		<animcolor a="97" d="0" />
+		<offset x="0" y="0.91" d="4" />
+		<scale xscale="1.0" yscale="0.36" d="0"/>
+		<animcolor a="93" d="0" />
+		<offset x="0" y="0.86" d="4" />
+		<scale xscale="1.0" yscale="0.36" d="0"/>
+		<animcolor a="89" d="0" />
+		<offset x="0" y="0.82" d="4" />
+		<scale xscale="1.0" yscale="0.36" d="0"/>
+		<animcolor a="85" d="0" />
+		<offset x="0" y="0.77" d="4" />
+		<scale xscale="1.0" yscale="0.35" d="0"/>
+		<animcolor a="81" d="0" />
+		<offset x="0" y="0.73" d="4" />
+		<scale xscale="1.0" yscale="0.35" d="0"/>
+		<animcolor a="77" d="0" />
+		<offset x="0" y="0.69" d="4" />
+		<scale xscale="1.0" yscale="0.35" d="0"/>
+		<animcolor a="73" d="0" />
+		<offset x="0" y="0.65" d="4" />
+		<scale xscale="1.0" yscale="0.35" d="0"/>
+		<animcolor a="69" d="0" />
+		<offset x="0" y="0.61" d="4" />
+		<scale xscale="1.0" yscale="0.34" d="0"/>
+		<animcolor a="66" d="0" />
+		<offset x="0" y="0.57" d="4" />
+		<scale xscale="1.0" yscale="0.34" d="0"/>
+		<animcolor a="62" d="0" />
+		<offset x="0" y="0.53" d="4" />
+		<scale xscale="1.0" yscale="0.34" d="0"/>
+		<animcolor a="58" d="0" />
+		<offset x="0" y="0.49" d="4" />
+		<scale xscale="1.0" yscale="0.34" d="0"/>
+		<animcolor a="55" d="0" />
+		<offset x="0" y="0.46" d="4" />
+		<scale xscale="1.0" yscale="0.33" d="0"/>
+		<animcolor a="51" d="0" />
+		<offset x="0" y="0.43" d="4" />
+		<scale xscale="1.0" yscale="0.33" d="0"/>
+		<animcolor a="48" d="0" />
+		<offset x="0" y="0.39" d="4" />
+		<scale xscale="1.0" yscale="0.33" d="0"/>
+		<animcolor a="44" d="0" />
+		<offset x="0" y="0.36" d="4" />
+		<scale xscale="1.0" yscale="0.33" d="0"/>
+		<animcolor a="41" d="0" />
+		<offset x="0" y="0.33" d="4" />
+		<scale xscale="1.0" yscale="0.32" d="0"/>
+		<animcolor a="38" d="0" />
+		<offset x="0" y="0.31" d="4" />
+		<scale xscale="1.0" yscale="0.32" d="0"/>
+		<animcolor a="35" d="0" />
+		<offset x="0" y="0.28" d="4" />
+		<scale xscale="1.0" yscale="0.32" d="0"/>
+		<animcolor a="32" d="0" />
+		<offset x="0" y="0.25" d="4" />
+		<scale xscale="1.0" yscale="0.32" d="0"/>
+		<animcolor a="29" d="0" />
+		<offset x="0" y="0.23" d="4" />
+		<scale xscale="1.0" yscale="0.32" d="0"/>
+		<animcolor a="26" d="0" />
+		<offset x="0" y="0.2" d="4" />
+		<scale xscale="1.0" yscale="0.31" d="0"/>
+		<animcolor a="23" d="0" />
+		<offset x="0" y="0.18" d="4" />
+		<scale xscale="1.0" yscale="0.31" d="0"/>
+		<animcolor a="21" d="0" />
+		<offset x="0" y="0.16" d="4" />
+		<scale xscale="1.0" yscale="0.31" d="0"/>
+		<animcolor a="18" d="0" />
+		<offset x="0" y="0.14" d="4" />
+		<scale xscale="1.0" yscale="0.31" d="0"/>
+		<animcolor a="16" d="0" />
+		<offset x="0" y="0.12" d="4" />
+		<scale xscale="1.0" yscale="0.31" d="0"/>
+		<animcolor a="14" d="0" />
+		<offset x="0" y="0.11" d="4" />
+		<scale xscale="1.0" yscale="0.31" d="0"/>
+		<animcolor a="12" d="0" />
+		<offset x="0" y="0.09" d="4" />
+		<scale xscale="1.0" yscale="0.31" d="0"/>
+		<animcolor a="10" d="0" />
+		<offset x="0" y="0.08" d="4" />
+		<scale xscale="1.0" yscale="0.31" d="0"/>
+		<animcolor a="8" d="0" />
+		<offset x="0" y="0.06" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<animcolor a="7" d="0" />
+		<offset x="0" y="0.05" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<animcolor a="5" d="0" />
+		<offset x="0" y="0.04" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<animcolor a="4" d="0" />
+		<offset x="0" y="0.03" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<animcolor a="3" d="0" />
+		<offset x="0" y="0.02" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<animcolor a="2" d="0" />
+		<offset x="0" y="0.02" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<animcolor a="1" d="0" />
+		<offset x="0" y="0.01" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<animcolor a="0" d="0" />
+		<offset x="0" y="0.01" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+		<scale xscale="1.0" yscale="0.3" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+		<return/>
+	</animation>
+
+
+	<animation name="firework.glow.fade.anim">
+		<sub id="victory.fireworks.whistle.sound"/>
+        <animcolor a="0" d="88" />
+		<sub id="victory.fireworks.pop.sound"/>
+        <animcolor a="128" d="2" />
+        <animcolor a="255" d="10" />
+        <animcolor a="254" d="2" />
+        <animcolor a="252" d="2" />
+        <animcolor a="248" d="2" />
+        <animcolor a="244" d="2" />
+        <animcolor a="238" d="2" />
+        <animcolor a="231" d="2" />
+        <animcolor a="223" d="2" />
+        <animcolor a="215" d="2" />
+        <animcolor a="205" d="2" />
+ 
+        <sub id="victory.fireworks.crackle.sound"/> 
+<animcolor a="195" d="2" />
+        <animcolor a="185" d="2" />
+        <animcolor a="174" d="2" />
+        <animcolor a="162" d="2" />
+        <animcolor a="151" d="2" />
+
+        <animcolor a="139" d="2" />
+        <animcolor a="127" d="2" />
+        <animcolor a="115" d="2" />
+        <animcolor a="103" d="2" />
+        <animcolor a="92" d="2" />
+        <animcolor a="80" d="2" />
+        <animcolor a="69" d="2" />
+        <animcolor a="59" d="2" />
+        <animcolor a="49" d="2" />
+        <animcolor a="39" d="2" />
+        <animcolor a="31" d="2" />
+        <animcolor a="23" d="2" />
+        <animcolor a="16" d="2" />
+        <animcolor a="10" d="2" />
+        <animcolor a="6" d="2" />
+        <animcolor a="2" d="2" />
+        <animcolor a="0" d="0" />
+        <return/>
+	</animation>	
+
+	<animation name="intro.firework.glow.fade.1.anim">
+		<animcolor a="127" d="0" />
+		<offset x="0" y="80.01" d="4" />
+		<animcolor a="255" d="0" />
+		<offset x="0" y="79.11" d="4" />
+		<offset x="0" y="78.22" d="4" />
+		<offset x="0" y="77.33" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="76.45" d="4" />
+		<offset x="0" y="75.58" d="4" />
+		<animcolor a="253" d="0" />
+		<offset x="0" y="74.71" d="4" />
+		<animcolor a="252" d="0" />
+		<offset x="0" y="73.84" d="4" />
+		<animcolor a="250" d="0" />
+		<offset x="0" y="72.98" d="4" />
+		<animcolor a="248" d="0" />
+		<offset x="0" y="72.12" d="4" />
+		<animcolor a="246" d="0" />
+		<offset x="0" y="71.27" d="4" />
+		<animcolor a="244" d="0" />
+		<offset x="0" y="70.42" d="4" />
+		<animcolor a="241" d="0" />
+		<offset x="0" y="69.58" d="4" />
+		<animcolor a="238" d="0" />
+		<offset x="0" y="68.75" d="4" />
+		<animcolor a="234" d="0" />
+		<offset x="0" y="67.92" d="4" />
+		<animcolor a="231" d="0" />
+		<offset x="0" y="67.09" d="4" />
+		<animcolor a="227" d="0" />
+		<offset x="0" y="66.27" d="4" />
+		<animcolor a="223" d="0" />
+		<offset x="0" y="65.46" d="4" />
+		<animcolor a="219" d="0" />
+		<offset x="0" y="64.64" d="4" />
+		<animcolor a="215" d="0" />
+		<offset x="0" y="63.84" d="4" />
+		<animcolor a="210" d="0" />
+		<offset x="0" y="63.04" d="4" />
+		<animcolor a="205" d="0" />
+		<offset x="0" y="62.24" d="4" />
+		<animcolor a="200" d="0" />
+		<offset x="0" y="61.45" d="4" />
+		<animcolor a="195" d="0" />
+		<offset x="0" y="60.67" d="4" />
+		<animcolor a="190" d="0" />
+		<offset x="0" y="59.89" d="4" />
+		<animcolor a="185" d="0" />
+		<offset x="0" y="59.11" d="4" />
+		<animcolor a="179" d="0" />
+		<offset x="0" y="58.34" d="4" />
+		<animcolor a="174" d="0" />
+		<offset x="0" y="57.58" d="4" />
+		<animcolor a="168" d="0" />
+		<offset x="0" y="56.82" d="4" />
+		<animcolor a="162" d="0" />
+		<offset x="0" y="56.06" d="4" />
+		<animcolor a="157" d="0" />
+		<offset x="0" y="55.31" d="4" />
+		<animcolor a="151" d="0" />
+		<offset x="0" y="54.57" d="4" />
+		<animcolor a="145" d="0" />
+		<offset x="0" y="53.83" d="4" />
+		<animcolor a="139" d="0" />
+		<offset x="0" y="53.09" d="4" />
+		<animcolor a="133" d="0" />
+		<offset x="0" y="52.36" d="4" />
+		<animcolor a="127" d="0" />
+		<offset x="0" y="51.64" d="4" />
+		<animcolor a="121" d="0" />
+		<offset x="0" y="50.92" d="4" />
+		<animcolor a="115" d="0" />
+		<offset x="0" y="50.2" d="4" />
+		<animcolor a="109" d="0" />
+		<offset x="0" y="49.49" d="4" />
+		<animcolor a="103" d="0" />
+		<offset x="0" y="48.79" d="4" />
+		<animcolor a="97" d="0" />
+		<offset x="0" y="48.09" d="4" />
+		<animcolor a="92" d="0" />
+		<offset x="0" y="47.4" d="4" />
+		<animcolor a="86" d="0" />
+		<offset x="0" y="46.71" d="4" />
+		<animcolor a="80" d="0" />
+		<offset x="0" y="46.02" d="4" />
+		<animcolor a="75" d="0" />
+		<offset x="0" y="45.34" d="4" />
+		<animcolor a="69" d="0" />
+		<offset x="0" y="44.67" d="4" />
+		<animcolor a="64" d="0" />
+		<offset x="0" y="44.0" d="4" />
+		<animcolor a="59" d="0" />
+		<offset x="0" y="43.33" d="4" />
+		<animcolor a="54" d="0" />
+		<offset x="0" y="42.68" d="4" />
+		<animcolor a="49" d="0" />
+		<offset x="0" y="42.02" d="4" />
+		<animcolor a="44" d="0" />
+		<offset x="0" y="41.37" d="4" />
+		<animcolor a="39" d="0" />
+		<offset x="0" y="40.73" d="4" />
+		<animcolor a="35" d="0" />
+		<offset x="0" y="40.09" d="4" />
+		<animcolor a="31" d="0" />
+		<offset x="0" y="39.46" d="4" />
+		<animcolor a="27" d="0" />
+		<offset x="0" y="38.83" d="4" />
+		<animcolor a="23" d="0" />
+		<offset x="0" y="38.2" d="4" />
+		<animcolor a="20" d="0" />
+		<offset x="0" y="37.58" d="4" />
+		<animcolor a="16" d="0" />
+		<offset x="0" y="36.97" d="4" />
+		<animcolor a="13" d="0" />
+		<offset x="0" y="36.36" d="4" />
+		<animcolor a="10" d="0" />
+		<offset x="0" y="35.76" d="4" />
+		<animcolor a="8" d="0" />
+		<offset x="0" y="35.16" d="4" />
+		<animcolor a="6" d="0" />
+		<offset x="0" y="34.57" d="4" />
+		<animcolor a="4" d="0" />
+		<offset x="0" y="33.98" d="4" />
+		<animcolor a="2" d="0" />
+		<offset x="0" y="33.4" d="4" />
+		<animcolor a="1" d="0" />
+		<offset x="0" y="32.82" d="4" />
+		<animcolor a="0" d="0" />
+		<offset x="0" y="32.24" d="4" />
+		<offset x="0" y="31.68" d="4" />
+		<offset x="0" y="31.11" d="4" />
+        <return/>
+	</animation>	
+	
+    
+    
+    <animation name="intro.firework.glow.fade.2.anim">
+		<animcolor a="127" d="0" />
+		<offset x="0" y="38.2" d="4" />
+		<animcolor a="255" d="0" />
+		<offset x="0" y="37.58" d="4" />
+		<offset x="0" y="36.97" d="4" />
+		<offset x="0" y="36.36" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="35.76" d="4" />
+		<offset x="0" y="35.16" d="4" />
+		<animcolor a="253" d="0" />
+		<offset x="0" y="34.57" d="4" />
+		<animcolor a="252" d="0" />
+		<offset x="0" y="33.98" d="4" />
+		<animcolor a="250" d="0" />
+		<offset x="0" y="33.4" d="4" />
+		<animcolor a="248" d="0" />
+		<offset x="0" y="32.82" d="4" />
+		<animcolor a="246" d="0" />
+		<offset x="0" y="32.24" d="4" />
+		<animcolor a="244" d="0" />
+		<offset x="0" y="31.68" d="4" />
+		<animcolor a="241" d="0" />
+		<offset x="0" y="31.11" d="4" />
+		<animcolor a="238" d="0" />
+		<offset x="0" y="30.55" d="4" />
+		<animcolor a="234" d="0" />
+		<offset x="0" y="30.0" d="4" />
+		<animcolor a="231" d="0" />
+		<offset x="0" y="29.45" d="4" />
+		<animcolor a="227" d="0" />
+		<offset x="0" y="28.91" d="4" />
+		<animcolor a="223" d="0" />
+		<offset x="0" y="28.37" d="4" />
+		<animcolor a="219" d="0" />
+		<offset x="0" y="27.84" d="4" />
+		<animcolor a="215" d="0" />
+		<offset x="0" y="27.31" d="4" />
+		<animcolor a="210" d="0" />
+		<offset x="0" y="26.79" d="4" />
+		<animcolor a="205" d="0" />
+		<offset x="0" y="26.27" d="4" />
+		<animcolor a="200" d="0" />
+		<offset x="0" y="25.76" d="4" />
+		<animcolor a="195" d="0" />
+		<offset x="0" y="25.25" d="4" />
+		<animcolor a="190" d="0" />
+		<offset x="0" y="24.75" d="4" />
+		<animcolor a="185" d="0" />
+		<offset x="0" y="24.25" d="4" />
+		<animcolor a="179" d="0" />
+		<offset x="0" y="23.76" d="4" />
+		<animcolor a="174" d="0" />
+		<offset x="0" y="23.27" d="4" />
+		<animcolor a="168" d="0" />
+		<offset x="0" y="22.79" d="4" />
+		<animcolor a="162" d="0" />
+		<offset x="0" y="22.31" d="4" />
+		<animcolor a="157" d="0" />
+		<offset x="0" y="21.84" d="4" />
+		<animcolor a="151" d="0" />
+		<offset x="0" y="21.37" d="4" />
+		<animcolor a="145" d="0" />
+		<offset x="0" y="20.91" d="4" />
+		<animcolor a="139" d="0" />
+		<offset x="0" y="20.45" d="4" />
+		<animcolor a="133" d="0" />
+		<offset x="0" y="20.0" d="4" />
+		<animcolor a="127" d="0" />
+		<offset x="0" y="19.56" d="4" />
+		<animcolor a="121" d="0" />
+		<offset x="0" y="19.11" d="4" />
+		<animcolor a="115" d="0" />
+		<offset x="0" y="18.68" d="4" />
+		<animcolor a="109" d="0" />
+		<offset x="0" y="18.24" d="4" />
+		<animcolor a="103" d="0" />
+		<offset x="0" y="17.82" d="4" />
+		<animcolor a="97" d="0" />
+		<offset x="0" y="17.4" d="4" />
+		<animcolor a="92" d="0" />
+		<offset x="0" y="16.98" d="4" />
+		<animcolor a="86" d="0" />
+		<offset x="0" y="16.57" d="4" />
+		<animcolor a="80" d="0" />
+		<offset x="0" y="16.16" d="4" />
+		<animcolor a="75" d="0" />
+		<offset x="0" y="15.76" d="4" />
+		<animcolor a="69" d="0" />
+		<offset x="0" y="15.36" d="4" />
+		<animcolor a="64" d="0" />
+		<offset x="0" y="14.97" d="4" />
+		<animcolor a="59" d="0" />
+		<offset x="0" y="14.59" d="4" />
+		<animcolor a="54" d="0" />
+		<offset x="0" y="14.2" d="4" />
+		<animcolor a="49" d="0" />
+		<offset x="0" y="13.83" d="4" />
+		<animcolor a="44" d="0" />
+		<offset x="0" y="13.46" d="4" />
+		<animcolor a="39" d="0" />
+		<offset x="0" y="13.09" d="4" />
+		<animcolor a="35" d="0" />
+		<offset x="0" y="12.73" d="4" />
+		<animcolor a="31" d="0" />
+		<offset x="0" y="12.37" d="4" />
+		<animcolor a="27" d="0" />
+		<offset x="0" y="12.02" d="4" />
+		<animcolor a="23" d="0" />
+		<offset x="0" y="11.68" d="4" />
+		<animcolor a="20" d="0" />
+		<offset x="0" y="11.34" d="4" />
+		<animcolor a="16" d="0" />
+		<offset x="0" y="11.0" d="4" />
+		<animcolor a="13" d="0" />
+		<offset x="0" y="10.67" d="4" />
+		<animcolor a="10" d="0" />
+		<offset x="0" y="10.34" d="4" />
+		<animcolor a="8" d="0" />
+		<offset x="0" y="10.02" d="4" />
+		<animcolor a="6" d="0" />
+		<offset x="0" y="9.71" d="4" />
+		<animcolor a="4" d="0" />
+		<offset x="0" y="9.4" d="4" />
+		<animcolor a="2" d="0" />
+		<offset x="0" y="9.09" d="4" />
+		<animcolor a="1" d="0" />
+		<offset x="0" y="8.79" d="4" />
+		<animcolor a="0" d="0" />
+		<offset x="0" y="8.49" d="4" />
+		<offset x="0" y="8.2" d="4" />
+		<offset x="0" y="7.92" d="4" />
+        <return/>
+	</animation>	
+	
+    
+    
+    
+    <animation name="intro.firework.glow.fade.3.anim">    
+		<animcolor a="127" d="0" />
+		<offset x="0" y="17.4" d="4" />
+		<animcolor a="255" d="0" />
+		<offset x="0" y="16.98" d="4" />
+		<offset x="0" y="16.57" d="4" />
+		<offset x="0" y="16.16" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="15.76" d="4" />
+		<offset x="0" y="15.36" d="4" />
+		<animcolor a="253" d="0" />
+		<offset x="0" y="14.97" d="4" />
+		<animcolor a="252" d="0" />
+		<offset x="0" y="14.59" d="4" />
+		<animcolor a="250" d="0" />
+		<offset x="0" y="14.2" d="4" />
+		<animcolor a="248" d="0" />
+		<offset x="0" y="13.83" d="4" />
+		<animcolor a="246" d="0" />
+		<offset x="0" y="13.46" d="4" />
+		<animcolor a="244" d="0" />
+		<offset x="0" y="13.09" d="4" />
+		<animcolor a="241" d="0" />
+		<offset x="0" y="12.73" d="4" />
+		<animcolor a="238" d="0" />
+		<offset x="0" y="12.37" d="4" />
+		<animcolor a="234" d="0" />
+		<offset x="0" y="12.02" d="4" />
+		<animcolor a="231" d="0" />
+		<offset x="0" y="11.68" d="4" />
+		<animcolor a="227" d="0" />
+		<offset x="0" y="11.34" d="4" />
+		<animcolor a="223" d="0" />
+		<offset x="0" y="11.0" d="4" />
+		<animcolor a="219" d="0" />
+		<offset x="0" y="10.67" d="4" />
+		<animcolor a="215" d="0" />
+		<offset x="0" y="10.34" d="4" />
+		<animcolor a="210" d="0" />
+		<offset x="0" y="10.02" d="4" />
+		<animcolor a="205" d="0" />
+		<offset x="0" y="9.71" d="4" />
+		<animcolor a="200" d="0" />
+		<offset x="0" y="9.4" d="4" />
+		<animcolor a="195" d="0" />
+		<offset x="0" y="9.09" d="4" />
+		<animcolor a="190" d="0" />
+		<offset x="0" y="8.79" d="4" />
+		<animcolor a="185" d="0" />
+		<offset x="0" y="8.49" d="4" />
+		<animcolor a="179" d="0" />
+		<offset x="0" y="8.2" d="4" />
+		<animcolor a="174" d="0" />
+		<offset x="0" y="7.92" d="4" />
+		<animcolor a="168" d="0" />
+		<offset x="0" y="7.64" d="4" />
+		<animcolor a="162" d="0" />
+		<offset x="0" y="7.36" d="4" />
+		<animcolor a="157" d="0" />
+		<offset x="0" y="7.09" d="4" />
+		<animcolor a="151" d="0" />
+		<offset x="0" y="6.83" d="4" />
+		<animcolor a="145" d="0" />
+		<offset x="0" y="6.57" d="4" />
+		<animcolor a="139" d="0" />
+		<offset x="0" y="6.31" d="4" />
+		<animcolor a="133" d="0" />
+		<offset x="0" y="6.06" d="4" />
+		<animcolor a="127" d="0" />
+		<offset x="0" y="5.82" d="4" />
+		<animcolor a="121" d="0" />
+		<offset x="0" y="5.58" d="4" />
+		<animcolor a="115" d="0" />
+		<offset x="0" y="5.34" d="4" />
+		<animcolor a="109" d="0" />
+		<offset x="0" y="5.11" d="4" />
+		<animcolor a="103" d="0" />
+		<offset x="0" y="4.89" d="4" />
+		<animcolor a="97" d="0" />
+		<offset x="0" y="4.67" d="4" />
+		<animcolor a="92" d="0" />
+		<offset x="0" y="4.45" d="4" />
+		<animcolor a="86" d="0" />
+		<offset x="0" y="4.24" d="4" />
+		<animcolor a="80" d="0" />
+		<offset x="0" y="4.04" d="4" />
+		<animcolor a="75" d="0" />
+		<offset x="0" y="3.84" d="4" />
+		<animcolor a="69" d="0" />
+		<offset x="0" y="3.65" d="4" />
+		<animcolor a="64" d="0" />
+		<offset x="0" y="3.46" d="4" />
+		<animcolor a="59" d="0" />
+		<offset x="0" y="3.27" d="4" />
+		<animcolor a="54" d="0" />
+		<offset x="0" y="3.09" d="4" />
+		<animcolor a="49" d="0" />
+		<offset x="0" y="2.92" d="4" />
+		<animcolor a="44" d="0" />
+		<offset x="0" y="2.75" d="4" />
+		<animcolor a="39" d="0" />
+		<offset x="0" y="2.59" d="4" />
+		<animcolor a="35" d="0" />
+		<offset x="0" y="2.43" d="4" />
+		<animcolor a="31" d="0" />
+		<offset x="0" y="2.27" d="4" />
+		<animcolor a="27" d="0" />
+		<offset x="0" y="2.12" d="4" />
+		<animcolor a="23" d="0" />
+		<offset x="0" y="1.98" d="4" />
+		<animcolor a="20" d="0" />
+		<offset x="0" y="1.84" d="4" />
+		<animcolor a="16" d="0" />
+		<offset x="0" y="1.71" d="4" />
+		<animcolor a="13" d="0" />
+		<offset x="0" y="1.58" d="4" />
+		<animcolor a="10" d="0" />
+		<offset x="0" y="1.45" d="4" />
+		<animcolor a="8" d="0" />
+		<offset x="0" y="1.34" d="4" />
+		<animcolor a="6" d="0" />
+		<offset x="0" y="1.22" d="4" />
+		<animcolor a="4" d="0" />
+		<offset x="0" y="1.11" d="4" />
+		<animcolor a="2" d="0" />
+		<offset x="0" y="1.01" d="4" />
+		<animcolor a="1" d="0" />
+		<offset x="0" y="0.91" d="4" />
+		<animcolor a="0" d="0" />
+		<offset x="0" y="0.82" d="4" />
+		<offset x="0" y="0.73" d="4" />
+		<offset x="0" y="0.65" d="4" />
+        <return/>
+	</animation>	
+
+</resources>

@@ -1,0 +1,574 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDRAH.EARTH.01 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.EARTH.01 definition -->
+
+	<gidrah
+		 name="gidrah.earth.01"
+		 inherit="gidrah.earth.01.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.01.walk.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.earth.01.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.earth.01.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.01.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.earth.01.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.earth.01.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.earth.01.dead.anim" />
+				<emitter emitter="gidrah.earth.death.emitter" offset="15,15"  />
+				<emitter emitter="gidrah.earth.death.flash.emitter" offset="15,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.earth.01.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.earth.01.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.earth.01.blink.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.earth.01.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.01.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.01.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.01.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.01.frozen.2.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.01.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.EARTH.01 -->
+
+	<array name="gidrah.earth.01.glow.array">
+		<item>spriteimage.gidrah.earth.01.glow.01</item>
+		<item>spriteimage.gidrah.earth.01.glow.02</item>
+		<item>spriteimage.gidrah.earth.01.glow.03</item>
+		<item>spriteimage.gidrah.earth.01.attack.glow.01</item>
+		<item>spriteimage.gidrah.earth.01.attack.glow.02</item>
+		<item>spriteimage.gidrah.earth.01.attack.glow.03</item>
+	</array>
+
+	<array name="gidrah.earth.01.face.array">
+		<item>spriteimage.gidrah.earth.01.top.01</item>
+		<item>spriteimage.gidrah.earth.01.top.02</item>
+		<item>spriteimage.gidrah.earth.01.top.03</item>
+		<item>spriteimage.gidrah.earth.01.attack.top.01</item>
+		<item>spriteimage.gidrah.earth.01.attack.top.02</item>
+		<item>spriteimage.gidrah.earth.01.attack.top.03</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.EARTH.01 -->
+
+	<animation name="gidrah.earth.01.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.earth.01.01" d="4" />
+			<frame i="spriteimage.gidrah.earth.01.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.01.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.01.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.01.03" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.01.03" d="1" />
+			<frame i="spriteimage.gidrah.earth.01.01" d="4" />
+			<frame i="spriteimage.gidrah.earth.01.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.01.06" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.01.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.01.07" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.01.07" d="1" />
+			<frame i="spriteimage.gidrah.earth.01.01" d="4" />
+			<frame i="spriteimage.gidrah.earth.01.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.01.04" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.01.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.01.05" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.01.05" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.earth.01.blink.glow.anim">
+		<frameset id="gidrah.earth.01.glow.array" />
+	</animation>
+
+	<animation name="gidrah.earth.01.blink.anim">
+		<frameset id="gidrah.earth.01.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+		<label id="blink"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="9" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="19" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="3" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="7" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="14" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.earth.01.attack.anim">
+		<loop count="3"/>
+		<label id="bite"/>
+			<frame i="spriteimage.gidrah.earth.01.01" d="2" />
+			<frame i="spriteimage.gidrah.earth.01.08" d="2" />
+			<frame i="spriteimage.gidrah.earth.01.09" d="2" />
+			<frame i="spriteimage.gidrah.earth.01.10" d="6" />
+			<frame i="spriteimage.gidrah.earth.01.01" d="3" />
+		<repeat id="bite"/>
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.earth.01.01" d="1" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.earth.01.attack.face.glow.anim">
+		<frameset id="gidrah.earth.01.glow.array" />
+	</animation>
+
+	<animation name="gidrah.earth.01.attack.face.anim">
+		<frameset id="gidrah.earth.01.face.array" />
+		<loop count="3"/>
+		<label id="bite"/>
+			<notify layer="glow" idx="1"/><frame idx="1" d="2" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="2" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="2" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="6" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="3" />
+		<repeat id="bite"/>
+	</animation>
+
+	<animation name="gidrah.earth.01.dead.anim">
+			<frame i="spriteimage.gidrah.earth.01.ghost.01" d="3" />
+			<frame i="spriteimage.gidrah.earth.01.ghost.02" d="3" />
+			<frame i="spriteimage.gidrah.earth.01.ghost.03" d="3" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.earth.01.frozen.1.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.earth.01.02" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.earth.01.04" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.earth.01.frozen.2.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.earth.01.03" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.earth.01.05" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.earth.01.07" d="1" />
+		<label id="end"/>
+	</animation>
+
+
+
+
+	<!-- GIDRAH.EARTH.02 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.EARTH.02 definition -->
+
+	<gidrah
+		 name="gidrah.earth.02"
+		 inherit="gidrah.earth.02.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.02.walk.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.earth.02.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.earth.02.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.02.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.earth.02.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.earth.02.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.earth.02.dead.anim" />
+				<emitter emitter="gidrah.earth.death.emitter" offset="15,15"  />
+				<emitter emitter="gidrah.earth.death.flash.emitter" offset="15,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.earth.02.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.earth.02.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.earth.02.blink.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.earth.02.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.02.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.02.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.02.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.02.frozen.2.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.02.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.EARTH.02 -->
+
+	<array name="gidrah.earth.02.glow.array">
+		<item>spriteimage.gidrah.earth.02.glow.01</item>
+		<item>spriteimage.gidrah.earth.02.glow.02</item>
+		<item>spriteimage.gidrah.earth.02.glow.03</item>
+		<item>spriteimage.gidrah.earth.02.attack.glow.01</item>
+		<item>spriteimage.gidrah.earth.02.attack.glow.02</item>
+		<item>spriteimage.gidrah.earth.02.attack.glow.03</item>
+	</array>
+
+	<array name="gidrah.earth.02.face.array">
+		<item>spriteimage.gidrah.earth.02.top.01</item>
+		<item>spriteimage.gidrah.earth.02.top.02</item>
+		<item>spriteimage.gidrah.earth.02.top.03</item>
+		<item>spriteimage.gidrah.earth.02.attack.top.01</item>
+		<item>spriteimage.gidrah.earth.02.attack.top.02</item>
+		<item>spriteimage.gidrah.earth.02.attack.top.03</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.EARTH.02 -->
+
+	<animation name="gidrah.earth.02.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.earth.02.01" d="4" />
+			<frame i="spriteimage.gidrah.earth.02.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.02.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.02.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.02.03" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.02.03" d="1" />
+			<frame i="spriteimage.gidrah.earth.02.01" d="4" />
+			<frame i="spriteimage.gidrah.earth.02.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.02.06" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.02.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.02.07" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.02.07" d="1" />
+			<frame i="spriteimage.gidrah.earth.02.01" d="4" />
+			<frame i="spriteimage.gidrah.earth.02.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.02.04" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.earth.02.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.02.05" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.earth.02.05" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.earth.02.blink.glow.anim">
+		<frameset id="gidrah.earth.02.glow.array" />
+	</animation>
+
+	<animation name="gidrah.earth.02.blink.anim">
+		<frameset id="gidrah.earth.02.face.array" />
+		<label id="start"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+		<label id="blink"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="9" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="19" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="3" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="7" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="1" />
+			<notify layer="glow" idx="2"/><frame idx="2" d="14" />
+			<notify layer="glow" idx="1"/><frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.earth.02.attack.anim">
+		<loop count="2"/>
+		<label id="bite"/>
+			<frame i="spriteimage.gidrah.earth.02.01" d="2" />
+			<frame i="spriteimage.gidrah.earth.02.08" d="2" />
+			<frame i="spriteimage.gidrah.earth.02.09" d="2" />
+			<frame i="spriteimage.gidrah.earth.02.10" d="6" />
+			<frame i="spriteimage.gidrah.earth.02.01" d="3" />
+		<repeat id="bite"/>
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.earth.02.01" d="1" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.earth.02.attack.face.glow.anim">
+		<frameset id="gidrah.earth.02.glow.array" />
+	</animation>
+
+	<animation name="gidrah.earth.02.attack.face.anim">
+		<frameset id="gidrah.earth.02.face.array" />
+		<loop count="2"/>
+		<label id="bite"/>
+			<notify layer="glow" idx="0"/><frame idx="0" d="2" />
+			<notify layer="glow" idx="3"/><frame idx="3" d="2" />
+			<notify layer="glow" idx="4"/><frame idx="4" d="2" />
+			<notify layer="glow" idx="5"/><frame idx="5" d="6" />
+			<notify layer="glow" idx="0"/><frame idx="0" d="3" />
+		<repeat id="bite"/>
+	</animation>
+
+	<animation name="gidrah.earth.02.dead.anim">
+			<frame i="spriteimage.gidrah.earth.02.ghost.01" d="3" />
+			<frame i="spriteimage.gidrah.earth.02.ghost.02" d="3" />
+			<frame i="spriteimage.gidrah.earth.02.ghost.03" d="3" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.earth.02.frozen.1.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.earth.02.02" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.earth.02.04" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.earth.02.frozen.2.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.earth.02.03" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.earth.02.05" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.earth.02.07" d="1" />
+		<label id="end"/>
+	</animation>
+
+
+
+
+	<!-- ANGRYGIDRAH.EARTH.01 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.EARTH.01 definition -->
+
+	<gidrah
+		 name="angrygidrah.earth.01"
+		 inherit="angrygidrah.earth.01.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.01.walk.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.earth.01.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.earth.01.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.01.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.earth.01.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.earth.01.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.earth.01.dead.anim" />
+				<emitter emitter="gidrah.earth.death.large.emitter" offset="16,15"  />
+				<emitter emitter="gidrah.earth.death.flash.large.emitter" offset="16,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.earth.01.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.earth.01.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.earth.01.blink.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.earth.01.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.01.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.01.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.01.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.01.frozen.2.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.01.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.01.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for ANGRYGIDRAH.EARTH.01 -->
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.EARTH.01 -->
+
+
+
+
+	<!-- ANGRYGIDRAH.EARTH.02 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.EARTH.02 definition -->
+
+	<gidrah
+		 name="angrygidrah.earth.02"
+		 inherit="angrygidrah.earth.02.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.02.walk.anim" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" doChildOffset="true" animation="gidrah.earth.02.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.earth.02.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.02.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.earth.02.attack.face.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.earth.02.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.earth.02.dead.anim" />
+				<emitter emitter="gidrah.earth.death.large.emitter" offset="16,15"  />
+				<emitter emitter="gidrah.earth.death.flash.large.emitter" offset="16,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.75">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.earth.02.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+				<sprite id="glow" layer="5" sublayer="1" offset="0,0" colored="gidrah-glow" attenuated="false" animation="gidrah.earth.02.blink.glow.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.earth.02.blink.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" image="spriteimage.gidrah.earth.02.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.02.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.02.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.02.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.75">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah" attenuated="true" animation="gidrah.earth.02.frozen.2.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.earth.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.earth.02.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for ANGRYGIDRAH.EARTH.02 -->
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.EARTH.02 -->
+
+</resources>

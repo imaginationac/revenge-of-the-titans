@@ -1,0 +1,1585 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Characters -->
+<resources>
+
+
+	<!-- CHARACTER BUBBLE BACKGROUNDS ============================================================================================================================ -->
+
+	<!-- insets are nor inherited here - odd ? -->
+
+	<widgetbackground name="earth.human-speech.background" inherit="human-speech.background" color="earth.colormap:bubble" insets="24,40,24,24" />
+	<widgetbackground name="earth.human-speech-top-left.background" inherit="human-speech-top-left.background" color="earth.colormap:bubble" insets="24,40,24,24" />	
+	<widgetbackground name="earth.human-speech-top-left-info.background" inherit="human-speech-top-left-info.background" color="earth.colormap:bubble" insets="140,40,24,24" />			
+	<widgetbackground name="earth.human-speech-right.background" inherit="human-speech-right.background" color="earth.colormap:bubble" insets="40,24,24,24" />		
+	<widgetbackground name="earth.human-speech-left.background" inherit="human-speech-left.background" color="earth.colormap:bubble" insets="28,24,40,24" />		
+	<widgetbackground name="earth.info.background" inherit="info.background" color="earth.colormap:bubble" insets="24,28,24,24" />	
+	<widgetbackground name="earth.tech.background" inherit="info.background" color="earth.colormap:bubble" insets="135,28,24,24" />	
+	<widgetbackground name="earth.delivery.background" inherit="info.background" color="earth.colormap:bubble" insets="145,28,24,24" />	
+
+	<widgetbackground name="earth.gidrah.background" inherit="info.background.spec" insets="175,28,24,24" color="earth.colormap:alert-bubble"/>	
+	<widgetbackground name="earth.alert.background" inherit="info-dark.background.spec" insets="24,28,24,24" color="earth.colormap:alert-bubble"/>
+
+
+	<!-- BUILDINGS / WEAPONS SPEC ============================================================================================================================ -->
+
+
+	<character
+		name="earth.research.char.spec"
+		inherit="research.char.spec"
+		bubble="earth.info.background"
+		color="earth.colormap:text"
+		boldColor="earth.colormap:text-bold"
+	>
+	</character>
+
+	<animation name="earth.info.background.anim">
+		<scale scale="0.625"/>
+		<frame i="spriteimage.story.earth.info.01" d="1"/>
+	</animation>
+
+	<character
+		name="earth.research.tech.char.spec"
+		inherit="earth.research.char.spec"
+		bubble="earth.tech.background"
+		color="earth.colormap:text"
+		boldColor="earth.colormap:text-bold"
+	>
+	</character>
+
+	<character
+		name="earth.research.delivery.char.spec"
+		inherit="earth.research.tech.char.spec"
+		bubble="earth.delivery.background"
+	>
+	</character>
+
+
+	<!-- INFOS =============================================================================================================== -->
+	
+	<character
+		name="earth.info.crystals.char"
+		inherit="earth.research.char.spec"
+		bubble="earth.human-speech-top-left-info.background"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" offset="-4,-53" image="spriteimage.items.info.crystals.01"/>				
+			</layers>
+		</idleLayers>
+	</character>	
+
+
+	<!-- GIDRAHS =============================================================================================================== -->
+	
+	<character
+		name="earth.gidrah.01.char"
+		inherit="research.char.spec"
+		bubble="earth.gidrah.background"
+		color="earth.colormap:alert-text"
+		boldColor="earth.colormap:alert-text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.earth.1.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.gidrah.02.char"
+		inherit="earth.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.earth.3.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="earth.angry.01.char"
+		inherit="earth.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.earth.2.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="earth.angry.02.char"
+		inherit="earth.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.earth.4.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<!--  boss -->
+
+	<animation name="earth.alert.ground.anim">
+		<scale xscale="0.65" yscale="0.65" d="0"/>
+		<frame i="spriteimage.character.ground.01" d="1"/>
+	</animation>
+
+	<character
+		name="earth.boss.char"
+		inherit="research.char.spec"
+		bubble="earth.alert.background"
+		color="earth.colormap:alert-text"
+		boldColor="earth.colormap:alert-text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.65">
+				<sprite layer="2" offset="4,0" animation="alert.background.anim"/>
+				<sprite layer="10" animation="earth.alert.ground.anim"/>
+				<sprite layer="11" image="spriteimage.character.boss.earth.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+
+
+	<!-- CUSTERD ============================================================================================================================ -->
+
+
+	<animation name="custerd.earth.body.idle.anim">
+		<frame i="spriteimage.character.custerd.earth.back.01" d="20" />
+	</animation>
+	<animation name="custerd.earth.body.talk.anim">
+		
+		<label id="start"/>
+		<random>
+			<dest id="point" 			n="1"/>
+			<dest id="point-up" 		n="1"/>
+		</random>
+			
+		<label id="point"/>
+		<frame i="spriteimage.character.custerd.earth.back.02" d="25" />
+		<random>
+			<dest id="point-up" n="2"/>
+			<dest id="start"/>
+			<dest id="idle"/>
+		</random>	
+	
+		<label id="point-up"/>
+		<frame i="spriteimage.character.custerd.earth.back.03" d="25" />
+		<random>
+			<dest id="point" n="2"/>
+			<dest id="start"/>
+			<dest id="idle"/>
+		</random>		
+
+		<label id="idle"/>
+		<frame i="spriteimage.character.custerd.earth.back.01" d="25" />
+		<random>
+			<dest id="idle" n="1"/>
+			<dest id="start"/>
+		</random>				
+	</animation>
+
+	<animation name="custerd.earth.head.look-left.anim">
+		<frame i="spriteimage.character.custerd.earth.04" d="3" childXOffset="-2" />
+		<label id="look-left"/>
+		<frame i="spriteimage.character.custerd.earth.05" d="50" childXOffset="-6" />
+		<random>
+			<dest id="look-left" n="2"/>
+			<dest id="stop-look-left"/>
+		</random>
+		<label id="stop-look-left"/>
+		<frame i="spriteimage.character.custerd.earth.04" d="4" childXOffset="-2" />
+		<frame i="spriteimage.character.custerd.earth.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="custerd.earth.head.look-right.anim">
+		<frame i="spriteimage.character.custerd.earth.02" d="3" childXOffset="2" />
+		<label id="look-right"/>
+		<frame i="spriteimage.character.custerd.earth.03" d="50" childXOffset="6" />
+		<random>
+			<dest id="look-right" n="2"/>
+			<dest id="stop-look-right"/>
+		</random>
+		<label id="stop-look-right"/>
+		<frame i="spriteimage.character.custerd.earth.02" d="4" childXOffset="2" />
+		<frame i="spriteimage.character.custerd.earth.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="custerd.earth.head.talk.anim">
+		<frame i="spriteimage.character.custerd.earth.01" d="20" childXOffset="0" />
+	</animation>
+
+	<animation name="custerd.earth.head.idle.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.custerd.earth.01" d="70" childXOffset="0" />
+		<random>
+			<dest id="start" n="3"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="custerd.earth.head.look-left.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start" n="3"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="custerd.earth.head.look-right.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start" n="3"/>
+		</random>
+	</animation>
+
+	<animation name="custerd.earth.glow.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.custerd.earth.glow.04" d="5" />
+		<frame i="spriteimage.character.custerd.earth.glow.05" d="5" />
+		<frame i="spriteimage.character.custerd.earth.glow.06" d="5" />
+		<frame i="spriteimage.character.custerd.earth.glow.05" d="5" />
+		<frame i="spriteimage.character.custerd.earth.glow.04" d="5" />
+		<frame i="spriteimage.character.custerd.earth.glow.01" d="5" />		
+		<random>
+			<dest id="start" n="7"/>
+			<dest id="blink"/>
+		</random>
+		<label id="blink"/>
+		<frame i="spriteimage.character.custerd.earth.glow.03" d="30" />
+		<frame i="spriteimage.character.custerd.earth.glow.02" d="5" />
+		<frame i="spriteimage.character.custerd.earth.glow.01" d="5" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="custerd.earth.mouth.idle.anim">
+		<scale scale="0.5"/>
+		<frame i="spriteimage.character.custerd.earth.top.01" d="1" />
+	</animation>
+	<animation name="custerd.earth.mouth.vowel.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.custerd.earth.top.02" d="200" />
+		<frame i="spriteimage.character.custerd.earth.top.03" d="200" />
+	</animation>
+	<animation name="custerd.earth.mouth.consonant.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.custerd.earth.top.04" d="200" />
+		<frame i="spriteimage.character.custerd.earth.top.05" d="200" />
+	</animation>
+
+
+
+	<character
+		name="earth.custerd.char"
+		inherit="custerd.char"
+		bubble="earth.human-speech.background"
+		color="earth.colormap:text"
+		boldColor="earth.colormap:text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="5" animation="custerd.earth.head.idle.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="4" animation="custerd.earth.body.idle.anim"/>
+				<sprite layer="6" doChildOffset="true" animation="custerd.earth.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.earth.01"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.55">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="5" animation="custerd.earth.head.talk.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="4" animation="custerd.earth.body.talk.anim"/>
+				<sprite layer="6" doChildOffset="true" animation="custerd.earth.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.earth.01"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<frame i="spriteimage.character.custerd.earth.top.01" d="1" />
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.custerd.earth.top.02" d="200" />
+				<frame i="spriteimage.character.custerd.earth.top.03" d="200" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.custerd.earth.top.04" d="200" />
+				<frame i="spriteimage.character.custerd.earth.top.05" d="200" />
+			</animation>
+		</consonantAppearance>
+	
+	</character>
+
+
+	<character
+		name="earth.custerd-left.char"
+		inherit="earth.custerd.char"
+		bubble="earth.human-speech-right.background"
+	>
+	</character>
+	
+	<character
+		name="earth.custerd.alert.char"
+		inherit="earth.custerd.char"
+		bubble="earth.human-speech-top-left.background"
+	>
+	</character>
+
+	<character
+		name="earth.custerd.info.char"
+		inherit="earth.custerd.char"
+		bubble="-"
+	>
+	</character>
+
+
+
+	<!-- TECH ============================================================================================================================ -->
+
+
+	<animation name="tech.earth.body.idle.anim">
+		<frame i="spriteimage.character.tech.earth.01" d="20" />
+	</animation>
+	<animation name="tech.earth.body.talk.anim">
+		<label id="start"/>
+		<random>
+			<dest id="point" 			n="1"/>
+			<dest id="gesture-left" 	n="1"/>
+			<dest id="gesture-right" 	n="1"/>
+			<dest id="shrug" 			n="1"/>
+		</random>
+			
+		<label id="point"/>
+		<frame i="spriteimage.character.tech.earth.02" d="15" />
+		<random>
+			<dest id="point" n="2"/>
+			<dest id="start"/>
+		</random>	
+	
+		<label id="gesture-left"/>
+		<frame i="spriteimage.character.tech.earth.03" d="15" />
+		<random>
+			<dest id="gesture-left" n="2"/>
+			<dest id="start"/>
+		</random>		
+	
+		<label id="gesture-right"/>
+		<frame i="spriteimage.character.tech.earth.04" d="15" />
+		<random>
+			<dest id="gesture-right" n="2"/>
+			<dest id="start"/>
+		</random>		
+		
+		<label id="shrug"/>
+		<frame i="spriteimage.character.tech.earth.05" d="15" />
+		<random>
+			<dest id="shrug" n="2"/>
+			<dest id="start"/>
+		</random>					
+	</animation>
+
+
+	<animation name="tech.earth.head.look-left.anim">
+		<label id="look-left"/>
+		<frame i="spriteimage.character.tech.earth.back.03" d="20" childXOffset="13" />
+		<random>
+			<dest id="look-left" n="2"/>
+			<dest id="stop-look-left"/>
+		</random>
+		<label id="stop-look-left"/>
+		<frame i="spriteimage.character.tech.earth.back.02" d="2" childXOffset="5" />
+		<frame i="spriteimage.character.tech.earth.back.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="tech.earth.head.look-right.anim">
+		<label id="look-right"/>
+		<frame i="spriteimage.character.tech.earth.back.05" d="20" childXOffset="-13" />
+		<random>
+			<dest id="look-right" n="2"/>
+			<dest id="stop-look-right"/>
+		</random>
+		<label id="stop-look-right"/>
+		<frame i="spriteimage.character.tech.earth.back.04" d="2" childXOffset="-5" />
+		<frame i="spriteimage.character.tech.earth.back.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="tech.earth.head.talk.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.tech.earth.back.01" d="20" childXOffset="0" />
+		<random>
+			<dest id="start"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="tech.earth.head.look-left.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="tech.earth.head.look-right.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start"/>
+		</random>
+	</animation>
+
+	<animation name="tech.earth.head.idle.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.tech.earth.back.01" d="100" childXOffset="0" />
+		<random>
+			<dest id="start" n="6"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="tech.earth.head.look-left.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start" n="3"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="tech.earth.head.look-right.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start" n="3"/>
+		</random>
+	</animation>
+
+	<animation name="tech.earth.mouth.idle.anim">
+		<scale scale="0.5"/>
+		<frame i="spriteimage.character.tech.earth.top.01" d="1" />
+	</animation>
+	<animation name="tech.earth.mouth.vowel.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.tech.earth.top.02" d="200" />
+		<frame i="spriteimage.character.tech.earth.top.03" d="200" />
+	</animation>
+	<animation name="tech.earth.mouth.consonant.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.tech.earth.top.04" d="200" />
+		<frame i="spriteimage.character.tech.earth.top.05" d="200" />
+	</animation>
+
+
+	<character
+		name="earth.tech.char"
+		inherit="tech.char"
+		bubble="earth.human-speech.background"
+		color="earth.colormap:text"
+		boldColor="earth.colormap:text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="4" animation="tech.earth.head.idle.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" animation="tech.earth.body.idle.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.earth.01"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.5">
+				<sprite layer="4" animation="tech.earth.head.talk.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" animation="tech.earth.body.talk.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.earth.01"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<frame i="spriteimage.character.tech.earth.top.01" d="1" />
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.earth.top.02" d="200" />
+				<frame i="spriteimage.character.tech.earth.top.03" d="200" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.earth.top.04" d="200" />
+				<frame i="spriteimage.character.tech.earth.top.05" d="200" />
+			</animation>
+		</consonantAppearance>
+	</character>
+
+	<character
+		name="earth.tech-left.char"
+		inherit="earth.tech.char"
+		bubble="earth.human-speech-right.background"
+	>
+	</character>
+
+	<character
+		name="earth.tech-gidrah.char"
+		inherit="earth.tech.char"
+		bubble="earth.human-speech-left.background"
+	>
+	</character>
+
+
+
+
+
+	<!-- GENERAL BUILDINGS ============================================================================================================================ -->
+
+	
+	<character
+		name="earth.factory.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.factory.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.factory.01"/>
+				<sprite layer="12" image="spriteimage.info.factory.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.factory.top.01" colored="earth.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.capacitor.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.capacitor.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.capacitor.01"/>
+				<sprite layer="12" image="spriteimage.info.capacitor.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.reactor.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.reactor.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.reactor.01"/>
+				<sprite layer="12" image="spriteimage.info.reactor.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.shieldgenerator.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.shield.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.shield.01"/>
+				<sprite layer="12" image="spriteimage.info.shield.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="earth.warehouse.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.warehouse.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.warehouse.01"/>
+				<sprite layer="12" image="spriteimage.info.warehouse.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.warehouse.top.01" colored="earth.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="earth.barracks.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barracks.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.barracks.01"/>
+				<sprite layer="12" image="spriteimage.info.barracks.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.barracks.top.01" colored="earth.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="earth.collector.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.collector.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.collector.01"/>
+				<sprite layer="12" image="spriteimage.info.collector.top.01" colored="earth.colormap:info-alt" />
+				<sprite layer="12" image="spriteimage.info.collector.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="earth.scanner.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.scanner.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.scanner.01"/>
+				<sprite layer="12" image="spriteimage.info.scanner.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="earth.battery.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.battery.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.battery.01"/>
+				<sprite layer="12" image="spriteimage.info.battery.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+		
+	<character
+		name="earth.cooling.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.cooling.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.cooling.01"/>
+				<sprite layer="12" image="spriteimage.info.cooling.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.cooling.top.01" colored="earth.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.autoloader.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.autoloader.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.autoloader.01"/>
+				<sprite layer="12" image="spriteimage.info.autoloader.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="earth.decoy.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.decoy.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.decoy.01"/>
+				<sprite layer="12" image="spriteimage.info.decoy.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="earth.tangleweb.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tangleweb.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tangleweb.01"/>
+				<sprite layer="12" image="spriteimage.info.tangleweb.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="earth.tankfactory.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="earth.repairdrones.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.scarecrow.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.cloakingdevice.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+	
+	
+	<!-- MINES ============================================================================================================================ -->
+	
+	<character
+		name="earth.mine.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.mine.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.mine.01"/>
+				<sprite layer="12" image="spriteimage.info.mine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	
+	<character
+		name="earth.clustermines.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.clustermine.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.clustermine.02"/>
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.clustermine.01"/>
+				<sprite layer="12" image="spriteimage.info.clustermine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	
+	<character
+		name="earth.blastmine.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.blastmine.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.blastmine.01"/>
+				<sprite layer="12" image="spriteimage.info.blastmine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	
+
+	<!-- BARRICADES ============================================================================================================================ -->
+
+	
+	<character
+		name="earth.concrete.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.concrete.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.barricade.concrete.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.concrete.top.01" colored="earth.colormap:info-alt" />
+		</layers></idleLayers>
+	</character>
+		
+	<character
+		name="earth.steel.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.steel.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.barricade.steel.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.steel.top.01" colored="earth.colormap:info-alt" />
+				<sprite layer="12" image="spriteimage.info.barricade.steel.glow.01" colored="earth.colormap:info-metal" />
+		</layers></idleLayers>
+	</character>
+	
+	<character
+		name="earth.titanium.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.titanium.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.barricade.titanium.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.titanium.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.titanium.top.01" colored="earth.colormap:info-metal" />
+		</layers></idleLayers>
+	</character>
+	
+	<character
+		name="earth.nanomesh.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.nanomesh.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.barricade.nanomesh.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.nanomesh.glow.01"/>
+		</layers></idleLayers>
+	</character>
+	
+	
+	
+	<!-- TURRETS ============================================================================================================================ -->	
+	
+	
+	<character
+		name="earth.blaster.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.blaster.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.blaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.blaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.heavyblaster.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.heavyblaster.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.heavyblaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.heavyblaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="earth.blastcannon.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.blastcannon.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.blastcannon.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.blastcannon.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="earth.multiblaster.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.multiblaster.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.multiblaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.multiblaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="earth.shotgun.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.spreader.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.spreader.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.spreader.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="earth.assault.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.assault.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.assault.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.assault.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="earth.rocket.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.rockets.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.rockets.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.rockets.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="earth.laser.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.laser.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.laser.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.laser.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+		
+
+	<character
+		name="earth.disruptor.char"
+		inherit="earth.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.disruptor.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tower.disruptor.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.disruptor.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.disruptor.top.01" colored="earth.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<!-- TECH ============================================================================================================================ -->	
+	
+	<character name="earth.tech.physics.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.physics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.physics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.physics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.biology.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.biology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.biology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.biology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.chemistry.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.chemistry.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.chemistry.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.chemistry.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.efficiency.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.efficiency.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.efficiency.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.efficiency.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.psychology.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.psychology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.psychology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.psychology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.nuclear.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nuclear.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nuclear.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nuclear.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.explosives.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.explosives.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.explosives.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.explosives.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.textiles.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.textiles.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.textiles.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.textiles.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.automation.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.automation.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.automation.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.automation.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.barometrics.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.barometrics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.barometrics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.barometrics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.optics.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.optics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.optics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.optics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.ballistics.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.ballistics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.ballistics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.ballistics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.robotics.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.robotics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.robotics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.robotics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.forcefields.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.forcefields.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.forcefields.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.forcefields.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.anatomy.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.anatomy.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.anatomy.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.anatomy.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.extraction.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.extraction.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extraction.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.extraction.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+
+	<!--  new techs -->
+
+	<character name="earth.tech.ionisation.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.ionisation.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.ionisation.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.ionisation.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.lithium.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.lithium.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.lithium.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.lithium.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.sodium.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.sodium.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.sodium.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.sodium.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.precision.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.precision.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.precision.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.precision.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.advancedexplosives.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.advancedexplosives.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.advancedexplosives.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.advancedexplosives.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.plastic.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.plastic.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.plastic.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.plastic.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.nanohardening.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nanohardening.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nanohardening.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nanohardening.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.finetuning.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.finetuning.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.finetuning.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.finetuning.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.droidbuff.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.droidbuff.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.droidbuff.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.droidbuff.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.nanotechnology.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nanotechnology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nanotechnology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nanotechnology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.splitter.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.splitter.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.splitter.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.splitter.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.multibarrel.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.multibarrel.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.multibarrel.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.multibarrel.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.amplifiers.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.amplifiers.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.amplifiers.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.amplifiers.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.lasertech.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.lasertech.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.lasertech.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.lasertech.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.shells.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.shells.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.shells.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.shells.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.shielding.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.shielding.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.shielding.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.shielding.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.xrays.char" inherit="earth.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.xrays.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.xrays.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.xrays.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+
+
+	<character name="earth.tech.coffee.char" inherit="earth.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.coffee.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.coffee.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.coffee.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.strongercoffee.char" inherit="earth.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.strongercoffee.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.strongercoffee.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.strongercoffee.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.grant.char" inherit="earth.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.grant.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.grant.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.grant.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.reinforcements.char" inherit="earth.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.reinforcements.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.reinforcements.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.reinforcements.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.extrabarricades.char" inherit="earth.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.extrabarricades.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extrabarricades.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.extrabarricades.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="earth.tech.extramines.char" inherit="earth.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.extramines.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extramines.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.extramines.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="earth.tech.powerups.char" inherit="earth.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="earth.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.powerups.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.powerups.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.powerups.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	
+</resources>

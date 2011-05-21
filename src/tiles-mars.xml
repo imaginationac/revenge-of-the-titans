@@ -1,0 +1,1111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Earth tiles -->
+<resources>
+	<tileset name="mars.tileset" description="Mars Tiles" default_="">
+
+
+<!-- temp stuff -->	
+
+<animation name="mars.pyramid.medium.glow.01.anim">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.mars.pyramid.medium.glow.01" d="1"/>
+		<frame i="hud.phase.20%.animation" d="1"/>
+</animation>
+
+<emitter
+	name="mars.ruins.test.emitter"
+	duration="10.0, 100.0"
+	infinite="true"
+	particlesPerTick="1.0"
+	appearance="spriteimage.particle.light.64px.02"
+	layer="6"
+	radius="0.0, 4.0"
+	startScale="0.3"
+	scale="0.4, 0.6"
+	endScale="0.8, 1.0"
+	particleDuration="1.0"
+	fadeDuration="1.0"
+	startHue="0.2"
+	startSaturation="1.0"
+	startBrightness="0.8, 1.0"
+	endHue="0.25"
+	endSaturation="1.0"
+	endBrightness="0.5, 1.0"
+	delayAfter="10.0, 50.0"
+	emitterScale="0.3"
+	inherit="weapon.flash.capacitor.emitter"
+>
+	<slave>
+		<emitter
+			duration="1.0"
+			particlesPerTick="-1.0, 1.0"
+			appearance="spriteimage.particle.light.64px.02"
+			layer="6"
+			startScale="0.3"
+			scale="0.4, 1.0"
+			endScale="0.3, 0.5"
+			particleDuration="1.0, 3.0"
+			fadeDuration="2.0, 8.0"
+			startHue="0.2"
+			startSaturation="0.5, 1.0"
+			startBrightness="0.4"
+			endHue="0.25"
+			endSaturation="1.0"
+			endBrightness="0.2, 0.4"
+			emitterScale="1.0"
+			inherit="weapon.flash.capacitor.emitter"
+		>
+			<slave>
+				<emitter
+					duration="1.0"
+					particlesPerTick="-2.0, 1.0"
+					appearance="spriteimage.particle.glowing.3px.01"
+					layer="5"
+					subLayer="6"
+					velocity="6.0, 10.0"
+					acceleration="-0.75"
+					radius="1.0, 2.0"
+					startScale="0.8, 1.0"
+					scale="0.7, 0.8"
+					endScale="0.6"
+					gravityY="-0.01, -0.02"
+					particleDuration="5.0, 20.0"
+					fadeDuration="5.0"
+					startHue="0.2"
+					startSaturation="1.0"
+					startBrightness="1.0"
+					endHue="0.25"
+					endSaturation="1.0"
+					endBrightness="1.0"
+					angle="0.0, 90.0"
+					rotate="true"
+					relativeRotate="true"
+					interpolation="1"
+					emitterScale="0.6"
+					doYOffset="true"
+					inherit="ricochet.sparks.emitter"
+				>
+					<slave>
+						<emitter
+							duration="12.0"
+							particlesPerTick="1.0"
+							appearance="spriteimage.particle.glowing.3px.01"
+							layer="5"
+							subLayer="6"
+							startScale="0.8"
+							scale="0.7"
+							endScale="0.6"
+							particleDuration="2.0"
+							fadeDuration="5.0"
+							startHue="0.2"
+							startSaturation="1.0"
+							startBrightness="1.0"
+							endHue="0.25"
+							endSaturation="1.0"
+							endBrightness="0.3"
+							interpolation="2"
+							emitterScale="0.55"
+							inherit="ricochet.sparks.trail.emitter"
+						/>
+					</slave>
+				</emitter>
+			</slave>
+		</emitter>
+	</slave>
+</emitter>
+
+
+
+
+
+		<include resource="volcanoes.xml" />
+		<include resource="ruins-mars.xml" />
+
+		<!-- Only easy gidrahs come from mid spawnpoints -->		
+		<spawnpoint name="spawnpoint.mid.mars" i="29036" layer="2" xoffset="0" yoffset="0" type="1">
+			<random>
+				<array>
+					<item>spawnpoint.mid.mars.01</item>
+					<item>spawnpoint.mid.mars.02</item>
+					<item>spawnpoint.mid.mars.03</item>
+				</array>
+			</random>
+		</spawnpoint>
+
+
+		<spawnpoint name="spawnpoint.mid.mars.01" i="29037" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="spawner.mars.emitter" offset="17,0" ySortOffset="6"  />
+				<sprite layer="4" sublayer="0" offset="-32,11" ySortOffset="11" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="4" sublayer="0" offset="64,9" ySortOffset="9" colored="crater" attenuated="true" image="spriteimage.crater.tiny.04" />
+				<sprite layer="4" sublayer="0" offset="16,2" ySortOffset="2" colored="crater" attenuated="true" image="spriteimage.volcano.05" />
+				<sprite layer="4" sublayer="0" offset="55,-17" ySortOffset="-17" colored="crater" attenuated="true" image="spriteimage.crater.tiny.05" />
+				<sprite layer="4" sublayer="0" offset="-27,-17" ySortOffset="-17" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="4" sublayer="0" offset="-1,-19" ySortOffset="-19" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="4" sublayer="1" offset="-32,11" ySortOffset="11" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="4" sublayer="1" offset="64,9" ySortOffset="9" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.04" />
+				<sprite layer="4" sublayer="1" offset="16,2" ySortOffset="2" bottomColored="volcano" topColored="volcano-top" attenuated="true" image="spriteimage.volcano.top.05" />
+				<sprite layer="4" sublayer="1" offset="-27,-17" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="4" sublayer="1" offset="55,-17" ySortOffset="-17" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.05" />
+				<sprite layer="4" sublayer="1" offset="-1,-19" ySortOffset="-19" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="5" sublayer="6" offset="16,2" bottomColored="volcano" topColored="volcano-top" attenuated="true" image="spriteimage.volcano.glow.05" />
+				<sprite layer="13" sublayer="0" offset="16,16" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+		<spawnpoint name="spawnpoint.mid.mars.02" i="29038" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="spawner.mars.emitter" offset="17,0" ySortOffset="6"  />
+				<sprite layer="4" sublayer="0" offset="-33,8" ySortOffset="8" colored="crater" attenuated="true" image="spriteimage.crater.tiny.05" />
+				<sprite layer="4" sublayer="0" offset="61,7" ySortOffset="7" colored="crater" attenuated="true" image="spriteimage.crater.tiny.04" />
+				<sprite layer="4" sublayer="0" offset="16,2" ySortOffset="2" colored="crater" attenuated="true" image="spriteimage.volcano.05" />
+				<sprite layer="4" sublayer="0" offset="60,-16" ySortOffset="-16" colored="crater" attenuated="true" image="spriteimage.crater.small.05" />
+				<sprite layer="4" sublayer="0" offset="-11,-23" ySortOffset="-23" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="4" sublayer="0" offset="34,-31" ySortOffset="-31" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="4" sublayer="1" offset="-33,8" ySortOffset="8" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.05" />
+				<sprite layer="4" sublayer="1" offset="61,7" ySortOffset="7" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.04" />
+				<sprite layer="4" sublayer="1" offset="16,2" ySortOffset="2" bottomColored="volcano" topColored="volcano-top" attenuated="true" image="spriteimage.volcano.top.05" />
+				<sprite layer="4" sublayer="1" offset="60,-16" ySortOffset="-16" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.05" />
+				<sprite layer="4" sublayer="1" offset="-11,-23" ySortOffset="-23" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="4" sublayer="1" offset="34,-31" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="5" sublayer="6" offset="16,2" bottomColored="volcano" topColored="volcano-top" attenuated="true" image="spriteimage.volcano.glow.05" />
+				<sprite layer="13" sublayer="0" offset="16,16" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+		<spawnpoint name="spawnpoint.mid.mars.03" i="29039" layer="2" type="1" ><layers><layers scale="0.5">
+				<emitter emitter="spawner.mars.emitter" offset="17,0" ySortOffset="6"  />
+				<sprite layer="4" sublayer="0" offset="63,15" ySortOffset="15" colored="crater" attenuated="true" image="spriteimage.crater.small.01" />
+				<sprite layer="4" sublayer="0" offset="16,2" ySortOffset="2" colored="crater" attenuated="true" image="spriteimage.volcano.05" />
+				<sprite layer="4" sublayer="0" offset="-44,-2" ySortOffset="-2" colored="crater" attenuated="true" image="spriteimage.crater.tiny.04" />
+				<sprite layer="4" sublayer="0" offset="62,-19" ySortOffset="-19" colored="crater" attenuated="true" image="spriteimage.crater.tiny.01" />
+				<sprite layer="4" sublayer="0" offset="-32,-20" ySortOffset="-20" colored="crater" attenuated="true" image="spriteimage.crater.tiny.06" />
+				<sprite layer="4" sublayer="0" offset="42,-25" ySortOffset="-25" colored="crater" attenuated="true" image="spriteimage.crater.small.02" />
+				<sprite layer="4" sublayer="1" offset="63,15" ySortOffset="15" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.01" />
+				<sprite layer="4" sublayer="1" offset="16,2" ySortOffset="2" bottomColored="volcano" topColored="volcano-top" attenuated="true" image="spriteimage.volcano.top.05" />
+				<sprite layer="4" sublayer="1" offset="-44,-2" ySortOffset="-2" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.04" />
+				<sprite layer="4" sublayer="1" offset="62,-19" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.01" />
+				<sprite layer="4" sublayer="1" offset="-32,-20" ySortOffset="-20" colored="crater-top" attenuated="true" image="spriteimage.crater.tiny.top.06" />
+				<sprite layer="4" sublayer="1" offset="42,-25" ySortOffset="-25" colored="crater-top" attenuated="true" image="spriteimage.crater.small.top.02" />
+				<sprite layer="5" sublayer="6" offset="16,2" bottomColored="volcano" topColored="volcano-top" attenuated="true" image="spriteimage.volcano.glow.05" />
+				<sprite layer="13" sublayer="0" offset="16,16" attenuated="false" animation="alert.ping.anim" />
+		</layers></layers></spawnpoint>
+
+		
+		
+		<!--  STANDARD FLOOR ========================================================================================================================== -->
+			
+		
+		<!--  ALT FLOOR ========================================================================================================================== -->
+		
+		<floor name="mars.floor.1" i="21100" >
+			<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+			<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>  
+		</floor>
+		
+		<!--  WALL EDGE FLOOR ========================================================================================================================== -->
+					
+		<floor name="mars.floor.2" i="21200" image="tiles.floor.1.2" colored="floor">
+			<random>
+				<array>
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					<item>mars.floor.2.1.01</item>
+					<item>mars.floor.2.1.02</item>
+					<item>mars.floor.2.1.03</item>
+					<item>mars.floor.2.1.04</item>
+
+					
+					<item>mars.floor.2.2.01</item>
+					<item>mars.floor.2.2.02</item>
+					<item>mars.floor.2.2.03</item>
+					<item>mars.floor.2.2.04</item>
+					<item>mars.floor.2.2.05</item>
+					<item>mars.floor.2.2.06</item>
+					<item>mars.floor.2.2.07</item>
+					<item>mars.floor.2.2.08</item>					
+
+					<item>mars.floor.2.2.01</item>
+					<item>mars.floor.2.2.02</item>
+					<item>mars.floor.2.2.03</item>
+					<item>mars.floor.2.2.04</item>
+					<item>mars.floor.2.2.05</item>
+					<item>mars.floor.2.2.06</item>
+					<item>mars.floor.2.2.07</item>
+					<item>mars.floor.2.2.08</item>		
+
+
+					<item>mars.floor.2.3.01</item>
+					<item>mars.floor.2.3.02</item>
+					<item>mars.floor.2.3.03</item>
+					<item>mars.floor.2.3.04</item>
+					<item>mars.floor.2.3.05</item>
+					<item>mars.floor.2.3.06</item>
+					<item>mars.floor.2.3.07</item>
+					<item>mars.floor.2.3.08</item>		
+					
+				</array>
+			</random>
+		</floor>
+
+
+		<floor name="mars.floor.2.1.01" i="21201" image="tiles.floor.2.1" colored="floor"/>
+		<floor name="mars.floor.2.1.02" i="21202" image="tiles.floor.3.1" colored="floor"/>
+		<floor name="mars.floor.2.1.03" i="21203" image="tiles.floor.4.1" colored="floor"/>
+		<floor name="mars.floor.2.1.04" i="21204" image="tiles.floor.5.1" colored="floor"/>
+
+		<!-- cliff edge floor tex plus 1 scree tex -->
+
+		<floor name="mars.floor.2.2.01" i="21211" image="tiles.floor.0.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="6,6" image="spriteimage.pointy.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="6,6" ySortOffset="6" image="spriteimage.pointy.scree.tiny.01" colored="floor-alt" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="mars.floor.2.2.02" i="21212" image="tiles.floor.1.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="2,8" image="spriteimage.pointy.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,8" ySortOffset="8" image="spriteimage.pointy.scree.tiny.02" colored="floor-alt-edge" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.2.03" i="21213" image="tiles.floor.2.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,10" image="spriteimage.pointy.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,10" ySortOffset="10" image="spriteimage.pointy.scree.tiny.03" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.2.04" i="21214" image="tiles.floor.3.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="22,12" image="spriteimage.pointy.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="22,12" ySortOffset="12" image="spriteimage.pointy.scree.tiny.04" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.2.05" i="21215" image="tiles.floor.4.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,22" image="spriteimage.pointy.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,22" ySortOffset="22" image="spriteimage.pointy.scree.tiny.01" colored="floor-alt" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="mars.floor.2.2.06" i="21216" image="tiles.floor.5.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="23,29" image="spriteimage.pointy.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="23,29" ySortOffset="29" image="spriteimage.pointy.scree.tiny.02" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.2.07" i="21217" image="tiles.floor.6.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="3,27" image="spriteimage.pointy.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="3,27" ySortOffset="27" image="spriteimage.pointy.scree.tiny.03" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.2.08" i="21218" image="tiles.floor.7.2" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="9,21" image="spriteimage.pointy.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="9,21" ySortOffset="21" image="spriteimage.pointy.scree.tiny.04" colored="cliff-top-1" attenuated="true" />
+		</layers></layers></floor>	
+
+
+		<!-- cliff edge floor tex plus 2 scree tex -->
+		
+		<floor name="mars.floor.2.3.01" i="21231" image="tiles.floor.0.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="6,6" image="spriteimage.pointy.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="6,6" ySortOffset="6" image="spriteimage.pointy.scree.tiny.01" colored="cliff-1"  attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="16,2" image="spriteimage.pointy.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="16,2" ySortOffset="2" image="spriteimage.pointy.scree.tiny.01" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>
+		<floor name="mars.floor.2.3.02" i="21232" image="tiles.floor.1.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="2,8" image="spriteimage.pointy.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,8" ySortOffset="8" image="spriteimage.pointy.scree.tiny.02" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="10,4" image="spriteimage.pointy.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="10,4" ySortOffset="4" image="spriteimage.pointy.scree.tiny.02" colored="cliff-1" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.3.03" i="21233" image="tiles.floor.2.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,10" image="spriteimage.pointy.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,10" ySortOffset="10" image="spriteimage.pointy.scree.tiny.03" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="36,12" image="spriteimage.pointy.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="36,12" ySortOffset="12" image="spriteimage.pointy.scree.tiny.03" colored="cliff-1" attenuated="true" />		
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.3.04" i="21234" image="tiles.floor.3.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="22,12" image="spriteimage.pointy.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="22,12" ySortOffset="12" image="spriteimage.pointy.scree.tiny.04" colored="cliff-top-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="32,10" image="spriteimage.pointy.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="32,10" ySortOffset="10" image="spriteimage.pointy.scree.tiny.04" colored="cliff-1" attenuated="true" />			
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.3.05" i="21235" image="tiles.floor.4.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="28,22" image="spriteimage.pointy.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="28,22" ySortOffset="22" image="spriteimage.pointy.scree.tiny.01" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="40,12" image="spriteimage.pointy.scree.tiny.ground.01" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="40,12" ySortOffset="12" image="spriteimage.pointy.scree.tiny.01" colored="floor-alt-edge" attenuated="true" />			
+		</layers></layers></floor>
+		<floor name="mars.floor.2.3.06" i="21236" image="tiles.floor.5.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="23,29" image="spriteimage.pointy.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="23,29" ySortOffset="29" image="spriteimage.pointy.scree.tiny.02" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="16,20" image="spriteimage.pointy.scree.tiny.ground.02" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="16,20" ySortOffset="20" image="spriteimage.pointy.scree.tiny.02" colored="floor-alt" attenuated="true" />			
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.3.07" i="21237" image="tiles.floor.6.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="3,27" image="spriteimage.pointy.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="3,27" ySortOffset="27" image="spriteimage.pointy.scree.tiny.03" colored="cliff-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="5,43" image="spriteimage.pointy.scree.tiny.ground.03" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="5,43" ySortOffset="43" image="spriteimage.pointy.scree.tiny.03" colored="floor-alt" attenuated="true" />
+		</layers></layers></floor>		
+		<floor name="mars.floor.2.3.08" i="21238" image="tiles.floor.7.3" colored="floor"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" offset="9,21" image="spriteimage.pointy.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="9,21" ySortOffset="21" image="spriteimage.pointy.scree.tiny.04" colored="cliff-top-1" attenuated="true" />
+			<sprite layer="3" sublayer="1" offset="2,27" image="spriteimage.pointy.scree.tiny.ground.04" colored="shadow" attenuated="true" />	
+			<sprite layer="5" sublayer="2" offset="2,27" ySortOffset="27" image="spriteimage.pointy.scree.tiny.04" colored="floor-alt-edge" attenuated="true" />			
+		</layers></layers></floor>			
+		
+		
+		
+		
+		<!-- FLOOR 3 - not used at the mo ========================================================================================================================== 	-->	
+		
+
+
+
+		<!--  OBSTACLES ========================================================================================================================== -->
+
+			
+
+
+
+
+
+		<!--  ROADS  ========================================================================================================================== -->
+
+
+		<detail name="mars.road.0" i="21600" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.0.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.0.0" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.1" i="21601" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.1.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.1.0" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.2" i="21602" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.2.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.2.0" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="mars.road.3" i="21603" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.3.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.3.0" colored="road-in"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>mars.road.3</item>
+					<item>mars.road.3.01</item>
+					<item>mars.road.3.02</item>
+					<item>mars.road.3.03</item>
+				</array>
+			</random>
+		</detail>
+		
+		<detail name="mars.road.4" i="21604" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.4.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.4.0" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<!--  vertical -->
+		
+		<detail name="mars.road.5" i="21605" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.5.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.5.0" colored="road-in"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>mars.road.5</item>
+					<item>mars.road.5.01</item>
+					<item>mars.road.5.02</item>
+					<item>mars.road.5.03</item>
+					<item>mars.road.5.04</item>
+					<item>mars.road.5.05</item>
+					<item>mars.road.5.06</item>
+					<item>mars.road.5.07</item>
+					<item>mars.road.5.08</item>
+					<item>mars.road.5.09</item>
+					<item>mars.road.5.10</item>
+				</array>
+			</random>
+		</detail>
+	
+
+		
+		<detail name="mars.road.6" i="21606" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.6.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.6.0" colored="road-in"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>mars.road.6</item>
+					<item>mars.road.6.01</item>
+					<item>mars.road.6.02</item>
+					<item>mars.road.6.03</item>
+				</array>
+			</random>
+		</detail>
+	
+		<detail name="mars.road.7" i="21607" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.7.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.7.0" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.8" i="21608" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.8.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.8.0" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="mars.road.9" i="21609" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.9.0" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.9.0" colored="road-in"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>mars.road.9</item>
+					<item>mars.road.9.01</item>
+					<item>mars.road.9.02</item>
+					<item>mars.road.9.03</item>
+				</array>
+			</random>
+		</detail>
+		
+		<!--  horizontal -->
+		
+		<detail name="mars.road.10" i="21610" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.0.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.0.1" colored="road-in"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>mars.road.10</item>
+					<item>mars.road.10.01</item>
+					<item>mars.road.10.02</item>
+					<item>mars.road.10.03</item>
+					<item>mars.road.10.04</item>
+					<item>mars.road.10.05</item>
+					<item>mars.road.10.06</item>
+					<item>mars.road.10.07</item>
+					<item>mars.road.10.08</item>
+					<item>mars.road.10.09</item>
+					<item>mars.road.10.10</item>
+				</array>
+			</random>
+		</detail>
+		
+		
+		
+		<detail name="mars.road.11" i="21611" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.1.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.1.1" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="mars.road.12" i="21612" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.2.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.2.1" colored="road-in"/>
+			</layers></layers>
+			<random>
+				<array>
+					<item>mars.road.12</item>
+					<item>mars.road.12.01</item>
+					<item>mars.road.12.02</item>
+					<item>mars.road.12.03</item>
+				</array>
+			</random>
+		</detail>
+		
+		<detail name="mars.road.13" i="21613" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.3.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.3.1" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.14" i="21614" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.4.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.4.1" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.15" i="21615" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.5.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.5.1" colored="road-in"/>
+		</layers></layers></detail>
+
+
+		<!--  random horizontal -->
+
+
+
+		<detail name="mars.road.10.01" i="21620" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.0.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.0.3" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.10.02" i="21621" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.1.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.1.3" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.10.03" i="21622" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.2.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.2.3" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.10.04" i="21623" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.3.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.3.3" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.10.05" i="21624" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.4.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.4.3" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.10.06" i="21625" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.5.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.5.3" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.10.07" i="21626" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.6.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.6.3" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.10.08" i="21627" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.7.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.7.3" colored="road-in"/>
+		</layers></layers></detail>		
+		<detail name="mars.road.10.09" i="21628" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.8.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.8.3" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.10.10" i="21629" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.9.3" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.9.3" colored="road-in"/>
+		</layers></layers></detail>				
+		
+
+		<!--  random vertical -->
+
+		<detail name="mars.road.5.01" i="21640" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.0.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.0.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.02" i="21641" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.1.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.1.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.03" i="21642" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.2.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.2.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.04" i="21643" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.3.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.3.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.05" i="21644" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.4.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.4.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.06" i="21645" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.5.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.5.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.07" i="21646" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.6.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.6.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.08" i="21647" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.7.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.7.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.09" i="21648" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.8.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.8.2" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.5.10" i="21649" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.9.2" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.9.2" colored="road-in"/>
+		</layers></layers></detail>
+
+
+
+		<!--  random corners -->
+
+		<detail name="mars.road.3.01" i="21650" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.0.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.0.4" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.3.02" i="21651" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.1.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.1.4" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.3.03" i="21652" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.2.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.2.4" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="mars.road.6.01" i="21653" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.3.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.3.4" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.6.02" i="21654" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.4.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.4.4" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.6.03" i="21655" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.5.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.5.4" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="mars.road.9.01" i="21656" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.6.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.6.4" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.9.02" i="21657" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.7.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.7.4" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.9.03" i="21658" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.8.4" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.8.4" colored="road-in"/>
+		</layers></layers></detail>
+		
+		<detail name="mars.road.12.01" i="21659" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.6.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.6.1" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.12.02" i="21660" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.7.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.7.1" colored="road-in"/>
+		</layers></layers></detail>
+		<detail name="mars.road.12.03" i="21661" layer="1"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.mars.back.8.1" colored="road-out"/>
+			<sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.mars.top.8.1" colored="road-in"/>
+		</layers></layers></detail>
+
+	</tileset>
+
+
+
+
+	<!--  WALLS ========================================================================================================================== -->
+
+
+		<wall name="mars.wall.master.1" i="20081" layer="2">
+			<random>
+				<array>
+					<item>mars.wall.small.1.01</item>
+					<item>mars.wall.small.1.02</item>
+					<item>mars.wall.small.1.03</item>	
+					<item>mars.wall.small.1.04</item>
+					<item>mars.wall.small.1.05</item>
+					<item>mars.wall.small.1.06</item>
+					<item>mars.wall.small.1.07</item>	
+					<item>mars.wall.small.1.08</item>
+					<item>mars.wall.small.2.01</item>
+					<item>mars.wall.small.2.02</item>
+					<item>mars.wall.small.2.03</item>	
+					<item>mars.wall.small.2.04</item>
+					<item>mars.wall.small.2.05</item>
+					<item>mars.wall.small.2.06</item>
+					<item>mars.wall.small.2.07</item>	
+					<item>mars.wall.small.2.08</item>
+					<item>mars.wall.small.3.01</item>
+					<item>mars.wall.small.3.02</item>
+					<item>mars.wall.small.3.03</item>	
+					<item>mars.wall.small.3.04</item>
+					<item>mars.wall.small.3.05</item>
+					<item>mars.wall.small.3.06</item>
+					<item>mars.wall.small.3.07</item>	
+					<item>mars.wall.small.3.08</item>																				
+				</array>
+			</random>
+		</wall>
+
+		<wall name="mars.wall.master.2" i="20082" layer="2">
+			<random>
+				<array>
+					<item>mars.wall.small.1.01</item>
+					<item>mars.wall.small.1.02</item>
+					<item>mars.wall.small.1.03</item>	
+					<item>mars.wall.small.1.04</item>
+					<item>mars.wall.small.1.05</item>
+					<item>mars.wall.small.1.06</item>
+					<item>mars.wall.small.1.07</item>	
+					<item>mars.wall.small.1.08</item>
+					<item>mars.wall.small.2.01</item>
+					<item>mars.wall.small.2.02</item>
+					<item>mars.wall.small.2.03</item>	
+					<item>mars.wall.small.2.04</item>
+					<item>mars.wall.small.2.05</item>
+					<item>mars.wall.small.2.06</item>
+					<item>mars.wall.small.2.07</item>	
+					<item>mars.wall.small.2.08</item>
+					<item>mars.wall.small.3.01</item>
+					<item>mars.wall.small.3.02</item>
+					<item>mars.wall.small.3.03</item>	
+					<item>mars.wall.small.3.04</item>
+					<item>mars.wall.small.3.05</item>
+					<item>mars.wall.small.3.06</item>
+					<item>mars.wall.small.3.07</item>	
+					<item>mars.wall.small.3.08</item>	
+					
+					<item>mars.wall.medium.1.01</item>																									
+					<item>mars.wall.medium.1.02</item>					
+					<item>mars.wall.medium.1.03</item>					
+					<item>mars.wall.medium.1.04</item>					
+					<item>mars.wall.medium.1.05</item>					
+					<item>mars.wall.medium.1.06</item>					
+					<item>mars.wall.medium.1.07</item>					
+					<item>mars.wall.medium.1.08</item>	
+					<item>mars.wall.medium.2.01</item>																									
+					<item>mars.wall.medium.2.02</item>					
+					<item>mars.wall.medium.2.03</item>					
+					<item>mars.wall.medium.2.04</item>					
+					<item>mars.wall.medium.2.05</item>					
+					<item>mars.wall.medium.2.06</item>					
+					<item>mars.wall.medium.2.07</item>					
+					<item>mars.wall.medium.2.08</item>	
+
+					<item>mars.wall.medium.1.01</item>																									
+					<item>mars.wall.medium.1.02</item>					
+					<item>mars.wall.medium.1.03</item>					
+					<item>mars.wall.medium.1.04</item>					
+					<item>mars.wall.medium.1.05</item>					
+					<item>mars.wall.medium.1.06</item>					
+					<item>mars.wall.medium.1.07</item>					
+					<item>mars.wall.medium.1.08</item>	
+					<item>mars.wall.medium.2.01</item>																									
+					<item>mars.wall.medium.2.02</item>					
+					<item>mars.wall.medium.2.03</item>					
+					<item>mars.wall.medium.2.04</item>					
+					<item>mars.wall.medium.2.05</item>					
+					<item>mars.wall.medium.2.06</item>					
+					<item>mars.wall.medium.2.07</item>					
+					<item>mars.wall.medium.2.08</item>	
+					
+					<item>mars.wall.medium.1.01</item>																									
+					<item>mars.wall.medium.1.02</item>					
+					<item>mars.wall.medium.1.03</item>					
+					<item>mars.wall.medium.1.04</item>					
+					<item>mars.wall.medium.1.05</item>					
+					<item>mars.wall.medium.1.06</item>					
+					<item>mars.wall.medium.1.07</item>					
+					<item>mars.wall.medium.1.08</item>	
+					<item>mars.wall.medium.2.01</item>																									
+					<item>mars.wall.medium.2.02</item>					
+					<item>mars.wall.medium.2.03</item>					
+					<item>mars.wall.medium.2.04</item>					
+					<item>mars.wall.medium.2.05</item>					
+					<item>mars.wall.medium.2.06</item>					
+					<item>mars.wall.medium.2.07</item>					
+					<item>mars.wall.medium.2.08</item>											
+				</array>
+			</random>
+		</wall>
+
+		<wall name="mars.wall.master.3" i="20083" layer="2">
+			<random>
+				<array>
+					<item>mars.wall.medium.1.01</item>																									
+					<item>mars.wall.medium.1.02</item>					
+					<item>mars.wall.medium.1.03</item>					
+					<item>mars.wall.medium.1.04</item>					
+					<item>mars.wall.medium.1.05</item>					
+					<item>mars.wall.medium.1.06</item>					
+					<item>mars.wall.medium.1.07</item>					
+					<item>mars.wall.medium.1.08</item>	
+					<item>mars.wall.medium.2.01</item>																									
+					<item>mars.wall.medium.2.02</item>					
+					<item>mars.wall.medium.2.03</item>					
+					<item>mars.wall.medium.2.04</item>					
+					<item>mars.wall.medium.2.05</item>					
+					<item>mars.wall.medium.2.06</item>					
+					<item>mars.wall.medium.2.07</item>					
+					<item>mars.wall.medium.2.08</item>	
+					
+					<item>mars.wall.cliff.01</item> 
+					<item>mars.wall.cliff.02</item>
+					<item>mars.wall.cliff.03</item>
+					<item>mars.wall.cliff.04</item>
+					<item>mars.wall.cliff.05</item>
+					<item>mars.wall.cliff.06</item>
+					<item>mars.wall.cliff.07</item>					
+					<item>mars.wall.cliff.08</item> 
+					<item>mars.wall.cliff.09</item>
+					<item>mars.wall.cliff.10</item>
+					<item>mars.wall.cliff.11</item>
+					<item>mars.wall.cliff.12</item>
+					<item>mars.wall.cliff.13</item>
+					<item>mars.wall.cliff.14</item>																
+				</array>
+			</random>
+		</wall>
+
+		<wall name="mars.cave.master.1" i="20085" layer="2">
+			<random>
+				<array>
+					<item>mars.cave.internal.test</item> 
+				</array>
+			</random>
+		</wall>
+
+
+
+	<tileset name="mars.walls" description="mars Walls" default_="">
+		<wall name="mars.wall.1" inherit="mars.wall.master.1" i="20101" layer="2" />
+		<wall name="mars.wall.2" inherit="mars.wall.master.1" i="20102" layer="2" />
+		<wall name="mars.wall.3" inherit="mars.wall.master.1" i="20103" layer="2" />
+		<wall name="mars.wall.4" inherit="mars.wall.master.1" i="20104" layer="2" />
+		<wall name="mars.wall.5" inherit="mars.wall.master.1" i="20105" layer="2" />		
+		<wall name="mars.wall.6" inherit="mars.wall.master.1" i="20106" layer="2" />	
+		<wall name="mars.wall.7" inherit="mars.wall.master.1" i="20107" layer="2" />
+		<wall name="mars.wall.8" inherit="mars.wall.master.1" i="20108" layer="2" />		
+		<wall name="mars.wall.9" inherit="mars.wall.master.2" i="20109" layer="2" />	
+	</tileset>	
+	
+	<tileset name="mars.internalWalls" description="mars Internal Walls" default_="">
+		<wall name="mars.internalWall.1" inherit="mars.wall.master.3" i="29011" layer="2" />
+		<wall name="mars.internalWall.2" inherit="mars.wall.master.3" i="29012" layer="2" />
+		<wall name="mars.internalWall.3" inherit="mars.wall.master.3" i="29013" layer="2" />	
+		<wall name="mars.internalWall.4" inherit="mars.wall.master.3" i="29014" layer="2" />
+		<wall name="mars.internalWall.5" inherit="mars.wall.master.3" i="29015" layer="2" />
+		<wall name="mars.internalWall.6" inherit="mars.wall.master.3" i="29016" layer="2" />
+		<wall name="mars.internalWall.7" inherit="mars.wall.master.3" i="29017" layer="2" />		
+		<wall name="mars.internalWall.8" inherit="mars.cave.master.1" i="29018" layer="2" />
+		<wall name="mars.internalWall.9" inherit="mars.cave.master.1" i="29019" layer="2" />
+	</tileset>
+
+
+ 
+	<wall name="mars.wall.spec" image="tiles.floor.1.0" colored="floor" i="20110"/>
+	<wall name="mars.wall.cliff.spec" image="tiles.floor.1.0" colored="floor" i="20111"/>
+	<wall name="mars.wall.internal.spec" image="tiles.floor.1.0" colored="floor" i="20112"/>
+	<wall name="mars.cave.internal.spec" image="tiles.floor.1.0" colored="shadow" i="20113"/>
+
+	<include resource="rocks-mars.xml"/>
+
+
+	<wall name="mars.cave.internal.test" inherit="mars.cave.internal.spec" i="20180"><layers><layers scale="0.5"></layers></layers></wall>
+
+  
+  
+ 	<!-- TRANSITION BETWEEN FLOOR AND ALT FLOOR ========================================================================================================================== -->
+  	
+  	
+ 	<wall name="mars.transition.master.1" i="20501" layer="0">
+		<random>
+			<array>
+				<item>mars.trans.1.small.01</item>
+				<item>mars.trans.1.small.02</item>
+				<item>mars.trans.1.small.03</item>
+				<item>mars.trans.1.small.04</item>
+				<item>mars.trans.1.small.05</item>
+				<item>mars.trans.1.small.06</item>
+				<item>mars.trans.1.small.07</item>
+				<item>mars.trans.1.small.08</item>
+				<item>mars.trans.1.small.09</item>
+				<item>mars.trans.1.small.10</item>																				
+			</array>
+		</random>
+	</wall>
+  	
+ 	<wall name="mars.transition.master.2" i="20502" layer="0">
+		<random>
+			<array>
+				<item>mars.trans.1.large.01</item>
+				<item>mars.trans.1.large.02</item>
+				<item>mars.trans.1.large.03</item>
+				<item>mars.trans.1.large.04</item>	
+				<item>mars.trans.1.large.05</item>
+				<item>mars.trans.1.large.06</item>
+				<item>mars.trans.1.large.07</item>
+				<item>mars.trans.1.large.08</item>
+				<item>mars.trans.1.large.09</item>
+				<item>mars.trans.1.large.10</item>
+				<item>mars.trans.1.large.10</item>					
+				<item>mars.trans.1.large.11</item>
+				<item>mars.trans.1.large.12</item>
+				<item>mars.trans.1.large.13</item>
+				<item>mars.trans.1.large.14</item>																			
+			</array>
+		</random>
+	</wall>
+	
+	  	
+  	
+	<tileset name="mars.transitions" description="mars Transitions" default_="">
+
+		<wall name="mars.transition.1" inherit="mars.transition.master.1" i="20511" layer="0" />
+		<wall name="mars.transition.2" inherit="mars.transition.master.1" i="20512" layer="0" />
+		<wall name="mars.transition.3" inherit="mars.transition.master.1" i="20513" layer="0" />		
+		<wall name="mars.transition.4" inherit="mars.transition.master.1" i="20514" layer="0" />		
+
+
+		<wall name="mars.transition.5" inherit="mars.transition.master.2" i="20515" layer="0" />
+		<wall name="mars.transition.6" inherit="mars.transition.master.2" i="20516" layer="0" />
+		<wall name="mars.transition.7" inherit="mars.transition.master.2" i="20517" layer="0" />		
+		<wall name="mars.transition.8" inherit="mars.transition.master.2" i="20518" layer="0" />		
+
+	</tileset>
+  
+<!--
+	<floor name="trans.spec" spec="true" layer="0"/>
+
+	<decal name="trans.bottom.spec" layer="1" image="spriteimage.trans.2.large.bottom.01" offset="0,0" colored="floor-alt-edge" attenuated="true"/>
+	<decal name="trans.top.spec" layer="2" image="spriteimage.trans.2.large.top.01" offset="0,0" colored="floor-alt" attenuated="true"/>
+-->
+
+	<floor name="mars.trans.1.small.01" i="28110" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.small.02" i="28111" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>	
+	<floor name="mars.trans.1.small.03" i="28112" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.small.04" i="28113" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+	<floor name="mars.trans.1.small.05" i="28114" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.small.06" i="28115" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+	<floor name="mars.trans.1.small.07" i="28116" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.small.08" i="28117" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+	<floor name="mars.trans.1.small.09" i="28118" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.small.10" i="28119" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+	
+
+	<floor name="mars.trans.1.large.01" i="28150" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.large.02" i="28151" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>	
+	<floor name="mars.trans.1.large.03" i="28152" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.large.04" i="28153" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+	<floor name="mars.trans.1.large.05" i="28154" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.large.06" i="28155" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+	<floor name="mars.trans.1.large.07" i="28156" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.large.08" i="28157" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+	<floor name="mars.trans.1.large.09" i="28158" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.large.10" i="28159" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+
+
+	<floor name="mars.trans.1.large.11" i="28180" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.large.12" i="28181" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>		
+	<floor name="mars.trans.1.large.13" i="28182" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>
+	</floor>
+	<floor name="mars.trans.1.large.14" i="28183" inherit="trans.spec">
+		<decal scale="0.5" inherit="trans.bottom.spec" image="spriteimage.trans.2.large.bottom.01" attenuated="true"/>
+		<decal scale="0.5" inherit="trans.top.spec" image="spriteimage.trans.2.large.top.01" attenuated="true"/>  
+	</floor>		
+
+
+
+
+
+</resources>
+
+

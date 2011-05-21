@@ -1,0 +1,2472 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!--  GUI resources -->
+
+<resources>
+
+
+	<!--  level select  -->
+
+	<property key="level_label_w" value="60" />
+	<property key="level_label_h" value="23" />
+	<property key="level_label_x_offset" value="-15" />
+	<property key="level_marker_size" value="20" />
+	<property key="level_connect_w" value="8" />
+	<property key="level_connect_y_offset" value="9" />
+
+
+	<animation name="level.marker.red.glow.animation">
+		
+		<animcolor a="0" d="0"/>
+		<frame i="spriteimage.level.marker.red.09" d="0" />
+				
+		<label id="delayBefore"/>
+		
+		<scale scale="0.5" d="2"/>
+		
+		<random>
+			<dest id="delayBefore" n="5"/>
+			<dest id="start" />
+		</random>
+		
+		<label id="start"/>
+		
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.level.marker.red.01" d="3" />
+		<frame i="spriteimage.level.marker.red.02" d="3" />
+		<frame i="spriteimage.level.marker.red.03" d="3" />
+		<frame i="spriteimage.level.marker.red.04" d="3" />
+		<frame i="spriteimage.level.marker.red.05" d="3" />
+		<frame i="spriteimage.level.marker.red.06" d="4" />
+		<scale scale="0.525"/>
+		<frame i="spriteimage.level.marker.red.07" d="5" />
+		<scale scale="0.55"/>
+		<frame i="spriteimage.level.marker.red.08" d="6" />
+		<scale scale="0.575"/>
+		<frame i="spriteimage.level.marker.red.09" d="7" />
+		<scale scale="0.6"/>
+		<animcolor a="245" d="5"/>
+		<animcolor a="235" d="5"/>
+		<scale scale="0.7"/>
+		<animcolor a="225" d="5"/>
+		<animcolor a="215" d="5"/>
+
+		<random>
+			<dest id="fade" n="5"/>
+			<dest id="start" />
+		</random>
+
+		<label id="fade"/>
+
+		<scale scale="0.8"/>		
+		<animcolor a="205" d="5"/>
+		<animcolor a="195" d="5"/>
+		<scale scale="0.95"/>			
+		<animcolor a="185" d="5"/>
+		<animcolor a="175" d="5"/>
+		<scale scale="1.1"/>			
+		<animcolor a="165" d="5"/>		
+		<animcolor a="155" d="5"/>	
+		<scale scale="1.3"/>
+		<animcolor a="145" d="5"/>
+		<animcolor a="135" d="5"/>
+		<scale scale="1.5"/>		
+		<animcolor a="115" d="5"/>
+		<scale scale="1.7"/>
+		<animcolor a="95" d="5"/>
+		<scale scale="1.9"/>			
+		<animcolor a="70" d="5"/>
+		<scale scale="2.1"/>
+		<animcolor a="40" d="5"/>
+		<scale scale="2.4"/>			
+		<animcolor a="20" d="5"/>				
+		<scale scale="2.8"/>
+		<animcolor a="10" d="5"/>	
+				
+		<animcolor a="0" d="50"/>
+		<animcolor a="255" d="0"/>
+		
+		
+		<label id="delayAfter"/>
+		
+		<scale scale="0.5" d="2"/>
+		
+		<random>
+			<dest id="delayAfter" n="10"/>
+			<dest id="start" />
+		</random>
+
+	</animation>
+
+
+	<animation name="level.marker.white.glow.animation">
+		
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.level.marker.white.01" d="999" />
+		<goto seq="1"/>
+		
+		<animcolor a="255" d="0"/>
+
+		<label id="delayBefore"/>
+		
+		<scale scale="0.5" d="2"/>
+		
+		<random>
+			<dest id="delayBefore" n="5"/>
+			<dest id="start" />
+		</random>
+		
+		<label id="start"/>
+		
+		<frame i="spriteimage.level.marker.white.01" d="3" />
+		<frame i="spriteimage.level.marker.white.02" d="3" />
+		<frame i="spriteimage.level.marker.white.03" d="3" />
+		<frame i="spriteimage.level.marker.white.04" d="3" />
+		<frame i="spriteimage.level.marker.white.05" d="3" />
+		<frame i="spriteimage.level.marker.white.06" d="4" />
+		<scale scale="0.525"/>
+		<frame i="spriteimage.level.marker.white.07" d="5" />
+		<scale scale="0.55"/>
+		<frame i="spriteimage.level.marker.white.08" d="6" />
+		<scale scale="0.575"/>
+		<frame i="spriteimage.level.marker.white.09" d="7" />
+		<scale scale="0.6"/>
+		<animcolor a="245" d="5"/>
+		<animcolor a="235" d="5"/>
+		<scale scale="0.7"/>
+		<animcolor a="225" d="5"/>
+		<animcolor a="215" d="5"/>
+		<scale scale="0.8"/>		
+		<animcolor a="205" d="5"/>
+		<animcolor a="195" d="5"/>
+		<scale scale="0.95"/>			
+		<animcolor a="185" d="5"/>
+		<animcolor a="175" d="5"/>
+		<scale scale="1.1"/>			
+		<animcolor a="165" d="5"/>		
+		<animcolor a="155" d="5"/>	
+		<scale scale="1.3"/>
+		<animcolor a="145" d="5"/>
+		<animcolor a="135" d="5"/>
+		<scale scale="1.5"/>		
+		<animcolor a="115" d="5"/>
+		<scale scale="1.7"/>
+		<animcolor a="95" d="5"/>
+		<scale scale="1.9"/>			
+		<animcolor a="70" d="5"/>
+		<scale scale="2.1"/>
+		<animcolor a="40" d="5"/>
+		<scale scale="2.4"/>			
+		<animcolor a="20" d="5"/>				
+		<scale scale="2.8"/>
+		<animcolor a="10" d="5"/>	
+		
+		<scale scale="0.5" d="0"/>		
+		<animcolor a="0" d="50"/>
+		<animcolor a="255" d="0"/>
+		
+		<goto id="start"/>
+
+	</animation>
+	
+	
+	<animation name="level.marker.white.glow.on.animation">
+		
+		<label id="start"/>
+		
+		<animcolor a="255" d="0"/>
+		<scale scale="0.7" d="0"/>
+
+		<frame i="spriteimage.level.marker.white.01" d="3" />
+		<frame i="spriteimage.level.marker.white.02" d="3" />
+		<frame i="spriteimage.level.marker.white.03" d="3" />
+		<frame i="spriteimage.level.marker.white.04" d="3" />
+		<frame i="spriteimage.level.marker.white.05" d="3" />
+		<frame i="spriteimage.level.marker.white.06" d="4" />
+		<scale scale="0.725"/>
+		<frame i="spriteimage.level.marker.white.07" d="5" />
+		<scale scale="0.75"/>
+		<frame i="spriteimage.level.marker.white.08" d="6" />
+		<scale scale="0.775"/>
+		<frame i="spriteimage.level.marker.white.09" d="7" />
+		<scale scale="0.8"/>
+		<animcolor a="150" d="5"/>
+	
+		<goto id="start"/>
+
+	</animation>	
+	
+
+
+
+	<!--  Select level screen - need one for each world -->
+
+
+	<area name="titlescreen_top.spec" 
+		
+		font="tinyfont.glfont"
+		
+		color="!114,255,96,100" 
+		valign="top"
+		halign="centered"
+		textOffset="0,-5"
+		textLayer="1"
+		size="=$SCREEN_W-4,22"
+		noClick="true"
+		layer="-1"
+		position="=4,$SCREEN_H-22"
+	>
+		<anchor y="top" d="-22"/>
+		<anchor w="right" d="-4"/>
+	</area>
+	
+	<area
+		name="level.select.screen.spec"
+		size="320,320"
+		position="2,2"
+		scale="0.6175"
+		layer="-2"
+	>	
+		<anchor y="mid" d="-158"/>
+		<anchor x="mid" d="-158"/>	
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.map.earth.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+
+	<area
+		name="level.select.spec"
+		size="=$level_label_w,$level_label_h"
+		scale="0.5"
+		font="tinyfont.glfont"
+		 
+		disabledColor="0,0,0,0"
+		color="earth.colormap:level-cash"
+		mouseOnColor="earth.colormap:level-cash-on"
+		textOffset="21,1"
+		halign="left"
+		valign="bottom"
+		layer="1"
+		textLayer="10"
+	/>
+	<area
+		name="level.num.spec"
+		size="=$level_label_h,$level_label_h"
+		scale="0.5"
+		font="smallfont.glfont"
+		 
+		disabledColor="0,0,0,0"
+		color="earth.colormap:level"
+		mouseOnColor="earth.colormap:level-on"
+		textOffset="-3,2"
+		halign="right"
+		valign="top"
+		layer="1"
+		textLayer="10"
+		noClick="true"	
+	/>
+
+	<area
+		name="level.name.spec"
+		size="=70,$level_label_h"
+		scale="0.5"
+		font="tinyfont.glfont"
+		 
+		disabledColor="0,0,0,0"
+		color="earth.colormap:level"
+		mouseOnColor="earth.colormap:level-on"
+		textOffset="21,1"
+		halign="left"
+		valign="top"
+		layer="1"
+		textLayer="10"
+		noClick="true"
+	/>
+
+	<area
+		name="level.marker.spec"
+		size="=$level_marker_size,$level_marker_size"
+		scale="0.5"
+		offset="10,10"
+		disabled="spriteimage.level.marker.red.10" 
+		mouseoff="spriteimage.level.marker.white.10" 
+		mouseon="spriteimage.level.marker.white.10"
+		layer="3"
+		noClick="true"
+	/>
+
+	<area
+		name="level.marker.glow.spec"
+		inherit="level.marker.spec"
+		mouseoff="level.marker.white.glow.animation"
+		mouseon="level.marker.white.glow.on.animation"
+		disabled="level.marker.red.glow.animation" 
+		layer="2"
+	/>
+
+	<area
+		name="level.connect.spec"
+		layer="1"
+		noClick="true"
+	>
+		<background>
+			<widgetbackground inherit="line_background"
+				topColor="earth.colormap:level-line"
+				bottomColor="titles.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				topColor="earth.colormap:level-line"
+				bottomColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+		<disabledBackground>
+			<widgetbackground inherit="line_background"
+				color="0,0,0,0"
+			/>
+		</disabledBackground>
+	</area>
+
+	<area
+		name="level.connect.down.spec"
+		inherit="level.connect.spec"
+	>
+	<background>
+		<widgetbackground inherit="line_background"
+				topColor="titles.colormap:level-line"
+				bottomColor="earth.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				bottomColor="earth.colormap:level-line"
+				topColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+	</area>
+
+	<area
+		name="earth_top.spec"
+		inherit="titlescreen_top.spec"
+		text="EARTH - SELECT MISSION..."
+		color="earth.colormap:level-on"
+	>		
+		<background>
+			<widgetbackground inherit="button_background" color="earth.colormap:level-cash" />
+		</background>
+	</area>
+
+
+	<!-- define 20 levels here -->
+
+	<property key="earth_0_x" value="98" />
+	<property key="earth_0_y" value="171" />
+	<property key="earth_0_x_offset" value="0" />
+	<property key="earth_0_label_y" value="283" />
+	<property key="earth_0_w" value="90" />
+	
+	<property key="earth_1_x" value="122" />
+	<property key="earth_1_y" value="156" />	
+	<property key="earth_1_x_offset" value="0" />
+	<property key="earth_1_label_y" value="255" />
+	<property key="earth_1_w" value="100" />
+
+	<property key="earth_2_x" value="31" />
+	<property key="earth_2_y" value="90" />
+	<property key="earth_2_x_offset" value="0" />
+	<property key="earth_2_label_y" value="235" />
+	<property key="earth_2_w" value="72" />
+		
+	<property key="earth_3_x" value="60" />
+	<property key="earth_3_y" value="99" />	
+	<property key="earth_3_x_offset" value="0" />
+	<property key="earth_3_label_y" value="62" />
+	<property key="earth_3_w" value="76" />
+	
+	<property key="earth_4_x" value="95" />
+	<property key="earth_4_y" value="126" />
+	<property key="earth_4_x_offset" value="-10" />
+	<property key="earth_4_label_y" value="90" />
+	<property key="earth_4_w" value="65" />
+		
+	<property key="earth_5_x" value="163" />
+	<property key="earth_5_y" value="166" />	
+	<property key="earth_5_x_offset" value="-40" />
+	<property key="earth_5_label_y" value="34" />
+	<property key="earth_5_w" value="73" />
+	
+	<property key="earth_6_x" value="218" />
+	<property key="earth_6_y" value="141" />
+	<property key="earth_6_x_offset" value="0" />
+	<property key="earth_6_label_y" value="283" />
+	<property key="earth_6_w" value="70" />
+		
+	<property key="earth_7_x" value="239" />
+	<property key="earth_7_y" value="195" />	
+	<property key="earth_7_x_offset" value="5" />
+	<property key="earth_7_label_y" value="255" />
+	<property key="earth_7_w" value="73" />
+		
+	<property key="earth_8_x" value="195" />
+	<property key="earth_8_y" value="123" />	
+	<property key="earth_8_x_offset" value="0" />
+	<property key="earth_8_label_y" value="90" />
+	<property key="earth_8_w" value="77" />
+		
+	<property key="earth_9_x" value="263" />
+	<property key="earth_9_y" value="142" />
+	<property key="earth_9_x_offset" value="-10" />	
+	<property key="earth_9_label_y" value="62" />
+	<property key="earth_9_w" value="73" />	
+	
+
+	<instance class="worm.screens.SelectLevelScreen"
+		name="select.level.screen.0"
+		maxsprites="512"
+		keyboardnavigation="false"
+		world="0"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="back"/>
+		<hotkey key="RETURN" area="back"/>
+		
+		<area id="background" inherit="level.select.screen.spec" noClick="true" />
+		<area id="titlescreen_top" inherit="earth_top.spec"/>
+		<area id="back" inherit="button.abort.spec" />
+
+		<area id="level.0" inherit="level.select.spec" position="=$earth_0_x+$earth_0_x_offset+$level_label_x_offset,$earth_0_label_y-$level_label_h" />
+		<area id="level.num.0" master="level.0" inherit="level.num.spec" position="=$earth_0_x+$earth_0_x_offset+$level_label_x_offset,$earth_0_label_y-$level_label_h" />
+		<area id="level.name.0" master="level.0" inherit="level.name.spec" size="=$earth_0_w,$level_label_h" position="=$earth_0_x+$earth_0_x_offset+$level_label_x_offset,$earth_0_label_y-$level_label_h" />
+		<area id="level.marker.0" master="level.0" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_0_x,$level_marker_size/-2+$earth_0_y" />
+		<area id="level.marker.glow.0" master="level.0" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_0_x,$level_marker_size/-2+$earth_0_y"  />
+		<!-- up --> <area id="level.connect.0" master="level.0" inherit="level.connect.spec" position="=$earth_0_x-4,$earth_0_y" size="=$level_connect_w,$earth_0_label_y-$level_label_h-$earth_0_y+$level_connect_y_offset"/>
+				
+		<area id="level.1" inherit="level.select.spec" position="=$earth_1_x+$earth_1_x_offset+$level_label_x_offset,$earth_1_label_y-$level_label_h" />
+		<area id="level.num.1" master="level.1" inherit="level.num.spec" position="=$earth_1_x+$earth_1_x_offset+$level_label_x_offset,$earth_1_label_y-$level_label_h" />
+		<area id="level.name.1" master="level.1" inherit="level.name.spec" size="=$earth_1_w,$level_label_h" position="=$earth_1_x+$earth_1_x_offset+$level_label_x_offset,$earth_1_label_y-$level_label_h" />
+		<area id="level.marker.1" master="level.1" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_1_x,$level_marker_size/-2+$earth_1_y" />
+		<area id="level.marker.glow.1" master="level.1" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_1_x,$level_marker_size/-2+$earth_1_y"  />
+		<!-- up --> <area id="level.connect.1" master="level.1" inherit="level.connect.spec" position="=$earth_1_x-4,$earth_1_y" size="=$level_connect_w,$earth_1_label_y-$level_label_h-$earth_1_y+$level_connect_y_offset"/>
+
+		<area id="level.2" inherit="level.select.spec" position="=$earth_2_x+$earth_2_x_offset+$level_label_x_offset,$earth_2_label_y-$level_label_h" />
+		<area id="level.num.2" master="level.2" inherit="level.num.spec" position="=$earth_2_x+$earth_2_x_offset+$level_label_x_offset,$earth_2_label_y-$level_label_h" />
+		<area id="level.name.2" master="level.2" inherit="level.name.spec" size="=$earth_2_w,$level_label_h" position="=$earth_2_x+$earth_2_x_offset+$level_label_x_offset,$earth_2_label_y-$level_label_h" />
+		<area id="level.marker.2" master="level.2" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_2_x,$level_marker_size/-2+$earth_2_y" />
+		<area id="level.marker.glow.2" master="level.2" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_2_x,$level_marker_size/-2+$earth_2_y"  />
+		<!-- up --> <area id="level.connect.2" master="level.2" inherit="level.connect.spec" position="=$earth_2_x-4,$earth_2_y" size="=$level_connect_w,$earth_2_label_y-$level_label_h-$earth_2_y+$level_connect_y_offset"/>
+				
+		<area id="level.3" inherit="level.select.spec" position="=$earth_3_x+$earth_3_x_offset+$level_label_x_offset,$earth_3_label_y-$level_label_h" />
+		<area id="level.num.3" master="level.3" inherit="level.num.spec" position="=$earth_3_x+$earth_3_x_offset+$level_label_x_offset,$earth_3_label_y-$level_label_h" />
+		<area id="level.name.3" master="level.3" inherit="level.name.spec" size="=$earth_3_w,$level_label_h" position="=$earth_3_x+$earth_3_x_offset+$level_label_x_offset,$earth_3_label_y-$level_label_h" />
+		<area id="level.marker.3" master="level.3" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_3_x,$level_marker_size/-2+$earth_3_y" />
+		<area id="level.marker.glow.3" master="level.3" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_3_x,$level_marker_size/-2+$earth_3_y"  />
+		<!-- down --> <area id="level.connect.3" master="level.3" inherit="level.connect.down.spec" position="=$earth_3_x-4,$earth_3_label_y" size="=$level_connect_w,$earth_3_y-$earth_3_label_y"/>
+		
+		<area id="level.4" inherit="level.select.spec" position="=$earth_4_x+$earth_4_x_offset+$level_label_x_offset,$earth_4_label_y-$level_label_h" />
+		<area id="level.num.4" master="level.4" inherit="level.num.spec" position="=$earth_4_x+$earth_4_x_offset+$level_label_x_offset,$earth_4_label_y-$level_label_h" />
+		<area id="level.name.4" master="level.4" inherit="level.name.spec" size="=$earth_4_w,$level_label_h" position="=$earth_4_x+$earth_4_x_offset+$level_label_x_offset,$earth_4_label_y-$level_label_h" />
+		<area id="level.marker.4" master="level.4" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_4_x,$level_marker_size/-2+$earth_4_y" />
+		<area id="level.marker.glow.4" master="level.4" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_4_x,$level_marker_size/-2+$earth_4_y"  />
+		<!-- down --> <area id="level.connect.4" master="level.4" inherit="level.connect.down.spec" position="=$earth_4_x-4,$earth_4_label_y" size="=$level_connect_w,$earth_4_y-$earth_4_label_y"/>
+				
+		<area id="level.5" inherit="level.select.spec" position="=$earth_5_x+$earth_5_x_offset+$level_label_x_offset,$earth_5_label_y-$level_label_h" />
+		<area id="level.num.5" master="level.5" inherit="level.num.spec" position="=$earth_5_x+$earth_5_x_offset+$level_label_x_offset,$earth_5_label_y-$level_label_h" />
+		<area id="level.name.5" master="level.5" inherit="level.name.spec" size="=$earth_5_w,$level_label_h" position="=$earth_5_x+$earth_5_x_offset+$level_label_x_offset,$earth_5_label_y-$level_label_h" />
+		<area id="level.marker.5" master="level.5" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_5_x,$level_marker_size/-2+$earth_5_y" />
+		<area id="level.marker.glow.5" master="level.5" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_5_x,$level_marker_size/-2+$earth_5_y"  />
+		<!-- down --> <area id="level.connect.5" master="level.5" inherit="level.connect.down.spec" position="=$earth_5_x-4,$earth_5_label_y" size="=$level_connect_w,$earth_5_y-$earth_5_label_y"/>
+				
+		<area id="level.6" inherit="level.select.spec" position="=$earth_6_x+$earth_6_x_offset+$level_label_x_offset,$earth_6_label_y-$level_label_h" />
+		<area id="level.num.6" master="level.6" inherit="level.num.spec" position="=$earth_6_x+$earth_6_x_offset+$level_label_x_offset,$earth_6_label_y-$level_label_h" />
+		<area id="level.name.6" master="level.6" inherit="level.name.spec" size="=$earth_6_w,$level_label_h" position="=$earth_6_x+$earth_6_x_offset+$level_label_x_offset,$earth_6_label_y-$level_label_h" />
+		<area id="level.marker.6" master="level.6" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_6_x,$level_marker_size/-2+$earth_6_y" />
+		<area id="level.marker.glow.6" master="level.6" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_6_x,$level_marker_size/-2+$earth_6_y"  />
+		<!-- up --> <area id="level.connect.6" master="level.6" inherit="level.connect.spec" position="=$earth_6_x-4,$earth_6_y" size="=$level_connect_w,$earth_6_label_y-$level_label_h-$earth_6_y+$level_connect_y_offset"/>
+			
+		<area id="level.7" inherit="level.select.spec" position="=$earth_7_x+$earth_7_x_offset+$level_label_x_offset,$earth_7_label_y-$level_label_h" />
+		<area id="level.num.7" master="level.7" inherit="level.num.spec" position="=$earth_7_x+$earth_7_x_offset+$level_label_x_offset,$earth_7_label_y-$level_label_h" />
+		<area id="level.name.7" master="level.7" inherit="level.name.spec" size="=$earth_7_w,$level_label_h" position="=$earth_7_x+$earth_7_x_offset+$level_label_x_offset,$earth_7_label_y-$level_label_h" />
+		<area id="level.marker.7" master="level.7" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_7_x,$level_marker_size/-2+$earth_7_y" />
+		<area id="level.marker.glow.7" master="level.7" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_7_x,$level_marker_size/-2+$earth_7_y"  />
+		<!-- up --> <area id="level.connect.7" master="level.7" inherit="level.connect.spec" position="=$earth_7_x-4,$earth_7_y" size="=$level_connect_w,$earth_7_label_y-$level_label_h-$earth_7_y+$level_connect_y_offset"/>
+				
+		<area id="level.8" inherit="level.select.spec" position="=$earth_8_x+$earth_8_x_offset+$level_label_x_offset,$earth_8_label_y-$level_label_h" />
+		<area id="level.num.8" master="level.8" inherit="level.num.spec" position="=$earth_8_x+$earth_8_x_offset+$level_label_x_offset,$earth_8_label_y-$level_label_h" />
+		<area id="level.name.8" master="level.8" inherit="level.name.spec" size="=$earth_8_w,$level_label_h" position="=$earth_8_x+$earth_8_x_offset+$level_label_x_offset,$earth_8_label_y-$level_label_h" />
+		<area id="level.marker.8" master="level.8" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_8_x,$level_marker_size/-2+$earth_8_y" />
+		<area id="level.marker.glow.8" master="level.8" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_8_x,$level_marker_size/-2+$earth_8_y"  />
+		<!-- down --> <area id="level.connect.8" master="level.8" inherit="level.connect.down.spec" position="=$earth_8_x-4,$earth_8_label_y" size="=$level_connect_w,$earth_8_y-$earth_8_label_y"/>
+				
+		<area id="level.9" inherit="level.select.spec" position="=$earth_9_x+$earth_9_x_offset+$level_label_x_offset,$earth_9_label_y-$level_label_h" />
+		<area id="level.num.9" master="level.9" inherit="level.num.spec" position="=$earth_9_x+$earth_9_x_offset+$level_label_x_offset,$earth_9_label_y-$level_label_h" />
+		<area id="level.name.9" master="level.9" inherit="level.name.spec" size="=$earth_9_w,$level_label_h" position="=$earth_9_x+$earth_9_x_offset+$level_label_x_offset,$earth_9_label_y-$level_label_h" />		
+		<area id="level.marker.9" master="level.9" inherit="level.marker.spec" position="=$level_marker_size/-2+$earth_9_x,$level_marker_size/-2+$earth_9_y" />
+		<area id="level.marker.glow.9" master="level.9" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$earth_9_x,$level_marker_size/-2+$earth_9_y"  />
+		<!-- down --> <area id="level.connect.9" master="level.9" inherit="level.connect.down.spec" position="=$earth_9_x-4,$earth_9_label_y" size="=$level_connect_w,$earth_9_y-$earth_9_label_y"/>
+								
+		
+	</instance>
+
+
+
+
+<!--  MOON LEVEL SELECT  -->
+
+
+	<area
+		name="moon.select.screen.spec"
+		inherit="level.select.screen.spec"
+	>		
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.map.moon.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area
+		name="moon.select.spec"
+		inherit="level.select.spec"
+		color="moon.colormap:level-cash"
+		mouseOnColor="moon.colormap:level-cash-on"
+	/>
+	<area
+		name="moon.num.spec"
+		inherit="level.num.spec"
+		color="moon.colormap:level"
+		mouseOnColor="moon.colormap:level-on"
+	/>
+	<area
+		name="moon.name.spec"
+		inherit="level.name.spec"
+		color="moon.colormap:level"
+		mouseOnColor="moon.colormap:level-on"
+	/>
+
+	<area
+		name="moon.select.right.spec"
+		inherit="moon.select.spec"
+		halign="right"
+		textOffset="0,1"	
+	/>
+	<area
+		name="moon.num.right.spec"
+		inherit="moon.num.spec"
+	/>
+	<area
+		name="moon.name.right.spec"
+		inherit="moon.name.spec"
+		halign="right"
+		textOffset="0,1"
+	/>
+
+
+
+	<area
+		name="moon.connect.spec"
+		inherit="level.connect.spec"
+	>
+	<background>
+			<widgetbackground inherit="line_background"
+				topColor="moon.colormap:level-line"
+				bottomColor="titles.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				topColor="moon.colormap:level-line"
+				bottomColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+		<disabledBackground>
+			<widgetbackground inherit="line_background"
+				color="0,0,0,0"
+			/>
+		</disabledBackground>
+	</area>
+
+	<area
+		name="moon.connect.down.spec"
+		inherit="moon.connect.spec"
+	>
+	<background>
+		<widgetbackground inherit="line_background"
+				topColor="titles.colormap:level-line"
+				bottomColor="moon.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				bottomColor="moon.colormap:level-line"
+				topColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+	</area>
+
+	<area
+		name="moon_top.spec"
+		inherit="titlescreen_top.spec"
+		text="MOON - SELECT MISSION..."
+		color="moon.colormap:level-on"
+	>		
+		<background>
+			<widgetbackground inherit="button_background" color="moon.colormap:level-cash" />
+		</background>
+	</area>
+
+
+	<!-- define 20 levels here -->
+
+	<property key="moon_0_x" value="138" />
+	<property key="moon_0_y" value="185" />
+	<property key="moon_0_x_offset" value="0" />
+	<property key="moon_0_label_y" value="290" />
+	<property key="moon_0_w" value="117" />
+	
+	<property key="moon_1_x" value="106" />
+	<property key="moon_1_y" value="199" />	
+	<property key="moon_1_x_offset" value="8" />
+	<property key="moon_1_label_y" value="273" />
+	<property key="moon_1_w" value="72" />
+
+	<property key="moon_2_x" value="85" />
+	<property key="moon_2_y" value="181" />
+	<property key="moon_2_x_offset" value="0" />
+	<property key="moon_2_label_y" value="242" />
+	<property key="moon_2_w" value="62" />
+		
+	<property key="moon_3_x" value="90" />
+	<property key="moon_3_y" value="160" />	
+	<property key="moon_3_x_offset" value="0" />
+	<property key="moon_3_label_y" value="92" />
+	<property key="moon_3_w" value="65" />
+	
+	<property key="moon_4_x" value="106" />
+	<property key="moon_4_y" value="137" />
+	<property key="moon_4_x_offset" value="20" />
+	<property key="moon_4_label_y" value="48" />
+	<property key="moon_4_w" value="72" />
+		
+	<property key="moon_5_x" value="129" />
+	<property key="moon_5_y" value="120" />	
+	<property key="moon_5_x_offset" value="0" />
+	<property key="moon_5_label_y" value="74" />
+	<property key="moon_5_w" value="80" />
+	
+	<property key="moon_6_x" value="202" />
+	<property key="moon_6_y" value="151" />
+	<property key="moon_6_x_offset" value="-10" />
+	<property key="moon_6_label_y" value="46" />
+	<property key="moon_6_w" value="135" />
+		
+	<property key="moon_7_x" value="224" />
+	<property key="moon_7_y" value="135" />	
+	<property key="moon_7_x_offset" value="5" />
+	<property key="moon_7_label_y" value="86" />
+	<property key="moon_7_w" value="82" />
+		
+	<property key="moon_8_x" value="235" />
+	<property key="moon_8_y" value="162" />	
+	<property key="moon_8_x_offset" value="8" />
+	<property key="moon_8_label_y" value="223" />
+	<property key="moon_8_w" value="86" />
+		
+	<property key="moon_9_x" value="215" />
+	<property key="moon_9_y" value="215" />
+	<property key="moon_9_x_offset" value="0" />	
+	<property key="moon_9_label_y" value="265" />
+	<property key="moon_9_w" value="96" />	
+	
+
+	
+	<instance class="worm.screens.SelectLevelScreen"
+		name="select.level.screen.1"
+		
+		maxsprites="512"
+		keyboardnavigation="false"
+		world="1"
+		transition="instant.transition"
+		centre="both"
+		stream="moon.stream"
+	>
+		<hotkey key="ESCAPE" area="back"/>
+		<hotkey key="RETURN" area="back"/>
+
+		<area id="background" inherit="moon.select.screen.spec" noClick="true" />
+		<area id="titlescreen_top" inherit="moon_top.spec"/>
+		<area id="back" inherit="button.abort.spec" />
+
+		<area id="level.0" inherit="moon.select.spec" position="=$moon_0_x+$moon_0_x_offset+$level_label_x_offset,$moon_0_label_y-$level_label_h" />
+		<area id="level.num.0" master="level.0" inherit="moon.num.spec" position="=$moon_0_x+$moon_0_x_offset+$level_label_x_offset,$moon_0_label_y-$level_label_h" />
+		<area id="level.name.0" master="level.0" inherit="moon.name.spec" size="=$moon_0_w,$level_label_h" position="=$moon_0_x+$moon_0_x_offset+$level_label_x_offset,$moon_0_label_y-$level_label_h" />
+		<area id="level.marker.0" master="level.0" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_0_x,$level_marker_size/-2+$moon_0_y" />
+		<area id="level.marker.glow.0" master="level.0" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_0_x,$level_marker_size/-2+$moon_0_y"  />
+		<!-- up --> <area id="moon.connect.0" master="level.0" inherit="moon.connect.spec" position="=$moon_0_x-4,$moon_0_y" size="=$level_connect_w,$moon_0_label_y-$level_label_h-$moon_0_y+$level_connect_y_offset"/>
+		
+		<!-- right --> 		
+		<area id="level.1" inherit="moon.select.right.spec" size="=$moon_1_w,$level_label_h" position="=$moon_1_x+$moon_1_x_offset+$level_label_x_offset-$moon_1_w,$moon_1_label_y-$level_label_h" />
+		<area id="level.num.1" master="level.1" inherit="moon.num.right.spec" position="=$moon_1_x+$moon_1_x_offset+$level_label_x_offset,$moon_1_label_y-$level_label_h" />
+		<area id="level.name.1" master="level.1" inherit="moon.name.right.spec" size="=$moon_1_w,$level_label_h" position="=$moon_1_x+$moon_1_x_offset+$level_label_x_offset-$moon_1_w,$moon_1_label_y-$level_label_h" />
+		<area id="level.marker.1" master="level.1" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_1_x,$level_marker_size/-2+$moon_1_y" />
+		<area id="level.marker.glow.1" master="level.1" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_1_x,$level_marker_size/-2+$moon_1_y"  />
+		<!-- up --> <area id="moon.connect.1" master="level.1" inherit="moon.connect.spec" position="=$moon_1_x-4,$moon_1_y" size="=$level_connect_w,$moon_1_label_y-$level_label_h-$moon_1_y+$level_connect_y_offset"/>
+
+		<!-- right --> 		
+		<area id="level.2" inherit="moon.select.right.spec" size="=$moon_2_w,$level_label_h" position="=$moon_2_x+$moon_2_x_offset+$level_label_x_offset-$moon_2_w,$moon_2_label_y-$level_label_h" />
+		<area id="level.num.2" master="level.2" inherit="moon.num.right.spec" position="=$moon_2_x+$moon_2_x_offset+$level_label_x_offset,$moon_2_label_y-$level_label_h" />
+		<area id="level.name.2" master="level.2" inherit="moon.name.right.spec" size="=$moon_2_w,$level_label_h" position="=$moon_2_x+$moon_2_x_offset+$level_label_x_offset-$moon_2_w,$moon_2_label_y-$level_label_h" />
+		<area id="level.marker.2" master="level.2" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_2_x,$level_marker_size/-2+$moon_2_y" />
+		<area id="level.marker.glow.2" master="level.2" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_2_x,$level_marker_size/-2+$moon_2_y"  />
+		<!-- up --> <area id="moon.connect.2" master="level.2" inherit="moon.connect.spec" position="=$moon_2_x-4,$moon_2_y" size="=$level_connect_w,$moon_2_label_y-$level_label_h-$moon_2_y+$level_connect_y_offset"/>
+				
+		<!-- right --> 		
+		<area id="level.3" inherit="moon.select.right.spec" size="=$moon_3_w,$level_label_h" position="=$moon_3_x+$moon_3_x_offset+$level_label_x_offset-$moon_3_w,$moon_3_label_y-$level_label_h" />
+		<area id="level.num.3" master="level.3" inherit="moon.num.right.spec" position="=$moon_3_x+$moon_3_x_offset+$level_label_x_offset,$moon_3_label_y-$level_label_h" />
+		<area id="level.name.3" master="level.3" inherit="moon.name.right.spec" size="=$moon_3_w,$level_label_h" position="=$moon_3_x+$moon_3_x_offset+$level_label_x_offset-$moon_3_w,$moon_3_label_y-$level_label_h" />
+		<area id="level.marker.3" master="level.3" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_3_x,$level_marker_size/-2+$moon_3_y" />
+		<area id="level.marker.glow.3" master="level.3" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_3_x,$level_marker_size/-2+$moon_3_y"  />
+		<!-- down --> <area id="moon.connect.3" master="level.3" inherit="moon.connect.down.spec" position="=$moon_3_x-4,$moon_3_label_y" size="=$level_connect_w,$moon_3_y-$moon_3_label_y"/>
+		
+		<!-- right --> 		
+		<area id="level.4" inherit="moon.select.right.spec" size="=$moon_4_w,$level_label_h" position="=$moon_4_x+$moon_4_x_offset+$level_label_x_offset-$moon_4_w,$moon_4_label_y-$level_label_h" />
+		<area id="level.num.4" master="level.4" inherit="moon.num.right.spec" position="=$moon_4_x+$moon_4_x_offset+$level_label_x_offset,$moon_4_label_y-$level_label_h" />
+		<area id="level.name.4" master="level.4" inherit="moon.name.right.spec" size="=$moon_4_w,$level_label_h" position="=$moon_4_x+$moon_4_x_offset+$level_label_x_offset-$moon_4_w,$moon_4_label_y-$level_label_h" />
+		<area id="level.marker.4" master="level.4" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_4_x,$level_marker_size/-2+$moon_4_y" />
+		<area id="level.marker.glow.4" master="level.4" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_4_x,$level_marker_size/-2+$moon_4_y"  />
+		<!-- down --> <area id="moon.connect.4" master="level.4" inherit="moon.connect.down.spec" position="=$moon_4_x-4,$moon_4_label_y" size="=$level_connect_w,$moon_4_y-$moon_4_label_y"/>
+				
+		<area id="level.5" inherit="moon.select.spec" position="=$moon_5_x+$moon_5_x_offset+$level_label_x_offset,$moon_5_label_y-$level_label_h" />
+		<area id="level.num.5" master="level.5" inherit="moon.num.spec" position="=$moon_5_x+$moon_5_x_offset+$level_label_x_offset,$moon_5_label_y-$level_label_h" />
+		<area id="level.name.5" master="level.5" inherit="moon.name.spec" size="=$moon_5_w,$level_label_h" position="=$moon_5_x+$moon_5_x_offset+$level_label_x_offset,$moon_5_label_y-$level_label_h" />
+		<area id="level.marker.5" master="level.5" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_5_x,$level_marker_size/-2+$moon_5_y" />
+		<area id="level.marker.glow.5" master="level.5" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_5_x,$level_marker_size/-2+$moon_5_y"  />
+		<!-- down --> <area id="moon.connect.5" master="level.5" inherit="moon.connect.down.spec" position="=$moon_5_x-4,$moon_5_label_y" size="=$level_connect_w,$moon_5_y-$moon_5_label_y"/>
+				
+		<area id="level.6" inherit="moon.select.spec" position="=$moon_6_x+$moon_6_x_offset+$level_label_x_offset,$moon_6_label_y-$level_label_h" />
+		<area id="level.num.6" master="level.6" inherit="moon.num.spec" position="=$moon_6_x+$moon_6_x_offset+$level_label_x_offset,$moon_6_label_y-$level_label_h" />
+		<area id="level.name.6" master="level.6" inherit="moon.name.spec" size="=$moon_6_w,$level_label_h" position="=$moon_6_x+$moon_6_x_offset+$level_label_x_offset,$moon_6_label_y-$level_label_h" />
+		<area id="level.marker.6" master="level.6" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_6_x,$level_marker_size/-2+$moon_6_y" />
+		<area id="level.marker.glow.6" master="level.6" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_6_x,$level_marker_size/-2+$moon_6_y"  />
+		<!-- down --> <area id="moon.connect.6" master="level.6" inherit="moon.connect.down.spec" position="=$moon_6_x-4,$moon_6_label_y" size="=$level_connect_w,$moon_6_y-$moon_6_label_y"/>
+			
+		<area id="level.7" inherit="moon.select.spec" position="=$moon_7_x+$moon_7_x_offset+$level_label_x_offset,$moon_7_label_y-$level_label_h" />
+		<area id="level.num.7" master="level.7" inherit="moon.num.spec" position="=$moon_7_x+$moon_7_x_offset+$level_label_x_offset,$moon_7_label_y-$level_label_h" />
+		<area id="level.name.7" master="level.7" inherit="moon.name.spec" size="=$moon_7_w,$level_label_h" position="=$moon_7_x+$moon_7_x_offset+$level_label_x_offset,$moon_7_label_y-$level_label_h" />
+		<area id="level.marker.7" master="level.7" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_7_x,$level_marker_size/-2+$moon_7_y" />
+		<area id="level.marker.glow.7" master="level.7" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_7_x,$level_marker_size/-2+$moon_7_y"  />
+		<!-- down --> <area id="moon.connect.7" master="level.7" inherit="moon.connect.down.spec" position="=$moon_7_x-4,$moon_7_label_y" size="=$level_connect_w,$moon_7_y-$moon_7_label_y"/>
+				
+		<area id="level.8" inherit="moon.select.spec" position="=$moon_8_x+$moon_8_x_offset+$level_label_x_offset,$moon_8_label_y-$level_label_h" />
+		<area id="level.num.8" master="level.8" inherit="moon.num.spec" position="=$moon_8_x+$moon_8_x_offset+$level_label_x_offset,$moon_8_label_y-$level_label_h" />
+		<area id="level.name.8" master="level.8" inherit="moon.name.spec" size="=$moon_8_w,$level_label_h" position="=$moon_8_x+$moon_8_x_offset+$level_label_x_offset,$moon_8_label_y-$level_label_h" />
+		<area id="level.marker.8" master="level.8" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_8_x,$level_marker_size/-2+$moon_8_y" />
+		<area id="level.marker.glow.8" master="level.8" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_8_x,$level_marker_size/-2+$moon_8_y"  />
+		<!-- up --> <area id="moon.connect.8" master="level.8" inherit="moon.connect.spec" position="=$moon_8_x-4,$moon_8_y" size="=$level_connect_w,$moon_8_label_y-$level_label_h-$moon_8_y+$level_connect_y_offset"/>
+				
+		<area id="level.9" inherit="moon.select.spec" position="=$moon_9_x+$moon_9_x_offset+$level_label_x_offset,$moon_9_label_y-$level_label_h" />
+		<area id="level.num.9" master="level.9" inherit="moon.num.spec" position="=$moon_9_x+$moon_9_x_offset+$level_label_x_offset,$moon_9_label_y-$level_label_h" />
+		<area id="level.name.9" master="level.9" inherit="moon.name.spec" size="=$moon_9_w,$level_label_h" position="=$moon_9_x+$moon_9_x_offset+$level_label_x_offset,$moon_9_label_y-$level_label_h" />		
+		<area id="level.marker.9" master="level.9" inherit="level.marker.spec" position="=$level_marker_size/-2+$moon_9_x,$level_marker_size/-2+$moon_9_y" />
+		<area id="level.marker.glow.9" master="level.9" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$moon_9_x,$level_marker_size/-2+$moon_9_y"  />
+		<!-- up --> <area id="moon.connect.9" master="level.9" inherit="moon.connect.spec" position="=$moon_9_x-4,$moon_9_y" size="=$level_connect_w,$moon_9_label_y-$level_label_h-$moon_9_y+$level_connect_y_offset"/>
+								
+		
+	</instance>
+
+
+
+
+<!--  MARS LEVEL SELECT  -->
+
+
+	<area
+		name="mars.select.screen.left.spec"
+		inherit="level.select.screen.spec" scale="0.5">
+	>		
+		<anchor x="mid" d="-256" /><anchor y="mid" d="-130" />
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.map.mars.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area
+		name="mars.select.screen.right.spec"
+		inherit="level.select.screen.spec" scale="0.5">
+	>		
+		<anchor x="mid" d="0" /><anchor y="mid" d="-130" />
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.map.mars.02" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area
+		name="mars.select.spec"
+		inherit="level.select.spec"
+		color="mars.colormap:level-cash"
+		mouseOnColor="mars.colormap:level-cash-on"
+	/>
+	<area
+		name="mars.num.spec"
+		inherit="level.num.spec"
+		color="mars.colormap:level"
+		mouseOnColor="mars.colormap:level-on"
+	/>
+	<area
+		name="mars.name.spec"
+		inherit="level.name.spec"
+		color="mars.colormap:level"
+		mouseOnColor="mars.colormap:level-on"
+	/>
+
+	<area
+		name="mars.select.right.spec"
+		inherit="mars.select.spec"
+		halign="right"
+		textOffset="0,1"	
+	/>
+	<area
+		name="mars.num.right.spec"
+		inherit="mars.num.spec"
+	/>
+	<area
+		name="mars.name.right.spec"
+		inherit="mars.name.spec"
+		halign="right"
+		textOffset="0,1"
+	/>
+
+
+
+	<area
+		name="mars.connect.spec"
+		inherit="level.connect.spec"
+	>
+	<background>
+			<widgetbackground inherit="line_background"
+				topColor="mars.colormap:level-line"
+				bottomColor="titles.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				topColor="mars.colormap:level-line"
+				bottomColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+		<disabledBackground>
+			<widgetbackground inherit="line_background"
+				color="0,0,0,0"
+			/>
+		</disabledBackground>
+	</area>
+
+	<area
+		name="mars.connect.down.spec"
+		inherit="mars.connect.spec"
+	>
+	<background>
+		<widgetbackground inherit="line_background"
+				topColor="titles.colormap:level-line"
+				bottomColor="mars.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				bottomColor="mars.colormap:level-line"
+				topColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+	</area>
+
+	<area
+		name="mars_top.spec"
+		inherit="titlescreen_top.spec"
+		text="MARS - SELECT MISSION..."
+		color="mars.colormap:level-on"
+	>		
+		<background>
+			<widgetbackground inherit="button_background" color="mars.colormap:level-cash" />
+		</background>
+	</area>
+
+
+	<!-- define 20 levels here -->
+
+	<property key="mars_0_x" value="33" />
+	<property key="mars_0_y" value="189" />
+	<property key="mars_0_x_offset" value="0" />
+	<property key="mars_0_label_y" value="285" />
+	<property key="mars_0_w" value="80" />
+	
+	<property key="mars_1_x" value="56" />
+	<property key="mars_1_y" value="193" />	
+	<property key="mars_1_x_offset" value="0" />
+	<property key="mars_1_label_y" value="260" />
+	<property key="mars_1_w" value="115" />
+
+	<property key="mars_2_x" value="83" />
+	<property key="mars_2_y" value="172" />
+	<property key="mars_2_x_offset" value="0" />
+	<property key="mars_2_label_y" value="235" />
+	<property key="mars_2_w" value="105" />
+		
+	<property key="mars_3_x" value="45" />
+	<property key="mars_3_y" value="153" />	
+	<property key="mars_3_x_offset" value="-12" />
+	<property key="mars_3_label_y" value="57" />
+	<property key="mars_3_w" value="85" />
+	
+	<property key="mars_4_x" value="141" />
+	<property key="mars_4_y" value="134" />
+	<property key="mars_4_x_offset" value="8" />
+	<property key="mars_4_label_y" value="80" />
+	<property key="mars_4_w" value="85" />
+		
+	<property key="mars_5_x" value="161" />
+	<property key="mars_5_y" value="148" />	
+	<property key="mars_5_x_offset" value="0" />
+	<property key="mars_5_label_y" value="40" />
+	<property key="mars_5_w" value="90" />
+	
+	<property key="mars_6_x" value="193" />
+	<property key="mars_6_y" value="135" />
+	<property key="mars_6_x_offset" value="0" />
+	<property key="mars_6_label_y" value="65" />
+	<property key="mars_6_w" value="70" />
+		
+	<property key="mars_7_x" value="265" />
+	<property key="mars_7_y" value="185" />	
+	<property key="mars_7_x_offset" value="20" />
+	<property key="mars_7_label_y" value="90" />
+	<property key="mars_7_w" value="70" />
+		
+	<property key="mars_8_x" value="230" />
+	<property key="mars_8_y" value="160" />	
+	<property key="mars_8_x_offset" value="0" />
+	<property key="mars_8_label_y" value="248" />
+	<property key="mars_8_w" value="100" />
+		
+	<property key="mars_9_x" value="200" />
+	<property key="mars_9_y" value="180" />
+	<property key="mars_9_x_offset" value="0" />	
+	<property key="mars_9_label_y" value="273" />
+	<property key="mars_9_w" value="115" />	
+	
+
+	
+	<instance class="worm.screens.SelectLevelScreen"
+		name="select.level.screen.2"
+		
+		maxsprites="512"
+		keyboardnavigation="false"
+		world="2"
+		transition="instant.transition"
+		centre="both"
+		stream="mars.stream"
+	>
+		<hotkey key="ESCAPE" area="back"/>
+		<hotkey key="RETURN" area="back"/>
+
+		<area id="background-left" inherit="mars.select.screen.left.spec" noClick="true" />
+		<area id="background-right" inherit="mars.select.screen.right.spec" noClick="true" />
+		<area id="titlescreen_top" inherit="mars_top.spec"/>
+		<area id="back" inherit="button.abort.spec" />
+
+		<area id="level.0" inherit="mars.select.spec" position="=$mars_0_x+$mars_0_x_offset+$level_label_x_offset,$mars_0_label_y-$level_label_h" />
+		<area id="level.num.0" master="level.0" inherit="mars.num.spec" position="=$mars_0_x+$mars_0_x_offset+$level_label_x_offset,$mars_0_label_y-$level_label_h" />
+		<area id="level.name.0" master="level.0" inherit="mars.name.spec" size="=$mars_0_w,$level_label_h" position="=$mars_0_x+$mars_0_x_offset+$level_label_x_offset,$mars_0_label_y-$level_label_h" />
+		<area id="level.marker.0" master="level.0" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_0_x,$level_marker_size/-2+$mars_0_y" />
+		<area id="level.marker.glow.0" master="level.0" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_0_x,$level_marker_size/-2+$mars_0_y"  />
+		<!-- up --> <area id="mars.connect.0" master="level.0" inherit="mars.connect.spec" position="=$mars_0_x-4,$mars_0_y" size="=$level_connect_w,$mars_0_label_y-$level_label_h-$mars_0_y+$level_connect_y_offset"/>
+		
+		<area id="level.1" inherit="mars.select.spec" position="=$mars_1_x+$mars_1_x_offset+$level_label_x_offset,$mars_1_label_y-$level_label_h" />
+		<area id="level.num.1" master="level.1" inherit="mars.num.spec" position="=$mars_1_x+$mars_1_x_offset+$level_label_x_offset,$mars_1_label_y-$level_label_h" />
+		<area id="level.name.1" master="level.1" inherit="mars.name.spec" size="=$mars_1_w,$level_label_h" position="=$mars_1_x+$mars_1_x_offset+$level_label_x_offset,$mars_1_label_y-$level_label_h" />
+		<area id="level.marker.1" master="level.1" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_1_x,$level_marker_size/-2+$mars_1_y" />
+		<area id="level.marker.glow.1" master="level.1" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_1_x,$level_marker_size/-2+$mars_1_y"  />
+		<!-- up --> <area id="mars.connect.1" master="level.1" inherit="mars.connect.spec" position="=$mars_1_x-4,$mars_1_y" size="=$level_connect_w,$mars_1_label_y-$level_label_h-$mars_1_y+$level_connect_y_offset"/>
+
+		<area id="level.2" inherit="mars.select.spec" position="=$mars_2_x+$mars_2_x_offset+$level_label_x_offset,$mars_2_label_y-$level_label_h" />
+		<area id="level.num.2" master="level.2" inherit="mars.num.spec" position="=$mars_2_x+$mars_2_x_offset+$level_label_x_offset,$mars_2_label_y-$level_label_h" />
+		<area id="level.name.2" master="level.2" inherit="mars.name.spec" size="=$mars_2_w,$level_label_h" position="=$mars_2_x+$mars_2_x_offset+$level_label_x_offset,$mars_2_label_y-$level_label_h" />
+		<area id="level.marker.2" master="level.2" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_2_x,$level_marker_size/-2+$mars_2_y" />
+		<area id="level.marker.glow.2" master="level.2" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_2_x,$level_marker_size/-2+$mars_2_y"  />
+		<!-- up --> <area id="mars.connect.2" master="level.2" inherit="mars.connect.spec" position="=$mars_2_x-4,$mars_2_y" size="=$level_connect_w,$mars_2_label_y-$level_label_h-$mars_2_y+$level_connect_y_offset"/>
+				
+		<area id="level.3" inherit="mars.select.spec" position="=$mars_3_x+$mars_3_x_offset+$level_label_x_offset,$mars_3_label_y-$level_label_h" />
+		<area id="level.num.3" master="level.3" inherit="mars.num.spec" position="=$mars_3_x+$mars_3_x_offset+$level_label_x_offset,$mars_3_label_y-$level_label_h" />
+		<area id="level.name.3" master="level.3" inherit="mars.name.spec" size="=$mars_3_w,$level_label_h" position="=$mars_3_x+$mars_3_x_offset+$level_label_x_offset,$mars_3_label_y-$level_label_h" />
+		<area id="level.marker.3" master="level.3" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_3_x,$level_marker_size/-2+$mars_3_y" />
+		<area id="level.marker.glow.3" master="level.3" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_3_x,$level_marker_size/-2+$mars_3_y"  />
+		<!-- down --> <area id="mars.connect.3" master="level.3" inherit="mars.connect.down.spec" position="=$mars_3_x-4,$mars_3_label_y" size="=$level_connect_w,$mars_3_y-$mars_3_label_y"/>
+		
+		<!-- right --> 		
+		<area id="level.4" inherit="mars.select.right.spec" size="=$mars_4_w,$level_label_h" position="=$mars_4_x+$mars_4_x_offset+$level_label_x_offset-$mars_4_w,$mars_4_label_y-$level_label_h" />
+		<area id="level.num.4" master="level.4" inherit="mars.num.right.spec" position="=$mars_4_x+$mars_4_x_offset+$level_label_x_offset,$mars_4_label_y-$level_label_h" />
+		<area id="level.name.4" master="level.4" inherit="mars.name.right.spec" size="=$mars_4_w,$level_label_h" position="=$mars_4_x+$mars_4_x_offset+$level_label_x_offset-$mars_4_w,$mars_4_label_y-$level_label_h" />
+		<area id="level.marker.4" master="level.4" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_4_x,$level_marker_size/-2+$mars_4_y" />
+		<area id="level.marker.glow.4" master="level.4" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_4_x,$level_marker_size/-2+$mars_4_y"  />
+		<!-- down --> <area id="mars.connect.4" master="level.4" inherit="mars.connect.down.spec" position="=$mars_4_x-4,$mars_4_label_y" size="=$level_connect_w,$mars_4_y-$mars_4_label_y"/>
+				
+		<area id="level.5" inherit="mars.select.spec" position="=$mars_5_x+$mars_5_x_offset+$level_label_x_offset,$mars_5_label_y-$level_label_h" />
+		<area id="level.num.5" master="level.5" inherit="mars.num.spec" position="=$mars_5_x+$mars_5_x_offset+$level_label_x_offset,$mars_5_label_y-$level_label_h" />
+		<area id="level.name.5" master="level.5" inherit="mars.name.spec" size="=$mars_5_w,$level_label_h" position="=$mars_5_x+$mars_5_x_offset+$level_label_x_offset,$mars_5_label_y-$level_label_h" />
+		<area id="level.marker.5" master="level.5" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_5_x,$level_marker_size/-2+$mars_5_y" />
+		<area id="level.marker.glow.5" master="level.5" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_5_x,$level_marker_size/-2+$mars_5_y"  />
+		<!-- down --> <area id="mars.connect.5" master="level.5" inherit="mars.connect.down.spec" position="=$mars_5_x-4,$mars_5_label_y" size="=$level_connect_w,$mars_5_y-$mars_5_label_y"/>
+				
+		<area id="level.6" inherit="mars.select.spec" position="=$mars_6_x+$mars_6_x_offset+$level_label_x_offset,$mars_6_label_y-$level_label_h" />
+		<area id="level.num.6" master="level.6" inherit="mars.num.spec" position="=$mars_6_x+$mars_6_x_offset+$level_label_x_offset,$mars_6_label_y-$level_label_h" />
+		<area id="level.name.6" master="level.6" inherit="mars.name.spec" size="=$mars_6_w,$level_label_h" position="=$mars_6_x+$mars_6_x_offset+$level_label_x_offset,$mars_6_label_y-$level_label_h" />
+		<area id="level.marker.6" master="level.6" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_6_x,$level_marker_size/-2+$mars_6_y" />
+		<area id="level.marker.glow.6" master="level.6" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_6_x,$level_marker_size/-2+$mars_6_y"  />
+		<!-- down --> <area id="mars.connect.6" master="level.6" inherit="mars.connect.down.spec" position="=$mars_6_x-4,$mars_6_label_y" size="=$level_connect_w,$mars_6_y-$mars_6_label_y"/>
+			
+		<!-- right --> 		
+		<area id="level.7" inherit="mars.select.right.spec" size="=$mars_7_w,$level_label_h" position="=$mars_7_x+$mars_7_x_offset+$level_label_x_offset-$mars_7_w,$mars_7_label_y-$level_label_h" />
+		<area id="level.num.7" master="level.7" inherit="mars.num.right.spec" position="=$mars_7_x+$mars_7_x_offset+$level_label_x_offset,$mars_7_label_y-$level_label_h" />
+		<area id="level.name.7" master="level.7" inherit="mars.name.right.spec" size="=$mars_7_w,$level_label_h" position="=$mars_7_x+$mars_7_x_offset+$level_label_x_offset-$mars_7_w,$mars_7_label_y-$level_label_h" />
+		<area id="level.marker.7" master="level.7" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_7_x,$level_marker_size/-2+$mars_7_y" />
+		<area id="level.marker.glow.7" master="level.7" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_7_x,$level_marker_size/-2+$mars_7_y"  />
+		<!-- down --> <area id="mars.connect.7" master="level.7" inherit="mars.connect.down.spec" position="=$mars_7_x-4,$mars_7_label_y" size="=$level_connect_w,$mars_7_y-$mars_7_label_y"/>
+				
+		<area id="level.8" inherit="mars.select.spec" position="=$mars_8_x+$mars_8_x_offset+$level_label_x_offset,$mars_8_label_y-$level_label_h" />
+		<area id="level.num.8" master="level.8" inherit="mars.num.spec" position="=$mars_8_x+$mars_8_x_offset+$level_label_x_offset,$mars_8_label_y-$level_label_h" />
+		<area id="level.name.8" master="level.8" inherit="mars.name.spec" size="=$mars_8_w,$level_label_h" position="=$mars_8_x+$mars_8_x_offset+$level_label_x_offset,$mars_8_label_y-$level_label_h" />
+		<area id="level.marker.8" master="level.8" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_8_x,$level_marker_size/-2+$mars_8_y" />
+		<area id="level.marker.glow.8" master="level.8" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_8_x,$level_marker_size/-2+$mars_8_y"  />
+		<!-- up --> <area id="mars.connect.8" master="level.8" inherit="mars.connect.spec" position="=$mars_8_x-4,$mars_8_y" size="=$level_connect_w,$mars_8_label_y-$level_label_h-$mars_8_y+$level_connect_y_offset"/>
+				
+		<area id="level.9" inherit="mars.select.spec" position="=$mars_9_x+$mars_9_x_offset+$level_label_x_offset,$mars_9_label_y-$level_label_h" />
+		<area id="level.num.9" master="level.9" inherit="mars.num.spec" position="=$mars_9_x+$mars_9_x_offset+$level_label_x_offset,$mars_9_label_y-$level_label_h" />
+		<area id="level.name.9" master="level.9" inherit="mars.name.spec" size="=$mars_9_w,$level_label_h" position="=$mars_9_x+$mars_9_x_offset+$level_label_x_offset,$mars_9_label_y-$level_label_h" />		
+		<area id="level.marker.9" master="level.9" inherit="level.marker.spec" position="=$level_marker_size/-2+$mars_9_x,$level_marker_size/-2+$mars_9_y" />
+		<area id="level.marker.glow.9" master="level.9" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$mars_9_x,$level_marker_size/-2+$mars_9_y"  />
+		<!-- up --> <area id="mars.connect.9" master="level.9" inherit="mars.connect.spec" position="=$mars_9_x-4,$mars_9_y" size="=$level_connect_w,$mars_9_label_y-$level_label_h-$mars_9_y+$level_connect_y_offset"/>
+								
+		
+	</instance>
+
+
+
+
+<!--  SATURN LEVEL SELECT  -->
+
+	<area
+		name="saturn.select.screen.left.spec"
+		inherit="level.select.screen.spec" scale="0.5">
+	>		
+		<anchor x="mid" d="-256" /><anchor y="mid" d="-160" />
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.map.saturn.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area
+		name="saturn.select.screen.right.spec"
+		inherit="level.select.screen.spec" scale="0.5">
+	>		
+		<anchor x="mid" d="0" /><anchor y="mid" d="-160" />
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.map.saturn.02" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+
+	<area
+		name="saturn.select.spec"
+		inherit="level.select.spec"
+		color="saturn.colormap:level-cash"
+		mouseOnColor="saturn.colormap:level-cash-on"
+	/>
+	<area
+		name="saturn.num.spec"
+		inherit="level.num.spec"
+		color="saturn.colormap:level"
+		mouseOnColor="saturn.colormap:level-on"
+	/>
+	<area
+		name="saturn.name.spec"
+		inherit="level.name.spec"
+		color="saturn.colormap:level"
+		mouseOnColor="saturn.colormap:level-on"
+	/>
+
+	<area
+		name="saturn.select.right.spec"
+		inherit="saturn.select.spec"
+		halign="right"
+		textOffset="0,1"	
+	/>
+	<area
+		name="saturn.num.right.spec"
+		inherit="saturn.num.spec"
+	/>
+	<area
+		name="saturn.name.right.spec"
+		inherit="saturn.name.spec"
+		halign="right"
+		textOffset="0,1"
+	/>
+
+
+
+	<area
+		name="saturn.connect.spec"
+		inherit="level.connect.spec"
+	>
+	<background>
+			<widgetbackground inherit="line_background"
+				topColor="saturn.colormap:level-line"
+				bottomColor="titles.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				topColor="saturn.colormap:level-line"
+				bottomColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+		<disabledBackground>
+			<widgetbackground inherit="line_background"
+				color="0,0,0,0"
+			/>
+		</disabledBackground>
+	</area>
+
+	<area
+		name="saturn.connect.down.spec"
+		inherit="saturn.connect.spec"
+	>
+	<background>
+		<widgetbackground inherit="line_background"
+				topColor="titles.colormap:level-line"
+				bottomColor="saturn.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				bottomColor="saturn.colormap:level-line"
+				topColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+	</area>
+
+	<area
+		name="saturn_top.spec"
+		inherit="titlescreen_top.spec"
+		text="SATURN - SELECT MISSION..."
+		color="saturn.colormap:level-on"
+	>		
+		<background>
+			<widgetbackground inherit="button_background" color="saturn.colormap:level-cash" />
+		</background>
+	</area>
+
+
+	<!-- define 20 levels here -->
+
+	<property key="saturn_0_x" value="28" />
+	<property key="saturn_0_y" value="215" />
+	<property key="saturn_0_x_offset" value="-1" />
+	<property key="saturn_0_label_y" value="285" />
+	<property key="saturn_0_w" value="90" />
+	
+	<property key="saturn_1_x" value="60" />
+	<property key="saturn_1_y" value="190" />	
+	<property key="saturn_1_x_offset" value="-2" />
+	<property key="saturn_1_label_y" value="260" />
+	<property key="saturn_1_w" value="90" />
+
+	<property key="saturn_2_x" value="48" />
+	<property key="saturn_2_y" value="97" />
+	<property key="saturn_2_x_offset" value="-2" />
+	<property key="saturn_2_label_y" value="151" />
+	<property key="saturn_2_w" value="90" />
+		
+	<property key="saturn_3_x" value="71" />
+	<property key="saturn_3_y" value="101" />	
+	<property key="saturn_3_x_offset" value="-31" />
+	<property key="saturn_3_label_y" value="55" />
+	<property key="saturn_3_w" value="90" />
+	
+	<property key="saturn_4_x" value="150" />
+	<property key="saturn_4_y" value="110" />
+	<property key="saturn_4_x_offset" value="-20" />
+	<property key="saturn_4_label_y" value="43" />
+	<property key="saturn_4_w" value="90" />
+		
+	<property key="saturn_5_x" value="190" />
+	<property key="saturn_5_y" value="123" />	
+	<property key="saturn_5_x_offset" value="-18" />
+	<property key="saturn_5_label_y" value="68" />
+	<property key="saturn_5_w" value="90" />
+	
+	<property key="saturn_6_x" value="167" />
+	<property key="saturn_6_y" value="196" />
+	<property key="saturn_6_x_offset" value="0" />
+	<property key="saturn_6_label_y" value="260" />
+	<property key="saturn_6_w" value="90" />
+		
+	<property key="saturn_7_x" value="139" />
+	<property key="saturn_7_y" value="202" />	
+	<property key="saturn_7_x_offset" value="-2" />
+	<property key="saturn_7_label_y" value="285" />
+	<property key="saturn_7_w" value="90" />
+		
+	<property key="saturn_8_x" value="234" />
+	<property key="saturn_8_y" value="203" />	
+	<property key="saturn_8_x_offset" value="9" />
+	<property key="saturn_8_label_y" value="170" />
+	<property key="saturn_8_w" value="90" />
+		
+	<property key="saturn_9_x" value="254" />
+	<property key="saturn_9_y" value="232" />
+	<property key="saturn_9_x_offset" value="-2" />
+	<property key="saturn_9_label_y" value="285" />
+	<property key="saturn_9_w" value="90" />	
+	
+
+	
+	<instance class="worm.screens.SelectLevelScreen"
+		name="select.level.screen.3"
+		
+		maxsprites="512"
+		keyboardnavigation="false"
+		world="3"
+		transition="instant.transition"
+		centre="both"
+		stream="saturn.stream"
+	>
+		<hotkey key="ESCAPE" area="back"/>
+		<hotkey key="RETURN" area="back"/>
+
+		<area id="background-left" inherit="saturn.select.screen.left.spec" noClick="true" />
+		<area id="background-right" inherit="saturn.select.screen.right.spec" noClick="true" />
+		<area id="titlescreen_top" inherit="saturn_top.spec"/>
+		<area id="back" inherit="button.abort.spec" />
+
+		<area id="level.0" inherit="saturn.select.spec" position="=$saturn_0_x+$saturn_0_x_offset+$level_label_x_offset,$saturn_0_label_y-$level_label_h" />
+		<area id="level.num.0" master="level.0" inherit="saturn.num.spec" position="=$saturn_0_x+$saturn_0_x_offset+$level_label_x_offset,$saturn_0_label_y-$level_label_h" />
+		<area id="level.name.0" master="level.0" inherit="saturn.name.spec" size="=$saturn_0_w,$level_label_h" position="=$saturn_0_x+$saturn_0_x_offset+$level_label_x_offset,$saturn_0_label_y-$level_label_h" />
+		<area id="level.marker.0" master="level.0" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_0_x,$level_marker_size/-2+$saturn_0_y" />
+		<area id="level.marker.glow.0" master="level.0" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_0_x,$level_marker_size/-2+$saturn_0_y"  />
+		<!-- up --> <area id="saturn.connect.0" master="level.0" inherit="saturn.connect.spec" position="=$saturn_0_x-4,$saturn_0_y" size="=$level_connect_w,$saturn_0_label_y-$level_label_h-$saturn_0_y+$level_connect_y_offset"/>
+		
+		<area id="level.1" inherit="saturn.select.spec" position="=$saturn_1_x+$saturn_1_x_offset+$level_label_x_offset,$saturn_1_label_y-$level_label_h" />
+		<area id="level.num.1" master="level.1" inherit="saturn.num.spec" position="=$saturn_1_x+$saturn_1_x_offset+$level_label_x_offset,$saturn_1_label_y-$level_label_h" />
+		<area id="level.name.1" master="level.1" inherit="saturn.name.spec" size="=$saturn_1_w,$level_label_h" position="=$saturn_1_x+$saturn_1_x_offset+$level_label_x_offset,$saturn_1_label_y-$level_label_h" />
+		<area id="level.marker.1" master="level.1" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_1_x,$level_marker_size/-2+$saturn_1_y" />
+		<area id="level.marker.glow.1" master="level.1" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_1_x,$level_marker_size/-2+$saturn_1_y"  />
+		<!-- up --> <area id="saturn.connect.1" master="level.1" inherit="saturn.connect.spec" position="=$saturn_1_x-4,$saturn_1_y" size="=$level_connect_w,$saturn_1_label_y-$level_label_h-$saturn_1_y+$level_connect_y_offset"/>
+
+		<area id="level.2" inherit="saturn.select.spec" position="=$saturn_2_x+$saturn_2_x_offset+$level_label_x_offset,$saturn_2_label_y-$level_label_h" />
+		<area id="level.num.2" master="level.2" inherit="saturn.num.spec" position="=$saturn_2_x+$saturn_2_x_offset+$level_label_x_offset,$saturn_2_label_y-$level_label_h" />
+		<area id="level.name.2" master="level.2" inherit="saturn.name.spec" size="=$saturn_2_w,$level_label_h" position="=$saturn_2_x+$saturn_2_x_offset+$level_label_x_offset,$saturn_2_label_y-$level_label_h" />
+		<area id="level.marker.2" master="level.2" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_2_x,$level_marker_size/-2+$saturn_2_y" />
+		<area id="level.marker.glow.2" master="level.2" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_2_x,$level_marker_size/-2+$saturn_2_y"  />
+		<!-- up --> <area id="saturn.connect.2" master="level.2" inherit="saturn.connect.spec" position="=$saturn_2_x-4,$saturn_2_y" size="=$level_connect_w,$saturn_2_label_y-$level_label_h-$saturn_2_y+$level_connect_y_offset"/>
+				
+		<area id="level.3" inherit="saturn.select.spec" position="=$saturn_3_x+$saturn_3_x_offset+$level_label_x_offset,$saturn_3_label_y-$level_label_h" />
+		<area id="level.num.3" master="level.3" inherit="saturn.num.spec" position="=$saturn_3_x+$saturn_3_x_offset+$level_label_x_offset,$saturn_3_label_y-$level_label_h" />
+		<area id="level.name.3" master="level.3" inherit="saturn.name.spec" size="=$saturn_3_w,$level_label_h" position="=$saturn_3_x+$saturn_3_x_offset+$level_label_x_offset,$saturn_3_label_y-$level_label_h" />
+		<area id="level.marker.3" master="level.3" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_3_x,$level_marker_size/-2+$saturn_3_y" />
+		<area id="level.marker.glow.3" master="level.3" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_3_x,$level_marker_size/-2+$saturn_3_y"  />
+		<!-- down --> <area id="saturn.connect.3" master="level.3" inherit="saturn.connect.down.spec" position="=$saturn_3_x-4,$saturn_3_label_y" size="=$level_connect_w,$saturn_3_y-$saturn_3_label_y"/>
+		
+		<area id="level.4" inherit="saturn.select.spec" position="=$saturn_4_x+$saturn_4_x_offset+$level_label_x_offset,$saturn_4_label_y-$level_label_h" />
+		<area id="level.num.4" master="level.4" inherit="saturn.num.spec" position="=$saturn_4_x+$saturn_4_x_offset+$level_label_x_offset,$saturn_4_label_y-$level_label_h" />
+		<area id="level.name.4" master="level.4" inherit="saturn.name.spec" size="=$saturn_4_w,$level_label_h" position="=$saturn_4_x+$saturn_4_x_offset+$level_label_x_offset,$saturn_4_label_y-$level_label_h" />
+		<area id="level.marker.4" master="level.4" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_4_x,$level_marker_size/-2+$saturn_4_y" />
+		<area id="level.marker.glow.4" master="level.4" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_4_x,$level_marker_size/-2+$saturn_4_y"  />
+		<!-- down --> <area id="saturn.connect.4" master="level.4" inherit="saturn.connect.down.spec" position="=$saturn_4_x-4,$saturn_4_label_y" size="=$level_connect_w,$saturn_4_y-$saturn_4_label_y"/>
+				
+		<area id="level.5" inherit="saturn.select.spec" position="=$saturn_5_x+$saturn_5_x_offset+$level_label_x_offset,$saturn_5_label_y-$level_label_h" />
+		<area id="level.num.5" master="level.5" inherit="saturn.num.spec" position="=$saturn_5_x+$saturn_5_x_offset+$level_label_x_offset,$saturn_5_label_y-$level_label_h" />
+		<area id="level.name.5" master="level.5" inherit="saturn.name.spec" size="=$saturn_5_w,$level_label_h" position="=$saturn_5_x+$saturn_5_x_offset+$level_label_x_offset,$saturn_5_label_y-$level_label_h" />
+		<area id="level.marker.5" master="level.5" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_5_x,$level_marker_size/-2+$saturn_5_y" />
+		<area id="level.marker.glow.5" master="level.5" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_5_x,$level_marker_size/-2+$saturn_5_y"  />
+		<!-- down --> <area id="saturn.connect.5" master="level.5" inherit="saturn.connect.down.spec" position="=$saturn_5_x-4,$saturn_5_label_y" size="=$level_connect_w,$saturn_5_y-$saturn_5_label_y"/>
+				
+		<area id="level.6" inherit="saturn.select.spec" position="=$saturn_6_x+$saturn_6_x_offset+$level_label_x_offset,$saturn_6_label_y-$level_label_h" />
+		<area id="level.num.6" master="level.6" inherit="saturn.num.spec" position="=$saturn_6_x+$saturn_6_x_offset+$level_label_x_offset,$saturn_6_label_y-$level_label_h" />
+		<area id="level.name.6" master="level.6" inherit="saturn.name.spec" size="=$saturn_6_w,$level_label_h" position="=$saturn_6_x+$saturn_6_x_offset+$level_label_x_offset,$saturn_6_label_y-$level_label_h" />
+		<area id="level.marker.6" master="level.6" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_6_x,$level_marker_size/-2+$saturn_6_y" />
+		<area id="level.marker.glow.6" master="level.6" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_6_x,$level_marker_size/-2+$saturn_6_y"  />
+		<!-- up --> <area id="saturn.connect.6" master="level.6" inherit="saturn.connect.spec" position="=$saturn_6_x-4,$saturn_6_y" size="=$level_connect_w,$saturn_6_label_y-$level_label_h-$saturn_6_y+$level_connect_y_offset"/>
+			
+		<area id="level.7" inherit="saturn.select.spec" position="=$saturn_7_x+$saturn_7_x_offset+$level_label_x_offset,$saturn_7_label_y-$level_label_h" />
+		<area id="level.num.7" master="level.7" inherit="saturn.num.spec" position="=$saturn_7_x+$saturn_7_x_offset+$level_label_x_offset,$saturn_7_label_y-$level_label_h" />
+		<area id="level.name.7" master="level.7" inherit="saturn.name.spec" size="=$saturn_7_w,$level_label_h" position="=$saturn_7_x+$saturn_7_x_offset+$level_label_x_offset,$saturn_7_label_y-$level_label_h" />
+		<area id="level.marker.7" master="level.7" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_7_x,$level_marker_size/-2+$saturn_7_y" />
+		<area id="level.marker.glow.7" master="level.7" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_7_x,$level_marker_size/-2+$saturn_7_y"  />
+		<!-- up --> <area id="saturn.connect.7" master="level.7" inherit="saturn.connect.spec" position="=$saturn_7_x-4,$saturn_7_y" size="=$level_connect_w,$saturn_7_label_y-$level_label_h-$saturn_7_y+$level_connect_y_offset"/>
+				
+		<!-- right --> 		
+		<area id="level.8" inherit="saturn.select.right.spec" size="=$saturn_8_w,$level_label_h" position="=$saturn_8_x+$saturn_8_x_offset+$level_label_x_offset-$saturn_8_w,$saturn_8_label_y-$level_label_h" />
+		<area id="level.num.8" master="level.8" inherit="saturn.num.right.spec" position="=$saturn_8_x+$saturn_8_x_offset+$level_label_x_offset,$saturn_8_label_y-$level_label_h" />
+		<area id="level.name.8" master="level.8" inherit="saturn.name.right.spec" size="=$saturn_8_w,$level_label_h" position="=$saturn_8_x+$saturn_8_x_offset+$level_label_x_offset-$saturn_8_w,$saturn_8_label_y-$level_label_h" />
+		<area id="level.marker.8" master="level.8" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_8_x,$level_marker_size/-2+$saturn_8_y" />
+		<area id="level.marker.glow.8" master="level.8" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_8_x,$level_marker_size/-2+$saturn_8_y"  />
+		<!-- down --> <area id="saturn.connect.8" master="level.8" inherit="saturn.connect.down.spec" position="=$saturn_8_x-4,$saturn_8_label_y" size="=$level_connect_w,$saturn_8_y-$saturn_8_label_y"/>
+					
+		<area id="level.9" inherit="saturn.select.spec" position="=$saturn_9_x+$saturn_9_x_offset+$level_label_x_offset,$saturn_9_label_y-$level_label_h" />
+		<area id="level.num.9" master="level.9" inherit="saturn.num.spec" position="=$saturn_9_x+$saturn_9_x_offset+$level_label_x_offset,$saturn_9_label_y-$level_label_h" />
+		<area id="level.name.9" master="level.9" inherit="saturn.name.spec" size="=$saturn_9_w,$level_label_h" position="=$saturn_9_x+$saturn_9_x_offset+$level_label_x_offset,$saturn_9_label_y-$level_label_h" />
+		<area id="level.marker.9" master="level.9" inherit="level.marker.spec" position="=$level_marker_size/-2+$saturn_9_x,$level_marker_size/-2+$saturn_9_y" />
+		<area id="level.marker.glow.9" master="level.9" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$saturn_9_x,$level_marker_size/-2+$saturn_9_y"  />
+		<!-- up --> <area id="saturn.connect.9" master="level.9" inherit="saturn.connect.spec" position="=$saturn_9_x-4,$saturn_9_y" size="=$level_connect_w,$saturn_9_label_y-$level_label_h-$saturn_9_y+$level_connect_y_offset"/>
+	
+	</instance>
+
+
+
+
+
+
+<!--  TITAN LEVEL SELECT  -->
+
+
+	<area
+		name="titan.select.screen.left.spec"
+		inherit="level.select.screen.spec" scale="0.5">
+	>		
+		<anchor x="mid" d="-256" /><anchor y="mid" d="-125" />
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.map.titan.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area
+		name="titan.select.screen.right.spec"
+		inherit="level.select.screen.spec" scale="0.5">
+	>		
+		<anchor x="mid" d="0" /><anchor y="mid" d="-125" />
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.map.titan.02" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area
+		name="titan.select.spec"
+		inherit="level.select.spec"
+		color="titan.colormap:level-cash"
+		mouseOnColor="titan.colormap:level-cash-on"
+	/>
+	<area
+		name="titan.num.spec"
+		inherit="level.num.spec"
+		color="titan.colormap:level"
+		mouseOnColor="titan.colormap:level-on"
+	/>
+	<area
+		name="titan.name.spec"
+		inherit="level.name.spec"
+		color="titan.colormap:level"
+		mouseOnColor="titan.colormap:level-on"
+	/>
+
+	<area
+		name="titan.select.right.spec"
+		inherit="titan.select.spec"
+		halign="right"
+		textOffset="0,1"	
+	/>
+	<area
+		name="titan.num.right.spec"
+		inherit="titan.num.spec"
+	/>
+	<area
+		name="titan.name.right.spec"
+		inherit="titan.name.spec"
+		halign="right"
+		textOffset="0,1"
+	/>
+
+
+
+	<area
+		name="titan.connect.spec"
+		inherit="level.connect.spec"
+	>
+	<background>
+			<widgetbackground inherit="line_background"
+				topColor="titan.colormap:level-line"
+				bottomColor="titles.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				topColor="titan.colormap:level-line"
+				bottomColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+		<disabledBackground>
+			<widgetbackground inherit="line_background"
+				color="0,0,0,0"
+			/>
+		</disabledBackground>
+	</area>
+
+	<area
+		name="titan.connect.down.spec"
+		inherit="titan.connect.spec"
+	>
+	<background>
+		<widgetbackground inherit="line_background"
+				topColor="titles.colormap:level-line"
+				bottomColor="titan.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				bottomColor="titan.colormap:level-line"
+				topColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+	</area>
+
+	<area
+		name="titan_top.spec"
+		inherit="titlescreen_top.spec"
+		text="TITAN - SELECT MISSION..."
+		color="titan.colormap:level-on"
+	>		
+		<background>
+			<widgetbackground inherit="button_background" color="titan.colormap:level-cash" />
+		</background>
+	</area>
+
+
+	<!-- define 20 levels here -->
+
+	<property key="titan_0_x" value="85" />
+	<property key="titan_0_y" value="190" />
+	<property key="titan_0_x_offset" value="9" />
+	<property key="titan_0_label_y" value="255" />
+	<property key="titan_0_w" value="60" />
+	
+	<property key="titan_1_x" value="106" />
+	<property key="titan_1_y" value="199" />	
+	<property key="titan_1_x_offset" value="8" />
+	<property key="titan_1_label_y" value="285" />
+	<property key="titan_1_w" value="60" />
+
+	<property key="titan_2_x" value="178" />
+	<property key="titan_2_y" value="219" />
+	<property key="titan_2_x_offset" value="8" />
+	<property key="titan_2_label_y" value="290" />
+	<property key="titan_2_w" value="50" />
+		
+	<property key="titan_3_x" value="215" />
+	<property key="titan_3_y" value="209" />	
+	<property key="titan_3_x_offset" value="-2" />
+	<property key="titan_3_label_y" value="280" />
+	<property key="titan_3_w" value="90" />
+	
+	<property key="titan_4_x" value="235" />
+	<property key="titan_4_y" value="190" />
+	<property key="titan_4_x_offset" value="-2" />
+	<property key="titan_4_label_y" value="250" />
+	<property key="titan_4_w" value="75" />
+		
+	<property key="titan_5_x" value="85" />
+	<property key="titan_5_y" value="140" />	
+	<property key="titan_5_x_offset" value="-2" />
+	<property key="titan_5_label_y" value="92" />
+	<property key="titan_5_w" value="55" />
+	
+	<property key="titan_6_x" value="102" />
+	<property key="titan_6_y" value="120" />
+	<property key="titan_6_x_offset" value="0" />
+	<property key="titan_6_label_y" value="65" />
+	<property key="titan_6_w" value="55" />
+		
+	<property key="titan_7_x" value="122" />
+	<property key="titan_7_y" value="129" />	
+	<property key="titan_7_x_offset" value="18" />
+	<property key="titan_7_label_y" value="38" />
+	<property key="titan_7_w" value="60" />
+		
+	<property key="titan_8_x" value="150" />
+	<property key="titan_8_y" value="103" />	
+	<property key="titan_8_x_offset" value="0" />
+	<property key="titan_8_label_y" value="65" />
+	<property key="titan_8_w" value="60" />
+		
+	<property key="titan_9_x" value="230" />
+	<property key="titan_9_y" value="128" />
+	<property key="titan_9_x_offset" value="-5" />	
+	<property key="titan_9_label_y" value="38" />
+	<property key="titan_9_w" value="100" />	
+	
+
+	
+	<instance class="worm.screens.SelectLevelScreen"
+		name="select.level.screen.4"
+		
+		maxsprites="512"
+		keyboardnavigation="false"
+		world="4"
+		transition="instant.transition"
+		centre="both"
+		stream="titan.stream"
+	>
+		<hotkey key="ESCAPE" area="back"/>
+		<hotkey key="RETURN" area="back"/>
+
+		<area id="background-left" inherit="titan.select.screen.left.spec" noClick="true" />
+		<area id="background-right" inherit="titan.select.screen.right.spec" noClick="true" />
+		<area id="titlescreen_top" inherit="titan_top.spec"/>
+		<area id="back" inherit="button.abort.spec" />
+
+
+
+		<!-- right --> 		
+		<area id="level.0" inherit="titan.select.right.spec" size="=$titan_0_w,$level_label_h" position="=$titan_0_x+$titan_0_x_offset+$level_label_x_offset-$titan_0_w,$titan_0_label_y-$level_label_h" />
+		<area id="level.num.0" master="level.0" inherit="titan.num.right.spec" position="=$titan_0_x+$titan_0_x_offset+$level_label_x_offset,$titan_0_label_y-$level_label_h" />
+		<area id="level.name.0" master="level.0" inherit="titan.name.right.spec" size="=$titan_0_w,$level_label_h" position="=$titan_0_x+$titan_0_x_offset+$level_label_x_offset-$titan_0_w,$titan_0_label_y-$level_label_h" />
+		<area id="level.marker.0" master="level.0" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_0_x,$level_marker_size/-2+$titan_0_y" />
+		<area id="level.marker.glow.0" master="level.0" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_0_x,$level_marker_size/-2+$titan_0_y"  />
+		<!-- up --> <area id="titan.connect.0" master="level.0" inherit="titan.connect.spec" position="=$titan_0_x-4,$titan_0_y" size="=$level_connect_w,$titan_0_label_y-$level_label_h-$titan_0_y+$level_connect_y_offset"/>
+		
+		<!-- right --> 		
+		<area id="level.1" inherit="titan.select.right.spec" size="=$titan_1_w,$level_label_h" position="=$titan_1_x+$titan_1_x_offset+$level_label_x_offset-$titan_1_w,$titan_1_label_y-$level_label_h" />
+		<area id="level.num.1" master="level.1" inherit="titan.num.right.spec" position="=$titan_1_x+$titan_1_x_offset+$level_label_x_offset,$titan_1_label_y-$level_label_h" />
+		<area id="level.name.1" master="level.1" inherit="titan.name.right.spec" size="=$titan_1_w,$level_label_h" position="=$titan_1_x+$titan_1_x_offset+$level_label_x_offset-$titan_1_w,$titan_1_label_y-$level_label_h" />
+		<area id="level.marker.1" master="level.1" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_1_x,$level_marker_size/-2+$titan_1_y" />
+		<area id="level.marker.glow.1" master="level.1" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_1_x,$level_marker_size/-2+$titan_1_y"  />
+		<!-- up --> <area id="titan.connect.1" master="level.1" inherit="titan.connect.spec" position="=$titan_1_x-4,$titan_1_y" size="=$level_connect_w,$titan_1_label_y-$level_label_h-$titan_1_y+$level_connect_y_offset"/>
+
+		<!-- right --> 		
+		<area id="level.2" inherit="titan.select.right.spec" size="=$titan_2_w,$level_label_h" position="=$titan_2_x+$titan_2_x_offset+$level_label_x_offset-$titan_2_w,$titan_2_label_y-$level_label_h" />
+		<area id="level.num.2" master="level.2" inherit="titan.num.right.spec" position="=$titan_2_x+$titan_2_x_offset+$level_label_x_offset,$titan_2_label_y-$level_label_h" />
+		<area id="level.name.2" master="level.2" inherit="titan.name.right.spec" size="=$titan_2_w,$level_label_h" position="=$titan_2_x+$titan_2_x_offset+$level_label_x_offset-$titan_2_w,$titan_2_label_y-$level_label_h" />
+		<area id="level.marker.2" master="level.2" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_2_x,$level_marker_size/-2+$titan_2_y" />
+		<area id="level.marker.glow.2" master="level.2" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_2_x,$level_marker_size/-2+$titan_2_y"  />
+		<!-- up --> <area id="titan.connect.2" master="level.2" inherit="titan.connect.spec" position="=$titan_2_x-4,$titan_2_y" size="=$level_connect_w,$titan_2_label_y-$level_label_h-$titan_2_y+$level_connect_y_offset"/>
+				
+		<area id="level.3" inherit="titan.select.spec" position="=$titan_3_x+$titan_3_x_offset+$level_label_x_offset,$titan_3_label_y-$level_label_h" />
+		<area id="level.num.3" master="level.3" inherit="titan.num.spec" position="=$titan_3_x+$titan_3_x_offset+$level_label_x_offset,$titan_3_label_y-$level_label_h" />
+		<area id="level.name.3" master="level.3" inherit="titan.name.spec" size="=$titan_3_w,$level_label_h" position="=$titan_3_x+$titan_3_x_offset+$level_label_x_offset,$titan_3_label_y-$level_label_h" />
+		<area id="level.marker.3" master="level.3" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_3_x,$level_marker_size/-2+$titan_3_y" />
+		<area id="level.marker.glow.3" master="level.3" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_3_x,$level_marker_size/-2+$titan_3_y"  />
+		<!-- up --> <area id="titan.connect.3" master="level.3" inherit="titan.connect.spec" position="=$titan_3_x-4,$titan_3_y" size="=$level_connect_w,$titan_3_label_y-$level_label_h-$titan_3_y+$level_connect_y_offset"/>
+	
+		<area id="level.4" inherit="titan.select.spec" position="=$titan_4_x+$titan_4_x_offset+$level_label_x_offset,$titan_4_label_y-$level_label_h" />
+		<area id="level.num.4" master="level.4" inherit="titan.num.spec" position="=$titan_4_x+$titan_4_x_offset+$level_label_x_offset,$titan_4_label_y-$level_label_h" />
+		<area id="level.name.4" master="level.4" inherit="titan.name.spec" size="=$titan_4_w,$level_label_h" position="=$titan_4_x+$titan_4_x_offset+$level_label_x_offset,$titan_4_label_y-$level_label_h" />
+		<area id="level.marker.4" master="level.4" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_4_x,$level_marker_size/-2+$titan_4_y" />
+		<area id="level.marker.glow.4" master="level.4" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_4_x,$level_marker_size/-2+$titan_4_y"  />
+		<!-- up --> <area id="titan.connect.4" master="level.4" inherit="titan.connect.spec" position="=$titan_4_x-4,$titan_4_y" size="=$level_connect_w,$titan_4_label_y-$level_label_h-$titan_4_y+$level_connect_y_offset"/>
+				
+		<!-- right --> 		
+		<area id="level.5" inherit="titan.select.right.spec" size="=$titan_5_w,$level_label_h" position="=$titan_5_x+$titan_5_x_offset+$level_label_x_offset-$titan_5_w,$titan_5_label_y-$level_label_h" />
+		<area id="level.num.5" master="level.5" inherit="titan.num.right.spec" position="=$titan_5_x+$titan_5_x_offset+$level_label_x_offset,$titan_5_label_y-$level_label_h" />
+		<area id="level.name.5" master="level.5" inherit="titan.name.right.spec" size="=$titan_5_w,$level_label_h" position="=$titan_5_x+$titan_5_x_offset+$level_label_x_offset-$titan_5_w,$titan_5_label_y-$level_label_h" />
+		<area id="level.marker.5" master="level.5" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_5_x,$level_marker_size/-2+$titan_5_y" />
+		<area id="level.marker.glow.5" master="level.5" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_5_x,$level_marker_size/-2+$titan_5_y"  />
+		<!-- down --> <area id="titan.connect.5" master="level.5" inherit="titan.connect.down.spec" position="=$titan_5_x-4,$titan_5_label_y" size="=$level_connect_w,$titan_5_y-$titan_5_label_y"/>
+				
+		<!-- right --> 		
+		<area id="level.6" inherit="titan.select.right.spec" size="=$titan_6_w,$level_label_h" position="=$titan_6_x+$titan_6_x_offset+$level_label_x_offset-$titan_6_w,$titan_6_label_y-$level_label_h" />
+		<area id="level.num.6" master="level.6" inherit="titan.num.right.spec" position="=$titan_6_x+$titan_6_x_offset+$level_label_x_offset,$titan_6_label_y-$level_label_h" />
+		<area id="level.name.6" master="level.6" inherit="titan.name.right.spec" size="=$titan_6_w,$level_label_h" position="=$titan_6_x+$titan_6_x_offset+$level_label_x_offset-$titan_6_w,$titan_6_label_y-$level_label_h" />
+		<area id="level.marker.6" master="level.6" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_6_x,$level_marker_size/-2+$titan_6_y" />
+		<area id="level.marker.glow.6" master="level.6" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_6_x,$level_marker_size/-2+$titan_6_y"  />
+		<!-- down --> <area id="titan.connect.6" master="level.6" inherit="titan.connect.down.spec" position="=$titan_6_x-4,$titan_6_label_y" size="=$level_connect_w,$titan_6_y-$titan_6_label_y"/>
+			
+		<!-- right --> 		
+		<area id="level.7" inherit="titan.select.right.spec" size="=$titan_7_w,$level_label_h" position="=$titan_7_x+$titan_7_x_offset+$level_label_x_offset-$titan_7_w,$titan_7_label_y-$level_label_h" />
+		<area id="level.num.7" master="level.7" inherit="titan.num.right.spec" position="=$titan_7_x+$titan_7_x_offset+$level_label_x_offset,$titan_7_label_y-$level_label_h" />
+		<area id="level.name.7" master="level.7" inherit="titan.name.right.spec" size="=$titan_7_w,$level_label_h" position="=$titan_7_x+$titan_7_x_offset+$level_label_x_offset-$titan_7_w,$titan_7_label_y-$level_label_h" />
+		<area id="level.marker.7" master="level.7" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_7_x,$level_marker_size/-2+$titan_7_y" />
+		<area id="level.marker.glow.7" master="level.7" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_7_x,$level_marker_size/-2+$titan_7_y"  />
+		<!-- down --> <area id="titan.connect.7" master="level.7" inherit="titan.connect.down.spec" position="=$titan_7_x-4,$titan_7_label_y" size="=$level_connect_w,$titan_7_y-$titan_7_label_y"/>
+				
+		<area id="level.8" inherit="titan.select.spec" position="=$titan_8_x+$titan_8_x_offset+$level_label_x_offset,$titan_8_label_y-$level_label_h" />
+		<area id="level.num.8" master="level.8" inherit="titan.num.spec" position="=$titan_8_x+$titan_8_x_offset+$level_label_x_offset,$titan_8_label_y-$level_label_h" />
+		<area id="level.name.8" master="level.8" inherit="titan.name.spec" size="=$titan_8_w,$level_label_h" position="=$titan_8_x+$titan_8_x_offset+$level_label_x_offset,$titan_8_label_y-$level_label_h" />		
+		<area id="level.marker.8" master="level.8" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_8_x,$level_marker_size/-2+$titan_8_y" />
+		<area id="level.marker.glow.8" master="level.8" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_8_x,$level_marker_size/-2+$titan_8_y"  />
+		<!-- down --> <area id="titan.connect.8" master="level.8" inherit="titan.connect.down.spec" position="=$titan_8_x-4,$titan_8_label_y" size="=$level_connect_w,$titan_8_y-$titan_8_label_y"/>
+				
+		<area id="level.9" inherit="titan.select.spec" position="=$titan_9_x+$titan_9_x_offset+$level_label_x_offset,$titan_9_label_y-$level_label_h" />
+		<area id="level.num.9" master="level.9" inherit="titan.num.spec" position="=$titan_9_x+$titan_9_x_offset+$level_label_x_offset,$titan_9_label_y-$level_label_h" />
+		<area id="level.name.9" master="level.9" inherit="titan.name.spec" size="=$titan_9_w,$level_label_h" position="=$titan_9_x+$titan_9_x_offset+$level_label_x_offset,$titan_9_label_y-$level_label_h" />		
+		<area id="level.marker.9" master="level.9" inherit="level.marker.spec" position="=$level_marker_size/-2+$titan_9_x,$level_marker_size/-2+$titan_9_y" />
+		<area id="level.marker.glow.9" master="level.9" inherit="level.marker.glow.spec" position="=$level_marker_size/-2+$titan_9_x,$level_marker_size/-2+$titan_9_y"  />
+		<!-- down --> <area id="titan.connect.9" master="level.9" inherit="titan.connect.down.spec" position="=$titan_9_x-4,$titan_9_label_y" size="=$level_connect_w,$titan_9_y-$titan_9_label_y"/>
+	
+	</instance>
+
+
+
+
+	<area
+		name="world.select.screen.left.spec"
+		inherit="level.select.screen.spec" scale="0.5">
+	>		
+		<anchor x="mid" d="-256" /><anchor y="mid" d="-130" />
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.world.select.01" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area
+		name="world.select.screen.right.spec"
+		inherit="level.select.screen.spec" scale="0.5">
+	>		
+		<anchor x="mid" d="0" /><anchor y="mid" d="-130" />
+		<mouseOff>
+			<animation>
+				<animcolor a="204" d="1"/>
+				<frame i="spriteimage.world.select.02" d="1"/>
+				<frame i="hud.phase.20%.animation" d="1"/>
+			</animation>
+		</mouseOff>
+	</area>
+
+	<area
+		name="world.select.right.spec"
+		inherit="level.select.spec"
+		halign="right"
+		textOffset="0,1"	
+	/>
+	<area
+		name="world.num.right.spec"
+		inherit="level.num.spec"
+		halign="left"
+		textOffset="2,2"
+	/>
+	<area
+		name="world.name.right.spec"
+		inherit="level.name.spec"
+		halign="right"
+		textOffset="0,1"
+	/>
+
+
+	<area
+		name="world_top.spec"
+		inherit="earth_top.spec"
+		text="SELECT WORLD..."
+		color="earth.colormap:level-on"
+	>		
+		<background>
+			<widgetbackground inherit="button_background" color="earth.colormap:level-cash" />
+		</background>
+	</area>
+
+
+	<area
+		name="world.select.spec"
+		inherit="level.select.spec"
+		size="=90,$level_label_h"
+	/>
+
+
+	<area
+		name="world.connect.spec"
+		inherit="level.connect.spec"
+	>
+	<background>
+			<widgetbackground inherit="line_background"
+				bottomColor="earth.colormap:level-line"
+				topColor="titles.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				bottomColor="earth.colormap:level-line"
+				topColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+	</area>
+
+	<area
+		name="world.connect.down.spec"
+		inherit="world.connect.spec"
+	>
+	<background>
+		<widgetbackground inherit="line_background"
+				bottomColor="titles.colormap:level-line"
+				topColor="earth.colormap:level-line"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="line_background"
+				topColor="earth.colormap:level-line"
+				bottomColor="titles.colormap:level-line-on"
+			/>
+		</mouseOnBackground>
+	</area>
+
+
+
+
+	<property key="world_0_x" value="33" />
+	<property key="world_0_y" value="130" />
+	<property key="world_0_x_offset" value="0" />
+	<property key="world_0_label_y" value="240" />
+	<property key="world_0_w" value="100" />
+	
+	<property key="world_1_x" value="98" />
+	<property key="world_1_y" value="100" />	
+	<property key="world_1_x_offset" value="-10" />
+	<property key="world_1_label_y" value="53" />
+	<property key="world_1_w" value="150" />
+
+	<property key="world_2_x" value="135" />
+	<property key="world_2_y" value="179" />
+	<property key="world_2_x_offset" value="0" />
+	<property key="world_2_label_y" value="290" />
+	<property key="world_2_w" value="100" />
+		
+	<property key="world_3_x" value="255" />
+	<property key="world_3_y" value="193" />	
+	<property key="world_3_x_offset" value="19" />
+	<property key="world_3_label_y" value="130" />
+	<property key="world_3_w" value="100" />
+	
+	<property key="world_4_x" value="293" />
+	<property key="world_4_y" value="229" />
+	<property key="world_4_x_offset" value="17" />
+	<property key="world_4_label_y" value="89" />
+	<property key="world_4_w" value="100" />
+
+	<property key="world_connect_y_offset" value="3" />
+	<property key="up_shift" value="6" />
+
+
+	<instance class="worm.screens.SelectWorldScreen"
+		name="select.world.screen"
+		
+		maxsprites="512"
+		keyboardnavigation="false"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="cancel"/>
+		<hotkey key="RETURN" area="cancel"/>
+		
+		<area id="background-left" inherit="world.select.screen.left.spec" noClick="true" />
+		<area id="background-right" inherit="world.select.screen.right.spec" noClick="true" />
+		<area id="titlescreen_top" inherit="world_top.spec" />
+		<area id="cancel" inherit="button.abort.spec" />
+		
+		<!-- define 5 worlds here -->
+
+		<area id="world.0" inherit="world.select.spec" size="=$world_0_w,$level_label_h" position="=$world_0_x+$world_0_x_offset+$level_label_x_offset,$world_0_label_y-$level_label_h-$up_shift" />
+		<area id="world.num.0" master="world.0" inherit="level.num.spec" position="=$world_0_x+$world_0_x_offset+$level_label_x_offset,$world_0_label_y-$level_label_h-$up_shift" />
+		<area id="world.name.0" master="world.0" inherit="level.name.spec" size="=$world_0_w,$level_label_h" position="=$world_0_x+$world_0_x_offset+$level_label_x_offset,$world_0_label_y-$level_label_h-$up_shift" />
+		<!-- up --> <area id="world.connect.0" master="world.0" inherit="world.connect.spec" position="=$world_0_x-4,$world_0_y" size="=$level_connect_w,$world_0_label_y-$level_label_h-$world_0_y+$world_connect_y_offset"/>
+		<area id="world.3.planet" position="13, 67"	size="66, 66" master="world.0"/>
+				
+		<area id="world.1" inherit="world.select.spec" size="=$world_1_w,$level_label_h" position="=$world_1_x+$world_1_x_offset+$level_label_x_offset,$world_1_label_y-$level_label_h" />
+		<area id="world.num.1" master="world.1" inherit="level.num.spec" position="=$world_1_x+$world_1_x_offset+$level_label_x_offset,$world_1_label_y-$level_label_h" />
+		<area id="world.name.1" master="world.1" inherit="level.name.spec" size="=$world_1_w,$level_label_h" position="=$world_1_x+$world_1_x_offset+$level_label_x_offset,$world_1_label_y-$level_label_h" />
+		<!-- down --> <area id="world.connect.1" master="world.1" inherit="world.connect.down.spec" position="=$world_1_x-4,$world_1_label_y" size="=$level_connect_w,$world_1_y-$world_1_label_y"/>
+		<area id="world.1.planet" position="91, 92" size="25, 26" master="world.1"/>
+
+		<area id="world.2" inherit="world.select.spec" size="=$world_2_w,$level_label_h" position="=$world_2_x+$world_2_x_offset+$level_label_x_offset,$world_2_label_y-$level_label_h-$up_shift" />
+		<area id="world.num.2" master="world.2" inherit="level.num.spec" position="=$world_2_x+$world_2_x_offset+$level_label_x_offset,$world_2_label_y-$level_label_h-$up_shift" />
+		<area id="world.name.2" master="world.2" inherit="level.name.spec" size="=$world_2_w,$level_label_h" position="=$world_2_x+$world_2_x_offset+$level_label_x_offset,$world_2_label_y-$level_label_h-$up_shift" />
+		<!-- up --> <area id="world.connect.2" master="world.2" inherit="world.connect.spec" position="=$world_2_x-4,$world_2_y" size="=$level_connect_w,$world_2_label_y-$level_label_h-$world_2_y+$world_connect_y_offset"/>
+		<area id="world.2.planet" position="123, 122" size="60, 68" master="world.2"/>	
+				
+		<!-- right --> 		
+		<area id="world.3" inherit="world.select.right.spec" size="=$world_3_w,$level_label_h" position="=$world_3_x+$world_3_x_offset+$level_label_x_offset-$world_3_w,$world_3_label_y-$level_label_h" />
+		<area id="world.num.3" master="world.3" inherit="world.num.right.spec" position="=$world_3_x+$world_3_x_offset+$level_label_x_offset,$world_3_label_y-$level_label_h" />
+		<area id="world.name.3" master="world.3" inherit="world.name.right.spec" size="=$world_3_w,$level_label_h" position="=$world_3_x+$world_3_x_offset+$level_label_x_offset-$world_3_w,$world_3_label_y-$level_label_h" />
+		<!-- down --> <area id="world.connect.3" master="world.3" inherit="world.connect.down.spec" position="=$world_3_x-3,$world_3_label_y" size="=$level_connect_w,$world_3_y-$world_3_label_y"/>
+		<area id="world.3.planet" position="183, 187" size="100, 72" master="world.3"/>	
+
+		<!-- right --> 		
+		<area id="world.4" inherit="world.select.right.spec" size="=$world_4_w,$level_label_h" position="=$world_4_x+$world_4_x_offset+$level_label_x_offset-$world_4_w,$world_4_label_y-$level_label_h" />
+		<area id="world.num.4" master="world.4" inherit="world.num.right.spec" position="=$world_4_x+$world_4_x_offset+$level_label_x_offset,$world_4_label_y-$level_label_h" />
+		<area id="world.name.4" master="world.4" inherit="world.name.right.spec" size="=$world_4_w,$level_label_h" position="=$world_4_x+$world_4_x_offset+$level_label_x_offset-$world_4_w,$world_4_label_y-$level_label_h" />
+		<!-- down --> <area id="world.connect.4" master="world.4" inherit="world.connect.down.spec" position="=$world_4_x-4,$world_4_label_y" size="=$level_connect_w,$world_4_y-$world_4_label_y"/>
+		<area id="world.4.planet" position="283, 221" size="23, 23" master="world.4"/>	
+
+	</instance>
+
+
+
+
+	<!-- ENDLESS level select 5 across -->
+
+	<property key="endless_w" value="58" />
+	<property key="endless_h" value="33" />
+
+	<property key="endless_x_1" value="=-(($endless_w*5)/2)" />
+	<property key="endless_x_2" value="=$endless_x_1+$endless_w" />
+	<property key="endless_x_3" value="=$endless_x_2+$endless_w" />
+	<property key="endless_x_4" value="=$endless_x_3+$endless_w" />
+	<property key="endless_x_5" value="=$endless_x_4+$endless_w" />
+
+	<property key="endless_y" value="-30" />
+
+	<property key="endless_y_1" value="=$endless_y-($endless_h*1)" />
+	<property key="endless_y_2" value="=$endless_y-($endless_h*2)" />
+	<property key="endless_y_3" value="=$endless_y-($endless_h*3)" />
+	<property key="endless_y_4" value="=$endless_y-($endless_h*4)" />
+	<property key="endless_y_5" value="=$endless_y-($endless_h*5)" />
+	<property key="endless_y_6" value="=$endless_y-($endless_h*6)" />
+	<property key="endless_y_7" value="=$endless_y-($endless_h*7)" />
+	<property key="endless_y_8" value="=$endless_y-($endless_h*8)" />
+	<property key="endless_y_9" value="=$endless_y-($endless_h*9)" />
+	<property key="endless_y_10" value="=$endless_y-($endless_h*10)" />
+
+	<area
+		name="endless.num.spec"
+		inherit="level.num.spec"
+		size="=$endless_w,$endless_h"
+		noclick="true"
+		halign="left"
+		textOffset="5, -2"
+		mouseOnColor="button-text-on"
+		disabledColor="0,0,0,64"			
+		group="endless"
+		position="0,0"
+	/>
+
+	<area
+		name="endless.cash.spec"
+		inherit="level.select.spec"
+		size="=$endless_w,$endless_h"
+		halign="right"
+		valign="bottom"
+		textOffset="-5, 3"
+		mouseOnColor="button-text-on"
+		disabledColor="0,0,0,64"		
+		group="endless"
+		position="0,0"
+	>
+	<background>
+			<widgetbackground inherit="button_background"
+				insets="2,2,2,2"
+				color="button"
+			/>
+		</background>
+		<mouseOnBackground>
+			<widgetbackground inherit="button_background"
+				insets="2,2,2,2"
+				color="button-on"
+			/>
+		</mouseOnBackground>
+		<disabledBackground>
+			<widgetbackground inherit="button_background"
+				insets="2,2,2,2"
+				color="button-disabled"
+			/>
+		</disabledBackground>
+	</area>
+	
+	<instance class="worm.screens.SelectEndlessLevelScreen"
+		name="select.endless.screen"
+		maxsprites="4096"
+		keyboardnavigation="false"
+		world="0"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="back"/>
+		<hotkey key="RETURN" area="back"/>
+		
+		<!-- <area id="background-left" inherit="world.select.screen.left.spec" noClick="true" />
+		<area id="background-right" inherit="world.select.screen.right.spec" noClick="true" />  -->
+		
+		
+		<area id="gameover-left" inherit="titlescreen-middle.spec" scale="0.390625">
+			<anchor x="right" d="-200" /><anchor y="bottom" d="25" />
+			<mouseOff>
+				<animation>
+					<animcolor a="255" d="0"/>
+					<frame i="spriteimage.gameover.01" d="1"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation>
+			</mouseOff>
+		</area>
+		<area id="gameover-right" inherit="titlescreen-middle.spec" scale="0.390625">
+			<anchor x="left" d="0" /><anchor y="bottom" d="25" />
+			<mouseOff>
+				<animation>
+					<animcolor a="255" d="0"/>
+					<frame i="spriteimage.gameover.02" d="1"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation>
+			</mouseOff>
+		</area>		
+		
+		
+		
+		<area id="titlescreen_top" inherit="world_top.spec" text="SELECT CHECKPOINT..."/>
+		<area id="back" inherit="button.abort.spec" />
+		
+		<area id="level.0" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.num.0" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.1" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.num.1" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.2" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.num.2" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.3" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.num.3" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.4" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_1"/></area>
+		<area id="level.num.4" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_1"/></area>
+
+		<area id="level.5" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.num.5" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.6" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.num.6" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.7" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.num.7" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.8" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.num.8" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.9" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_2"/></area>
+		<area id="level.num.9" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_2"/></area>		
+
+		<area id="level.10" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.num.10" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.11" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.num.11" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.12" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.num.12" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.13" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.num.13" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.14" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_3"/></area>
+		<area id="level.num.14" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_3"/></area>
+		
+		<area id="level.15" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.num.15" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.16" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.num.16" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.17" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.num.17" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.18" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.num.18" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.19" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_4"/></area>
+		<area id="level.num.19" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_4"/></area>
+		
+		<area id="level.20" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.num.20" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.21" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.num.21" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.22" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.num.22" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.23" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.num.23" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.24" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_5"/></area>
+		<area id="level.num.24" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_5"/></area>
+
+		<area id="level.25" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.num.25" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.26" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.num.26" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.27" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.num.27" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.28" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.num.28" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.29" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_6"/></area>
+		<area id="level.num.29" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_6"/></area>
+		
+		<area id="level.30" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.num.30" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.31" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.num.31" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.32" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.num.32" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.33" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.num.33" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.34" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_7"/></area>
+		<area id="level.num.34" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_7"/></area>
+		
+		<area id="level.35" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.num.35" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_1"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.36" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.num.36" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_2"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.37" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.num.37" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_3"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.38" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.num.38" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_4"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.39" inherit="endless.cash.spec"		><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_8"/></area>
+		<area id="level.num.39" inherit="endless.num.spec"	><anchor x="mid" d="=$endless_x_5"/><anchor y="top" d="=$endless_y_8"/></area>
+
+	</instance>	
+
+
+
+
+	<!-- SURVIVAL  -->
+
+	<animation name="survival.select.world.off.anim">
+		<color c="text-darkest" d="0"/>
+		<frame i="survival.select.world.off.scale.anim" d="0"/>
+	</animation>
+	<animation name="survival.select.world.on.anim">
+		<color c="text-dark" d="0"/>
+		<frame i="survival.select.world.on.scale.anim" d="0"/>
+	</animation>
+	<animation name="survival.select.world.disabled.anim">
+		<color c="default.colormap:gui-greyed" d="0"/>
+		<frame i="survival.select.world.disabled.scale.anim" d="0"/>
+	</animation>
+	<animation name="survival.selected.world.anim">
+		<scale scale="0.5" d="0"/>
+		<color c="text" d="0"/>
+	</animation>
+
+	<animation name="survival.select.world.off.scale.anim">
+		<scale scale="0.5" d="0"/>
+	</animation>
+	<animation name="survival.select.world.on.scale.anim">
+		<scale scale="0.515" d="2"/>
+		<scale scale="0.53" d="2"/>
+	</animation>
+	<animation name="survival.select.world.disabled.scale.anim">
+		<scale scale="0.5" d="0"/>
+	</animation>
+
+	<animation name="survival.select.world.back.off.anim">      <frame i="spriteimage.survival.select.world.01" d="0"/><frame i="survival.select.world.off.anim" d="0"/></animation>
+	<animation name="survival.select.world.back.on.anim">       <frame i="spriteimage.survival.select.world.01" d="0"/><frame i="survival.select.world.on.anim" d="0"/></animation>
+	<animation name="survival.select.world.back.disabled.anim"> <frame i="spriteimage.survival.select.world.01" d="0"/><frame i="survival.select.world.disabled.anim" d="0"/></animation>
+	<animation name="survival.selected.world.back.anim">        <frame i="spriteimage.survival.select.world.01" d="0"/><frame i="survival.selected.world.anim" d="0"/></animation>
+
+	<animation name="survival.select.world.earth.off.anim">      <frame i="spriteimage.survival.select.world.earth.off.01" d="0"/><frame i="survival.select.world.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.earth.on.anim">       <frame i="spriteimage.survival.select.world.earth.on.01" d="0"/><frame i="survival.select.world.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.earth.disabled.anim"> <frame i="spriteimage.survival.select.world.earth.disabled.01" d="0"/><frame i="survival.select.world.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.world.moon.off.anim">      <frame i="spriteimage.survival.select.world.moon.off.01" d="0"/><frame i="survival.select.world.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.moon.on.anim">       <frame i="spriteimage.survival.select.world.moon.on.01" d="0"/><frame i="survival.select.world.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.moon.disabled.anim"> <frame i="spriteimage.survival.select.world.moon.disabled.01" d="0"/><frame i="survival.select.world.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.world.mars.off.anim">      <frame i="spriteimage.survival.select.world.mars.off.01" d="0"/><frame i="survival.select.world.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.mars.on.anim">       <frame i="spriteimage.survival.select.world.mars.on.01" d="0"/><frame i="survival.select.world.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.mars.disabled.anim"> <frame i="spriteimage.survival.select.world.mars.disabled.01" d="0"/><frame i="survival.select.world.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.world.saturn.off.anim">      <frame i="spriteimage.survival.select.world.saturn.off.01" d="0"/><frame i="survival.select.world.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.saturn.on.anim">       <frame i="spriteimage.survival.select.world.saturn.on.01" d="0"/><frame i="survival.select.world.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.saturn.disabled.anim"> <frame i="spriteimage.survival.select.world.saturn.disabled.01" d="0"/><frame i="survival.select.world.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.world.titan.off.anim">      <frame i="spriteimage.survival.select.world.titan.off.01" d="0"/><frame i="survival.select.world.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.titan.on.anim">       <frame i="spriteimage.survival.select.world.titan.on.01" d="0"/><frame i="survival.select.world.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.world.titan.disabled.anim"> <frame i="spriteimage.survival.select.world.titan.disabled.01" d="0"/><frame i="survival.select.world.disabled.scale.anim" d="0"/></animation>
+
+
+	<animation name="survival.select.terrain.off.anim">
+		<color c="text-darkest" d="0"/>
+		<frame i="survival.select.terrain.off.scale.anim" d="0"/>
+	</animation>
+	<animation name="survival.select.terrain.on.anim">
+		<color c="text-dark" d="0"/>
+		<scale scale="0.5" d="0"/>
+		<frame i="survival.select.terrain.on.scale.anim" d="0"/>
+	</animation>
+	<animation name="survival.select.terrain.disabled.anim">
+		<color c="default.colormap:gui-greyed" d="0"/>
+		<frame i="survival.select.terrain.disabled.scale.anim" d="0"/>
+	</animation>
+	<animation name="survival.selected.terrain.anim">
+		<scale scale="0.5" d="0"/>
+		<color c="text" d="0"/>
+	</animation>
+
+	<animation name="survival.select.terrain.off.scale.anim">
+		<scale scale="0.5" d="0"/>
+	</animation>
+	<animation name="survival.select.terrain.on.scale.anim">
+		<scale scale="0.52" d="2"/>
+		<scale scale="0.54" d="2"/>
+	</animation>
+	<animation name="survival.select.terrain.disabled.scale.anim">
+		<scale scale="0.5" d="0"/>
+	</animation>
+
+	<animation name="survival.select.terrain.back.off.anim">      <frame i="spriteimage.survival.select.terrain.01" d="0"/><frame i="survival.select.terrain.off.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.back.on.anim">       <frame i="spriteimage.survival.select.terrain.01" d="0"/><frame i="survival.select.terrain.on.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.back.disabled.anim"> <frame i="spriteimage.survival.select.terrain.01" d="0"/><frame i="survival.select.terrain.disabled.anim" d="0"/></animation>
+	<animation name="survival.selected.terrain.back.anim">       <frame i="spriteimage.survival.select.terrain.01" d="0"/><frame i="survival.selected.terrain.anim" d="0"/></animation>
+
+	<animation name="survival.select.terrain.plains.off.anim">      <frame i="spriteimage.survival.select.terrain.plains.off.01" d="0"/><frame i="survival.select.terrain.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.plains.on.anim">       <frame i="spriteimage.survival.select.terrain.plains.on.01" d="0"/><frame i="survival.select.terrain.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.plains.disabled.anim"> <frame i="spriteimage.survival.select.terrain.plains.disabled.01" d="0"/><frame i="survival.select.terrain.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.terrain.canyons.off.anim">      <frame i="spriteimage.survival.select.terrain.canyons.off.01" d="0"/><frame i="survival.select.terrain.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.canyons.on.anim">       <frame i="spriteimage.survival.select.terrain.canyons.on.01" d="0"/><frame i="survival.select.terrain.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.canyons.disabled.anim"> <frame i="spriteimage.survival.select.terrain.canyons.disabled.01" d="0"/><frame i="survival.select.terrain.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.terrain.broken.off.anim">      <frame i="spriteimage.survival.select.terrain.broken.off.01" d="0"/><frame i="survival.select.terrain.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.broken.on.anim">       <frame i="spriteimage.survival.select.terrain.broken.on.01" d="0"/><frame i="survival.select.terrain.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.broken.disabled.anim"> <frame i="spriteimage.survival.select.terrain.broken.disabled.01" d="0"/><frame i="survival.select.terrain.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.terrain.empty.off.anim">      <frame i="spriteimage.survival.select.terrain.empty.off.01" d="0"/><frame i="survival.select.terrain.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.empty.on.anim">       <frame i="spriteimage.survival.select.terrain.empty.on.01" d="0"/><frame i="survival.select.terrain.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.empty.disabled.anim"> <frame i="spriteimage.survival.select.terrain.empty.disabled.01" d="0"/><frame i="survival.select.terrain.disabled.scale.anim" d="0"/></animation>
+
+
+	<animation name="survival.select.terrain.small.off.anim">      <frame i="spriteimage.survival.select.terrain.small.off.01" d="0"/><frame i="survival.select.terrain.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.small.on.anim">       <frame i="spriteimage.survival.select.terrain.small.on.01" d="0"/><frame i="survival.select.terrain.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.small.disabled.anim"> <frame i="spriteimage.survival.select.terrain.small.disabled.01" d="0"/><frame i="survival.select.terrain.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.terrain.medium.off.anim">      <frame i="spriteimage.survival.select.terrain.medium.off.01" d="0"/><frame i="survival.select.terrain.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.medium.on.anim">       <frame i="spriteimage.survival.select.terrain.medium.on.01" d="0"/><frame i="survival.select.terrain.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.medium.disabled.anim"> <frame i="spriteimage.survival.select.terrain.medium.disabled.01" d="0"/><frame i="survival.select.terrain.disabled.scale.anim" d="0"/></animation>
+
+	<animation name="survival.select.terrain.large.off.anim">      <frame i="spriteimage.survival.select.terrain.large.off.01" d="0"/><frame i="survival.select.terrain.off.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.large.on.anim">       <frame i="spriteimage.survival.select.terrain.large.on.01" d="0"/><frame i="survival.select.terrain.on.scale.anim" d="0"/></animation>
+	<animation name="survival.select.terrain.large.disabled.anim"> <frame i="spriteimage.survival.select.terrain.large.disabled.01" d="0"/><frame i="survival.select.terrain.disabled.scale.anim" d="0"/></animation>
+
+
+
+
+
+	<property key="survival_world_w" value="62" />
+	<property key="survival_world_h" value="=$survival_world_w" />
+	<property key="survival_world_o" value="$survival_world_w/2" />	
+	
+	<property key="survival_world_y" value="222" />	
+	
+	<property key="survival_world_1_x" value="=(320-($survival_world_w*5))/2" />
+	<property key="survival_world_2_x" value="=$survival_world_1_x+$survival_world_w" />
+	<property key="survival_world_3_x" value="=$survival_world_2_x+$survival_world_w" />
+	<property key="survival_world_4_x" value="=$survival_world_3_x+$survival_world_w" />
+	<property key="survival_world_5_x" value="=$survival_world_4_x+$survival_world_w" />
+
+
+	<property key="survival_terrain_w" value="37" />
+	<property key="survival_terrain_h" value="36" />
+	<property key="survival_terrain_x_o" value="$survival_terrain_w/2" />	
+	<property key="survival_terrain_y_o" value="$survival_terrain_h/2" />	
+	
+	<property key="survival_terrain_y" value="168" />	
+	
+	<property key="survival_terrain_1_x" value="=(320-($survival_terrain_w*4))/2" />
+	<property key="survival_terrain_2_x" value="=$survival_terrain_1_x+$survival_terrain_w" />
+	<property key="survival_terrain_3_x" value="=$survival_terrain_2_x+$survival_terrain_w" />
+	<property key="survival_terrain_4_x" value="=$survival_terrain_3_x+$survival_terrain_w" />
+
+
+	<property key="survival_size_y" value="114" />	
+	
+	<property key="survival_size_1_x" value="=(320-($survival_terrain_w*3))/2" />
+	<property key="survival_size_2_x" value="=$survival_size_1_x+$survival_terrain_w" />
+	<property key="survival_size_3_x" value="=$survival_size_2_x+$survival_terrain_w" />
+
+		
+	<area
+		name="survival.world.select.spec"
+		size="=$survival_world_w,$survival_world_h"
+		offset="=$survival_world_o,$survival_world_o"
+		layer="12"
+		scale="0.5"
+	/>
+	
+	<area
+		name="survival.world.select.back.spec"
+		inherit="survival.world.select.spec"
+		layer="11"
+	/>
+
+	<area
+		name="survival.terrain.select.spec"
+		size="=$survival_terrain_w,$survival_terrain_h"
+		offset="=$survival_terrain_x_o,$survival_terrain_y_o"
+		layer="12"
+		scale="0.5"
+	/>
+	
+	<area
+		name="survival.terrain.select.back.spec"
+		inherit="survival.terrain.select.spec"
+		layer="11"
+	/>
+
+
+	<instance class="worm.screens.SelectSurvivalLevelScreen"
+		name="select.survival.screen"
+		maxsprites="4096"
+		keyboardnavigation="false"
+		world="0"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="back"/>
+		<hotkey key="RETURN" area="play"/>
+
+		<area id="best_time_label" text="BEST TIME:" group="default_msg" layer="12" color="text-dark" halign="centered" font="tinyfont.glfont" 
+			position="0,96" size="320,12"/>	
+		<area id="best_time" text="00:00:00:00" group="default_msg" layer="12" color="text" halign="centered" font="bigfont.glfont" 
+			position="0,80" size="320,20"/>	
+
+		<area id="online_best_time_label" text="ONLINE HISCORE RECORD:" group="default_msg" layer="12" color="text-dark" halign="centered" font="tinyfont.glfont" 
+			position="0,48" size="320,12"/>	
+		<area id="online_best_time" text="00:00:00:00" group="default_msg" layer="12" color="text" halign="centered" font="bigfont.glfont" 
+			position="0,32" size="320,20"/>	
+
+
+
+		<!-- WORLD -->
+
+		<area id="world_label" text="WORLD / DIFFICULTY:" layer="12" color="text-dark" halign="centered" font="tinyfont.glfont" 
+			position="=0,$survival_world_y+$survival_world_h" size="320,13"/>	
+
+		<!-- earth -->
+
+		<area id="select.world.0.pic" group="select.world.0" inherit="survival.world.select.spec" position="=$survival_world_1_x,$survival_world_y"
+			mouseoff="survival.select.world.earth.off.anim" mouseon="survival.select.world.earth.on.anim" disabled="survival.select.world.earth.disabled.anim" />
+		<area id="select.world.0.back" group="select.world.0" inherit="survival.world.select.back.spec" position="=$survival_world_1_x,$survival_world_y"
+			mouseoff="survival.select.world.back.off.anim" mouseon="survival.select.world.back.on.anim" disabled="survival.select.world.back.disabled.anim" />
+
+		<area id="select.world.0.pic.selected" group="selected.world.0" inherit="survival.world.select.spec" 
+			position="=$survival_world_1_x,$survival_world_y" mouseoff="spriteimage.survival.select.world.earth.on.01" />
+		<area id="select.world.0.selected.back" group="selected.world.0" inherit="survival.world.select.back.spec"
+			position="=$survival_world_1_x,$survival_world_y" mouseoff="survival.selected.world.back.anim"  />
+	
+		<!-- moon -->
+		
+		<area id="select.world.1.pic" group="select.world.1" inherit="survival.world.select.spec" position="=$survival_world_2_x,$survival_world_y"
+			mouseoff="survival.select.world.moon.off.anim" mouseon="survival.select.world.moon.on.anim" disabled="survival.select.world.moon.disabled.anim" />
+		<area id="select.world.1.back" group="select.world.1" inherit="survival.world.select.back.spec" position="=$survival_world_2_x,$survival_world_y"
+			mouseoff="survival.select.world.back.off.anim" mouseon="survival.select.world.back.on.anim" disabled="survival.select.world.back.disabled.anim" />
+
+		<area id="select.world.1.pic.selected" group="selected.world.1" inherit="survival.world.select.spec" 
+			position="=$survival_world_2_x,$survival_world_y" mouseoff="spriteimage.survival.select.world.moon.on.01" />
+		<area id="select.world.1.selected.back" group="selected.world.1" inherit="survival.world.select.back.spec"
+			position="=$survival_world_2_x,$survival_world_y" mouseoff="survival.selected.world.back.anim"  />
+
+		<!-- mars -->
+
+		<area id="select.world.2.pic" group="select.world.2" inherit="survival.world.select.spec" position="=$survival_world_3_x,$survival_world_y"
+			mouseoff="survival.select.world.mars.off.anim" mouseon="survival.select.world.mars.on.anim" disabled="survival.select.world.mars.disabled.anim" />
+		<area id="select.world.2.back" group="select.world.2" inherit="survival.world.select.back.spec" position="=$survival_world_3_x,$survival_world_y"
+			mouseoff="survival.select.world.back.off.anim" mouseon="survival.select.world.back.on.anim" disabled="survival.select.world.back.disabled.anim" />
+
+		<area id="select.world.2.pic.selected" group="selected.world.2" inherit="survival.world.select.spec" 
+			position="=$survival_world_3_x,$survival_world_y" mouseoff="spriteimage.survival.select.world.mars.on.01" />
+		<area id="select.world.2.selected.back" group="selected.world.2" inherit="survival.world.select.back.spec"
+			position="=$survival_world_3_x,$survival_world_y" mouseoff="survival.selected.world.back.anim"  />
+			
+		<!-- saturn -->	
+				
+		<area id="select.world.3.pic" group="select.world.3" inherit="survival.world.select.spec" position="=$survival_world_4_x,$survival_world_y"
+			mouseoff="survival.select.world.saturn.off.anim" mouseon="survival.select.world.saturn.on.anim" disabled="survival.select.world.saturn.disabled.anim" />
+		<area id="select.world.3.back" group="select.world.3" inherit="survival.world.select.back.spec" position="=$survival_world_4_x,$survival_world_y"
+			mouseoff="survival.select.world.back.off.anim" mouseon="survival.select.world.back.on.anim" disabled="survival.select.world.back.disabled.anim" />
+
+		<area id="select.world.3.pic.selected" group="selected.world.3" inherit="survival.world.select.spec" 
+			position="=$survival_world_4_x,$survival_world_y" mouseoff="spriteimage.survival.select.world.saturn.on.01" />
+		<area id="select.world.3.selected.back" group="selected.world.3" inherit="survival.world.select.back.spec"
+			position="=$survival_world_4_x,$survival_world_y" mouseoff="survival.selected.world.back.anim"  />
+		
+		<!-- titam -->	
+				
+		<area id="select.world.4.pic" group="select.world.4" inherit="survival.world.select.spec" position="=$survival_world_5_x,$survival_world_y"
+			mouseoff="survival.select.world.titan.off.anim" mouseon="survival.select.world.titan.on.anim" disabled="survival.select.world.titan.disabled.anim" />
+		<area id="select.world.4.back" group="select.world.4" inherit="survival.world.select.back.spec" position="=$survival_world_5_x,$survival_world_y"
+			mouseoff="survival.select.world.back.off.anim" mouseon="survival.select.world.back.on.anim" disabled="survival.select.world.back.disabled.anim" />
+
+		<area id="select.world.4.pic.selected" group="selected.world.4" inherit="survival.world.select.spec" 
+			position="=$survival_world_5_x,$survival_world_y" mouseoff="spriteimage.survival.select.world.titan.on.01" />
+		<area id="select.world.4.selected.back" group="selected.world.4" inherit="survival.world.select.back.spec"
+			position="=$survival_world_5_x,$survival_world_y" mouseoff="survival.selected.world.back.anim"  />					
+		
+
+		<!-- TERRAIN -->
+
+		<area id="terrain_label" text="TERRAIN:" layer="12" color="text-dark" halign="centered" font="tinyfont.glfont" 
+			position="=0,$survival_terrain_y+$survival_terrain_h" size="320,13"/>	
+
+		<!-- empty -->
+
+		<area id="select.terrain.0.pic" group="select.terrain.0" inherit="survival.terrain.select.spec" position="=$survival_terrain_1_x,$survival_terrain_y"
+			mouseoff="survival.select.terrain.empty.off.anim" mouseon="survival.select.terrain.empty.on.anim" disabled="survival.select.terrain.empty.disabled.anim" />
+		<area id="select.terrain.0.back" group="select.terrain.0" inherit="survival.terrain.select.back.spec" position="=$survival_terrain_1_x,$survival_terrain_y"
+			mouseoff="survival.select.terrain.back.off.anim" mouseon="survival.select.terrain.back.on.anim" disabled="survival.select.terrain.back.disabled.anim" />
+
+		<area id="select.terrain.0.pic.selected" group="select.terrain.0, selected.terrain.0" inherit="survival.terrain.select.spec" 
+			position="=$survival_terrain_1_x,$survival_terrain_y" mouseoff="spriteimage.survival.select.terrain.empty.on.01" />
+		<area id="select.terrain.0.selected.back" group="select.terrain.0, selected.terrain.0" inherit="survival.terrain.select.back.spec"
+			position="=$survival_terrain_1_x,$survival_terrain_y" mouseoff="survival.selected.terrain.back.anim"  />
+	
+		<!-- plains -->
+
+		<area id="select.terrain.1.pic" group="select.terrain.1" inherit="survival.terrain.select.spec" position="=$survival_terrain_2_x,$survival_terrain_y"
+			mouseoff="survival.select.terrain.plains.off.anim" mouseon="survival.select.terrain.plains.on.anim" disabled="survival.select.terrain.plains.disabled.anim" />
+		<area id="select.terrain.1.back" group="select.terrain.1" inherit="survival.terrain.select.back.spec" position="=$survival_terrain_2_x,$survival_terrain_y"
+			mouseoff="survival.select.terrain.back.off.anim" mouseon="survival.select.terrain.back.on.anim" disabled="survival.select.terrain.back.disabled.anim" />
+
+		<area id="select.terrain.1.pic.selected" group="select.terrain.1, selected.terrain.1" inherit="survival.terrain.select.spec" 
+			position="=$survival_terrain_2_x,$survival_terrain_y" mouseoff="spriteimage.survival.select.terrain.plains.on.01" />
+		<area id="select.terrain.1.selected.back" group="select.terrain.1, selected.terrain.1" inherit="survival.terrain.select.back.spec"
+			position="=$survival_terrain_2_x,$survival_terrain_y" mouseoff="survival.selected.terrain.back.anim"  />
+	
+		<!-- canyons -->
+
+		<area id="select.terrain.2.pic" group="select.terrain.2" inherit="survival.terrain.select.spec" position="=$survival_terrain_3_x,$survival_terrain_y"
+			mouseoff="survival.select.terrain.canyons.off.anim" mouseon="survival.select.terrain.canyons.on.anim" disabled="survival.select.terrain.canyons.disabled.anim" />
+		<area id="select.terrain.2.back" group="select.terrain.2" inherit="survival.terrain.select.back.spec" position="=$survival_terrain_3_x,$survival_terrain_y"
+			mouseoff="survival.select.terrain.back.off.anim" mouseon="survival.select.terrain.back.on.anim" disabled="survival.select.terrain.back.disabled.anim" />
+
+		<area id="select.terrain.2.pic.selected" group="select.terrain.2, selected.terrain.2" inherit="survival.terrain.select.spec" 
+			position="=$survival_terrain_3_x,$survival_terrain_y" mouseoff="spriteimage.survival.select.terrain.canyons.on.01" />
+		<area id="select.terrain.2.selected.back" group="select.terrain.2, selected.terrain.2" inherit="survival.terrain.select.back.spec"
+			position="=$survival_terrain_3_x,$survival_terrain_y" mouseoff="survival.selected.terrain.back.anim"  />
+		
+		<!-- broken -->
+		
+		<area id="select.terrain.3.pic" group="select.terrain.3" inherit="survival.terrain.select.spec" position="=$survival_terrain_4_x,$survival_terrain_y"
+			mouseoff="survival.select.terrain.broken.off.anim" mouseon="survival.select.terrain.broken.on.anim" disabled="survival.select.terrain.broken.disabled.anim" />
+		<area id="select.terrain.3.back" group="select.terrain.3" inherit="survival.terrain.select.back.spec" position="=$survival_terrain_4_x,$survival_terrain_y"
+			mouseoff="survival.select.terrain.back.off.anim" mouseon="survival.select.terrain.back.on.anim" disabled="survival.select.terrain.back.disabled.anim" />
+
+		<area id="select.terrain.3.pic.selected" group="select.terrain.3, selected.terrain.3" inherit="survival.terrain.select.spec" 
+			position="=$survival_terrain_4_x,$survival_terrain_y" mouseoff="spriteimage.survival.select.terrain.broken.on.01" />
+		<area id="select.terrain.3.selected.back" group="select.terrain.3, selected.terrain.3" inherit="survival.terrain.select.back.spec"
+			position="=$survival_terrain_4_x,$survival_terrain_y" mouseoff="survival.selected.terrain.back.anim"  />
+
+
+		<!-- SIZE -->
+
+		<area id="size_label" text="MAP SIZE:" layer="12" color="text-dark" halign="centered" font="tinyfont.glfont" 
+			position="=0,$survival_size_y+$survival_terrain_h" size="320,13"/>	
+
+		<!-- small -->
+		
+		<area id="select.size.0.pic" group="select.size.0" inherit="survival.terrain.select.spec" position="=$survival_size_1_x,$survival_size_y"
+			mouseoff="survival.select.terrain.small.off.anim" mouseon="survival.select.terrain.small.on.anim" disabled="survival.select.terrain.small.disabled.anim" />
+		<area id="select.size.0.back" group="select.size.0" inherit="survival.terrain.select.back.spec" position="=$survival_size_1_x,$survival_size_y"
+			mouseoff="survival.select.terrain.back.off.anim" mouseon="survival.select.terrain.back.on.anim" disabled="survival.select.terrain.back.disabled.anim" />
+
+		<area id="select.size.0.pic.selected" group="select.size.0, selected.size.0" inherit="survival.terrain.select.spec" 
+			position="=$survival_size_1_x,$survival_size_y" mouseoff="spriteimage.survival.select.terrain.small.on.01" />
+		<area id="select.size.0.selected.back" group="select.size.0, selected.size.0" inherit="survival.terrain.select.back.spec"
+			position="=$survival_size_1_x,$survival_size_y" mouseoff="survival.selected.terrain.back.anim"  />
+
+		<!-- medium -->
+		
+		<area id="select.size.1.pic" group="select.size.1" inherit="survival.terrain.select.spec" position="=$survival_size_2_x,$survival_size_y"
+			mouseoff="survival.select.terrain.medium.off.anim" mouseon="survival.select.terrain.medium.on.anim" disabled="survival.select.terrain.medium.disabled.anim" />
+		<area id="select.size.1.back" group="select.size.1" inherit="survival.terrain.select.back.spec" position="=$survival_size_2_x,$survival_size_y"
+			mouseoff="survival.select.terrain.back.off.anim" mouseon="survival.select.terrain.back.on.anim" disabled="survival.select.terrain.back.disabled.anim" />
+
+		<area id="select.size.1.pic.selected" group="select.size.1, selected.size.1" inherit="survival.terrain.select.spec" 
+			position="=$survival_size_2_x,$survival_size_y" mouseoff="spriteimage.survival.select.terrain.medium.on.01" />
+		<area id="select.size.1.selected.back" group="select.size.1, selected.size.1" inherit="survival.terrain.select.back.spec"
+			position="=$survival_size_2_x,$survival_size_y" mouseoff="survival.selected.terrain.back.anim"  />
+
+		<!-- large -->
+		
+		<area id="select.size.2.pic" group="select.size.2" inherit="survival.terrain.select.spec" position="=$survival_size_3_x,$survival_size_y"
+			mouseoff="survival.select.terrain.large.off.anim" mouseon="survival.select.terrain.large.on.anim" disabled="survival.select.terrain.large.disabled.anim" />
+		<area id="select.size.2.back" group="select.size.2" inherit="survival.terrain.select.back.spec" position="=$survival_size_3_x,$survival_size_y"
+			mouseoff="survival.select.terrain.back.off.anim" mouseon="survival.select.terrain.back.on.anim" disabled="survival.select.terrain.back.disabled.anim" />
+
+		<area id="select.size.2.pic.selected" group="select.size.2, selected.size.2" inherit="survival.terrain.select.spec" 
+			position="=$survival_size_3_x,$survival_size_y" mouseoff="spriteimage.survival.select.terrain.large.on.01" />
+		<area id="select.size.2.selected.back" group="select.size.2, selected.size.2" inherit="survival.terrain.select.back.spec"
+			position="=$survival_size_3_x,$survival_size_y" mouseoff="survival.selected.terrain.back.anim"  />
+
+
+
+		
+		<area id="gameover-left" inherit="titlescreen-middle.spec" scale="0.390625">
+			<anchor x="right" d="-200" /><anchor y="bottom" d="25" />
+			<mouseOff>
+				<animation>
+					<animcolor a="255" d="0"/>
+					<frame i="spriteimage.gameover.01" d="1"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation>
+			</mouseOff>
+		</area>
+		<area id="gameover-right" inherit="titlescreen-middle.spec" scale="0.390625">
+			<anchor x="left" d="0" /><anchor y="bottom" d="25" />
+			<mouseOff>
+				<animation>
+					<animcolor a="255" d="0"/>
+					<frame i="spriteimage.gameover.02" d="1"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation>
+			</mouseOff>
+		</area>		
+		
+		<area id="titlescreen_top" inherit="world_top.spec" text="SELECT PARAMETERS..."/>
+		<area id="back" inherit="button.abort.spec" />
+		<area id="play" inherit="button.continue.spec" />
+		
+	</instance>	
+
+
+</resources>
+
+
+
+

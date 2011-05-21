@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Titan Buildings -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<instance
+		class="worm.buildings.BaseBuildingFeature"
+		name="building.titan.base"
+		inherit="building.earth.base"
+	>
+	</instance>
+	
+	
+	
+	<!-- obstacles -->
+
+
+	<animation name="titan.shroom.phase.anim">
+		<animcolor a="63" d="3" />
+		<animcolor a="65" d="3" />
+		<animcolor a="69" d="3" />
+		<animcolor a="75" d="3" />
+		<animcolor a="83" d="3" />
+		<animcolor a="93" d="3" />
+		<animcolor a="105" d="3" />
+		<animcolor a="117" d="3" />
+		<animcolor a="131" d="3" />
+		<animcolor a="145" d="3" />
+		<animcolor a="159" d="3" />
+		<animcolor a="173" d="3" />
+		<animcolor a="187" d="3" />
+		<animcolor a="201" d="3" />
+		<animcolor a="213" d="3" />
+		<animcolor a="225" d="3" />
+		<animcolor a="235" d="3" />
+		<animcolor a="243" d="3" />
+		<animcolor a="249" d="3" />
+		<animcolor a="253" d="3" />
+		<animcolor a="255" d="3" />
+		<animcolor a="254" d="3" />
+		<animcolor a="253" d="3" />
+		<animcolor a="251" d="3" />
+		<animcolor a="249" d="3" />
+		<animcolor a="246" d="3" />
+		<animcolor a="243" d="3" />
+		<animcolor a="239" d="3" />
+		<animcolor a="235" d="3" />
+		<animcolor a="230" d="3" />
+		<animcolor a="225" d="3" />
+		<animcolor a="219" d="3" />
+		<animcolor a="213" d="3" />
+		<animcolor a="207" d="3" />
+		<animcolor a="201" d="3" />
+		<animcolor a="194" d="3" />
+		<animcolor a="187" d="3" />
+		<animcolor a="180" d="3" />
+		<animcolor a="173" d="3" />
+		<animcolor a="166" d="3" />
+		<animcolor a="159" d="3" />
+		<animcolor a="152" d="3" />
+		<animcolor a="145" d="3" />
+		<animcolor a="138" d="3" />
+		<animcolor a="131" d="3" />
+		<animcolor a="124" d="3" />
+		<animcolor a="117" d="3" />
+		<animcolor a="111" d="3" />
+		<animcolor a="105" d="3" />
+		<animcolor a="99" d="3" />
+		<animcolor a="93" d="3" />
+		<animcolor a="88" d="3" />
+		<animcolor a="83" d="3" />
+		<animcolor a="79" d="3" />
+		<animcolor a="75" d="3" />
+		<animcolor a="71" d="3" />
+		<animcolor a="69" d="3" />
+		<animcolor a="66" d="3" />
+		<animcolor a="65" d="3" />
+		<animcolor a="64" d="3" />
+		<animcolor a="63" d="3" />
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="titan.shroom.1.01.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.01" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.02.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.02" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.03.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.03" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.04.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.04" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.05.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.05" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.06.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.06" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.07.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.07" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.08.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.08" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.09.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.09" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	<animation name="titan.shroom.1.10.anim">
+		<frame i="spriteimage.titan.obstacle.1.glow.10" d="0" />
+		<frame i="titan.shroom.phase.anim" d="0" />
+	</animation>
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.master"
+		hitpoints="2"
+		bounds="0,0,8,8"
+		floor="-4"
+	>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" animation="obstacle.dead.animation"/>
+				<emitter offset="8,0" ySortOffset="8" emitter="shroom.explosion.emitter"/> 
+			</layers>
+		</deathAppearance>	
+	</instance>
+
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.01"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.01" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.01.anim" />
+			</layers>
+		</appearance>
+	</instance>
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.02"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.02" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.02.anim" />
+			</layers>
+		</appearance>
+	</instance>
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.03"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.03" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.03.anim" />
+			</layers>
+		</appearance>
+	</instance>
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.04"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.04" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.04.anim" />
+			</layers>
+		</appearance>
+	</instance>
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.05"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.05" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.05.anim" />
+			</layers>
+		</appearance>
+	</instance>
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.06"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.06" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.06.anim" />
+			</layers>
+		</appearance>
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.07"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.07" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.07.anim" />
+			</layers>
+		</appearance>
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.08"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.08" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.08.anim" />
+			</layers>
+		</appearance>
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.09"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.09" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.09.anim" />
+			</layers>
+		</appearance>
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="titan.obstacle.1.10"
+		inherit="titan.obstacle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.titan.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="1" bottomColored="cliff-1" topColored="cliff-glow" attenuated="true" image="spriteimage.titan.obstacle.1.10" />
+				<sprite layer="5" sublayer="2" colored="shroom-glow" attenuated="false" animation="titan.shroom.1.10.anim" />
+			</layers>
+		</appearance>
+	</instance>
+	
+</resources>

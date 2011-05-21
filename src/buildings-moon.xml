@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Mars Buildings -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<instance
+		class="worm.buildings.BaseBuildingFeature"
+		name="building.moon.base"
+		inherit="building.earth.base"
+	>
+	</instance>
+	
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.master"
+		hitpoints="2"
+		bounds="0,0,8,8"
+		floor="-4"
+	>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" animation="obstacle.dead.animation"/>
+				<emitter offset="8,0" ySortOffset="8" emitter="obstacle.explosion.emitter"/> 
+				<emitter offset="2,0" ySortOffset="2" emitter="obstacle.explosion.fire.emitter"/>
+			</layers>
+		</deathAppearance>	
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.master"
+		hitpoints="2"
+		bounds="0,0,8,8"
+		floor="-4"
+	>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" animation="obstacle.dead.animation"/>
+				<emitter offset="8,0" ySortOffset="8" emitter="obstacle.explosion.emitter"/> 
+				<emitter offset="2,0" ySortOffset="2" emitter="obstacle.explosion.fire.emitter"/>
+			</layers>
+		</deathAppearance>	
+	</instance>
+
+
+
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.1"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.01" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.2"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.02" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.3"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.03" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.4"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.04" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.5"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.05" />
+			</layers>
+		</appearance>
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.burning.1"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.01" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.burning.2"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="3" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.02" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.burning.3"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.03" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.burning.4"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.04" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.pod.burning.5"
+		inherit="moon.pod.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.1.05" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.1"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.01" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.2"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.02" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.3"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.03" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.4"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.04" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.5"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.05" />
+			</layers>
+		</appearance>
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.burning.1"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.01" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.burning.2"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="3" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.02" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.burning.3"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.03" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.burning.4"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.04" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="moon.vehicle.burning.5"
+		inherit="moon.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.moon.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.moon.obstacle.2.05" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+
+
+
+
+	
+</resources>
+

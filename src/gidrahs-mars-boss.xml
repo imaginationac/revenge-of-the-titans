@@ -1,0 +1,2248 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDRAH.MARS.BOSS ==================================================================================================  -->
+
+
+	<!-- LAYERS for GIDRAH.MARS.BOSS -->
+
+	<layers name="gidrah.mars.boss.walkAndRoar.layers" scale="0.5">
+		<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" animation="gidrah.mars.boss.walk.body.anim" />
+		<sprite layer="5" sublayer="1" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.head.anim" />
+		<sprite layer="5" sublayer="2" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.blink.face.anim" />
+		<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.head.glow.anim" />
+		<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.blink.face.glow.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.mars.boss.ground.01" />
+	</layers>
+
+ 	<layers name="gidrah.mars.boss.walkAndRoarShort.layers" scale="0.5">
+		<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" animation="gidrah.mars.boss.walk.body.anim" />
+		<sprite layer="5" sublayer="1" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.head.anim" />
+		<sprite layer="5" sublayer="2" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.roar.face.anim" />
+		<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.head.glow.anim" />
+		<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.roar.face.glow.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.mars.boss.ground.01" />
+	</layers>
+
+ 	<layers name="gidrah.mars.boss.walk.layers" scale="0.5">
+		<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" animation="gidrah.mars.boss.walk.body.anim" />
+		<sprite layer="5" sublayer="1" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.head.anim" />
+		<sprite layer="5" sublayer="2" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.face.anim" />
+		<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.head.glow.anim" />
+		<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.face.glow.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.mars.boss.ground.01" />
+	</layers>
+
+ 
+	<!-- GIDRAH.MARS.BOSS definition -->
+
+	<gidrah
+		 name="gidrah.mars.boss"
+		 inherit="gidrah.mars.boss.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" animation="gidrah.mars.boss.walk.selecta.anim" />
+				<sprite layer="5" sublayer="1" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.head.anim" />
+				<sprite layer="5" sublayer="2" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.face.anim" />
+				<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.head.glow.anim" />
+				<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.mars.boss.ground.01" />
+		</layers></appearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" animation="gidrah.mars.boss.idle.body.anim" />
+				<sprite layer="5" sublayer="1" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.head.anim" />
+				<sprite layer="5" sublayer="2" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.face.anim" />
+				<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.head.glow.anim" />
+				<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.mars.boss.ground.01" />
+		</layers></idleAppearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" animation="gidrah.mars.boss.attack.body.anim" />
+				<sprite layer="5" sublayer="1" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.attack.head.anim" />
+				<sprite layer="5" sublayer="2" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.attack.face.anim" />
+				<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.attack.head.glow.anim" />
+				<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.attack.face.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.mars.boss.ground.01" />
+				<emitter emitter="mars.boss.attack.emitter" offset="-12,0" ySortOffset="9"  />
+		</layers></attackAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" image="spriteimage.gidrah.mars.boss.back.01" />
+								<sprite layer="5" sublayer="1" offset="0,49" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.mars.boss.01" />
+								<sprite layer="5" sublayer="2" offset="0,49" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.mars.boss.top.01" />
+								<sprite layer="5" sublayer="3" offset="0,49" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.mars.boss.head.glow.01" />
+								<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" image="spriteimage.gidrah.mars.boss.ice.glow.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.mars.boss.ground.01" />
+								<emitter emitter="frozen.boss.sparkle.emitter" offset="7,0" ySortOffset="88"  />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<sprite><layers scale="0.5">
+ 		</layers></sprite>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" animation="gidrah.mars.boss.death.body.anim" />
+				<sprite layer="5" sublayer="1" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.death.head.anim" />
+				<sprite layer="5" sublayer="2" offset="0,48" bottomColored="floor-fog" topColored="gidrah-mars-boss" attenuated="true" doChildOffset="true" animation="gidrah.mars.boss.death.face.anim" />
+				<sprite layer="5" sublayer="3" offset="0,48" ySortOffset="48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.death.face.glow.anim" />
+				<sprite layer="5" sublayer="3" offset="0,48" attenuated="false" doChildOffset="true" animation="gidrah.mars.boss.death.head.glow.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" animation="gidrah.mars.boss.death.ground.anim" />
+				<emitter emitter="mars.boss.death.remove.fire.emitter" offset="-10,0" ySortOffset="9"  />
+				<emitter emitter="mars.boss.death.explosion.emitter" offset="13,0" ySortOffset="63"  />
+				<emitter emitter="mars.boss.death.remove.explosion.flash.emitter" offset="2,0" ySortOffset="15"  />
+				<emitter emitter="mars.boss.death.remove.explosion.sparks.emitter" offset="1,0" ySortOffset="21"  />
+				<emitter emitter="mars.boss.death.remove.explosion.end.emitter" offset="1,0" ySortOffset="18"  />
+		</layers></deathAppearance>
+	</gidrah>
+
+
+	<!-- ANIMATION for GIDRAH.MARS.BOSS -->
+
+	<animation name="gidrah.mars.boss.walk.selecta.anim">
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" />
+		<setlayers layers="gidrah.mars.boss.walk.layers"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.idle.body.anim">
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="598" />
+	</animation>
+
+	<animation name="gidrah.mars.boss.head.anim">
+			<frame i="spriteimage.gidrah.mars.boss.01" d="1" />
+		<frame i="gidrah.mars.boss.throb.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.attack.body.anim">
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="9" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="4" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="34" childYOffset="-4.0" />
+		<sound player="gidrah.player" attenuator="default.attenuator" sound="gidrah-mars-boss-amb.buffer"/>
+		<sound player="gidrah.player" attenuator="loud.attenuator" sound="gidrah-mars-boss-roar.buffer"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="5" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="1" childYOffset="4.2" />
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="0" childYOffset="12.0" />
+			<offset x="0.0" y="3.1" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="17.4" />
+			<offset x="0.0" y="6.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="22.4" />
+			<offset x="0.0" y="8.7" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="27.0" />
+			<offset x="0.0" y="11.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="31.2" />
+			<offset x="0.0" y="13.5" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="35.0" />
+			<offset x="0.0" y="15.6" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="38.4" />
+			<offset x="0.0" y="17.5" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="41.4" />
+			<offset x="0.0" y="19.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="44.0" />
+			<offset x="0.0" y="20.7" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="46.2" />
+			<offset x="0.0" y="22.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="48.0" />
+			<offset x="0.0" y="23.1" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="49.4" />
+			<offset x="0.0" y="24.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="50.4" />
+			<offset x="0.0" y="24.7" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="51.0" />
+			<offset x="0.0" y="25.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="51.2" />
+			<offset x="0.0" y="25.5" d="1"/>
+			<offset x="0.0" y="25.6" d="2"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="51.1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="50.9" />
+			<offset x="0.0" y="25.5" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="50.8" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="50.6" />
+			<offset x="0.0" y="25.4" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="50.4" />
+			<offset x="0.0" y="25.3" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="50.2" />
+			<offset x="0.0" y="25.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="50.0" />
+			<offset x="0.0" y="25.1" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="49.7" />
+			<offset x="0.0" y="25.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="49.5" />
+			<offset x="0.0" y="24.9" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="49.2" />
+			<offset x="0.0" y="24.7" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="49.0" />
+			<offset x="0.0" y="24.6" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="48.7" />
+			<offset x="0.0" y="24.5" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="48.4" />
+			<offset x="0.0" y="24.3" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="48.1" />
+			<offset x="0.0" y="24.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="47.8" />
+			<offset x="0.0" y="24.1" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="47.6" />
+			<offset x="0.0" y="23.9" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="47.3" />
+			<offset x="0.0" y="23.8" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="47.1" />
+			<offset x="0.0" y="23.7" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="46.8" />
+			<offset x="0.0" y="23.5" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="46.6" />
+			<offset x="0.0" y="23.4" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="46.4" />
+			<offset x="0.0" y="23.3" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="46.3" />
+			<offset x="0.0" y="23.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="46.1" />
+			<offset x="0.0" y="23.1" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="46.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="45.9" />
+			<offset x="0.0" y="23.0" d="2"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="45.8" />
+			<offset x="0.0" y="22.9" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="47.5" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="49.0" />
+			<offset x="0.0" y="23.8" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="50.4" />
+			<offset x="0.0" y="24.5" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="51.5" />
+			<offset x="0.0" y="25.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="52.5" />
+			<offset x="0.0" y="25.8" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="53.3" />
+			<offset x="0.0" y="26.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="53.9" />
+			<offset x="0.0" y="26.6" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="54.3" />
+			<offset x="0.0" y="26.9" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="54.6" />
+			<offset x="0.0" y="27.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="54.7" />
+			<offset x="0.0" y="27.3" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="0" childYOffset="-6.0" />
+			<offset x="0.0" y="0.0" d="1"/>
+		<event id="1"/>
+		<shake amount="10"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="3" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="1" childYOffset="3.1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="0" childYOffset="7.2" />
+			<offset x="0.0" y="2.5" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="0" childYOffset="10.4" />
+			<offset x="0.0" y="4.6" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="0" childYOffset="14.7" />
+			<offset x="0.0" y="6.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="16.1" />
+			<offset x="0.0" y="7.4" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="16.6" />
+			<offset x="0.0" y="8.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="16.4" />
+			<offset x="0.0" y="8.3" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="16.0" />
+			<offset x="0.0" y="8.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="15.3" />
+			<offset x="0.0" y="8.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="14.4" />
+			<offset x="0.0" y="7.7" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="13.1" />
+			<offset x="0.0" y="7.2" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="11.6" />
+			<offset x="0.0" y="6.6" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="9.9" />
+			<offset x="0.0" y="5.8" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="7.8" />
+			<offset x="0.0" y="4.9" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="5.5" />
+			<offset x="0.0" y="3.9" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="2.9" />
+			<offset x="0.0" y="2.7" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="0" childYOffset="-2.0" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="0" childYOffset="-2.0" />
+			<offset x="0.0" y="0.0" d="2"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="3" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="4" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="4" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="3" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="38" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.attack.head.anim">
+			<frame i="spriteimage.gidrah.mars.boss.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.01" d="0" />
+			<scale xscale="0.501" yscale="0.498" d="1"/>
+			<scale xscale="0.503" yscale="0.496" d="1"/>
+			<scale xscale="0.504" yscale="0.494" d="1"/>
+			<scale xscale="0.505" yscale="0.492" d="1"/>
+			<scale xscale="0.506" yscale="0.49" d="1"/>
+			<scale xscale="0.508" yscale="0.488" d="1"/>
+			<scale xscale="0.509" yscale="0.486" d="1"/>
+			<scale xscale="0.51" yscale="0.484" d="1"/>
+			<scale xscale="0.511" yscale="0.482" d="1"/>
+			<scale xscale="0.512" yscale="0.481" d="1"/>
+			<scale xscale="0.513" yscale="0.479" d="1"/>
+			<scale xscale="0.514" yscale="0.477" d="1"/>
+			<scale xscale="0.515" yscale="0.476" d="1"/>
+			<scale xscale="0.516" yscale="0.474" d="1"/>
+			<scale xscale="0.517" yscale="0.473" d="1"/>
+			<scale xscale="0.518" yscale="0.471" d="1"/>
+			<scale xscale="0.519" yscale="0.47" d="1"/>
+			<scale xscale="0.52" yscale="0.469" d="1"/>
+			<scale xscale="0.521" yscale="0.467" d="1"/>
+			<scale xscale="0.521" yscale="0.466" d="1"/>
+			<scale xscale="0.522" yscale="0.465" d="1"/>
+			<scale xscale="0.523" yscale="0.464" d="1"/>
+			<scale xscale="0.524" yscale="0.463" d="1"/>
+			<scale xscale="0.524" yscale="0.462" d="1"/>
+			<scale xscale="0.525" yscale="0.46" d="1"/>
+			<scale xscale="0.526" yscale="0.46" d="1"/>
+			<scale xscale="0.526" yscale="0.459" d="1"/>
+			<scale xscale="0.527" yscale="0.458" d="1"/>
+			<scale xscale="0.527" yscale="0.457" d="1"/>
+			<scale xscale="0.528" yscale="0.456" d="1"/>
+			<scale xscale="0.528" yscale="0.455" d="1"/>
+			<scale xscale="0.529" yscale="0.455" d="1"/>
+			<scale xscale="0.529" yscale="0.454" d="1"/>
+			<scale xscale="0.53" yscale="0.453" d="1"/>
+			<scale xscale="0.53" yscale="0.453" d="1"/>
+			<scale xscale="0.53" yscale="0.452" d="1"/>
+			<scale xscale="0.531" yscale="0.452" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="7"/>
+			<scale xscale="0.537" yscale="0.444" d="1"/>
+			<scale xscale="0.541" yscale="0.44" d="1"/>
+			<scale xscale="0.545" yscale="0.436" d="1"/>
+			<scale xscale="0.548" yscale="0.433" d="1"/>
+			<scale xscale="0.55" yscale="0.43" d="1"/>
+			<scale xscale="0.552" yscale="0.428" d="1"/>
+			<scale xscale="0.553" yscale="0.427" d="1"/>
+			<scale xscale="0.553" yscale="0.427" d="1"/>
+			<scale xscale="0.536" yscale="0.446" d="1"/>
+			<scale xscale="0.521" yscale="0.463" d="1"/>
+			<scale xscale="0.507" yscale="0.478" d="1"/>
+			<scale xscale="0.496" yscale="0.491" d="1"/>
+			<scale xscale="0.486" yscale="0.502" d="1"/>
+			<scale xscale="0.478" yscale="0.511" d="1"/>
+			<scale xscale="0.471" yscale="0.518" d="1"/>
+			<scale xscale="0.467" yscale="0.523" d="1"/>
+			<scale xscale="0.464" yscale="0.526" d="1"/>
+			<scale xscale="0.463" yscale="0.527" d="1"/>
+			<scale xscale="0.463" yscale="0.527" d="1"/>
+			<scale xscale="0.463" yscale="0.527" d="1"/>
+			<scale xscale="0.464" yscale="0.527" d="1"/>
+			<scale xscale="0.464" yscale="0.526" d="1"/>
+			<scale xscale="0.464" yscale="0.526" d="1"/>
+			<scale xscale="0.465" yscale="0.525" d="1"/>
+			<scale xscale="0.465" yscale="0.525" d="1"/>
+			<scale xscale="0.466" yscale="0.524" d="1"/>
+			<scale xscale="0.466" yscale="0.524" d="1"/>
+			<scale xscale="0.467" yscale="0.523" d="1"/>
+			<scale xscale="0.468" yscale="0.522" d="1"/>
+			<scale xscale="0.468" yscale="0.522" d="1"/>
+			<scale xscale="0.469" yscale="0.521" d="1"/>
+			<scale xscale="0.47" yscale="0.52" d="1"/>
+			<scale xscale="0.471" yscale="0.519" d="1"/>
+			<scale xscale="0.471" yscale="0.519" d="1"/>
+			<scale xscale="0.472" yscale="0.518" d="1"/>
+			<scale xscale="0.473" yscale="0.517" d="1"/>
+			<scale xscale="0.474" yscale="0.516" d="1"/>
+			<scale xscale="0.474" yscale="0.516" d="1"/>
+			<scale xscale="0.475" yscale="0.515" d="1"/>
+			<scale xscale="0.476" yscale="0.514" d="1"/>
+			<scale xscale="0.476" yscale="0.514" d="1"/>
+			<scale xscale="0.477" yscale="0.513" d="1"/>
+			<scale xscale="0.477" yscale="0.512" d="1"/>
+			<scale xscale="0.478" yscale="0.512" d="1"/>
+			<scale xscale="0.478" yscale="0.512" d="1"/>
+			<scale xscale="0.479" yscale="0.511" d="1"/>
+			<scale xscale="0.479" yscale="0.511" d="1"/>
+			<scale xscale="0.479" yscale="0.511" d="1"/>
+			<scale xscale="0.479" yscale="0.51" d="1"/>
+			<scale xscale="0.479" yscale="0.51" d="1"/>
+			<scale xscale="0.474" yscale="0.517" d="1"/>
+			<scale xscale="0.469" yscale="0.523" d="1"/>
+			<scale xscale="0.465" yscale="0.528" d="1"/>
+			<scale xscale="0.461" yscale="0.532" d="1"/>
+			<scale xscale="0.458" yscale="0.536" d="1"/>
+			<scale xscale="0.456" yscale="0.539" d="1"/>
+			<scale xscale="0.454" yscale="0.542" d="1"/>
+			<scale xscale="0.452" yscale="0.543" d="1"/>
+			<scale xscale="0.451" yscale="0.544" d="1"/>
+			<scale xscale="0.451" yscale="0.545" d="1"/>
+			<scale xscale="0.452" yscale="0.543" d="1"/>
+			<scale xscale="0.457" yscale="0.54" d="1"/>
+			<scale xscale="0.463" yscale="0.533" d="1"/>
+			<scale xscale="0.473" yscale="0.524" d="1"/>
+			<scale xscale="0.485" yscale="0.512" d="1"/>
+			<scale xscale="0.5" yscale="0.498" d="1"/>
+			<scale xscale="0.518" yscale="0.481" d="1"/>
+			<scale xscale="0.539" yscale="0.462" d="1"/>
+			<scale xscale="0.524" yscale="0.477" d="1"/>
+			<scale xscale="0.511" yscale="0.49" d="1"/>
+			<scale xscale="0.5" yscale="0.502" d="1"/>
+			<scale xscale="0.49" yscale="0.513" d="1"/>
+			<scale xscale="0.481" yscale="0.522" d="1"/>
+			<scale xscale="0.473" yscale="0.53" d="1"/>
+			<scale xscale="0.467" yscale="0.536" d="1"/>
+			<scale xscale="0.463" yscale="0.541" d="1"/>
+			<scale xscale="0.459" yscale="0.545" d="1"/>
+			<scale xscale="0.457" yscale="0.547" d="1"/>
+			<scale xscale="0.457" yscale="0.547" d="1"/>
+			<scale xscale="0.458" yscale="0.546" d="1"/>
+			<scale xscale="0.462" yscale="0.541" d="1"/>
+			<scale xscale="0.469" yscale="0.535" d="1"/>
+			<scale xscale="0.477" yscale="0.527" d="1"/>
+			<scale xscale="0.485" yscale="0.518" d="1"/>
+			<scale xscale="0.495" yscale="0.509" d="1"/>
+			<scale xscale="0.503" yscale="0.5" d="1"/>
+			<scale xscale="0.511" yscale="0.492" d="1"/>
+			<scale xscale="0.518" yscale="0.485" d="1"/>
+			<scale xscale="0.522" yscale="0.481" d="1"/>
+			<scale xscale="0.523" yscale="0.48" d="1"/>
+			<scale xscale="0.517" yscale="0.486" d="1"/>
+			<scale xscale="0.512" yscale="0.491" d="1"/>
+			<scale xscale="0.506" yscale="0.496" d="1"/>
+			<scale xscale="0.502" yscale="0.501" d="1"/>
+			<scale xscale="0.498" yscale="0.505" d="1"/>
+			<scale xscale="0.494" yscale="0.508" d="1"/>
+			<scale xscale="0.491" yscale="0.511" d="1"/>
+			<scale xscale="0.489" yscale="0.514" d="1"/>
+			<scale xscale="0.487" yscale="0.516" d="1"/>
+			<scale xscale="0.486" yscale="0.517" d="1"/>
+			<scale xscale="0.485" yscale="0.518" d="1"/>
+			<scale xscale="0.485" yscale="0.518" d="1"/>
+			<scale xscale="0.485" yscale="0.518" d="1"/>
+			<scale xscale="0.486" yscale="0.517" d="1"/>
+			<scale xscale="0.488" yscale="0.515" d="1"/>
+			<scale xscale="0.49" yscale="0.513" d="1"/>
+			<scale xscale="0.492" yscale="0.511" d="1"/>
+			<scale xscale="0.495" yscale="0.508" d="1"/>
+			<scale xscale="0.498" yscale="0.505" d="1"/>
+			<scale xscale="0.5" yscale="0.503" d="1"/>
+			<scale xscale="0.503" yscale="0.5" d="1"/>
+			<scale xscale="0.506" yscale="0.498" d="1"/>
+			<scale xscale="0.508" yscale="0.496" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.508" yscale="0.494" d="1"/>
+			<scale xscale="0.508" yscale="0.495" d="1"/>
+			<scale xscale="0.507" yscale="0.495" d="1"/>
+			<scale xscale="0.507" yscale="0.495" d="1"/>
+			<scale xscale="0.506" yscale="0.496" d="1"/>
+			<scale xscale="0.506" yscale="0.496" d="1"/>
+			<scale xscale="0.505" yscale="0.496" d="1"/>
+			<scale xscale="0.505" yscale="0.497" d="1"/>
+			<scale xscale="0.504" yscale="0.497" d="1"/>
+			<scale xscale="0.504" yscale="0.498" d="1"/>
+			<scale xscale="0.503" yscale="0.498" d="1"/>
+			<scale xscale="0.502" yscale="0.498" d="1"/>
+			<scale xscale="0.501" yscale="0.499" d="1"/>
+			<scale xscale="0.501" yscale="0.499" d="1"/>
+			<scale scale="0.5" d="400"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.attack.face.anim">
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="66" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="41" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.top.09" d="7" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="9" />
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.top.09" d="7" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="10" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.top.09" d="7" />
+			<frame i="spriteimage.gidrah.mars.boss.top.08" d="5" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="420" />
+	</animation>
+
+	<animation name="gidrah.mars.boss.attack.head.glow.anim">
+			<frame i="spriteimage.gidrah.mars.boss.head.glow.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.head.glow.01" d="0" />
+			<scale xscale="0.501" yscale="0.498" d="1"/>
+			<scale xscale="0.503" yscale="0.496" d="1"/>
+			<scale xscale="0.504" yscale="0.494" d="1"/>
+			<scale xscale="0.505" yscale="0.492" d="1"/>
+			<scale xscale="0.506" yscale="0.49" d="1"/>
+			<scale xscale="0.508" yscale="0.488" d="1"/>
+			<scale xscale="0.509" yscale="0.486" d="1"/>
+			<scale xscale="0.51" yscale="0.484" d="1"/>
+			<scale xscale="0.511" yscale="0.482" d="1"/>
+			<scale xscale="0.512" yscale="0.481" d="1"/>
+			<scale xscale="0.513" yscale="0.479" d="1"/>
+			<scale xscale="0.514" yscale="0.477" d="1"/>
+			<scale xscale="0.515" yscale="0.476" d="1"/>
+			<scale xscale="0.516" yscale="0.474" d="1"/>
+			<scale xscale="0.517" yscale="0.473" d="1"/>
+			<scale xscale="0.518" yscale="0.471" d="1"/>
+			<scale xscale="0.519" yscale="0.47" d="1"/>
+			<scale xscale="0.52" yscale="0.469" d="1"/>
+			<scale xscale="0.521" yscale="0.467" d="1"/>
+			<scale xscale="0.521" yscale="0.466" d="1"/>
+			<scale xscale="0.522" yscale="0.465" d="1"/>
+			<scale xscale="0.523" yscale="0.464" d="1"/>
+			<scale xscale="0.524" yscale="0.463" d="1"/>
+			<scale xscale="0.524" yscale="0.462" d="1"/>
+			<scale xscale="0.525" yscale="0.46" d="1"/>
+			<scale xscale="0.526" yscale="0.46" d="1"/>
+			<scale xscale="0.526" yscale="0.459" d="1"/>
+			<scale xscale="0.527" yscale="0.458" d="1"/>
+			<scale xscale="0.527" yscale="0.457" d="1"/>
+			<scale xscale="0.528" yscale="0.456" d="1"/>
+			<scale xscale="0.528" yscale="0.455" d="1"/>
+			<scale xscale="0.529" yscale="0.455" d="1"/>
+			<scale xscale="0.529" yscale="0.454" d="1"/>
+			<scale xscale="0.53" yscale="0.453" d="1"/>
+			<scale xscale="0.53" yscale="0.453" d="1"/>
+			<scale xscale="0.53" yscale="0.452" d="1"/>
+			<scale xscale="0.531" yscale="0.452" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="7"/>
+			<scale xscale="0.537" yscale="0.444" d="1"/>
+			<scale xscale="0.541" yscale="0.44" d="1"/>
+			<scale xscale="0.545" yscale="0.436" d="1"/>
+			<scale xscale="0.548" yscale="0.433" d="1"/>
+			<scale xscale="0.55" yscale="0.43" d="1"/>
+			<scale xscale="0.552" yscale="0.428" d="1"/>
+			<scale xscale="0.553" yscale="0.427" d="1"/>
+			<scale xscale="0.553" yscale="0.427" d="1"/>
+			<scale xscale="0.536" yscale="0.446" d="1"/>
+			<scale xscale="0.521" yscale="0.463" d="1"/>
+			<scale xscale="0.507" yscale="0.478" d="1"/>
+			<scale xscale="0.496" yscale="0.491" d="1"/>
+			<scale xscale="0.486" yscale="0.502" d="1"/>
+			<scale xscale="0.478" yscale="0.511" d="1"/>
+			<scale xscale="0.471" yscale="0.518" d="1"/>
+			<scale xscale="0.467" yscale="0.523" d="1"/>
+			<scale xscale="0.464" yscale="0.526" d="1"/>
+			<scale xscale="0.463" yscale="0.527" d="1"/>
+			<scale xscale="0.463" yscale="0.527" d="1"/>
+			<scale xscale="0.463" yscale="0.527" d="1"/>
+			<scale xscale="0.464" yscale="0.527" d="1"/>
+			<scale xscale="0.464" yscale="0.526" d="1"/>
+			<scale xscale="0.464" yscale="0.526" d="1"/>
+			<scale xscale="0.465" yscale="0.525" d="1"/>
+			<scale xscale="0.465" yscale="0.525" d="1"/>
+			<scale xscale="0.466" yscale="0.524" d="1"/>
+			<scale xscale="0.466" yscale="0.524" d="1"/>
+			<scale xscale="0.467" yscale="0.523" d="1"/>
+			<scale xscale="0.468" yscale="0.522" d="1"/>
+			<scale xscale="0.468" yscale="0.522" d="1"/>
+			<scale xscale="0.469" yscale="0.521" d="1"/>
+			<scale xscale="0.47" yscale="0.52" d="1"/>
+			<scale xscale="0.471" yscale="0.519" d="1"/>
+			<scale xscale="0.471" yscale="0.519" d="1"/>
+			<scale xscale="0.472" yscale="0.518" d="1"/>
+			<scale xscale="0.473" yscale="0.517" d="1"/>
+			<scale xscale="0.474" yscale="0.516" d="1"/>
+			<scale xscale="0.474" yscale="0.516" d="1"/>
+			<scale xscale="0.475" yscale="0.515" d="1"/>
+			<scale xscale="0.476" yscale="0.514" d="1"/>
+			<scale xscale="0.476" yscale="0.514" d="1"/>
+			<scale xscale="0.477" yscale="0.513" d="1"/>
+			<scale xscale="0.477" yscale="0.512" d="1"/>
+			<scale xscale="0.478" yscale="0.512" d="1"/>
+			<scale xscale="0.478" yscale="0.512" d="1"/>
+			<scale xscale="0.479" yscale="0.511" d="1"/>
+			<scale xscale="0.479" yscale="0.511" d="1"/>
+			<scale xscale="0.479" yscale="0.511" d="1"/>
+			<scale xscale="0.479" yscale="0.51" d="1"/>
+			<scale xscale="0.479" yscale="0.51" d="1"/>
+			<scale xscale="0.474" yscale="0.517" d="1"/>
+			<scale xscale="0.469" yscale="0.523" d="1"/>
+			<scale xscale="0.465" yscale="0.528" d="1"/>
+			<scale xscale="0.461" yscale="0.532" d="1"/>
+			<scale xscale="0.458" yscale="0.536" d="1"/>
+			<scale xscale="0.456" yscale="0.539" d="1"/>
+			<scale xscale="0.454" yscale="0.542" d="1"/>
+			<scale xscale="0.452" yscale="0.543" d="1"/>
+			<scale xscale="0.451" yscale="0.544" d="1"/>
+			<scale xscale="0.451" yscale="0.545" d="1"/>
+			<scale xscale="0.452" yscale="0.543" d="1"/>
+			<scale xscale="0.457" yscale="0.54" d="1"/>
+			<scale xscale="0.463" yscale="0.533" d="1"/>
+			<scale xscale="0.473" yscale="0.524" d="1"/>
+			<scale xscale="0.485" yscale="0.512" d="1"/>
+			<scale xscale="0.5" yscale="0.498" d="1"/>
+			<scale xscale="0.518" yscale="0.481" d="1"/>
+			<scale xscale="0.539" yscale="0.462" d="1"/>
+			<scale xscale="0.524" yscale="0.477" d="1"/>
+			<scale xscale="0.511" yscale="0.49" d="1"/>
+			<scale xscale="0.5" yscale="0.502" d="1"/>
+			<scale xscale="0.49" yscale="0.513" d="1"/>
+			<scale xscale="0.481" yscale="0.522" d="1"/>
+			<scale xscale="0.473" yscale="0.53" d="1"/>
+			<scale xscale="0.467" yscale="0.536" d="1"/>
+			<scale xscale="0.463" yscale="0.541" d="1"/>
+			<scale xscale="0.459" yscale="0.545" d="1"/>
+			<scale xscale="0.457" yscale="0.547" d="1"/>
+			<scale xscale="0.457" yscale="0.547" d="1"/>
+			<scale xscale="0.458" yscale="0.546" d="1"/>
+			<scale xscale="0.462" yscale="0.541" d="1"/>
+			<scale xscale="0.469" yscale="0.535" d="1"/>
+			<scale xscale="0.477" yscale="0.527" d="1"/>
+			<scale xscale="0.485" yscale="0.518" d="1"/>
+			<scale xscale="0.495" yscale="0.509" d="1"/>
+			<scale xscale="0.503" yscale="0.5" d="1"/>
+			<scale xscale="0.511" yscale="0.492" d="1"/>
+			<scale xscale="0.518" yscale="0.485" d="1"/>
+			<scale xscale="0.522" yscale="0.481" d="1"/>
+			<scale xscale="0.523" yscale="0.48" d="1"/>
+			<scale xscale="0.517" yscale="0.486" d="1"/>
+			<scale xscale="0.512" yscale="0.491" d="1"/>
+			<scale xscale="0.506" yscale="0.496" d="1"/>
+			<scale xscale="0.502" yscale="0.501" d="1"/>
+			<scale xscale="0.498" yscale="0.505" d="1"/>
+			<scale xscale="0.494" yscale="0.508" d="1"/>
+			<scale xscale="0.491" yscale="0.511" d="1"/>
+			<scale xscale="0.489" yscale="0.514" d="1"/>
+			<scale xscale="0.487" yscale="0.516" d="1"/>
+			<scale xscale="0.486" yscale="0.517" d="1"/>
+			<scale xscale="0.485" yscale="0.518" d="1"/>
+			<scale xscale="0.485" yscale="0.518" d="1"/>
+			<scale xscale="0.485" yscale="0.518" d="1"/>
+			<scale xscale="0.486" yscale="0.517" d="1"/>
+			<scale xscale="0.488" yscale="0.515" d="1"/>
+			<scale xscale="0.49" yscale="0.513" d="1"/>
+			<scale xscale="0.492" yscale="0.511" d="1"/>
+			<scale xscale="0.495" yscale="0.508" d="1"/>
+			<scale xscale="0.498" yscale="0.505" d="1"/>
+			<scale xscale="0.5" yscale="0.503" d="1"/>
+			<scale xscale="0.503" yscale="0.5" d="1"/>
+			<scale xscale="0.506" yscale="0.498" d="1"/>
+			<scale xscale="0.508" yscale="0.496" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.511" yscale="0.493" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.51" yscale="0.493" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.509" yscale="0.494" d="1"/>
+			<scale xscale="0.508" yscale="0.494" d="1"/>
+			<scale xscale="0.508" yscale="0.495" d="1"/>
+			<scale xscale="0.507" yscale="0.495" d="1"/>
+			<scale xscale="0.507" yscale="0.495" d="1"/>
+			<scale xscale="0.506" yscale="0.496" d="1"/>
+			<scale xscale="0.506" yscale="0.496" d="1"/>
+			<scale xscale="0.505" yscale="0.496" d="1"/>
+			<scale xscale="0.505" yscale="0.497" d="1"/>
+			<scale xscale="0.504" yscale="0.497" d="1"/>
+			<scale xscale="0.504" yscale="0.498" d="1"/>
+			<scale xscale="0.503" yscale="0.498" d="1"/>
+			<scale xscale="0.502" yscale="0.498" d="1"/>
+			<scale xscale="0.501" yscale="0.499" d="1"/>
+			<scale xscale="0.501" yscale="0.499" d="1"/>
+			<scale scale="0.5" d="400"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.attack.face.glow.anim">
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="66" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="41" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="9" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="10" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.09" d="7" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.08" d="5" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="420" />
+	</animation>
+
+	<animation name="gidrah.mars.boss.throb.anim">
+		<label id="start"/>
+			<scale xscale="0.502" yscale="0.503" d="1"/>
+			<scale xscale="0.503" yscale="0.506" d="1"/>
+			<scale xscale="0.505" yscale="0.509" d="1"/>
+			<scale xscale="0.506" yscale="0.511" d="1"/>
+			<scale xscale="0.507" yscale="0.514" d="1"/>
+			<scale xscale="0.508" yscale="0.516" d="1"/>
+			<scale xscale="0.509" yscale="0.519" d="1"/>
+			<scale xscale="0.511" yscale="0.521" d="1"/>
+			<scale xscale="0.512" yscale="0.523" d="1"/>
+			<scale xscale="0.512" yscale="0.524" d="1"/>
+			<scale xscale="0.513" yscale="0.526" d="1"/>
+			<scale xscale="0.514" yscale="0.527" d="1"/>
+			<scale xscale="0.515" yscale="0.529" d="1"/>
+			<scale xscale="0.515" yscale="0.53" d="1"/>
+			<scale xscale="0.516" yscale="0.531" d="1"/>
+			<scale xscale="0.516" yscale="0.532" d="1"/>
+			<scale xscale="0.517" yscale="0.533" d="1"/>
+			<scale xscale="0.517" yscale="0.533" d="1"/>
+			<scale xscale="0.517" yscale="0.534" d="1"/>
+			<scale xscale="0.518" yscale="0.534" d="1"/>
+			<scale xscale="0.518" yscale="0.535" d="1"/>
+			<scale xscale="0.518" yscale="0.535" d="1"/>
+			<scale xscale="0.516" yscale="0.532" d="1"/>
+			<scale xscale="0.514" yscale="0.529" d="1"/>
+			<scale xscale="0.513" yscale="0.527" d="1"/>
+			<scale xscale="0.511" yscale="0.525" d="1"/>
+			<scale xscale="0.51" yscale="0.522" d="1"/>
+			<scale xscale="0.509" yscale="0.52" d="1"/>
+			<scale xscale="0.507" yscale="0.518" d="1"/>
+			<scale xscale="0.506" yscale="0.516" d="1"/>
+			<scale xscale="0.505" yscale="0.514" d="1"/>
+			<scale xscale="0.504" yscale="0.513" d="1"/>
+			<scale xscale="0.503" yscale="0.511" d="1"/>
+			<scale xscale="0.502" yscale="0.509" d="1"/>
+			<scale xscale="0.501" yscale="0.508" d="1"/>
+			<scale xscale="0.5" yscale="0.506" d="1"/>
+			<scale xscale="0.499" yscale="0.505" d="1"/>
+			<scale xscale="0.498" yscale="0.504" d="1"/>
+			<scale xscale="0.498" yscale="0.503" d="1"/>
+			<scale xscale="0.497" yscale="0.502" d="1"/>
+			<scale xscale="0.497" yscale="0.501" d="1"/>
+			<scale xscale="0.496" yscale="0.5" d="1"/>
+			<scale xscale="0.496" yscale="0.499" d="1"/>
+			<scale xscale="0.495" yscale="0.499" d="1"/>
+			<scale xscale="0.495" yscale="0.498" d="1"/>
+			<scale xscale="0.495" yscale="0.498" d="1"/>
+			<scale xscale="0.494" yscale="0.497" d="1"/>
+			<scale xscale="0.494" yscale="0.497" d="1"/>
+			<scale xscale="0.494" yscale="0.497" d="1"/>
+			<scale xscale="0.494" yscale="0.497" d="1"/>
+			<scale xscale="0.496" yscale="0.499" d="1"/>
+			<scale xscale="0.498" yscale="0.501" d="1"/>
+			<scale xscale="0.5" yscale="0.503" d="1"/>
+			<scale xscale="0.502" yscale="0.505" d="1"/>
+			<scale xscale="0.503" yscale="0.507" d="1"/>
+			<scale xscale="0.505" yscale="0.509" d="1"/>
+			<scale xscale="0.506" yscale="0.511" d="1"/>
+			<scale xscale="0.508" yscale="0.513" d="1"/>
+			<scale xscale="0.509" yscale="0.514" d="1"/>
+			<scale xscale="0.51" yscale="0.516" d="1"/>
+			<scale xscale="0.512" yscale="0.517" d="1"/>
+			<scale xscale="0.513" yscale="0.518" d="1"/>
+			<scale xscale="0.514" yscale="0.52" d="1"/>
+			<scale xscale="0.515" yscale="0.521" d="1"/>
+			<scale xscale="0.516" yscale="0.522" d="1"/>
+			<scale xscale="0.517" yscale="0.523" d="1"/>
+			<scale xscale="0.518" yscale="0.524" d="1"/>
+			<scale xscale="0.518" yscale="0.525" d="1"/>
+			<scale xscale="0.519" yscale="0.526" d="1"/>
+			<scale xscale="0.52" yscale="0.526" d="1"/>
+			<scale xscale="0.52" yscale="0.527" d="1"/>
+			<scale xscale="0.521" yscale="0.527" d="1"/>
+			<scale xscale="0.521" yscale="0.528" d="1"/>
+			<scale xscale="0.521" yscale="0.528" d="1"/>
+			<scale xscale="0.522" yscale="0.528" d="1"/>
+			<scale xscale="0.522" yscale="0.529" d="1"/>
+			<scale xscale="0.522" yscale="0.529" d="1"/>
+			<scale xscale="0.522" yscale="0.529" d="1"/>
+			<scale xscale="0.521" yscale="0.527" d="1"/>
+			<scale xscale="0.52" yscale="0.526" d="1"/>
+			<scale xscale="0.519" yscale="0.525" d="1"/>
+			<scale xscale="0.518" yscale="0.524" d="1"/>
+			<scale xscale="0.517" yscale="0.522" d="1"/>
+			<scale xscale="0.516" yscale="0.521" d="1"/>
+			<scale xscale="0.515" yscale="0.52" d="1"/>
+			<scale xscale="0.514" yscale="0.519" d="1"/>
+			<scale xscale="0.514" yscale="0.518" d="1"/>
+			<scale xscale="0.513" yscale="0.517" d="1"/>
+			<scale xscale="0.512" yscale="0.516" d="1"/>
+			<scale xscale="0.511" yscale="0.515" d="1"/>
+			<scale xscale="0.51" yscale="0.514" d="1"/>
+			<scale xscale="0.51" yscale="0.513" d="1"/>
+			<scale xscale="0.509" yscale="0.512" d="1"/>
+			<scale xscale="0.508" yscale="0.511" d="1"/>
+			<scale xscale="0.508" yscale="0.51" d="1"/>
+			<scale xscale="0.507" yscale="0.509" d="1"/>
+			<scale xscale="0.507" yscale="0.509" d="1"/>
+			<scale xscale="0.506" yscale="0.508" d="1"/>
+			<scale xscale="0.506" yscale="0.507" d="1"/>
+			<scale xscale="0.505" yscale="0.507" d="1"/>
+			<scale xscale="0.505" yscale="0.506" d="1"/>
+			<scale xscale="0.504" yscale="0.505" d="1"/>
+			<scale xscale="0.504" yscale="0.505" d="1"/>
+			<scale xscale="0.503" yscale="0.504" d="1"/>
+			<scale xscale="0.503" yscale="0.504" d="1"/>
+			<scale xscale="0.502" yscale="0.503" d="1"/>
+			<scale xscale="0.502" yscale="0.503" d="1"/>
+			<scale scale="0.502" d="1"/>
+			<scale scale="0.502" d="1"/>
+			<scale xscale="0.501" yscale="0.502" d="1"/>
+			<scale scale="0.501" d="1"/>
+			<scale scale="0.501" d="1"/>
+			<scale scale="0.501" d="1"/>
+			<scale xscale="0.5" yscale="0.501" d="1"/>
+			<scale scale="0.5" d="1"/>
+			<scale scale="0.5" d="1"/>
+			<scale scale="0.5" d="1"/>
+			<scale scale="0.5" d="1"/>
+			<scale scale="0.5" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.death.body.anim">
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="4" childYOffset="-2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.14" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="3" childYOffset="-4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.15" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="112" childYOffset="-6.0" />
+		<sound player="gidrah.player" attenuator="default.attenuator" sound="gidrah-mars-boss-amb.buffer"/>
+		<sound player="gidrah.player" attenuator="loud.attenuator" sound="gidrah-mars-boss-roar.buffer"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="194" childYOffset="-6.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.16" d="1" />
+		<shake amount="30"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.17" d="279" />
+		<shake amount="20"/>
+		<frame i="boss.dead.remove.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.death.head.anim">
+			<frame i="spriteimage.gidrah.mars.boss.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.01" d="0" />
+			<scale scale="0.5" d="1"/>
+			<scale scale="0.5" d="1"/>
+			<scale xscale="0.501" yscale="0.499" d="1"/>
+			<scale xscale="0.501" yscale="0.498" d="1"/>
+			<scale xscale="0.502" yscale="0.497" d="1"/>
+			<scale xscale="0.502" yscale="0.496" d="1"/>
+			<scale xscale="0.503" yscale="0.495" d="1"/>
+			<scale xscale="0.504" yscale="0.493" d="1"/>
+			<scale xscale="0.505" yscale="0.492" d="1"/>
+			<scale xscale="0.507" yscale="0.49" d="1"/>
+			<scale xscale="0.508" yscale="0.487" d="1"/>
+			<scale xscale="0.51" yscale="0.485" d="1"/>
+			<scale xscale="0.511" yscale="0.482" d="1"/>
+			<scale xscale="0.513" yscale="0.479" d="1"/>
+			<scale xscale="0.515" yscale="0.476" d="1"/>
+			<scale xscale="0.517" yscale="0.473" d="1"/>
+			<scale xscale="0.519" yscale="0.47" d="1"/>
+			<scale xscale="0.521" yscale="0.466" d="1"/>
+			<scale xscale="0.524" yscale="0.462" d="1"/>
+			<scale xscale="0.527" yscale="0.458" d="1"/>
+			<scale xscale="0.529" yscale="0.454" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="3"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="2"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.532" yscale="0.451" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.531" yscale="0.452" d="1"/>
+			<scale xscale="0.531" yscale="0.452" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.531" yscale="0.452" d="1"/>
+			<scale xscale="0.531" yscale="0.453" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.53" yscale="0.453" d="1"/>
+			<scale xscale="0.53" yscale="0.454" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.53" yscale="0.454" d="1"/>
+			<scale xscale="0.53" yscale="0.455" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.53" yscale="0.455" d="1"/>
+			<scale xscale="0.529" yscale="0.456" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.529" yscale="0.456" d="1"/>
+			<scale xscale="0.529" yscale="0.457" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.529" yscale="0.457" d="1"/>
+			<scale xscale="0.528" yscale="0.458" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.528" yscale="0.459" d="1"/>
+			<scale xscale="0.528" yscale="0.459" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.527" yscale="0.46" d="1"/>
+			<scale xscale="0.527" yscale="0.461" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.527" yscale="0.462" d="1"/>
+			<scale xscale="0.526" yscale="0.462" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.526" yscale="0.463" d="1"/>
+			<scale xscale="0.526" yscale="0.464" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.525" yscale="0.465" d="1"/>
+			<scale xscale="0.525" yscale="0.465" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.525" yscale="0.466" d="1"/>
+			<scale xscale="0.524" yscale="0.467" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.524" yscale="0.468" d="1"/>
+			<scale xscale="0.523" yscale="0.469" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.523" yscale="0.47" d="1"/>
+			<scale xscale="0.523" yscale="0.471" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.522" yscale="0.472" d="1"/>
+			<scale xscale="0.522" yscale="0.473" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.521" yscale="0.474" d="1"/>
+			<scale xscale="0.521" yscale="0.475" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.52" yscale="0.476" d="1"/>
+			<scale xscale="0.52" yscale="0.477" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.52" yscale="0.478" d="1"/>
+			<scale xscale="0.519" yscale="0.479" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.519" yscale="0.48" d="1"/>
+			<scale xscale="0.518" yscale="0.481" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.518" yscale="0.482" d="1"/>
+			<scale xscale="0.517" yscale="0.483" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.517" yscale="0.485" d="1"/>
+			<scale xscale="0.516" yscale="0.486" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.516" yscale="0.487" d="1"/>
+			<scale xscale="0.515" yscale="0.488" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.515" yscale="0.489" d="1"/>
+			<scale xscale="0.514" yscale="0.49" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.513" yscale="0.492" d="1"/>
+			<scale xscale="0.513" yscale="0.493" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.512" yscale="0.494" d="1"/>
+			<scale xscale="0.512" yscale="0.495" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.511" yscale="0.497" d="1"/>
+			<scale xscale="0.511" yscale="0.498" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.51" yscale="0.499" d="1"/>
+			<scale xscale="0.509" yscale="0.501" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.509" yscale="0.502" d="1"/>
+			<scale xscale="0.508" yscale="0.503" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.508" yscale="0.505" d="1"/>
+			<scale xscale="0.507" yscale="0.506" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale scale="0.507" d="1"/>
+			<scale xscale="0.506" yscale="0.509" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.505" yscale="0.51" d="1"/>
+			<scale xscale="0.505" yscale="0.512" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.504" yscale="0.513" d="1"/>
+			<scale xscale="0.503" yscale="0.514" d="0"/>
+			<offset x="0.2" y="+0.0" d="1"/>
+			<scale xscale="0.503" yscale="0.516" d="1"/>
+			<scale xscale="0.502" yscale="0.517" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.502" yscale="0.519" d="1"/>
+			<scale xscale="0.501" yscale="0.52" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.5" yscale="0.522" d="1"/>
+			<scale xscale="0.5" yscale="0.523" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<scale xscale="0.499" yscale="0.525" d="1"/>
+			<scale xscale="0.498" yscale="0.526" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.498" yscale="0.528" d="1"/>
+			<scale xscale="0.497" yscale="0.529" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.496" yscale="0.53" d="1"/>
+			<scale xscale="0.496" yscale="0.532" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.495" yscale="0.534" d="1"/>
+			<scale xscale="0.494" yscale="0.535" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.494" yscale="0.537" d="1"/>
+			<scale xscale="0.493" yscale="0.538" d="0"/>
+			<offset x="0.6" y="+0.0" d="1"/>
+			<scale xscale="0.492" yscale="0.54" d="1"/>
+			<scale xscale="0.492" yscale="0.541" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<scale xscale="0.491" yscale="0.543" d="1"/>
+			<scale xscale="0.49" yscale="0.544" d="0"/>
+			<offset x="0.6" y="+0.0" d="1"/>
+			<scale xscale="0.49" yscale="0.546" d="1"/>
+			<scale xscale="0.489" yscale="0.547" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.488" yscale="0.549" d="1"/>
+			<scale xscale="0.488" yscale="0.55" d="0"/>
+			<offset x="0.7" y="+0.0" d="1"/>
+			<scale xscale="0.487" yscale="0.552" d="1"/>
+			<scale xscale="0.486" yscale="0.554" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.485" yscale="0.555" d="1"/>
+			<scale xscale="0.485" yscale="0.557" d="0"/>
+			<offset x="0.7" y="+0.0" d="1"/>
+			<scale xscale="0.484" yscale="0.558" d="1"/>
+			<scale xscale="0.483" yscale="0.56" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.483" yscale="0.561" d="1"/>
+			<scale xscale="0.482" yscale="0.563" d="0"/>
+			<offset x="0.7" y="+0.0" d="1"/>
+			<scale xscale="0.481" yscale="0.565" d="1"/>
+			<scale xscale="0.481" yscale="0.566" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.48" yscale="0.568" d="1"/>
+			<scale xscale="0.479" yscale="0.569" d="0"/>
+			<offset x="0.9" y="+0.0" d="1"/>
+			<scale xscale="0.479" yscale="0.571" d="1"/>
+			<scale xscale="0.478" yscale="0.572" d="0"/>
+			<offset x="-0.6" y="+0.0" d="1"/>
+			<scale xscale="0.477" yscale="0.574" d="1"/>
+			<scale xscale="0.476" yscale="0.576" d="0"/>
+			<offset x="0.8" y="+0.0" d="1"/>
+			<scale xscale="0.476" yscale="0.577" d="1"/>
+			<scale xscale="0.475" yscale="0.579" d="0"/>
+			<offset x="-0.6" y="+0.0" d="1"/>
+			<scale xscale="0.474" yscale="0.58" d="1"/>
+			<scale xscale="0.474" yscale="0.582" d="0"/>
+			<offset x="0.9" y="+0.0" d="1"/>
+			<scale xscale="0.473" yscale="0.583" d="1"/>
+			<scale xscale="0.472" yscale="0.585" d="0"/>
+			<offset x="-0.6" y="+0.0" d="1"/>
+			<scale xscale="0.472" yscale="0.587" d="1"/>
+			<scale xscale="0.471" yscale="0.588" d="0"/>
+			<offset x="1.2" y="+0.0" d="1"/>
+			<scale xscale="0.47" yscale="0.59" d="1"/>
+			<scale xscale="0.47" yscale="0.591" d="0"/>
+			<offset x="-0.6" y="+0.0" d="1"/>
+			<scale xscale="0.469" yscale="0.593" d="1"/>
+			<scale xscale="0.468" yscale="0.594" d="0"/>
+			<offset x="1.0" y="+0.0" d="1"/>
+			<scale xscale="0.467" yscale="0.596" d="1"/>
+			<scale xscale="0.467" yscale="0.597" d="0"/>
+			<offset x="-0.7" y="+0.0" d="1"/>
+			<scale xscale="0.466" yscale="0.599" d="1"/>
+			<scale xscale="0.465" yscale="0.601" d="0"/>
+			<offset x="1.0" y="+0.0" d="1"/>
+			<scale xscale="0.465" yscale="0.602" d="1"/>
+			<scale xscale="0.464" yscale="0.604" d="0"/>
+			<offset x="-0.7" y="+0.0" d="1"/>
+			<scale xscale="0.463" yscale="0.605" d="1"/>
+			<scale xscale="0.463" yscale="0.607" d="0"/>
+			<offset x="1.0" y="+0.0" d="1"/>
+			<scale xscale="0.462" yscale="0.608" d="1"/>
+			<scale xscale="0.461" yscale="0.61" d="0"/>
+			<offset x="-0.9" y="+0.0" d="1"/>
+			<scale xscale="0.461" yscale="0.611" d="1"/>
+			<scale xscale="0.46" yscale="0.613" d="0"/>
+			<offset x="1.3" y="+0.0" d="1"/>
+			<scale xscale="0.459" yscale="0.614" d="1"/>
+			<scale xscale="0.459" yscale="0.616" d="0"/>
+			<offset x="-1.0" y="+0.0" d="1"/>
+			<scale xscale="0.458" yscale="0.617" d="1"/>
+			<scale xscale="0.458" yscale="0.618" d="0"/>
+			<offset x="1.5" y="+0.0" d="1"/>
+			<scale xscale="0.457" yscale="0.62" d="1"/>
+			<scale xscale="0.456" yscale="0.621" d="0"/>
+			<offset x="-1.0" y="+0.0" d="1"/>
+			<scale xscale="0.456" yscale="0.623" d="1"/>
+			<scale xscale="0.455" yscale="0.624" d="0"/>
+			<offset x="1.3" y="+0.0" d="1"/>
+			<scale xscale="0.454" yscale="0.626" d="1"/>
+			<scale xscale="0.454" yscale="0.627" d="0"/>
+			<offset x="-1.1" y="+0.0" d="1"/>
+			<scale xscale="0.453" yscale="0.628" d="1"/>
+			<scale xscale="0.453" yscale="0.63" d="0"/>
+			<offset x="1.5" y="+0.0" d="1"/>
+			<scale xscale="0.452" yscale="0.631" d="1"/>
+			<scale xscale="0.451" yscale="0.633" d="0"/>
+			<offset x="-1.1" y="+0.0" d="1"/>
+			<scale xscale="0.451" yscale="0.634" d="1"/>
+			<scale xscale="0.45" yscale="0.635" d="0"/>
+			<offset x="1.8" y="+0.0" d="1"/>
+			<scale xscale="0.45" yscale="0.637" d="1"/>
+			<scale xscale="0.449" yscale="0.638" d="0"/>
+			<offset x="-1.2" y="+0.0" d="1"/>
+			<scale xscale="0.448" yscale="0.639" d="1"/>
+			<scale xscale="0.448" yscale="0.641" d="0"/>
+			<offset x="1.9" y="+0.0" d="1"/>
+			<scale xscale="0.447" yscale="0.642" d="1"/>
+			<scale xscale="0.447" yscale="0.643" d="0"/>
+			<offset x="-1.2" y="+0.0" d="1"/>
+			<scale xscale="0.446" yscale="0.644" d="1"/>
+			<scale xscale="0.446" yscale="0.646" d="0"/>
+			<offset x="1.8" y="+0.0" d="1"/>
+			<scale xscale="0.445" yscale="0.647" d="1"/>
+			<scale xscale="0.444" yscale="0.648" d="0"/>
+			<offset x="-1.3" y="+0.0" d="1"/>
+			<scale xscale="0.444" yscale="0.649" d="1"/>
+			<scale xscale="0.443" yscale="0.651" d="0"/>
+			<offset x="2.1" y="+0.0" d="1"/>
+			<scale xscale="0.443" yscale="0.652" d="1"/>
+			<scale xscale="0.442" yscale="0.653" d="0"/>
+			<offset x="-1.2" y="+0.0" d="1"/>
+			<scale xscale="0.442" yscale="0.654" d="1"/>
+			<scale xscale="0.441" yscale="0.655" d="0"/>
+			<offset x="1.8" y="+0.0" d="1"/>
+			<scale xscale="0.441" yscale="0.656" d="1"/>
+			<scale xscale="0.44" yscale="0.657" d="0"/>
+			<offset x="-1.5" y="+0.0" d="1"/>
+			<scale xscale="0.44" yscale="0.659" d="1"/>
+			<scale xscale="0.439" yscale="0.66" d="0"/>
+			<offset x="2.3" y="+0.0" d="1"/>
+			<scale xscale="0.439" yscale="0.661" d="1"/>
+			<scale xscale="0.438" yscale="0.662" d="0"/>
+			<offset x="-1.4" y="+0.0" d="1"/>
+			<scale xscale="0.438" yscale="0.663" d="1"/>
+			<scale xscale="0.438" yscale="0.664" d="0"/>
+			<offset x="2.3" y="+0.0" d="1"/>
+			<scale xscale="0.437" yscale="0.665" d="1"/>
+			<scale xscale="0.437" yscale="0.666" d="0"/>
+			<offset x="-1.0" y="+0.0" d="1"/>
+			<scale xscale="0.436" yscale="0.667" d="1"/>
+			<scale xscale="0.436" yscale="0.668" d="0"/>
+			<offset x="2.3" y="+0.0" d="1"/>
+			<scale xscale="0.435" yscale="0.669" d="1"/>
+			<scale xscale="0.435" yscale="0.67" d="0"/>
+			<offset x="-1.5" y="+0.0" d="1"/>
+			<scale xscale="0.435" yscale="0.671" d="1"/>
+			<scale xscale="0.434" yscale="0.671" d="0"/>
+			<offset x="2.3" y="+0.0" d="1"/>
+			<scale xscale="0.434" yscale="0.672" d="1"/>
+			<scale xscale="0.433" yscale="0.673" d="0"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<scale xscale="0.433" yscale="0.674" d="1"/>
+			<scale xscale="0.433" yscale="0.675" d="0"/>
+			<offset x="2.7" y="+0.0" d="1"/>
+			<scale xscale="0.432" yscale="0.676" d="1"/>
+			<scale xscale="0.432" yscale="0.676" d="0"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<scale xscale="0.432" yscale="0.677" d="1"/>
+			<scale xscale="0.431" yscale="0.678" d="0"/>
+			<offset x="2.7" y="+0.0" d="1"/>
+			<scale xscale="0.431" yscale="0.679" d="1"/>
+			<scale xscale="0.431" yscale="0.679" d="0"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<scale xscale="0.43" yscale="0.68" d="1"/>
+			<scale xscale="0.43" yscale="0.681" d="0"/>
+			<offset x="2.7" y="+0.0" d="1"/>
+			<scale xscale="0.43" yscale="0.681" d="1"/>
+			<scale xscale="0.43" yscale="0.682" d="0"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<scale xscale="0.429" yscale="0.682" d="1"/>
+			<scale xscale="0.429" yscale="0.683" d="0"/>
+			<offset x="2.4" y="+0.0" d="1"/>
+			<scale xscale="0.429" yscale="0.683" d="1"/>
+			<scale xscale="0.429" yscale="0.684" d="0"/>
+			<offset x="-2.2" y="+0.0" d="1"/>
+			<scale xscale="0.428" yscale="0.684" d="1"/>
+			<scale xscale="0.428" yscale="0.685" d="0"/>
+			<offset x="3.3" y="+0.0" d="1"/>
+			<scale xscale="0.428" yscale="0.685" d="1"/>
+			<scale xscale="0.428" yscale="0.686" d="0"/>
+			<offset x="-2.2" y="+0.0" d="1"/>
+			<scale xscale="0.428" yscale="0.686" d="1"/>
+			<scale xscale="0.427" yscale="0.687" d="0"/>
+			<offset x="3.3" y="+0.0" d="1"/>
+			<scale xscale="0.427" yscale="0.687" d="1"/>
+			<scale xscale="0.427" yscale="0.687" d="0"/>
+			<offset x="-2.2" y="+0.0" d="1"/>
+			<scale xscale="0.427" yscale="0.688" d="1"/>
+			<scale xscale="0.427" yscale="0.688" d="0"/>
+			<offset x="3.3" y="+0.0" d="1"/>
+			<scale xscale="0.427" yscale="0.688" d="1"/>
+			<scale xscale="0.427" yscale="0.688" d="0"/>
+			<offset x="-2.6" y="+0.0" d="1"/>
+			<scale xscale="0.427" yscale="0.689" d="1"/>
+			<scale xscale="0.427" yscale="0.689" d="0"/>
+			<offset x="3.9" y="+0.0" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="0"/>
+			<offset x="-2.6" y="+0.0" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="0"/>
+			<offset x="3.9" y="+0.0" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.445" yscale="0.689" d="1"/>
+			<scale xscale="0.502" yscale="0.697" d="1"/>
+			<scale xscale="0.597" yscale="0.711" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale scale="0.5" d="279"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.death.face.anim">
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="36" />
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.2" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.3" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.6" y="+0.0" d="2"/>
+			<offset x="-0.3" y="+0.0" d="2"/>
+			<offset x="0.6" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.7" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.7" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.7" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.9" y="+0.0" d="2"/>
+			<offset x="-0.6" y="+0.0" d="2"/>
+			<offset x="0.8" y="+0.0" d="2"/>
+			<offset x="-0.6" y="+0.0" d="2"/>
+			<offset x="0.9" y="+0.0" d="2"/>
+			<offset x="-0.6" y="+0.0" d="2"/>
+			<offset x="1.2" y="+0.0" d="2"/>
+			<offset x="-0.6" y="+0.0" d="2"/>
+			<offset x="1.0" y="+0.0" d="2"/>
+			<offset x="-0.7" y="+0.0" d="2"/>
+			<offset x="1.0" y="+0.0" d="2"/>
+			<offset x="-0.7" y="+0.0" d="2"/>
+			<offset x="1.0" y="+0.0" d="2"/>
+			<offset x="-0.9" y="+0.0" d="2"/>
+			<offset x="1.3" y="+0.0" d="2"/>
+			<offset x="-1.0" y="+0.0" d="2"/>
+			<offset x="1.5" y="+0.0" d="2"/>
+			<offset x="-1.0" y="+0.0" d="2"/>
+			<offset x="1.3" y="+0.0" d="2"/>
+			<offset x="-1.1" y="+0.0" d="2"/>
+			<offset x="1.5" y="+0.0" d="2"/>
+			<offset x="-1.1" y="+0.0" d="2"/>
+			<offset x="1.8" y="+0.0" d="2"/>
+			<offset x="-1.2" y="+0.0" d="2"/>
+			<offset x="1.9" y="+0.0" d="2"/>
+			<offset x="-1.2" y="+0.0" d="2"/>
+			<offset x="1.8" y="+0.0" d="2"/>
+			<offset x="-1.3" y="+0.0" d="2"/>
+			<offset x="2.1" y="+0.0" d="2"/>
+			<offset x="-1.2" y="+0.0" d="2"/>
+			<offset x="1.8" y="+0.0" d="2"/>
+			<offset x="-1.5" y="+0.0" d="2"/>
+			<offset x="2.3" y="+0.0" d="2"/>
+			<offset x="-1.4" y="+0.0" d="2"/>
+			<offset x="2.3" y="+0.0" d="2"/>
+			<offset x="-1.0" y="+0.0" d="2"/>
+			<offset x="2.3" y="+0.0" d="2"/>
+			<offset x="-1.5" y="+0.0" d="2"/>
+			<offset x="2.3" y="+0.0" d="2"/>
+			<offset x="-1.8" y="+0.0" d="2"/>
+			<offset x="2.7" y="+0.0" d="2"/>
+			<offset x="-1.8" y="+0.0" d="2"/>
+			<offset x="2.7" y="+0.0" d="2"/>
+			<offset x="-1.8" y="+0.0" d="2"/>
+			<offset x="2.7" y="+0.0" d="2"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="1" />
+			<offset x="2.4" y="+0.0" d="2"/>
+			<offset x="-2.2" y="+0.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="1" />
+			<offset x="3.3" y="+0.0" d="2"/>
+			<offset x="-2.2" y="+0.0" d="2"/>
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="0" />
+			<offset x="3.3" y="+0.0" d="2"/>
+			<offset x="-2.2" y="+0.0" d="2"/>
+			<offset x="3.3" y="+0.0" d="2"/>
+			<offset x="-2.6" y="+0.0" d="2"/>
+			<offset x="3.9" y="+0.0" d="2"/>
+			<offset x="-2.6" y="+0.0" d="2"/>
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="0" />
+			<offset x="3.9" y="+0.0" d="2"/>
+			<offset x="0.0" y="+0.0" d="9"/>
+			<frame i="spriteimage.gidrah.mars.boss.top.02" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.top.03" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.top.04" d="20" />
+			<frame i="spriteimage.gidrah.mars.boss.top.03" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.top.02" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="15" />
+			<animcolor a="0" d="279"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.death.face.glow.anim">
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="36" />
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.1" y="+0.0" d="2"/>
+			<offset x="-0.1" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.2" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.3" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.2" y="+0.0" d="2"/>
+			<offset x="0.3" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.6" y="+0.0" d="2"/>
+			<offset x="-0.3" y="+0.0" d="2"/>
+			<offset x="0.6" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.7" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.7" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.7" y="+0.0" d="2"/>
+			<offset x="-0.5" y="+0.0" d="2"/>
+			<offset x="0.9" y="+0.0" d="2"/>
+			<offset x="-0.6" y="+0.0" d="2"/>
+			<offset x="0.8" y="+0.0" d="2"/>
+			<offset x="-0.6" y="+0.0" d="2"/>
+			<offset x="0.9" y="+0.0" d="2"/>
+			<offset x="-0.6" y="+0.0" d="2"/>
+			<offset x="1.2" y="+0.0" d="2"/>
+			<offset x="-0.6" y="+0.0" d="2"/>
+			<offset x="1.0" y="+0.0" d="2"/>
+			<offset x="-0.7" y="+0.0" d="2"/>
+			<offset x="1.0" y="+0.0" d="2"/>
+			<offset x="-0.7" y="+0.0" d="2"/>
+			<offset x="1.0" y="+0.0" d="2"/>
+			<offset x="-0.9" y="+0.0" d="2"/>
+			<offset x="1.3" y="+0.0" d="2"/>
+			<offset x="-1.0" y="+0.0" d="2"/>
+			<offset x="1.5" y="+0.0" d="2"/>
+			<offset x="-1.0" y="+0.0" d="2"/>
+			<offset x="1.3" y="+0.0" d="2"/>
+			<offset x="-1.1" y="+0.0" d="2"/>
+			<offset x="1.5" y="+0.0" d="2"/>
+			<offset x="-1.1" y="+0.0" d="2"/>
+			<offset x="1.8" y="+0.0" d="2"/>
+			<offset x="-1.2" y="+0.0" d="2"/>
+			<offset x="1.9" y="+0.0" d="2"/>
+			<offset x="-1.2" y="+0.0" d="2"/>
+			<offset x="1.8" y="+0.0" d="2"/>
+			<offset x="-1.3" y="+0.0" d="2"/>
+			<offset x="2.1" y="+0.0" d="2"/>
+			<offset x="-1.2" y="+0.0" d="2"/>
+			<offset x="1.8" y="+0.0" d="2"/>
+			<offset x="-1.5" y="+0.0" d="2"/>
+			<offset x="2.3" y="+0.0" d="2"/>
+			<offset x="-1.4" y="+0.0" d="2"/>
+			<offset x="2.3" y="+0.0" d="2"/>
+			<offset x="-1.0" y="+0.0" d="2"/>
+			<offset x="2.3" y="+0.0" d="2"/>
+			<offset x="-1.5" y="+0.0" d="2"/>
+			<offset x="2.3" y="+0.0" d="2"/>
+			<offset x="-1.8" y="+0.0" d="2"/>
+			<offset x="2.7" y="+0.0" d="2"/>
+			<offset x="-1.8" y="+0.0" d="2"/>
+			<offset x="2.7" y="+0.0" d="2"/>
+			<offset x="-1.8" y="+0.0" d="2"/>
+			<offset x="2.7" y="+0.0" d="2"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="1" />
+			<offset x="2.4" y="+0.0" d="2"/>
+			<offset x="-2.2" y="+0.0" d="1"/>
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="1" />
+			<offset x="3.3" y="+0.0" d="2"/>
+			<offset x="-2.2" y="+0.0" d="2"/>
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="0" />
+			<offset x="3.3" y="+0.0" d="2"/>
+			<offset x="-2.2" y="+0.0" d="2"/>
+			<offset x="3.3" y="+0.0" d="2"/>
+			<offset x="-2.6" y="+0.0" d="2"/>
+			<offset x="3.9" y="+0.0" d="2"/>
+			<offset x="-2.6" y="+0.0" d="2"/>
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="0" />
+			<offset x="3.9" y="+0.0" d="2"/>
+			<offset x="0.0" y="+0.0" d="9"/>
+			<frame i="spriteimage.gidrah.mars.boss.glow.02" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.03" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.04" d="20" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.03" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.02" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="15" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.10" d="115" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.11" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.12" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.13" d="20" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.10" d="60" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.11" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.12" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.13" d="20" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.12" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.11" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.10" d="52" />
+		<frame i="boss.dead.remove.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.death.head.glow.anim">
+			<frame i="spriteimage.gidrah.mars.boss.head.glow.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.head.glow.01" d="0" />
+			<scale scale="0.5" d="1"/>
+			<scale scale="0.5" d="1"/>
+			<scale xscale="0.501" yscale="0.499" d="1"/>
+			<scale xscale="0.501" yscale="0.498" d="1"/>
+			<scale xscale="0.502" yscale="0.497" d="1"/>
+			<scale xscale="0.502" yscale="0.496" d="1"/>
+			<scale xscale="0.503" yscale="0.495" d="1"/>
+			<scale xscale="0.504" yscale="0.493" d="1"/>
+			<scale xscale="0.505" yscale="0.492" d="1"/>
+			<scale xscale="0.507" yscale="0.49" d="1"/>
+			<scale xscale="0.508" yscale="0.487" d="1"/>
+			<scale xscale="0.51" yscale="0.485" d="1"/>
+			<scale xscale="0.511" yscale="0.482" d="1"/>
+			<scale xscale="0.513" yscale="0.479" d="1"/>
+			<scale xscale="0.515" yscale="0.476" d="1"/>
+			<scale xscale="0.517" yscale="0.473" d="1"/>
+			<scale xscale="0.519" yscale="0.47" d="1"/>
+			<scale xscale="0.521" yscale="0.466" d="1"/>
+			<scale xscale="0.524" yscale="0.462" d="1"/>
+			<scale xscale="0.527" yscale="0.458" d="1"/>
+			<scale xscale="0.529" yscale="0.454" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="3"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="2"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.449" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="1"/>
+			<scale xscale="0.532" yscale="0.45" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.532" yscale="0.451" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="1"/>
+			<scale xscale="0.531" yscale="0.451" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.531" yscale="0.452" d="1"/>
+			<scale xscale="0.531" yscale="0.452" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.531" yscale="0.452" d="1"/>
+			<scale xscale="0.531" yscale="0.453" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.53" yscale="0.453" d="1"/>
+			<scale xscale="0.53" yscale="0.454" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.53" yscale="0.454" d="1"/>
+			<scale xscale="0.53" yscale="0.455" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.53" yscale="0.455" d="1"/>
+			<scale xscale="0.529" yscale="0.456" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.529" yscale="0.456" d="1"/>
+			<scale xscale="0.529" yscale="0.457" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.529" yscale="0.457" d="1"/>
+			<scale xscale="0.528" yscale="0.458" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.528" yscale="0.459" d="1"/>
+			<scale xscale="0.528" yscale="0.459" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.527" yscale="0.46" d="1"/>
+			<scale xscale="0.527" yscale="0.461" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.527" yscale="0.462" d="1"/>
+			<scale xscale="0.526" yscale="0.462" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.526" yscale="0.463" d="1"/>
+			<scale xscale="0.526" yscale="0.464" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.525" yscale="0.465" d="1"/>
+			<scale xscale="0.525" yscale="0.465" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.525" yscale="0.466" d="1"/>
+			<scale xscale="0.524" yscale="0.467" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.524" yscale="0.468" d="1"/>
+			<scale xscale="0.523" yscale="0.469" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.523" yscale="0.47" d="1"/>
+			<scale xscale="0.523" yscale="0.471" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.522" yscale="0.472" d="1"/>
+			<scale xscale="0.522" yscale="0.473" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.521" yscale="0.474" d="1"/>
+			<scale xscale="0.521" yscale="0.475" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.52" yscale="0.476" d="1"/>
+			<scale xscale="0.52" yscale="0.477" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.52" yscale="0.478" d="1"/>
+			<scale xscale="0.519" yscale="0.479" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.519" yscale="0.48" d="1"/>
+			<scale xscale="0.518" yscale="0.481" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.518" yscale="0.482" d="1"/>
+			<scale xscale="0.517" yscale="0.483" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.517" yscale="0.485" d="1"/>
+			<scale xscale="0.516" yscale="0.486" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.516" yscale="0.487" d="1"/>
+			<scale xscale="0.515" yscale="0.488" d="0"/>
+			<offset x="0.1" y="+0.0" d="1"/>
+			<scale xscale="0.515" yscale="0.489" d="1"/>
+			<scale xscale="0.514" yscale="0.49" d="0"/>
+			<offset x="-0.1" y="+0.0" d="1"/>
+			<scale xscale="0.513" yscale="0.492" d="1"/>
+			<scale xscale="0.513" yscale="0.493" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.512" yscale="0.494" d="1"/>
+			<scale xscale="0.512" yscale="0.495" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.511" yscale="0.497" d="1"/>
+			<scale xscale="0.511" yscale="0.498" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.51" yscale="0.499" d="1"/>
+			<scale xscale="0.509" yscale="0.501" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.509" yscale="0.502" d="1"/>
+			<scale xscale="0.508" yscale="0.503" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.508" yscale="0.505" d="1"/>
+			<scale xscale="0.507" yscale="0.506" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale scale="0.507" d="1"/>
+			<scale xscale="0.506" yscale="0.509" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.505" yscale="0.51" d="1"/>
+			<scale xscale="0.505" yscale="0.512" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.504" yscale="0.513" d="1"/>
+			<scale xscale="0.503" yscale="0.514" d="0"/>
+			<offset x="0.2" y="+0.0" d="1"/>
+			<scale xscale="0.503" yscale="0.516" d="1"/>
+			<scale xscale="0.502" yscale="0.517" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.502" yscale="0.519" d="1"/>
+			<scale xscale="0.501" yscale="0.52" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.5" yscale="0.522" d="1"/>
+			<scale xscale="0.5" yscale="0.523" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<scale xscale="0.499" yscale="0.525" d="1"/>
+			<scale xscale="0.498" yscale="0.526" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.498" yscale="0.528" d="1"/>
+			<scale xscale="0.497" yscale="0.529" d="0"/>
+			<offset x="-0.2" y="+0.0" d="1"/>
+			<scale xscale="0.496" yscale="0.53" d="1"/>
+			<scale xscale="0.496" yscale="0.532" d="0"/>
+			<offset x="0.3" y="+0.0" d="1"/>
+			<scale xscale="0.495" yscale="0.534" d="1"/>
+			<scale xscale="0.494" yscale="0.535" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.494" yscale="0.537" d="1"/>
+			<scale xscale="0.493" yscale="0.538" d="0"/>
+			<offset x="0.6" y="+0.0" d="1"/>
+			<scale xscale="0.492" yscale="0.54" d="1"/>
+			<scale xscale="0.492" yscale="0.541" d="0"/>
+			<offset x="-0.3" y="+0.0" d="1"/>
+			<scale xscale="0.491" yscale="0.543" d="1"/>
+			<scale xscale="0.49" yscale="0.544" d="0"/>
+			<offset x="0.6" y="+0.0" d="1"/>
+			<scale xscale="0.49" yscale="0.546" d="1"/>
+			<scale xscale="0.489" yscale="0.547" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.488" yscale="0.549" d="1"/>
+			<scale xscale="0.488" yscale="0.55" d="0"/>
+			<offset x="0.7" y="+0.0" d="1"/>
+			<scale xscale="0.487" yscale="0.552" d="1"/>
+			<scale xscale="0.486" yscale="0.554" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.485" yscale="0.555" d="1"/>
+			<scale xscale="0.485" yscale="0.557" d="0"/>
+			<offset x="0.7" y="+0.0" d="1"/>
+			<scale xscale="0.484" yscale="0.558" d="1"/>
+			<scale xscale="0.483" yscale="0.56" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.483" yscale="0.561" d="1"/>
+			<scale xscale="0.482" yscale="0.563" d="0"/>
+			<offset x="0.7" y="+0.0" d="1"/>
+			<scale xscale="0.481" yscale="0.565" d="1"/>
+			<scale xscale="0.481" yscale="0.566" d="0"/>
+			<offset x="-0.5" y="+0.0" d="1"/>
+			<scale xscale="0.48" yscale="0.568" d="1"/>
+			<scale xscale="0.479" yscale="0.569" d="0"/>
+			<offset x="0.9" y="+0.0" d="1"/>
+			<scale xscale="0.479" yscale="0.571" d="1"/>
+			<scale xscale="0.478" yscale="0.572" d="0"/>
+			<offset x="-0.6" y="+0.0" d="1"/>
+			<scale xscale="0.477" yscale="0.574" d="1"/>
+			<scale xscale="0.476" yscale="0.576" d="0"/>
+			<offset x="0.8" y="+0.0" d="1"/>
+			<scale xscale="0.476" yscale="0.577" d="1"/>
+			<scale xscale="0.475" yscale="0.579" d="0"/>
+			<offset x="-0.6" y="+0.0" d="1"/>
+			<scale xscale="0.474" yscale="0.58" d="1"/>
+			<scale xscale="0.474" yscale="0.582" d="0"/>
+			<offset x="0.9" y="+0.0" d="1"/>
+			<scale xscale="0.473" yscale="0.583" d="1"/>
+			<scale xscale="0.472" yscale="0.585" d="0"/>
+			<offset x="-0.6" y="+0.0" d="1"/>
+			<scale xscale="0.472" yscale="0.587" d="1"/>
+			<scale xscale="0.471" yscale="0.588" d="0"/>
+			<offset x="1.2" y="+0.0" d="1"/>
+			<scale xscale="0.47" yscale="0.59" d="1"/>
+			<scale xscale="0.47" yscale="0.591" d="0"/>
+			<offset x="-0.6" y="+0.0" d="1"/>
+			<scale xscale="0.469" yscale="0.593" d="1"/>
+			<scale xscale="0.468" yscale="0.594" d="0"/>
+			<offset x="1.0" y="+0.0" d="1"/>
+			<scale xscale="0.467" yscale="0.596" d="1"/>
+			<scale xscale="0.467" yscale="0.597" d="0"/>
+			<offset x="-0.7" y="+0.0" d="1"/>
+			<scale xscale="0.466" yscale="0.599" d="1"/>
+			<scale xscale="0.465" yscale="0.601" d="0"/>
+			<offset x="1.0" y="+0.0" d="1"/>
+			<scale xscale="0.465" yscale="0.602" d="1"/>
+			<scale xscale="0.464" yscale="0.604" d="0"/>
+			<offset x="-0.7" y="+0.0" d="1"/>
+			<scale xscale="0.463" yscale="0.605" d="1"/>
+			<scale xscale="0.463" yscale="0.607" d="0"/>
+			<offset x="1.0" y="+0.0" d="1"/>
+			<scale xscale="0.462" yscale="0.608" d="1"/>
+			<scale xscale="0.461" yscale="0.61" d="0"/>
+			<offset x="-0.9" y="+0.0" d="1"/>
+			<scale xscale="0.461" yscale="0.611" d="1"/>
+			<scale xscale="0.46" yscale="0.613" d="0"/>
+			<offset x="1.3" y="+0.0" d="1"/>
+			<scale xscale="0.459" yscale="0.614" d="1"/>
+			<scale xscale="0.459" yscale="0.616" d="0"/>
+			<offset x="-1.0" y="+0.0" d="1"/>
+			<scale xscale="0.458" yscale="0.617" d="1"/>
+			<scale xscale="0.458" yscale="0.618" d="0"/>
+			<offset x="1.5" y="+0.0" d="1"/>
+			<scale xscale="0.457" yscale="0.62" d="1"/>
+			<scale xscale="0.456" yscale="0.621" d="0"/>
+			<offset x="-1.0" y="+0.0" d="1"/>
+			<scale xscale="0.456" yscale="0.623" d="1"/>
+			<scale xscale="0.455" yscale="0.624" d="0"/>
+			<offset x="1.3" y="+0.0" d="1"/>
+			<scale xscale="0.454" yscale="0.626" d="1"/>
+			<scale xscale="0.454" yscale="0.627" d="0"/>
+			<offset x="-1.1" y="+0.0" d="1"/>
+			<scale xscale="0.453" yscale="0.628" d="1"/>
+			<scale xscale="0.453" yscale="0.63" d="0"/>
+			<offset x="1.5" y="+0.0" d="1"/>
+			<scale xscale="0.452" yscale="0.631" d="1"/>
+			<scale xscale="0.451" yscale="0.633" d="0"/>
+			<offset x="-1.1" y="+0.0" d="1"/>
+			<scale xscale="0.451" yscale="0.634" d="1"/>
+			<scale xscale="0.45" yscale="0.635" d="0"/>
+			<offset x="1.8" y="+0.0" d="1"/>
+			<scale xscale="0.45" yscale="0.637" d="1"/>
+			<scale xscale="0.449" yscale="0.638" d="0"/>
+			<offset x="-1.2" y="+0.0" d="1"/>
+			<scale xscale="0.448" yscale="0.639" d="1"/>
+			<scale xscale="0.448" yscale="0.641" d="0"/>
+			<offset x="1.9" y="+0.0" d="1"/>
+			<scale xscale="0.447" yscale="0.642" d="1"/>
+			<scale xscale="0.447" yscale="0.643" d="0"/>
+			<offset x="-1.2" y="+0.0" d="1"/>
+			<scale xscale="0.446" yscale="0.644" d="1"/>
+			<scale xscale="0.446" yscale="0.646" d="0"/>
+			<offset x="1.8" y="+0.0" d="1"/>
+			<scale xscale="0.445" yscale="0.647" d="1"/>
+			<scale xscale="0.444" yscale="0.648" d="0"/>
+			<offset x="-1.3" y="+0.0" d="1"/>
+			<scale xscale="0.444" yscale="0.649" d="1"/>
+			<scale xscale="0.443" yscale="0.651" d="0"/>
+			<offset x="2.1" y="+0.0" d="1"/>
+			<scale xscale="0.443" yscale="0.652" d="1"/>
+			<scale xscale="0.442" yscale="0.653" d="0"/>
+			<offset x="-1.2" y="+0.0" d="1"/>
+			<scale xscale="0.442" yscale="0.654" d="1"/>
+			<scale xscale="0.441" yscale="0.655" d="0"/>
+			<offset x="1.8" y="+0.0" d="1"/>
+			<scale xscale="0.441" yscale="0.656" d="1"/>
+			<scale xscale="0.44" yscale="0.657" d="0"/>
+			<offset x="-1.5" y="+0.0" d="1"/>
+			<scale xscale="0.44" yscale="0.659" d="1"/>
+			<scale xscale="0.439" yscale="0.66" d="0"/>
+			<offset x="2.3" y="+0.0" d="1"/>
+			<scale xscale="0.439" yscale="0.661" d="1"/>
+			<scale xscale="0.438" yscale="0.662" d="0"/>
+			<offset x="-1.4" y="+0.0" d="1"/>
+			<scale xscale="0.438" yscale="0.663" d="1"/>
+			<scale xscale="0.438" yscale="0.664" d="0"/>
+			<offset x="2.3" y="+0.0" d="1"/>
+			<scale xscale="0.437" yscale="0.665" d="1"/>
+			<scale xscale="0.437" yscale="0.666" d="0"/>
+			<offset x="-1.0" y="+0.0" d="1"/>
+			<scale xscale="0.436" yscale="0.667" d="1"/>
+			<scale xscale="0.436" yscale="0.668" d="0"/>
+			<offset x="2.3" y="+0.0" d="1"/>
+			<scale xscale="0.435" yscale="0.669" d="1"/>
+			<scale xscale="0.435" yscale="0.67" d="0"/>
+			<offset x="-1.5" y="+0.0" d="1"/>
+			<scale xscale="0.435" yscale="0.671" d="1"/>
+			<scale xscale="0.434" yscale="0.671" d="0"/>
+			<offset x="2.3" y="+0.0" d="1"/>
+			<scale xscale="0.434" yscale="0.672" d="1"/>
+			<scale xscale="0.433" yscale="0.673" d="0"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<scale xscale="0.433" yscale="0.674" d="1"/>
+			<scale xscale="0.433" yscale="0.675" d="0"/>
+			<offset x="2.7" y="+0.0" d="1"/>
+			<scale xscale="0.432" yscale="0.676" d="1"/>
+			<scale xscale="0.432" yscale="0.676" d="0"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<scale xscale="0.432" yscale="0.677" d="1"/>
+			<scale xscale="0.431" yscale="0.678" d="0"/>
+			<offset x="2.7" y="+0.0" d="1"/>
+			<scale xscale="0.431" yscale="0.679" d="1"/>
+			<scale xscale="0.431" yscale="0.679" d="0"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<scale xscale="0.43" yscale="0.68" d="1"/>
+			<scale xscale="0.43" yscale="0.681" d="0"/>
+			<offset x="2.7" y="+0.0" d="1"/>
+			<scale xscale="0.43" yscale="0.681" d="1"/>
+			<scale xscale="0.43" yscale="0.682" d="0"/>
+			<offset x="-1.8" y="+0.0" d="1"/>
+			<scale xscale="0.429" yscale="0.682" d="1"/>
+			<scale xscale="0.429" yscale="0.683" d="0"/>
+			<offset x="2.4" y="+0.0" d="1"/>
+			<scale xscale="0.429" yscale="0.683" d="1"/>
+			<scale xscale="0.429" yscale="0.684" d="0"/>
+			<offset x="-2.2" y="+0.0" d="1"/>
+			<scale xscale="0.428" yscale="0.684" d="1"/>
+			<scale xscale="0.428" yscale="0.685" d="0"/>
+			<offset x="3.3" y="+0.0" d="1"/>
+			<scale xscale="0.428" yscale="0.685" d="1"/>
+			<scale xscale="0.428" yscale="0.686" d="0"/>
+			<offset x="-2.2" y="+0.0" d="1"/>
+			<scale xscale="0.428" yscale="0.686" d="1"/>
+			<scale xscale="0.427" yscale="0.687" d="0"/>
+			<offset x="3.3" y="+0.0" d="1"/>
+			<scale xscale="0.427" yscale="0.687" d="1"/>
+			<scale xscale="0.427" yscale="0.687" d="0"/>
+			<offset x="-2.2" y="+0.0" d="1"/>
+			<scale xscale="0.427" yscale="0.688" d="1"/>
+			<scale xscale="0.427" yscale="0.688" d="0"/>
+			<offset x="3.3" y="+0.0" d="1"/>
+			<scale xscale="0.427" yscale="0.688" d="1"/>
+			<scale xscale="0.427" yscale="0.688" d="0"/>
+			<offset x="-2.6" y="+0.0" d="1"/>
+			<scale xscale="0.427" yscale="0.689" d="1"/>
+			<scale xscale="0.427" yscale="0.689" d="0"/>
+			<offset x="3.9" y="+0.0" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="0"/>
+			<offset x="-2.6" y="+0.0" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="0"/>
+			<offset x="3.9" y="+0.0" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="0"/>
+			<offset x="0.0" y="+0.0" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.689" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.688" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.687" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.426" yscale="0.686" d="1"/>
+			<scale xscale="0.445" yscale="0.689" d="1"/>
+			<scale xscale="0.502" yscale="0.697" d="1"/>
+			<scale xscale="0.597" yscale="0.711" d="1"/>
+			<animcolor a="0" d="0"/>
+			<scale scale="0.5" d="279"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.death.ground.anim">
+			<frame i="spriteimage.gidrah.mars.boss.ground.01" d="599" />
+		<frame i="boss.dead.remove.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.blink.face.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="15" />
+			
+			<sound attenuator="default.attenuator" sound="mars.boss.clicky.distant.buffer"/>
+			<sound attenuator="loud.attenuator" sound="mars.boss.clicky.buffer"/>
+			
+			<frame i="spriteimage.gidrah.mars.boss.top.09" d="11" />
+			<frame i="spriteimage.gidrah.mars.boss.top.08" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="15" />
+			
+			<sound attenuator="default.attenuator" sound="mars.boss.clicky.distant.buffer"/>
+			<sound attenuator="loud.attenuator" sound="mars.boss.clicky.buffer"/>			
+			
+			<frame i="spriteimage.gidrah.mars.boss.top.09" d="11" />
+			<frame i="spriteimage.gidrah.mars.boss.top.08" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="15" />
+			
+			<sound attenuator="default.attenuator" sound="mars.boss.clicky.distant.buffer"/>
+			<sound attenuator="loud.attenuator" sound="mars.boss.clicky.buffer"/>			
+			
+			<frame i="spriteimage.gidrah.mars.boss.top.09" d="11" />
+			<frame i="spriteimage.gidrah.mars.boss.top.08" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="18" />
+			
+			<sound attenuator="default.attenuator" sound="mars.boss.clicky.distant.buffer"/>
+			<sound attenuator="loud.attenuator" sound="mars.boss.clicky.buffer"/>			
+			
+			<frame i="spriteimage.gidrah.mars.boss.top.09" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.08" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="82" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.blink.face.glow.anim">
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="15" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.09" d="11" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.08" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="15" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.09" d="11" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.08" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="15" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.09" d="11" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.08" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="3" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="18" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.09" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.08" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="81" />
+		<setlayers layers="gidrah.mars.boss.walk.layers"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.roar.face.anim">
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="5" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.05" d="28" />
+	
+			<sound attenuator="default.attenuator" sound="mars.boss.clicky.distant.buffer"/>
+			<sound attenuator="loud.attenuator" sound="mars.boss.clicky.buffer"/>
+			
+			<frame i="spriteimage.gidrah.mars.boss.top.09" d="18" />
+			<frame i="spriteimage.gidrah.mars.boss.top.08" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="532" />
+	</animation>
+
+	<animation name="gidrah.mars.boss.roar.face.glow.anim">
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="5" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.07" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.06" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.05" d="28" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.09" d="18" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.08" d="4" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="173" />
+		<setlayers layers="gidrah.mars.boss.walk.layers"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.walk.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.03" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.03" d="1" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.04" d="10" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.03" d="2" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.03" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.02" d="3" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.02" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="6" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.11" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.11" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.12" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.12" d="1" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.13" d="10" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.13" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.12" d="2" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.12" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.11" d="3" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.11" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="6" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.05" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.05" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.06" d="1" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.07" d="10" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.07" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.06" d="2" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.06" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.05" d="3" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.05" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="6" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.08" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.08" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.09" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.09" d="1" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.10" d="10" childYOffset="4.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.10" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.09" d="2" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.09" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.08" d="3" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.mars.boss.back.08" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.back.01" d="6" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.face.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="41" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.top.02" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.top.03" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.top.04" d="22" />
+			<frame i="spriteimage.gidrah.mars.boss.top.03" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.top.02" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.top.01" d="50" />
+		<random>
+			<dest id="roarShort" n="2"/>
+			<dest id="roar" n="1"/>
+			<dest id="start" n="7"/>
+		</random>
+		<label id="roar"/>
+		<setlayers layers="gidrah.mars.boss.walkAndRoar.layers"/>
+		<label id="roarShort"/>
+		<setlayers layers="gidrah.mars.boss.walkAndRoarShort.layers"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.head.glow.anim">
+			<frame i="spriteimage.gidrah.mars.boss.head.glow.01" d="1" />
+		<frame i="gidrah.mars.boss.throb.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.mars.boss.face.glow.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="41" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.02" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.03" d="1" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.04" d="22" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.03" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.02" d="2" />
+			<frame i="spriteimage.gidrah.mars.boss.glow.01" d="50" />
+		<goto id="start"/>
+	</animation>
+
+</resources>

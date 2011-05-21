@@ -1,0 +1,1240 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Characters -->
+<resources>
+
+	<include resource="tags.xml"/>
+
+	<include resource="characters-earth.xml"/>
+	<include resource="characters-moon.xml"/>
+	<include resource="characters-mars.xml"/>
+	<include resource="characters-saturn.xml"/>
+	<include resource="characters-titan.xml"/>
+	<include resource="characters-endless.xml"/>
+	<include resource="characters-survival.xml"/>
+	
+	<!-- CHARACTER BUBBLE BACKGROUNDS ============================================================================================================================ -->
+	
+	<texture
+		name="script-speechbubble.texture"
+		url="classpath:script-speechbubble.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="speechbubble.imagebank" texture="script-speechbubble.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.speechbubble_bottom_left" 	x="0"   y="0"	w="19" h="33"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble_bottom" 		x="19"  y="0"	w="12" h="33"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble_bottom_right" 	x="57"  y="0"	w="71" h="33"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble_left" 			x="0"   y="33"	w="19" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble_middle" 		x="19"  y="33"	w="12" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble_right" 			x="57"  y="33"	w="71" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble_top_left" 		x="0"   y="45"	w="19" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble_top" 			x="19"  y="45"	w="12" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble_top_right" 		x="57"  y="45"	w="71" h="19"	hx="0" hy="0" offset="false"/>
+	</imagebank>
+	
+	<widgetbackground
+		name="speechbubble.background.spec"
+		bottom_left="spriteimage.speechbubble_bottom_left"
+		bottom="spriteimage.speechbubble_bottom"
+		bottom_right="spriteimage.speechbubble_bottom_right"
+		left="spriteimage.speechbubble_left"
+		middle="spriteimage.speechbubble_middle"
+		right="spriteimage.speechbubble_right"
+		top_left="spriteimage.speechbubble_top_left"
+		top="spriteimage.speechbubble_top"
+		top_right="spriteimage.speechbubble_top_right"
+	/>
+
+
+	<texture
+		name="script-speechbubble-bottom.texture"
+		url="classpath:script-speechbubble-bottom.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="speechbubble-bottom.imagebank" texture="script-speechbubble-bottom.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.speechbubble-bottom_bottom_left" 	x="0"   y="0"	w="71" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-bottom_bottom" 			x="71"  y="0"	w="12" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-bottom_bottom_right" 	x="109"  y="0"	w="19" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-bottom_left" 			x="0"   y="19"	w="71" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-bottom_middle" 			x="71"  y="19"	w="12" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-bottom_right" 			x="109"  y="19"	w="19" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-bottom_top_left" 		x="0"   y="31"	w="71" h="33"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-bottom_top" 			x="71"  y="31"	w="12" h="33"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-bottom_top_right" 		x="109"  y="31"	w="19" h="33"	hx="0" hy="0" offset="false"/>
+	</imagebank>
+	
+	<widgetbackground
+		name="speechbubble-bottom.background.spec"
+		bottom_left="spriteimage.speechbubble-bottom_bottom_left"
+		bottom="spriteimage.speechbubble-bottom_bottom"
+		bottom_right="spriteimage.speechbubble-bottom_bottom_right"
+		left="spriteimage.speechbubble-bottom_left"
+		middle="spriteimage.speechbubble-bottom_middle"
+		right="spriteimage.speechbubble-bottom_right"
+		top_left="spriteimage.speechbubble-bottom_top_left"
+		top="spriteimage.speechbubble-bottom_top"
+		top_right="spriteimage.speechbubble-bottom_top_right"
+	/>
+
+
+
+	<texture
+		name="script-speechbubble-2.texture"
+		url="classpath:script-speechbubble-2.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="speechbubble-2.imagebank" texture="script-speechbubble-2.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.speechbubble-2_bottom_left" 		x="0"   y="0"	w="71" h="33"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-2_bottom" 			x="71"  y="0"	w="12" h="33"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-2_bottom_right" 	x="109" y="0"	w="19" h="33"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-2_left" 			x="0"   y="33"	w="71" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-2_middle" 			x="71"  y="33"	w="12" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-2_right" 			x="109" y="33"	w="19" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-2_top_left" 		x="0"   y="45"	w="71" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-2_top" 				x="71"  y="45"	w="12" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-2_top_right" 		x="109" y="45"	w="19" h="19"	hx="0" hy="0" offset="false"/>
+	</imagebank>
+	
+	<widgetbackground
+		name="speechbubble-2.background.spec"
+		bottom_left="spriteimage.speechbubble-2_bottom_left"
+		bottom="spriteimage.speechbubble-2_bottom"
+		bottom_right="spriteimage.speechbubble-2_bottom_right"
+		left="spriteimage.speechbubble-2_left"
+		middle="spriteimage.speechbubble-2_middle"
+		right="spriteimage.speechbubble-2_right"
+		top_left="spriteimage.speechbubble-2_top_left"
+		top="spriteimage.speechbubble-2_top"
+		top_right="spriteimage.speechbubble-2_top_right"
+	/>
+
+
+	<texture
+		name="script-speechbubble-right.texture"
+		url="classpath:script-speechbubble-right.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="speechbubble-right.imagebank" texture="script-speechbubble-right.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.speechbubble-right_bottom_left" 		x="0"   y="0"	w="33" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right_bottom" 			x="33"  y="0"	w="12" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right_bottom_right" 	x="45"  y="0"	w="19" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right_left" 			x="0"   y="19"	w="33" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right_middle" 			x="33"  y="19"	w="12" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right_right" 			x="45"  y="19"	w="19" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right_top_left" 		x="0"   y="66"	w="33" h="62"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right_top" 				x="33"  y="66"	w="12" h="62"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right_top_right" 		x="45"  y="66"	w="19" h="62"	hx="0" hy="0" offset="false"/>
+	</imagebank>
+	
+	<widgetbackground
+		name="speechbubble-right.background.spec"
+		bottom_left="spriteimage.speechbubble-right_bottom_left"
+		bottom="spriteimage.speechbubble-right_bottom"
+		bottom_right="spriteimage.speechbubble-right_bottom_right"
+		left="spriteimage.speechbubble-right_left"
+		middle="spriteimage.speechbubble-right_middle"
+		right="spriteimage.speechbubble-right_right"
+		top_left="spriteimage.speechbubble-right_top_left"
+		top="spriteimage.speechbubble-right_top"
+		top_right="spriteimage.speechbubble-right_top_right"
+	/>
+
+
+	<texture
+		name="script-speechbubble-right-2.texture"
+		url="classpath:script-speechbubble-right.02.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="speechbubble-right-2.imagebank" texture="script-speechbubble-right-2.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.speechbubble-right-2_bottom_left" 	x="0"   y="0"	w="33" h="62"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right-2_bottom" 		x="33"  y="0"	w="12" h="62"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right-2_bottom_right" 	x="45"  y="0"	w="19" h="62"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right-2_left" 			x="0"   y="62"	w="33" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right-2_middle" 		x="33"  y="62"	w="12" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right-2_right" 			x="45"  y="62"	w="19" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right-2_top_left" 		x="0"   y="109"	w="33" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right-2_top" 			x="33"  y="109"	w="12" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-right-2_top_right" 		x="45"  y="109"	w="19" h="19"	hx="0" hy="0" offset="false"/>
+	</imagebank>
+	
+	<widgetbackground
+		name="speechbubble-right-2.background.spec"
+		bottom_left="spriteimage.speechbubble-right-2_bottom_left"
+		bottom="spriteimage.speechbubble-right-2_bottom"
+		bottom_right="spriteimage.speechbubble-right-2_bottom_right"
+		left="spriteimage.speechbubble-right-2_left"
+		middle="spriteimage.speechbubble-right-2_middle"
+		right="spriteimage.speechbubble-right-2_right"
+		top_left="spriteimage.speechbubble-right-2_top_left"
+		top="spriteimage.speechbubble-right-2_top"
+		top_right="spriteimage.speechbubble-right-2_top_right"
+	/>
+
+
+	<texture
+		name="script-speechbubble-left.texture"
+		url="classpath:script-speechbubble-left.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="speechbubble-left.imagebank" texture="script-speechbubble-left.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.speechbubble-left_bottom_left" 		x="0"   y="0"	w="19" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-left_bottom" 			x="19"  y="0"	w="12" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-left_bottom_right" 		x="31"  y="0"	w="33" h="19"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-left_left" 				x="0"   y="19"	w="19" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-left_middle" 			x="19"  y="19"	w="12" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-left_right" 			x="31"  y="19"	w="33" h="12"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-left_top_left" 			x="0"   y="66"	w="19" h="62"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-left_top" 				x="19"  y="66"	w="12" h="62"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.speechbubble-left_top_right" 		x="31"  y="66"	w="33" h="62"	hx="0" hy="0" offset="false"/>
+	</imagebank>
+	
+	<widgetbackground
+		name="speechbubble-left.background.spec"
+		bottom_left="spriteimage.speechbubble-left_bottom_left"
+		bottom="spriteimage.speechbubble-left_bottom"
+		bottom_right="spriteimage.speechbubble-left_bottom_right"
+		left="spriteimage.speechbubble-left_left"
+		middle="spriteimage.speechbubble-left_middle"
+		right="spriteimage.speechbubble-left_right"
+		top_left="spriteimage.speechbubble-left_top_left"
+		top="spriteimage.speechbubble-left_top"
+		top_right="spriteimage.speechbubble-left_top_right"
+	/>
+
+	<texture
+		name="script-info.texture"
+		url="classpath:script-info.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="info.imagebank" texture="script-info.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.info_bottom_left" 	x="0"   y="0"	w="40" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_bottom" 		x="40"  y="0"	w="10" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_bottom_right" 	x="88"  y="0"	w="40" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_left" 			x="0"   y="40"	w="40" h="10"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_middle" 		x="40"  y="40"	w="10" h="10"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_right" 			x="88"  y="40"	w="40" h="10"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_top_left" 		x="0"   y="88"	w="40" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_top" 			x="40"  y="88"	w="10" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_top_right" 		x="88"  y="88"	w="40" h="40"	hx="0" hy="0" offset="false"/>
+	</imagebank>
+	
+	<widgetbackground
+		name="info.background.spec"
+		bottom_left="spriteimage.info_bottom_left"
+		bottom="spriteimage.info_bottom"
+		bottom_right="spriteimage.info_bottom_right"
+		left="spriteimage.info_left"
+		middle="spriteimage.info_middle"
+		right="spriteimage.info_right"
+		top_left="spriteimage.info_top_left"
+		top="spriteimage.info_top"
+		top_right="spriteimage.info_top_right"
+	/>
+
+
+	<texture
+		name="script-info-dark.texture"
+		url="classpath:script-info-dark.01.jgimage"
+		dst="GL_RGBA"
+		target="GL_TEXTURE_2D"
+		min="GL_LINEAR"
+		mag="GL_LINEAR"
+		wrap="GL_FALSE"
+	/>
+	
+	<imagebank name="info-dark.imagebank" texture="script-info-dark.texture" defaultstyle="transparent.style">
+		<spriteimage name="spriteimage.info_dark_bottom_left" 	x="0"   y="0"	w="40" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_dark_bottom" 		x="40"  y="0"	w="10" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_dark_bottom_right" 	x="88"  y="0"	w="40" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_dark_left" 			x="0"   y="40"	w="40" h="10"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_dark_middle" 		x="40"  y="40"	w="10" h="10"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_dark_right" 			x="88"  y="40"	w="40" h="10"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_dark_top_left" 		x="0"   y="88"	w="40" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_dark_top" 			x="40"  y="88"	w="10" h="40"	hx="0" hy="0" offset="false"/>
+		<spriteimage name="spriteimage.info_dark_top_right" 		x="88"  y="88"	w="40" h="40"	hx="0" hy="0" offset="false"/>
+	</imagebank>
+	
+	<widgetbackground
+		name="info-dark.background.spec"
+		bottom_left="spriteimage.info_dark_bottom_left"
+		bottom="spriteimage.info_dark_bottom"
+		bottom_right="spriteimage.info_dark_bottom_right"
+		left="spriteimage.info_dark_left"
+		middle="spriteimage.info_dark_middle"
+		right="spriteimage.info_dark_right"
+		top_left="spriteimage.info_dark_top_left"
+		top="spriteimage.info_dark_top"
+		top_right="spriteimage.info_dark_top_right"
+	/>
+
+
+	<widgetbackground name="human-speech.background" inherit="speechbubble.background.spec" insets="24,40,24,24" />
+	<widgetbackground name="human-speech-top-left.background" inherit="speechbubble-2.background.spec" insets="24,40,24,24" />	
+	<widgetbackground name="human-speech-top-left-info.background" inherit="speechbubble-2.background.spec" insets="140,40,24,24" />			
+	<widgetbackground name="human-speech-right.background" inherit="speechbubble-right.background.spec" insets="40,24,24,24" />		
+	<widgetbackground name="human-speech-left.background" inherit="speechbubble-left.background.spec" insets="28,24,40,24" />		
+	<widgetbackground name="info.background" inherit="info.background.spec" insets="24,28,24,24" />	
+	<widgetbackground name="human-speech-bottom.background" inherit="speechbubble-bottom.background.spec" insets="24,40,24,24" />
+
+	<widgetbackground name="gidrah.background" inherit="info.background.spec" insets="175,28,24,24" />	
+	<widgetbackground name="alert.background" inherit="info-dark.background.spec" insets="24,28,24,24" />
+
+
+
+	<!-- CUSTERD ============================================================================================================================ -->
+
+	<character
+		name="custerd.char"
+		animated="true"
+		bubbleLayer="3"
+		mouthLayer="6"
+		textSpeed="2"
+		speech="true"
+	>
+		<sounds>
+			<array>
+				<item>general1.buffer</item>
+				<item>general2.buffer</item>
+				<item>general3.buffer</item>
+				<item>general4.buffer</item>
+				<item>general5.buffer</item>
+				<item>general6.buffer</item>
+				<item>general7.buffer</item>
+				<item>general8.buffer</item>
+			</array>
+		</sounds>
+	</character>
+
+
+	<!-- R AND D - TECH ============================================================================================================================ -->
+
+	<character
+		name="tech.char"
+		animated="true"
+		vowel="tech-vowel.buffer"
+		consonant="tech-consonant.buffer"
+		bubbleLayer="3"
+		mouthLayer="6"
+		textSpeed="2"
+		speech="true"
+	>
+		<sounds>
+			<array>
+				<item>scientist1.buffer</item>
+				<item>scientist2.buffer</item>
+				<item>scientist3.buffer</item>
+				<item>scientist4.buffer</item>
+				<item>scientist5.buffer</item>
+				<item>scientist6.buffer</item>
+				<item>scientist7.buffer</item>
+				<item>scientist8.buffer</item>
+			</array>
+		</sounds>
+	</character>
+
+
+	<!-- RESEARCH BUILDINGS / WEAPONS / INFO / GERNERAL ============================================================================================================================ -->
+	
+	<character
+		name="research.char.spec"
+		left="true"
+		bubbleLayer="1"
+		textSpeed="1"
+	>
+		<sounds>
+			<array>
+				<item>textBeep.buffer</item>
+			</array>
+		</sounds>
+	</character>
+
+	<!-- STAT BOT ============================================================================================================================================================= -->
+	
+	<character
+		name="statbot.char.spec"
+		animated="true"
+		bubbleLayer="3"
+		speech="true"
+		textSpeed="3"
+	>
+		<sounds>
+			<array>
+				<item>ZX1.buffer</item>
+				<item>ZX2.buffer</item>
+				<item>ZX3.buffer</item>
+				<item>ZX4.buffer</item>
+				<item>ZX5.buffer</item>
+				<item>ZX6.buffer</item>
+				<item>ZX7.buffer</item>
+				<item>ZX8.buffer</item>
+			</array>
+		</sounds>
+	</character>
+
+
+	<!-- TITAN ============================================================================================================================================================= -->
+	
+	<character
+		name="titan.char.spec"
+		animated="true"
+		bubbleLayer="3"
+		speech="true"
+		textSpeed="3"
+	>
+		<sounds>
+			<array>
+				<item>titan1.buffer</item>
+				<item>titan2.buffer</item>
+				<item>titan3.buffer</item>
+				<item>titan4.buffer</item>
+				<item>titan5.buffer</item>
+				<item>titan6.buffer</item>
+				<item>titan7.buffer</item>
+				<item>titan8.buffer</item>
+			</array>
+		</sounds>
+	</character>
+
+
+	<!-- ALERT (boss levels) - background and blinking ALERT anim etc. ======================================================================================================== -->
+
+	<setting
+		name="alert.setting.spec"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="12" offset="100,450" animation="story.alert.anim"/>
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+160"/>
+					<scale xscale="1.3" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.mars.01" d="0"/>
+					<frame i="alert.setting.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+	<animation name="alert.setting.animation">
+		<animcolor a="0" d="2" />
+		<animcolor a="15" d="2" />
+		<animcolor a="62" d="2" />
+		<animcolor a="127" d="2" />
+		<animcolor a="183" d="2" />
+		<animcolor a="221" d="2" />
+		<animcolor a="244" d="2" />
+		<animcolor a="253" d="2" />
+		<animcolor a="254" d="2" />
+		<animcolor a="252" d="2" />
+		<animcolor a="249" d="2" />
+		<animcolor a="243" d="2" />
+		<animcolor a="235" d="2" />
+		<animcolor a="226" d="2" />
+		<animcolor a="215" d="2" />
+		<animcolor a="202" d="2" />
+		<animcolor a="189" d="2" />
+		<animcolor a="176" d="2" />
+		<animcolor a="162" d="2" />
+		<animcolor a="148" d="2" />
+		<animcolor a="135" d="2" />
+		<animcolor a="122" d="2" />
+		<animcolor a="110" d="2" />
+		<animcolor a="99" d="2" />
+		<animcolor a="88" d="2" />
+		<animcolor a="79" d="2" />
+		<animcolor a="69" d="2" />
+		<animcolor a="61" d="2" />
+		<animcolor a="53" d="2" />
+		<animcolor a="46" d="2" />
+		<animcolor a="40" d="2" />
+		<animcolor a="34" d="2" />
+		<animcolor a="29" d="2" />
+		<animcolor a="24" d="2" />
+		<animcolor a="20" d="2" />
+		<animcolor a="16" d="2" />
+		<animcolor a="12" d="2" />
+		<animcolor a="10" d="2" />
+		<animcolor a="7" d="2" />
+		<animcolor a="5" d="2" />
+		<animcolor a="3" d="2" />
+		<animcolor a="2" d="2" />
+		<animcolor a="1" d="2" />
+		<animcolor a="0" d="2" />
+		<animcolor a="0" d="2" />
+		<animcolor a="0" d="2" />
+		<goto seq="0"/>
+	</animation>
+
+	<animation name="alert.background.anim">
+		<scale scale="0.65"/>
+		<frame i="spriteimage.story.alert.info.01" d="1"/>
+	</animation>
+
+	<animation name="alert.background.flipped.anim">
+		<scale scale="0.65"/>
+		<angle angle="32768"/>
+		<frame i="spriteimage.story.alert.info.01" d="1"/>
+	</animation>
+
+	<animation name="story.alert.anim">
+		<scale scale="0.5"/>
+		<frame i="spriteimage.story.alert.01" d="8"/>
+		<frame i="spriteimage.story.alert.02" d="6"/>
+		<frame i="spriteimage.story.alert.03" d="4"/>
+		<frame i="spriteimage.story.alert.04" d="3"/>
+		<animcolor a="200" d="3"/>
+		<animcolor a="150" d="3"/>
+		<animcolor a="100" d="3"/>
+		<animcolor a="50" d="3"/>
+		<animcolor a="30" d="4"/>
+		<animcolor a="10" d="8"/>
+		<animcolor a="255" d="0"/>
+		<goto seq="1"/>
+	</animation>
+
+
+
+
+
+
+
+	<!-- OLD CHARACTERS... MOVE TO NEW XMLs ============================================================================================================================ -->
+
+
+
+
+	
+	
+	<!-- R AND D - MARS ============================================================================================================================ 
+
+	<animation name="tech.mars.body.idle.anim">
+		<frame i="spriteimage.character.tech.mars.back.01" d="20" />
+	</animation>
+	<animation name="tech.mars.body.talk.anim">
+		<label id="start"/>
+		<random>
+			<dest id="point-left" 			n="1"/>
+			<dest id="gesture-left" 		n="1"/>
+			<dest id="arms-out" 			n="1"/>
+			<dest id="arms-up" 				n="1"/>
+		</random>
+			
+		<label id="point-left"/>
+		<frame i="spriteimage.character.tech.mars.back.02" d="10" />
+		<random>
+			<dest id="point-left" n="2"/>
+			<dest id="gesture-left" n="2"/>
+			<dest id="arms-up" n="2"/>
+			<dest id="start"/>
+		</random>	
+	
+		<label id="gesture-left"/>
+		<frame i="spriteimage.character.tech.mars.back.03" d="10" />
+		<random>
+			<dest id="gesture-left" n="2"/>
+			<dest id="point-left" n="2"/>
+			<dest id="arms-out" n="2"/>
+			<dest id="start"/>
+		</random>		
+	
+		<label id="arms-out"/>
+		<frame i="spriteimage.character.tech.mars.back.04" d="10" />
+		<random>
+			<dest id="arms-out" n="2"/>
+			<dest id="gesture-left" n="2"/>
+			<dest id="arms-up" n="2"/>
+			<dest id="start"/>
+		</random>		
+		
+		<label id="arms-up"/>
+		<frame i="spriteimage.character.tech.mars.back.05" d="10" />
+		<random>
+			<dest id="arms-up" n="2"/>
+			<dest id="point-left" n="2"/>
+			<dest id="arms-out" n="2"/>
+			<dest id="start"/>
+		</random>					
+	</animation>
+
+	<animation name="tech.mars.glow.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.tech.mars.glow.04" d="5" />
+		<frame i="spriteimage.character.tech.mars.glow.03" d="5" />
+		<frame i="spriteimage.character.tech.mars.glow.02" d="5" />
+		<frame i="spriteimage.character.tech.mars.glow.01" d="5" />
+		<frame i="spriteimage.character.tech.mars.glow.02" d="5" />
+		<frame i="spriteimage.character.tech.mars.glow.03" d="5" />		
+		<goto id="start"/>
+	</animation>
+
+	<character
+		name="oddglove.char"
+		inherit="tech.char"
+		bubble="mars-human-speech.background"
+		vowel="oddglove-vowel.buffer"
+		consonant="oddglove-consonant.buffer"
+		color="mars.colormap:text"
+		boldColor="mars.colormap:text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" image="spriteimage.character.tech.mars.01"/>
+				<sprite layer="4" animation="tech.mars.body.idle.anim"/>
+				<sprite layer="6" animation="tech.mars.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.mars.01"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.5">
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" image="spriteimage.character.tech.mars.01"/>
+				<sprite layer="4" animation="tech.mars.body.talk.anim"/>
+				<sprite layer="6" animation="tech.mars.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.mars.01"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<frame i="spriteimage.character.tech.mars.top.01" d="1" />
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.mars.top.02" d="200" />
+				<frame i="spriteimage.character.tech.mars.top.03" d="200" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.mars.top.04" d="200" />
+				<frame i="spriteimage.character.tech.mars.top.05" d="200" />
+			</animation>
+		</consonantAppearance>
+	</character>
+
+	<character
+		name="oddglove-left.char"
+		inherit="oddglove.char"
+		bubble="mars-human-speech-right.background"
+	>
+	</character>
+	
+	-->
+	
+	
+
+	
+
+	
+	
+	<!-- TECH BOX SCALE ANIMS ============================================================================================================================ -->
+
+	<animation name="info.tech.physics.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.physics.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.physics.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.physics.01" d="0" />
+	</animation>
+	<animation name="info.tech.physics.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.physics.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.biology.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.biology.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.biology.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.biology.01" d="0" />
+	</animation>
+	<animation name="info.tech.biology.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.biology.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.chemistry.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.chemistry.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.chemistry.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.chemistry.01" d="0" />
+	</animation>
+	<animation name="info.tech.chemistry.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.chemistry.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.efficiency.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.efficiency.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.efficiency.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.efficiency.01" d="0" />
+	</animation>
+	<animation name="info.tech.efficiency.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.efficiency.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.psychology.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.psychology.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.psychology.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.psychology.01" d="0" />
+	</animation>
+	<animation name="info.tech.psychology.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.psychology.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.nuclear.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.nuclear.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.nuclear.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.nuclear.01" d="0" />
+	</animation>
+	<animation name="info.tech.nuclear.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.nuclear.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.explosives.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.explosives.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.explosives.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.explosives.01" d="0" />
+	</animation>
+	<animation name="info.tech.explosives.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.explosives.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.textiles.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.textiles.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.textiles.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.textiles.01" d="0" />
+	</animation>
+	<animation name="info.tech.textiles.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.textiles.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.automation.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.automation.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.automation.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.automation.01" d="0" />
+	</animation>
+	<animation name="info.tech.automation.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.automation.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.barometrics.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.barometrics.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.barometrics.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.barometrics.01" d="0" />
+	</animation>
+	<animation name="info.tech.barometrics.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.barometrics.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.optics.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.optics.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.optics.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.optics.01" d="0" />
+	</animation>
+	<animation name="info.tech.optics.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.optics.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.ballistics.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.ballistics.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.ballistics.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.ballistics.01" d="0" />
+	</animation>
+	<animation name="info.tech.ballistics.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.ballistics.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.robotics.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.robotics.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.robotics.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.robotics.01" d="0" />
+	</animation>
+	<animation name="info.tech.robotics.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.robotics.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.forcefields.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.forcefields.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.forcefields.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.forcefields.01" d="0" />
+	</animation>
+	<animation name="info.tech.forcefields.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.forcefields.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.anatomy.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.anatomy.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.anatomy.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.anatomy.01" d="0" />
+	</animation>
+	<animation name="info.tech.anatomy.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.anatomy.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.extraction.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.extraction.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.extraction.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.extraction.01" d="0" />
+	</animation>
+	<animation name="info.tech.extraction.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.extraction.glow.01" d="0" />
+	</animation>	
+		
+	
+	<!--  new tech -->
+	
+	<animation name="info.tech.ionisation.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.ionisation.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.ionisation.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.ionisation.01" d="0" />
+	</animation>
+	<animation name="info.tech.ionisation.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.ionisation.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.lithium.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.lithium.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.lithium.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.lithium.01" d="0" />
+	</animation>
+	<animation name="info.tech.lithium.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.lithium.glow.01" d="0" />
+	</animation>		
+	
+	<animation name="info.tech.sodium.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.sodium.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.sodium.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.sodium.01" d="0" />
+	</animation>
+	<animation name="info.tech.sodium.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.sodium.glow.01" d="0" />
+	</animation>	
+
+	<animation name="info.tech.precision.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.precision.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.precision.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.precision.01" d="0" />
+	</animation>
+	<animation name="info.tech.precision.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.precision.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.advancedexplosives.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.advancedexplosives.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.advancedexplosives.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.advancedexplosives.01" d="0" />
+	</animation>
+	<animation name="info.tech.advancedexplosives.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.advancedexplosives.glow.01" d="0" />
+	</animation>		
+	
+	<animation name="info.tech.plastic.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.plastic.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.plastic.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.plastic.01" d="0" />
+	</animation>
+	<animation name="info.tech.plastic.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.plastic.glow.01" d="0" />
+	</animation>	
+
+	<animation name="info.tech.nanohardening.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.nanohardening.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.nanohardening.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.nanohardening.01" d="0" />
+	</animation>
+	<animation name="info.tech.nanohardening.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.nanohardening.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.finetuning.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.finetuning.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.finetuning.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.finetuning.01" d="0" />
+	</animation>
+	<animation name="info.tech.finetuning.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.finetuning.glow.01" d="0" />
+	</animation>		
+	
+	<animation name="info.tech.droidbuff.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.droidbuff.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.droidbuff.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.droidbuff.01" d="0" />
+	</animation>
+	<animation name="info.tech.droidbuff.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.droidbuff.glow.01" d="0" />
+	</animation>	
+
+	<animation name="info.tech.nanotechnology.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.nanotechnology.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.nanotechnology.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.nanotechnology.01" d="0" />
+	</animation>
+	<animation name="info.tech.nanotechnology.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.nanotechnology.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.splitter.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.splitter.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.splitter.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.splitter.01" d="0" />
+	</animation>
+	<animation name="info.tech.splitter.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.splitter.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.multibarrel.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.multibarrel.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.multibarrel.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.multibarrel.01" d="0" />
+	</animation>
+	<animation name="info.tech.multibarrel.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.multibarrel.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.amplifiers.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.amplifiers.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.amplifiers.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.amplifiers.01" d="0" />
+	</animation>
+	<animation name="info.tech.amplifiers.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.amplifiers.glow.01" d="0" />
+	</animation>		
+	
+	<animation name="info.tech.lasertech.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.lasertech.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.lasertech.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.lasertech.01" d="0" />
+	</animation>
+	<animation name="info.tech.lasertech.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.lasertech.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.shells.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.shells.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.shells.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.shells.01" d="0" />
+	</animation>
+	<animation name="info.tech.shells.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.shells.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.shielding.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.shielding.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.shielding.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.shielding.01" d="0" />
+	</animation>
+	<animation name="info.tech.shielding.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.shielding.glow.01" d="0" />
+	</animation>		
+	
+	<animation name="info.tech.xrays.ground.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.xrays.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.xrays.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.xrays.01" d="0" />
+	</animation>
+	<animation name="info.tech.xrays.glow.anim">
+		<scale xscale="0.375" yscale="0.425" d="0"/>
+		<frame i="spriteimage.info.tech.new.xrays.glow.01" d="0" />
+	</animation>	
+
+
+
+
+
+	<animation name="info.tech.coffee.ground.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.coffee.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.coffee.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.coffee.01" d="0" />
+	</animation>
+	<animation name="info.tech.coffee.glow.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.coffee.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.grant.ground.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.grant.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.grant.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.grant.01" d="0" />
+	</animation>
+	<animation name="info.tech.grant.glow.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.grant.glow.01" d="0" />
+	</animation>		
+
+	<animation name="info.tech.strongercoffee.ground.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.strongercoffee.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.strongercoffee.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.strongercoffee.01" d="0" />
+	</animation>
+	<animation name="info.tech.strongercoffee.glow.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.strongercoffee.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.reinforcements.ground.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.reinforcements.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.reinforcements.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.reinforcements.01" d="0" />
+	</animation>
+	<animation name="info.tech.reinforcements.glow.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.reinforcements.glow.01" d="0" />
+	</animation>	
+
+	<animation name="info.tech.extrabarricades.ground.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.extrabarricades.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.extrabarricades.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.extrabarricades.01" d="0" />
+	</animation>
+	<animation name="info.tech.extrabarricades.glow.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.extrabarricades.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.extramines.ground.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.extramines.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.extramines.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.extramines.01" d="0" />
+	</animation>
+	<animation name="info.tech.extramines.glow.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.extramines.glow.01" d="0" />
+	</animation>	
+	
+	<animation name="info.tech.powerups.ground.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.powerups.ground.01" d="0" />
+	</animation>
+	<animation name="info.tech.powerups.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.powerups.01" d="0" />
+	</animation>
+	<animation name="info.tech.powerups.glow.anim">
+		<scale xscale="0.325" yscale="0.375" d="0"/>
+		<frame i="spriteimage.info.tech.new.powerups.glow.01" d="0" />
+	</animation>	
+
+</resources>

@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+		<ruin name="titan.ruin.3x2.01" i="31701" layer="2" ruin="true" width="3" height="2" bThruMap="000110"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.large.emitter" offset="38,0" ySortOffset="64"  />
+				<sprite layer="3" sublayer="1" offset="82,49" ySortOffset="49" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.06" />
+				<sprite layer="3" sublayer="1" offset="14,15" ySortOffset="15" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.03" />
+				<sprite layer="3" sublayer="1" offset="61,9" ySortOffset="9" colored="road-out" attenuated="true" image="tiles.road.titan.back.5.4" />
+				<sprite layer="3" sublayer="1" offset="26,7" ySortOffset="7" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="3" sublayer="3" offset="61,9" ySortOffset="9" colored="road-in" attenuated="false" animation="road.titan.glow.5.4.anim" />
+				<sprite layer="5" sublayer="2" offset="82,49" ySortOffset="49" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.06" />
+				<sprite layer="5" sublayer="2" offset="38,39" ySortOffset="39" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.large.back.01" />
+				<sprite layer="5" sublayer="2" offset="69,19" ySortOffset="19" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="14,15" ySortOffset="15" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.03" />
+				<sprite layer="5" sublayer="2" offset="26,7" ySortOffset="7" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="3" offset="82,49" ySortOffset="49" colored="cliff-glow" attenuated="false" animation="titan.rock.06.anim" />
+				<sprite layer="5" sublayer="3" offset="38,39" ySortOffset="39" colored="road-in" attenuated="false" animation="titan.nodule.glow.large.anim" />
+				<sprite layer="5" sublayer="3" offset="69,19" ySortOffset="19" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="14,15" ySortOffset="15" colored="cliff-glow" attenuated="false" animation="titan.rock.03.anim" />
+				<sprite layer="5" sublayer="3" offset="26,7" ySortOffset="7" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="6" sublayer="0" offset="69,30" ySortOffset="30" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.3x2.02" i="31702" layer="2" ruin="true" width="3" height="2" bThruMap="100010"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.large.emitter" offset="51,0" ySortOffset="59"  />
+				<sprite layer="3" sublayer="1" offset="14,55" ySortOffset="55" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.05" />
+				<sprite layer="3" sublayer="1" offset="-17,44" ySortOffset="44" colored="road-out" attenuated="true" image="tiles.road.titan.back.5.4" />
+				<sprite layer="3" sublayer="1" offset="84,18" ySortOffset="18" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="3" sublayer="1" offset="47,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.06" />
+				<sprite layer="3" sublayer="1" offset="60,-1" ySortOffset="-1" colored="road-out" attenuated="true" image="tiles.road.titan.back.3.3" />
+				<sprite layer="3" sublayer="3" offset="-17,44" ySortOffset="44" colored="road-in" attenuated="false" animation="road.titan.glow.5.4.anim" />
+				<sprite layer="3" sublayer="3" offset="60,-1" ySortOffset="-1" colored="road-in" attenuated="false" animation="road.titan.glow.3.3.anim" />
+				<sprite layer="5" sublayer="2" offset="14,55" ySortOffset="55" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.05" />
+				<sprite layer="5" sublayer="2" offset="51,34" ySortOffset="34" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.large.back.01" />
+				<sprite layer="5" sublayer="2" offset="84,18" ySortOffset="18" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="2" offset="13,18" ySortOffset="18" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="47,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.06" />
+				<sprite layer="5" sublayer="3" offset="14,55" ySortOffset="55" colored="cliff-glow" attenuated="false" animation="titan.rock.05.anim" />
+				<sprite layer="5" sublayer="3" offset="51,34" ySortOffset="34" colored="road-in" attenuated="false" animation="titan.nodule.glow.large.anim" />
+				<sprite layer="5" sublayer="3" offset="84,18" ySortOffset="18" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="5" sublayer="3" offset="13,18" ySortOffset="18" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="47,5" ySortOffset="5" colored="cliff-glow" attenuated="false" animation="titan.rock.06.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.01" i="31703" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="11,27" ySortOffset="27" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="50,8" ySortOffset="8" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="3" sublayer="1" offset="12,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.07" />
+				<sprite layer="5" sublayer="2" offset="11,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="40,21" ySortOffset="21" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="50,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="2" offset="12,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.07" />
+				<sprite layer="5" sublayer="3" offset="11,27" ySortOffset="27" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="40,21" ySortOffset="21" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="50,8" ySortOffset="8" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="5" sublayer="3" offset="12,5" ySortOffset="5" colored="cliff-glow" attenuated="false" animation="titan.rock.07.anim" />
+				<sprite layer="6" sublayer="0" offset="40,32" ySortOffset="32" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.02" i="31704" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="18,29" ySortOffset="29" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="51,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.06" />
+				<sprite layer="5" sublayer="2" offset="18,29" ySortOffset="29" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="45,19" ySortOffset="19" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="15,7" ySortOffset="7" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="51,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.06" />
+				<sprite layer="5" sublayer="3" offset="18,29" ySortOffset="29" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="45,19" ySortOffset="19" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="15,7" ySortOffset="7" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="51,6" ySortOffset="6" colored="cliff-glow" attenuated="false" animation="titan.rock.06.anim" />
+				<sprite layer="6" sublayer="0" offset="45,30" ySortOffset="30" attenuated="false" animation="titan.spot.anim" />
+				<sprite layer="6" sublayer="0" offset="15,18" ySortOffset="18" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.03" i="31705" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="48,21" ySortOffset="21" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.06" />
+				<sprite layer="3" sublayer="1" offset="44,4" ySortOffset="4" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="5" sublayer="2" offset="48,21" ySortOffset="21" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.06" />
+				<sprite layer="5" sublayer="2" offset="21,14" ySortOffset="14" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="44,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="3" offset="48,21" ySortOffset="21" colored="cliff-glow" attenuated="false" animation="titan.rock.06.anim" />
+				<sprite layer="5" sublayer="3" offset="21,14" ySortOffset="14" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="44,4" ySortOffset="4" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="6" sublayer="0" offset="21,25" ySortOffset="25" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.04" i="31706" layer="2" ruin="true" width="2" height="1" bThruMap="01"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.cannon.2.emitter" offset="41,0" ySortOffset="38"  />
+				<emitter emitter="titan.nodule.cannon.3.emitter" offset="41,0" ySortOffset="38"  />
+				<emitter emitter="titan.nodule.cannon.1.emitter" offset="41,0" ySortOffset="38"  />
+				<sprite layer="3" sublayer="1" offset="10,27" ySortOffset="27" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="52,8" ySortOffset="8" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="5" sublayer="2" offset="10,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="41,22" ySortOffset="22" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.cannon.anim" />
+				<sprite layer="5" sublayer="2" offset="18,9" ySortOffset="9" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="52,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="3" offset="10,27" ySortOffset="27" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="18,9" ySortOffset="9" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="52,8" ySortOffset="8" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="6" sublayer="0" offset="18,20" ySortOffset="20" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+	<animation name="titan.cannon.anim">
+		<label id="start"/>
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="5" />
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="8" />
+			<frame i="spriteimage.titan.nodule.cannon.back.02" d="5" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="10" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.04" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.06" d="9" />
+			<frame i="spriteimage.titan.nodule.cannon.back.06" d="7" />
+			<frame i="spriteimage.titan.nodule.cannon.back.05" d="5" />
+			<frame i="spriteimage.titan.nodule.cannon.back.04" d="3" />
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="3" />
+			<frame i="spriteimage.titan.nodule.cannon.back.02" d="2" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="7" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.04" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.06" d="9" />
+			<frame i="spriteimage.titan.nodule.cannon.back.06" d="7" />
+			<frame i="spriteimage.titan.nodule.cannon.back.05" d="5" />
+			<frame i="spriteimage.titan.nodule.cannon.back.04" d="3" />
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="3" />
+			<frame i="spriteimage.titan.nodule.cannon.back.02" d="2" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="7" />
+			<frame i="spriteimage.titan.nodule.cannon.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.04" d="1" />
+			<frame i="spriteimage.titan.nodule.cannon.back.06" d="15" />
+			<frame i="spriteimage.titan.nodule.cannon.back.06" d="6" />
+			<frame i="spriteimage.titan.nodule.cannon.back.05" d="6" />
+			<frame i="spriteimage.titan.nodule.cannon.back.04" d="5" />
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="5" />
+			<frame i="spriteimage.titan.nodule.cannon.back.03" d="551" />
+		<goto id="start"/>
+	</animation>
+
+		<ruin name="titan.ruin.2x1.05" i="31707" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.flare.2.emitter" offset="23,0" ySortOffset="52"  />
+				<emitter emitter="titan.nodule.flare.4.emitter" offset="45,0" ySortOffset="39"  />
+				<emitter emitter="titan.nodule.flare.3.emitter" offset="33,0" ySortOffset="37"  />
+				<emitter emitter="titan.nodule.flare.1.emitter" offset="13,0" ySortOffset="34"  />
+				<sprite layer="3" sublayer="1" offset="28,24" ySortOffset="24" colored="shadow" attenuated="true" image="spriteimage.titan.nodule.flare.ground.01" />
+				<sprite layer="3" sublayer="1" offset="12,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="5" sublayer="2" offset="28,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.flare.anim" />
+				<sprite layer="5" sublayer="2" offset="42,7" ySortOffset="7" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="12,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="3" offset="42,7" ySortOffset="7" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="12,6" ySortOffset="6" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="6" sublayer="0" offset="42,18" ySortOffset="18" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+	<animation name="titan.flare.anim">
+		<label id="start"/>
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="84" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.02" d="47" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.03" d="5" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="62" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.06" d="47" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.07" d="5" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="98" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.08" d="27" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.09" d="5" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="2" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="1" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.04" d="47" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.05" d="5" />
+			<frame i="spriteimage.titan.nodule.flare.1.back.01" d="62" />
+		<goto id="start"/>
+	</animation>
+
+		<ruin name="titan.ruin.2x1.06" i="31708" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.flare.2.emitter" offset="28,0" ySortOffset="51"  />
+				<emitter emitter="titan.nodule.flare.4.emitter" offset="50,0" ySortOffset="38"  />
+				<emitter emitter="titan.nodule.flare.3.emitter" offset="38,0" ySortOffset="37"  />
+				<emitter emitter="titan.nodule.flare.1.emitter" offset="18,0" ySortOffset="34"  />
+				<sprite layer="3" sublayer="1" offset="33,24" ySortOffset="24" colored="shadow" attenuated="true" image="spriteimage.titan.nodule.flare.ground.01" />
+				<sprite layer="3" sublayer="1" offset="51,10" ySortOffset="10" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="3" sublayer="1" offset="13,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.08" />
+				<sprite layer="5" sublayer="2" offset="33,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.flare.anim" />
+				<sprite layer="5" sublayer="2" offset="51,10" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="2" offset="13,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" animation="titan.rock.08.anim" />
+				<sprite layer="5" sublayer="3" offset="51,10" ySortOffset="10" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="5" sublayer="3" offset="13,6" ySortOffset="6" colored="cliff-glow" attenuated="false" image="spriteimage.titan.rock.glow.08" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.07" i="31709" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.flare.2.emitter" offset="29,0" ySortOffset="52"  />
+				<emitter emitter="titan.nodule.flare.4.emitter" offset="52,0" ySortOffset="39"  />
+				<emitter emitter="titan.nodule.flare.3.emitter" offset="40,0" ySortOffset="37"  />
+				<emitter emitter="titan.nodule.flare.1.emitter" offset="19,0" ySortOffset="34"  />
+				<sprite layer="3" sublayer="1" offset="35,24" ySortOffset="24" colored="shadow" attenuated="true" image="spriteimage.titan.nodule.flare.ground.01" />
+				<sprite layer="3" sublayer="1" offset="51,7" ySortOffset="7" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="5" sublayer="2" offset="35,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.flare.anim" />
+				<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="51,7" ySortOffset="7" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="3" offset="20,8" ySortOffset="8" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="51,7" ySortOffset="7" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="6" sublayer="0" offset="20,19" ySortOffset="19" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.08" i="31710" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="51,26" ySortOffset="26" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.06" />
+				<sprite layer="3" sublayer="1" offset="15,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.03" />
+				<sprite layer="5" sublayer="2" offset="51,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.06" />
+				<sprite layer="5" sublayer="2" offset="15,19" ySortOffset="19" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="45,8" ySortOffset="8" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="15,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.03" />
+				<sprite layer="5" sublayer="3" offset="51,26" ySortOffset="26" colored="cliff-glow" attenuated="false" animation="titan.rock.06.anim" />
+				<sprite layer="5" sublayer="3" offset="15,19" ySortOffset="19" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="45,8" ySortOffset="8" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="15,6" ySortOffset="6" colored="cliff-glow" attenuated="false" animation="titan.rock.03.anim" />
+				<sprite layer="6" sublayer="0" offset="15,30" ySortOffset="30" attenuated="false" animation="titan.spot.anim" />
+				<sprite layer="6" sublayer="0" offset="45,19" ySortOffset="19" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.09" i="31711" layer="2" ruin="true" width="2" height="1" bThruMap="10"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="13,27" ySortOffset="27" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="50,18" ySortOffset="18" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.08" />
+				<sprite layer="5" sublayer="2" offset="13,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="50,18" ySortOffset="18" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" animation="titan.rock.08.anim" />
+				<sprite layer="5" sublayer="2" offset="26,9" ySortOffset="9" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="3" offset="13,27" ySortOffset="27" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="50,18" ySortOffset="18" colored="cliff-glow" attenuated="false" image="spriteimage.titan.rock.glow.08" />
+				<sprite layer="5" sublayer="3" offset="26,9" ySortOffset="9" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.10" i="31712" layer="2" ruin="true" width="2" height="1" bThruMap="01"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="16,23" ySortOffset="23" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.07" />
+				<sprite layer="3" sublayer="1" offset="20,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="5" sublayer="2" offset="16,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.07" />
+				<sprite layer="5" sublayer="2" offset="41,15" ySortOffset="15" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="20,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="3" offset="16,23" ySortOffset="23" colored="cliff-glow" attenuated="false" animation="titan.rock.07.anim" />
+				<sprite layer="5" sublayer="3" offset="41,15" ySortOffset="15" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="20,6" ySortOffset="6" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.11" i="31713" layer="2" ruin="true" width="2" height="1" bThruMap="10"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="50,23" ySortOffset="23" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.06" />
+				<sprite layer="3" sublayer="1" offset="15,3" ySortOffset="3" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.08" />
+				<sprite layer="5" sublayer="2" offset="50,23" ySortOffset="23" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.06" />
+				<sprite layer="5" sublayer="2" offset="20,22" ySortOffset="22" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="44,7" ySortOffset="7" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="15,3" ySortOffset="3" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" animation="titan.rock.08.anim" />
+				<sprite layer="5" sublayer="3" offset="50,23" ySortOffset="23" colored="cliff-glow" attenuated="false" animation="titan.rock.06.anim" />
+				<sprite layer="5" sublayer="3" offset="20,22" ySortOffset="22" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="44,7" ySortOffset="7" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="15,3" ySortOffset="3" colored="cliff-glow" attenuated="false" image="spriteimage.titan.rock.glow.08" />
+				<sprite layer="6" sublayer="0" offset="44,18" ySortOffset="18" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.12" i="31714" layer="2" ruin="true" width="2" height="1" bThruMap="01"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="15,30" ySortOffset="30" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="50,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.03" />
+				<sprite layer="5" sublayer="2" offset="15,30" ySortOffset="30" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="45,19" ySortOffset="19" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="19,7" ySortOffset="7" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="50,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.03" />
+				<sprite layer="5" sublayer="3" offset="15,30" ySortOffset="30" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="45,19" ySortOffset="19" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="19,7" ySortOffset="7" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="50,6" ySortOffset="6" colored="cliff-glow" attenuated="false" animation="titan.rock.03.anim" />
+				<sprite layer="6" sublayer="0" offset="19,18" ySortOffset="18" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.13" i="31715" layer="2" ruin="true" width="2" height="1" bThruMap="01"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.cannon.2.emitter" offset="37,0" ySortOffset="34"  />
+				<emitter emitter="titan.nodule.cannon.3.emitter" offset="37,0" ySortOffset="34"  />
+				<emitter emitter="titan.nodule.cannon.1.emitter" offset="37,0" ySortOffset="34"  />
+				<sprite layer="3" sublayer="1" offset="16,28" ySortOffset="28" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="55,9" ySortOffset="9" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.03" />
+				<sprite layer="3" sublayer="1" offset="14,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.08" />
+				<sprite layer="5" sublayer="2" offset="16,28" ySortOffset="28" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="37,18" ySortOffset="18" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.cannon.anim" />
+				<sprite layer="5" sublayer="2" offset="55,9" ySortOffset="9" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.03" />
+				<sprite layer="5" sublayer="2" offset="14,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" animation="titan.rock.08.anim" />
+				<sprite layer="5" sublayer="3" offset="16,28" ySortOffset="28" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="55,9" ySortOffset="9" colored="cliff-glow" attenuated="false" animation="titan.rock.03.anim" />
+				<sprite layer="5" sublayer="3" offset="14,5" ySortOffset="5" colored="cliff-glow" attenuated="false" image="spriteimage.titan.rock.glow.08" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.14" i="31716" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.cannon.3.emitter" offset="43,0" ySortOffset="40"  />
+				<emitter emitter="titan.nodule.cannon.2.emitter" offset="43,0" ySortOffset="40"  />
+				<emitter emitter="titan.nodule.cannon.1.emitter" offset="43,0" ySortOffset="40"  />
+				<sprite layer="3" sublayer="1" offset="12,24" ySortOffset="24" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.05" />
+				<sprite layer="3" sublayer="1" offset="55,9" ySortOffset="9" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.02" />
+				<sprite layer="5" sublayer="2" offset="12,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.05" />
+				<sprite layer="5" sublayer="2" offset="43,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.cannon.anim" />
+				<sprite layer="5" sublayer="2" offset="55,9" ySortOffset="9" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.02" />
+				<sprite layer="5" sublayer="2" offset="22,8" ySortOffset="8" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="3" offset="12,24" ySortOffset="24" colored="cliff-glow" attenuated="false" animation="titan.rock.05.anim" />
+				<sprite layer="5" sublayer="3" offset="55,9" ySortOffset="9" colored="cliff-glow" attenuated="false" animation="titan.rock.02.anim" />
+				<sprite layer="5" sublayer="3" offset="22,8" ySortOffset="8" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.15" i="31717" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.cannon.1.emitter" offset="25,0" ySortOffset="37"  />
+				<emitter emitter="titan.nodule.cannon.3.emitter" offset="25,0" ySortOffset="37"  />
+				<emitter emitter="titan.nodule.cannon.2.emitter" offset="25,0" ySortOffset="37"  />
+				<sprite layer="3" sublayer="1" offset="54,26" ySortOffset="26" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="12,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.03" />
+				<sprite layer="5" sublayer="2" offset="54,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="25,21" ySortOffset="21" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.cannon.anim" />
+				<sprite layer="5" sublayer="2" offset="44,6" ySortOffset="6" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="12,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.03" />
+				<sprite layer="5" sublayer="3" offset="54,26" ySortOffset="26" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="44,6" ySortOffset="6" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="12,5" ySortOffset="5" colored="cliff-glow" attenuated="false" animation="titan.rock.03.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x1.16" i="31718" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.flare.2.emitter" offset="24,0" ySortOffset="53"  />
+				<emitter emitter="titan.nodule.flare.4.emitter" offset="46,0" ySortOffset="40"  />
+				<emitter emitter="titan.nodule.flare.3.emitter" offset="34,0" ySortOffset="38"  />
+				<emitter emitter="titan.nodule.flare.1.emitter" offset="14,0" ySortOffset="35"  />
+				<sprite layer="3" sublayer="1" offset="29,25" ySortOffset="25" colored="shadow" attenuated="true" image="spriteimage.titan.nodule.flare.ground.01" />
+				<sprite layer="3" sublayer="1" offset="14,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.06" />
+				<sprite layer="5" sublayer="2" offset="29,25" ySortOffset="25" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.flare.anim" />
+				<sprite layer="5" sublayer="2" offset="45,8" ySortOffset="8" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="14,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.06" />
+				<sprite layer="5" sublayer="3" offset="45,8" ySortOffset="8" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="14,5" ySortOffset="5" colored="cliff-glow" attenuated="false" animation="titan.rock.06.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.3x1.01" i="31719" layer="2" ruin="true" width="3" height="1" bThruMap="010"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.flare.2.emitter" offset="39,0" ySortOffset="58"  />
+				<emitter emitter="titan.nodule.flare.4.emitter" offset="61,0" ySortOffset="45"  />
+				<emitter emitter="titan.nodule.flare.3.emitter" offset="49,0" ySortOffset="44"  />
+				<emitter emitter="titan.nodule.flare.1.emitter" offset="29,0" ySortOffset="40"  />
+				<sprite layer="3" sublayer="1" offset="44,30" ySortOffset="30" colored="shadow" attenuated="true" image="spriteimage.titan.nodule.flare.ground.01" />
+				<sprite layer="3" sublayer="1" offset="10,24" ySortOffset="24" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.03" />
+				<sprite layer="3" sublayer="1" offset="59,4" ySortOffset="4" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.08" />
+				<sprite layer="5" sublayer="2" offset="44,30" ySortOffset="30" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.flare.anim" />
+				<sprite layer="5" sublayer="2" offset="10,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.03" />
+				<sprite layer="5" sublayer="2" offset="69,17" ySortOffset="17" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="24,8" ySortOffset="8" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="59,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" animation="titan.rock.08.anim" />
+				<sprite layer="5" sublayer="3" offset="10,24" ySortOffset="24" colored="cliff-glow" attenuated="false" animation="titan.rock.03.anim" />
+				<sprite layer="5" sublayer="3" offset="69,17" ySortOffset="17" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="24,8" ySortOffset="8" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="59,4" ySortOffset="4" colored="cliff-glow" attenuated="false" image="spriteimage.titan.rock.glow.08" />
+				<sprite layer="6" sublayer="0" offset="69,28" ySortOffset="28" attenuated="false" animation="titan.spot.anim" />
+				<sprite layer="6" sublayer="0" offset="24,19" ySortOffset="19" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.3x1.02" i="31720" layer="2" ruin="true" width="3" height="1" bThruMap="110"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.cannon.3.emitter" offset="57,0" ySortOffset="43"  />
+				<emitter emitter="titan.nodule.cannon.2.emitter" offset="57,0" ySortOffset="43"  />
+				<emitter emitter="titan.nodule.cannon.1.emitter" offset="57,0" ySortOffset="43"  />
+				<sprite layer="3" sublayer="1" offset="10,26" ySortOffset="26" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.03" />
+				<sprite layer="3" sublayer="1" offset="82,14" ySortOffset="14" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.05" />
+				<sprite layer="3" sublayer="1" offset="37,5" ySortOffset="5" colored="road-out" attenuated="true" image="tiles.road.titan.back.4.4" />
+				<sprite layer="3" sublayer="3" offset="37,5" ySortOffset="5" colored="road-in" attenuated="false" animation="road.titan.glow.4.4.anim" />
+				<sprite layer="5" sublayer="2" offset="57,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.cannon.anim" />
+				<sprite layer="5" sublayer="2" offset="10,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.03" />
+				<sprite layer="5" sublayer="2" offset="82,14" ySortOffset="14" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.05" />
+				<sprite layer="5" sublayer="2" offset="23,9" ySortOffset="9" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="3" offset="10,26" ySortOffset="26" colored="cliff-glow" attenuated="false" animation="titan.rock.03.anim" />
+				<sprite layer="5" sublayer="3" offset="82,14" ySortOffset="14" colored="cliff-glow" attenuated="false" animation="titan.rock.05.anim" />
+				<sprite layer="5" sublayer="3" offset="23,9" ySortOffset="9" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.3x1.03" i="31721" layer="2" ruin="true" width="3" height="1" bThruMap="110"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.cannon.1.emitter" offset="43,0" ySortOffset="47"  />
+				<emitter emitter="titan.nodule.cannon.3.emitter" offset="43,0" ySortOffset="47"  />
+				<emitter emitter="titan.nodule.cannon.2.emitter" offset="43,0" ySortOffset="47"  />
+				<sprite layer="3" sublayer="1" offset="11,17" ySortOffset="17" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.05" />
+				<sprite layer="5" sublayer="2" offset="43,31" ySortOffset="31" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.cannon.anim" />
+				<sprite layer="5" sublayer="2" offset="11,17" ySortOffset="17" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.05" />
+				<sprite layer="5" sublayer="2" offset="73,12" ySortOffset="12" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="30,6" ySortOffset="6" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="3" offset="11,17" ySortOffset="17" colored="cliff-glow" attenuated="false" animation="titan.rock.05.anim" />
+				<sprite layer="5" sublayer="3" offset="73,12" ySortOffset="12" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="30,6" ySortOffset="6" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="6" sublayer="0" offset="73,23" ySortOffset="23" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.3x1.04" i="31722" layer="2" ruin="true" width="3" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="1,8" ySortOffset="8" colored="road-out" attenuated="true" image="tiles.road.titan.back.8.4" />
+				<sprite layer="3" sublayer="1" offset="40,-2" ySortOffset="-2" colored="road-out" attenuated="true" image="tiles.road.titan.back.6.3" />
+				<sprite layer="3" sublayer="3" offset="1,8" ySortOffset="8" colored="road-in" attenuated="false" animation="road.titan.glow.8.4.anim" />
+				<sprite layer="3" sublayer="3" offset="40,-2" ySortOffset="-2" colored="road-in" attenuated="false" animation="road.titan.glow.6.3.anim" />
+				<sprite layer="5" sublayer="2" offset="53,25" ySortOffset="25" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="74,12" ySortOffset="12" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="20,6" ySortOffset="6" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="3" offset="53,25" ySortOffset="25" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="74,12" ySortOffset="12" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="20,6" ySortOffset="6" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="6" sublayer="0" offset="53,36" ySortOffset="36" attenuated="false" animation="titan.spot.anim" />
+				<sprite layer="6" sublayer="0" offset="74,23" ySortOffset="23" attenuated="false" animation="titan.spot.anim" />
+				<sprite layer="6" sublayer="0" offset="20,17" ySortOffset="17" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x2.01" i="31723" layer="2" ruin="true" width="2" height="2" bThruMap="0011"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.flare.2.emitter" offset="29,0" ySortOffset="76"  />
+				<emitter emitter="titan.nodule.flare.4.emitter" offset="51,0" ySortOffset="63"  />
+				<emitter emitter="titan.nodule.flare.3.emitter" offset="39,0" ySortOffset="62"  />
+				<emitter emitter="titan.nodule.flare.1.emitter" offset="19,0" ySortOffset="58"  />
+				<sprite layer="3" sublayer="1" offset="34,48" ySortOffset="48" colored="shadow" attenuated="true" image="spriteimage.titan.nodule.flare.ground.01" />
+				<sprite layer="3" sublayer="1" offset="11,34" ySortOffset="34" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.03" />
+				<sprite layer="3" sublayer="1" offset="52,32" ySortOffset="32" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.05" />
+				<sprite layer="3" sublayer="1" offset="46,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.04" />
+				<sprite layer="5" sublayer="2" offset="34,48" ySortOffset="48" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.flare.anim" />
+				<sprite layer="5" sublayer="2" offset="11,34" ySortOffset="34" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.03" />
+				<sprite layer="5" sublayer="2" offset="52,32" ySortOffset="32" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.05" />
+				<sprite layer="5" sublayer="2" offset="22,16" ySortOffset="16" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="46,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.04" />
+				<sprite layer="5" sublayer="3" offset="11,34" ySortOffset="34" colored="cliff-glow" attenuated="false" animation="titan.rock.03.anim" />
+				<sprite layer="5" sublayer="3" offset="52,32" ySortOffset="32" colored="cliff-glow" attenuated="false" animation="titan.rock.05.anim" />
+				<sprite layer="5" sublayer="3" offset="22,16" ySortOffset="16" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="46,6" ySortOffset="6" colored="cliff-glow" attenuated="false" animation="titan.rock.04.anim" />
+				<sprite layer="6" sublayer="0" offset="22,27" ySortOffset="27" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x2.02" i="31724" layer="2" ruin="true" width="2" height="2" bThruMap="0011"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.cannon.2.emitter" offset="38,0" ySortOffset="55"  />
+				<emitter emitter="titan.nodule.cannon.3.emitter" offset="38,0" ySortOffset="55"  />
+				<emitter emitter="titan.nodule.cannon.1.emitter" offset="38,0" ySortOffset="55"  />
+				<sprite layer="3" sublayer="1" offset="10,22" ySortOffset="22" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.02" />
+				<sprite layer="3" sublayer="1" offset="52,4" ySortOffset="4" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="5" sublayer="2" offset="22,53" ySortOffset="53" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="38,39" ySortOffset="39" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" animation="titan.cannon.anim" />
+				<sprite layer="5" sublayer="2" offset="10,22" ySortOffset="22" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.02" />
+				<sprite layer="5" sublayer="2" offset="30,10" ySortOffset="10" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="52,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="3" offset="22,53" ySortOffset="53" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="10,22" ySortOffset="22" colored="cliff-glow" attenuated="false" animation="titan.rock.02.anim" />
+				<sprite layer="5" sublayer="3" offset="30,10" ySortOffset="10" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="52,4" ySortOffset="4" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x2.03" i="31725" layer="2" ruin="true" width="2" height="2" bThruMap="0001"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="44,58" ySortOffset="58" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="14,21" ySortOffset="21" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.07" />
+				<sprite layer="5" sublayer="2" offset="44,58" ySortOffset="58" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="20,50" ySortOffset="50" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="46,31" ySortOffset="31" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="14,21" ySortOffset="21" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.07" />
+				<sprite layer="5" sublayer="2" offset="31,8" ySortOffset="8" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="3" offset="44,58" ySortOffset="58" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="20,50" ySortOffset="50" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="46,31" ySortOffset="31" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="14,21" ySortOffset="21" colored="cliff-glow" attenuated="false" animation="titan.rock.07.anim" />
+				<sprite layer="5" sublayer="3" offset="31,8" ySortOffset="8" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="6" sublayer="0" offset="20,61" ySortOffset="61" attenuated="false" animation="titan.spot.anim" />
+				<sprite layer="6" sublayer="0" offset="31,19" ySortOffset="19" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.2x2.04" i="31726" layer="2" ruin="true" width="2" height="2" bThruMap="0001"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="18,56" ySortOffset="56" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.05" />
+				<sprite layer="3" sublayer="1" offset="-1,25" ySortOffset="25" colored="road-out" attenuated="true" image="tiles.road.titan.back.7.3" />
+				<sprite layer="3" sublayer="1" offset="48,17" ySortOffset="17" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.08" />
+				<sprite layer="3" sublayer="3" offset="-1,25" ySortOffset="25" colored="road-in" attenuated="false" animation="road.titan.glow.7.3.anim" />
+				<sprite layer="5" sublayer="2" offset="18,56" ySortOffset="56" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.05" />
+				<sprite layer="5" sublayer="2" offset="44,48" ySortOffset="48" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.01" />
+				<sprite layer="5" sublayer="2" offset="48,17" ySortOffset="17" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" animation="titan.rock.08.anim" />
+				<sprite layer="5" sublayer="2" offset="22,9" ySortOffset="9" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="3" offset="18,56" ySortOffset="56" colored="cliff-glow" attenuated="false" animation="titan.rock.05.anim" />
+				<sprite layer="5" sublayer="3" offset="44,48" ySortOffset="48" colored="road-in" attenuated="false" animation="titan.nodule.glow.small.anim" />
+				<sprite layer="5" sublayer="3" offset="48,17" ySortOffset="17" colored="cliff-glow" attenuated="false" image="spriteimage.titan.rock.glow.08" />
+				<sprite layer="5" sublayer="3" offset="22,9" ySortOffset="9" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="6" sublayer="0" offset="22,20" ySortOffset="20" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.3x2.03" i="31727" layer="2" ruin="true" width="3" height="2" bThruMap="000010"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.large.emitter" offset="45,0" ySortOffset="67"  />
+				<sprite layer="3" sublayer="1" offset="44,3" ySortOffset="3" colored="road-out" attenuated="true" image="tiles.road.titan.back.7.2" />
+				<sprite layer="3" sublayer="3" offset="44,3" ySortOffset="3" colored="road-in" attenuated="false" animation="road.titan.glow.7.2.anim" />
+				<sprite layer="5" sublayer="2" offset="46,42" ySortOffset="42" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.large.back.01" />
+				<sprite layer="5" sublayer="2" offset="74,21" ySortOffset="21" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="3" offset="46,42" ySortOffset="42" colored="road-in" attenuated="false" animation="titan.nodule.glow.large.anim" />
+				<sprite layer="5" sublayer="3" offset="74,21" ySortOffset="21" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="20,8" ySortOffset="8" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="6" sublayer="0" offset="74,32" ySortOffset="32" attenuated="false" animation="titan.spot.anim" />
+				<sprite layer="6" sublayer="0" offset="20,19" ySortOffset="19" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="titan.ruin.3x2.04" i="31728" layer="2" ruin="true" width="3" height="2" bThruMap="000010"><layers><layers scale="0.5">
+ 				<emitter emitter="titan.nodule.large.emitter" offset="59,0" ySortOffset="48"  />
+				<sprite layer="3" sublayer="1" offset="61,39" ySortOffset="39" colored="road-out" attenuated="true" image="tiles.road.titan.back.2.4" />
+				<sprite layer="3" sublayer="1" offset="3,13" ySortOffset="13" colored="road-out" attenuated="true" image="tiles.road.titan.back.4.2" />
+				<sprite layer="3" sublayer="1" offset="26,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.01" />
+				<sprite layer="3" sublayer="1" offset="82,4" ySortOffset="4" colored="shadow" attenuated="true" image="spriteimage.titan.rock.ground.06" />
+				<sprite layer="3" sublayer="3" offset="61,39" ySortOffset="39" colored="road-in" attenuated="false" animation="road.titan.glow.2.4.anim" />
+				<sprite layer="3" sublayer="3" offset="3,13" ySortOffset="13" colored="road-in" attenuated="false" animation="road.titan.glow.4.2.anim" />
+				<sprite layer="5" sublayer="2" offset="24,47" ySortOffset="47" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.small.back.02" />
+				<sprite layer="5" sublayer="2" offset="59,23" ySortOffset="23" colored="cliff-1" attenuated="true" image="spriteimage.titan.nodule.large.back.01" />
+				<sprite layer="5" sublayer="2" offset="26,6" ySortOffset="6" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.01" />
+				<sprite layer="5" sublayer="2" offset="82,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.titan.rock.06" />
+				<sprite layer="5" sublayer="3" offset="24,47" ySortOffset="47" colored="road-in" attenuated="false" image="spriteimage.titan.nodule.small.glow.02" />
+				<sprite layer="5" sublayer="3" offset="59,23" ySortOffset="23" colored="road-in" attenuated="false" animation="titan.nodule.glow.large.anim" />
+				<sprite layer="5" sublayer="3" offset="26,6" ySortOffset="6" colored="cliff-glow" attenuated="false" animation="titan.rock.01.anim" />
+				<sprite layer="5" sublayer="3" offset="82,4" ySortOffset="4" colored="cliff-glow" attenuated="false" animation="titan.rock.06.anim" />
+				<sprite layer="6" sublayer="0" offset="24,58" ySortOffset="58" attenuated="false" animation="titan.spot.anim" />
+		</layers></layers></ruin>
+
+</resources>

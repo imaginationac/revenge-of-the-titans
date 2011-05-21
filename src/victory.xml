@@ -1,0 +1,919 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Completed the whole game screen (pile of dead gidrahs with humans atop) -->
+
+<resources>	
+
+
+	<include resource="victory-anim.xml" />
+
+
+	<!--  eyes -->
+
+	<animation name="victory.custerd.eye.anim">
+		
+		<animcolor a="255" d="0" />
+		<frame i="spriteimage.victory.eye.06" d="0" />
+		<sub id="victory.eye.scroll.anim"/>		
+	
+		<frame i="spriteimage.victory.eye.05" d="8"/>
+		
+		<label id="start"/>
+		<frame i="spriteimage.victory.eye.04" d="8" />
+		<frame i="spriteimage.victory.eye.05" d="8" />
+		<frame i="spriteimage.victory.eye.06" d="8" />
+		<frame i="spriteimage.victory.eye.05" d="8" />
+		<frame i="spriteimage.victory.eye.04" d="8" />
+		<frame i="spriteimage.victory.eye.01" d="8" />		
+		<random>
+			<dest id="start" n="7"/>
+			<dest id="blink"/>
+		</random>
+		<label id="blink"/>
+		<frame i="spriteimage.victory.eye.03" d="50" />
+		<frame i="spriteimage.victory.eye.02" d="6" />
+		<frame i="spriteimage.victory.eye.01" d="6" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="victory.tech.eyes.anim">
+			
+		<animcolor a="255" d="0" />
+		<frame i="spriteimage.victory.tech.eyes.01" d="0" />
+		<sub id="victory.eyes.scroll.anim"/>		
+	</animation>
+
+	<!--  fireworks -->
+
+
+	<emitter 
+		name="firework.bang.emitter"
+			duration="1.0"
+			particlesPerTick="5.0, 30.0"
+			appearance="glitter.animation"
+			layer="5"
+			subLayer="6"
+			velocity="6.0"
+			acceleration="-0.2, -0.22"
+			startScale="0.5"
+			scale="0.65"
+			endScale="0.5"
+			gravityX="-0.001, 0.001"
+			gravityY="-0.0005, -0.005"
+			particleDuration="32.0, 48.0"
+			fadeDuration="65.0, 200.0"
+			startHue="0.75"
+			startSaturation="1.0"
+			startBrightness="1.0"
+			endHue="0.25"
+			endSaturation="1.0"
+			endBrightness="1.0"
+			delay="1.0"
+			rotate="true"
+			emitterScale="0.7"
+			doYOffset="true"
+	/>
+		
+	<emitter
+			name="firework.bang.smoke.ring.emitter"
+			duration="5.0, 10.0"
+			particlesPerTick="-1.0, 2.0"
+			appearance="smoke.glowing.alpha.animation"
+			layer="5"
+			radius="0.0, 8.0"
+			startScale="0.5, 0.6"
+			scale="0.7, 0.8"
+			endScale="1.5, 2.5"
+			gravityX="-0.005, 0.005"
+			gravityY="0.001, 0.005"
+			particleDuration="8.0, 32.0"
+			fadeDuration="32.0, 128.0"
+			startHue="0.8"
+			startSaturation="1.0"
+			startBrightness="0.5"
+			endHue="0.25"
+			endSaturation="1.0"
+			endBrightness="0.1, 0.3"
+			delay="20.0"
+			emitterScale="0.4"
+			doYOffset="true"
+	/>
+
+	<emitter
+			name="firework.bang.smoke.emitter"
+			duration="1.0"
+			particlesPerTick="4.0, 8.0"
+			appearance="smoke.glowing.alpha.animation"
+			layer="5"
+			velocity="1.0, 3.0"
+			acceleration="-0.1, -0.2"
+			radius="0.0, 16.0"
+			startScale="0.5, 0.6"
+			scale="0.9, 1.0"
+			endScale="1.5, 2.5"
+			gravityX="-0.005, 0.005"
+			gravityY="-0.001, -0.005"
+			particleDuration="8.0, 24.0"
+			fadeDuration="32.0, 128.0"
+			startHue="0.8"
+			startSaturation="1.0"
+			startBrightness="1.0"
+			endHue="0.25"
+			endSaturation="1.0"
+			endBrightness="0.5, 1.0"
+			angle="80.0, 100.0"
+			delay="1.0"
+			rotate="true"
+			relativeRotate="true"
+			emitterScale="0.6"
+			doYOffset="true"
+		/>
+	
+	<emitter
+		name="firework.flash.emitter"
+		duration="2"
+		particlesPerTick="2"
+		maxParticles="2"
+		appearance="spriteimage.particle.light.64px.02"
+		layer="6"
+		startScale="1.5, 2.0"
+		scale="3.0, 4.0"
+		endScale="10.0, 12.0"
+		gravityY="0.01, 0.03"
+		particleDuration="20.0"
+		fadeDuration="24.0, 64.0"
+		startHue="0.8"
+		startSaturation="0.5, 1.0"
+		startBrightness="1.0"
+		endHue="0.25"
+		endSaturation="1.0"
+		endBrightness="0.3"
+		angle="90.0"
+		delay="90.0"
+		doYOffset="true"
+	/>
+
+	<emitter name="firework.emitter"
+		duration="2.0"
+		particlesPerTick="1.0"
+		maxParticles="1"
+		appearance="spriteimage.particle.glowing.4px.01"
+		layer="5"
+		subLayer="6"
+		velocity="6.0"
+		acceleration="-0.06"
+		startScale="0.8, 1.0"
+		scale="0.7, 0.8"
+		endScale="0.6"
+		gravityX="0.0"
+		gravityY="-0.01"
+		particleDuration="90.0"
+		fadeDuration="5.0"
+		startHue="0.8"
+		startSaturation="1.0"
+		startBrightness="1.0"
+		endHue="0.25"
+		endSaturation="0.0"
+		endBrightness="0.5"
+		angle="85.0, 95.0"
+		delayAfter="1.0"
+		rotate="true"
+		relativeRotate="true"
+		emitterScale="0.65"
+	/>
+
+
+
+    <emitter name="victory.firework.0.emitter" inherit="firework.emitter">
+        <slave><emitter inherit="firework.flash.emitter">
+            <chain><emitter inherit="titan.nodule.trail.emitter" duration="100" fadeDuration="30" interpolation="1"/></chain>
+            <slave><emitter inherit="firework.bang.emitter">
+		           <slave><emitter inherit="titan.nodule.trail.emitter" duration="32" particleDuration="4.0, 6.0" fadeDuration="8,16">
+				   		<chain><emitter inherit="firework.bang.smoke.ring.emitter" /></chain>
+					</emitter></slave>
+					<chain><emitter inherit="firework.bang.smoke.emitter"/></chain>
+			</emitter></slave>
+        </emitter></slave>
+        <chain><emitter inherit="titan.nodule.flash.emitter" emitterScale="2.5"/></chain>
+    </emitter>
+
+  	<emitter name="victory.firework.right.emitter" inherit="victory.firework.0.emitter" angle="75,95"/>
+  	<emitter name="victory.firework.left.emitter" inherit="victory.firework.0.emitter" angle="95,115"/>
+
+
+
+
+	<!--  blaster fire -->
+
+	<emitter
+		name="victory.cannon.control.2.emitter"
+		appearance="spriteimage.particle.dummy.01"
+		particlesPerTick="-2.0,1.0"
+		duration="30,90"
+		particleDuration="1"
+		fadeDuration="0"
+		delay="50,250"
+		delayAfter="50,250"
+		radius="0,32"
+	/>
+
+
+	<emitter
+		name="victory.cannon.flash.emitter"
+		inherit="titan.nodule.flash.emitter"
+		emitterScale="2.0"
+		startHue="0.2"
+		endHue="0.0"
+		startBrightness="0.5,1.0"
+		endBrightness="0.1,0.5"
+		appearance="spriteimage.particle.light.64px.02"
+	/>
+
+
+	<emitter
+		name="victory.cannon.fire.emitter"
+		sound="blaster-quiet.buffer"
+		duration="1.0"
+		particlesPerTick="1.0"
+		appearance="blaster.bullet.animation"
+		layer="5"
+		subLayer="6"
+		velocity="12,15"
+		acceleration="0"
+		startScale="0.7"
+		scale="0.9"
+		endScale="1.1"
+		rotate="true"
+		relativeRotate="false"
+		emitterScale="0.6"
+		doYOffset="true"
+		particleDuration="16"
+		fadeDuration="16"
+	/>
+
+	<emitter name="victory.cannon.1.emitter" inherit="titan.nodule.cannon.control.emitter" delayAfter="400">
+		<slave><emitter inherit="victory.cannon.control.2.emitter">
+			<slave><emitter inherit="victory.cannon.flash.emitter" >
+				<slave><emitter inherit="victory.cannon.fire.emitter" angle="30,45"/></slave>
+			</emitter></slave></emitter>
+	</slave></emitter>
+
+	<emitter name="victory.cannon.2.emitter" inherit="titan.nodule.cannon.control.emitter" delayAfter="400">
+		<slave><emitter inherit="victory.cannon.control.2.emitter">
+			<slave><emitter inherit="victory.cannon.flash.emitter" >
+				<slave><emitter inherit="victory.cannon.fire.emitter" angle="50,70"/></slave>
+			</emitter></slave></emitter>
+	</slave></emitter>
+
+	<emitter name="victory.cannon.3.emitter" inherit="titan.nodule.cannon.control.emitter" delayAfter="400">
+		<slave><emitter inherit="victory.cannon.control.2.emitter">
+			<slave><emitter inherit="victory.cannon.flash.emitter">
+				<slave><emitter inherit="victory.cannon.fire.emitter" angle="100,120"/></slave>
+			</emitter></slave></emitter>
+	</slave></emitter>
+	
+	<emitter name="victory.cannon.4.emitter" inherit="titan.nodule.cannon.control.emitter" delayAfter="400">
+		<slave><emitter inherit="victory.cannon.control.2.emitter">
+			<slave><emitter inherit="victory.cannon.flash.emitter">
+				<slave><emitter inherit="victory.cannon.fire.emitter" angle="140,160"/></slave>
+			</emitter></slave></emitter>
+	</slave></emitter>
+
+
+
+	<emitter name="victory.cannon.distant.1.emitter" inherit="titan.nodule.cannon.control.emitter" delayAfter="200">
+		<slave><emitter inherit="victory.cannon.control.2.emitter">
+			<slave><emitter inherit="victory.cannon.flash.emitter" >
+				<slave><emitter inherit="victory.cannon.fire.emitter" emitterScale="0.3" sound="blaster-veryquiet.buffer" angle="20,35" fadeDuration="24" /></slave>
+			</emitter></slave></emitter>
+	</slave></emitter>
+
+	<emitter name="victory.cannon.distant.2.emitter" inherit="titan.nodule.cannon.control.emitter" delayAfter="200">
+		<slave><emitter inherit="victory.cannon.control.2.emitter">
+			<slave><emitter inherit="victory.cannon.flash.emitter" >
+				<slave><emitter inherit="victory.cannon.fire.emitter" emitterScale="0.3" sound="blaster-veryquiet.buffer" angle="60,80" fadeDuration="24"/></slave>
+			</emitter></slave></emitter>
+	</slave></emitter>
+
+	<emitter name="victory.cannon.distant.3.emitter" inherit="titan.nodule.cannon.control.emitter" delayAfter="200">
+		<slave><emitter inherit="victory.cannon.control.2.emitter">
+			<slave><emitter inherit="victory.cannon.flash.emitter">
+				<slave><emitter inherit="victory.cannon.fire.emitter" emitterScale="0.3" sound="blaster-veryquiet.buffer" angle="90,110" fadeDuration="24"/></slave>
+			</emitter></slave></emitter>
+	</slave></emitter>
+	
+	<emitter name="victory.cannon.distant.4.emitter" inherit="titan.nodule.cannon.control.emitter" delayAfter="200">
+		<slave><emitter inherit="victory.cannon.control.2.emitter">
+			<slave><emitter inherit="victory.cannon.flash.emitter">
+				<slave><emitter inherit="victory.cannon.fire.emitter" semitterScale="0.3" ound="blaster-veryquiet.buffer" angle="150,170" fadeDuration="24"/></slave>
+			</emitter></slave></emitter>
+	</slave></emitter>
+
+
+
+
+
+	<animation name="victory.top.left.mask.anim">
+		<animcolor r="0" g="0" b="0" a="255" d="0" />
+		<frame i="spriteimage.victory.top.01" d="0"/>
+		<sub id="victory.top.mask.anim"/>
+	</animation>
+	<animation name="victory.top.right.mask.anim">
+		<animcolor r="0" g="0" b="0" a="255" d="0" />
+		<frame i="spriteimage.victory.top.02" d="0"/>
+		<sub id="victory.top.mask.anim"/>
+	</animation>
+
+	<animation name="victory.mid.left.mask.anim">
+		<animcolor r="0" g="0" b="0" a="255" d="0" />
+		<frame i="spriteimage.victory.01" d="0"/>
+		<sub id="victory.mid.mask.anim"/>
+	</animation>
+	<animation name="victory.mid.right.mask.anim">
+		<animcolor r="0" g="0" b="0" a="255" d="0" />
+		<frame i="spriteimage.victory.02" d="0"/>
+		<sub id="victory.mid.mask.anim"/>
+	</animation>
+
+
+
+	<animation name="victory.top.left.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.top.01" d="0"/>
+		<sub id="victory.top.anim"/>
+	</animation>
+	<animation name="victory.top.right.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.top.02" d="0"/>
+		<sub id="victory.top.anim"/>
+	</animation>
+
+	<animation name="victory.mid.left.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.01" d="0"/>
+		<sub id="victory.mid.anim"/>
+	</animation>
+	<animation name="victory.mid.right.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.02" d="0"/>
+		<sub id="victory.mid.anim"/>
+	</animation>
+
+	<animation name="victory.back.left.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.back.01" d="0"/>
+		<sub id="victory.back.anim"/>
+	</animation>
+	<animation name="victory.back.right.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.back.02" d="0"/>
+		<sub id="victory.back.anim"/>
+	</animation>	
+
+	<animation name="victory.front.anim">
+		<animcolor a="255" d="0" />
+		<frame i="spriteimage.victory.front.01" d="0"/>
+		<sub id="victory.front.fade.anim"/>
+	</animation>	
+
+
+
+
+	<animation name="victory.flag.anim">
+		<frame i="spriteimage.victory.flag.01" d="0"/>
+		<sub id="victory.flag.scroll.anim"/>
+       
+        
+        <label id="loop-4-1"/>
+		<frame i="spriteimage.victory.flag.01" d="4"/>	
+        <frame i="spriteimage.victory.flag.02" d="4"/>
+		<frame i="spriteimage.victory.flag.03" d="4"/>	
+		<frame i="spriteimage.victory.flag.04" d="4"/>	
+		<frame i="spriteimage.victory.flag.05" d="4"/>	
+        <random>
+			<dest id="loop-4-2" 	n="1"/>
+			<dest id="loop-5-2" 	n="1"/>
+			<dest id="loop-6-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-4-2"/>
+        <frame i="spriteimage.victory.flag.06" d="4"/>
+		<frame i="spriteimage.victory.flag.07" d="4"/>
+		<frame i="spriteimage.victory.flag.08" d="4"/>
+		<frame i="spriteimage.victory.flag.09" d="4"/>
+		<frame i="spriteimage.victory.flag.10" d="4"/>
+        <random>
+			<dest id="loop-4-1" 	n="1"/>
+			<dest id="loop-5-1" 	n="1"/>
+			<dest id="loop-6-1" 	n="1"/>
+		</random>	
+
+
+        <label id="loop-5-1"/>
+		<frame i="spriteimage.victory.flag.01" d="5"/>	
+        <frame i="spriteimage.victory.flag.02" d="5"/>
+		<frame i="spriteimage.victory.flag.03" d="5"/>	
+		<frame i="spriteimage.victory.flag.04" d="5"/>	
+		<frame i="spriteimage.victory.flag.05" d="5"/>	
+        <random>
+			<dest id="loop-4-2" 	n="1"/>
+			<dest id="loop-5-2" 	n="1"/>
+            <dest id="loop-6-2" 	n="1"/>
+            <dest id="loop-7-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-5-2"/>
+        <frame i="spriteimage.victory.flag.06" d="5"/>
+		<frame i="spriteimage.victory.flag.07" d="5"/>
+		<frame i="spriteimage.victory.flag.08" d="5"/>
+		<frame i="spriteimage.victory.flag.09" d="5"/>
+		<frame i="spriteimage.victory.flag.10" d="5"/>
+        <random>
+			<dest id="loop-4-1" 	n="1"/>
+			<dest id="loop-5-1" 	n="1"/>
+            <dest id="loop-6-1" 	n="1"/>
+            <dest id="loop-7-1" 	n="1"/>
+		</random>	
+
+
+        <label id="loop-6-1"/>
+		<frame i="spriteimage.victory.flag.01" d="6"/>	
+        <frame i="spriteimage.victory.flag.02" d="6"/>
+		<frame i="spriteimage.victory.flag.03" d="6"/>	
+		<frame i="spriteimage.victory.flag.04" d="6"/>	
+		<frame i="spriteimage.victory.flag.05" d="6"/>	
+        <random>
+			<dest id="loop-4-2" 	n="1"/>
+			<dest id="loop-5-2" 	n="1"/>
+			<dest id="loop-6-2" 	n="1"/>
+            <dest id="loop-7-2" 	n="1"/>
+            <dest id="loop-8-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-6-2"/>
+        <frame i="spriteimage.victory.flag.06" d="6"/>
+		<frame i="spriteimage.victory.flag.07" d="6"/>
+		<frame i="spriteimage.victory.flag.08" d="6"/>
+		<frame i="spriteimage.victory.flag.09" d="6"/>
+		<frame i="spriteimage.victory.flag.10" d="6"/>
+        <random>
+			<dest id="loop-4-1" 	n="1"/>
+			<dest id="loop-5-1" 	n="1"/>
+			<dest id="loop-6-1" 	n="1"/>
+            <dest id="loop-7-1" 	n="1"/>
+            <dest id="loop-8-1" 	n="1"/>
+		</random>	
+
+
+        <label id="loop-7-1"/>
+		<frame i="spriteimage.victory.flag.01" d="7"/>	
+        <frame i="spriteimage.victory.flag.02" d="7"/>
+		<frame i="spriteimage.victory.flag.03" d="7"/>	
+		<frame i="spriteimage.victory.flag.04" d="7"/>	
+		<frame i="spriteimage.victory.flag.05" d="7"/>	
+        <random>
+			<dest id="loop-5-2" 	n="1"/>
+			<dest id="loop-6-2" 	n="1"/>
+			<dest id="loop-7-2" 	n="1"/>
+            <dest id="loop-8-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-7-2"/>
+        <frame i="spriteimage.victory.flag.06" d="7"/>
+		<frame i="spriteimage.victory.flag.07" d="7"/>
+		<frame i="spriteimage.victory.flag.08" d="7"/>
+		<frame i="spriteimage.victory.flag.09" d="7"/>
+		<frame i="spriteimage.victory.flag.10" d="7"/>
+        <random>
+			<dest id="loop-5-1" 	n="1"/>
+			<dest id="loop-6-1" 	n="1"/>
+			<dest id="loop-7-1" 	n="1"/>
+            <dest id="loop-8-1" 	n="1"/>
+		</random>	
+
+
+        <label id="loop-8-1"/>
+		<frame i="spriteimage.victory.flag.01" d="8"/>	
+        <frame i="spriteimage.victory.flag.02" d="8"/>
+		<frame i="spriteimage.victory.flag.03" d="8"/>	
+		<frame i="spriteimage.victory.flag.04" d="8"/>	
+		<frame i="spriteimage.victory.flag.05" d="8"/>	
+        <random>
+			<dest id="loop-6-2" 	n="1"/>
+			<dest id="loop-7-2" 	n="1"/>
+            <dest id="loop-8-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-8-2"/>
+        <frame i="spriteimage.victory.flag.06" d="8"/>
+		<frame i="spriteimage.victory.flag.07" d="8"/>
+		<frame i="spriteimage.victory.flag.08" d="8"/>
+		<frame i="spriteimage.victory.flag.09" d="8"/>
+		<frame i="spriteimage.victory.flag.10" d="8"/>
+        <random>
+			<dest id="loop-6-1" 	n="1"/>
+			<dest id="loop-7-1" 	n="1"/>
+            <dest id="loop-8-1" 	n="1"/>
+		</random>	
+
+    </animation>	
+
+
+
+
+	<animation name="victory.fireworks.crackle.sound">
+        <random>
+			<dest id="sound-1" 	n="1"/>
+			<dest id="sound-2" 	n="1"/>
+            <dest id="sound-3" 	n="1"/>
+		</random>	
+		
+		<label id="sound-1"/>
+		<sound attenuator="none.attenuator" sound="crackle1.buffer"/>
+		<goto id="return"/>
+
+		<label id="sound-2"/>
+		<sound attenuator="none.attenuator" sound="crackle2.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-3"/>
+		<sound attenuator="none.attenuator" sound="crackle3.buffer"/>
+
+		<label id="return"/>
+		<return/>
+	</animation>	
+
+	<animation name="victory.fireworks.whistle.sound">
+        <random>
+			<dest id="sound-1" 	n="1"/>
+			<dest id="sound-2" 	n="1"/>
+            <dest id="sound-3" 	n="1"/>
+ 			<dest id="sound-4" 	n="1"/>
+		</random>	
+		
+		<label id="sound-1"/>
+		<sound attenuator="none.attenuator" sound="whistle1.buffer"/>
+		<goto id="return"/>
+
+		<label id="sound-2"/>
+		<sound attenuator="none.attenuator" sound="whistle2.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-3"/>
+		<sound attenuator="none.attenuator" sound="whistle3.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-4"/>
+		<sound attenuator="none.attenuator" sound="whistle4.buffer"/>
+
+		<label id="return"/>
+		<return/>
+	</animation>	
+
+	<animation name="victory.fireworks.pop.sound">
+        <random>
+			<dest id="sound-1" 	n="1"/>
+			<dest id="sound-2" 	n="1"/>
+            <dest id="sound-3" 	n="1"/>
+ 			<dest id="sound-4" 	n="1"/>
+            <dest id="sound-5" 	n="1"/>           
+		</random>	
+		
+		<label id="sound-1"/>
+		<sound attenuator="none.attenuator" sound="pop1.buffer"/>
+		<goto id="return"/>
+
+		<label id="sound-2"/>
+		<sound attenuator="none.attenuator" sound="pop2.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-3"/>
+		<sound attenuator="none.attenuator" sound="pop3.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-4"/>
+		<sound attenuator="none.attenuator" sound="pop4.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-5"/>
+		<sound attenuator="none.attenuator" sound="pop5.buffer"/>
+
+		<label id="return"/>
+		<return/>
+	</animation>	
+
+
+
+	<animation name="victory.fireworks.right.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.right.glow.01" d="600"/>
+		
+		<label id="start"/>
+		<random>
+			<dest id="emit1" 	n="1"/>
+			<dest id="emit2" 	n="1"/>
+			<dest id="emit3" 	n="1"/>		
+		</random>
+		
+		<label id="emit1"/>
+		<sub id="victory.fireworks.whistle.sound"/>
+		<emit id="victory.firework.right.emitter" ox="50" oy="60"/>
+		<goto id="fade"/>
+
+		<label id="emit2"/>
+		<emit id="victory.firework.right.emitter" ox="100" oy="80"/>
+		<goto id="fade"/>
+
+		<label id="emit3"/>
+		<emit id="victory.firework.right.emitter" ox="150" oy="100"/>
+		<goto id="fade"/>
+		
+		<label id="fade"/>
+		<sub id="firework.glow.fade.anim"/>
+		<animcolor a="0" d="50" />>
+		
+		<label id="pause"/>
+		<animcolor a="0" d="7" />
+        <random>
+			<dest id="pause" 	n="5"/>
+			<dest id="start" 	n="1"/>
+		</random>			
+		
+	</animation>
+
+	<animation name="victory.fireworks.left.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.left.glow.01" d="630"/>
+		
+		<label id="start"/>
+		<random>
+			<dest id="emit1" 	n="1"/>
+			<dest id="emit2" 	n="1"/>
+			<dest id="emit3" 	n="1"/>		
+		</random>
+		
+		<label id="emit1"/>
+		<emit id="victory.firework.left.emitter" ox="110" oy="60"/>
+		<goto id="fade"/>
+
+		<label id="emit2"/>
+		<emit id="victory.firework.left.emitter" ox="160" oy="80"/>
+		<goto id="fade"/>
+
+		<label id="emit3"/>
+		<emit id="victory.firework.left.emitter" ox="210" oy="100"/>
+		<goto id="fade"/>
+		
+		<label id="fade"/>
+		<sub id="firework.glow.fade.anim"/>
+		<animcolor a="0" d="50" />
+		
+		<label id="pause"/>
+		<animcolor a="0" d="5" />
+        <random>
+			<dest id="pause" 	n="7"/>
+			<dest id="start" 	n="1"/>
+		</random>			
+		
+	</animation>	
+
+
+	<animation name="victory.fireworks.intro.1.anim">
+
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.left.glow.02" d="0"/>
+		<offset x="0" y="81.82" d="0" />
+		<emit id="victory.firework.left.emitter" ox="230" oy="200"/>
+		
+		<animcolor a="0" d="88" />
+		<sub id="intro.firework.glow.fade.1.anim"/>
+		<animcolor a="0" d="0" />
+	
+	</animation>	
+	
+	<animation name="victory.fireworks.intro.2.anim">
+
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.right.glow.02" d="220"/>
+		<offset x="0" y="36.36" d="0" />
+		<emit id="victory.firework.right.emitter" ox="50" oy="150"/>
+		
+		<animcolor a="0" d="88" />
+		<sub id="intro.firework.glow.fade.2.anim"/>
+		<animcolor a="0" d="0" />
+	
+	</animation>	
+
+	<animation name="victory.fireworks.intro.3.anim">
+
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.left.glow.02" d="380"/>
+		<offset x="0" y="16.16" d="0" />
+		<emit id="victory.firework.left.emitter" ox="180" oy="80"/>
+		
+		<animcolor a="0" d="88" />
+		<sub id="intro.firework.glow.fade.3.anim"/>
+		<animcolor a="0" d="0" />
+	
+	</animation>	
+
+
+	<animation name="victory.fireworks.finale.left.anim">
+
+		<label id="start"/>
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.left.glow.01" d="1900"/>
+
+		<animcolor a="0" d="0" />
+		<emit id="victory.firework.left.emitter" ox="180" oy="50"/>
+		<animcolor a="0" d="60" />	
+		<emit id="victory.firework.left.emitter" ox="220" oy="70"/>
+		<sub id="firework.glow.fade.anim"/> <!-- 120 -->
+		
+		<animcolor a="0" d="1100" />
+		<goto id="start"/>	
+		
+	</animation>	
+
+
+	<animation name="victory.fireworks.finale.right.anim">
+
+		<label id="start"/>
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.victory.right.glow.01" d="1900"/>
+		<animcolor a="0" d="30" />	
+		<emit id="victory.firework.right.emitter" ox="80" oy="50"/>
+		<animcolor a="0" d="90" />	
+		<emit id="victory.firework.right.emitter" ox="40" oy="70"/>
+		<sub id="firework.glow.fade.anim"/> <!-- 120 -->
+		
+		<animcolor a="0" d="1100" />
+		<goto id="start"/>	
+		
+	</animation>	
+
+
+	<animation name="blasters.anim">
+		<animcolor a="0" d="450"/>
+		<emit id="victory.cannon.1.emitter" ox="370" oy="120"/>
+		<emit id="victory.cannon.2.emitter" ox="300" oy="150"/>
+		<emit id="victory.cannon.3.emitter" ox="200" oy="150"/>
+		<emit id="victory.cannon.4.emitter" ox="120" oy="120"/>
+  	</animation>
+
+
+	<animation name="blasters.distant.anim">
+		<animcolor a="0" d="133"/>
+		<emit id="victory.cannon.distant.1.emitter" ox="390" oy="120"/>
+		<emit id="victory.cannon.distant.2.emitter" ox="320" oy="150"/>
+		<emit id="victory.cannon.distant.3.emitter" ox="180" oy="150"/>
+		<emit id="victory.cannon.distant.4.emitter" ox="100" oy="120"/>
+  	</animation>
+
+
+	<area name="victory-left.spec" inherit="titlescreen-left.spec" scale="0.5">
+		<anchor x="mid" d="-256" /><anchor y="mid" d="-160" />
+	</area>
+	
+	<area name="victory-right.spec" inherit="titlescreen-right.spec" scale="0.5">
+		<anchor x="mid" d="0" /><anchor y="mid" d="-160" />
+	</area>
+
+	<character
+		name="victory.char.spec"
+		animated="true"
+		color="!66,200,100,255"
+		boldColor="titan.colormap:text-bold"
+		left="true"
+		textSpeed="6"
+		bubbleLayer="20"
+		mouthLayer="20"
+	>
+		<sounds>
+			<array>
+				<item>textBeep.buffer</item>
+			</array>
+		</sounds>
+	</character>
+
+	<character
+		name="victory1.char"
+		inherit="victory.char.spec"
+	/>
+	<character
+		name="victory2.char"
+		inherit="victory.char.spec"
+	/>
+	<character
+		name="victory3.char"
+		inherit="victory.char.spec"
+	/>
+	
+	<instance class="worm.screens.CompleteGameScreen"
+		name="gamecomplete.screen"
+		maxsprites="16384"
+		keyboardnavigation="false"
+		stream="complete.stream"
+		transition="instant.transition"
+		centre="both"
+	>
+		<hotkey key="ESCAPE" area="ok"/>
+		<hotkey key="RETURN" area="ok"/>
+
+<!-- 		
+		<area id="message" valign="top" halign="centered" font="bigfont.glfont" color="button-red" text="VICTORY!" layer="12" position="0,0" size="320,320"/>
+ -->
+ 		<area id="ok" inherit="button.continue.spec"/>
+	
+		<area id="victory-mid-right-mask" inherit="victory-right.spec" layer="6" mouseoff="victory.mid.right.mask.anim"  />
+		<area id="victory-mid-left-mask"  inherit="victory-left.spec"  layer="6" mouseoff="victory.mid.left.mask.anim"  />
+		<area id="victory-top-right-mask" inherit="victory-right.spec" layer="8" mouseoff="victory.top.right.mask.anim"  />
+		<area id="victory-top-left-mask"  inherit="victory-left.spec"  layer="8" mouseoff="victory.top.left.mask.anim"  />		
+	
+		<area id="victory-back-right" inherit="victory-right.spec" layer="-10" mouseoff="victory.back.right.anim" ><anchor x="mid" d="0" /><anchor y="mid" d="-130" /></area>
+		<area id="victory-back-left"  inherit="victory-left.spec"  layer="-10" mouseoff="victory.back.left.anim" ><anchor x="mid" d="-256" /><anchor y="mid" d="-130" /></area>
+		<area id="victory-mid-right" inherit="victory-right.spec" layer="7" mouseoff="victory.mid.right.anim"  />
+		<area id="victory-mid-left"  inherit="victory-left.spec"  layer="7" mouseoff="victory.mid.left.anim"  />
+		<area id="victory-top-right" inherit="victory-right.spec" layer="9" mouseoff="victory.top.right.anim"  />
+		<area id="victory-top-left"  inherit="victory-left.spec"  layer="9" mouseoff="victory.top.left.anim"  />		
+	
+		<area id="victory-flag" position="166,211" size="32,32" layer="10" scale="0.5" mouseoff="victory.flag.anim"  />
+
+		<!-- <area id="victory-fireworks-intro-1" inherit="victory-left.spec" layer="10" mouseoff="victory.fireworks.intro.1.anim"  /> -->
+		<area id="victory-fireworks-intro-2" inherit="victory-right.spec" layer="10" mouseoff="victory.fireworks.intro.2.anim"  />
+		<area id="victory-fireworks-intro-3" inherit="victory-left.spec" layer="10" mouseoff="victory.fireworks.intro.3.anim"  />		
+
+
+	
+		<area id="victory-fireworks-right" inherit="victory-right.spec" layer="9" mouseoff="victory.fireworks.right.anim"  />
+		<area id="victory-fireworks-left" inherit="victory-left.spec" layer="9" mouseoff="victory.fireworks.left.anim"  />
+
+		<area id="victory-fireworks-finale.right" inherit="victory-right.spec" layer="9" mouseoff="victory.fireworks.finale.right.anim"  />
+		<area id="victory-fireworks-finale.left" inherit="victory-left.spec" layer="9" mouseoff="victory.fireworks.finale.left.anim"  />
+
+		<area id="victory-blasters" inherit="victory-left.spec" layer="9" mouseoff="blasters.anim"  />
+		<area id="victory-blasters-distant" inherit="victory-left.spec" lazyer="9" mouseoff="blasters.distant.anim"  />
+		
+		<area id="victory-front" inherit="victory-left.spec" layer="12" scale="1.0" mouseoff="victory.front.anim" ><anchor x="mid" d="-256" /><anchor y="mid" d="-130" /></area>	
+
+		<area id="victory-custerd-eye" inherit="victory-right.spec" layer="12" mouseoff="victory.custerd.eye.anim"  />
+		<area id="victory-tech-eyes" inherit="victory-right.spec" layer="12" mouseoff="victory.tech.eyes.anim"  />
+	
+		<!--  Story stuff -->
+		
+
+		
+		<setting>
+			<setting
+				name="completegame.setting"
+				position="0,0"
+				size="320,320"
+			>	
+				<actor character="victory1.char"  position="0,0" bounds="20,284,300,30"  expand="down" />
+				<actor character="victory2.char"  position="0,0" bounds="113,282,180,30" expand="down" leading="-1" />
+				<actor character="victory3.char"  position="0,0" bounds="113,282,180,30" expand="down" />
+			</setting>	
+		</setting>
+
+		<story>	
+			<story name="victory.story">
+				<char id="victory1.char" >{font:bigfont.glfont}VICTORY!</char>
+				<char id="victory2.char" delay="180" fadeAfter="600">{font:tinyfont.glfont}CONGRATULATIONS COMMANDER! titan prime is ours. earth is saved once again from the titan menace.</char>
+				<char id="victory3.char" delay="780" fadeAfter="300">{font:tinyfont.glfont}coffee supplies are en route, as per your request.</char>
+			</story>
+		</story>
+	</instance>
+	
+	
+</resources>

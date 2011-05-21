@@ -1,0 +1,1974 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+		<ruin name="saturn.ruin.2x1.02" i="31501" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="24,0" ySortOffset="14"  />
+				<sprite layer="4" sublayer="0" offset="25,6" ySortOffset="6" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.08" />
+				<sprite layer="4" sublayer="1" offset="25,6" ySortOffset="6" colored="water" attenuated="true" image="spriteimage.pool.small.08" />
+				<sprite layer="4" sublayer="2" offset="15,14" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.06" />
+				<sprite layer="4" sublayer="2" offset="47,14" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.08" />
+				<sprite layer="5" sublayer="4" offset="15,14" ySortOffset="14" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.06" />
+				<sprite layer="5" sublayer="4" offset="47,14" ySortOffset="14" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.08" />
+				<sprite layer="5" sublayer="5" offset="47,14" ySortOffset="14" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.03" />
+				<sprite layer="5" sublayer="5" offset="15,14" ySortOffset="14" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.06" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x1.03" i="31502" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="0" offset="10,7" ySortOffset="7" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="1" offset="10,7" ySortOffset="7" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="2" offset="18,18" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.03" />
+				<sprite layer="4" sublayer="2" offset="46,8" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.12" />
+				<sprite layer="5" sublayer="4" offset="18,18" ySortOffset="18" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.03" />
+				<sprite layer="5" sublayer="4" offset="46,8" ySortOffset="8" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.12" />
+				<sprite layer="5" sublayer="5" offset="18,18" ySortOffset="18" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.03" />
+				<sprite layer="5" sublayer="5" offset="46,8" ySortOffset="8" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.4x2.01" i="31503" layer="2" ruin="true" width="4" height="2" bThruMap="10000010"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.large.emitter" offset="76,19"  />
+				<sprite layer="4" sublayer="0" offset="117,49" ySortOffset="49" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="0" offset="41,48" ySortOffset="48" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="0" offset="91,20" ySortOffset="20" colored="pool-in" attenuated="true" image="spriteimage.pool.large.back.03" />
+				<sprite layer="4" sublayer="0" offset="43,12" ySortOffset="12" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.06" />
+				<sprite layer="4" sublayer="1" offset="117,49" ySortOffset="49" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="1" offset="41,48" ySortOffset="48" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+				<sprite layer="4" sublayer="1" offset="91,20" ySortOffset="20" colored="water" attenuated="true" image="spriteimage.pool.large.03" />
+				<sprite layer="4" sublayer="1" offset="43,12" ySortOffset="12" colored="water" attenuated="true" image="spriteimage.pool.small.06" />
+				<sprite layer="4" sublayer="2" offset="82,43" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.09" />
+				<sprite layer="4" sublayer="2" offset="17,7" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.04" />
+				<sprite layer="5" sublayer="4" offset="82,43" ySortOffset="43" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.09" />
+				<sprite layer="5" sublayer="4" offset="17,7" ySortOffset="7" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.04" />
+				<sprite layer="5" sublayer="5" offset="82,43" ySortOffset="43" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+				<sprite layer="5" sublayer="5" offset="16,14" ySortOffset="14" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.4x2.02" i="31504" layer="2" ruin="true" width="4" height="2" bThruMap="00001011"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="22,14"  />
+				<sprite layer="4" sublayer="0" offset="51,51" ySortOffset="51" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.03" />
+				<sprite layer="4" sublayer="0" offset="32,17" ySortOffset="17" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.09" />
+				<sprite layer="4" sublayer="0" offset="112,8" ySortOffset="8" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.06" />
+				<sprite layer="4" sublayer="1" offset="51,51" ySortOffset="51" colored="water" attenuated="true" image="spriteimage.pool.small.03" />
+				<sprite layer="4" sublayer="1" offset="32,17" ySortOffset="17" colored="water" attenuated="true" image="spriteimage.pool.medium.09" />
+				<sprite layer="4" sublayer="1" offset="112,8" ySortOffset="8" colored="water" attenuated="true" image="spriteimage.pool.small.06" />
+				<sprite layer="4" sublayer="2" offset="16,38" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.07" />
+				<sprite layer="4" sublayer="2" offset="123,37" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.ground.01" />
+				<sprite layer="4" sublayer="2" offset="84,37" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.01" />
+				<sprite layer="5" sublayer="2" offset="70,41" ySortOffset="41" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.line.2.anim" />
+				<sprite layer="5" sublayer="2" offset="123,37" ySortOffset="37" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.line.anim" />
+				<sprite layer="5" sublayer="3" offset="84,78" ySortOffset="37" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.anim" />
+				<sprite layer="5" sublayer="4" offset="84,78" ySortOffset="37" colored="buildings-highlight" attenuated="true" animation="pumpjack.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="16,38" ySortOffset="38" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.07" />
+				<sprite layer="5" sublayer="4" offset="123,37" ySortOffset="37" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.01" />
+				<sprite layer="5" sublayer="4" offset="84,37" ySortOffset="37" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.01" />
+				<sprite layer="5" sublayer="5" offset="16,38" ySortOffset="38" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+				<sprite layer="5" sublayer="5" offset="63,36" ySortOffset="36" attenuated="false" animation="pumpjack.light.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.4x2.03" i="31505" layer="2" ruin="true" width="4" height="2" bThruMap="00111100"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="0" offset="119,54" ySortOffset="54" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.01" />
+				<sprite layer="4" sublayer="0" offset="103,52" ySortOffset="52" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.03" />
+				<sprite layer="4" sublayer="0" offset="27,8" ySortOffset="8" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="1" offset="119,54" ySortOffset="54" colored="water" attenuated="true" image="spriteimage.pool.small.01" />
+				<sprite layer="4" sublayer="1" offset="103,52" ySortOffset="52" colored="water" attenuated="true" image="spriteimage.pool.small.03" />
+				<sprite layer="4" sublayer="1" offset="27,8" ySortOffset="8" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+				<sprite layer="4" sublayer="2" offset="50,41" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.02" />
+				<sprite layer="4" sublayer="2" offset="18,32" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.11" />
+				<sprite layer="4" sublayer="2" offset="77,8" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.01" />
+				<sprite layer="4" sublayer="2" offset="116,8" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.ground.01" />
+				<sprite layer="5" sublayer="2" offset="63,12" ySortOffset="12" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.line.2.anim" />
+				<sprite layer="5" sublayer="2" offset="116,8" ySortOffset="8" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.line.anim" />
+				<sprite layer="5" sublayer="3" offset="77,49" ySortOffset="8" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.anim" />
+				<sprite layer="5" sublayer="4" offset="77,49" ySortOffset="8" colored="buildings-highlight" attenuated="true" animation="pumpjack.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="50,41" ySortOffset="41" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.02" />
+				<sprite layer="5" sublayer="4" offset="18,32" ySortOffset="32" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.11" />
+				<sprite layer="5" sublayer="4" offset="77,8" ySortOffset="8" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.01" />
+				<sprite layer="5" sublayer="4" offset="116,8" ySortOffset="8" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.01" />
+				<sprite layer="5" sublayer="5" offset="50,41" ySortOffset="41" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.02" />
+				<sprite layer="5" sublayer="5" offset="18,32" ySortOffset="32" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.01" />
+				<sprite layer="5" sublayer="5" offset="56,7" ySortOffset="7" attenuated="false" animation="pumpjack.light.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.4x2.04" i="31506" layer="2" ruin="true" width="4" height="2" bThruMap="00000111"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="22,14"  />
+				<sprite layer="4" sublayer="0" offset="16,51" ySortOffset="51" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.04" />
+				<sprite layer="4" sublayer="0" offset="32,15" ySortOffset="15" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.10" />
+				<sprite layer="4" sublayer="0" offset="102,13" ySortOffset="13" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="1" offset="16,51" ySortOffset="51" colored="water" attenuated="true" image="spriteimage.pool.medium.04" />
+				<sprite layer="4" sublayer="1" offset="32,15" ySortOffset="15" colored="water" attenuated="true" image="spriteimage.pool.medium.10" />
+				<sprite layer="4" sublayer="1" offset="102,13" ySortOffset="13" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+				<sprite layer="4" sublayer="2" offset="118,36" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.ground.01" />
+				<sprite layer="4" sublayer="2" offset="68,36" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.02" />
+				<sprite layer="5" sublayer="2" offset="53,56" ySortOffset="56" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.line.2.anim" />
+				<sprite layer="5" sublayer="2" offset="118,36" ySortOffset="36" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.line.anim" />
+				<sprite layer="5" sublayer="3" offset="68,93" ySortOffset="36" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.anim" />
+				<sprite layer="5" sublayer="4" offset="68,93" ySortOffset="36" colored="buildings-highlight" attenuated="true" animation="pumpjack.large.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="68,36" ySortOffset="36" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.02" />
+				<sprite layer="5" sublayer="4" offset="118,36" ySortOffset="36" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.01" />
+				<sprite layer="5" sublayer="5" offset="40,35" ySortOffset="35" attenuated="false" animation="pumpjack.large.light.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x2.01" i="31507" layer="2" ruin="true" width="3" height="2" bThruMap="000110"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="62,17"  />
+				<sprite layer="4" sublayer="0" offset="10,55" ySortOffset="55" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.06" />
+				<sprite layer="4" sublayer="0" offset="78,53" ySortOffset="53" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.04" />
+				<sprite layer="4" sublayer="0" offset="71,19" ySortOffset="19" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.08" />
+				<sprite layer="4" sublayer="0" offset="26,8" ySortOffset="8" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="1" offset="10,55" ySortOffset="55" colored="water" attenuated="true" image="spriteimage.pool.small.06" />
+				<sprite layer="4" sublayer="1" offset="78,53" ySortOffset="53" colored="water" attenuated="true" image="spriteimage.pool.medium.04" />
+				<sprite layer="4" sublayer="1" offset="71,19" ySortOffset="19" colored="water" attenuated="true" image="spriteimage.pool.medium.08" />
+				<sprite layer="4" sublayer="1" offset="26,8" ySortOffset="8" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+				<sprite layer="4" sublayer="2" offset="72,35" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.ground.01" />
+				<sprite layer="4" sublayer="2" offset="33,35" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.01" />
+				<sprite layer="5" sublayer="2" offset="19,39" ySortOffset="39" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.line.2.anim" />
+				<sprite layer="5" sublayer="2" offset="72,35" ySortOffset="35" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.line.anim" />
+				<sprite layer="5" sublayer="3" offset="33,76" ySortOffset="35" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.anim" />
+				<sprite layer="5" sublayer="4" offset="33,76" ySortOffset="35" colored="buildings-highlight" attenuated="true" animation="pumpjack.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="33,35" ySortOffset="35" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.01" />
+				<sprite layer="5" sublayer="4" offset="72,35" ySortOffset="35" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.01" />
+				<sprite layer="5" sublayer="5" offset="12,34" ySortOffset="34" attenuated="false" animation="pumpjack.light.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x2.02" i="31508" layer="2" ruin="true" width="3" height="2" bThruMap="110000"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="0" offset="13,58" ySortOffset="58" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.03" />
+				<sprite layer="4" sublayer="0" offset="15,10" ySortOffset="10" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="0" offset="78,10" ySortOffset="10" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="1" offset="13,58" ySortOffset="58" colored="water" attenuated="true" image="spriteimage.pool.small.03" />
+				<sprite layer="4" sublayer="1" offset="78,10" ySortOffset="10" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+				<sprite layer="4" sublayer="1" offset="15,10" ySortOffset="10" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="2" offset="35,18" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.02" />
+				<sprite layer="4" sublayer="2" offset="85,18" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.ground.01" />
+				<sprite layer="5" sublayer="2" offset="21,38" ySortOffset="38" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.line.2.anim" />
+				<sprite layer="5" sublayer="2" offset="86,18" ySortOffset="18" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.line.anim" />
+				<sprite layer="5" sublayer="3" offset="36,75" ySortOffset="18" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.anim" />
+				<sprite layer="5" sublayer="4" offset="36,75" ySortOffset="18" colored="buildings-highlight" attenuated="true" animation="pumpjack.large.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="35,18" ySortOffset="18" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.02" />
+				<sprite layer="5" sublayer="4" offset="85,18" ySortOffset="18" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.01" />
+				<sprite layer="5" sublayer="5" offset="7,17" ySortOffset="17" attenuated="false" animation="pumpjack.large.light.anim" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x2.01" i="31509" layer="2" ruin="true" width="2" height="2" bThruMap="1100"><layers><layers scale="0.5">
+ 				<emitter emitter="saturn.tower.emitter" offset="18,0" ySortOffset="98"  />
+				<sprite layer="4" sublayer="0" offset="57,59" ySortOffset="59" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="0" offset="13,51" ySortOffset="51" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.06" />
+				<sprite layer="4" sublayer="0" offset="53,7" ySortOffset="7" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.01" />
+				<sprite layer="4" sublayer="1" offset="57,59" ySortOffset="59" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="1" offset="13,51" ySortOffset="51" colored="water" attenuated="true" image="spriteimage.pool.small.06" />
+				<sprite layer="4" sublayer="1" offset="53,7" ySortOffset="7" colored="water" attenuated="true" image="spriteimage.pool.medium.01" />
+				<sprite layer="4" sublayer="2" offset="44,22" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.04" />
+				<sprite layer="4" sublayer="2" offset="18,8" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.tower.ground.01" />
+				<sprite layer="5" sublayer="4" offset="44,22" ySortOffset="22" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.04" />
+				<sprite layer="5" sublayer="4" offset="18,8" ySortOffset="8" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.tower.01" />
+				<sprite layer="5" sublayer="5" offset="44,22" ySortOffset="22" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+				<sprite layer="5" sublayer="5" offset="18,8" ySortOffset="8" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.tower.top.01" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x1.08" i="31510" layer="2" ruin="true" width="2" height="1" bThruMap="01"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="39,0" ySortOffset="31"  />
+				<sprite layer="4" sublayer="0" offset="9,9" ySortOffset="9" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.02" />
+				<sprite layer="4" sublayer="0" offset="51,5" ySortOffset="5" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.05" />
+				<sprite layer="4" sublayer="1" offset="9,9" ySortOffset="9" colored="water" attenuated="true" image="spriteimage.pool.small.02" />
+				<sprite layer="4" sublayer="1" offset="51,5" ySortOffset="5" colored="water" attenuated="true" image="spriteimage.pool.small.05" />
+				<sprite layer="4" sublayer="2" offset="45,13" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.06" />
+				<sprite layer="5" sublayer="4" offset="45,13" ySortOffset="13" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.06" />
+				<sprite layer="5" sublayer="5" offset="45,13" ySortOffset="13" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.06" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.4x2.05" i="31511" layer="2" ruin="true" width="4" height="2" bThruMap="10000111"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="72,0" ySortOffset="34"  />
+				<emitter emitter="ruins.inside.fire.emitter" offset="17,0" ySortOffset="33"  />
+				<sprite layer="4" sublayer="0" offset="15,56" ySortOffset="56" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.08" />
+				<sprite layer="4" sublayer="0" offset="86,55" ySortOffset="55" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.03" />
+				<sprite layer="4" sublayer="0" offset="70,16" ySortOffset="16" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="0" offset="105,13" ySortOffset="13" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.05" />
+				<sprite layer="4" sublayer="1" offset="15,56" ySortOffset="56" colored="water" attenuated="true" image="spriteimage.pool.small.08" />
+				<sprite layer="4" sublayer="1" offset="86,55" ySortOffset="55" colored="water" attenuated="true" image="spriteimage.pool.small.03" />
+				<sprite layer="4" sublayer="1" offset="70,16" ySortOffset="16" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="1" offset="105,13" ySortOffset="13" colored="water" attenuated="true" image="spriteimage.pool.medium.05" />
+				<sprite layer="4" sublayer="2" offset="64,34" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.04" />
+				<sprite layer="4" sublayer="2" offset="101,25" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.01" />
+				<sprite layer="4" sublayer="2" offset="20,7" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.07" />
+				<sprite layer="5" sublayer="3" offset="82,82" ySortOffset="25" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpruin.3.anim" />
+				<sprite layer="5" sublayer="4" offset="82,82" ySortOffset="25" colored="buildings-highlight" attenuated="true" animation="pumpruin.3.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="64,34" ySortOffset="34" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.04" />
+				<sprite layer="5" sublayer="4" offset="20,7" ySortOffset="7" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.07" />
+				<sprite layer="5" sublayer="5" offset="20,7" ySortOffset="7" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+		</layers></layers></ruin>
+
+	<animation name="pumpruin.3.anim">
+			<frame i="spriteimage.saturn.ruins.pumpjack.back.02" d="0" />
+			<angle angle="-8192" d="198"/>
+	</animation>
+
+	<animation name="pumpruin.3.metal.anim">
+			<frame i="spriteimage.saturn.ruins.pumpjack.top.02" d="0" />
+			<angle angle="-8192" d="198"/>
+	</animation>
+
+		<ruin name="saturn.ruin.3x2.03" i="31512" layer="2" ruin="true" width="3" height="2" bThruMap="110000"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="13,0" ySortOffset="12"  />
+				<sprite layer="4" sublayer="0" offset="82,54" ySortOffset="54" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.07" />
+				<sprite layer="4" sublayer="0" offset="25,50" ySortOffset="50" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.08" />
+				<sprite layer="4" sublayer="0" offset="83,8" ySortOffset="8" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.02" />
+				<sprite layer="4" sublayer="1" offset="82,54" ySortOffset="54" colored="water" attenuated="true" image="spriteimage.pool.small.07" />
+				<sprite layer="4" sublayer="1" offset="25,50" ySortOffset="50" colored="water" attenuated="true" image="spriteimage.pool.medium.08" />
+				<sprite layer="4" sublayer="1" offset="83,8" ySortOffset="8" colored="water" attenuated="true" image="spriteimage.pool.medium.02" />
+				<sprite layer="4" sublayer="2" offset="35,13" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.05" />
+				<sprite layer="4" sublayer="2" offset="56,13" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.01" />
+				<sprite layer="5" sublayer="3" offset="28,46" ySortOffset="13" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpruin.2.anim" />
+				<sprite layer="5" sublayer="4" offset="28,46" ySortOffset="13" colored="buildings-highlight" attenuated="true" animation="pumpruin.2.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="35,13" ySortOffset="13" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.05" />
+		</layers></layers></ruin>
+
+	<animation name="pumpruin.2.metal.anim">
+			<frame i="spriteimage.saturn.ruins.pumpjack.top.01" d="0" />
+			<angle angle="-3277" d="198"/>
+	</animation>
+
+	<animation name="pumpruin.2.anim">
+			<frame i="spriteimage.saturn.ruins.pumpjack.back.01" d="0" />
+			<angle angle="-3277" d="198"/>
+	</animation>
+
+		<ruin name="saturn.ruin.3x2.04" i="31513" layer="2" ruin="true" width="3" height="2" bThruMap="001110"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="33,0" ySortOffset="37"  />
+				<sprite layer="4" sublayer="0" offset="46,23" ySortOffset="23" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="0" offset="15,10" ySortOffset="10" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.06" />
+				<sprite layer="4" sublayer="1" offset="46,23" ySortOffset="23" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="1" offset="15,10" ySortOffset="10" colored="water" attenuated="true" image="spriteimage.pool.small.06" />
+				<sprite layer="4" sublayer="2" offset="26,37" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.03" />
+				<sprite layer="4" sublayer="2" offset="52,36" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.01" />
+				<sprite layer="4" sublayer="2" offset="77,12" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.09" />
+				<sprite layer="5" sublayer="3" offset="34,77" ySortOffset="36" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpruin.1.anim" />
+				<sprite layer="5" sublayer="4" offset="34,77" ySortOffset="36" colored="buildings-highlight" attenuated="true" animation="pumpruin.1.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="26,37" ySortOffset="37" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.03" />
+				<sprite layer="5" sublayer="4" offset="77,12" ySortOffset="12" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.09" />
+				<sprite layer="5" sublayer="5" offset="77,12" ySortOffset="12" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+		</layers></layers></ruin>
+
+	<animation name="pumpruin.1.metal.anim">
+			<frame i="spriteimage.saturn.ruins.pumpjack.top.01" d="0" />
+			<angle angle="-8192" d="198"/>
+	</animation>
+
+	<animation name="pumpruin.1.anim">
+			<frame i="spriteimage.saturn.ruins.pumpjack.back.01" d="0" />
+			<angle angle="-8192" d="198"/>
+	</animation>
+
+		<ruin name="saturn.ruin.2x2.02" i="31514" layer="2" ruin="true" width="2" height="2" bThruMap="1100"><layers><layers scale="0.5">
+ 				<emitter emitter="saturn.tower.emitter" offset="47,0" ySortOffset="111"  />
+				<sprite layer="4" sublayer="0" offset="29,56" ySortOffset="56" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.02" />
+				<sprite layer="4" sublayer="0" offset="33,2" ySortOffset="2" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="1" offset="29,56" ySortOffset="56" colored="water" attenuated="true" image="spriteimage.pool.small.02" />
+				<sprite layer="4" sublayer="1" offset="33,2" ySortOffset="2" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+				<sprite layer="4" sublayer="2" offset="47,21" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.tower.ground.01" />
+				<sprite layer="4" sublayer="2" offset="17,19" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.12" />
+				<sprite layer="5" sublayer="4" offset="47,21" ySortOffset="21" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.tower.01" />
+				<sprite layer="5" sublayer="4" offset="17,19" ySortOffset="19" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.12" />
+				<sprite layer="5" sublayer="5" offset="47,21" ySortOffset="21" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.tower.top.01" />
+				<sprite layer="5" sublayer="5" offset="17,19" ySortOffset="19" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x2.03" i="31515" layer="2" ruin="true" width="2" height="2" bThruMap="0100"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="0" offset="30,49" ySortOffset="49" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.07" />
+				<sprite layer="4" sublayer="0" offset="15,30" ySortOffset="30" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.02" />
+				<sprite layer="4" sublayer="0" offset="12,6" ySortOffset="6" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.06" />
+				<sprite layer="4" sublayer="1" offset="30,49" ySortOffset="49" colored="water" attenuated="true" image="spriteimage.pool.medium.07" />
+				<sprite layer="4" sublayer="1" offset="15,30" ySortOffset="30" colored="water" attenuated="true" image="spriteimage.pool.medium.02" />
+				<sprite layer="4" sublayer="1" offset="12,6" ySortOffset="6" colored="water" attenuated="true" image="spriteimage.pool.small.06" />
+				<sprite layer="4" sublayer="2" offset="44,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.11" />
+				<sprite layer="5" sublayer="4" offset="44,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.11" />
+				<sprite layer="5" sublayer="5" offset="44,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.01" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x2.04" i="31516" layer="2" ruin="true" width="2" height="2" bThruMap="0010"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="28,17"  />
+				<sprite layer="4" sublayer="0" offset="55,52" ySortOffset="52" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="0" offset="37,19" ySortOffset="19" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.08" />
+				<sprite layer="4" sublayer="0" offset="11,6" ySortOffset="6" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.06" />
+				<sprite layer="4" sublayer="1" offset="55,52" ySortOffset="52" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="1" offset="37,19" ySortOffset="19" colored="water" attenuated="true" image="spriteimage.pool.medium.08" />
+				<sprite layer="4" sublayer="1" offset="11,6" ySortOffset="6" colored="water" attenuated="true" image="spriteimage.pool.small.06" />
+				<sprite layer="4" sublayer="2" offset="34,34" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.12" />
+				<sprite layer="4" sublayer="2" offset="9,33" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.04" />
+				<sprite layer="5" sublayer="4" offset="34,34" ySortOffset="34" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.12" />
+				<sprite layer="5" sublayer="4" offset="9,33" ySortOffset="33" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.04" />
+				<sprite layer="5" sublayer="5" offset="34,34" ySortOffset="34" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+				<sprite layer="5" sublayer="5" offset="9,33" ySortOffset="33" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x1.09" i="31517" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x1.10" i="31518" layer="2" ruin="true" width="2" height="1" bThruMap="01"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="0" offset="18,21" ySortOffset="21" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.04" />
+				<sprite layer="4" sublayer="0" offset="9,9" ySortOffset="9" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.03" />
+				<sprite layer="4" sublayer="1" offset="18,21" ySortOffset="21" colored="water" attenuated="true" image="spriteimage.pool.medium.04" />
+				<sprite layer="4" sublayer="1" offset="9,9" ySortOffset="9" colored="water" attenuated="true" image="spriteimage.pool.small.03" />
+				<sprite layer="4" sublayer="2" offset="48,7" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.09" />
+				<sprite layer="5" sublayer="4" offset="48,7" ySortOffset="7" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.09" />
+				<sprite layer="5" sublayer="5" offset="48,7" ySortOffset="7" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x1.11" i="31519" layer="2" ruin="true" width="2" height="1" bThruMap="10"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="14,0" ySortOffset="27"  />
+				<sprite layer="4" sublayer="0" offset="45,20" ySortOffset="20" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.03" />
+				<sprite layer="4" sublayer="0" offset="53,8" ySortOffset="8" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.08" />
+				<sprite layer="4" sublayer="1" offset="45,20" ySortOffset="20" colored="water" attenuated="true" image="spriteimage.pool.medium.03" />
+				<sprite layer="4" sublayer="1" offset="53,8" ySortOffset="8" colored="water" attenuated="true" image="spriteimage.pool.small.08" />
+				<sprite layer="4" sublayer="2" offset="16,9" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.05" />
+				<sprite layer="5" sublayer="4" offset="16,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.05" />
+				<sprite layer="5" sublayer="5" offset="16,9" ySortOffset="9" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.05" />
+		</layers></layers></ruin>
+
+<!--
+		<ruin name="saturn.ruin.3x1.05" i="31520" layer="2" ruin="true" width="3" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="35,9" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.02" />
+				<sprite layer="4" sublayer="2" offset="85,9" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.ground.01" />
+				<sprite layer="5" sublayer="2" offset="20,29" ySortOffset="29" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.line.2.anim" />
+				<sprite layer="5" sublayer="2" offset="85,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.line.anim" />
+				<sprite layer="5" sublayer="3" offset="35,66" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.large.anim" />
+				<sprite layer="5" sublayer="4" offset="35,66" ySortOffset="9" colored="buildings-highlight" attenuated="true" animation="pumpjack.large.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="35,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.02" />
+				<sprite layer="5" sublayer="4" offset="85,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.01" />
+				<sprite layer="5" sublayer="5" offset="7,8" ySortOffset="8" attenuated="false" animation="pumpjack.large.light.anim" />
+		</layers></layers></ruin>
+-->
+
+	<animation name="pumpjack.large.light.anim">
+		<label id="start"/>
+			<frame i="spriteimage.building.light.red.5px.04" d="101" />
+			<animcolor a="255" d="7"/>
+			<frame i="spriteimage.building.light.red.5px.04" d="3" />
+			<frame i="spriteimage.building.light.red.5px.03" d="2" />
+			<frame i="spriteimage.building.light.red.5px.02" d="2" />
+			<frame i="spriteimage.building.light.red.5px.01" d="2" />
+			<frame i="spriteimage.building.light.red.5px.01" d="20" />
+			<frame i="spriteimage.building.light.red.5px.01" d="6" />
+			<frame i="spriteimage.building.light.red.5px.02" d="6" />
+			<frame i="spriteimage.building.light.red.5px.03" d="5" />
+			<frame i="spriteimage.building.light.red.5px.04" d="4" />
+			<animcolor a="255" d="1"/>
+			<frame i="spriteimage.building.light.red.5px.04" d="0" />
+			<animcolor a="253" d="1"/>
+			<animcolor a="251" d="1"/>
+			<animcolor a="247" d="1"/>
+			<animcolor a="243" d="1"/>
+			<animcolor a="237" d="1"/>
+			<animcolor a="230" d="1"/>
+			<animcolor a="223" d="1"/>
+			<animcolor a="214" d="1"/>
+			<animcolor a="204" d="1"/>
+			<animcolor a="193" d="1"/>
+			<animcolor a="181" d="1"/>
+			<animcolor a="169" d="1"/>
+			<animcolor a="156" d="1"/>
+			<animcolor a="142" d="1"/>
+			<animcolor a="128" d="1"/>
+			<animcolor a="114" d="1"/>
+			<animcolor a="100" d="1"/>
+			<animcolor a="86" d="1"/>
+			<animcolor a="73" d="1"/>
+			<animcolor a="61" d="1"/>
+			<animcolor a="49" d="1"/>
+			<animcolor a="39" d="1"/>
+			<animcolor a="30" d="1"/>
+			<animcolor a="22" d="1"/>
+			<animcolor a="15" d="1"/>
+			<animcolor a="10" d="1"/>
+			<animcolor a="5" d="1"/>
+			<animcolor a="2" d="1"/>
+			<animcolor a="1" d="1"/>
+			<animcolor a="0" d="11"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="pumpjack.large.line.anim">
+		<label id="start"/>
+			<frame i="spriteimage.saturn.ruins.pumpjack.line.back.01" d="1" />
+			<scale xscale="0.4" yscale="0.594" d="1"/>
+			<scale xscale="0.4" yscale="0.595" d="1"/>
+			<scale xscale="0.4" yscale="0.595" d="1"/>
+			<scale xscale="0.4" yscale="0.595" d="1"/>
+			<scale xscale="0.4" yscale="0.596" d="1"/>
+			<scale xscale="0.4" yscale="0.597" d="1"/>
+			<scale xscale="0.4" yscale="0.598" d="1"/>
+			<scale xscale="0.4" yscale="0.599" d="1"/>
+			<scale xscale="0.4" yscale="0.6" d="1"/>
+			<scale xscale="0.4" yscale="0.601" d="1"/>
+			<scale xscale="0.4" yscale="0.603" d="1"/>
+			<scale xscale="0.4" yscale="0.604" d="1"/>
+			<scale xscale="0.4" yscale="0.606" d="1"/>
+			<scale xscale="0.4" yscale="0.608" d="1"/>
+			<scale xscale="0.4" yscale="0.61" d="1"/>
+			<scale xscale="0.4" yscale="0.612" d="1"/>
+			<scale xscale="0.4" yscale="0.614" d="1"/>
+			<scale xscale="0.4" yscale="0.616" d="1"/>
+			<scale xscale="0.4" yscale="0.618" d="1"/>
+			<scale xscale="0.4" yscale="0.621" d="1"/>
+			<scale xscale="0.4" yscale="0.623" d="1"/>
+			<scale xscale="0.4" yscale="0.626" d="1"/>
+			<scale xscale="0.4" yscale="0.629" d="1"/>
+			<scale xscale="0.4" yscale="0.631" d="1"/>
+			<scale xscale="0.4" yscale="0.634" d="1"/>
+			<scale xscale="0.4" yscale="0.637" d="1"/>
+			<scale xscale="0.4" yscale="0.64" d="1"/>
+			<scale xscale="0.4" yscale="0.644" d="1"/>
+			<scale xscale="0.4" yscale="0.647" d="1"/>
+			<scale xscale="0.4" yscale="0.65" d="1"/>
+			<scale xscale="0.4" yscale="0.654" d="1"/>
+			<scale xscale="0.4" yscale="0.657" d="1"/>
+			<scale xscale="0.4" yscale="0.661" d="1"/>
+			<scale xscale="0.4" yscale="0.664" d="1"/>
+			<scale xscale="0.4" yscale="0.668" d="1"/>
+			<scale xscale="0.4" yscale="0.672" d="1"/>
+			<scale xscale="0.4" yscale="0.676" d="1"/>
+			<scale xscale="0.4" yscale="0.68" d="1"/>
+			<scale xscale="0.4" yscale="0.684" d="1"/>
+			<scale xscale="0.4" yscale="0.688" d="1"/>
+			<scale xscale="0.4" yscale="0.692" d="1"/>
+			<scale xscale="0.4" yscale="0.696" d="1"/>
+			<scale xscale="0.4" yscale="0.7" d="1"/>
+			<scale xscale="0.4" yscale="0.705" d="1"/>
+			<scale xscale="0.4" yscale="0.709" d="1"/>
+			<scale xscale="0.4" yscale="0.713" d="1"/>
+			<scale xscale="0.4" yscale="0.718" d="1"/>
+			<scale xscale="0.4" yscale="0.722" d="1"/>
+			<scale xscale="0.4" yscale="0.727" d="1"/>
+			<scale xscale="0.4" yscale="0.731" d="1"/>
+			<scale xscale="0.4" yscale="0.736" d="1"/>
+			<scale xscale="0.4" yscale="0.74" d="1"/>
+			<scale xscale="0.4" yscale="0.745" d="1"/>
+			<scale xscale="0.4" yscale="0.75" d="1"/>
+			<scale xscale="0.4" yscale="0.754" d="1"/>
+			<scale xscale="0.4" yscale="0.759" d="1"/>
+			<scale xscale="0.4" yscale="0.764" d="1"/>
+			<scale xscale="0.4" yscale="0.769" d="1"/>
+			<scale xscale="0.4" yscale="0.773" d="1"/>
+			<scale xscale="0.4" yscale="0.778" d="1"/>
+			<scale xscale="0.4" yscale="0.783" d="1"/>
+			<scale xscale="0.4" yscale="0.788" d="1"/>
+			<scale xscale="0.4" yscale="0.793" d="1"/>
+			<scale xscale="0.4" yscale="0.798" d="1"/>
+			<scale xscale="0.4" yscale="0.802" d="1"/>
+			<scale xscale="0.4" yscale="0.807" d="1"/>
+			<scale xscale="0.4" yscale="0.812" d="1"/>
+			<scale xscale="0.4" yscale="0.817" d="1"/>
+			<scale xscale="0.4" yscale="0.822" d="1"/>
+			<scale xscale="0.4" yscale="0.827" d="1"/>
+			<scale xscale="0.4" yscale="0.831" d="1"/>
+			<scale xscale="0.4" yscale="0.836" d="1"/>
+			<scale xscale="0.4" yscale="0.841" d="1"/>
+			<scale xscale="0.4" yscale="0.846" d="1"/>
+			<scale xscale="0.4" yscale="0.851" d="1"/>
+			<scale xscale="0.4" yscale="0.856" d="1"/>
+			<scale xscale="0.4" yscale="0.86" d="1"/>
+			<scale xscale="0.4" yscale="0.865" d="1"/>
+			<scale xscale="0.4" yscale="0.87" d="1"/>
+			<scale xscale="0.4" yscale="0.874" d="1"/>
+			<scale xscale="0.4" yscale="0.879" d="1"/>
+			<scale xscale="0.4" yscale="0.884" d="1"/>
+			<scale xscale="0.4" yscale="0.888" d="1"/>
+			<scale xscale="0.4" yscale="0.893" d="1"/>
+			<scale xscale="0.4" yscale="0.897" d="1"/>
+			<scale xscale="0.4" yscale="0.902" d="1"/>
+			<scale xscale="0.4" yscale="0.906" d="1"/>
+			<scale xscale="0.4" yscale="0.91" d="1"/>
+			<scale xscale="0.4" yscale="0.915" d="1"/>
+			<scale xscale="0.4" yscale="0.919" d="1"/>
+			<scale xscale="0.4" yscale="0.923" d="1"/>
+			<scale xscale="0.4" yscale="0.927" d="1"/>
+			<scale xscale="0.4" yscale="0.932" d="1"/>
+			<scale xscale="0.4" yscale="0.936" d="1"/>
+			<scale xscale="0.4" yscale="0.94" d="1"/>
+			<scale xscale="0.4" yscale="0.944" d="1"/>
+			<scale xscale="0.4" yscale="0.947" d="1"/>
+			<scale xscale="0.4" yscale="0.951" d="1"/>
+			<scale xscale="0.4" yscale="0.955" d="1"/>
+			<scale xscale="0.4" yscale="0.959" d="1"/>
+			<scale xscale="0.4" yscale="0.962" d="1"/>
+			<scale xscale="0.4" yscale="0.966" d="1"/>
+			<scale xscale="0.4" yscale="0.969" d="1"/>
+			<scale xscale="0.4" yscale="0.973" d="1"/>
+			<scale xscale="0.4" yscale="0.976" d="1"/>
+			<scale xscale="0.4" yscale="0.979" d="1"/>
+			<scale xscale="0.4" yscale="0.982" d="1"/>
+			<scale xscale="0.4" yscale="0.985" d="1"/>
+			<scale xscale="0.4" yscale="0.988" d="1"/>
+			<scale xscale="0.4" yscale="0.991" d="1"/>
+			<scale xscale="0.4" yscale="0.994" d="1"/>
+			<scale xscale="0.4" yscale="0.996" d="1"/>
+			<scale xscale="0.4" yscale="0.999" d="1"/>
+			<scale xscale="0.4" yscale="1.001" d="1"/>
+			<scale xscale="0.4" yscale="1.003" d="1"/>
+			<scale xscale="0.4" yscale="1.006" d="1"/>
+			<scale xscale="0.4" yscale="1.008" d="1"/>
+			<scale xscale="0.4" yscale="1.01" d="1"/>
+			<scale xscale="0.4" yscale="1.012" d="1"/>
+			<scale xscale="0.4" yscale="1.013" d="1"/>
+			<scale xscale="0.4" yscale="1.015" d="1"/>
+			<scale xscale="0.4" yscale="1.017" d="1"/>
+			<scale xscale="0.4" yscale="1.018" d="1"/>
+			<scale xscale="0.4" yscale="1.019" d="1"/>
+			<scale xscale="0.4" yscale="1.021" d="1"/>
+			<scale xscale="0.4" yscale="1.022" d="1"/>
+			<scale xscale="0.4" yscale="1.022" d="1"/>
+			<scale xscale="0.4" yscale="1.023" d="1"/>
+			<scale xscale="0.4" yscale="1.024" d="1"/>
+			<scale xscale="0.4" yscale="1.024" d="1"/>
+			<scale xscale="0.4" yscale="1.025" d="1"/>
+			<scale xscale="0.4" yscale="1.025" d="1"/>
+			<scale xscale="0.4" yscale="1.025" d="1"/>
+			<scale xscale="0.4" yscale="1.025" d="1"/>
+			<scale xscale="0.4" yscale="1.024" d="1"/>
+			<scale xscale="0.4" yscale="1.022" d="1"/>
+			<scale xscale="0.4" yscale="1.02" d="1"/>
+			<scale xscale="0.4" yscale="1.018" d="1"/>
+			<scale xscale="0.4" yscale="1.015" d="1"/>
+			<scale xscale="0.4" yscale="1.011" d="1"/>
+			<scale xscale="0.4" yscale="1.008" d="1"/>
+			<scale xscale="0.4" yscale="1.003" d="1"/>
+			<scale xscale="0.4" yscale="0.998" d="1"/>
+			<scale xscale="0.4" yscale="0.993" d="1"/>
+			<scale xscale="0.4" yscale="0.987" d="1"/>
+			<scale xscale="0.4" yscale="0.981" d="1"/>
+			<scale xscale="0.4" yscale="0.975" d="1"/>
+			<scale xscale="0.4" yscale="0.968" d="1"/>
+			<scale xscale="0.4" yscale="0.961" d="1"/>
+			<scale xscale="0.4" yscale="0.954" d="1"/>
+			<scale xscale="0.4" yscale="0.946" d="1"/>
+			<scale xscale="0.4" yscale="0.938" d="1"/>
+			<scale xscale="0.4" yscale="0.93" d="1"/>
+			<scale xscale="0.4" yscale="0.922" d="1"/>
+			<scale xscale="0.4" yscale="0.913" d="1"/>
+			<scale xscale="0.4" yscale="0.905" d="1"/>
+			<scale xscale="0.4" yscale="0.896" d="1"/>
+			<scale xscale="0.4" yscale="0.886" d="1"/>
+			<scale xscale="0.4" yscale="0.877" d="1"/>
+			<scale xscale="0.4" yscale="0.868" d="1"/>
+			<scale xscale="0.4" yscale="0.858" d="1"/>
+			<scale xscale="0.4" yscale="0.849" d="1"/>
+			<scale xscale="0.4" yscale="0.839" d="1"/>
+			<scale xscale="0.4" yscale="0.829" d="1"/>
+			<scale xscale="0.4" yscale="0.819" d="1"/>
+			<scale xscale="0.4" yscale="0.81" d="1"/>
+			<scale xscale="0.4" yscale="0.8" d="1"/>
+			<scale xscale="0.4" yscale="0.79" d="1"/>
+			<scale xscale="0.4" yscale="0.78" d="1"/>
+			<scale xscale="0.4" yscale="0.771" d="1"/>
+			<scale xscale="0.4" yscale="0.761" d="1"/>
+			<scale xscale="0.4" yscale="0.752" d="1"/>
+			<scale xscale="0.4" yscale="0.742" d="1"/>
+			<scale xscale="0.4" yscale="0.733" d="1"/>
+			<scale xscale="0.4" yscale="0.724" d="1"/>
+			<scale xscale="0.4" yscale="0.715" d="1"/>
+			<scale xscale="0.4" yscale="0.706" d="1"/>
+			<scale xscale="0.4" yscale="0.697" d="1"/>
+			<scale xscale="0.4" yscale="0.689" d="1"/>
+			<scale xscale="0.4" yscale="0.681" d="1"/>
+			<scale xscale="0.4" yscale="0.673" d="1"/>
+			<scale xscale="0.4" yscale="0.665" d="1"/>
+			<scale xscale="0.4" yscale="0.658" d="1"/>
+			<scale xscale="0.4" yscale="0.651" d="1"/>
+			<scale xscale="0.4" yscale="0.644" d="1"/>
+			<scale xscale="0.4" yscale="0.638" d="1"/>
+			<scale xscale="0.4" yscale="0.632" d="1"/>
+			<scale xscale="0.4" yscale="0.626" d="1"/>
+			<scale xscale="0.4" yscale="0.621" d="1"/>
+			<scale xscale="0.4" yscale="0.616" d="1"/>
+			<scale xscale="0.4" yscale="0.612" d="1"/>
+			<scale xscale="0.4" yscale="0.608" d="1"/>
+			<scale xscale="0.4" yscale="0.604" d="1"/>
+			<scale xscale="0.4" yscale="0.601" d="1"/>
+			<scale xscale="0.4" yscale="0.599" d="1"/>
+			<scale xscale="0.4" yscale="0.597" d="1"/>
+			<scale xscale="0.4" yscale="0.596" d="1"/>
+			<scale xscale="0.4" yscale="0.595" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="pumpjack.large.line.2.anim">
+		<label id="start"/>
+			<frame i="spriteimage.saturn.ruins.pumpjack.line.back.02" d="1" />
+			<scale xscale="0.5" yscale="0.56" d="1"/>
+			<scale xscale="0.5" yscale="0.56" d="1"/>
+			<scale xscale="0.5" yscale="0.56" d="1"/>
+			<scale xscale="0.5" yscale="0.559" d="1"/>
+			<scale xscale="0.5" yscale="0.559" d="1"/>
+			<scale xscale="0.5" yscale="0.559" d="1"/>
+			<scale xscale="0.5" yscale="0.558" d="1"/>
+			<scale xscale="0.5" yscale="0.558" d="1"/>
+			<scale xscale="0.5" yscale="0.557" d="1"/>
+			<scale xscale="0.5" yscale="0.557" d="1"/>
+			<scale xscale="0.5" yscale="0.556" d="1"/>
+			<scale xscale="0.5" yscale="0.555" d="1"/>
+			<scale xscale="0.5" yscale="0.554" d="1"/>
+			<scale xscale="0.5" yscale="0.554" d="1"/>
+			<scale xscale="0.5" yscale="0.553" d="1"/>
+			<scale xscale="0.5" yscale="0.552" d="1"/>
+			<scale xscale="0.5" yscale="0.551" d="1"/>
+			<scale xscale="0.5" yscale="0.55" d="1"/>
+			<scale xscale="0.5" yscale="0.549" d="1"/>
+			<scale xscale="0.5" yscale="0.548" d="1"/>
+			<scale xscale="0.5" yscale="0.547" d="1"/>
+			<scale xscale="0.5" yscale="0.546" d="1"/>
+			<scale xscale="0.5" yscale="0.544" d="1"/>
+			<scale xscale="0.5" yscale="0.543" d="1"/>
+			<scale xscale="0.5" yscale="0.542" d="1"/>
+			<scale xscale="0.5" yscale="0.541" d="1"/>
+			<scale xscale="0.5" yscale="0.539" d="1"/>
+			<scale xscale="0.5" yscale="0.538" d="1"/>
+			<scale xscale="0.5" yscale="0.537" d="1"/>
+			<scale xscale="0.5" yscale="0.535" d="1"/>
+			<scale xscale="0.5" yscale="0.534" d="1"/>
+			<scale xscale="0.5" yscale="0.532" d="1"/>
+			<scale xscale="0.5" yscale="0.531" d="1"/>
+			<scale xscale="0.5" yscale="0.529" d="1"/>
+			<scale xscale="0.5" yscale="0.527" d="1"/>
+			<scale xscale="0.5" yscale="0.526" d="1"/>
+			<scale xscale="0.5" yscale="0.524" d="1"/>
+			<scale xscale="0.5" yscale="0.523" d="1"/>
+			<scale xscale="0.5" yscale="0.521" d="1"/>
+			<scale xscale="0.5" yscale="0.519" d="1"/>
+			<scale xscale="0.5" yscale="0.517" d="1"/>
+			<scale xscale="0.5" yscale="0.516" d="1"/>
+			<scale xscale="0.5" yscale="0.514" d="1"/>
+			<scale xscale="0.5" yscale="0.512" d="1"/>
+			<scale xscale="0.5" yscale="0.51" d="1"/>
+			<scale xscale="0.5" yscale="0.508" d="1"/>
+			<scale xscale="0.5" yscale="0.506" d="1"/>
+			<scale xscale="0.5" yscale="0.505" d="1"/>
+			<scale xscale="0.5" yscale="0.503" d="1"/>
+			<scale xscale="0.5" yscale="0.501" d="1"/>
+			<scale xscale="0.5" yscale="0.499" d="1"/>
+			<scale xscale="0.5" yscale="0.497" d="1"/>
+			<scale xscale="0.5" yscale="0.495" d="1"/>
+			<scale xscale="0.5" yscale="0.493" d="1"/>
+			<scale xscale="0.5" yscale="0.491" d="1"/>
+			<scale xscale="0.5" yscale="0.489" d="1"/>
+			<scale xscale="0.5" yscale="0.487" d="1"/>
+			<scale xscale="0.5" yscale="0.485" d="1"/>
+			<scale xscale="0.5" yscale="0.483" d="1"/>
+			<scale xscale="0.5" yscale="0.481" d="1"/>
+			<scale xscale="0.5" yscale="0.479" d="1"/>
+			<scale xscale="0.5" yscale="0.477" d="1"/>
+			<scale xscale="0.5" yscale="0.475" d="1"/>
+			<scale xscale="0.5" yscale="0.473" d="1"/>
+			<scale xscale="0.5" yscale="0.471" d="1"/>
+			<scale xscale="0.5" yscale="0.469" d="1"/>
+			<scale xscale="0.5" yscale="0.466" d="1"/>
+			<scale xscale="0.5" yscale="0.464" d="1"/>
+			<scale xscale="0.5" yscale="0.462" d="1"/>
+			<scale xscale="0.5" yscale="0.46" d="1"/>
+			<scale xscale="0.5" yscale="0.458" d="1"/>
+			<scale xscale="0.5" yscale="0.456" d="1"/>
+			<scale xscale="0.5" yscale="0.454" d="1"/>
+			<scale xscale="0.5" yscale="0.452" d="1"/>
+			<scale xscale="0.5" yscale="0.45" d="1"/>
+			<scale xscale="0.5" yscale="0.448" d="1"/>
+			<scale xscale="0.5" yscale="0.446" d="1"/>
+			<scale xscale="0.5" yscale="0.444" d="1"/>
+			<scale xscale="0.5" yscale="0.442" d="1"/>
+			<scale xscale="0.5" yscale="0.44" d="1"/>
+			<scale xscale="0.5" yscale="0.438" d="1"/>
+			<scale xscale="0.5" yscale="0.436" d="1"/>
+			<scale xscale="0.5" yscale="0.434" d="1"/>
+			<scale xscale="0.5" yscale="0.433" d="1"/>
+			<scale xscale="0.5" yscale="0.431" d="1"/>
+			<scale xscale="0.5" yscale="0.429" d="1"/>
+			<scale xscale="0.5" yscale="0.427" d="1"/>
+			<scale xscale="0.5" yscale="0.425" d="1"/>
+			<scale xscale="0.5" yscale="0.423" d="1"/>
+			<scale xscale="0.5" yscale="0.421" d="1"/>
+			<scale xscale="0.5" yscale="0.42" d="1"/>
+			<scale xscale="0.5" yscale="0.418" d="1"/>
+			<scale xscale="0.5" yscale="0.416" d="1"/>
+			<scale xscale="0.5" yscale="0.415" d="1"/>
+			<scale xscale="0.5" yscale="0.413" d="1"/>
+			<scale xscale="0.5" yscale="0.411" d="1"/>
+			<scale xscale="0.5" yscale="0.41" d="1"/>
+			<scale xscale="0.5" yscale="0.408" d="1"/>
+			<scale xscale="0.5" yscale="0.406" d="1"/>
+			<scale xscale="0.5" yscale="0.405" d="1"/>
+			<scale xscale="0.5" yscale="0.403" d="1"/>
+			<scale xscale="0.5" yscale="0.402" d="1"/>
+			<scale xscale="0.5" yscale="0.4" d="1"/>
+			<scale xscale="0.5" yscale="0.399" d="1"/>
+			<scale xscale="0.5" yscale="0.398" d="1"/>
+			<scale xscale="0.5" yscale="0.396" d="1"/>
+			<scale xscale="0.5" yscale="0.395" d="1"/>
+			<scale xscale="0.5" yscale="0.394" d="1"/>
+			<scale xscale="0.5" yscale="0.393" d="1"/>
+			<scale xscale="0.5" yscale="0.391" d="1"/>
+			<scale xscale="0.5" yscale="0.39" d="1"/>
+			<scale xscale="0.5" yscale="0.389" d="1"/>
+			<scale xscale="0.5" yscale="0.388" d="1"/>
+			<scale xscale="0.5" yscale="0.387" d="1"/>
+			<scale xscale="0.5" yscale="0.386" d="1"/>
+			<scale xscale="0.5" yscale="0.385" d="1"/>
+			<scale xscale="0.5" yscale="0.384" d="1"/>
+			<scale xscale="0.5" yscale="0.383" d="1"/>
+			<scale xscale="0.5" yscale="0.383" d="1"/>
+			<scale xscale="0.5" yscale="0.382" d="1"/>
+			<scale xscale="0.5" yscale="0.381" d="1"/>
+			<scale xscale="0.5" yscale="0.381" d="1"/>
+			<scale xscale="0.5" yscale="0.38" d="1"/>
+			<scale xscale="0.5" yscale="0.379" d="1"/>
+			<scale xscale="0.5" yscale="0.379" d="1"/>
+			<scale xscale="0.5" yscale="0.379" d="1"/>
+			<scale xscale="0.5" yscale="0.378" d="1"/>
+			<scale xscale="0.5" yscale="0.378" d="1"/>
+			<scale xscale="0.5" yscale="0.378" d="1"/>
+			<scale xscale="0.5" yscale="0.377" d="1"/>
+			<scale xscale="0.5" yscale="0.377" d="1"/>
+			<scale xscale="0.5" yscale="0.377" d="1"/>
+			<scale xscale="0.5" yscale="0.377" d="1"/>
+			<scale xscale="0.5" yscale="0.377" d="1"/>
+			<scale xscale="0.5" yscale="0.378" d="1"/>
+			<scale xscale="0.5" yscale="0.378" d="1"/>
+			<scale xscale="0.5" yscale="0.379" d="1"/>
+			<scale xscale="0.5" yscale="0.38" d="1"/>
+			<scale xscale="0.5" yscale="0.381" d="1"/>
+			<scale xscale="0.5" yscale="0.383" d="1"/>
+			<scale xscale="0.5" yscale="0.384" d="1"/>
+			<scale xscale="0.5" yscale="0.386" d="1"/>
+			<scale xscale="0.5" yscale="0.388" d="1"/>
+			<scale xscale="0.5" yscale="0.391" d="1"/>
+			<scale xscale="0.5" yscale="0.393" d="1"/>
+			<scale xscale="0.5" yscale="0.396" d="1"/>
+			<scale xscale="0.5" yscale="0.398" d="1"/>
+			<scale xscale="0.5" yscale="0.401" d="1"/>
+			<scale xscale="0.5" yscale="0.404" d="1"/>
+			<scale xscale="0.5" yscale="0.407" d="1"/>
+			<scale xscale="0.5" yscale="0.41" d="1"/>
+			<scale xscale="0.5" yscale="0.414" d="1"/>
+			<scale xscale="0.5" yscale="0.417" d="1"/>
+			<scale xscale="0.5" yscale="0.421" d="1"/>
+			<scale xscale="0.5" yscale="0.424" d="1"/>
+			<scale xscale="0.5" yscale="0.428" d="1"/>
+			<scale xscale="0.5" yscale="0.432" d="1"/>
+			<scale xscale="0.5" yscale="0.436" d="1"/>
+			<scale xscale="0.5" yscale="0.44" d="1"/>
+			<scale xscale="0.5" yscale="0.444" d="1"/>
+			<scale xscale="0.5" yscale="0.448" d="1"/>
+			<scale xscale="0.5" yscale="0.452" d="1"/>
+			<scale xscale="0.5" yscale="0.456" d="1"/>
+			<scale xscale="0.5" yscale="0.46" d="1"/>
+			<scale xscale="0.5" yscale="0.464" d="1"/>
+			<scale xscale="0.5" yscale="0.469" d="1"/>
+			<scale xscale="0.5" yscale="0.473" d="1"/>
+			<scale xscale="0.5" yscale="0.477" d="1"/>
+			<scale xscale="0.5" yscale="0.481" d="1"/>
+			<scale xscale="0.5" yscale="0.485" d="1"/>
+			<scale xscale="0.5" yscale="0.489" d="1"/>
+			<scale xscale="0.5" yscale="0.493" d="1"/>
+			<scale xscale="0.5" yscale="0.497" d="1"/>
+			<scale xscale="0.5" yscale="0.501" d="1"/>
+			<scale xscale="0.5" yscale="0.505" d="1"/>
+			<scale xscale="0.5" yscale="0.509" d="1"/>
+			<scale xscale="0.5" yscale="0.513" d="1"/>
+			<scale xscale="0.5" yscale="0.516" d="1"/>
+			<scale xscale="0.5" yscale="0.52" d="1"/>
+			<scale xscale="0.5" yscale="0.523" d="1"/>
+			<scale xscale="0.5" yscale="0.527" d="1"/>
+			<scale xscale="0.5" yscale="0.53" d="1"/>
+			<scale xscale="0.5" yscale="0.533" d="1"/>
+			<scale xscale="0.5" yscale="0.536" d="1"/>
+			<scale xscale="0.5" yscale="0.539" d="1"/>
+			<scale xscale="0.5" yscale="0.542" d="1"/>
+			<scale xscale="0.5" yscale="0.544" d="1"/>
+			<scale xscale="0.5" yscale="0.546" d="1"/>
+			<scale xscale="0.5" yscale="0.549" d="1"/>
+			<scale xscale="0.5" yscale="0.551" d="1"/>
+			<scale xscale="0.5" yscale="0.553" d="1"/>
+			<scale xscale="0.5" yscale="0.554" d="1"/>
+			<scale xscale="0.5" yscale="0.556" d="1"/>
+			<scale xscale="0.5" yscale="0.557" d="1"/>
+			<scale xscale="0.5" yscale="0.558" d="1"/>
+			<scale xscale="0.5" yscale="0.559" d="1"/>
+			<scale xscale="0.5" yscale="0.56" d="1"/>
+			<scale xscale="0.5" yscale="0.56" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="pumpjack.large.anim">
+		<label id="start"/>
+			<frame i="spriteimage.saturn.ruins.pumpjack.back.02" d="1" />
+			<angle angle="-5116" d="1"/>
+			<angle angle="-5107" d="1"/>
+			<angle angle="-5093" d="1"/>
+			<angle angle="-5073" d="1"/>
+			<angle angle="-5047" d="1"/>
+			<angle angle="-5016" d="1"/>
+			<angle angle="-4980" d="1"/>
+			<angle angle="-4938" d="1"/>
+			<angle angle="-4891" d="1"/>
+			<angle angle="-4839" d="1"/>
+			<angle angle="-4783" d="1"/>
+			<angle angle="-4721" d="1"/>
+			<angle angle="-4655" d="1"/>
+			<angle angle="-4584" d="1"/>
+			<angle angle="-4509" d="1"/>
+			<angle angle="-4429" d="1"/>
+			<angle angle="-4346" d="1"/>
+			<angle angle="-4258" d="1"/>
+			<angle angle="-4166" d="1"/>
+			<angle angle="-4070" d="1"/>
+			<angle angle="-3971" d="1"/>
+			<angle angle="-3869" d="1"/>
+			<angle angle="-3762" d="1"/>
+			<angle angle="-3653" d="1"/>
+			<angle angle="-3541" d="1"/>
+			<angle angle="-3425" d="1"/>
+			<angle angle="-3307" d="1"/>
+			<angle angle="-3186" d="1"/>
+			<angle angle="-3063" d="1"/>
+			<angle angle="-2937" d="1"/>
+			<angle angle="-2809" d="1"/>
+			<angle angle="-2678" d="1"/>
+			<angle angle="-2546" d="1"/>
+			<angle angle="-2412" d="1"/>
+			<angle angle="-2276" d="1"/>
+			<angle angle="-2138" d="1"/>
+			<angle angle="-1999" d="1"/>
+			<angle angle="-1859" d="1"/>
+			<angle angle="-1717" d="1"/>
+			<angle angle="-1575" d="1"/>
+			<angle angle="-1431" d="1"/>
+			<angle angle="-1287" d="1"/>
+			<angle angle="-1141" d="1"/>
+			<angle angle="-996" d="1"/>
+			<angle angle="-849" d="1"/>
+			<angle angle="-703" d="1"/>
+			<angle angle="-556" d="1"/>
+			<angle angle="-408" d="1"/>
+			<angle angle="-261" d="1"/>
+			<angle angle="-114" d="1"/>
+			<angle angle="33" d="1"/>
+			<angle angle="180" d="1"/>
+			<angle angle="327" d="1"/>
+			<angle angle="473" d="1"/>
+			<angle angle="619" d="1"/>
+			<angle angle="764" d="1"/>
+			<angle angle="908" d="1"/>
+			<angle angle="1052" d="1"/>
+			<angle angle="1195" d="1"/>
+			<angle angle="1337" d="1"/>
+			<angle angle="1478" d="1"/>
+			<angle angle="1618" d="1"/>
+			<angle angle="1757" d="1"/>
+			<angle angle="1895" d="1"/>
+			<angle angle="2031" d="1"/>
+			<angle angle="2167" d="1"/>
+			<angle angle="2301" d="1"/>
+			<angle angle="2433" d="1"/>
+			<angle angle="2564" d="1"/>
+			<angle angle="2694" d="1"/>
+			<angle angle="2822" d="1"/>
+			<angle angle="2949" d="1"/>
+			<angle angle="3074" d="1"/>
+			<angle angle="3197" d="1"/>
+			<angle angle="3319" d="1"/>
+			<angle angle="3439" d="1"/>
+			<angle angle="3557" d="1"/>
+			<angle angle="3673" d="1"/>
+			<angle angle="3788" d="1"/>
+			<angle angle="3900" d="1"/>
+			<angle angle="4011" d="1"/>
+			<angle angle="4120" d="1"/>
+			<angle angle="4227" d="1"/>
+			<angle angle="4332" d="1"/>
+			<angle angle="4434" d="1"/>
+			<angle angle="4535" d="1"/>
+			<angle angle="4634" d="1"/>
+			<angle angle="4731" d="1"/>
+			<angle angle="4826" d="1"/>
+			<angle angle="4919" d="1"/>
+			<angle angle="5009" d="1"/>
+			<angle angle="5098" d="1"/>
+			<angle angle="5184" d="1"/>
+			<angle angle="5269" d="1"/>
+			<angle angle="5351" d="1"/>
+			<angle angle="5431" d="1"/>
+			<angle angle="5509" d="1"/>
+			<angle angle="5584" d="1"/>
+			<angle angle="5658" d="1"/>
+			<angle angle="5729" d="1"/>
+			<angle angle="5799" d="1"/>
+			<angle angle="5866" d="1"/>
+			<angle angle="5931" d="1"/>
+			<angle angle="5993" d="1"/>
+			<angle angle="6054" d="1"/>
+			<angle angle="6112" d="1"/>
+			<angle angle="6168" d="1"/>
+			<angle angle="6222" d="1"/>
+			<angle angle="6274" d="1"/>
+			<angle angle="6324" d="1"/>
+			<angle angle="6371" d="1"/>
+			<angle angle="6416" d="1"/>
+			<angle angle="6459" d="1"/>
+			<angle angle="6500" d="1"/>
+			<angle angle="6539" d="1"/>
+			<angle angle="6576" d="1"/>
+			<angle angle="6610" d="1"/>
+			<angle angle="6642" d="1"/>
+			<angle angle="6673" d="1"/>
+			<angle angle="6701" d="1"/>
+			<angle angle="6726" d="1"/>
+			<angle angle="6750" d="1"/>
+			<angle angle="6772" d="1"/>
+			<angle angle="6791" d="1"/>
+			<angle angle="6809" d="1"/>
+			<angle angle="6824" d="1"/>
+			<angle angle="6837" d="1"/>
+			<angle angle="6848" d="1"/>
+			<angle angle="6857" d="1"/>
+			<angle angle="6864" d="1"/>
+			<angle angle="6869" d="1"/>
+			<angle angle="6872" d="1"/>
+			<angle angle="6873" d="1"/>
+			<angle angle="6870" d="1"/>
+			<angle angle="6860" d="1"/>
+			<angle angle="6845" d="1"/>
+			<angle angle="6823" d="1"/>
+			<angle angle="6795" d="1"/>
+			<angle angle="6760" d="1"/>
+			<angle angle="6718" d="1"/>
+			<angle angle="6670" d="1"/>
+			<angle angle="6614" d="1"/>
+			<angle angle="6550" d="1"/>
+			<angle angle="6479" d="1"/>
+			<angle angle="6401" d="1"/>
+			<angle angle="6314" d="1"/>
+			<angle angle="6220" d="1"/>
+			<angle angle="6117" d="1"/>
+			<angle angle="6005" d="1"/>
+			<angle angle="5885" d="1"/>
+			<angle angle="5756" d="1"/>
+			<angle angle="5618" d="1"/>
+			<angle angle="5471" d="1"/>
+			<angle angle="5315" d="1"/>
+			<angle angle="5149" d="1"/>
+			<angle angle="4973" d="1"/>
+			<angle angle="4787" d="1"/>
+			<angle angle="4592" d="1"/>
+			<angle angle="4386" d="1"/>
+			<angle angle="4171" d="1"/>
+			<angle angle="3945" d="1"/>
+			<angle angle="3710" d="1"/>
+			<angle angle="3465" d="1"/>
+			<angle angle="3210" d="1"/>
+			<angle angle="2945" d="1"/>
+			<angle angle="2672" d="1"/>
+			<angle angle="2389" d="1"/>
+			<angle angle="2098" d="1"/>
+			<angle angle="1800" d="1"/>
+			<angle angle="1494" d="1"/>
+			<angle angle="1182" d="1"/>
+			<angle angle="865" d="1"/>
+			<angle angle="544" d="1"/>
+			<angle angle="219" d="1"/>
+			<angle angle="-107" d="1"/>
+			<angle angle="-434" d="1"/>
+			<angle angle="-761" d="1"/>
+			<angle angle="-1084" d="1"/>
+			<angle angle="-1404" d="1"/>
+			<angle angle="-1718" d="1"/>
+			<angle angle="-2025" d="1"/>
+			<angle angle="-2323" d="1"/>
+			<angle angle="-2611" d="1"/>
+			<angle angle="-2888" d="1"/>
+			<angle angle="-3151" d="1"/>
+			<angle angle="-3401" d="1"/>
+			<angle angle="-3636" d="1"/>
+			<angle angle="-3855" d="1"/>
+			<angle angle="-4057" d="1"/>
+			<angle angle="-4243" d="1"/>
+			<angle angle="-4411" d="1"/>
+			<angle angle="-4561" d="1"/>
+			<angle angle="-4693" d="1"/>
+			<angle angle="-4808" d="1"/>
+			<angle angle="-4905" d="1"/>
+			<angle angle="-4984" d="1"/>
+			<angle angle="-5046" d="1"/>
+			<angle angle="-5091" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="pumpjack.large.metal.anim">
+		<label id="start"/>
+			<frame i="spriteimage.saturn.ruins.pumpjack.top.02" d="1" />
+			<angle angle="-5116" d="1"/>
+			<angle angle="-5107" d="1"/>
+			<angle angle="-5093" d="1"/>
+			<angle angle="-5073" d="1"/>
+			<angle angle="-5047" d="1"/>
+			<angle angle="-5016" d="1"/>
+			<angle angle="-4980" d="1"/>
+			<angle angle="-4938" d="1"/>
+			<angle angle="-4891" d="1"/>
+			<angle angle="-4839" d="1"/>
+			<angle angle="-4783" d="1"/>
+			<angle angle="-4721" d="1"/>
+			<angle angle="-4655" d="1"/>
+			<angle angle="-4584" d="1"/>
+			<angle angle="-4509" d="1"/>
+			<angle angle="-4429" d="1"/>
+			<angle angle="-4346" d="1"/>
+			<angle angle="-4258" d="1"/>
+			<angle angle="-4166" d="1"/>
+			<angle angle="-4070" d="1"/>
+			<angle angle="-3971" d="1"/>
+			<angle angle="-3869" d="1"/>
+			<angle angle="-3762" d="1"/>
+			<angle angle="-3653" d="1"/>
+			<angle angle="-3541" d="1"/>
+			<angle angle="-3425" d="1"/>
+			<angle angle="-3307" d="1"/>
+			<angle angle="-3186" d="1"/>
+			<angle angle="-3063" d="1"/>
+			<angle angle="-2937" d="1"/>
+			<angle angle="-2809" d="1"/>
+			<angle angle="-2678" d="1"/>
+			<angle angle="-2546" d="1"/>
+			<angle angle="-2412" d="1"/>
+			<angle angle="-2276" d="1"/>
+			<angle angle="-2138" d="1"/>
+			<angle angle="-1999" d="1"/>
+			<angle angle="-1859" d="1"/>
+			<angle angle="-1717" d="1"/>
+			<angle angle="-1575" d="1"/>
+			<angle angle="-1431" d="1"/>
+			<angle angle="-1287" d="1"/>
+			<angle angle="-1141" d="1"/>
+			<angle angle="-996" d="1"/>
+			<angle angle="-849" d="1"/>
+			<angle angle="-703" d="1"/>
+			<angle angle="-556" d="1"/>
+			<angle angle="-408" d="1"/>
+			<angle angle="-261" d="1"/>
+			<angle angle="-114" d="1"/>
+			<angle angle="33" d="1"/>
+			<angle angle="180" d="1"/>
+			<angle angle="327" d="1"/>
+			<angle angle="473" d="1"/>
+			<angle angle="619" d="1"/>
+			<angle angle="764" d="1"/>
+			<angle angle="908" d="1"/>
+			<angle angle="1052" d="1"/>
+			<angle angle="1195" d="1"/>
+			<angle angle="1337" d="1"/>
+			<angle angle="1478" d="1"/>
+			<angle angle="1618" d="1"/>
+			<angle angle="1757" d="1"/>
+			<angle angle="1895" d="1"/>
+			<angle angle="2031" d="1"/>
+			<angle angle="2167" d="1"/>
+			<angle angle="2301" d="1"/>
+			<angle angle="2433" d="1"/>
+			<angle angle="2564" d="1"/>
+			<angle angle="2694" d="1"/>
+			<angle angle="2822" d="1"/>
+			<angle angle="2949" d="1"/>
+			<angle angle="3074" d="1"/>
+			<angle angle="3197" d="1"/>
+			<angle angle="3319" d="1"/>
+			<angle angle="3439" d="1"/>
+			<angle angle="3557" d="1"/>
+			<angle angle="3673" d="1"/>
+			<angle angle="3788" d="1"/>
+			<angle angle="3900" d="1"/>
+			<angle angle="4011" d="1"/>
+			<angle angle="4120" d="1"/>
+			<angle angle="4227" d="1"/>
+			<angle angle="4332" d="1"/>
+			<angle angle="4434" d="1"/>
+			<angle angle="4535" d="1"/>
+			<angle angle="4634" d="1"/>
+			<angle angle="4731" d="1"/>
+			<angle angle="4826" d="1"/>
+			<angle angle="4919" d="1"/>
+			<angle angle="5009" d="1"/>
+			<angle angle="5098" d="1"/>
+			<angle angle="5184" d="1"/>
+			<angle angle="5269" d="1"/>
+			<angle angle="5351" d="1"/>
+			<angle angle="5431" d="1"/>
+			<angle angle="5509" d="1"/>
+			<angle angle="5584" d="1"/>
+			<angle angle="5658" d="1"/>
+			<angle angle="5729" d="1"/>
+			<angle angle="5799" d="1"/>
+			<angle angle="5866" d="1"/>
+			<angle angle="5931" d="1"/>
+			<angle angle="5993" d="1"/>
+			<angle angle="6054" d="1"/>
+			<angle angle="6112" d="1"/>
+			<angle angle="6168" d="1"/>
+			<angle angle="6222" d="1"/>
+			<angle angle="6274" d="1"/>
+			<angle angle="6324" d="1"/>
+			<angle angle="6371" d="1"/>
+			<angle angle="6416" d="1"/>
+			<angle angle="6459" d="1"/>
+			<angle angle="6500" d="1"/>
+			<angle angle="6539" d="1"/>
+			<angle angle="6576" d="1"/>
+			<angle angle="6610" d="1"/>
+			<angle angle="6642" d="1"/>
+			<angle angle="6673" d="1"/>
+			<angle angle="6701" d="1"/>
+			<angle angle="6726" d="1"/>
+			<angle angle="6750" d="1"/>
+			<angle angle="6772" d="1"/>
+			<angle angle="6791" d="1"/>
+			<angle angle="6809" d="1"/>
+			<angle angle="6824" d="1"/>
+			<angle angle="6837" d="1"/>
+			<angle angle="6848" d="1"/>
+			<angle angle="6857" d="1"/>
+			<angle angle="6864" d="1"/>
+			<angle angle="6869" d="1"/>
+			<angle angle="6872" d="1"/>
+			<angle angle="6873" d="1"/>
+			<angle angle="6870" d="1"/>
+			<angle angle="6860" d="1"/>
+			<angle angle="6845" d="1"/>
+			<angle angle="6823" d="1"/>
+			<angle angle="6795" d="1"/>
+			<angle angle="6760" d="1"/>
+			<angle angle="6718" d="1"/>
+			<angle angle="6670" d="1"/>
+			<angle angle="6614" d="1"/>
+			<angle angle="6550" d="1"/>
+			<angle angle="6479" d="1"/>
+			<angle angle="6401" d="1"/>
+			<angle angle="6314" d="1"/>
+			<angle angle="6220" d="1"/>
+			<angle angle="6117" d="1"/>
+			<angle angle="6005" d="1"/>
+			<angle angle="5885" d="1"/>
+			<angle angle="5756" d="1"/>
+			<angle angle="5618" d="1"/>
+			<angle angle="5471" d="1"/>
+			<angle angle="5315" d="1"/>
+			<angle angle="5149" d="1"/>
+			<angle angle="4973" d="1"/>
+			<angle angle="4787" d="1"/>
+			<angle angle="4592" d="1"/>
+			<angle angle="4386" d="1"/>
+			<angle angle="4171" d="1"/>
+			<angle angle="3945" d="1"/>
+			<angle angle="3710" d="1"/>
+			<angle angle="3465" d="1"/>
+			<angle angle="3210" d="1"/>
+			<angle angle="2945" d="1"/>
+			<angle angle="2672" d="1"/>
+			<angle angle="2389" d="1"/>
+			<angle angle="2098" d="1"/>
+			<angle angle="1800" d="1"/>
+			<angle angle="1494" d="1"/>
+			<angle angle="1182" d="1"/>
+			<angle angle="865" d="1"/>
+			<angle angle="544" d="1"/>
+			<angle angle="219" d="1"/>
+			<angle angle="-107" d="1"/>
+			<angle angle="-434" d="1"/>
+			<angle angle="-761" d="1"/>
+			<angle angle="-1084" d="1"/>
+			<angle angle="-1404" d="1"/>
+			<angle angle="-1718" d="1"/>
+			<angle angle="-2025" d="1"/>
+			<angle angle="-2323" d="1"/>
+			<angle angle="-2611" d="1"/>
+			<angle angle="-2888" d="1"/>
+			<angle angle="-3151" d="1"/>
+			<angle angle="-3401" d="1"/>
+			<angle angle="-3636" d="1"/>
+			<angle angle="-3855" d="1"/>
+			<angle angle="-4057" d="1"/>
+			<angle angle="-4243" d="1"/>
+			<angle angle="-4411" d="1"/>
+			<angle angle="-4561" d="1"/>
+			<angle angle="-4693" d="1"/>
+			<angle angle="-4808" d="1"/>
+			<angle angle="-4905" d="1"/>
+			<angle angle="-4984" d="1"/>
+			<angle angle="-5046" d="1"/>
+			<angle angle="-5091" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+		<ruin name="saturn.ruin.2x1.01" i="31521" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="2" offset="21,9" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.ground.01" />
+				<sprite layer="4" sublayer="2" offset="60,9" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.ground.01" />
+				<sprite layer="5" sublayer="2" offset="7,13" ySortOffset="13" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.line.2.anim" />
+				<sprite layer="5" sublayer="2" offset="60,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.line.anim" />
+				<sprite layer="5" sublayer="3" offset="21,50" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" animation="pumpjack.anim" />
+				<sprite layer="5" sublayer="4" offset="21,50" ySortOffset="9" colored="buildings-highlight" attenuated="true" animation="pumpjack.metal.anim" />
+				<sprite layer="5" sublayer="4" offset="21,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.01" />
+				<sprite layer="5" sublayer="4" offset="60,9" ySortOffset="9" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.pumpjack.line.01" />
+				<sprite layer="5" sublayer="5" offset="0,8" ySortOffset="8" attenuated="false" animation="pumpjack.light.anim" />
+		</layers></layers></ruin>
+
+	<animation name="pumpjack.anim">
+		<label id="start"/>
+			<frame i="spriteimage.saturn.ruins.pumpjack.back.01" d="1" />
+			<frame i="spriteimage.saturn.ruins.pumpjack.back.01" d="0" />
+			<angle angle="-5108" d="1"/>
+			<angle angle="-5077" d="1"/>
+			<angle angle="-5026" d="1"/>
+			<angle angle="-4955" d="1"/>
+			<angle angle="-4866" d="1"/>
+			<angle angle="-4759" d="1"/>
+			<angle angle="-4634" d="1"/>
+			<angle angle="-4494" d="1"/>
+			<angle angle="-4337" d="1"/>
+			<angle angle="-4166" d="1"/>
+			<angle angle="-3982" d="1"/>
+			<angle angle="-3785" d="1"/>
+			<angle angle="-3575" d="1"/>
+			<angle angle="-3355" d="1"/>
+			<angle angle="-3126" d="1"/>
+			<angle angle="-2887" d="1"/>
+			<angle angle="-2640" d="1"/>
+			<angle angle="-2386" d="1"/>
+			<angle angle="-2126" d="1"/>
+			<angle angle="-1860" d="1"/>
+			<angle angle="-1591" d="1"/>
+			<angle angle="-1317" d="1"/>
+			<angle angle="-1041" d="1"/>
+			<angle angle="-763" d="1"/>
+			<angle angle="-484" d="1"/>
+			<angle angle="-204" d="1"/>
+			<angle angle="75" d="1"/>
+			<angle angle="354" d="1"/>
+			<angle angle="631" d="1"/>
+			<angle angle="906" d="1"/>
+			<angle angle="1178" d="1"/>
+			<angle angle="1447" d="1"/>
+			<angle angle="1713" d="1"/>
+			<angle angle="1974" d="1"/>
+			<angle angle="2231" d="1"/>
+			<angle angle="2483" d="1"/>
+			<angle angle="2730" d="1"/>
+			<angle angle="2971" d="1"/>
+			<angle angle="3207" d="1"/>
+			<angle angle="3436" d="1"/>
+			<angle angle="3659" d="1"/>
+			<angle angle="3875" d="1"/>
+			<angle angle="4085" d="1"/>
+			<angle angle="4287" d="1"/>
+			<angle angle="4482" d="1"/>
+			<angle angle="4671" d="1"/>
+			<angle angle="4851" d="1"/>
+			<angle angle="5025" d="1"/>
+			<angle angle="5190" d="1"/>
+			<angle angle="5348" d="1"/>
+			<angle angle="5499" d="1"/>
+			<angle angle="5641" d="1"/>
+			<angle angle="5776" d="1"/>
+			<angle angle="5903" d="1"/>
+			<angle angle="6022" d="1"/>
+			<angle angle="6133" d="1"/>
+			<angle angle="6236" d="1"/>
+			<angle angle="6331" d="1"/>
+			<angle angle="6419" d="1"/>
+			<angle angle="6499" d="1"/>
+			<angle angle="6571" d="1"/>
+			<angle angle="6635" d="1"/>
+			<angle angle="6691" d="1"/>
+			<angle angle="6740" d="1"/>
+			<angle angle="6781" d="1"/>
+			<angle angle="6814" d="1"/>
+			<angle angle="6840" d="1"/>
+			<angle angle="6859" d="1"/>
+			<angle angle="6869" d="1"/>
+			<angle angle="6873" d="1"/>
+			<angle angle="6868" d="1"/>
+			<angle angle="6855" d="1"/>
+			<angle angle="6833" d="1"/>
+			<angle angle="6801" d="1"/>
+			<angle angle="6760" d="1"/>
+			<angle angle="6708" d="1"/>
+			<angle angle="6647" d="1"/>
+			<angle angle="6575" d="1"/>
+			<angle angle="6492" d="1"/>
+			<angle angle="6398" d="1"/>
+			<angle angle="6293" d="1"/>
+			<angle angle="6176" d="1"/>
+			<angle angle="6047" d="1"/>
+			<angle angle="5905" d="1"/>
+			<angle angle="5751" d="1"/>
+			<angle angle="5583" d="1"/>
+			<angle angle="5402" d="1"/>
+			<angle angle="5207" d="1"/>
+			<angle angle="4999" d="1"/>
+			<angle angle="4776" d="1"/>
+			<angle angle="4539" d="1"/>
+			<angle angle="4288" d="1"/>
+			<angle angle="4022" d="1"/>
+			<angle angle="3742" d="1"/>
+			<angle angle="3448" d="1"/>
+			<angle angle="3139" d="1"/>
+			<angle angle="2817" d="1"/>
+			<angle angle="2482" d="1"/>
+			<angle angle="2135" d="1"/>
+			<angle angle="1776" d="1"/>
+			<angle angle="1407" d="1"/>
+			<angle angle="1030" d="1"/>
+			<angle angle="645" d="1"/>
+			<angle angle="256" d="1"/>
+			<angle angle="-137" d="1"/>
+			<angle angle="-530" d="1"/>
+			<angle angle="-921" d="1"/>
+			<angle angle="-1308" d="1"/>
+			<angle angle="-1687" d="1"/>
+			<angle angle="-2056" d="1"/>
+			<angle angle="-2413" d="1"/>
+			<angle angle="-2754" d="1"/>
+			<angle angle="-3077" d="1"/>
+			<angle angle="-3381" d="1"/>
+			<angle angle="-3664" d="1"/>
+			<angle angle="-3923" d="1"/>
+			<angle angle="-4158" d="1"/>
+			<angle angle="-4368" d="1"/>
+			<angle angle="-4552" d="1"/>
+			<angle angle="-4711" d="1"/>
+			<angle angle="-4843" d="1"/>
+			<angle angle="-4950" d="1"/>
+			<angle angle="-5031" d="1"/>
+			<angle angle="-5087" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="pumpjack.line.anim">
+		<label id="start"/>
+			<frame i="spriteimage.saturn.ruins.pumpjack.line.back.01" d="1" />
+			<scale xscale="0.4" yscale="0.351" d="1"/>
+			<scale xscale="0.4" yscale="0.351" d="1"/>
+			<scale xscale="0.4" yscale="0.352" d="1"/>
+			<scale xscale="0.4" yscale="0.353" d="1"/>
+			<scale xscale="0.4" yscale="0.354" d="1"/>
+			<scale xscale="0.4" yscale="0.356" d="1"/>
+			<scale xscale="0.4" yscale="0.358" d="1"/>
+			<scale xscale="0.4" yscale="0.36" d="1"/>
+			<scale xscale="0.4" yscale="0.363" d="1"/>
+			<scale xscale="0.4" yscale="0.366" d="1"/>
+			<scale xscale="0.4" yscale="0.369" d="1"/>
+			<scale xscale="0.4" yscale="0.372" d="1"/>
+			<scale xscale="0.4" yscale="0.376" d="1"/>
+			<scale xscale="0.4" yscale="0.38" d="1"/>
+			<scale xscale="0.4" yscale="0.385" d="1"/>
+			<scale xscale="0.4" yscale="0.389" d="1"/>
+			<scale xscale="0.4" yscale="0.394" d="1"/>
+			<scale xscale="0.4" yscale="0.399" d="1"/>
+			<scale xscale="0.4" yscale="0.404" d="1"/>
+			<scale xscale="0.4" yscale="0.41" d="1"/>
+			<scale xscale="0.4" yscale="0.415" d="1"/>
+			<scale xscale="0.4" yscale="0.421" d="1"/>
+			<scale xscale="0.4" yscale="0.427" d="1"/>
+			<scale xscale="0.4" yscale="0.433" d="1"/>
+			<scale xscale="0.4" yscale="0.439" d="1"/>
+			<scale xscale="0.4" yscale="0.446" d="1"/>
+			<scale xscale="0.4" yscale="0.452" d="1"/>
+			<scale xscale="0.4" yscale="0.458" d="1"/>
+			<scale xscale="0.4" yscale="0.465" d="1"/>
+			<scale xscale="0.4" yscale="0.472" d="1"/>
+			<scale xscale="0.4" yscale="0.478" d="1"/>
+			<scale xscale="0.4" yscale="0.485" d="1"/>
+			<scale xscale="0.4" yscale="0.492" d="1"/>
+			<scale xscale="0.4" yscale="0.499" d="1"/>
+			<scale xscale="0.4" yscale="0.506" d="1"/>
+			<scale xscale="0.4" yscale="0.513" d="1"/>
+			<scale xscale="0.4" yscale="0.52" d="1"/>
+			<scale xscale="0.4" yscale="0.526" d="1"/>
+			<scale xscale="0.4" yscale="0.533" d="1"/>
+			<scale xscale="0.4" yscale="0.54" d="1"/>
+			<scale xscale="0.4" yscale="0.547" d="1"/>
+			<scale xscale="0.4" yscale="0.553" d="1"/>
+			<scale xscale="0.4" yscale="0.56" d="1"/>
+			<scale xscale="0.4" yscale="0.567" d="1"/>
+			<scale xscale="0.4" yscale="0.573" d="1"/>
+			<scale xscale="0.4" yscale="0.579" d="1"/>
+			<scale xscale="0.4" yscale="0.586" d="1"/>
+			<scale xscale="0.4" yscale="0.592" d="1"/>
+			<scale xscale="0.4" yscale="0.597" d="1"/>
+			<scale xscale="0.4" yscale="0.603" d="1"/>
+			<scale xscale="0.4" yscale="0.609" d="1"/>
+			<scale xscale="0.4" yscale="0.614" d="1"/>
+			<scale xscale="0.4" yscale="0.619" d="1"/>
+			<scale xscale="0.4" yscale="0.624" d="1"/>
+			<scale xscale="0.4" yscale="0.629" d="1"/>
+			<scale xscale="0.4" yscale="0.634" d="1"/>
+			<scale xscale="0.4" yscale="0.638" d="1"/>
+			<scale xscale="0.4" yscale="0.642" d="1"/>
+			<scale xscale="0.4" yscale="0.646" d="1"/>
+			<scale xscale="0.4" yscale="0.65" d="1"/>
+			<scale xscale="0.4" yscale="0.653" d="1"/>
+			<scale xscale="0.4" yscale="0.656" d="1"/>
+			<scale xscale="0.4" yscale="0.659" d="1"/>
+			<scale xscale="0.4" yscale="0.661" d="1"/>
+			<scale xscale="0.4" yscale="0.663" d="1"/>
+			<scale xscale="0.4" yscale="0.665" d="1"/>
+			<scale xscale="0.4" yscale="0.666" d="1"/>
+			<scale xscale="0.4" yscale="0.667" d="1"/>
+			<scale xscale="0.4" yscale="0.667" d="1"/>
+			<scale xscale="0.4" yscale="0.668" d="1"/>
+			<scale xscale="0.4" yscale="0.667" d="1"/>
+			<scale xscale="0.4" yscale="0.666" d="1"/>
+			<scale xscale="0.4" yscale="0.665" d="1"/>
+			<scale xscale="0.4" yscale="0.663" d="1"/>
+			<scale xscale="0.4" yscale="0.66" d="1"/>
+			<scale xscale="0.4" yscale="0.657" d="1"/>
+			<scale xscale="0.4" yscale="0.654" d="1"/>
+			<scale xscale="0.4" yscale="0.649" d="1"/>
+			<scale xscale="0.4" yscale="0.645" d="1"/>
+			<scale xscale="0.4" yscale="0.64" d="1"/>
+			<scale xscale="0.4" yscale="0.635" d="1"/>
+			<scale xscale="0.4" yscale="0.629" d="1"/>
+			<scale xscale="0.4" yscale="0.623" d="1"/>
+			<scale xscale="0.4" yscale="0.617" d="1"/>
+			<scale xscale="0.4" yscale="0.61" d="1"/>
+			<scale xscale="0.4" yscale="0.603" d="1"/>
+			<scale xscale="0.4" yscale="0.596" d="1"/>
+			<scale xscale="0.4" yscale="0.588" d="1"/>
+			<scale xscale="0.4" yscale="0.58" d="1"/>
+			<scale xscale="0.4" yscale="0.572" d="1"/>
+			<scale xscale="0.4" yscale="0.564" d="1"/>
+			<scale xscale="0.4" yscale="0.556" d="1"/>
+			<scale xscale="0.4" yscale="0.548" d="1"/>
+			<scale xscale="0.4" yscale="0.539" d="1"/>
+			<scale xscale="0.4" yscale="0.531" d="1"/>
+			<scale xscale="0.4" yscale="0.522" d="1"/>
+			<scale xscale="0.4" yscale="0.514" d="1"/>
+			<scale xscale="0.4" yscale="0.505" d="1"/>
+			<scale xscale="0.4" yscale="0.496" d="1"/>
+			<scale xscale="0.4" yscale="0.488" d="1"/>
+			<scale xscale="0.4" yscale="0.479" d="1"/>
+			<scale xscale="0.4" yscale="0.471" d="1"/>
+			<scale xscale="0.4" yscale="0.462" d="1"/>
+			<scale xscale="0.4" yscale="0.454" d="1"/>
+			<scale xscale="0.4" yscale="0.446" d="1"/>
+			<scale xscale="0.4" yscale="0.438" d="1"/>
+			<scale xscale="0.4" yscale="0.43" d="1"/>
+			<scale xscale="0.4" yscale="0.423" d="1"/>
+			<scale xscale="0.4" yscale="0.416" d="1"/>
+			<scale xscale="0.4" yscale="0.409" d="1"/>
+			<scale xscale="0.4" yscale="0.402" d="1"/>
+			<scale xscale="0.4" yscale="0.396" d="1"/>
+			<scale xscale="0.4" yscale="0.39" d="1"/>
+			<scale xscale="0.4" yscale="0.384" d="1"/>
+			<scale xscale="0.4" yscale="0.378" d="1"/>
+			<scale xscale="0.4" yscale="0.374" d="1"/>
+			<scale xscale="0.4" yscale="0.369" d="1"/>
+			<scale xscale="0.4" yscale="0.365" d="1"/>
+			<scale xscale="0.4" yscale="0.361" d="1"/>
+			<scale xscale="0.4" yscale="0.358" d="1"/>
+			<scale xscale="0.4" yscale="0.356" d="1"/>
+			<scale xscale="0.4" yscale="0.354" d="1"/>
+			<scale xscale="0.4" yscale="0.352" d="1"/>
+			<scale xscale="0.4" yscale="0.351" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="pumpjack.line.2.anim">
+		<label id="start"/>
+			<frame i="spriteimage.saturn.ruins.pumpjack.line.back.01" d="1" />
+			<scale xscale="0.5" yscale="0.56" d="1"/>
+			<scale xscale="0.5" yscale="0.56" d="1"/>
+			<scale xscale="0.5" yscale="0.559" d="1"/>
+			<scale xscale="0.5" yscale="0.558" d="1"/>
+			<scale xscale="0.5" yscale="0.557" d="1"/>
+			<scale xscale="0.5" yscale="0.556" d="1"/>
+			<scale xscale="0.5" yscale="0.555" d="1"/>
+			<scale xscale="0.5" yscale="0.553" d="1"/>
+			<scale xscale="0.5" yscale="0.552" d="1"/>
+			<scale xscale="0.5" yscale="0.55" d="1"/>
+			<scale xscale="0.5" yscale="0.548" d="1"/>
+			<scale xscale="0.5" yscale="0.546" d="1"/>
+			<scale xscale="0.5" yscale="0.543" d="1"/>
+			<scale xscale="0.5" yscale="0.541" d="1"/>
+			<scale xscale="0.5" yscale="0.538" d="1"/>
+			<scale xscale="0.5" yscale="0.536" d="1"/>
+			<scale xscale="0.5" yscale="0.533" d="1"/>
+			<scale xscale="0.5" yscale="0.53" d="1"/>
+			<scale xscale="0.5" yscale="0.527" d="1"/>
+			<scale xscale="0.5" yscale="0.524" d="1"/>
+			<scale xscale="0.5" yscale="0.52" d="1"/>
+			<scale xscale="0.5" yscale="0.517" d="1"/>
+			<scale xscale="0.5" yscale="0.514" d="1"/>
+			<scale xscale="0.5" yscale="0.51" d="1"/>
+			<scale xscale="0.5" yscale="0.507" d="1"/>
+			<scale xscale="0.5" yscale="0.503" d="1"/>
+			<scale xscale="0.5" yscale="0.499" d="1"/>
+			<scale xscale="0.5" yscale="0.496" d="1"/>
+			<scale xscale="0.5" yscale="0.492" d="1"/>
+			<scale xscale="0.5" yscale="0.488" d="1"/>
+			<scale xscale="0.5" yscale="0.484" d="1"/>
+			<scale xscale="0.5" yscale="0.48" d="1"/>
+			<scale xscale="0.5" yscale="0.476" d="1"/>
+			<scale xscale="0.5" yscale="0.472" d="1"/>
+			<scale xscale="0.5" yscale="0.469" d="1"/>
+			<scale xscale="0.5" yscale="0.465" d="1"/>
+			<scale xscale="0.5" yscale="0.461" d="1"/>
+			<scale xscale="0.5" yscale="0.457" d="1"/>
+			<scale xscale="0.5" yscale="0.453" d="1"/>
+			<scale xscale="0.5" yscale="0.449" d="1"/>
+			<scale xscale="0.5" yscale="0.445" d="1"/>
+			<scale xscale="0.5" yscale="0.441" d="1"/>
+			<scale xscale="0.5" yscale="0.438" d="1"/>
+			<scale xscale="0.5" yscale="0.434" d="1"/>
+			<scale xscale="0.5" yscale="0.43" d="1"/>
+			<scale xscale="0.5" yscale="0.427" d="1"/>
+			<scale xscale="0.5" yscale="0.423" d="1"/>
+			<scale xscale="0.5" yscale="0.42" d="1"/>
+			<scale xscale="0.5" yscale="0.417" d="1"/>
+			<scale xscale="0.5" yscale="0.413" d="1"/>
+			<scale xscale="0.5" yscale="0.41" d="1"/>
+			<scale xscale="0.5" yscale="0.407" d="1"/>
+			<scale xscale="0.5" yscale="0.404" d="1"/>
+			<scale xscale="0.5" yscale="0.401" d="1"/>
+			<scale xscale="0.5" yscale="0.399" d="1"/>
+			<scale xscale="0.5" yscale="0.396" d="1"/>
+			<scale xscale="0.5" yscale="0.394" d="1"/>
+			<scale xscale="0.5" yscale="0.391" d="1"/>
+			<scale xscale="0.5" yscale="0.389" d="1"/>
+			<scale xscale="0.5" yscale="0.387" d="1"/>
+			<scale xscale="0.5" yscale="0.385" d="1"/>
+			<scale xscale="0.5" yscale="0.384" d="1"/>
+			<scale xscale="0.5" yscale="0.382" d="1"/>
+			<scale xscale="0.5" yscale="0.381" d="1"/>
+			<scale xscale="0.5" yscale="0.38" d="1"/>
+			<scale xscale="0.5" yscale="0.379" d="1"/>
+			<scale xscale="0.5" yscale="0.378" d="1"/>
+			<scale xscale="0.5" yscale="0.378" d="1"/>
+			<scale xscale="0.5" yscale="0.377" d="1"/>
+			<scale xscale="0.5" yscale="0.377" d="1"/>
+			<scale xscale="0.5" yscale="0.377" d="1"/>
+			<scale xscale="0.5" yscale="0.378" d="1"/>
+			<scale xscale="0.5" yscale="0.379" d="1"/>
+			<scale xscale="0.5" yscale="0.38" d="1"/>
+			<scale xscale="0.5" yscale="0.381" d="1"/>
+			<scale xscale="0.5" yscale="0.383" d="1"/>
+			<scale xscale="0.5" yscale="0.385" d="1"/>
+			<scale xscale="0.5" yscale="0.388" d="1"/>
+			<scale xscale="0.5" yscale="0.39" d="1"/>
+			<scale xscale="0.5" yscale="0.393" d="1"/>
+			<scale xscale="0.5" yscale="0.396" d="1"/>
+			<scale xscale="0.5" yscale="0.399" d="1"/>
+			<scale xscale="0.5" yscale="0.403" d="1"/>
+			<scale xscale="0.5" yscale="0.407" d="1"/>
+			<scale xscale="0.5" yscale="0.41" d="1"/>
+			<scale xscale="0.5" yscale="0.415" d="1"/>
+			<scale xscale="0.5" yscale="0.419" d="1"/>
+			<scale xscale="0.5" yscale="0.423" d="1"/>
+			<scale xscale="0.5" yscale="0.427" d="1"/>
+			<scale xscale="0.5" yscale="0.432" d="1"/>
+			<scale xscale="0.5" yscale="0.437" d="1"/>
+			<scale xscale="0.5" yscale="0.441" d="1"/>
+			<scale xscale="0.5" yscale="0.446" d="1"/>
+			<scale xscale="0.5" yscale="0.451" d="1"/>
+			<scale xscale="0.5" yscale="0.456" d="1"/>
+			<scale xscale="0.5" yscale="0.461" d="1"/>
+			<scale xscale="0.5" yscale="0.466" d="1"/>
+			<scale xscale="0.5" yscale="0.471" d="1"/>
+			<scale xscale="0.5" yscale="0.476" d="1"/>
+			<scale xscale="0.5" yscale="0.481" d="1"/>
+			<scale xscale="0.5" yscale="0.486" d="1"/>
+			<scale xscale="0.5" yscale="0.491" d="1"/>
+			<scale xscale="0.5" yscale="0.496" d="1"/>
+			<scale scale="0.5" d="1"/>
+			<scale xscale="0.5" yscale="0.505" d="1"/>
+			<scale xscale="0.5" yscale="0.51" d="1"/>
+			<scale xscale="0.5" yscale="0.514" d="1"/>
+			<scale xscale="0.5" yscale="0.518" d="1"/>
+			<scale xscale="0.5" yscale="0.523" d="1"/>
+			<scale xscale="0.5" yscale="0.527" d="1"/>
+			<scale xscale="0.5" yscale="0.53" d="1"/>
+			<scale xscale="0.5" yscale="0.534" d="1"/>
+			<scale xscale="0.5" yscale="0.538" d="1"/>
+			<scale xscale="0.5" yscale="0.541" d="1"/>
+			<scale xscale="0.5" yscale="0.544" d="1"/>
+			<scale xscale="0.5" yscale="0.547" d="1"/>
+			<scale xscale="0.5" yscale="0.55" d="1"/>
+			<scale xscale="0.5" yscale="0.552" d="1"/>
+			<scale xscale="0.5" yscale="0.554" d="1"/>
+			<scale xscale="0.5" yscale="0.556" d="1"/>
+			<scale xscale="0.5" yscale="0.557" d="1"/>
+			<scale xscale="0.5" yscale="0.558" d="1"/>
+			<scale xscale="0.5" yscale="0.559" d="1"/>
+			<scale xscale="0.5" yscale="0.56" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="pumpjack.metal.anim">
+		<label id="start"/>
+			<frame i="spriteimage.saturn.ruins.pumpjack.top.01" d="1" />
+			<angle angle="-5108" d="1"/>
+			<angle angle="-5077" d="1"/>
+			<angle angle="-5026" d="1"/>
+			<angle angle="-4955" d="1"/>
+			<angle angle="-4866" d="1"/>
+			<angle angle="-4759" d="1"/>
+			<angle angle="-4634" d="1"/>
+			<angle angle="-4494" d="1"/>
+			<angle angle="-4337" d="1"/>
+			<angle angle="-4166" d="1"/>
+			<angle angle="-3982" d="1"/>
+			<angle angle="-3785" d="1"/>
+			<angle angle="-3575" d="1"/>
+			<angle angle="-3355" d="1"/>
+			<angle angle="-3126" d="1"/>
+			<angle angle="-2887" d="1"/>
+			<angle angle="-2640" d="1"/>
+			<angle angle="-2386" d="1"/>
+			<angle angle="-2126" d="1"/>
+			<angle angle="-1860" d="1"/>
+			<angle angle="-1591" d="1"/>
+			<angle angle="-1317" d="1"/>
+			<angle angle="-1041" d="1"/>
+			<angle angle="-763" d="1"/>
+			<angle angle="-484" d="1"/>
+			<angle angle="-204" d="1"/>
+			<angle angle="75" d="1"/>
+			<angle angle="354" d="1"/>
+			<angle angle="631" d="1"/>
+			<angle angle="906" d="1"/>
+			<angle angle="1178" d="1"/>
+			<angle angle="1447" d="1"/>
+			<angle angle="1713" d="1"/>
+			<angle angle="1974" d="1"/>
+			<angle angle="2231" d="1"/>
+			<angle angle="2483" d="1"/>
+			<angle angle="2730" d="1"/>
+			<angle angle="2971" d="1"/>
+			<angle angle="3207" d="1"/>
+			<angle angle="3436" d="1"/>
+			<angle angle="3659" d="1"/>
+			<angle angle="3875" d="1"/>
+			<angle angle="4085" d="1"/>
+			<angle angle="4287" d="1"/>
+			<angle angle="4482" d="1"/>
+			<angle angle="4671" d="1"/>
+			<angle angle="4851" d="1"/>
+			<angle angle="5025" d="1"/>
+			<angle angle="5190" d="1"/>
+			<angle angle="5348" d="1"/>
+			<angle angle="5499" d="1"/>
+			<angle angle="5641" d="1"/>
+			<angle angle="5776" d="1"/>
+			<angle angle="5903" d="1"/>
+			<angle angle="6022" d="1"/>
+			<angle angle="6133" d="1"/>
+			<angle angle="6236" d="1"/>
+			<angle angle="6331" d="1"/>
+			<angle angle="6419" d="1"/>
+			<angle angle="6499" d="1"/>
+			<angle angle="6571" d="1"/>
+			<angle angle="6635" d="1"/>
+			<angle angle="6691" d="1"/>
+			<angle angle="6740" d="1"/>
+			<angle angle="6781" d="1"/>
+			<angle angle="6814" d="1"/>
+			<angle angle="6840" d="1"/>
+			<angle angle="6859" d="1"/>
+			<angle angle="6869" d="1"/>
+			<angle angle="6873" d="1"/>
+			<angle angle="6868" d="1"/>
+			<angle angle="6855" d="1"/>
+			<angle angle="6833" d="1"/>
+			<angle angle="6801" d="1"/>
+			<angle angle="6760" d="1"/>
+			<angle angle="6708" d="1"/>
+			<angle angle="6647" d="1"/>
+			<angle angle="6575" d="1"/>
+			<angle angle="6492" d="1"/>
+			<angle angle="6398" d="1"/>
+			<angle angle="6293" d="1"/>
+			<angle angle="6176" d="1"/>
+			<angle angle="6047" d="1"/>
+			<angle angle="5905" d="1"/>
+			<angle angle="5751" d="1"/>
+			<angle angle="5583" d="1"/>
+			<angle angle="5402" d="1"/>
+			<angle angle="5207" d="1"/>
+			<angle angle="4999" d="1"/>
+			<angle angle="4776" d="1"/>
+			<angle angle="4539" d="1"/>
+			<angle angle="4288" d="1"/>
+			<angle angle="4022" d="1"/>
+			<angle angle="3742" d="1"/>
+			<angle angle="3448" d="1"/>
+			<angle angle="3139" d="1"/>
+			<angle angle="2817" d="1"/>
+			<angle angle="2482" d="1"/>
+			<angle angle="2135" d="1"/>
+			<angle angle="1776" d="1"/>
+			<angle angle="1407" d="1"/>
+			<angle angle="1030" d="1"/>
+			<angle angle="645" d="1"/>
+			<angle angle="256" d="1"/>
+			<angle angle="-137" d="1"/>
+			<angle angle="-530" d="1"/>
+			<angle angle="-921" d="1"/>
+			<angle angle="-1308" d="1"/>
+			<angle angle="-1687" d="1"/>
+			<angle angle="-2056" d="1"/>
+			<angle angle="-2413" d="1"/>
+			<angle angle="-2754" d="1"/>
+			<angle angle="-3077" d="1"/>
+			<angle angle="-3381" d="1"/>
+			<angle angle="-3664" d="1"/>
+			<angle angle="-3923" d="1"/>
+			<angle angle="-4158" d="1"/>
+			<angle angle="-4368" d="1"/>
+			<angle angle="-4552" d="1"/>
+			<angle angle="-4711" d="1"/>
+			<angle angle="-4843" d="1"/>
+			<angle angle="-4950" d="1"/>
+			<angle angle="-5031" d="1"/>
+			<angle angle="-5087" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="pumpjack.light.anim">
+		<label id="start"/>
+			<frame i="spriteimage.building.light.red.5px.04" d="38" />
+			<animcolor a="255" d="2"/>
+			<frame i="spriteimage.building.light.red.5px.04" d="3" />
+			<frame i="spriteimage.building.light.red.5px.03" d="2" />
+			<frame i="spriteimage.building.light.red.5px.02" d="2" />
+			<frame i="spriteimage.building.light.red.5px.01" d="2" />
+			<frame i="spriteimage.building.light.red.5px.01" d="20" />
+			<frame i="spriteimage.building.light.red.5px.01" d="6" />
+			<frame i="spriteimage.building.light.red.5px.02" d="5" />
+			<frame i="spriteimage.building.light.red.5px.03" d="6" />
+			<frame i="spriteimage.building.light.red.5px.04" d="5" />
+			<frame i="spriteimage.building.light.red.5px.04" d="4" />
+			<animcolor a="255" d="1"/>
+			<animcolor a="253" d="1"/>
+			<animcolor a="251" d="1"/>
+			<animcolor a="247" d="1"/>
+			<animcolor a="243" d="1"/>
+			<animcolor a="237" d="1"/>
+			<animcolor a="230" d="1"/>
+			<animcolor a="223" d="1"/>
+			<animcolor a="214" d="1"/>
+			<animcolor a="204" d="1"/>
+			<animcolor a="193" d="1"/>
+			<animcolor a="181" d="1"/>
+			<animcolor a="169" d="1"/>
+			<animcolor a="156" d="1"/>
+			<animcolor a="142" d="1"/>
+			<animcolor a="128" d="1"/>
+			<animcolor a="114" d="1"/>
+			<animcolor a="100" d="1"/>
+			<animcolor a="86" d="1"/>
+			<animcolor a="73" d="1"/>
+			<animcolor a="61" d="1"/>
+			<animcolor a="49" d="1"/>
+			<animcolor a="39" d="1"/>
+			<animcolor a="30" d="1"/>
+			<animcolor a="22" d="1"/>
+			<animcolor a="15" d="1"/>
+			<animcolor a="10" d="1"/>
+			<animcolor a="5" d="1"/>
+			<animcolor a="2" d="1"/>
+			<animcolor a="1" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+		<ruin name="saturn.ruin.2x1.12" i="31522" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="28,12"  />
+				<sprite layer="4" sublayer="0" offset="12,23" ySortOffset="23" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.05" />
+				<sprite layer="4" sublayer="0" offset="38,14" ySortOffset="14" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.08" />
+				<sprite layer="4" sublayer="0" offset="80,-446" ySortOffset="-446" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.05" />
+				<sprite layer="4" sublayer="1" offset="12,23" ySortOffset="23" colored="water" attenuated="true" image="spriteimage.pool.small.05" />
+				<sprite layer="4" sublayer="1" offset="38,14" ySortOffset="14" colored="water" attenuated="true" image="spriteimage.pool.medium.08" />
+				<sprite layer="4" sublayer="1" offset="80,-446" ySortOffset="-446" colored="water" attenuated="true" image="spriteimage.pool.small.05" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x1.13" i="31523" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="17,17"  />
+				<sprite layer="4" sublayer="0" offset="27,20" ySortOffset="20" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.09" />
+				<sprite layer="4" sublayer="0" offset="52,8" ySortOffset="8" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.08" />
+				<sprite layer="4" sublayer="1" offset="27,20" ySortOffset="20" colored="water" attenuated="true" image="spriteimage.pool.medium.09" />
+				<sprite layer="4" sublayer="1" offset="52,8" ySortOffset="8" colored="water" attenuated="true" image="spriteimage.pool.small.08" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x1.14" i="31524" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="17,11"  />
+				<sprite layer="4" sublayer="0" offset="53,24" ySortOffset="24" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.07" />
+				<sprite layer="4" sublayer="0" offset="24,13" ySortOffset="13" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.07" />
+				<sprite layer="4" sublayer="1" offset="53,24" ySortOffset="24" colored="water" attenuated="true" image="spriteimage.pool.small.07" />
+				<sprite layer="4" sublayer="1" offset="24,13" ySortOffset="13" colored="water" attenuated="true" image="spriteimage.pool.medium.07" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.2x1.15" i="31525" layer="2" ruin="true" width="2" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="34,18"  />
+				<sprite layer="4" sublayer="0" offset="41,20" ySortOffset="20" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.07" />
+				<sprite layer="4" sublayer="0" offset="12,12" ySortOffset="12" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.06" />
+				<sprite layer="4" sublayer="1" offset="41,20" ySortOffset="20" colored="water" attenuated="true" image="spriteimage.pool.medium.07" />
+				<sprite layer="4" sublayer="1" offset="12,12" ySortOffset="12" colored="water" attenuated="true" image="spriteimage.pool.small.06" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x1.01" i="31526" layer="2" ruin="true" width="3" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="18,17"  />
+				<sprite layer="4" sublayer="0" offset="28,19" ySortOffset="19" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.10" />
+				<sprite layer="4" sublayer="0" offset="74,11" ySortOffset="11" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.05" />
+				<sprite layer="4" sublayer="1" offset="28,19" ySortOffset="19" colored="water" attenuated="true" image="spriteimage.pool.medium.10" />
+				<sprite layer="4" sublayer="1" offset="74,11" ySortOffset="11" colored="water" attenuated="true" image="spriteimage.pool.medium.05" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x1.02" i="31527" layer="2" ruin="true" width="3" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="58,16"  />
+				<sprite layer="4" sublayer="0" offset="28,24" ySortOffset="24" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.02" />
+				<sprite layer="4" sublayer="0" offset="69,19" ySortOffset="19" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.09" />
+				<sprite layer="4" sublayer="0" offset="27,9" ySortOffset="9" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="1" offset="28,24" ySortOffset="24" colored="water" attenuated="true" image="spriteimage.pool.small.02" />
+				<sprite layer="4" sublayer="1" offset="69,19" ySortOffset="19" colored="water" attenuated="true" image="spriteimage.pool.medium.09" />
+				<sprite layer="4" sublayer="1" offset="27,9" ySortOffset="9" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x1.03" i="31528" layer="2" ruin="true" width="3" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="29,13"  />
+				<sprite layer="4" sublayer="0" offset="11,24" ySortOffset="24" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="0" offset="74,19" ySortOffset="19" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.03" />
+				<sprite layer="4" sublayer="0" offset="36,15" ySortOffset="15" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.07" />
+				<sprite layer="4" sublayer="1" offset="11,24" ySortOffset="24" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="1" offset="74,19" ySortOffset="19" colored="water" attenuated="true" image="spriteimage.pool.medium.03" />
+				<sprite layer="4" sublayer="1" offset="36,15" ySortOffset="15" colored="water" attenuated="true" image="spriteimage.pool.medium.07" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x1.04" i="31529" layer="2" ruin="true" width="3" height="1" bulletThrough="true"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="53,12"  />
+				<sprite layer="4" sublayer="0" offset="85,25" ySortOffset="25" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.07" />
+				<sprite layer="4" sublayer="0" offset="16,16" ySortOffset="16" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.01" />
+				<sprite layer="4" sublayer="0" offset="60,14" ySortOffset="14" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.07" />
+				<sprite layer="4" sublayer="1" offset="85,25" ySortOffset="25" colored="water" attenuated="true" image="spriteimage.pool.small.07" />
+				<sprite layer="4" sublayer="1" offset="16,16" ySortOffset="16" colored="water" attenuated="true" image="spriteimage.pool.medium.01" />
+				<sprite layer="4" sublayer="1" offset="60,14" ySortOffset="14" colored="water" attenuated="true" image="spriteimage.pool.medium.07" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x1.05" i="31530" layer="2" ruin="true" width="3" height="1" bThruMap="011"><layers><layers scale="0.5">
+ 				<sprite layer="4" sublayer="0" offset="27,21" ySortOffset="21" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.03" />
+				<sprite layer="4" sublayer="0" offset="10,8" ySortOffset="8" colored="pool-in" attenuated="true" image="spriteimage.pool.small.back.04" />
+				<sprite layer="4" sublayer="1" offset="27,21" ySortOffset="21" colored="water" attenuated="true" image="spriteimage.pool.medium.03" />
+				<sprite layer="4" sublayer="1" offset="10,8" ySortOffset="8" colored="water" attenuated="true" image="spriteimage.pool.small.04" />
+				<sprite layer="4" sublayer="2" offset="44,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.06" />
+				<sprite layer="4" sublayer="2" offset="75,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.03" />
+				<sprite layer="5" sublayer="4" offset="44,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.06" />
+				<sprite layer="5" sublayer="4" offset="75,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.03" />
+				<sprite layer="5" sublayer="5" offset="44,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.06" />
+				<sprite layer="5" sublayer="5" offset="75,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.03" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x1.06" i="31531" layer="2" ruin="true" width="3" height="1" bThruMap="011"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="37,0" ySortOffset="36"  />
+				<sprite layer="4" sublayer="0" offset="20,19" ySortOffset="19" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.05" />
+				<sprite layer="4" sublayer="1" offset="20,19" ySortOffset="19" colored="water" attenuated="true" image="spriteimage.pool.medium.05" />
+				<sprite layer="4" sublayer="2" offset="44,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.11" />
+				<sprite layer="4" sublayer="2" offset="76,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.01" />
+				<sprite layer="5" sublayer="4" offset="76,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.01" />
+				<sprite layer="5" sublayer="4" offset="44,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.11" />
+				<sprite layer="5" sublayer="5" offset="76,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.01" />
+				<sprite layer="5" sublayer="5" offset="44,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.01" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x1.07" i="31532" layer="2" ruin="true" width="3" height="1" bThruMap="101"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="55,0" ySortOffset="7"  />
+				<sprite layer="4" sublayer="2" offset="81,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.10" />
+				<sprite layer="4" sublayer="2" offset="35,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.12" />
+				<sprite layer="4" sublayer="2" offset="11,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.04" />
+				<sprite layer="5" sublayer="4" offset="35,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.12" />
+				<sprite layer="5" sublayer="4" offset="11,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.04" />
+				<sprite layer="5" sublayer="4" offset="81,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.10" />
+				<sprite layer="5" sublayer="5" offset="35,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+				<sprite layer="5" sublayer="5" offset="81,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.02" />
+				<sprite layer="5" sublayer="5" offset="11,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.04" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x1.08" i="31533" layer="2" ruin="true" width="3" height="1" bThruMap="010"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.emitter" offset="19,18"  />
+				<sprite layer="4" sublayer="0" offset="26,20" ySortOffset="20" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.07" />
+				<sprite layer="4" sublayer="0" offset="69,18" ySortOffset="18" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="1" offset="26,20" ySortOffset="20" colored="water" attenuated="true" image="spriteimage.pool.medium.07" />
+				<sprite layer="4" sublayer="1" offset="69,18" ySortOffset="18" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+				<sprite layer="4" sublayer="2" offset="47,3" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.02" />
+				<sprite layer="5" sublayer="4" offset="47,3" ySortOffset="3" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.02" />
+				<sprite layer="5" sublayer="5" offset="47,3" ySortOffset="3" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.02" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x2.05" i="31534" layer="2" ruin="true" width="3" height="2" bThruMap="001000"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.large.emitter" offset="46,42"  />
+				<sprite layer="4" sublayer="0" offset="13,56" ySortOffset="56" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.01" />
+				<sprite layer="4" sublayer="0" offset="62,42" ySortOffset="42" colored="pool-in" attenuated="true" image="spriteimage.pool.large.back.01" />
+				<sprite layer="4" sublayer="0" offset="31,15" ySortOffset="15" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.04" />
+				<sprite layer="4" sublayer="1" offset="13,56" ySortOffset="56" colored="water" attenuated="true" image="spriteimage.pool.medium.01" />
+				<sprite layer="4" sublayer="1" offset="62,42" ySortOffset="42" colored="water" attenuated="true" image="spriteimage.pool.large.01" />
+				<sprite layer="4" sublayer="1" offset="31,15" ySortOffset="15" colored="water" attenuated="true" image="spriteimage.pool.medium.04" />
+				<sprite layer="4" sublayer="2" offset="74,7" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.08" />
+				<sprite layer="5" sublayer="4" offset="74,7" ySortOffset="7" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.08" />
+				<sprite layer="5" sublayer="5" offset="74,7" ySortOffset="7" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.03" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x2.06" i="31535" layer="2" ruin="true" width="3" height="2" bThruMap="000001"><layers><layers scale="0.5">
+ 				<emitter emitter="ruins.inside.fire.emitter" offset="77,0" ySortOffset="61"  />
+				<emitter emitter="pool.bubble.large.emitter" offset="36,19"  />
+				<sprite layer="4" sublayer="0" offset="27,47" ySortOffset="47" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.05" />
+				<sprite layer="4" sublayer="0" offset="52,20" ySortOffset="20" colored="pool-in" attenuated="true" image="spriteimage.pool.large.back.02" />
+				<sprite layer="4" sublayer="1" offset="27,47" ySortOffset="47" colored="water" attenuated="true" image="spriteimage.pool.medium.05" />
+				<sprite layer="4" sublayer="1" offset="52,20" ySortOffset="20" colored="water" attenuated="true" image="spriteimage.pool.large.02" />
+				<sprite layer="4" sublayer="2" offset="76,45" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.05" />
+				<sprite layer="5" sublayer="4" offset="76,45" ySortOffset="45" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.05" />
+				<sprite layer="5" sublayer="5" offset="76,45" ySortOffset="45" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.05" />
+		</layers></layers></ruin>
+
+		<ruin name="saturn.ruin.3x2.07" i="31536" layer="2" ruin="true" width="3" height="2" bThruMap="100000"><layers><layers scale="0.5">
+ 				<emitter emitter="pool.bubble.large.emitter" offset="19,39"  />
+				<emitter emitter="pool.bubble.emitter" offset="66,9"  />
+				<sprite layer="4" sublayer="0" offset="79,51" ySortOffset="51" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.06" />
+				<sprite layer="4" sublayer="0" offset="34,39" ySortOffset="39" colored="pool-in" attenuated="true" image="spriteimage.pool.large.back.03" />
+				<sprite layer="4" sublayer="0" offset="73,10" ySortOffset="10" colored="pool-in" attenuated="true" image="spriteimage.pool.medium.back.07" />
+				<sprite layer="4" sublayer="1" offset="79,51" ySortOffset="51" colored="water" attenuated="true" image="spriteimage.pool.medium.06" />
+				<sprite layer="4" sublayer="1" offset="34,39" ySortOffset="39" colored="water" attenuated="true" image="spriteimage.pool.large.03" />
+				<sprite layer="4" sublayer="1" offset="73,10" ySortOffset="10" colored="water" attenuated="true" image="spriteimage.pool.medium.07" />
+				<sprite layer="4" sublayer="2" offset="19,6" colored="shadow" attenuated="true" image="spriteimage.saturn.ruins.silo.ground.02" />
+				<sprite layer="5" sublayer="4" offset="19,6" ySortOffset="6" bottomColored="floor-fog" topColored="ruins" attenuated="true" image="spriteimage.saturn.ruins.silo.02" />
+				<sprite layer="5" sublayer="5" offset="19,6" ySortOffset="6" colored="buildings-alt" attenuated="false" image="spriteimage.saturn.ruins.silo.top.02" />
+		</layers></layers></ruin>
+
+</resources>

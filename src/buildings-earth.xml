@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Earth Buildings -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+
+	<animation name="earth.base.radar.animation">
+		<frame i="spriteimage.earth.base.radar.01" d="4"/>
+		<frame i="spriteimage.earth.base.radar.02" d="4"/>
+		<frame i="spriteimage.earth.base.radar.03" d="4"/>
+		<frame i="spriteimage.earth.base.radar.04" d="4"/>
+		<frame i="spriteimage.earth.base.radar.05" d="4"/>
+		<frame i="spriteimage.earth.base.radar.06" d="4"/>
+		<frame i="spriteimage.earth.base.radar.07" d="4"/>
+		<frame i="spriteimage.earth.base.radar.08" d="4"/>
+		<frame i="spriteimage.earth.base.radar.09" d="4"/>
+		<frame i="spriteimage.earth.base.radar.10" d="4"/>
+		<goto seq="0"/>
+	</animation>
+	
+	<animation name="earth.base.sweep.glow.animation">
+		<frame i="spriteimage.earth.base.sweep.glow.01" d="30" />
+		<frame i="spriteimage.earth.base.sweep.glow.02" d="4"/>
+		<frame i="spriteimage.earth.base.sweep.glow.03" d="4"/>
+		<frame i="spriteimage.earth.base.sweep.glow.04" d="4"/>				
+		<frame i="spriteimage.earth.base.sweep.glow.05" d="30"/>					
+		<frame i="spriteimage.earth.base.sweep.glow.06" d="4"/>
+		<frame i="spriteimage.earth.base.sweep.glow.07" d="4"/>
+		<frame i="spriteimage.earth.base.sweep.glow.08" d="4"/>
+		<goto seq="0"/>
+	</animation>	
+	
+	<animation name="earth.base.glow.1.animation">
+		<frame i="spriteimage.earth.base.glow.01" d="12"/>
+	</animation>
+	<!-- <animation name="earth.base.glow.2.animation">
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.earth.base.glow.05" d="25"/>
+		<frame i="spriteimage.earth.base.glow.06" d="2"/>
+		<frame i="spriteimage.earth.base.glow.07" d="3"/>
+		<frame i="spriteimage.earth.base.glow.08" d="4"/>
+		<alpha alpha="128" d="6"/>
+		<alpha alpha="64" d="8"/>
+		<alpha alpha="32" d="50"/>
+		<goto seq="0"/>
+	</animation> -->	
+
+	<animation name="earth.base.dead.animation">
+		<frame i="spriteimage.earth.base.02" d="0"/>
+		<frame i="building.5x5.dead.anim" d="1"/>
+	</animation>	
+	<animation name="earth.base.dead.ground.animation">
+		<frame i="spriteimage.earth.base.ground.01" d="0"/>
+		<frame i="building.5x5.dead.misc.anim" d="1"/>
+	</animation>	
+
+
+
+
+	<instance
+		class="worm.buildings.BaseBuildingFeature"
+		name="building.earth.base"
+		inherit="base.building.spec"
+		floor="6.0"
+		offset="=$5x5offsetX,$5x5offsetY"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.5x5.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.earth.base.ground.01"/>				
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.earth.base.back.01"/>
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="true" colored="buildings" animation="earth.base.radar.animation"/>		
+				<emitter offset="85,10" ySortOffset="85" emitter="steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.earth.base.01"/>		
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.earth.base.top.01"/>
+				
+				<sprite layer="5" sublayer="5" offset="0,0" animation="earth.base.sweep.glow.animation"/>
+				<sprite layer="5" sublayer="5" offset="0,0" animation="earth.base.glow.1.animation"/>
+				<sprite layer="5" sublayer="5" offset="7,79" animation="building.light.white.7px.blink.animation"/>
+				<sprite layer="5" sublayer="5" offset="7,79" animation="light.cyan.flash.large.animation"/>
+			</layers>
+		</appearance>
+
+		<deathAppearance>
+			<layers scale="0.5">
+				<!--  first sprite contains important event=1 to remove building -->
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.base.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.5x5.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="earth.base.dead.ground.animation"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" animation="earth.base.dead.top.animation"/>
+				<emitter offset="=$5x5x,0" ySortOffset="=$5x5yExplode" emitter="building.5x5.explosion.start.emitter"/> 
+				<emitter offset="=$5x5x,0" ySortOffset="=$5x5yExplode" emitter="building.5x5.explosion.end.emitter"/>
+				<emitter offset="=$5x5xFire,$5x5yFloor" ySortOffset="0" emitter="building.5x5.fire.emitter"/>
+				<emitter offset="=$5x5x,0" ySortOffset="=$5x5ySparks" emitter="building.5x5.explosion.sparks.emitter"/>
+				<emitter offset="=$5x5x,0" ySortOffset="=$5x5yExplode" emitter="building.5x5.explosion.flash.emitter"/>
+				<!-- <emitter offset="=$5x5x,0" ySortOffset="=$5x5y" emitter="test.coords.emitter"/> -->
+			</layers>
+		</deathAppearance>		
+		<shieldedAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.5x5.animation"/>
+				<emitter offset="=$5x5x,$5x5y" emitter="shield.5x5.emitter"/>
+				<emitter offset="=$5x5x,0" ySortOffset="=$5x5y" emitter="shield.sparkle.5x5.emitter"/>
+			</layers>
+		</shieldedAppearance>
+		<forcefieldAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.5x5.animation"/>
+				<emitter offset="=$5x5x,0" ySortOffset="=$5x5y" emitter="forcefield.sparkle.5x5.emitter"/>
+			</layers>
+		</forcefieldAppearance>
+	</instance>	
+
+
+
+	<!-- Obstacles -->
+
+
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.master"
+		hitpoints="2"
+		bounds="0,0,8,8"
+		floor="-4"
+	>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" animation="obstacle.dead.animation"/>
+				<emitter offset="8,0" ySortOffset="8" emitter="obstacle.explosion.emitter"/> 
+				<emitter offset="2,0" ySortOffset="2" emitter="obstacle.explosion.fire.emitter"/>
+			</layers>
+		</deathAppearance>	
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.tree.master"
+		hitpoints="1"
+		bounds="0,0,8,8"
+		floor="-4"
+	>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" animation="obstacle.dead.animation"/>
+				<emitter offset="8,0" ySortOffset="8" emitter="obstacle.explosion.emitter"/>
+				<emitter offset="2,0" ySortOffset="2" emitter="obstacle.explosion.fire.emitter"/> 
+			</layers>
+		</deathAppearance>	
+	</instance>
+
+
+
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.1"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.01" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.2"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.02" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.3"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.03" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.4"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.04" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.5"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.05" />
+			</layers>
+		</appearance>
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.burning.1"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.01" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.burning.2"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="3" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.02" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.burning.3"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.03" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.burning.4"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.04" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.vehicle.burning.5"
+		inherit="earth.vehicle.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-vehicle" attenuated="true" image="spriteimage.earth.obstacle.1.05" />
+				<emitter offset="4,0" ySortOffset="4" emitter="ruins.small.fire.emitter"/>
+			</layers>
+		</appearance>
+	</instance>
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.cactus.1"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.2.01" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.cactus.2"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.2.02" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.cactus.3"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.2.03" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.cactus.4"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.2.04" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.cactus.5"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.2.05" />
+			</layers>
+		</appearance>
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.tree.1"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.3.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.3.01" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.tree.2"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.3.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.3.02" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.tree.3"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.3.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.3.03" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.tree.4"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.3.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.3.04" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.tree.5"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.3.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.3.05" />
+			</layers>
+		</appearance>
+	</instance>
+	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.pine.1"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.4.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.4.01" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.pine.2"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.4.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.4.02" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.pine.3"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.4.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.4.03" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.pine.4"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.4.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.4.04" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="earth.pine.5"
+		inherit="earth.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.earth.obstacle.4.ground.01" />
+				<sprite layer="5" sublayer="2" bottomColored="floor-fog" topColored="obstacle-tree" attenuated="true" image="spriteimage.earth.obstacle.4.05" />
+			</layers>
+		</appearance>
+	</instance>
+	
+	
+</resources>

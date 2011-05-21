@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+<levelcolors
+	name="titan.01.colors"
+>
+	<color id="floor" c="!47,67,34,255"/>
+	<color id="floor-fog" order="1" c="!46,57,44,255"/>
+	<color id="floor-alt" order="2" c="!191,255,255,255"/>
+	<color id="floor-alt-edge" order="3" c="!42,65,43,255"/>
+	<color id="attenuate" order="4" c="!188,255,255,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,137"/>
+	<color id="shadow" order="6" c="!184,26,29,174"/>
+	<color id="cliff-1" order="10" c="!96,52,53,255"/>
+	<color id="cliff-2" order="11" c="!91,45,39,255"/>
+	<color id="cliff-top-1" order="13" c="!71,63,64,255"/>
+	<color id="cliff-glow" order="14" c="!191,255,172,255"/>
+	<color id="road-out" order="18" c="!191,40,51,255"/>
+	<color id="road-in" order="19" c="!191,255,255,255"/>
+	<color id="gidrah" order="20" c="!95,51,20,255"/>
+	<color id="buildings" order="21" c="!59,85,15,255"/>
+	<color id="buildings-alt" order="22" c="!67,255,157,255"/>
+	<color id="shroom-glow" order="25" c="!197,225,255,255"/>
+	<color id="crystal" order="27" c="!71,255,186,255"/>
+	<color id="crystal-glow" order="28" c="!66,255,255,255"/>
+	<color id="gui-dark" order="30" c="!68,188,164,87"/>
+	<color id="gui-mid" order="31" c="!65,211,175,136"/>
+	<color id="gui-bright" order="32" c="!66,215,255,233"/>
+	<color id="gui-back" order="33" c="!70,204,110,255"/>
+	<color id="gui-glow" order="34" c="!70,255,255,97"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!191,76,20,255"/>
+	<color id="buildings-highlight" order="37" c="!67,255,255,68"/>
+	
+	<color id="gidrah-boss" order="40" c="!95,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!95,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!95,93,95,255"/>
+</levelcolors>
+
+
+
+<levelcolors
+	name="titan.02.colors"
+>
+	<color id="floor" c="!44,115,51,255"/>
+	<color id="floor-fog" order="1" c="!42,113,65,255"/>
+	<color id="floor-alt" order="2" c="!191,57,62,255"/>
+	<color id="floor-alt-edge" order="3" c="!44,110,46,255"/>
+	<color id="attenuate" order="4" c="!187,99,128,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,200"/>
+	<color id="shadow" order="6" c="!72,83,70,150"/>
+	<color id="cliff-1" order="10" c="!77,110,37,255"/>
+	<color id="cliff-2" order="11" c="!75,124,37,255"/>
+	<color id="cliff-top-1" order="13" c="!69,220,154,255"/>
+	<color id="cliff-glow" order="14" c="!194,255,255,255"/>
+	<color id="road-out" order="18" c="!42,101,73,255"/>
+	<color id="road-in" order="19" c="!194,255,255,254"/>
+	<color id="gidrah" order="20" c="!74,29,35,255"/>
+	<color id="buildings" order="21" c="!63,45,34,255"/>
+	<color id="buildings-alt" order="22" c="!66,255,255,255"/>
+	<color id="shroom-glow" order="25" c="!187,225,255,255"/>
+	<color id="crystal" order="27" c="!72,94,124,255"/>
+	<color id="crystal-glow" order="28" c="!74,255,255,201"/>
+	<color id="gui-dark" order="30" c="!73,195,149,87"/>
+	<color id="gui-mid" order="31" c="!67,222,194,136"/>
+	<color id="gui-bright" order="32" c="!74,255,255,233"/>
+	<color id="gui-back" order="33" c="!67,135,122,255"/>
+	<color id="gui-glow" order="34" c="!74,174,255,38"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!46,88,95,255"/>
+	<color id="buildings-highlight" order="37" c="!66,255,255,65"/>
+	
+	<color id="gidrah-boss" order="40" c="!74,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!74,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!74,93,95,255"/>
+</levelcolors>
+
+
+
+<levelcolors
+	name="titan.03.colors"
+>
+	<color id="floor" c="!115,41,43,255"/>
+	<color id="floor-fog" order="1" c="!119,43,29,255"/>
+	<color id="floor-alt" order="2" c="!74,32,31,255"/>
+	<color id="floor-alt-edge" order="3" c="!135,32,39,255"/>
+	<color id="attenuate" order="4" c="!66,255,155,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,163"/>
+	<color id="shadow" order="6" c="!70,255,38,145"/>
+	<color id="cliff-1" order="10" c="!81,61,50,255"/>
+	<color id="cliff-2" order="11" c="!81,61,54,255"/>
+	<color id="cliff-top-1" order="13" c="!71,63,89,255"/>
+	<color id="cliff-glow" order="14" c="!70,221,137,255"/>
+	<color id="road-out" order="18" c="!68,80,57,255"/>
+	<color id="road-in" order="19" c="!191,255,255,255"/>
+	<color id="gidrah" order="20" c="!106,16,31,255"/>
+	<color id="buildings" order="21" c="!116,48,21,255"/>
+	<color id="buildings-alt" order="22" c="!73,255,255,255"/>
+	<color id="shroom-glow" order="25" c="!66,255,255,255"/>
+	<color id="crystal" order="27" c="!71,255,186,255"/>
+	<color id="crystal-glow" order="28" c="!66,255,255,255"/>
+	<color id="gui-dark" order="30" c="!68,188,164,87"/>
+	<color id="gui-mid" order="31" c="!65,255,175,136"/>
+	<color id="gui-bright" order="32" c="!66,255,255,233"/>
+	<color id="gui-back" order="33" c="!68,157,134,255"/>
+	<color id="gui-glow" order="34" c="!69,255,255,62"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!44,141,90,255"/>
+	<color id="buildings-highlight" order="37" c="!66,255,255,55"/>
+	
+	<color id="gidrah-boss" order="40" c="!106,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!106,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!106,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="titan.04.colors"
+>
+	<color id="floor" c="!42,120,78,255"/>
+	<color id="floor-fog" order="1" c="!44,122,94,255"/>
+	<color id="floor-alt" order="2" c="!191,255,255,255"/>
+	<color id="floor-alt-edge" order="3" c="!42,115,73,255"/>
+	<color id="attenuate" order="4" c="!193,255,123,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,151"/>
+	<color id="shadow" order="6" c="!187,122,71,137"/>
+	<color id="cliff-1" order="10" c="!40,122,48,255"/>
+	<color id="cliff-2" order="11" c="!44,102,60,255"/>
+	<color id="cliff-top-1" order="13" c="!71,63,64,255"/>
+	<color id="cliff-glow" order="14" c="!191,255,178,255"/>
+	<color id="road-out" order="18" c="!46,142,104,214"/>
+	<color id="road-in" order="19" c="!191,255,255,255"/>
+	<color id="gidrah" order="20" c="!42,60,38,255"/>
+	<color id="buildings" order="21" c="!42,58,48,255"/>
+	<color id="buildings-alt" order="22" c="!181,186,216,255"/>
+	<color id="shroom-glow" order="25" c="!188,255,255,255"/>
+	<color id="crystal" order="27" c="!58,255,186,255"/>
+	<color id="crystal-glow" order="28" c="!47,255,255,255"/>
+	<color id="gui-dark" order="30" c="!55,188,164,87"/>
+	<color id="gui-mid" order="31" c="!55,211,175,136"/>
+	<color id="gui-bright" order="32" c="!51,215,255,233"/>
+	<color id="gui-back" order="33" c="!57,255,137,187"/>
+	<color id="gui-glow" order="34" c="!46,193,255,49"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!43,180,106,255"/>
+	<color id="buildings-highlight" order="37" c="!63,255,255,66"/>
+	
+	<color id="gidrah-boss" order="40" c="!42,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!42,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!42,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="titan.05.colors"
+>
+	<color id="floor" c="!44,113,56,255"/>
+	<color id="floor-fog" order="1" c="!42,112,70,255"/>
+	<color id="floor-alt" order="2" c="!42,137,65,255"/>
+	<color id="floor-alt-edge" order="3" c="!42,112,50,255"/>
+	<color id="attenuate" order="4" c="!193,255,83,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,255"/>
+	<color id="shadow" order="6" c="!42,38,46,149"/>
+	<color id="cliff-1" order="10" c="!40,122,48,255"/>
+	<color id="cliff-2" order="11" c="!44,102,60,255"/>
+	<color id="cliff-top-1" order="13" c="!71,63,64,255"/>
+	<color id="cliff-glow" order="14" c="!191,255,178,255"/>
+	<color id="road-out" order="18" c="!38,120,70,255"/>
+	<color id="road-in" order="19" c="!191,255,255,255"/>
+	<color id="gidrah" order="20" c="!42,15,32,255"/>
+	<color id="buildings" order="21" c="!51,36,35,255"/>
+	<color id="buildings-alt" order="22" c="!55,255,255,200"/>
+	<color id="shroom-glow" order="25" c="!188,255,255,255"/>
+	<color id="crystal" order="27" c="!58,255,186,255"/>
+	<color id="crystal-glow" order="28" c="!47,255,255,255"/>
+	<color id="gui-dark" order="30" c="!55,188,164,87"/>
+	<color id="gui-mid" order="31" c="!55,211,175,136"/>
+	<color id="gui-bright" order="32" c="!51,215,255,233"/>
+	<color id="gui-back" order="33" c="!57,255,137,187"/>
+	<color id="gui-glow" order="34" c="!46,193,255,70"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!44,156,83,255"/>
+	<color id="buildings-highlight" order="37" c="!49,189,255,51"/>
+	
+	<color id="gidrah-boss" order="40" c="!42,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!42,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!42,93,95,255"/>
+</levelcolors>
+
+
+
+<levelcolors
+	name="titan.06.colors"
+>
+	<color id="floor" c="!42,86,68,255"/>
+	<color id="floor-fog" order="1" c="!42,93,68,255"/>
+	<color id="floor-alt" order="2" c="!45,73,59,255"/>
+	<color id="floor-alt-edge" order="3" c="!44,86,65,255"/>
+	<color id="attenuate" order="4" c="!193,127,62,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,255"/>
+	<color id="shadow" order="6" c="!191,91,61,88"/>
+	<color id="cliff-1" order="10" c="!40,104,44,255"/>
+	<color id="cliff-2" order="11" c="!44,99,46,255"/>
+	<color id="cliff-top-1" order="13" c="!71,63,64,255"/>
+	<color id="cliff-glow" order="14" c="!191,255,178,255"/>
+	<color id="road-out" order="18" c="!42,87,90,184"/>
+	<color id="road-in" order="19" c="!191,255,255,255"/>
+	<color id="gidrah" order="20" c="!42,46,44,255"/>
+	<color id="buildings" order="21" c="!42,51,35,255"/>
+	<color id="buildings-alt" order="22" c="!192,255,255,255"/>
+	<color id="shroom-glow" order="25" c="!192,255,255,255"/>
+	<color id="crystal" order="27" c="!43,101,131,255"/>
+	<color id="crystal-glow" order="28" c="!43,138,255,255"/>
+	<color id="gui-dark" order="30" c="!193,188,164,87"/>
+	<color id="gui-mid" order="31" c="!191,211,175,136"/>
+	<color id="gui-bright" order="32" c="!187,215,255,233"/>
+	<color id="gui-back" order="33" c="!106,69,96,255"/>
+	<color id="gui-glow" order="34" c="!40,94,194,66"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!42,98,106,255"/>
+	<color id="buildings-highlight" order="37" c="!43,133,109,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!42,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!42,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!42,93,95,255"/>
+</levelcolors>
+
+
+
+<levelcolors
+	name="titan.07.colors"
+>
+	<color id="floor" c="!42,75,17,255"/>
+	<color id="floor-fog" order="1" c="!42,76,10,255"/>
+	<color id="floor-alt" order="2" c="!191,133,23,255"/>
+	<color id="floor-alt-edge" order="3" c="!42,69,11,255"/>
+	<color id="attenuate" order="4" c="!47,113,227,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,142"/>
+	<color id="shadow" order="6" c="!0,0,0,79"/>
+	<color id="cliff-1" order="10" c="!0,0,0,255"/>
+	<color id="cliff-2" order="11" c="!0,0,0,255"/>
+	<color id="cliff-top-1" order="13" c="!71,63,64,255"/>
+	<color id="cliff-glow" order="14" c="!180,195,137,255"/>
+	<color id="road-out" order="18" c="!42,78,26,255"/>
+	<color id="road-in" order="19" c="!191,255,255,255"/>
+	<color id="gidrah" order="20" c="!0,0,0,255"/>
+	<color id="buildings" order="21" c="!42,76,10,255"/>
+	<color id="buildings-alt" order="22" c="!41,126,255,255"/>
+	<color id="shroom-glow" order="25" c="!188,255,255,255"/>
+	<color id="crystal" order="27" c="!43,101,131,255"/>
+	<color id="crystal-glow" order="28" c="!43,138,255,255"/>
+	<color id="gui-dark" order="30" c="!186,188,164,87"/>
+	<color id="gui-mid" order="31" c="!186,211,175,136"/>
+	<color id="gui-bright" order="32" c="!185,203,255,233"/>
+	<color id="gui-back" order="33" c="!72,82,71,255"/>
+	<color id="gui-glow" order="34" c="!187,205,255,96"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!43,138,96,255"/>
+	<color id="buildings-highlight" order="37" c="!189,122,102,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!70,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!70,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!70,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="titan.08.colors"
+>
+	<color id="floor" c="!136,67,34,255"/>
+	<color id="floor-fog" order="1" c="!133,61,29,255"/>
+	<color id="floor-alt" order="2" c="!121,49,36,255"/>
+	<color id="floor-alt-edge" order="3" c="!120,56,27,255"/>
+	<color id="attenuate" order="4" c="!74,255,198,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,148"/>
+	<color id="shadow" order="6" c="!184,26,29,187"/>
+	<color id="cliff-1" order="10" c="!135,52,53,255"/>
+	<color id="cliff-2" order="11" c="!133,45,39,255"/>
+	<color id="cliff-top-1" order="13" c="!130,63,64,255"/>
+	<color id="cliff-glow" order="14" c="!190,255,255,255"/>
+	<color id="road-out" order="18" c="!121,85,45,255"/>
+	<color id="road-in" order="19" c="!195,255,255,255"/>
+	<color id="gidrah" order="20" c="!127,34,15,255"/>
+	<color id="buildings" order="21" c="!134,52,29,255"/>
+	<color id="buildings-alt" order="22" c="!190,237,255,255"/>
+	<color id="shroom-glow" order="25" c="!0,255,94,255"/>
+	<color id="crystal" order="27" c="!71,255,186,255"/>
+	<color id="crystal-glow" order="28" c="!66,255,255,255"/>
+	<color id="gui-dark" order="30" c="!187,255,164,87"/>
+	<color id="gui-mid" order="31" c="!187,255,175,136"/>
+	<color id="gui-bright" order="32" c="!190,255,255,233"/>
+	<color id="gui-back" order="33" c="!82,129,61,255"/>
+	<color id="gui-glow" order="34" c="!76,95,255,54"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!96,143,82,255"/>
+	<color id="buildings-highlight" order="37" c="!74,255,74,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!127,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!127,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!127,93,95,255"/>
+	
+</levelcolors>
+
+
+<levelcolors
+	name="titan.09.colors"
+>
+	<color id="floor" c="!199,114,29,255"/>
+	<color id="floor-fog" order="1" c="!198,109,21,255"/>
+	<color id="floor-alt" order="2" c="!18,61,29,255"/>
+	<color id="floor-alt-edge" order="3" c="!199,110,23,255"/>
+	<color id="attenuate" order="4" c="!12,255,255,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,193"/>
+	<color id="shadow" order="6" c="!170,25,10,99"/>
+	<color id="cliff-1" order="10" c="!141,33,23,255"/>
+	<color id="cliff-2" order="11" c="!141,28,27,255"/>
+	<color id="cliff-top-1" order="13" c="!71,63,64,255"/>
+	<color id="cliff-glow" order="14" c="!4,255,188,255"/>
+	<color id="road-out" order="18" c="!199,124,39,255"/>
+	<color id="road-in" order="19" c="!190,255,255,255"/>
+	<color id="gidrah" order="20" c="!127,25,10,255"/>
+	<color id="buildings" order="21" c="!148,48,21,255"/>
+	<color id="buildings-alt" order="22" c="!190,255,255,255"/>
+	<color id="ruins" order="24" c="!35,120,36,255"/>
+	<color id="shroom-glow" order="25" c="!5,255,255,255"/>
+	<color id="crystal" order="27" c="!0,232,113,255"/>
+	<color id="crystal-glow" order="28" c="!6,255,255,255"/>
+	<color id="gui-dark" order="30" c="!186,188,164,87"/>
+	<color id="gui-mid" order="31" c="!186,211,175,136"/>
+	<color id="gui-bright" order="32" c="!186,215,255,233"/>
+	<color id="gui-back" order="33" c="!72,56,45,255"/>
+	<color id="gui-glow" order="34" c="!28,139,126,55"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!234,76,70,255"/>
+	<color id="buildings-highlight" order="37" c="!21,189,89,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!127,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!127,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!127,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="titan.10.colors"
+>
+	<color id="floor" c="!63,42,12,255"/>
+	<color id="floor-fog" order="1" c="!0,0,0,255"/>
+	<color id="floor-alt" order="2" c="!198,51,15,255"/>
+	<color id="floor-alt-edge" order="3" c="!85,42,6,255"/>
+	<color id="attenuate" order="4" c="!77,156,26,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,255"/>
+	<color id="shadow" order="6" c="!0,0,0,96"/>
+	<color id="cliff-1" order="10" c="!70,111,39,255"/>
+	<color id="cliff-2" order="11" c="!66,119,45,255"/>
+	<color id="cliff-top-1" order="13" c="!71,63,64,255"/>
+	<color id="cliff-glow" order="14" c="!192,255,162,255"/>
+	<color id="road-out" order="18" c="!74,51,20,255"/>
+	<color id="road-in" order="19" c="!191,255,255,255"/>
+	<color id="gidrah" order="20" c="!0,0,0,255"/>
+	<color id="buildings" order="21" c="!69,89,40,255"/>
+	<color id="buildings-alt" order="22" c="!187,255,255,255"/>
+	<color id="shroom-glow" order="25" c="!190,255,255,255"/>
+	<color id="crystal" order="27" c="!71,255,186,255"/>
+	<color id="crystal-glow" order="28" c="!66,255,255,255"/>
+	<color id="gui-dark" order="30" c="!186,188,164,87"/>
+	<color id="gui-mid" order="31" c="!186,211,175,136"/>
+	<color id="gui-bright" order="32" c="!186,215,255,233"/>
+	<color id="gui-back" order="33" c="!71,81,50,255"/>
+	<color id="gui-glow" order="34" c="!188,255,255,89"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!63,97,76,255"/>
+	<color id="buildings-highlight" order="37" c="!192,166,150,192"/>
+
+	<color id="gidrah-boss" order="40" c="!70,117,76,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!70,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!70,93,95,255"/>
+	
+</levelcolors>
+
+
+
+</resources>

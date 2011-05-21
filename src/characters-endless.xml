@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Characters -->
+<resources>
+
+
+	<!-- CHARACTER BUBBLE BACKGROUNDS ============================================================================================================================ -->
+
+	<!-- insets are nor inherited here - odd ? -->
+
+	<widgetbackground name="endless.info.background" inherit="info.background" color="endless.colormap:bubble" insets="24,28,24,24" />	
+
+
+	<!-- STAT BOT ============================================================================================================================ -->
+
+
+	<animation name="statbot.earth.body.idle.anim">
+		
+		<label id="start"/>
+		<frame i="spriteimage.character.statbot.earth.back.01" d="20" />
+			
+		<random>
+			<dest id="start" 	n="10"/>
+			<dest id="twitch1" 	n="1"/>
+			<dest id="twitch2" 	n="1"/>
+		</random>
+	
+		<label id="twitch1"/>
+		<frame i="spriteimage.character.statbot.earth.back.05" d="20" />
+		
+		<random>
+			<dest id="twitch1" 	n="1"/>
+			<dest id="twitch1end1" 	n="1"/>
+		</random>
+		
+		<label id="twitch1end1"/>
+		<frame i="spriteimage.character.statbot.earth.back.01" d="3" />
+
+		<label id="twitch1end2"/>
+		<frame i="spriteimage.character.statbot.earth.back.06" d="20" />
+
+		<random>
+			<dest id="twitch1end2" 	n="5"/>
+			<dest id="end" 	n="1"/>
+		</random>
+
+		
+		<label id="twitch2"/>
+		<frame i="spriteimage.character.statbot.earth.back.05" d="30" />
+		
+		<loop count="3"/> 
+			<label id="twitch2loop"/>
+			<frame i="spriteimage.character.statbot.earth.back.05" d="7" />
+			<frame i="spriteimage.character.statbot.earth.back.01" d="2" />
+			<frame i="spriteimage.character.statbot.earth.back.06" d="7" />
+			<frame i="spriteimage.character.statbot.earth.back.01" d="4" />
+		<repeat id="twitch2loop"/>
+		
+		<random>
+			<dest id="end" 	n="3"/>
+			<dest id="twitch2loop" 	n="1"/>
+		</random>
+		
+		<label id="end"/>
+		<frame i="spriteimage.character.statbot.earth.back.01" d="300" />
+		<goto id="start"/>
+		
+		
+	</animation>
+	
+	<animation name="statbot.earth.body.talk.anim">
+		<label id="start"/>
+		<random>
+			<dest id="point" 	n="1"/>
+			<dest id="gesture" 	n="1"/>
+			<dest id="hands-up" n="1"/>
+		</random>
+			
+		<label id="point"/>
+		<frame i="spriteimage.character.statbot.earth.back.02" d="15" />
+		<random>
+			<dest id="point" n="2"/>
+			<dest id="start"/>
+		</random>	
+	
+		<label id="gesture"/>
+		<frame i="spriteimage.character.statbot.earth.back.03" d="15" />
+		<random>
+			<dest id="gesture" n="2"/>
+			<dest id="start"/>
+		</random>		
+	
+		<label id="hands-up"/>
+		<frame i="spriteimage.character.statbot.earth.back.04" d="15" />
+		<random>
+			<dest id="hands-up" n="2"/>
+			<dest id="start"/>
+		</random>		
+		
+	</animation>
+
+	<animation name="statbot.earth.head.look-left.anim">
+		<frame i="spriteimage.character.statbot.earth.02" d="3" childXOffset="8" />
+		<label id="look-left"/>
+		<frame i="spriteimage.character.statbot.earth.03" d="40" childXOffset="16" />
+		<random>
+			<dest id="look-left" n="2"/>
+			<dest id="stop-look-left"/>
+		</random>
+		<label id="stop-look-left"/>
+		<frame i="spriteimage.character.statbot.earth.02" d="3" childXOffset="8" />
+		<frame i="spriteimage.character.statbot.earth.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="statbot.earth.head.look-right.anim">
+		<frame i="spriteimage.character.statbot.earth.04" d="3" childXOffset="-8" />
+		<label id="look-right"/>
+		<frame i="spriteimage.character.statbot.earth.05" d="40" childXOffset="-16" />
+		<random>
+			<dest id="look-right" n="2"/>
+			<dest id="stop-look-right"/>
+		</random>
+		<label id="stop-look-right"/>
+		<frame i="spriteimage.character.statbot.earth.04" d="3" childXOffset="-8" />
+		<frame i="spriteimage.character.statbot.earth.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="statbot.earth.head.talk.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.statbot.earth.01" d="20" childXOffset="0" />
+		<random>
+			<dest id="start"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="statbot.earth.head.look-left.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="statbot.earth.head.look-right.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start"/>
+		</random>
+	</animation>
+
+	<animation name="statbot.earth.head.idle.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.statbot.earth.01" d="20" childXOffset="0" />
+		<random>
+			<dest id="start" n="2"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="statbot.earth.head.look-left.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start" n="2"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="statbot.earth.head.look-right.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start" n="2"/>
+		</random>
+	</animation>
+
+	<animation name="statbot.earth.glow.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.statbot.earth.glow.04" d="5" />
+		<frame i="spriteimage.character.statbot.earth.glow.05" d="5" />
+		<frame i="spriteimage.character.statbot.earth.glow.06" d="5" />
+		<frame i="spriteimage.character.statbot.earth.glow.05" d="5" />
+		<frame i="spriteimage.character.statbot.earth.glow.04" d="5" />
+		<frame i="spriteimage.character.statbot.earth.glow.01" d="5" />		
+		<random>
+			<dest id="start" n="7"/>
+			<dest id="blink"/>
+		</random>
+		<label id="blink"/>
+		<frame i="spriteimage.character.statbot.earth.glow.03" d="30" />
+		<frame i="spriteimage.character.statbot.earth.glow.02" d="5" />
+		<frame i="spriteimage.character.statbot.earth.glow.01" d="5" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="statbot.earth.mouth.idle.anim">
+		<frame i="spriteimage.character.statbot.earth.top.01" d="1" />
+	</animation>
+	<animation name="statbot.earth.mouth.vowel.anim">
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.statbot.earth.top.02" d="200" />
+		<frame i="spriteimage.character.statbot.earth.top.03" d="200" />
+	</animation>
+	<animation name="statbot.earth.mouth.consonant.anim">
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.statbot.earth.top.04" d="200" />
+		<frame i="spriteimage.character.statbot.earth.top.05" d="200" />
+	</animation>
+
+
+	<character
+		name="endless.stats.char"
+		inherit="statbot.char.spec"
+		bubble="earth.human-speech-top-left.background"
+		color="earth.colormap:text"
+		boldColor="earth.colormap:text-bold"
+		mouthLayer="6"
+		textSpeed="1"
+		suppressChildOffsetMouth="true"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="5" animation="statbot.earth.head.idle.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="4" animation="statbot.earth.body.idle.anim"/>
+				<sprite layer="6" doChildOffset="true" animation="statbot.earth.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.earth.01"/>
+				<sprite layer="7" image="spriteimage.character.statbot.earth.top.06"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.5">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="5" animation="statbot.earth.head.talk.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="4" animation="statbot.earth.body.talk.anim"/>
+				<sprite layer="6" doChildOffset="true" animation="statbot.earth.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.earth.01"/>
+				<sprite layer="7" image="spriteimage.character.statbot.earth.top.06"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<animcolor a="255" d="0"/>
+				<frame i="spriteimage.character.statbot.earth.top.03" d="4" />
+				<animcolor a="200" d="5"/>
+				<animcolor a="150" d="6"/>
+				<animcolor a="100" d="7"/>
+				<animcolor a="50" d="32"/>
+				<animcolor a="100" d="7"/>
+				<animcolor a="150" d="6"/>
+				<animcolor a="200" d="5"/>
+				<animcolor a="255" d="4"/>
+				<frame i="spriteimage.character.statbot.earth.top.02" d="3" />
+				<frame i="spriteimage.character.statbot.earth.top.01" d="3" />
+				<frame i="spriteimage.character.statbot.earth.top.04" d="3" />
+				<frame i="spriteimage.character.statbot.earth.top.01" d="3" />
+				<frame i="spriteimage.character.statbot.earth.top.02" d="3" />
+				<goto seq="2"/>
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="4"/>
+				</random>
+				<animcolor a="255" d="0"/>
+				<frame i="spriteimage.character.statbot.earth.top.03" d="2" />
+				<animcolor a="128" d="0"/>
+				<frame i="spriteimage.character.statbot.earth.top.03" d="2" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<animcolor a="255" d="0"/>
+				<random>
+					<dest seq="3"/>
+					<dest seq="4"/>
+				</random>
+				<frame i="spriteimage.character.statbot.earth.top.05" d="2" />
+				<frame i="spriteimage.character.statbot.earth.top.04" d="2" />
+			</animation>
+		</consonantAppearance>
+	
+	</character>
+
+
+
+</resources>

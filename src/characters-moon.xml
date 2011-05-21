@@ -1,0 +1,1618 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Characters -->
+<resources>
+
+
+	<!-- CHARACTER BUBBLE BACKGROUNDS ============================================================================================================================ -->
+
+	<!-- insets are nor inherited here - odd ? -->
+
+	<widgetbackground name="moon.human-speech.background" inherit="human-speech.background" color="moon.colormap:bubble" insets="24,40,24,24" />
+	<widgetbackground name="moon.human-speech-top-left.background" inherit="human-speech-top-left.background" color="moon.colormap:bubble" insets="24,40,24,24" />	
+	<widgetbackground name="moon.human-speech-top-left-info.background" inherit="human-speech-top-left-info.background" color="moon.colormap:bubble" insets="140,40,24,24" />			
+	<widgetbackground name="moon.human-speech-right.background" inherit="human-speech-right.background" color="moon.colormap:bubble" insets="40,24,24,24" />		
+	<widgetbackground name="moon.human-speech-left.background" inherit="human-speech-left.background" color="moon.colormap:bubble" insets="28,24,40,24" />		
+	<widgetbackground name="moon.info.background" inherit="info.background" color="moon.colormap:bubble" insets="24,28,24,24" />	
+	<widgetbackground name="moon.tech.background" inherit="info.background" color="moon.colormap:bubble" insets="135,28,24,24" />	
+	<widgetbackground name="moon.delivery.background" inherit="info.background" color="moon.colormap:bubble" insets="145,28,24,24" />	
+
+
+	<widgetbackground name="moon.gidrah.background" inherit="info.background.spec" insets="175,28,24,24" color="moon.colormap:alert-bubble"/>	
+	<widgetbackground name="moon.alert.background" inherit="info-dark.background.spec" insets="24,28,24,24" color="moon.colormap:alert-bubble"/>
+
+
+	<!-- BUILDINGS / WEAPONS SPEC ============================================================================================================================ -->
+
+
+	<character
+		name="moon.research.char.spec"
+		inherit="research.char.spec"
+		bubble="moon.info.background"
+		color="moon.colormap:text"
+		boldColor="moon.colormap:text-bold"
+	>
+	</character>
+
+	<animation name="moon.info.background.anim">
+		<scale scale="0.625"/>
+		<frame i="spriteimage.story.moon.info.01" d="1"/>
+	</animation>
+
+
+
+
+	<!-- INFOS =============================================================================================================== -->
+	
+	<character
+		name="moon.info.crystals.char"
+		inherit="moon.research.char.spec"
+		bubble="moon.human-speech-top-left-info.background"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" offset="-4,-53" image="spriteimage.items.info.crystals.01"/>				
+			</layers>
+		</idleLayers>
+	</character>	
+
+	<character
+		name="moon.research.tech.char.spec"
+		inherit="moon.research.char.spec"
+		bubble="moon.tech.background"
+		color="moon.colormap:text"
+		boldColor="moon.colormap:text-bold"
+	>
+	</character>
+
+	<character
+		name="moon.research.delivery.char.spec"
+		inherit="moon.research.tech.char.spec"
+		bubble="moon.delivery.background"
+	>
+	</character>
+
+	<!-- GIDRAHS =============================================================================================================== -->
+	
+	<character
+		name="moon.gidrah.01.char"
+		inherit="research.char.spec"
+		bubble="moon.gidrah.background"
+		color="moon.colormap:alert-text"
+		boldColor="moon.colormap:alert-text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.moon.1.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.gidrah.02.char"
+		inherit="moon.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.moon.2.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.gidrah.03.char"
+		inherit="moon.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.moon.3.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.angry.01.char"
+		inherit="moon.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.moon.angry.1.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.angry.02.char"
+		inherit="moon.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" offset="-24,0" image="spriteimage.gidrah.info.moon.angry.2.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.angry.03.char"
+		inherit="moon.gidrah.01.char"
+	>
+		<idleLayers>
+			<layers scale="0.65">
+				<sprite layer="2" offset="0,0" animation="alert.background.anim"/>
+				<sprite layer="12" image="spriteimage.gidrah.info.moon.angry.3.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<!--  boss -->
+
+	<animation name="moon.alert.ground.anim">
+		<scale xscale="0.75" yscale="1.25" d="0"/>
+		<frame i="spriteimage.character.ground.01" d="1"/>
+	</animation>
+
+	<character
+		name="moon.boss.char"
+		inherit="research.char.spec"
+		bubble="moon.alert.background"
+		color="moon.colormap:alert-text"
+		boldColor="moon.colormap:alert-text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<sprite layer="2" offset="-2,0" animation="alert.background.anim"/>
+				<sprite layer="10" animation="moon.alert.ground.anim"/>
+				<sprite layer="11" image="spriteimage.character.boss.moon.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+
+
+	<!-- CUSTERD ============================================================================================================================ -->
+
+
+	<animation name="custerd.moon.body.idle.anim">
+		<frame i="spriteimage.character.custerd.moon.back.01" d="20" />
+	</animation>
+	<animation name="custerd.moon.body.talk.anim">
+		
+		<label id="start"/>
+		<random>
+			<dest id="point" 			n="1"/>
+			<dest id="point-up" 		n="1"/>
+		</random>
+			
+		<label id="point"/>
+		<frame i="spriteimage.character.custerd.moon.back.02" d="25" />
+		<random>
+			<dest id="point-up" n="2"/>
+			<dest id="start"/>
+			<dest id="idle"/>
+		</random>	
+	
+		<label id="point-up"/>
+		<frame i="spriteimage.character.custerd.moon.back.03" d="25" />
+		<random>
+			<dest id="point" n="2"/>
+			<dest id="start"/>
+			<dest id="idle"/>
+		</random>		
+
+		<label id="idle"/>
+		<frame i="spriteimage.character.custerd.moon.back.01" d="25" />
+		<random>
+			<dest id="idle" n="1"/>
+			<dest id="start"/>
+		</random>				
+	</animation>
+
+	<animation name="custerd.moon.head.look-left.anim">
+		<frame i="spriteimage.character.custerd.moon.04" d="3" childXOffset="-2" />
+		<label id="look-left"/>
+		<frame i="spriteimage.character.custerd.moon.05" d="50" childXOffset="-6" />
+		<random>
+			<dest id="look-left" n="2"/>
+			<dest id="stop-look-left"/>
+		</random>
+		<label id="stop-look-left"/>
+		<frame i="spriteimage.character.custerd.moon.04" d="4" childXOffset="-2" />
+		<frame i="spriteimage.character.custerd.moon.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="custerd.moon.head.look-right.anim">
+		<frame i="spriteimage.character.custerd.moon.02" d="3" childXOffset="2" />
+		<label id="look-right"/>
+		<frame i="spriteimage.character.custerd.moon.03" d="50" childXOffset="6" />
+		<random>
+			<dest id="look-right" n="2"/>
+			<dest id="stop-look-right"/>
+		</random>
+		<label id="stop-look-right"/>
+		<frame i="spriteimage.character.custerd.moon.02" d="4" childXOffset="2" />
+		<frame i="spriteimage.character.custerd.moon.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="custerd.moon.head.talk.anim">
+		<frame i="spriteimage.character.custerd.moon.01" d="20" childXOffset="0" />
+	</animation>
+
+	<animation name="custerd.moon.head.idle.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.custerd.moon.01" d="70" childXOffset="0" />
+		<random>
+			<dest id="start" n="3"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="custerd.moon.head.look-left.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start" n="3"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="custerd.moon.head.look-right.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start" n="3"/>
+		</random>
+	</animation>
+
+	<animation name="custerd.moon.glow.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.custerd.moon.glow.04" d="5" />
+		<frame i="spriteimage.character.custerd.moon.glow.05" d="5" />
+		<frame i="spriteimage.character.custerd.moon.glow.06" d="5" />
+		<frame i="spriteimage.character.custerd.moon.glow.05" d="5" />
+		<frame i="spriteimage.character.custerd.moon.glow.04" d="5" />
+		<frame i="spriteimage.character.custerd.moon.glow.01" d="5" />		
+		<random>
+			<dest id="start" n="7"/>
+			<dest id="blink"/>
+		</random>
+		<label id="blink"/>
+		<frame i="spriteimage.character.custerd.moon.glow.03" d="30" />
+		<frame i="spriteimage.character.custerd.moon.glow.02" d="5" />
+		<frame i="spriteimage.character.custerd.moon.glow.01" d="5" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="custerd.moon.mouth.idle.anim">
+		<scale scale="0.5"/>
+		<frame i="spriteimage.character.custerd.moon.top.01" d="1" />
+	</animation>
+	<animation name="custerd.moon.mouth.vowel.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.custerd.moon.top.02" d="200" />
+		<frame i="spriteimage.character.custerd.moon.top.03" d="200" />
+	</animation>
+	<animation name="custerd.moon.mouth.consonant.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.custerd.moon.top.04" d="200" />
+		<frame i="spriteimage.character.custerd.moon.top.05" d="200" />
+	</animation>
+
+
+
+	<character
+		name="moon.custerd.char"
+		inherit="custerd.char"
+		bubble="moon.human-speech.background"
+		color="moon.colormap:text"
+		boldColor="moon.colormap:text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.55">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="5" animation="custerd.moon.head.idle.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="4" animation="custerd.moon.body.idle.anim"/>
+				<sprite layer="6" doChildOffset="true" animation="custerd.moon.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.moon.01"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.55">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="5" animation="custerd.moon.head.talk.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="4" animation="custerd.moon.body.talk.anim"/>
+				<sprite layer="6" doChildOffset="true" animation="custerd.moon.glow.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.moon.01"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<frame i="spriteimage.character.custerd.moon.top.01" d="1" />
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.custerd.moon.top.02" d="200" />
+				<frame i="spriteimage.character.custerd.moon.top.03" d="200" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.55"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.custerd.moon.top.04" d="200" />
+				<frame i="spriteimage.character.custerd.moon.top.05" d="200" />
+			</animation>
+		</consonantAppearance>
+	
+	</character>
+
+
+	<character
+		name="moon.custerd-left.char"
+		inherit="moon.custerd.char"
+		bubble="moon.human-speech-right.background"
+	>
+	</character>
+	
+	<character
+		name="moon.custerd.alert.char"
+		inherit="moon.custerd.char"
+		bubble="moon.human-speech-top-left.background"
+	>
+	</character>
+
+	<character
+		name="moon.custerd.info.char"
+		inherit="moon.custerd.char"
+		bubble="-"
+	>
+	</character>
+
+	<character
+		name="moon.custerd-gidrah.char"
+		inherit="moon.custerd.char"
+		bubble="moon.human-speech-left.background"
+	>
+	</character>
+
+
+	<!-- TECH ============================================================================================================================ -->
+
+
+	<animation name="tech.moon.body.idle.anim">
+		<frame i="spriteimage.character.tech.moon.01" d="20" />
+	</animation>
+	<animation name="tech.moon.body.talk.anim">
+		<label id="start"/>
+		<random>
+			<dest id="point" 			n="1"/>
+			<dest id="gesture-left" 	n="1"/>
+			<dest id="gesture-right" 	n="1"/>
+			<dest id="shrug" 			n="1"/>
+		</random>
+			
+		<label id="point"/>
+		<frame i="spriteimage.character.tech.moon.02" d="15" />
+		<random>
+			<dest id="point" n="2"/>
+			<dest id="start"/>
+		</random>	
+	
+		<label id="gesture-left"/>
+		<frame i="spriteimage.character.tech.moon.03" d="15" />
+		<random>
+			<dest id="gesture-left" n="2"/>
+			<dest id="start"/>
+		</random>		
+	
+		<label id="gesture-right"/>
+		<frame i="spriteimage.character.tech.moon.04" d="15" />
+		<random>
+			<dest id="gesture-right" n="2"/>
+			<dest id="start"/>
+		</random>		
+		
+		<label id="shrug"/>
+		<frame i="spriteimage.character.tech.moon.05" d="15" />
+		<random>
+			<dest id="shrug" n="2"/>
+			<dest id="start"/>
+		</random>					
+	</animation>
+
+
+	<animation name="tech.moon.head.look-left.anim">
+		<label id="look-left"/>
+		<frame i="spriteimage.character.tech.moon.back.03" d="20" childXOffset="13" />
+		<random>
+			<dest id="look-left" n="2"/>
+			<dest id="stop-look-left"/>
+		</random>
+		<label id="stop-look-left"/>
+		<frame i="spriteimage.character.tech.moon.back.02" d="2" childXOffset="5" />
+		<frame i="spriteimage.character.tech.moon.back.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="tech.moon.head.look-right.anim">
+		<label id="look-right"/>
+		<frame i="spriteimage.character.tech.moon.back.05" d="20" childXOffset="-13" />
+		<random>
+			<dest id="look-right" n="2"/>
+			<dest id="stop-look-right"/>
+		</random>
+		<label id="stop-look-right"/>
+		<frame i="spriteimage.character.tech.moon.back.04" d="2" childXOffset="-5" />
+		<frame i="spriteimage.character.tech.moon.back.01" d="40" childXOffset="0" />
+		<return/>
+	</animation>
+
+	<animation name="tech.moon.head.talk.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.tech.moon.back.01" d="20" childXOffset="0" />
+		<random>
+			<dest id="start"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="tech.moon.head.look-left.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="tech.moon.head.look-right.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start"/>
+		</random>
+	</animation>
+
+	<animation name="tech.moon.head.idle.anim">
+		<label id="start"/>
+		<frame i="spriteimage.character.tech.moon.back.01" d="100" childXOffset="0" />
+		<random>
+			<dest id="start" n="6"/>
+			<dest id="look-left"/>
+			<dest id="look-right"/>
+		</random>
+		
+		<label id="look-left"/>
+		<sub id="tech.moon.head.look-left.anim"/>
+		<random>
+			<dest id="look-right"/>
+			<dest id="start" n="3"/>
+		</random>
+
+		<label id="look-right"/>
+		<sub id="tech.moon.head.look-right.anim"/>
+		<random>
+			<dest id="look-left"/>
+			<dest id="start" n="3"/>
+		</random>
+	</animation>
+
+	<animation name="tech.moon.mouth.idle.anim">
+		<scale scale="0.5"/>
+		<frame i="spriteimage.character.tech.moon.top.01" d="1" />
+	</animation>
+	<animation name="tech.moon.mouth.vowel.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.tech.moon.top.02" d="200" />
+		<frame i="spriteimage.character.tech.moon.top.03" d="200" />
+	</animation>
+	<animation name="tech.moon.mouth.consonant.anim">
+		<scale scale="0.5"/>
+		<random>
+			<dest seq="2"/>
+			<dest seq="3"/>
+		</random>
+		<frame i="spriteimage.character.tech.moon.top.04" d="200" />
+		<frame i="spriteimage.character.tech.moon.top.05" d="200" />
+	</animation>
+
+
+	<character
+		name="moon.tech.char"
+		inherit="tech.char"
+		bubble="moon.human-speech.background"
+		color="moon.colormap:text"
+		boldColor="moon.colormap:text-bold"
+	>
+		<idleLayers>
+			<layers scale="0.5">
+				<!-- head first to use childOffset on mouth  --> 
+				<sprite layer="4" animation="tech.moon.head.idle.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" animation="tech.moon.body.idle.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.moon.01"/>
+			</layers>
+		</idleLayers>
+		<talkLayers>
+			<layers scale="0.5">
+				<sprite layer="4" animation="tech.moon.head.talk.anim"/>
+				<sprite layer="1" image="spriteimage.character.ground.01"/>
+				<sprite layer="5" animation="tech.moon.body.talk.anim"/>
+				<sprite layer="0" image="spriteimage.story.spotlight.moon.01"/>
+			</layers>
+		</talkLayers>
+
+		<defaultAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<frame i="spriteimage.character.tech.moon.top.01" d="1" />
+			</animation>
+		</defaultAppearance>
+		<vowelAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.moon.top.02" d="200" />
+				<frame i="spriteimage.character.tech.moon.top.03" d="200" />
+			</animation>
+		</vowelAppearance>
+		<consonantAppearance>
+			<animation>
+				<scale scale="0.5"/>
+				<random>
+					<dest seq="2"/>
+					<dest seq="3"/>
+				</random>
+				<frame i="spriteimage.character.tech.moon.top.04" d="200" />
+				<frame i="spriteimage.character.tech.moon.top.05" d="200" />
+			</animation>
+		</consonantAppearance>
+	</character>
+
+	<character
+		name="moon.tech-left.char"
+		inherit="moon.tech.char"
+		bubble="moon.human-speech-right.background"
+	>
+	</character>
+
+	<character
+		name="moon.tech-gidrah.char"
+		inherit="moon.tech.char"
+		bubble="moon.human-speech-left.background"
+	>
+	</character>
+
+
+
+
+	<!-- GENERAL BUILDINGS ============================================================================================================================ -->
+
+	
+	<character
+		name="moon.factory.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.factory.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.factory.01"/>
+				<sprite layer="12" image="spriteimage.info.factory.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.factory.top.01" colored="moon.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.capacitor.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.capacitor.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.capacitor.01"/>
+				<sprite layer="12" image="spriteimage.info.capacitor.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.reactor.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.reactor.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.reactor.01"/>
+				<sprite layer="12" image="spriteimage.info.reactor.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.shieldgenerator.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.shield.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.shield.01"/>
+				<sprite layer="12" image="spriteimage.info.shield.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="moon.warehouse.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.warehouse.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.warehouse.01"/>
+				<sprite layer="12" image="spriteimage.info.warehouse.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.warehouse.top.01" colored="moon.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.barracks.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barracks.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.barracks.01"/>
+				<sprite layer="12" image="spriteimage.info.barracks.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.barracks.top.01" colored="moon.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.collector.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.collector.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.collector.01"/>
+				<sprite layer="12" image="spriteimage.info.collector.top.01" colored="moon.colormap:info-alt" />
+				<sprite layer="12" image="spriteimage.info.collector.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.scanner.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.scanner.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.scanner.01"/>
+				<sprite layer="12" image="spriteimage.info.scanner.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.battery.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.battery.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.battery.01"/>
+				<sprite layer="12" image="spriteimage.info.battery.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+		
+	<character
+		name="moon.cooling.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.cooling.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.cooling.01"/>
+				<sprite layer="12" image="spriteimage.info.cooling.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.cooling.top.01" colored="moon.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.autoloader.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.autoloader.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.autoloader.01"/>
+				<sprite layer="12" image="spriteimage.info.autoloader.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="moon.decoy.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.decoy.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.decoy.01"/>
+				<sprite layer="12" image="spriteimage.info.decoy.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="moon.tangleweb.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tangleweb.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tangleweb.01"/>
+				<sprite layer="12" image="spriteimage.info.tangleweb.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>	
+
+	<character
+		name="moon.tankfactory.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+
+	<character
+		name="moon.repairdrones.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.scarecrow.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.cloakingdevice.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+			</layers>
+		</idleLayers>
+	</character>	
+	
+	
+	<!-- MINES ============================================================================================================================ -->
+	
+	<character
+		name="moon.mine.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.mine.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.mine.01"/>
+				<sprite layer="12" image="spriteimage.info.mine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	
+	<character
+		name="moon.clustermines.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.clustermine.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.clustermine.02"/>
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.clustermine.01"/>
+				<sprite layer="12" image="spriteimage.info.clustermine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	
+	<character
+		name="moon.blastmine.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.blastmine.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.blastmine.01"/>
+				<sprite layer="12" image="spriteimage.info.blastmine.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+	
+
+	<!-- BARRICADES ============================================================================================================================ -->
+
+	
+	<character
+		name="moon.concrete.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.concrete.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.barricade.concrete.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.concrete.top.01" colored="moon.colormap:info-alt" />
+		</layers></idleLayers>
+	</character>
+		
+	<character
+		name="moon.steel.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.steel.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.barricade.steel.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.steel.top.01" colored="moon.colormap:info-alt" />
+				<sprite layer="12" image="spriteimage.info.barricade.steel.glow.01" colored="moon.colormap:info-metal" />
+		</layers></idleLayers>
+	</character>
+	
+	<character
+		name="moon.titanium.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.titanium.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.barricade.titanium.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.titanium.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.titanium.top.01" colored="moon.colormap:info-metal" />
+		</layers></idleLayers>
+	</character>
+	
+	<character
+		name="moon.nanomesh.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers><layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.barricade.nanomesh.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.barricade.nanomesh.01"/>
+				<sprite layer="12" image="spriteimage.info.barricade.nanomesh.glow.01"/>
+		</layers></idleLayers>
+	</character>
+	
+	
+	
+	<!-- TURRETS ============================================================================================================================ -->	
+	
+	
+	<character
+		name="moon.blaster.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.blaster.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.blaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.blaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.heavyblaster.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.heavyblaster.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.heavyblaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.heavyblaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+	<character
+		name="moon.blastcannon.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.blastcannon.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.blastcannon.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.blastcannon.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="moon.multiblaster.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.multiblaster.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.multiblaster.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.multiblaster.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="moon.shotgun.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.spreader.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.spreader.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.spreader.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="moon.assault.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.assault.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.assault.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.assault.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+	
+
+	<character
+		name="moon.rocket.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.rockets.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.rockets.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.rockets.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+
+
+	<character
+		name="moon.laser.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.laser.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.laser.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.laser.glow.01"/>
+			</layers>
+		</idleLayers>
+	</character>
+		
+
+	<character
+		name="moon.disruptor.char"
+		inherit="moon.research.char.spec"
+	>
+		<idleLayers>
+			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tower.disruptor.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tower.disruptor.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.disruptor.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.tower.disruptor.top.01" colored="moon.colormap:info-alt" />
+			</layers>
+		</idleLayers>
+	</character>
+
+
+
+	<!-- TECH ============================================================================================================================ -->	
+	
+	<character name="moon.tech.physics.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.physics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.physics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.physics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.biology.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.biology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.biology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.biology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.chemistry.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.chemistry.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.chemistry.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.chemistry.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.efficiency.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.efficiency.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.efficiency.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.efficiency.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.psychology.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.psychology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.psychology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.psychology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.nuclear.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nuclear.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nuclear.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nuclear.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.explosives.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.explosives.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.explosives.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.explosives.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.textiles.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.textiles.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.textiles.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.textiles.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.automation.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.automation.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.automation.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.automation.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.barometrics.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.barometrics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.barometrics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.barometrics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.optics.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.optics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.optics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.optics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.ballistics.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.ballistics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.ballistics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.ballistics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.robotics.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.robotics.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.robotics.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.robotics.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.forcefields.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.forcefields.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.forcefields.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.forcefields.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.anatomy.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.anatomy.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.anatomy.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.anatomy.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.extraction.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.extraction.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extraction.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.extraction.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+
+
+	<!--  new techs -->
+
+	<character name="moon.tech.ionisation.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.ionisation.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.ionisation.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.ionisation.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.lithium.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.lithium.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.lithium.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.lithium.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.sodium.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.sodium.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.sodium.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.sodium.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.precision.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.precision.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.precision.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.precision.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.advancedexplosives.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.advancedexplosives.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.advancedexplosives.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.advancedexplosives.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.plastic.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.plastic.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.plastic.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.plastic.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.nanohardening.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nanohardening.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nanohardening.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nanohardening.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.finetuning.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.finetuning.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.finetuning.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.finetuning.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.droidbuff.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.droidbuff.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.droidbuff.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.droidbuff.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.nanotechnology.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.nanotechnology.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.nanotechnology.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.nanotechnology.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.splitter.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.splitter.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.splitter.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.splitter.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.multibarrel.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.multibarrel.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.multibarrel.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.multibarrel.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.amplifiers.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.amplifiers.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.amplifiers.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.amplifiers.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.lasertech.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.lasertech.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.lasertech.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.lasertech.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.shells.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.shells.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.shells.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.shells.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.shielding.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.shielding.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.shielding.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.shielding.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.xrays.char" inherit="moon.research.tech.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="0,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.box.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.box.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.box.glow.01"/>
+				<sprite layer="10" offset="-14,83" sublayer="1" animation="info.tech.xrays.ground.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.xrays.anim"/>
+				<sprite layer="10" offset="-14,83" sublayer="3" colored="tech" animation="info.tech.xrays.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+
+
+	<character name="moon.tech.coffee.char" inherit="moon.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.coffee.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.coffee.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.coffee.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.strongercoffee.char" inherit="moon.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.strongercoffee.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.strongercoffee.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.strongercoffee.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.grant.char" inherit="moon.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.grant.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.grant.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.grant.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.reinforcements.char" inherit="moon.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.reinforcements.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.reinforcements.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.reinforcements.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.extrabarricades.char" inherit="moon.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.extrabarricades.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extrabarricades.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.extrabarricades.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+
+	<character name="moon.tech.extramines.char" inherit="moon.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.extramines.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.extramines.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.extramines.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	<character name="moon.tech.powerups.char" inherit="moon.research.delivery.char.spec">
+		<idleLayers><layers scale="0.5">
+				<sprite layer="2" offset="20,73" animation="moon.info.background.anim"/>
+				<sprite layer="9" sublayer="1" image="spriteimage.info.tech.crate.ground.01"/>
+				<sprite layer="9" sublayer="2" bottomColored="info-floor" topColored="info-building" image="spriteimage.info.tech.crate.01"/>
+				<sprite layer="9" sublayer="3" colored="info-metal" image="spriteimage.info.tech.crate.glow.01"/>
+				<sprite layer="10" offset="-20,85" sublayer="1" animation="info.tech.powerups.ground.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="2" bottomColored="info-floor" topColored="tech-top" animation="info.tech.powerups.anim"/>
+				<sprite layer="10" offset="-20,85" sublayer="3" colored="tech" animation="info.tech.powerups.glow.anim"/>			
+		</layers></idleLayers>
+	</character>
+	
+	
+</resources>

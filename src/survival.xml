@@ -1,0 +1,591 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Survival mode -->
+<resources>
+
+	<include resource="tags.xml"/>
+	
+	<!-- Rank and file gidrahs -->
+	<array
+		name="survival.gidrahs.0"
+	>
+		<item>gidrah.earth.01</item>
+		<item>gidrah.moon.01</item>
+		<item>gidrah.mars.01</item>
+		<item>gidrah.mars.02</item>
+		<item>gidrah.saturn.01</item>
+	</array>	
+	
+	<!-- Rank and file gidrahs -->
+	<array
+		name="survival.angrygidrahs.0"
+	>
+		<item>angrygidrah.earth.01</item>
+		<item>angrygidrah.moon.01</item>
+		<item>angrygidrah.mars.01</item>
+		<item>angrygidrah.mars.02</item>
+		<item>angrygidrah.saturn.01</item>
+	</array>	
+	
+	<!-- Tougher gidrahs -->
+	<array
+		name="survival.gidrahs.1"
+	>
+		<item>gidrah.earth.02</item>
+		<item>gidrah.moon.02</item>
+		<item>gidrah.saturn.02</item>
+	</array>	
+	
+	<!-- Tougher gidrahs -->
+	<array
+		name="survival.angrygidrahs.1"
+	>
+		<item>angrygidrah.earth.02</item>
+		<item>angrygidrah.moon.02</item>
+		<item>angrygidrah.saturn.02</item>
+	</array>	
+	
+	<!-- Difficult gidrahs -->
+	<array
+		name="survival.gidrahs.2"
+	>
+		<item>gidrah.moon.03</item>
+		<item>gidrah.mars.04</item>
+		<item>gidrah.saturn.03</item>
+		<item>gidrah.titan.02</item>
+	</array>	
+	
+	<!-- Difficult gidrahs -->
+	<array
+		name="survival.angrygidrahs.2"
+	>
+		<item>angrygidrah.moon.03</item>
+		<item>angrygidrah.mars.04</item>
+		<item>angrygidrah.saturn.03</item>
+		<item>angrygidrah.titan.02</item>
+	</array>	
+	
+	<!-- Exotic gidrahs -->
+	<array
+		name="survival.gidrahs.3"
+	>
+		<item>gidrah.mars.04</item>
+		<item>gidrah.saturn.04</item>
+		<item>gidrah.saturn.05</item>
+		<item>gidrah.titan.03</item>
+		<item>gidrah.titan.04</item>
+		<item>gidrah.titan.05</item>
+	</array>	
+	
+	<!-- Exotic gidrahs -->
+	<array
+		name="survival.angrygidrahs.3"
+	>
+		<item>angrygidrah.mars.04</item>
+		<item>angrygidrah.saturn.04</item>
+		<item>angrygidrah.saturn.05</item>
+		<item>angrygidrah.titan.03</item>
+		<item>angrygidrah.titan.04</item>
+		<item>angrygidrah.titan.05</item>
+	</array>	
+	
+	<!-- Bosses -->
+	<array name="survival.bosses.array">
+		<item>gidrah.earth.boss</item>
+		<item>gidrah.moon.boss</item>
+		<item>gidrah.mars.boss</item>
+		<item>gidrah.saturn.boss</item>
+		<item>gidrah.titan.boss</item>
+	</array>
+	
+	
+	
+	
+	<!-- Story settings -->
+	<setting
+		name="survival.setting.spec"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="12" offset="118,383" animation="story.alert.anim"/>
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+140"/>
+					<scale xscale="1.1" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.mars.01" d="0"/>
+					<frame i="alert.setting.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+	<setting name="survival.setting" inherit="survival.setting.spec" >
+		<actor character="survival.char" position="140,60" bounds="40,150,240,20" expand="up" mirrored="false" />
+	</setting>
+
+	<story name="survival.intro" setting="survival.setting">
+		<char id="survival.char">[stats]</char>
+	</story>
+
+	<!-- Survival map templates -->
+	<array name="survival.templates">
+		<item>
+			<array name="survival.earth.templates">
+				<item>
+					<emptytemplate name="survival.earth.empty.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+					/>
+				</item>
+				<item>
+					<plainstemplate name="survival.earth.plains.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minBlotchSize="3.0"
+						maxBlotchSize="16.0"
+						minBlotches="20"
+						maxBlotches="30"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<cavetemplate name="survival.earth.cave.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						bigInternalWalls="false"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<perlintemplate name="survival.earth.perlin.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						scale="6"
+						octaves="3"
+						persistence="0.5"
+						threshold="0.0"
+						
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+			</array>
+		</item>
+		<item>
+			<array name="survival.moon.templates">
+				<item>
+					<emptytemplate name="survival.moon.empty.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+					/>
+				</item>
+				<item>
+					<plainstemplate name="survival.moon.plains.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minBlotchSize="3.0"
+						maxBlotchSize="16.0"
+						minBlotches="20"
+						maxBlotches="30"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<cavetemplate name="survival.moon.cave.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						bigInternalWalls="false"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<perlintemplate name="survival.moon.perlin.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						scale="6"
+						octaves="3"
+						persistence="0.5"
+						threshold="0.0"
+
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+			</array>
+		</item>
+		<item>
+			<array name="survival.mars.templates">
+				<item>
+					<emptytemplate name="survival.mars.empty.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+					/>
+				</item>
+				<item>
+					<plainstemplate name="survival.mars.plains.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minBlotchSize="3.0"
+						maxBlotchSize="16.0"
+						minBlotches="20"
+						maxBlotches="30"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<cavetemplate name="survival.mars.cave.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						bigInternalWalls="false"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<perlintemplate name="survival.mars.perlin.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						scale="6"
+						octaves="3"
+						persistence="0.5"
+						threshold="0.0"
+
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+			</array>
+		</item>
+		<item>
+			<array name="survival.saturn.templates">
+				<item>
+					<emptytemplate name="survival.saturn.empty.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+					/>
+				</item>
+				<item>
+					<plainstemplate name="survival.saturn.plains.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minBlotchSize="3.0"
+						maxBlotchSize="16.0"
+						minBlotches="20"
+						maxBlotches="30"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<cavetemplate name="survival.saturn.cave.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						bigInternalWalls="false"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<perlintemplate name="survival.saturn.perlin.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						scale="9"
+						octaves="4"
+						persistence="0.25"
+						threshold="0.25"
+
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+			</array>
+		</item>
+		<item>
+			<array name="survival.titan.templates">
+				<item>
+					<emptytemplate name="survival.titan.empty.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+					/>
+				</item>
+				<item>
+					<plainstemplate name="survival.titan.plains.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minBlotchSize="3.0"
+						maxBlotchSize="16.0"
+						minBlotches="20"
+						maxBlotches="30"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<cavetemplate name="survival.titan.cave.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						bigInternalWalls="false"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+				<item>
+					<perlintemplate name="survival.titan.perlin.template"
+						floor0="earth.floor.0"
+						floor1="earth.floor.1"
+						floor2="earth.floor.2"
+						floor3="earth.floor.3"				
+						floorTransitions="earth.transitions"
+						base="basepoint.1"
+						
+						wall="earth.walls"
+						internalWall="earth.internalWalls"
+						
+						midSpawn="spawnpoint.mid.earth"
+		
+						scale="5"
+						octaves="5"
+						persistence="0.5"
+						threshold="0.25"
+						
+						minMainTunnelWidth="1.0"
+						maxMainTunnelWidth="3.0"
+						minSpawnTunnelWidth="1.0"
+						maxSpawnTunnelWidth="3.0"
+					/>
+				</item>
+			</array>
+		</item>
+	</array>
+</resources>

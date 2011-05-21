@@ -1,0 +1,1366 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDRAH.MOON.BOSS ==================================================================================================  -->
+
+
+	<!-- ANIMATION for GIDRAH.MOON.BOSS -->
+
+	<animation name="gidrah.moon.boss.walk.selecta.anim">
+			<frame i="spriteimage.boss.moon.back.01" d="1" />
+		<setlayers layers="gidrah.moon.boss.walk.layers"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.walkAndRoar.head.anim">
+			<frame i="spriteimage.boss.moon.01" d="1" />
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.2" childYOffset="-1.7" />
+			<offset x="-1.6" y="-0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.2" childYOffset="2.0" />
+			<offset x="1.6" y="1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.0" childYOffset="-0.5" />
+			<offset x="-1.5" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.6" childYOffset="0.4" />
+			<offset x="0.8" y="0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.0" childYOffset="-2.0" />
+			<offset x="-1.5" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.5" childYOffset="-0.7" />
+			<offset x="1.2" y="-0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.8" childYOffset="-2.0" />
+			<offset x="-0.9" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.0" childYOffset="-0.1" />
+			<offset x="1.5" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.9" childYOffset="-1.6" />
+			<offset x="-1.5" y="-0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.9" childYOffset="-0.4" />
+			<offset x="0.5" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.5" childYOffset="-1.4" />
+			<offset x="-0.8" y="-0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.1" childYOffset="0.2" />
+			<offset x="1.0" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.1" childYOffset="-0.6" />
+			<offset x="-1.1" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.3" />
+			<offset x="0.7" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.6" childYOffset="-1.3" />
+			<offset x="-0.8" y="-0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.4" childYOffset="-0.6" />
+			<offset x="0.7" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.8" childYOffset="-1.0" />
+			<offset x="-0.9" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.9" childYOffset="0.2" />
+			<offset x="1.9" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.9" childYOffset="-1.5" />
+			<offset x="-1.4" y="-0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.0" childYOffset="-0.5" />
+			<offset x="1.5" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.5" childYOffset="-1.1" />
+			<offset x="-0.8" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.9" childYOffset="-1.4" />
+			<offset x="1.0" y="-0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.0" childYOffset="-2.1" />
+			<offset x="-1.0" y="-1.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.6" childYOffset="-1.0" />
+			<offset x="1.3" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.0" childYOffset="-0.7" />
+			<offset x="-1.5" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.9" childYOffset="-1.8" />
+			<offset x="0.9" y="-0.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.5" childYOffset="-1.5" />
+			<offset x="-1.3" y="-0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.6" childYOffset="-2.7" />
+			<offset x="1.3" y="-1.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.4" childYOffset="-1.9" />
+			<offset x="-0.7" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.4" childYOffset="-0.4" />
+			<offset x="1.2" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.7" childYOffset="-1.3" />
+			<offset x="-1.3" y="-0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.8" childYOffset="-0.1" />
+			<offset x="0.4" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.6" childYOffset="-1.0" />
+			<offset x="-0.8" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.1" childYOffset="-0.4" />
+			<offset x="0.5" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.6" childYOffset="0.1" />
+			<offset x="-1.3" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.9" childYOffset="0.5" />
+			<offset x="0.9" y="0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.4" childYOffset="0.7" />
+			<offset x="-1.2" y="0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.7" childYOffset="-0.3" />
+			<offset x="0.8" y="-0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.0" childYOffset="0.5" />
+			<offset x="-0.5" y="0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.9" childYOffset="-0.3" />
+			<offset x="0.9" y="-0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.6" childYOffset="-0.7" />
+			<offset x="-1.3" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.5" childYOffset="1.4" />
+			<offset x="-0.2" y="0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.0" childYOffset="0.1" />
+			<offset x="-1.5" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.9" childYOffset="0.5" />
+			<offset x="0.9" y="0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.6" childYOffset="1.4" />
+			<offset x="-1.8" y="0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.5" childYOffset="-0.4" />
+			<offset x="1.3" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.5" childYOffset="0.8" />
+			<offset x="-0.7" y="0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.8" childYOffset="-0.4" />
+			<offset x="1.4" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.9" childYOffset="-1.0" />
+			<offset x="-1.9" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.4" childYOffset="2.1" />
+			<offset x="-0.2" y="1.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-4.5" childYOffset="0.2" />
+			<offset x="-2.2" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.8" childYOffset="0.7" />
+			<offset x="1.4" y="0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.6" childYOffset="1.6" />
+			<offset x="-1.8" y="0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.5" childYOffset="-0.4" />
+			<offset x="1.3" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.0" childYOffset="0.5" />
+			<offset x="-0.5" y="0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.9" childYOffset="-0.3" />
+			<offset x="0.9" y="-0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.6" childYOffset="-0.7" />
+			<offset x="-1.3" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.6" childYOffset="2.0" />
+			<offset x="1.3" y="1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.7" childYOffset="1.1" />
+			<offset x="0.8" y="0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.7" childYOffset="1.7" />
+			<offset x="-1.9" y="0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.6" />
+			<offset x="1.3" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.6" childYOffset="2.4" />
+			<offset x="-0.8" y="1.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.0" childYOffset="-0.2" />
+			<offset x="1.0" y="-0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-4.1" childYOffset="1.3" />
+			<offset x="-2.0" y="0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="4.0" childYOffset="3.4" />
+			<offset x="2.0" y="1.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.4" childYOffset="0.2" />
+			<offset x="-1.2" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-4.7" childYOffset="0.2" />
+			<offset x="-2.3" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="5.6" childYOffset="3.6" />
+			<offset x="2.8" y="1.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-5.8" childYOffset="0.8" />
+			<offset x="-2.9" y="0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="6.1" childYOffset="4.6" />
+			<offset x="3.1" y="2.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.6" childYOffset="1.4" />
+			<offset x="-1.8" y="0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.6" childYOffset="2.7" />
+			<offset x="1.3" y="1.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.3" childYOffset="3.7" />
+			<offset x="-1.6" y="1.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.3" childYOffset="2.7" />
+			<offset x="1.2" y="1.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.2" childYOffset="5.3" />
+			<offset x="-1.1" y="2.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="4.1" childYOffset="4.9" />
+			<offset x="2.0" y="2.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-4.8" childYOffset="3.7" />
+			<offset x="-2.4" y="1.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="5.6" childYOffset="1.9" />
+			<offset x="2.8" y="1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-5.6" childYOffset="2.9" />
+			<offset x="-2.8" y="1.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="5.6" childYOffset="1.9" />
+			<offset x="2.8" y="1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.8" childYOffset="1.8" />
+			<offset x="-0.9" y="0.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.1" childYOffset="1.2" />
+			<offset x="0.5" y="0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.8" childYOffset="1.1" />
+			<offset x="-0.4" y="0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.3" childYOffset="1.3" />
+			<offset x="0.1" y="0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.2" childYOffset="0.7" />
+			<offset x="-0.1" y="0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.2" childYOffset="0.5" />
+			<offset x="0.1" y="0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.1" childYOffset="-0.8" />
+			<offset x="0.0" y="-0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.1" childYOffset="-0.3" />
+			<offset x="0.0" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-0.1" />
+			<offset x="0.0" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="320" />
+	</animation>
+
+	<animation name="gidrah.moon.boss.walkAndRoar.head.glow.anim">
+			<frame i="spriteimage.boss.moon.top.01" d="1" />
+			<frame i="spriteimage.boss.moon.top.03" d="1" />
+			<frame i="spriteimage.boss.moon.top.05" d="1" />
+			<frame i="spriteimage.boss.moon.top.06" d="2" />
+			<frame i="spriteimage.boss.moon.top.07" d="3" />
+			<frame i="spriteimage.boss.moon.top.08" d="5" />
+			<frame i="spriteimage.boss.moon.top.08" d="147" />
+			<frame i="spriteimage.boss.moon.top.07" d="19" />
+			<frame i="spriteimage.boss.moon.top.07" d="4" />
+			<frame i="spriteimage.boss.moon.top.06" d="3" />
+			<frame i="spriteimage.boss.moon.top.05" d="2" />
+			<frame i="spriteimage.boss.moon.top.04" d="1" />
+			<frame i="spriteimage.boss.moon.top.03" d="3" />
+			<frame i="spriteimage.boss.moon.top.02" d="3" />
+			<frame i="spriteimage.boss.moon.top.01" d="4" />
+			<frame i="spriteimage.boss.moon.top.01" d="300" />
+	</animation>
+
+	<animation name="gidrah.moon.boss.walkAndRoar.face.anim">
+			<frame i="spriteimage.boss.moon.glow.01" d="1" />
+			<frame i="spriteimage.boss.moon.glow.07" d="1" />
+			<frame i="spriteimage.boss.moon.glow.08" d="167" />
+			<frame i="spriteimage.boss.moon.glow.08" d="1" />
+			<frame i="spriteimage.boss.moon.glow.07" d="2" />
+			<frame i="spriteimage.boss.moon.glow.06" d="1" />
+			<frame i="spriteimage.boss.moon.glow.05" d="1" />
+			<frame i="spriteimage.boss.moon.glow.04" d="1" />
+			<frame i="spriteimage.boss.moon.glow.03" d="1" />
+			<frame i="spriteimage.boss.moon.glow.02" d="3" />
+			<frame i="spriteimage.boss.moon.glow.01" d="4" />
+			<frame i="spriteimage.boss.moon.glow.01" d="17" />
+		<setlayers layers="gidrah.moon.boss.walk.layers"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.walk.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.boss.moon.back.01" d="6" />
+			<frame i="spriteimage.boss.moon.back.01" d="1" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="4" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="2" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="2" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="2" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="2" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="3" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="1" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="5" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="3" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="1" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="1" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="1" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="1" />
+			<frame i="spriteimage.boss.moon.back.01" d="5" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.walk.head.anim">
+		<label id="start"/>
+			<frame i="spriteimage.boss.moon.01" d="50" />
+		<random>
+			<dest id="roarShort" n="2"/>
+			<dest id="roar" n="1"/>
+			<dest id="start" n="7"/>
+		</random>
+		<label id="roar"/>
+				<sound attenuator="loud.attenuator" sound="gidrah-moon-boss-roar.buffer"/>
+				<sound attenuator="default.attenuator" sound="gidrah-moon-boss-amb.buffer"/>
+			<frame i="spriteimage.boss.moon.01" d="1" />
+		<setlayers layers="gidrah.moon.boss.walkAndRoar.layers"/>
+		<label id="roarShort"/>
+				<sound attenuator="loud.attenuator" sound="gidrah-moon-boss-roar-short.buffer"/>
+				<sound attenuator="default.attenuator" sound="gidrah-moon-boss-amb-short.buffer"/>
+			<frame i="spriteimage.boss.moon.01" d="1" />
+		<setlayers layers="gidrah.moon.boss.walkAndRoarShort.layers"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.head.glow.anim">
+		<label id="start"/>
+			<frame i="spriteimage.boss.moon.top.01" d="7" />
+			<frame i="spriteimage.boss.moon.top.02" d="6" />
+			<frame i="spriteimage.boss.moon.top.03" d="4" />
+			<frame i="spriteimage.boss.moon.top.04" d="3" />
+			<frame i="spriteimage.boss.moon.top.05" d="2" />
+			<frame i="spriteimage.boss.moon.top.06" d="3" />
+			<frame i="spriteimage.boss.moon.top.07" d="3" />
+			<frame i="spriteimage.boss.moon.top.08" d="5" />
+			<frame i="spriteimage.boss.moon.top.08" d="3" />
+			<frame i="spriteimage.boss.moon.top.07" d="3" />
+			<frame i="spriteimage.boss.moon.top.06" d="1" />
+			<frame i="spriteimage.boss.moon.top.05" d="1" />
+			<frame i="spriteimage.boss.moon.top.04" d="1" />
+			<frame i="spriteimage.boss.moon.top.03" d="2" />
+			<frame i="spriteimage.boss.moon.top.02" d="2" />
+			<frame i="spriteimage.boss.moon.top.01" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.boss.moon.glow.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.boss.moon.glow.01" d="5" />
+			<frame i="spriteimage.boss.moon.glow.09" d="1" />
+			<frame i="spriteimage.boss.moon.glow.10" d="1" />
+			<frame i="spriteimage.boss.moon.glow.11" d="11" />
+			<frame i="spriteimage.boss.moon.glow.11" d="5" />
+			<frame i="spriteimage.boss.moon.glow.10" d="3" />
+			<frame i="spriteimage.boss.moon.glow.09" d="1" />
+			<frame i="spriteimage.boss.moon.glow.09" d="2" />
+			<frame i="spriteimage.boss.moon.glow.01" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.idle.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.boss.moon.back.03" d="4" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="2" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="2" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="4" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="14" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="6" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="4" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="8" childYOffset="-2.0" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.attack.body.anim">
+		<!--
+		<sound player="gidrah.player" attenuator="loud.attenuator" sound="roar04.buffer"/>
+		<sound player="gidrah.player" attenuator="default.attenuator" sound="roar04_ambience.buffer"/>
+		-->
+			<frame i="spriteimage.boss.moon.back.01" d="1" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="1" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="1" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="3" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="1" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="1" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="2" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="1" />
+			<frame i="spriteimage.boss.moon.back.01" d="6" />
+			<frame i="spriteimage.boss.moon.back.01" d="19" />
+			<frame i="spriteimage.boss.moon.back.01" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-7.0" />
+		<event id="1"/>
+			<frame i="spriteimage.boss.moon.back.08" d="7" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="4" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="1" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="2" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="2" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="4" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="1" />
+			<frame i="spriteimage.boss.moon.back.01" d="6" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.attack.head.anim">
+			<frame i="spriteimage.boss.moon.01" d="11" />
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.2" />
+			<offset x="0.1" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.3" childYOffset="0.1" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-0.3" childYOffset="0.2" />
+			<offset x="-0.1" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.5" childYOffset="0.3" />
+			<offset x="-0.1" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.5" childYOffset="0.5" />
+			<offset x="0.2" y="0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.5" childYOffset="0.7" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-0.5" childYOffset="0.9" />
+			<offset x="-0.3" y="0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.8" childYOffset="1.2" />
+			<offset x="-0.3" y="0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.8" childYOffset="1.5" />
+			<offset x="0.4" y="0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.5" childYOffset="1.8" />
+			<offset x="0.4" y="0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.5" childYOffset="2.1" />
+			<offset x="-0.7" y="0.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.9" childYOffset="2.5" />
+			<offset x="-0.7" y="1.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.9" childYOffset="2.8" />
+			<offset x="1.0" y="1.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.1" childYOffset="3.2" />
+			<offset x="1.0" y="1.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.1" childYOffset="3.7" />
+			<offset x="-1.1" y="1.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.5" childYOffset="4.1" />
+			<offset x="-1.1" y="1.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.5" childYOffset="4.5" />
+			<offset x="0.8" y="2.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.5" childYOffset="5.0" />
+			<offset x="0.8" y="2.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.5" childYOffset="5.5" />
+			<offset x="-1.3" y="2.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.1" childYOffset="6.0" />
+			<offset x="-1.3" y="2.7" d="1"/>
+			<offset x="1.1" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.4" childYOffset="6.0" />
+			<offset x="-1.2" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.6" childYOffset="6.0" />
+			<offset x="1.3" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.2" childYOffset="6.0" />
+			<offset x="-1.6" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.4" childYOffset="6.0" />
+			<offset x="1.7" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="6.0" />
+			<offset x="0.0" y="3.0" d="2"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-6.6" />
+			<offset x="0.0" y="-3.3" d="2"/>
+			<frame i="spriteimage.boss.moon.01" d="2" childYOffset="-6.5" />
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-6.4" />
+			<offset x="0.0" y="-3.2" d="2"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-6.3" />
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-6.2" />
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-6.1" />
+			<offset x="0.0" y="-3.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.9" />
+			<offset x="0.0" y="-3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-5.8" />
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.7" />
+			<offset x="0.0" y="-2.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.5" />
+			<offset x="0.0" y="-2.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-5.4" />
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.2" />
+			<offset x="0.0" y="-2.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.0" />
+			<offset x="0.0" y="-2.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-4.8" />
+			<offset x="0.0" y="-2.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-4.6" />
+			<offset x="0.0" y="-2.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-4.4" />
+			<offset x="0.0" y="-2.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-4.2" />
+			<offset x="0.0" y="-2.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-4.0" />
+			<offset x="0.0" y="-2.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-3.7" />
+			<offset x="0.0" y="-2.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-3.5" />
+			<offset x="0.0" y="-1.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-3.2" />
+			<offset x="0.0" y="-1.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-2.9" />
+			<offset x="0.0" y="-1.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-2.7" />
+			<offset x="0.0" y="-1.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-2.4" />
+			<offset x="0.0" y="-1.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-2.1" />
+			<offset x="0.0" y="-1.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-1.7" />
+			<offset x="0.0" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-1.4" />
+			<offset x="0.0" y="-0.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-1.1" />
+			<offset x="0.0" y="-0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-0.7" />
+			<offset x="0.0" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-0.4" />
+			<offset x="0.0" y="-0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" />
+			<offset x="0.0" y="-0.2" d="1"/>
+			<offset x="0.0" y="0.0" d="419"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.attack.head.glow.anim">
+			<frame i="spriteimage.boss.moon.top.01" d="9" />
+			<frame i="spriteimage.boss.moon.top.02" d="6" />
+			<frame i="spriteimage.boss.moon.top.03" d="4" />
+			<frame i="spriteimage.boss.moon.top.04" d="4" />
+			<frame i="spriteimage.boss.moon.top.05" d="3" />
+			<frame i="spriteimage.boss.moon.top.06" d="2" />
+			<frame i="spriteimage.boss.moon.top.07" d="3" />
+			<frame i="spriteimage.boss.moon.top.08" d="1" />
+			<frame i="spriteimage.boss.moon.top.08" d="12" />
+			<frame i="spriteimage.boss.moon.top.08" d="1" />
+			<frame i="spriteimage.boss.moon.top.05" d="1" />
+			<frame i="spriteimage.boss.moon.top.01" d="34" />
+			<frame i="spriteimage.boss.moon.top.01" d="419" />
+	</animation>
+
+	<animation name="gidrah.moon.boss.attack.face.anim">
+			<frame i="spriteimage.boss.moon.glow.01" d="20" />
+			<frame i="spriteimage.boss.moon.glow.01" d="1" />
+			<frame i="spriteimage.boss.moon.glow.04" d="1" />
+			<frame i="spriteimage.boss.moon.glow.05" d="1" />
+			<frame i="spriteimage.boss.moon.glow.06" d="2" />
+			<frame i="spriteimage.boss.moon.glow.07" d="6" />
+			<frame i="spriteimage.boss.moon.glow.08" d="13" />
+			<frame i="spriteimage.boss.moon.glow.08" d="1" />
+			<frame i="spriteimage.boss.moon.glow.12" d="10" />
+			<frame i="spriteimage.boss.moon.glow.13" d="4" />
+			<frame i="spriteimage.boss.moon.glow.14" d="3" />
+			<frame i="spriteimage.boss.moon.glow.14" d="1" />
+			<frame i="spriteimage.boss.moon.glow.01" d="436" />
+	</animation>
+
+	<animation name="gidrah.moon.boss.death.body.anim">
+			<frame i="spriteimage.boss.moon.back.01" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="1" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="1" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="23" childYOffset="-7.0" />
+			<frame i="spriteimage.boss.moon.back.08" d="1" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="12" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.back.07" d="1" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="8" childYOffset="-5.0" />
+			<frame i="spriteimage.boss.moon.back.06" d="1" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="7" childYOffset="-4.0" />
+			<frame i="spriteimage.boss.moon.back.05" d="1" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="9" childYOffset="-3.0" />
+			<frame i="spriteimage.boss.moon.back.04" d="1" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="13" childYOffset="-2.0" />
+			<frame i="spriteimage.boss.moon.back.03" d="1" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="23" childYOffset="-1.0" />
+			<frame i="spriteimage.boss.moon.back.02" d="1" />
+			<frame i="spriteimage.boss.moon.back.01" d="44" />
+			<frame i="spriteimage.boss.moon.back.01" d="1" />
+		<setlayers layers="gidrah.moon.boss.deathFall.layers"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.death.head.anim">
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-0.5" />
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-1.0" />
+			<offset x="0.0" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-1.6" />
+			<offset x="0.0" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-2.1" />
+			<offset x="0.0" y="-0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-2.6" />
+			<offset x="0.0" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-3.0" />
+			<offset x="0.0" y="-1.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-3.5" />
+			<offset x="0.0" y="-1.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-3.9" />
+			<offset x="0.0" y="-1.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-4.2" />
+			<offset x="0.0" y="-1.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-4.5" />
+			<offset x="0.0" y="-2.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-4.8" />
+			<offset x="0.0" y="-2.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.1" />
+			<offset x="0.0" y="-2.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.3" />
+			<offset x="0.0" y="-2.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.4" />
+			<offset x="0.0" y="-2.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.6" />
+			<offset x="0.0" y="-2.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childYOffset="-5.7" />
+			<offset x="0.0" y="-2.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-5.8" />
+			<offset x="0.0" y="-2.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-5.9" />
+			<offset x="0.0" y="-3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="8" childYOffset="-6.0" />
+			<frame i="spriteimage.boss.moon.01" d="5" childYOffset="-5.9" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.2" childYOffset="-5.9" />
+			<offset x="0.0" y="-2.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.2" childYOffset="-5.8" />
+			<offset x="0.1" y="-2.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.3" childYOffset="-5.8" />
+			<offset x="-0.1" y="-2.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.5" childYOffset="-5.7" />
+			<offset x="0.2" y="-2.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.5" childYOffset="-5.7" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-0.5" childYOffset="-5.6" />
+			<offset x="-0.3" y="-2.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.8" childYOffset="-5.6" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.8" childYOffset="-5.5" />
+			<offset x="0.4" y="-2.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.9" childYOffset="-5.5" />
+			<offset x="-0.4" y="-2.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-0.5" childYOffset="-5.4" />
+			<offset x="-0.4" y="-2.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-0.5" childYOffset="-5.3" />
+			<offset x="-0.3" y="-2.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.6" childYOffset="-5.3" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.6" childYOffset="-5.2" />
+			<offset x="0.3" y="-2.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.7" childYOffset="-5.2" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.7" childYOffset="-5.1" />
+			<offset x="-0.9" y="-2.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="-5.0" />
+			<offset x="-0.9" y="-2.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="-4.9" />
+			<offset x="0.5" y="-2.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.2" childYOffset="-4.9" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.2" childYOffset="-4.8" />
+			<offset x="-0.6" y="-2.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.0" childYOffset="-4.7" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.0" childYOffset="-4.6" />
+			<offset x="0.5" y="-2.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.5" childYOffset="-4.5" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.5" childYOffset="-4.4" />
+			<offset x="-0.8" y="-2.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.8" childYOffset="-4.3" />
+			<offset x="-0.8" y="-2.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.8" childYOffset="-4.2" />
+			<offset x="0.4" y="-2.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.8" childYOffset="-4.1" />
+			<offset x="0.4" y="-2.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.8" childYOffset="-4.0" />
+			<offset x="-0.9" y="-2.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.1" childYOffset="-3.9" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="-3.7" />
+			<offset x="0.5" y="-1.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.3" childYOffset="-3.6" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.3" childYOffset="-3.5" />
+			<offset x="-0.7" y="-1.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.1" childYOffset="-3.4" />
+			<offset x="-0.7" y="-1.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.1" childYOffset="-3.2" />
+			<offset x="1.1" y="-1.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.8" childYOffset="-3.1" />
+			<offset x="1.1" y="-1.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.8" childYOffset="-2.9" />
+			<offset x="-0.9" y="-1.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.7" childYOffset="-2.8" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="0.7" childYOffset="-2.6" />
+			<offset x="0.4" y="-1.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.1" childYOffset="-2.5" />
+			<offset x="0.4" y="-1.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.1" childYOffset="-2.3" />
+			<offset x="-1.1" y="-1.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.1" childYOffset="-2.1" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.1" childYOffset="-2.0" />
+			<offset x="1.1" y="-1.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.0" childYOffset="-1.8" />
+			<offset x="1.1" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.0" childYOffset="-1.6" />
+			<offset x="-0.5" y="-0.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.9" childYOffset="-1.4" />
+			<offset x="-0.5" y="-0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.9" childYOffset="-1.2" />
+			<offset x="0.9" y="-0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.9" childYOffset="-1.0" />
+			<offset x="0.9" y="-0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.9" childYOffset="-0.9" />
+			<offset x="-0.9" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="-0.7" />
+			<offset x="-0.9" y="-0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="-0.4" />
+			<offset x="0.5" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="-0.2" />
+			<offset x="0.5" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" />
+			<offset x="-1.2" y="-0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.6" childYOffset="0.2" />
+			<offset x="-1.2" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.6" childYOffset="0.4" />
+			<offset x="1.3" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-3.3" childYOffset="0.6" />
+			<offset x="1.3" y="0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-3.3" childYOffset="0.8" />
+			<offset x="-1.7" y="0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.6" childYOffset="1.0" />
+			<offset x="-1.7" y="0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.6" childYOffset="1.3" />
+			<offset x="1.3" y="0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="1.5" />
+			<offset x="1.3" y="0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="1.7" />
+			<offset x="-1.2" y="0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.9" childYOffset="1.9" />
+			<offset x="-1.2" y="0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.9" childYOffset="2.1" />
+			<offset x="0.9" y="1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.5" childYOffset="2.3" />
+			<offset x="0.9" y="1.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-1.5" childYOffset="2.5" />
+			<offset x="-0.8" y="1.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="2.8" />
+			<offset x="-0.8" y="1.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="3.0" />
+			<offset x="0.5" y="1.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="3.2" />
+			<offset x="0.5" y="1.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="3.4" />
+			<offset x="-1.2" y="1.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.6" childYOffset="3.5" />
+			<offset x="-1.2" y="1.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.6" childYOffset="3.7" />
+			<offset x="1.3" y="1.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-3.2" childYOffset="3.9" />
+			<offset x="1.3" y="1.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-3.2" childYOffset="4.1" />
+			<offset x="-1.6" y="2.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.7" childYOffset="4.2" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.7" childYOffset="4.4" />
+			<offset x="0.8" y="2.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="4.6" />
+			<offset x="0.8" y="2.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="4.7" />
+			<offset x="-1.2" y="2.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.8" childYOffset="4.8" />
+			<offset x="-1.2" y="2.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="2.8" childYOffset="5.0" />
+			<offset x="1.4" y="2.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-3.3" childYOffset="5.1" />
+			<offset x="1.4" y="2.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-3.3" childYOffset="5.2" />
+			<offset x="-1.7" y="2.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="5.3" />
+			<offset x="-1.7" y="2.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="1.1" childYOffset="5.4" />
+			<offset x="0.5" y="2.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.4" childYOffset="5.5" />
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="5.6" />
+			<offset x="-1.2" y="2.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.8" childYOffset="5.7" />
+			<offset x="0.9" y="2.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-3.9" childYOffset="5.8" />
+			<offset x="0.9" y="2.9" d="1"/>
+			<offset x="-2.0" y="2.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.9" childYOffset="5.9" />
+			<offset x="1.5" y="2.9" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="5.9" />
+			<offset x="1.5" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="0" childXOffset="-2.4" childYOffset="6.0" />
+			<offset x="-1.2" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.9" childYOffset="6.0" />
+			<offset x="1.0" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-4.0" childYOffset="6.0" />
+			<offset x="-2.0" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.6" childYOffset="6.0" />
+			<offset x="1.3" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-5.4" childYOffset="6.0" />
+			<offset x="-2.7" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.8" childYOffset="6.0" />
+			<offset x="1.9" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-6.4" childYOffset="6.0" />
+			<offset x="-3.2" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="4.4" childYOffset="6.0" />
+			<offset x="2.2" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-7.7" childYOffset="6.0" />
+			<offset x="-3.8" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="6.9" childYOffset="6.0" />
+			<offset x="3.5" y="3.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="6.0" />
+			<offset x="0.0" y="3.0" d="4"/>
+			<animcolor a="0" d="349"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.death.head.glow.anim">
+			<frame i="spriteimage.boss.moon.top.01" d="23" />
+			<frame i="spriteimage.boss.moon.top.01" d="31" />
+			<frame i="spriteimage.boss.moon.top.02" d="27" />
+			<frame i="spriteimage.boss.moon.top.03" d="18" />
+			<frame i="spriteimage.boss.moon.top.04" d="14" />
+			<frame i="spriteimage.boss.moon.top.05" d="11" />
+			<frame i="spriteimage.boss.moon.top.06" d="10" />
+			<frame i="spriteimage.boss.moon.top.07" d="7" />
+			<frame i="spriteimage.boss.moon.top.08" d="2" />
+			<frame i="spriteimage.boss.moon.top.08" d="7" />
+			<animcolor a="0" d="349"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.death.face.anim">
+			<frame i="spriteimage.boss.moon.glow.01" d="37" />
+			<frame i="spriteimage.boss.moon.glow.01" d="4" />
+			<frame i="spriteimage.boss.moon.glow.02" d="6" />
+			<frame i="spriteimage.boss.moon.glow.03" d="6" />
+			<frame i="spriteimage.boss.moon.glow.04" d="7" />
+			<frame i="spriteimage.boss.moon.glow.05" d="7" />
+			<frame i="spriteimage.boss.moon.glow.06" d="10" />
+			<frame i="spriteimage.boss.moon.glow.07" d="16" />
+			<frame i="spriteimage.boss.moon.glow.08" d="31" />
+			<frame i="spriteimage.boss.moon.glow.08" d="26" />
+			<animcolor a="0" d="349"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.walkAndRoarShort.head.anim">
+			<frame i="spriteimage.boss.moon.01" d="1" />
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.2" childYOffset="-1.7" />
+			<offset x="-1.6" y="-0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.2" childYOffset="2.0" />
+			<offset x="1.6" y="1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.0" childYOffset="-0.5" />
+			<offset x="-1.5" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.6" childYOffset="0.4" />
+			<offset x="0.8" y="0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.0" childYOffset="-2.0" />
+			<offset x="-1.5" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.5" childYOffset="-0.7" />
+			<offset x="1.2" y="-0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.8" childYOffset="-2.0" />
+			<offset x="-0.9" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.0" childYOffset="-0.1" />
+			<offset x="1.5" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.9" childYOffset="-1.6" />
+			<offset x="-1.5" y="-0.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.9" childYOffset="-0.4" />
+			<offset x="0.5" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.5" childYOffset="-1.4" />
+			<offset x="-0.8" y="-0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.1" childYOffset="0.2" />
+			<offset x="1.0" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.1" childYOffset="-0.6" />
+			<offset x="-1.1" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.3" />
+			<offset x="0.7" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.6" childYOffset="-1.3" />
+			<offset x="-0.8" y="-0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.4" childYOffset="-0.6" />
+			<offset x="0.7" y="-0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.8" childYOffset="-1.0" />
+			<offset x="-0.9" y="-0.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.9" childYOffset="0.2" />
+			<offset x="1.9" y="0.1" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-2.9" childYOffset="-1.5" />
+			<offset x="-1.4" y="-0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="3.0" childYOffset="-0.5" />
+			<offset x="1.5" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-1.4" childYOffset="-1.9" />
+			<offset x="-0.7" y="-1.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="4.0" childYOffset="2.9" />
+			<offset x="2.0" y="1.5" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.6" childYOffset="1.4" />
+			<offset x="-1.8" y="0.7" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.6" childYOffset="2.7" />
+			<offset x="1.3" y="1.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-3.3" childYOffset="3.7" />
+			<offset x="-1.6" y="1.8" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="2.3" childYOffset="2.7" />
+			<offset x="1.2" y="1.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.8" childYOffset="1.1" />
+			<offset x="-0.4" y="0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.3" childYOffset="1.3" />
+			<offset x="0.1" y="0.6" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.2" childYOffset="0.7" />
+			<offset x="-0.1" y="0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.2" childYOffset="0.5" />
+			<offset x="0.1" y="0.3" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="0.1" childYOffset="-0.8" />
+			<offset x="0.0" y="-0.4" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="-0.1" childYOffset="-0.3" />
+			<offset x="0.0" y="-0.2" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childYOffset="-0.1" />
+			<offset x="0.0" y="0.0" d="1"/>
+			<frame i="spriteimage.boss.moon.01" d="1" childXOffset="1.1" />
+			<offset x="0.5" y="0.0" d="431"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.walkAndRoarShort.head.glow.anim">
+			<frame i="spriteimage.boss.moon.top.01" d="1" />
+			<frame i="spriteimage.boss.moon.top.03" d="1" />
+			<frame i="spriteimage.boss.moon.top.05" d="1" />
+			<frame i="spriteimage.boss.moon.top.06" d="2" />
+			<frame i="spriteimage.boss.moon.top.07" d="3" />
+			<frame i="spriteimage.boss.moon.top.08" d="5" />
+			<frame i="spriteimage.boss.moon.top.08" d="50" />
+			<frame i="spriteimage.boss.moon.top.07" d="16" />
+			<frame i="spriteimage.boss.moon.top.07" d="4" />
+			<frame i="spriteimage.boss.moon.top.06" d="3" />
+			<frame i="spriteimage.boss.moon.top.05" d="2" />
+			<frame i="spriteimage.boss.moon.top.04" d="1" />
+			<frame i="spriteimage.boss.moon.top.03" d="3" />
+			<frame i="spriteimage.boss.moon.top.02" d="3" />
+			<frame i="spriteimage.boss.moon.top.01" d="4" />
+			<frame i="spriteimage.boss.moon.top.01" d="400" />
+	</animation>
+
+	<animation name="gidrah.moon.boss.walkAndRoarShort.face.anim">
+			<frame i="spriteimage.boss.moon.glow.01" d="1" />
+			<frame i="spriteimage.boss.moon.glow.07" d="1" />
+			<frame i="spriteimage.boss.moon.glow.08" d="61" />
+			<frame i="spriteimage.boss.moon.glow.08" d="1" />
+			<frame i="spriteimage.boss.moon.glow.07" d="2" />
+			<frame i="spriteimage.boss.moon.glow.06" d="1" />
+			<frame i="spriteimage.boss.moon.glow.05" d="1" />
+			<frame i="spriteimage.boss.moon.glow.04" d="1" />
+			<frame i="spriteimage.boss.moon.glow.03" d="1" />
+			<frame i="spriteimage.boss.moon.glow.02" d="3" />
+			<frame i="spriteimage.boss.moon.glow.01" d="4" />
+			<frame i="spriteimage.boss.moon.glow.01" d="23" />
+		<setlayers layers="gidrah.moon.boss.walk.layers"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.deathFall.ground.anim">
+			<frame i="spriteimage.boss.moon.ground.01" d="9" />
+			<offset x="-0.5" y="0.0" d="1"/>
+			<offset x="-1.0" y="0.0" d="1"/>
+			<offset x="-1.4" y="0.0" d="1"/>
+			<offset x="-1.8" y="0.0" d="1"/>
+			<offset x="-2.2" y="0.0" d="1"/>
+			<offset x="-2.6" y="0.0" d="1"/>
+			<offset x="-3.0" y="0.0" d="1"/>
+			<offset x="-3.3" y="0.0" d="1"/>
+			<offset x="-3.6" y="0.0" d="1"/>
+			<offset x="-3.9" y="0.0" d="1"/>
+			<offset x="-4.2" y="0.0" d="1"/>
+			<offset x="-4.5" y="0.0" d="1"/>
+			<offset x="-4.7" y="0.0" d="1"/>
+			<offset x="-5.0" y="0.0" d="1"/>
+			<offset x="-5.2" y="0.0" d="1"/>
+			<offset x="-5.4" y="0.0" d="1"/>
+			<offset x="-5.6" y="0.0" d="1"/>
+			<offset x="-5.8" y="0.0" d="1"/>
+			<offset x="-5.9" y="0.0" d="1"/>
+			<offset x="-6.1" y="0.0" d="1"/>
+			<offset x="-6.2" y="0.0" d="1"/>
+			<offset x="-6.3" y="0.0" d="1"/>
+			<offset x="-6.4" y="0.0" d="1"/>
+			<offset x="-6.5" y="0.0" d="1"/>
+			<offset x="-6.6" y="0.0" d="1"/>
+			<offset x="-6.7" y="0.0" d="1"/>
+			<offset x="-6.8" y="0.0" d="1"/>
+			<offset x="-6.9" y="0.0" d="1"/>
+			<offset x="-7.0" y="0.0" d="2"/>
+			<offset x="-7.1" y="0.0" d="1"/>
+			<offset x="-7.2" y="0.0" d="1"/>
+			<offset x="-7.3" y="0.0" d="2"/>
+			<offset x="-7.4" y="0.0" d="1"/>
+			<offset x="-7.5" y="0.0" d="1"/>
+			<offset x="-7.6" y="0.0" d="2"/>
+			<offset x="-7.7" y="0.0" d="1"/>
+			<offset x="-7.8" y="0.0" d="1"/>
+			<offset x="-7.9" y="0.0" d="2"/>
+			<offset x="-8.0" y="0.0" d="1"/>
+			<offset x="-8.1" y="0.0" d="2"/>
+			<offset x="-8.2" y="0.0" d="1"/>
+			<offset x="-8.3" y="0.0" d="2"/>
+			<offset x="-8.4" y="0.0" d="2"/>
+			<offset x="-8.5" y="0.0" d="2"/>
+			<offset x="-8.6" y="0.0" d="2"/>
+			<offset x="-8.7" y="0.0" d="2"/>
+			<offset x="-8.8" y="0.0" d="3"/>
+			<offset x="-8.9" y="0.0" d="4"/>
+			<offset x="-9.0" y="0.0" d="5"/>
+			<offset x="-9.1" y="0.0" d="9"/>
+			<offset x="-9.2" y="0.0" d="114"/>
+			<offset x="-18.3" y="0.0" d="151"/>
+		<frame i="boss.dead.remove.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.deathFall.back.anim">
+			<frame i="spriteimage.boss.moon.dead.back.01" d="9" />
+			<angle angle="371" d="1"/>
+			<angle angle="724" d="1"/>
+			<angle angle="1060" d="1"/>
+			<angle angle="1378" d="1"/>
+			<angle angle="1681" d="1"/>
+			<angle angle="1967" d="1"/>
+			<angle angle="2238" d="1"/>
+			<angle angle="2495" d="1"/>
+			<angle angle="2736" d="1"/>
+			<angle angle="2964" d="1"/>
+			<angle angle="3177" d="1"/>
+			<angle angle="3378" d="1"/>
+			<angle angle="3566" d="1"/>
+			<angle angle="3742" d="1"/>
+			<angle angle="3906" d="1"/>
+			<angle angle="4059" d="1"/>
+			<angle angle="4201" d="1"/>
+			<angle angle="4333" d="1"/>
+			<angle angle="4454" d="1"/>
+			<angle angle="4567" d="1"/>
+			<angle angle="4670" d="1"/>
+			<angle angle="4765" d="1"/>
+			<angle angle="4852" d="1"/>
+			<angle angle="4931" d="1"/>
+			<angle angle="5003" d="1"/>
+			<angle angle="5069" d="1"/>
+			<angle angle="5128" d="1"/>
+			<angle angle="5184" d="1"/>
+			<angle angle="5241" d="1"/>
+			<angle angle="5298" d="1"/>
+			<angle angle="5355" d="1"/>
+			<angle angle="5412" d="1"/>
+			<angle angle="5470" d="1"/>
+			<angle angle="5527" d="1"/>
+			<angle angle="5584" d="1"/>
+			<angle angle="5641" d="1"/>
+			<angle angle="5698" d="1"/>
+			<angle angle="5754" d="1"/>
+			<angle angle="5810" d="1"/>
+			<angle angle="5866" d="1"/>
+			<angle angle="5921" d="1"/>
+			<angle angle="5975" d="1"/>
+			<angle angle="6028" d="1"/>
+			<angle angle="6080" d="1"/>
+			<angle angle="6130" d="1"/>
+			<angle angle="6179" d="1"/>
+			<angle angle="6227" d="1"/>
+			<angle angle="6273" d="1"/>
+			<angle angle="6317" d="1"/>
+			<angle angle="6359" d="1"/>
+			<angle angle="6399" d="1"/>
+			<angle angle="6438" d="1"/>
+			<angle angle="6474" d="1"/>
+			<angle angle="6508" d="1"/>
+			<angle angle="6540" d="1"/>
+			<angle angle="6571" d="1"/>
+			<angle angle="6599" d="1"/>
+			<angle angle="6626" d="1"/>
+			<angle angle="6650" d="1"/>
+			<angle angle="6674" d="1"/>
+			<angle angle="6695" d="1"/>
+			<angle angle="6715" d="1"/>
+			<angle angle="6734" d="1"/>
+			<angle angle="6752" d="1"/>
+			<angle angle="6768" d="1"/>
+			<angle angle="6783" d="1"/>
+			<angle angle="6797" d="1"/>
+			<angle angle="6810" d="1"/>
+			<angle angle="6822" d="1"/>
+			<angle angle="6834" d="1"/>
+			<angle angle="6844" d="1"/>
+			<angle angle="6854" d="1"/>
+			<angle angle="6863" d="1"/>
+			<angle angle="6872" d="1"/>
+			<angle angle="6879" d="1"/>
+			<angle angle="6887" d="1"/>
+			<angle angle="6894" d="1"/>
+			<angle angle="6900" d="1"/>
+			<angle angle="6906" d="1"/>
+			<angle angle="6911" d="1"/>
+			<angle angle="6916" d="1"/>
+			<angle angle="6921" d="1"/>
+			<angle angle="6925" d="1"/>
+			<angle angle="6929" d="1"/>
+			<angle angle="6933" d="1"/>
+			<angle angle="6936" d="1"/>
+			<angle angle="6939" d="1"/>
+			<angle angle="6942" d="1"/>
+			<angle angle="6945" d="1"/>
+			<angle angle="6947" d="1"/>
+			<angle angle="6949" d="1"/>
+			<angle angle="6951" d="1"/>
+			<angle angle="6953" d="1"/>
+			<angle angle="6955" d="1"/>
+			<angle angle="6956" d="1"/>
+			<angle angle="6958" d="1"/>
+			<angle angle="6959" d="1"/>
+			<angle angle="6960" d="1"/>
+			<angle angle="6961" d="1"/>
+			<angle angle="6962" d="1"/>
+			<angle angle="6962" d="1"/>
+			<angle angle="6963" d="1"/>
+			<angle angle="6963" d="1"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6964" d="65"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6962" d="1"/>
+			<angle angle="6959" d="1"/>
+			<angle angle="6954" d="1"/>
+			<angle angle="6950" d="1"/>
+			<angle angle="6945" d="1"/>
+			<angle angle="6941" d="1"/>
+			<angle angle="6937" d="1"/>
+			<angle angle="6936" d="1"/>
+			<angle angle="6939" d="1"/>
+			<angle angle="6948" d="1"/>
+			<angle angle="6967" d="1"/>
+			<angle angle="6999" d="1"/>
+			<angle angle="7054" d="1"/>
+			<angle angle="7144" d="1"/>
+			<angle angle="7287" d="1"/>
+			<angle angle="7517" d="1"/>
+			<angle angle="7883" d="1"/>
+			<angle angle="8443" d="1"/>
+			<angle angle="17798" d="150"/>
+		<frame i="boss.dead.remove.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.moon.boss.deathFall.body.anim">
+		<shake amount="32"/>
+			<frame i="spriteimage.boss.moon.dead.01" d="8" />
+			<frame i="spriteimage.boss.moon.dead.01" d="1" />
+			<angle angle="371" d="1"/>
+			<angle angle="724" d="1"/>
+			<angle angle="1060" d="1"/>
+			<angle angle="1378" d="1"/>
+			<angle angle="1681" d="1"/>
+			<angle angle="1967" d="1"/>
+			<angle angle="2238" d="1"/>
+			<angle angle="2495" d="1"/>
+			<angle angle="2736" d="1"/>
+			<angle angle="2964" d="1"/>
+			<angle angle="3177" d="1"/>
+			<angle angle="3378" d="1"/>
+			<angle angle="3566" d="1"/>
+			<angle angle="3742" d="1"/>
+			<angle angle="3906" d="1"/>
+			<angle angle="4059" d="1"/>
+			<angle angle="4201" d="1"/>
+			<angle angle="4333" d="1"/>
+			<angle angle="4454" d="1"/>
+			<angle angle="4567" d="1"/>
+			<angle angle="4670" d="1"/>
+			<angle angle="4765" d="1"/>
+			<angle angle="4852" d="1"/>
+			<angle angle="4931" d="1"/>
+			<angle angle="5003" d="1"/>
+			<angle angle="5069" d="1"/>
+			<angle angle="5128" d="1"/>
+			<angle angle="5184" d="1"/>
+			<angle angle="5241" d="1"/>
+			<angle angle="5298" d="1"/>
+			<angle angle="5355" d="1"/>
+			<angle angle="5412" d="1"/>
+			<angle angle="5470" d="1"/>
+			<angle angle="5527" d="1"/>
+			<angle angle="5584" d="1"/>
+			<angle angle="5641" d="1"/>
+			<angle angle="5698" d="1"/>
+			<angle angle="5754" d="1"/>
+			<angle angle="5810" d="1"/>
+			<angle angle="5866" d="1"/>
+			<angle angle="5921" d="1"/>
+			<angle angle="5975" d="1"/>
+			<angle angle="6028" d="1"/>
+			<angle angle="6080" d="1"/>
+			<angle angle="6130" d="1"/>
+			<angle angle="6179" d="1"/>
+			<angle angle="6227" d="1"/>
+			<angle angle="6273" d="1"/>
+			<angle angle="6317" d="1"/>
+			<angle angle="6359" d="1"/>
+			<angle angle="6399" d="1"/>
+			<angle angle="6438" d="1"/>
+			<angle angle="6474" d="1"/>
+			<angle angle="6508" d="1"/>
+			<angle angle="6540" d="1"/>
+			<angle angle="6571" d="1"/>
+			<angle angle="6599" d="1"/>
+			<angle angle="6626" d="1"/>
+			<angle angle="6650" d="1"/>
+			<angle angle="6674" d="1"/>
+			<angle angle="6695" d="1"/>
+			<angle angle="6715" d="1"/>
+			<angle angle="6734" d="1"/>
+			<angle angle="6752" d="1"/>
+			<angle angle="6768" d="1"/>
+			<angle angle="6783" d="1"/>
+			<angle angle="6797" d="1"/>
+			<angle angle="6810" d="1"/>
+			<angle angle="6822" d="1"/>
+			<angle angle="6834" d="1"/>
+			<angle angle="6844" d="1"/>
+			<angle angle="6854" d="1"/>
+			<angle angle="6863" d="1"/>
+			<angle angle="6872" d="1"/>
+			<angle angle="6879" d="1"/>
+			<angle angle="6887" d="1"/>
+			<angle angle="6894" d="1"/>
+			<angle angle="6900" d="1"/>
+			<angle angle="6906" d="1"/>
+			<angle angle="6911" d="1"/>
+			<angle angle="6916" d="1"/>
+			<angle angle="6921" d="1"/>
+			<angle angle="6925" d="1"/>
+			<angle angle="6929" d="1"/>
+			<angle angle="6933" d="1"/>
+			<angle angle="6936" d="1"/>
+			<angle angle="6939" d="1"/>
+			<angle angle="6942" d="1"/>
+			<angle angle="6945" d="1"/>
+			<angle angle="6947" d="1"/>
+			<angle angle="6949" d="1"/>
+			<angle angle="6951" d="1"/>
+			<angle angle="6953" d="1"/>
+			<angle angle="6955" d="1"/>
+			<angle angle="6956" d="1"/>
+			<angle angle="6958" d="1"/>
+			<angle angle="6959" d="1"/>
+			<angle angle="6960" d="1"/>
+			<angle angle="6961" d="1"/>
+			<angle angle="6962" d="1"/>
+			<angle angle="6962" d="1"/>
+			<angle angle="6963" d="1"/>
+			<angle angle="6963" d="1"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6964" d="65"/>
+			<angle angle="6964" d="1"/>
+			<angle angle="6962" d="1"/>
+			<angle angle="6959" d="1"/>
+			<angle angle="6954" d="1"/>
+			<angle angle="6950" d="1"/>
+			<angle angle="6945" d="1"/>
+			<angle angle="6941" d="1"/>
+			<angle angle="6937" d="1"/>
+			<angle angle="6936" d="1"/>
+			<angle angle="6939" d="1"/>
+			<angle angle="6948" d="1"/>
+			<angle angle="6967" d="1"/>
+			<angle angle="6999" d="1"/>
+			<angle angle="7054" d="1"/>
+			<angle angle="7144" d="1"/>
+			<angle angle="7287" d="1"/>
+			<angle angle="7517" d="1"/>
+			<angle angle="7883" d="1"/>
+			<angle angle="8443" d="1"/>
+			<angle angle="17798" d="1"/>
+		<shake amount="10"/>
+			<frame i="spriteimage.boss.moon.dead.01" d="149" />
+		<frame i="boss.dead.remove.anim" d="0"/>
+	</animation>
+
+
+	<!-- LAYERS for GIDRAH.MOON.BOSS -->
+
+	<layers name="gidrah.moon.boss.walkAndRoar.layers" scale="0.5">
+ 		<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.walk.body.anim" />
+		<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.moon.boss.walkAndRoar.head.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.walkAndRoar.head.glow.anim" />
+		<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.walkAndRoar.face.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.boss.moon.ground.01" />
+	</layers>
+
+ 	<layers name="gidrah.moon.boss.walk.layers" scale="0.5">
+ 		<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.walk.body.anim" />
+		<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.moon.boss.walk.head.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.head.glow.anim" />
+		<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.blink.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.boss.moon.ground.01" />
+	</layers>
+
+ 	<layers name="gidrah.moon.boss.walkAndRoarShort.layers" scale="0.5">
+ 		<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.walk.body.anim" />
+		<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.moon.boss.walkAndRoarShort.head.anim" />
+		<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.walkAndRoarShort.head.glow.anim" />
+		<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.walkAndRoarShort.face.anim" />
+		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.boss.moon.ground.01" />
+	</layers>
+
+ 	<layers name="gidrah.moon.boss.deathFall.layers" scale="0.5">
+ 		<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" animation="gidrah.moon.boss.deathFall.ground.anim" />
+		<sprite layer="5" sublayer="0" offset="-15,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.deathFall.back.anim" />
+		<emitter emitter="moon.boss.fall.emitter" offset="-50,0" ySortOffset="5"  />
+		<emitter emitter="moon.boss.death.explosion.emitter" offset="17,0" ySortOffset="47"  />
+		<sprite layer="5" sublayer="4" offset="-15,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.deathFall.body.anim" />
+		<emitter emitter="moon.boss.death.spray.1.emitter" offset="-13,0" ySortOffset="52" />
+		<emitter emitter="moon.boss.death.spray.2.emitter" offset="-13,0" ySortOffset="52" />
+		<emitter emitter="moon.boss.death.remove.explosion.end.emitter" offset="-27,0" ySortOffset="17"  />
+		<emitter emitter="moon.boss.death.remove.explosion.flash.emitter" offset="-26,0" ySortOffset="15"  />
+		<emitter emitter="moon.boss.death.remove.explosion.sparks.emitter" offset="-27,0" ySortOffset="12"  />
+		<emitter emitter="moon.boss.death.remove.fire.emitter" offset="-43,0" ySortOffset="4"  />
+	</layers>
+
+ 
+	<!-- GIDRAH.MOON.BOSS definition -->
+
+	<gidrah
+		 name="gidrah.moon.boss"
+		 inherit="gidrah.moon.boss.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.walk.selecta.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" image="spriteimage.boss.moon.01" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.head.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.boss.moon.ground.01" />
+		</layers></appearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.idle.body.anim" />
+				<sprite layer="5" sublayer="1" offset="0,-2" ySortOffset="-2" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" image="spriteimage.boss.moon.01" />
+				<sprite layer="5" sublayer="3" offset="0,-2" ySortOffset="-2" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.head.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,-2" ySortOffset="-2" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.boss.moon.ground.01" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" image="spriteimage.boss.moon.back.05" />
+								<sprite layer="5" sublayer="1" offset="0,-4" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" image="spriteimage.boss.moon.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.boss.moon.ground.01" />
+								<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" image="spriteimage.boss.moon.ice.glow.01" />
+								<emitter emitter="frozen.boss.sparkle.emitter" offset="19,0" ySortOffset="80"  />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.attack.body.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.moon.boss.attack.head.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.attack.head.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.attack.face.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.boss.moon.ground.01" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" animation="gidrah.moon.boss.death.body.anim" />
+				<sprite layer="5" sublayer="1" offset="0,0" bottomColored="floor-fog" topColored="gidrah-boss" attenuated="true" doChildOffset="true" animation="gidrah.moon.boss.death.head.anim" />
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.death.head.glow.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.moon.boss.death.face.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.boss.moon.ground.01" />
+				<emitter emitter="moon.boss.death.flash.emitter" offset="17,0" ySortOffset="90"  />
+		</layers></deathAppearance>
+	</gidrah>
+
+</resources>

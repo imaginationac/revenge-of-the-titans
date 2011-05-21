@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Sounds! -->
+<resources>
+
+	<include resource="soundbank.xml" />
+	<include resource="soundbank-mono.xml" />
+	<include resource="music.xml" />
+
+	<!-- Generic effects -->
+	<buffer name="newGame.buffer" url="resource:newGame.soundclip" gain="1.0" priority="50"/>
+	<buffer name="gameOver.buffer" url="resource:gameOver.soundclip" gain="1.0" priority="50"/>
+	<buffer name="gameSaved.buffer" url="resource:textEntered.soundclip" gain="1.0" priority="50"/>
+	<buffer name="keyTyped.buffer" url="resource:keyTyped.soundclip" gain="0.5" priority="1"/>
+	<buffer name="textEntered.buffer" url="resource:textEntered.soundclip" gain="0.3" priority="1"/>
+	<buffer name="buttonHover.buffer" url="resource:buttonHover.soundclip" gain="0.3" priority="1"/>
+	<buffer name="buttonClick.buffer" url="resource:buttonClick.soundclip" gain="0.3" priority="1"/>
+
+	<!-- Gun effects -->
+	<buffer name="shoot.buffer" url="resource:shoot.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	<buffer name="noAmmo.buffer" url="resource:noAmmo.soundclip" gain="1.0" priority="1"/>
+	<buffer name="reload.buffer" url="resource:reload.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	<buffer name="reloaded.buffer" url="resource:reloaded.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	<buffer name="capacitor.buffer" url="resource:capacitor.soundclip" gain="0.3" priority="50" looped="true"/>
+	<buffer name="capacitorStart.buffer" url="resource:capacitorStart.soundclip" gain="1.0" priority="51"/>
+	<buffer name="miniblaster.buffer" url="resource:miniblaster.soundclip" gain="0.25" priority="50"/>
+	<buffer name="miniheavyblaster.buffer" url="resource:miniblaster.soundclip" gain="0.25" pitch="0.75" priority="50"/>
+	<buffer name="blaster1.buffer" url="resource:blaster1.soundclip" gain="0.75" priority="50"/>
+	<buffer name="blaster2.buffer" url="resource:blaster2.soundclip" gain="0.75" priority="50"/>
+	<buffer name="blaster3.buffer" url="resource:blaster3.soundclip" gain="0.75" priority="50"/>
+	<buffer name="blaster4.buffer" url="resource:blaster4.soundclip" gain="0.75" priority="50"/>
+	<buffer name="blaster5.buffer" url="resource:blaster5.soundclip" gain="0.75" priority="50"/>
+	<buffer name="heavyBlaster.buffer" url="resource:heavyBlaster.soundclip" gain="1.0" priority="10"/>
+	<buffer name="blastCannon.buffer" url="resource:blastCannon.soundclip" gain="1.0" priority="50"/>
+	<buffer name="multiBlaster.buffer" url="resource:multiBlaster.soundclip" gain="1.0" priority="50"/>
+	<buffer name="shotgun.buffer" url="resource:shotgun.soundclip" gain="1.0" priority="50"/>
+	<buffer name="assault.buffer" url="resource:shotgun.soundclip" gain="1.0" pitch="0.8" priority="50"/>
+	<buffer name="laser.buffer" url="resource:laser.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	<buffer name="rocket.buffer" url="resource:rocket.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	<buffer name="bombDetonated.buffer" url="resource:bombDetonated.soundclip" gain="1.0" pitch="0.8" priority="60"/>
+	<buffer name="disruptor.buffer" url="resource:disruptor.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	<buffer name="bossDisruptor.buffer" url="resource:bossDisruptor.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	<buffer name="smartbomb.buffer" url="resource:smartBomb.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	
+	<!-- Ricochets -->
+	<buffer name="ric0.buffer" url="resource:ric0.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric1.buffer" url="resource:ric1.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric2.buffer" url="resource:ric2.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric3.buffer" url="resource:ric3.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric4.buffer" url="resource:ric4.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric5.buffer" url="resource:ric5.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric6.buffer" url="resource:ric6.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric7.buffer" url="resource:ric7.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric8.buffer" url="resource:ric8.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric9.buffer" url="resource:ric9.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric10.buffer" url="resource:ric10.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="ric11.buffer" url="resource:ric11.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+
+	<!-- Gidrah guns -->
+	<buffer name="gidrah.small.weapon.buffer" url="resource:gidrahSmallWeapon.soundclip" gain="1.0" priority="50"/>
+	<buffer name="gidrah.large.weapon.buffer" url="resource:gidrahLargeWeapon.soundclip" gain="1.0" priority="50"/>
+	
+	<!-- Game effects -->
+	<buffer name="unmined.buffer" url="resource:unmined.soundclip" gain="0.35" priority="1"/>
+	<buffer name="empty.buffer" url="resource:empty.soundclip" gain="0.25" priority="1"/>
+	<buffer name="full.buffer" url="resource:full.soundclip" gain="0.35" priority="1"/>
+	<buffer name="warning.buffer" url="resource:warning.soundclip" gain="0.25" priority="1"/>
+	<buffer name="redAlert.buffer" url="resource:redAlert.soundclip" gain="1.0" priority="1"/>
+	<buffer name="charging.buffer" url="resource:charging.soundclip" gain="1.0" priority="1"/>
+	<buffer name="charged.buffer" url="resource:charged.soundclip" gain="1.0" priority="1"/>
+	<buffer name="pickup.buffer" url="resource:pickup.soundclip" gain="1.0" priority="1"/>
+	<buffer name="build.buffer" url="resource:build.soundclip" gain="1.0" priority="2"/>
+	<buffer name="bash1.buffer" url="resource:bash1.soundclip" gain="1.0" priority="2"/>
+	<buffer name="bash2.buffer" url="resource:bash2.soundclip" gain="1.0" priority="2"/>
+	<buffer name="bash3.buffer" url="resource:bash3.soundclip" gain="1.0" priority="2"/>
+	<buffer name="bash4.buffer" url="resource:bash4.soundclip" gain="1.0" priority="2"/>
+	<buffer name="bash5.buffer" url="resource:bash5.soundclip" gain="1.0" priority="2"/>
+	<buffer name="bashDistant1.buffer" url="resource:bashDistant1.soundclip" gain="0.5" priority="1"/>
+	<buffer name="bashDistant2.buffer" url="resource:bashDistant2.soundclip" gain="0.5" priority="1"/>
+	<buffer name="bashDistant3.buffer" url="resource:bashDistant3.soundclip" gain="0.5" priority="1"/>
+	<buffer name="bashDistant4.buffer" url="resource:bashDistant4.soundclip" gain="0.5" priority="1"/>
+	<buffer name="bashDistant5.buffer" url="resource:bashDistant5.soundclip" gain="0.5" priority="1"/>
+	<buffer name="crumble1.buffer" url="resource:crumble1.soundclip" gain="1.0" priority="3"/>
+	<buffer name="crumble2.buffer" url="resource:crumble2.soundclip" gain="1.0" priority="3"/>
+	<buffer name="crumble3.buffer" url="resource:crumble3.soundclip" gain="1.0" priority="3"/>
+	<buffer name="crumble4.buffer" url="resource:crumble4.soundclip" gain="1.0" priority="3"/>
+	<buffer name="crumble5.buffer" url="resource:crumble5.soundclip" gain="1.0" priority="3"/>
+	<buffer name="crumble6.buffer" url="resource:crumble6.soundclip" gain="1.0" priority="3"/>
+	<buffer name="crumble1distant.buffer" url="resource:crumble1distant.soundclip" gain="0.5" priority="1"/>
+	<buffer name="crumble2distant.buffer" url="resource:crumble2distant.soundclip" gain="0.5" priority="1"/>
+	<buffer name="crumble3distant.buffer" url="resource:crumble3distant.soundclip" gain="0.5" priority="1"/>
+	<buffer name="crumble4distant.buffer" url="resource:crumble4distant.soundclip" gain="0.5" priority="1"/>
+	<buffer name="crumble5distant.buffer" url="resource:crumble5distant.soundclip" gain="0.5" priority="1"/>
+	<buffer name="crumble6distant.buffer" url="resource:crumble6distant.soundclip" gain="0.5" priority="1"/>
+	<buffer name="buildingExplosion.buffer" url="resource:buildingExplosion.soundclip" gain="1.0" priority="1"/>
+	<buffer name="gidrahPain.buffer" url="resource:gidrahPain.soundclip" gain="1.0" priority="1"/>
+	<buffer name="deflect.buffer" url="resource:deflect.soundclip" gain="1.0" priority="1"/>
+	<buffer name="factoryShutdownImminent.buffer" url="resource:factoryShutdownImminent.soundclip" gain="1.0" looped="true" priority="30"/>
+	<buffer name="factoryShutdown.buffer" url="resource:factoryShutdown.soundclip" gain="0.5" priority="31"/>
+	<buffer name="blastMinePip.buffer" url="resource:blastMinePip.soundclip" gain="1.0" priority="10"/>
+	<buffer name="blastMineReady.buffer" url="resource:blastMineReady.soundclip" gain="1.0" priority="11"/>
+	<buffer name="baseAttacked.buffer" url="resource:baseAttacked.soundclip" gain="0.5" priority="31"/>
+	<buffer name="baseDestructionImminent.buffer" url="resource:baseDestructionImminent.soundclip" gain="1.0" looped="true" priority="32"/>
+	<buffer name="factoryMining.buffer" url="resource:factoryMining.soundclip" gain="0.2" looped="true" priority="1"/>
+
+	<buffer name="saucer.buffer" url="resource:saucer.soundclip" gain="0.5" priority="1" looped="true"/>
+	<buffer name="saucerDeath.buffer" url="resource:saucerDeath.soundclip" gain="1.0" priority="1"/>
+
+	<buffer name="cantBuild.buffer" url="resource:cantBuild.soundclip" gain="1.0" pitch="1.0" priority="20"/>
+	<buffer name="insufficientFunds.buffer" url="resource:insufficientFunds.soundclip" gain="1.0" pitch="1.0" priority="20"/>
+	
+	<buffer name="sellMode.buffer" url="resource:sellMode.soundclip" gain="1.0" priority="20"/>
+	<buffer name="sold.buffer" url="resource:sold.soundclip" gain="1.0" priority="20"/>
+
+	<buffer name="mine.buffer" url="resource:mine.soundclip" gain="1.0" pitch="0.9" priority="20"/>
+	<buffer name="clusterMine.buffer" url="resource:mine.soundclip" gain="1.0" pitch="1.0" priority="20"/>
+	<buffer name="blastMine.buffer" url="resource:mine.soundclip" gain="1.0" pitch="0.5" priority="20"/>
+
+	<buffer name="medalAwarded.buffer" url="resource:medalAwarded.soundclip" gain="0.1" pitch="1.0" priority="30"/>
+	<buffer name="achievementUnlocked.buffer" url="resource:achievementUnlocked.soundclip" gain="0.1" pitch="1.0" priority="30"/>
+	<buffer name="newRank.buffer" url="resource:newRank.soundclip" gain="0.1" pitch="1.0" priority="30"/>
+
+	<buffer name="crystalSpawned.buffer" url="resource:crystalSpawned.soundclip" gain="1.0" priority="20"/>
+	
+	<!-- Fireworks -->
+	<buffer name="crackle1.buffer" url="resource:crackle1.soundclip" gain="0.1" priority="1"/>
+	<buffer name="crackle2.buffer" url="resource:crackle2.soundclip" gain="0.1" priority="1"/>
+	<buffer name="crackle3.buffer" url="resource:crackle3.soundclip" gain="0.1" priority="1"/>
+
+	<buffer name="whistle1.buffer" url="resource:whistle1.soundclip" gain="0.3" priority="1"/>
+	<buffer name="whistle2.buffer" url="resource:whistle2.soundclip" gain="0.3" priority="1"/>
+	<buffer name="whistle3.buffer" url="resource:whistle3.soundclip" gain="0.3" priority="1"/>
+	<buffer name="whistle4.buffer" url="resource:whistle4.soundclip" gain="0.3" priority="1"/>
+	
+	<buffer name="pop1.buffer" url="resource:pop1.soundclip" gain="0.3" priority="1"/>
+	<buffer name="pop2.buffer" url="resource:pop2.soundclip" gain="0.3" priority="1"/>
+	<buffer name="pop3.buffer" url="resource:pop3.soundclip" gain="0.3" priority="1"/>
+	<buffer name="pop4.buffer" url="resource:pop4.soundclip" gain="0.3" priority="1"/>
+	<buffer name="pop5.buffer" url="resource:pop5.soundclip" gain="0.3" priority="1"/>
+
+	<buffer name="blaster-quiet.buffer" url="resource:blaster1.soundclip" gain="0.25" priority="1"/>
+	<buffer name="blaster-veryquiet.buffer" url="resource:blaster2.soundclip" gain="0.125" priority="1"/>
+
+	<!-- Gidrah death -->
+	<buffer name="gidrah.01.death.buffer" url="resource:gidrah.01.death.soundclip" gain="1.0" priority="1"/>
+	<buffer name="gidrah.02.death.buffer" url="resource:gidrah.02.death.soundclip" gain="1.0" priority="1"/>
+	<buffer name="gidrah.03.death.buffer" url="resource:gidrah.03.death.soundclip" gain="1.0" priority="1"/>
+	<buffer name="gidrah.04.death.buffer" url="resource:gidrah.04.death.soundclip" gain="1.0" priority="1"/>
+	<buffer name="gidrah.05.death.buffer" url="resource:gidrah.05.death.soundclip" gain="1.0" priority="1"/>
+	<buffer name="gidrah.06.death.buffer" url="resource:gidrah.06.death.soundclip" gain="1.0" priority="1"/>
+	<buffer name="gidrah.07.death.buffer" url="resource:gidrah.07.death.soundclip" gain="1.0" priority="1"/>
+	<buffer name="gidrah.08.death.buffer" url="resource:gidrah.08.death.soundclip" gain="1.0" priority="1"/>
+
+	<!-- Boss death -->
+	<buffer name="bossFall.buffer" url="resource:bossFall.soundclip" gain="1.0" priority="99"/>
+	<buffer name="gidrah.earth.boss.death.buffer" url="resource:gidrah.earth.boss.death.soundclip" gain="1.0" priority="100"/>
+	<buffer name="gidrah.moon.boss.death.buffer" url="resource:gidrah.moon.boss.death.soundclip" gain="1.0" priority="100"/>
+	<buffer name="gidrah.mars.boss.death.buffer" url="resource:gidrah.mars.boss.death.soundclip" gain="1.0" priority="100"/>
+	<buffer name="gidrah.saturn.boss.death.buffer" url="resource:gidrah.saturn.boss.death.soundclip" gain="1.0" priority="100"/>
+	<buffer name="gidrah.titan.boss.death.buffer" url="resource:gidrah.titan.boss.death.soundclip" gain="1.0" priority="100"/>
+
+	<!-- Powerup collection -->	
+	<buffer name="collectShield.buffer" url="resource:powerupSpecial.soundclip" gain="1.0" pitch="0.5" priority="60"/>
+	<buffer name="collectRepair.buffer" url="resource:powerupSpecial.soundclip" gain="1.0" pitch="0.6" priority="60"/>
+	<buffer name="collectFreeze.buffer" url="resource:powerupSpecial.soundclip" gain="1.0" pitch="0.7" priority="60"/>
+	<buffer name="collectSmartBomb.buffer" url="resource:powerupSpecial.soundclip" gain="1.0" pitch="0.8" priority="60"/>
+	<buffer name="collectBezerk.buffer" url="resource:powerupSpecial.soundclip" gain="1.0" pitch="1.0" priority="60"/>
+
+	<buffer name="collectCapacitor.buffer" url="resource:powerupExotic.soundclip" gain="1.0" pitch="0.5" priority="60"/>
+	<buffer name="collectBattery.buffer" url="resource:powerupExotic.soundclip" gain="1.0" pitch="0.6" priority="60"/>
+	<buffer name="collectCoolingTower.buffer" url="resource:powerupExotic.soundclip" gain="1.0" pitch="0.7" priority="60"/>
+	<buffer name="collectScanner.buffer" url="resource:powerupExotic.soundclip" gain="1.0" pitch="0.8" priority="60"/>
+	<buffer name="collectReactor.buffer" url="resource:powerupExotic.soundclip" gain="1.0" pitch="0.9" priority="60"/>
+	<buffer name="collectShieldGenerator.buffer" url="resource:powerupExotic.soundclip" gain="1.0" pitch="1.0" priority="60"/>
+
+	<buffer name="collectMoney50.buffer" url="resource:powerupMoney.soundclip" gain="1.0" pitch="0.5" priority="60"/>
+	<buffer name="collectMoney100.buffer" url="resource:powerupMoney.soundclip" gain="1.0" pitch="0.6" priority="60"/>
+	<buffer name="collectMoney250.buffer" url="resource:powerupMoney.soundclip" gain="1.0" pitch="0.8" priority="60"/>
+	<buffer name="collectMoney500.buffer" url="resource:powerupMoney.soundclip" gain="1.0" pitch="1.0" priority="60"/>
+	
+	<!-- Gidrah noises -->
+	<buffer name="rumble.buffer" url="resource:rumble.soundclip" gain="1.0" priority="1000" looped="true"/>
+	<buffer name="rumble_ambience.buffer" url="resource:rumble_ambience.soundclip" gain="1.0" priority="1000" looped="true" />
+
+	<!-- Mars boss hacky noises -->
+	<buffer name="mars.boss.clicky.buffer" url="resource:bash1.soundclip" gain="0.3" pitch="3.0" priority="2"/>
+	<buffer name="mars.boss.clicky.distant.buffer" url="resource:bashDistant1.soundclip" gain="0.15" pitch="3.0" priority="1"/>
+
+	<!-- Titan boss hacky noises -->
+	<buffer name="gidrah-titan-boss-snap.buffer" url="resource:bash1.soundclip" gain="0.3" pitch="0.5" priority="2"/>
+	<buffer name="gidrah-titan-boss-snap.amb.buffer" url="resource:bashDistant1.soundclip" gain="0.15" pitch="0.5" priority="1"/>
+
+		
+
+	<!--  gids -->
+	<buffer name="gidrah-earth-01-roar.buffer" url="resource:gidrah-earth-01-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-earth-02-roar.buffer" url="resource:gidrah-earth-02-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-earth-boss-roar.buffer" url="resource:gidrah-earth-boss-roar.soundclip" gain="1.0" pitch="1.0" priority="3"/>
+	<buffer name="gidrah-earth-01-amb.buffer" url="resource:gidrah-earth-01-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-earth-02-amb.buffer" url="resource:gidrah-earth-02-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-earth-boss-amb.buffer" url="resource:gidrah-earth-boss-amb.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	
+	<buffer name="gidrah-moon-01-roar.buffer" url="resource:gidrah-moon-01-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-moon-02-roar.buffer" url="resource:gidrah-moon-02-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-moon-03-roar.buffer" url="resource:gidrah-moon-03-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-moon-boss-roar.buffer" url="resource:gidrah-moon-boss-roar.soundclip" gain="1.0" pitch="1.0" priority="3"/>
+	<buffer name="gidrah-moon-boss-roar-short.buffer" url="resource:gidrah-moon-boss-roar-short.soundclip" gain="1.0" pitch="1.0" priority="3"/>
+	<buffer name="gidrah-moon-01-amb.buffer" url="resource:gidrah-moon-01-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-moon-02-amb.buffer" url="resource:gidrah-moon-02-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-moon-03-amb.buffer" url="resource:gidrah-moon-03-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-moon-boss-amb.buffer" url="resource:gidrah-moon-boss-amb.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-moon-boss-amb-short.buffer" url="resource:gidrah-moon-boss-amb-short.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	
+	<buffer name="gidrah-mars-01-roar.buffer" url="resource:gidrah-mars-01-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-mars-02-roar.buffer" url="resource:gidrah-mars-02-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-mars-03-roar.buffer" url="resource:gidrah-mars-03-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-mars-04-roar.buffer" url="resource:gidrah-mars-04-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-mars-boss-roar.buffer" url="resource:gidrah-mars-boss-roar.soundclip" gain="1.0" pitch="1.0" priority="3"/>
+	<buffer name="gidrah-mars-gidlet-roar.buffer" url="resource:gidrah-mars-gidlet-roar.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-mars-01-amb.buffer" url="resource:gidrah-mars-01-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-mars-02-amb.buffer" url="resource:gidrah-mars-02-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-mars-03-amb.buffer" url="resource:gidrah-mars-03-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-mars-04-amb.buffer" url="resource:gidrah-mars-04-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-mars-boss-amb.buffer" url="resource:gidrah-mars-04-amb.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-mars-gidlet-amb.buffer" url="resource:gidrah-mars-gidlet-amb.soundclip" gain="0.25" pitch="1.0" priority="2"/>
+
+	<buffer name="gidrah-saturn-01-roar.buffer" url="resource:gidrah-saturn-01-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-saturn-02-roar.buffer" url="resource:gidrah-saturn-02-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-saturn-03-roar.buffer" url="resource:gidrah-saturn-03-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-saturn-04-roar.buffer" url="resource:gidrah-saturn-04-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-saturn-05-roar.buffer" url="resource:gidrah-saturn-05-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-saturn-boss-roar.buffer" url="resource:gidrah-saturn-boss-roar.soundclip" gain="1.0" pitch="1.0" priority="3"/>
+	<buffer name="gidrah-saturn-gidlet-roar.buffer" url="resource:gidrah-saturn-gidlet-roar.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-saturn-01-amb.buffer" url="resource:gidrah-saturn-01-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-saturn-02-amb.buffer" url="resource:gidrah-saturn-02-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-saturn-03-amb.buffer" url="resource:gidrah-saturn-03-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-saturn-04-amb.buffer" url="resource:gidrah-saturn-04-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-saturn-05-amb.buffer" url="resource:gidrah-saturn-05-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-saturn-boss-amb.buffer" url="resource:gidrah-saturn-boss-amb.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-saturn-gidlet-amb.buffer" url="resource:gidrah-saturn-gidlet-amb.soundclip" gain="0.25" pitch="1.0" priority="2"/>
+
+	<buffer name="gidrah-titan-01-roar.buffer" url="resource:gidrah-titan-01-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-titan-02-roar.buffer" url="resource:gidrah-titan-02-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-titan-03-roar.buffer" url="resource:gidrah-titan-03-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-titan-04-roar.buffer" url="resource:gidrah-titan-04-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-titan-05-roar.buffer" url="resource:gidrah-titan-05-roar.soundclip" gain="1.0" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-titan-boss-roar.buffer" url="resource:gidrah-titan-boss-roar.soundclip" gain="1.0" pitch="1.0" priority="3"/>
+	<buffer name="gidrah-titan-gidlet-roar.buffer" url="resource:gidrah-titan-gidlet-roar.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-titan-01-amb.buffer" url="resource:gidrah-titan-01-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-titan-02-amb.buffer" url="resource:gidrah-titan-02-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-titan-03-amb.buffer" url="resource:gidrah-titan-03-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-titan-04-amb.buffer" url="resource:gidrah-titan-04-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-titan-05-amb.buffer" url="resource:gidrah-titan-05-amb.soundclip" gain="0.5" pitch="1.0" priority="1"/>
+	<buffer name="gidrah-titan-boss-amb.buffer" url="resource:gidrah-titan-boss-amb.soundclip" gain="0.5" pitch="1.0" priority="2"/>
+	<buffer name="gidrah-titan-gidlet-amb.buffer" url="resource:gidrah-titan-gidlet-amb.soundclip" gain="0.25" pitch="1.0" priority="2"/>
+
+	<!-- Powerup modes -->
+	<buffer name="freeze.buffer" url="resource:freeze.soundclip" gain="0.5" looped="true" priority="100"/>
+	<buffer name="bezerk.buffer" url="resource:bezerk.soundclip" gain="1.0" looped="true" priority="100"/>
+	<buffer name="shields.buffer" url="resource:shields.soundclip" gain="0.5" looped="true" priority="100"/>
+	
+	<!-- Music -->
+	<stream name="title.stream" url="resource:title.ogg" gain="1.0" priority="1000" looped="true"/>
+	<stream name="gameover.stream" url="resource:gameover.ogg" gain="1.0" priority="1000" looped="true"/>
+	<stream name="complete.stream" url="resource:complete.ogg" gain="1.0" priority="1000" looped="true"/>
+	<stream name="earth.stream" url="resource:earth.ogg" gain="1.0" priority="1000" looped="true"/>
+	<stream name="moon.stream" url="resource:moon.ogg" gain="1.0" priority="1000" looped="true"/>
+	<stream name="mars.stream" url="resource:mars.ogg" gain="1.0" priority="1000" looped="true"/>
+	<stream name="saturn.stream" url="resource:saturn.ogg" gain="1.0" priority="1000" looped="true"/>
+	<stream name="titan.stream" url="resource:titan.ogg" gain="1.0" priority="1000" looped="true"/>
+
+	<!-- Level ambience -->
+	<stream name="level00.stream" url="resource:earth01.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level01.stream" url="resource:earth02.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level02.stream" url="resource:earth03.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level03.stream" url="resource:earth04.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level04.stream" url="resource:earth05.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level05.stream" url="resource:earth06.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level06.stream" url="resource:earth07.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level07.stream" url="resource:earth08.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level08.stream" url="resource:earth09.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level09.stream" url="resource:earth10.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level10.stream" url="resource:moon01.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level11.stream" url="resource:moon02.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level12.stream" url="resource:moon03.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level13.stream" url="resource:moon04.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level14.stream" url="resource:moon05.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level15.stream" url="resource:moon06.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level16.stream" url="resource:moon07.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level17.stream" url="resource:moon08.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level18.stream" url="resource:moon09.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level19.stream" url="resource:moon10.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level20.stream" url="resource:mars01.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level21.stream" url="resource:mars02.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level22.stream" url="resource:mars03.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level23.stream" url="resource:mars04.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level24.stream" url="resource:mars05.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level25.stream" url="resource:mars06.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level26.stream" url="resource:mars07.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level27.stream" url="resource:mars08.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level28.stream" url="resource:mars09.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level29.stream" url="resource:mars10.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level30.stream" url="resource:saturn01.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level31.stream" url="resource:saturn02.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level32.stream" url="resource:saturn03.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level33.stream" url="resource:saturn04.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level34.stream" url="resource:saturn05.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level35.stream" url="resource:saturn06.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level36.stream" url="resource:saturn07.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level37.stream" url="resource:saturn08.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level38.stream" url="resource:saturn09.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level39.stream" url="resource:saturn10.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level40.stream" url="resource:titan01.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level41.stream" url="resource:titan02.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level42.stream" url="resource:titan03.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level43.stream" url="resource:titan04.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level44.stream" url="resource:titan05.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level45.stream" url="resource:titan06.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level46.stream" url="resource:titan07.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level47.stream" url="resource:titan08.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level48.stream" url="resource:titan09.ogg" gain="0.5" priority="1000" looped="true"/>
+	<stream name="level49.stream" url="resource:titan10.ogg" gain="0.5" priority="1000" looped="true"/>
+
+	<!-- Spurious noises -->
+
+	
+	<!-- Speech -->
+	<buffer name="textBeep.buffer" url="resource:textBeep.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+
+	<buffer name="general1.buffer" url="resource:general1.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general2.buffer" url="resource:general2.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general3.buffer" url="resource:general3.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general4.buffer" url="resource:general4.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general5.buffer" url="resource:general5.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general6.buffer" url="resource:general6.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general7.buffer" url="resource:general7.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general8.buffer" url="resource:general8.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general9.buffer" url="resource:general9.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general10.buffer" url="resource:general10.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="general11.buffer" url="resource:general11.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+
+	<buffer name="titan1.buffer" url="resource:titan1.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="titan2.buffer" url="resource:titan2.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="titan3.buffer" url="resource:titan3.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="titan4.buffer" url="resource:titan4.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="titan5.buffer" url="resource:titan5.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="titan6.buffer" url="resource:titan6.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="titan7.buffer" url="resource:titan7.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+	<buffer name="titan8.buffer" url="resource:titan8.soundclip" gain="1.0" pitch="1.0" priority="1"/>
+
+	<buffer name="zx1.buffer" url="resource:ZX1.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="zx2.buffer" url="resource:ZX2.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="zx3.buffer" url="resource:ZX3.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="zx4.buffer" url="resource:ZX4.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="zx5.buffer" url="resource:ZX5.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="zx6.buffer" url="resource:ZX6.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="zx7.buffer" url="resource:ZX7.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="zx8.buffer" url="resource:ZX8.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+
+	<buffer name="scientist1.buffer" url="resource:scientist1.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="scientist2.buffer" url="resource:scientist2.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="scientist3.buffer" url="resource:scientist3.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="scientist4.buffer" url="resource:scientist4.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="scientist5.buffer" url="resource:scientist5.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="scientist6.buffer" url="resource:scientist6.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="scientist7.buffer" url="resource:scientist7.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+	<buffer name="scientist8.buffer" url="resource:scientist8.soundclip" gain="0.7" pitch="1.0" priority="1"/>
+</resources>

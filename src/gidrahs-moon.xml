@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Moon Gidrahs -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<include resource="gidrahs-moon-anim.xml" />
+	<include resource="gidrahs-moon-boss.xml" />
+
+
+	
+	<!-- standard, slow, unarmoured, 2hp -->
+	
+	<gidrah
+		name="gidrah.moon.01.spec"
+		latinName="LUNARUS LUNARUS"
+		strength="4"
+		points="10"
+		hitPoints="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="8.0"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="1"
+		roar="gidrah-moon-01-roar.buffer"
+		amb="gidrah-moon-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+	>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.moon.01.spec"
+		latinName="LUNARUS GIGANTUS"
+		strength="5"
+		angry="true"
+		points="50"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="8.0"
+		deflectEmitter="gidrah.moon.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-moon-01-roar.buffer"
+		amb="gidrah-moon-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+	>
+	</gidrah>
+
+	
+	
+	<gidrah
+		name="gidrah.moon.02.spec"
+		latinName="LORICATUS IMMUNDUS"
+		points="10"
+		strength="5"
+		armour="4"
+		hitPoints="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="48"
+		moves="2"
+		pause="450"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="3"
+		roar="gidrah-moon-02-roar.buffer"
+		amb="gidrah-moon-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="10"
+	>
+		<research>heavyblaster</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.moon.02.spec"
+		latinName="LORICATUS GIGANTUS"
+		angry="true"
+		points="50"
+		strength="6"
+		armour="6"
+		hitPoints="20"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="48"
+		moves="2"
+		pause="450"
+		deflectEmitter="gidrah.moon.deflect.large.emitter"
+		deflectYOffset="5"
+		roar="gidrah-moon-02-roar.buffer"
+		amb="gidrah-moon-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="10"
+	>
+		<research>heavyblaster</research>
+	</gidrah>
+
+
+
+	<gidrah
+		name="gidrah.moon.03.spec"
+		latinName="OCCULUS TENUIS"
+		points="10"
+		hitPoints="8"
+		strength="6"
+		armour="0"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="9"
+		deflectEmitter="gidrah.moon.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-moon-03-roar.buffer"
+		amb="gidrah-moon-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="15"
+	>
+		<research>heavyblaster</research>
+		<research>psychology</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.moon.03.spec"
+		latinName="OCCULUS ENORMUS"
+		angry="true"
+		points="50"
+		strength="7"
+		hitPoints="8"
+		armour="8"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		speed="9"
+		deflectEmitter="gidrah.moon.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-moon-03-roar.buffer"
+		amb="gidrah-moon-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="15"
+	>
+		<research>heavyblaster</research>
+		<research>psychology</research>
+		<research>biology</research>
+	</gidrah>
+	
+	
+	
+	<!-- BOSS ======================================================================================================================== -->
+
+	
+	<gidrah
+		name="gidrah.moon.boss.spec"
+		points="2000"
+		strength="100"
+		boss="true"
+		hitPoints="250"
+		hitPointsX="0"
+		hitPointsY="-9"
+		armour="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="3.0"
+		deflectEmitter="gidrah.moon.deflect.boss.emitter"
+		deflectYOffset="28"
+		roar="gidrah-moon-boss-roar.buffer"
+		amb="gidrah-moon-boss-amb.buffer"
+		death="gidrah.moon.boss.death.buffer"
+		medal="medal.moon_boss"
+	>
+	</gidrah>
+
+	
+	
+</resources>

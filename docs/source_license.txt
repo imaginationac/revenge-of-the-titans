@@ -1,0 +1,7 @@
+This source code is provided as a goodwill gesture to you, the internet community. Upon each file is a BSD style license, which we'd like you to keep there if you're redistributing it. If you are using the source to learn from or make mods or even write your own games, we think that's great.
+
+The assets from the game - that's the graphics, sound effects, and music - are NOT open sourced, nor redistributable, nor free*. They remain copyright Shaven Puppy Ltd 2010 onwards. What this explicitly means is that we don't want anyone twiddling with the source code and then uploading their own versions of Revenge of the Titans ANYWHERE. Got that? Feel free to make mods and gameplay patches or even write a completely new game using our source code. Just don't be redistributing the graphics and sounds or we will be extra cross. And it would be churlish of you to write hacks to remove our pitifully generous DRM from the Puppygames version.
+
+One last thing: we really, really, really don't have the time to support your many questions about the source code, or building it into a working game, and so on. Clever Java people will probably be able to figure it out and maybe they'll make an Ant build for it and put the whole thing on Sourceforge. But we're busy making new games! So bugger off. If you email our support email address asking for help with the source you will be hung by the toenails until sorry.
+
+* Some of the background music from the game levels is from the freesound.org site and are under a different copyright - see freesound_license.txt

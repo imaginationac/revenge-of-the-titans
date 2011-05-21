@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
+	hint stuff
+-->
+<resources>
+
+	<include resource="tags.xml"/>
+
+	<hint name="hint.explosives">
+		<icon>
+			<layers scale="0.25">
+				<sprite layer="10" sublayer="1" offset="0,-8" colored="shadow" image="spriteimage.info.mine.ground.01"/>				
+				<sprite layer="10" sublayer="2" offset="0,-8" bottomColored="gui-dark" topColored="gui-mid" image="spriteimage.info.mine.01"/>
+				<sprite layer="10" sublayer="3" offset="0,-8" image="spriteimage.info.mine.glow.01"/>	
+				<sprite layer="10" sublayer="4" offset="0,30">
+					<animation>
+						<animation name="hint.proximity.anim">
+							<scale scale="0.35"/>		
+							<frame i="spriteimage.info.alert.yellow.01" d="32"/>
+							<frame i="hint.alert.anim" d="0"/>
+						</animation>
+					</animation>
+				</sprite>
+			</layers>		
+		</icon>
+		<hints>
+			<array>
+				<item><text>BE CAREFUL WHERE YOU USE {color:gui-bright}EXPLOSIVES{color:gui-mid} - THEY CAN ALSO {color:gui-bright}DAMAGE YOUR BUILDINGS!</text></item>
+			</array>
+		</hints>
+	</hint>
+
+
+
+
+	<layers name="hint.info.layers" scale="0.4">
+			<sprite layer="10" sublayer="1" offset="0,-30" colored="gui-bright" animation="info.info.ground.anim"/>				
+			<sprite layer="10" sublayer="2" offset="0,-30" colored="gui-bright" animation="info.info.anim"/>
+	</layers>		
+
+	<hint name="hint.fastforward" icon="hint.info.layers" minLevel="2" maxLevel="10">
+		<hints>
+			<array>
+				<item><text>PRESSING THE {color:gui-bright}FAST FORWARD BUTTON{color:gui-mid} OR HOLDING DOWN THE {color:gui-bright}TAB KEY{color:gui-mid} SPEEDS UP TIME.</text></item>
+			</array>
+		</hints>
+	</hint>
+	
+	<hint name="hint.timerstarts" icon="hint.info.layers" minLevel="1" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>THE ALIENS ARRIVE AFTER YOU BUILD YOUR FIRST {color:gui-bright}REFINERY.{color:gui-mid} SCOUT AROUND AND BUILD YOUR DEFENCES FIRST!</text></item>
+			</array>
+		</hints>
+	</hint>
+	
+	<hint name="hint.unmined" icon="hint.info.layers" minLevel="4" maxLevel="9">
+		<hints>
+			<array>
+				<item><text>ONE OR MORE {color:gui-bright}CRYSTALS{color:gui-mid} IS NOT BEING REFINED! USE THE {color:gui-bright}E{color:gui-mid} SHORTCUT KEY TO FIND THEM</text></item>
+				<item><text>DON'T FORGET TO FIND ALL THE {color:gui-bright}CRYSTALS{color:gui-mid} USING THE {color:gui-bright}E{color:gui-mid} SHORTCUT KEY!</text></item>
+				<item><text>THERE ARE STILL {color:gui-bright}CRYSTALS{color:gui-mid} WHICH ARE NOT BEING MINED! USE THE {color:gui-bright}E{color:gui-mid} SHORTCUT KEY!</text></item>
+			</array>
+		</hints>
+	</hint>
+	
+	<hint name="hint.scroll" icon="hint.info.layers" minLevel="0" maxLevel="3">
+		<hints>
+			<array>
+				<item><text>USE {color:gui-bright}W,A,S,D{color:gui-mid} OR {color:gui-bright}CURSOR KEYS{color:gui-mid} OR MOVE THE MOUSE TO SCROLL AROUND.</text></item>
+			</array>
+		</hints>
+	</hint>
+	
+	<hint name="hint.dragbuild" icon="hint.info.layers" minLevel="2" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>YOU CAN HOLD DOWN THE MOUSE BUTTON AND DRAG TO PAINT MULTIPLE BUILDINGS.</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.dragsell" icon="hint.info.layers" minLevel="0" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>YOU CAN HOLD DOWN THE MIDDLE MOUSE BUTTON AND DRAG TO SELL MULTIPLE BUILDINGS.</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.stack" icon="hint.info.layers" minLevel="0" maxLevel="9">
+		<hints>
+			<array>
+				<item><text>PLACE UP TO FOUR UPGRADES OF THE SAME TYPE NEXT TO STACK BONUSES!</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.turrets_in_path" icon="hint.info.layers" minLevel="0" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>TRY NOT TO BUILD YOUR BUILDINGS DIRECTLY IN THE PATH OF THE ADVANCING TITANS!</text></item>
+			</array>
+		</hints>
+	</hint>
+	
+	<hint name="hint.disruptor" icon="hint.info.layers" random="true">
+		<hints>
+			<array>
+				<item><text>BE CAREFUL WHERE YOU PLACE {color:gui-bright}DISRUPTORS{color:gui-mid} - THEY WILL {color:gui-bright}DAMAGE YOUR OTHER BUILDINGS!</text></item>
+			</array>
+		</hints>
+	</hint>
+	
+	<hint name="hint.shield" icon="hint.info.layers" random="true">
+		<hints>
+			<array>
+				<item><text>NOW WOULD BE A GOOD TIME TO USE YOUR {color:gui-bright}SHIELD POWERUP{color:gui-mid} - THE BASE IS {color:gui-bright}NEARLY DESTROYED!{color:gui-mid}</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.repair" icon="hint.info.layers" random="true">
+		<hints>
+			<array>
+				<item><text>NOW WOULD BE A GOOD TIME TO USE YOUR {color:gui-bright}REPAIR POWERUP{color:gui-mid} - THE BASE IS {color:gui-bright}NEARLY DESTROYED!{color:gui-mid}</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.armoured" icon="hint.info.layers">
+		<hints>
+			<array>
+				<item><text>IT SEEMS THAT THESE TITANS ARE {color:gui-bright}HEAVILY ARMOURED!{color:gui-mid} - YOU'RE GOING TO NEED {color:gui-bright}BIGGER GUNS!{color:gui-mid}</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.capacitors" icon="hint.info.layers">
+		<hints>
+			<array>
+				<item><text>TO FIRE CAPACITORS AT THE ENEMY YOUR MOUSE CURSOR MUST BE IN RANGE OF THE CAPACITOR, THEN HOLD DOWN THE MOUSE BUTTON TO SHOOT.</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.sell_turrets" icon="hint.info.layers" minLevel="0" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>SELL TURRETS WHICH ARE OUT OF RANGE TO RECLAIM CASH AND REDEPLOY NEW TURRETS ELSEWHERE.</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.sell_addons" icon="hint.info.layers" minLevel="0" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>SOME OF YOUR TURRET UPGRADES ARE NOT ATTACHED TO ANY TURRETS. YOU SHOULD SELL THEM.</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.sell_misc" icon="hint.info.layers" minLevel="0" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>SOME OF YOUR BUILDINGS ARE PERFORMING NO USEFUL FUNCTION. YOU SHOULD SELL THEM.</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.dontsell" icon="hint.info.layers">
+		<hints>
+			<array>
+				<item><text>THERE'S {color:gui-bright}NO NEED{color:gui-mid} TO SELL BUILDINGS BEFORE THE END OF THE LEVEL! THIS IS DONE {color:gui-bright}AUTOMATICALLY{color:gui-mid} FOR YOU.</text></item>
+			</array>
+		</hints>
+	</hint>
+
+	<!-- Powerup usage hints -->
+	<hint name="hint.powerup" icon="hint.info.layers" minLevel="0" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>CLICK ON POWERUPS TO COLLECT THEM BEFORE THEY DISAPPEAR!</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.cool_powerup" icon="hint.info.layers">
+		<hints>
+			<array>
+				<item><text>COLLECT SPECIAL POWERUPS AND SAVE THEM FOR WHEN YOU NEED THEM. CLICK THE BOTTOM RIGHT ICONS TO USE THEM.</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.exotic_powerup" icon="hint.info.layers">
+		<hints>
+			<array>
+				<item><text>EXOTIC POWERUPS LAST FOR THE DURATION OF THE LEVEL. CLICK THE BOTTOM RIGHT ICONS TO USE THEM.</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.barricade_pickup" icon="hint.info.layers" minLevel="0" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>WE'VE RECEIVED A CONSIGNMENT OF EXTRA BARRICADES! MAKE GOOD USE OF THEM!</text></item>
+			</array>
+		</hints>
+	</hint>
+	<hint name="hint.mines_pickup" icon="hint.info.layers" minLevel="0" maxLevel="5">
+		<hints>
+			<array>
+				<item><text>DOCTOR ZAP HAS SENT US A DELIVERY OF HIGH EXPLOSIVES! MAKE SURE YOU COLLECT THEM!</text></item>
+			</array>
+		</hints>
+	</hint>
+		
+	
+	<!-- anims -->
+	
+	
+	<animation name="hint.alert.anim">
+		<loop count="10"/> 
+			<animcolor a="+-25" d="2"/>
+			<repeat seq="1"/> 
+		<animcolor a="0" d="16"/>
+		<animcolor a="255" d="32"/>
+		<goto seq="0"/>
+	</animation>
+	
+	<animation name="info.info.anim">
+		<frame i="spriteimage.info.info.01" d="0"/>
+		<animcolor a="63" d="2" />
+		<animcolor a="70" d="2" />
+		<animcolor a="87" d="2" />
+		<animcolor a="113" d="2" />
+		<animcolor a="143" d="2" />
+		<animcolor a="175" d="2" />
+		<animcolor a="205" d="2" />
+		<animcolor a="230" d="2" />
+		<animcolor a="248" d="2" />
+		<animcolor a="255" d="2" />
+		<animcolor a="253" d="2" />
+		<animcolor a="250" d="2" />
+		<animcolor a="244" d="2" />
+		<animcolor a="237" d="2" />
+		<animcolor a="228" d="2" />
+		<animcolor a="218" d="2" />
+		<animcolor a="207" d="2" />
+		<animcolor a="195" d="2" />
+		<animcolor a="182" d="2" />
+		<animcolor a="169" d="2" />
+		<animcolor a="156" d="2" />
+		<animcolor a="142" d="2" />
+		<animcolor a="129" d="2" />
+		<animcolor a="117" d="2" />
+		<animcolor a="105" d="2" />
+		<animcolor a="94" d="2" />
+		<animcolor a="85" d="2" />
+		<animcolor a="77" d="2" />
+		<animcolor a="70" d="2" />
+		<animcolor a="66" d="2" />
+		<goto seq="1"/>
+	</animation>
+
+	<animation name="info.info.ground.anim">
+		<frame i="spriteimage.info.info.ground.01" d="0"/>
+		<scale xscale="0.3" yscale="0.3" d="0"/>
+		<animcolor a="63" d="2" />
+		<scale xscale="0.3" yscale="0.3" d="0"/>
+		<animcolor a="70" d="2" />
+		<scale xscale="0.31" yscale="0.31" d="0"/>
+		<animcolor a="87" d="2" />
+		<scale xscale="0.33" yscale="0.33" d="0"/>
+		<animcolor a="113" d="2" />
+		<scale xscale="0.34" yscale="0.34" d="0"/>
+		<animcolor a="143" d="2" />
+		<scale xscale="0.36" yscale="0.36" d="0"/>
+		<animcolor a="175" d="2" />
+		<scale xscale="0.37" yscale="0.37" d="0"/>
+		<animcolor a="205" d="2" />
+		<scale xscale="0.39" yscale="0.39" d="0"/>
+		<animcolor a="230" d="2" />
+		<scale xscale="0.4" yscale="0.4" d="0"/>
+		<animcolor a="248" d="2" />
+		<scale xscale="0.4" yscale="0.4" d="0"/>
+		<animcolor a="255" d="2" />
+		<scale xscale="0.4" yscale="0.4" d="0"/>
+		<animcolor a="253" d="2" />
+		<scale xscale="0.4" yscale="0.4" d="0"/>
+		<animcolor a="250" d="2" />
+		<scale xscale="0.39" yscale="0.39" d="0"/>
+		<animcolor a="244" d="2" />
+		<scale xscale="0.39" yscale="0.39" d="0"/>
+		<animcolor a="237" d="2" />
+		<scale xscale="0.39" yscale="0.39" d="0"/>
+		<animcolor a="228" d="2" />
+		<scale xscale="0.38" yscale="0.38" d="0"/>
+		<animcolor a="218" d="2" />
+		<scale xscale="0.38" yscale="0.38" d="0"/>
+		<animcolor a="207" d="2" />
+		<scale xscale="0.37" yscale="0.37" d="0"/>
+		<animcolor a="195" d="2" />
+		<scale xscale="0.36" yscale="0.36" d="0"/>
+		<animcolor a="182" d="2" />
+		<scale xscale="0.36" yscale="0.36" d="0"/>
+		<animcolor a="169" d="2" />
+		<scale xscale="0.35" yscale="0.35" d="0"/>
+		<animcolor a="156" d="2" />
+		<scale xscale="0.34" yscale="0.34" d="0"/>
+		<animcolor a="142" d="2" />
+		<scale xscale="0.33" yscale="0.33" d="0"/>
+		<animcolor a="129" d="2" />
+		<scale xscale="0.33" yscale="0.33" d="0"/>
+		<animcolor a="117" d="2" />
+		<scale xscale="0.32" yscale="0.32" d="0"/>
+		<animcolor a="105" d="2" />
+		<scale xscale="0.32" yscale="0.32" d="0"/>
+		<animcolor a="94" d="2" />
+		<scale xscale="0.31" yscale="0.31" d="0"/>
+		<animcolor a="85" d="2" />
+		<scale xscale="0.31" yscale="0.31" d="0"/>
+		<animcolor a="77" d="2" />
+		<scale xscale="0.3" yscale="0.3" d="0"/>
+		<animcolor a="70" d="2" />
+		<scale xscale="0.3" yscale="0.3" d="0"/>
+		<animcolor a="66" d="2" />
+		<goto seq="1"/>
+	</animation>
+	
+</resources>

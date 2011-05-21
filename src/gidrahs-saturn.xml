@@ -1,0 +1,590 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Saturn Gidrahs -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<include resource="gidrahs-saturn-anim.xml" />
+	<include resource="gidrahs-saturn-gidlets-anim.xml" />
+	<include resource="gidrahs-saturn-wraith-anim.xml" />
+	<include resource="gidrahs-saturn-flying-anim.xml" />
+	<include resource="gidrahs-saturn-boss.xml" />
+
+	<gidrah
+		name="gidlet.saturn.01.spec"
+		points="5"
+		strength="2"
+		hitPoints="1"
+		bounds="0,0,4,4"
+		offset="2,1"
+		brain="tactical.brain"
+		speed="10.0"
+		gidlet="true"
+		roar="gidrah-saturn-gidlet-roar.buffer"
+		amb="gidrah-saturn-gidlet-amb.buffer"
+		death="gidrah.06.death.buffer"
+	/>
+
+	<gidrah
+		name="gidrah.saturn.01.spec"
+		latinName="GIDRUS SATURNUS"
+		points="10"
+		strength="4"
+		armour="0"
+		hitPoints="8"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="48.0"
+		moves="1"
+		pause="225"
+		deflectEmitter="gidrah.saturn.deflect.emitter"
+		deflectYOffset="3"
+		roar="gidrah-saturn-01-roar.buffer"
+		amb="gidrah-saturn-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="32"
+	>
+		<research>reactor</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.saturn.01.spec"
+		latinName="MAXIMUS SATURNUS"
+		angry="true"
+		strength="5"
+		points="50"
+		armour="8"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="48.0"
+		moves="1"
+		pause="225"
+		deflectEmitter="gidrah.saturn.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-saturn-01-roar.buffer"
+		amb="gidrah-saturn-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="32"
+	>
+		<research>reactor</research>
+		<research>blastcannon | mines</research>
+	</gidrah>
+
+
+	<gidrah
+		name="gidrah.saturn.02.spec"
+		latinName="MALUS MALUS"
+		points="10"
+		strength="5"
+		armour="0"
+		hitPoints="24"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="10.0"
+		deflectEmitter="gidrah.saturn.deflect.emitter"
+		deflectYOffset="3"
+		roar="gidrah-saturn-02-roar.buffer"
+		amb="gidrah-saturn-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="40"
+	>
+		<research>assaultcannon</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.saturn.02.spec"
+		latinName="MALUS REX"
+		strength="6"
+		angry="true"
+		points="50"
+		hitPoints="72"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="10.0"
+		deflectEmitter="gidrah.saturn.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-saturn-02-roar.buffer"
+		amb="gidrah-saturn-02-amb.buffer"
+		spawn="gidlet.saturn.01"
+		spawnType="1"
+		spawnRate="120,240"	
+		death="gidrah.02.death.buffer"
+		minLevel="40"
+	>
+		<research>assaultcannon</research>
+		<research>barracks | clustermines</research>
+	</gidrah>
+
+
+	<!-- Bomb Head -->
+
+	<gidrah
+		name="gidrah.saturn.03.spec"
+		latinName="CRETUS FLAMMUS"
+		points="10"
+		strength="4"
+		hitPoints="4"
+		armour="12"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		speed="8.0"
+		exploding="true"
+		explosionRadius="64.0"
+		deflectEmitter="gidrah.saturn.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-saturn-03-roar.buffer"
+		amb="gidrah-saturn-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		noStunOnAttack="true"
+		minLevel="44"
+	>
+		<research>mines | blastcannon</research>
+		<research>steel</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.saturn.03.spec"
+		latinName="CRETUS ENORMUS"
+		points="50"
+		strength="8"
+		hitPoints="16"
+		armour="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		speed="8.0"
+		exploding="true"
+		explosionRadius="128.0"
+		deflectEmitter="gidrah.saturn.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-saturn-03-roar.buffer"
+		amb="gidrah-saturn-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		noStunOnAttack="true"
+		minLevel="44"
+	>
+		<research>mines | blastcannon</research>
+		<research>steel</research>
+		<research>biology</research>
+	</gidrah>
+
+
+	<!-- Wraiths -->
+	
+	<gidrah
+		name="gidrah.saturn.04.spec"
+		latinName="SATURNUS EFFIGIA"
+		points="50"
+		strength="6"
+		wraith="true"
+		hitPoints="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="16.0"
+		deflectEmitter="gidrah.saturn.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-saturn-04-roar.buffer"
+		amb="gidrah-saturn-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="52"
+	>
+		<research>capacitor</research>
+		<research>decoy</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.saturn.04.spec"
+		latinName="DISPRAXIUS EFFIGIA"
+		angry="true"
+		strength="7"
+		wraith="true"
+		points="150"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="16.0"
+		deflectEmitter="gidrah.saturn.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-saturn-04-roar.buffer"
+		amb="gidrah-saturn-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="52"
+	>
+		<research>capacitor</research>
+		<research>decoy</research>
+	</gidrah>
+
+
+
+	<!-- Bomber -->
+	
+	
+	<gidrah
+		name="gidrah.saturn.05.spec"
+		latinName="ICARONYCTERIS CHIROPTERA"
+		points="50"
+		strength="4"
+		hitPoints="2"
+		bounds="0,56,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		flying="true"
+		height="56.0"
+		speed="15.0"
+		deflectEmitter="gidrah.saturn.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-saturn-05-roar.buffer"
+		amb="gidrah-saturn-05-amb.buffer"
+		bomb="small.bomb"
+		death="gidrah.05.death.buffer"
+		minLevel="48"
+	>
+		<research>laser</research>
+		<research>steel</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.saturn.05.spec"
+		latinName="PTEROPODIDAE CHIROPTERA"
+		angry="true"
+		strength="8"
+		points="250"
+		hitPoints="6"
+		bounds="0,84,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		flying="true"
+		height="64"
+		speed="15.0"
+		deflectEmitter="gidrah.saturn.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-saturn-05-roar.buffer"
+		amb="gidrah-saturn-05-amb.buffer"
+		bomb="large.bomb"
+		death="gidrah.05.death.buffer"
+		minLevel="48"
+	>
+		<research>laser</research>
+		<research>steel</research>
+	</gidrah>
+
+
+	<bomb
+		name="small.bomb"
+		explosionTexture="explosion.texture"
+		explosionRadius="32.0"
+		explosionDamage="4"
+		shake="4"
+		dropNoise="gidrah-saturn-05-roar.buffer"
+		bombOffset="7,4"
+		mirroredBombOffset="9,4"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.saturn.05.bomb.01" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.05.fly.bomb.glow.anim" />
+				<emitter emitter="bomber.emitter" offset="15,0" ySortOffset="0"  />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+			</layers>
+		</appearance>
+		<explosion>
+			<emitter inherit="saturn.bomb.explosion.emitter"/>
+		</explosion>
+	</bomb>
+	
+	<bomb
+		name="large.bomb"
+		explosionTexture="explosion.texture"
+		explosionRadius="64.0"
+		explosionDamage="6"
+		shake="8"
+		dropNoise="gidrah-saturn-05-roar.buffer"
+		bombOffset="6,3"
+		mirroredBombOffset="9,3"
+	>
+		<appearance>
+			<layers scale="0.75">
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" image="spriteimage.gidrah.saturn.05.bomb.01" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.saturn.05.fly.bomb.glow.anim" />
+				<emitter emitter="bomber.large.emitter" offset="15,0" ySortOffset="0"  />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidlet.saturn.01.ground.01" />
+			</layers>
+		</appearance>
+		<explosion>
+			<emitter inherit="saturn.bomb.explosion.large.emitter"/>
+		</explosion>
+	</bomb>
+
+
+
+	<!-- BOSS ======================================================================================================================== -->
+	<gidrah
+		name="gidrah.saturn.boss.spec"
+		points="3000"
+		strength="100"
+		boss="true"
+		hitPoints="350" 
+		hitPointsX="0"
+		hitPointsY="-9"
+		armour="4"
+		bounds="0,84,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		flying="true"
+		dropAttack="true"
+		height="64"
+		speed="1.0"
+		deflectEmitter="gidrah.saturn.deflect.boss.emitter"
+		deflectYOffset="28"
+		roar="gidrah-saturn-boss-roar.buffer"
+		amb="gidrah-saturn-boss-amb.buffer"
+		weapon="boss.laser.weapon"
+		beamOffset="1,-109"
+		minWeaponRange="100.0"
+		maxWeaponRange="200.0"
+		death="gidrah.saturn.boss.death.buffer"
+		medal="medal.saturn_boss"
+	/>
+	
+	<!-- bomb gidrah fuse spark anims -->
+
+	
+	<animation name="gidrah.saturn.03.fuse.lit.glow.anim">
+		<label id="start"/>
+		<animcolor a="0" d="2"/>
+		<random>
+			<dest id="sprite6" n="1"/>
+			<dest id="sprite5" n="1"/>
+			<dest id="sprite4" n="1"/>
+			<dest id="sprite3" n="1"/>
+			<dest id="sprite2" n="1"/>
+			<dest id="sprite1" n="1"/>
+		</random>
+		<label id="sprite1"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.01" d="0" />
+		<goto id="next"/>
+		<label id="sprite2"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.02" d="0" />
+		<goto id="next"/>
+		<label id="sprite3"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.03" d="0" />
+		<goto id="next"/>
+		<label id="sprite4"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.04" d="0" />
+		<goto id="next"/>
+		<label id="sprite5"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.05" d="0" />
+		<goto id="next"/>
+		<label id="sprite6"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.06" d="0" />
+		<goto id="next"/>
+		<label id="next"/>
+		<random>
+			<dest id="alphaDrop" n="1"/>
+			<dest id="alpha5" n="1"/>
+			<dest id="alpha4" n="1"/>
+			<dest id="alpha3" n="1"/>
+			<dest id="alpha2" n="1"/>
+			<dest id="alpha1" n="1"/>
+		</random>
+		<label id="alpha1"/>
+			<animcolor a="50" d="2"/>
+		<goto id="start"/>
+		<label id="alpha2"/>
+			<animcolor a="100" d="2"/>
+		<goto id="start"/>
+		<label id="alpha3"/>
+			<animcolor a="150" d="2"/>
+		<goto id="start"/>
+		<label id="alpha4"/>
+			<animcolor a="200" d="2"/>
+		<goto id="start"/>
+		<label id="alpha5"/>
+			<animcolor a="255" d="2"/>
+		<goto id="start"/>
+		<label id="alphaDrop"/>
+			<animcolor a="255" d="6"/>
+			<animcolor a="200" d="4"/>
+			<animcolor a="150" d="3"/>
+			<animcolor a="100" d="2"/>
+			<animcolor a="50" d="2"/>
+			<animcolor a="25" d="2"/>
+		<goto id="start"/>
+	</animation>
+
+
+	<animation name="gidrah.saturn.03.fuse.glow.anim">
+		<label id="start"/>
+		<animcolor a="0" d="2"/>
+		<random>
+			<dest id="sprite4" n="1"/>
+			<dest id="sprite3" n="1"/>
+			<dest id="sprite2" n="1"/>
+			<dest id="sprite1" n="5"/>
+		</random>
+		<label id="sprite1"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.01" d="0" />
+		<goto id="next"/>
+		<label id="sprite2"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.02" d="0" />
+		<goto id="next"/>
+		<label id="sprite3"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.03" d="0" />
+		<goto id="next"/>
+		<label id="sprite4"/>
+			<frame i="spriteimage.saturn.fuse.glow.top.04" d="0" />
+		<goto id="next"/>
+
+		<label id="next"/>
+		<random>
+			<dest id="alphaDrop" n="1"/>
+			<dest id="alpha5" n="1"/>
+			<dest id="alpha4" n="1"/>
+			<dest id="alpha3" n="1"/>
+			<dest id="alpha2" n="1"/>
+			<dest id="alpha1" n="1"/>
+		</random>
+		<label id="alpha1"/>
+			<animcolor a="50" d="2"/>
+		<goto id="start"/>
+		<label id="alpha2"/>
+			<animcolor a="75" d="2"/>
+		<goto id="start"/>
+		<label id="alpha3"/>
+			<animcolor a="100" d="2"/>
+		<goto id="start"/>
+		<label id="alpha4"/>
+			<animcolor a="125" d="2"/>
+		<goto id="start"/>
+		<label id="alpha5"/>
+			<animcolor a="150" d="2"/>
+		<goto id="start"/>
+		<label id="alphaDrop"/>
+			<animcolor a="200" d="10"/>
+			<animcolor a="150" d="4"/>
+			<animcolor a="100" d="3"/>
+			<animcolor a="75" d="2"/>
+			<animcolor a="50" d="2"/>
+			<animcolor a="25" d="2"/>
+		<goto id="start"/>
+	</animation>
+
+
+
+	<!-- bomber gidrah bomb glow anim -->
+
+
+	<animation name="gidrah.saturn.05.fly.bomb.glow.anim">
+		<label id="start"/>
+		<random>
+			<dest id="sprite6" n="4"/>
+			<dest id="sprite5" n="4"/>
+			<dest id="sprite4" n="4"/>
+			<dest id="sprite3" n="4"/>
+			<dest id="sprite2" n="4"/>
+			<dest id="sprite1" n="4"/>
+			<dest id="drop1" n="1"/>
+			<dest id="drop2" n="1"/>
+			<dest id="drop3" n="1"/>
+		</random>
+		<label id="sprite1"/>
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.01" d="2" />
+		<goto id="start"/>
+		<label id="sprite2"/>
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.02" d="2" />
+		<goto id="start"/>
+		<label id="sprite3"/>
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.03" d="2" />
+		<goto id="start"/>
+		<label id="sprite4"/>
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.04" d="2" />
+		<goto id="start"/>
+		<label id="sprite5"/>
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.05" d="2" />
+		<goto id="start"/>
+		<label id="sprite6"/>
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.06" d="2" />
+		<goto id="start"/>
+
+		
+		<label id="drop1"/>
+			
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.01" d="8" />
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.02" d="5" />
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.03" d="3" />
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.04" d="2" />
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.05" d="2" />
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.06" d="2" />
+			<goto id="alphaDrop"/>
+
+
+		<label id="drop2"/>
+			
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.03" d="8" />
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.04" d="5" />
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.05" d="3" />		
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.06" d="2" />	
+			<goto id="alphaDrop"/>
+
+		<label id="drop3"/>
+			
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.05" d="5" />	
+			<frame i="spriteimage.gidrah.saturn.05.bomb.glow.06" d="3" />
+
+		<label id="alphaDrop"/>
+			<animcolor a="255" d="2"/>
+			<animcolor a="200" d="2"/>
+			<animcolor a="150" d="2"/>
+			<animcolor a="100" d="2"/>
+			<animcolor a="50" d="2"/>
+			<animcolor a="25" d="3"/>
+			<animcolor a="0" d="5"/>
+			<animcolor a="255" d="0"/>
+		<goto id="start"/>
+	</animation>
+
+
+
+
+</resources>

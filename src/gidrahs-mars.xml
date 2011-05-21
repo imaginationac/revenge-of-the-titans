@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Mars Gidrahs -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<include resource="gidrahs-mars-anim.xml" />
+	<include resource="gidrahs-mars-wraith-anim.xml" />
+	<include resource="gidrahs-mars-gidlets-anim.xml" />
+	<include resource="gidrahs-mars-boss.xml" />
+
+	<gidrah
+		name="gidlet.mars.spec"
+		latinName="MICRO IXODIDAE"
+		points="5"
+		strength="2"
+		hitPoints="1"
+		bounds="0,0,4,4"
+		offset="2,1"
+		brain="dumb.brain"
+		speed="16.0"
+		gidlet="true"
+		roar="gidrah-mars-gidlet-roar.buffer"
+		amb="gidrah-mars-gidlet-amb.buffer"
+		death="gidrah.06.death.buffer"
+	/>
+
+
+
+
+	<!-- Rank n File -->
+	
+	<gidrah
+		name="gidrah.mars.01.spec"
+		latinName="GIDRUS MEMNONIUS"
+		points="10"
+		strength="4"
+		hitPoints="6"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="9.0"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="1"
+		roar="gidrah-mars-01-roar.buffer"
+		amb="gidrah-mars-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="20"
+	>
+		<research>spreadercannon</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.mars.01.spec"
+		latinName="MEMNONIUS MAXIMUS"
+		angry="true"
+		strength="5"
+		points="50"
+		armour="4"
+		hitPoints="20"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="9.0"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-mars-01-roar.buffer"
+		amb="gidrah-mars-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="20"
+	>
+		<research>spreadercannon</research>
+		<research>biology</research>
+	</gidrah>
+
+	
+	<!-- Spiders. Slightly less hitpoints and they move VERY fast. And they're all clever -->
+	
+	<gidrah
+		name="gidrah.mars.02.spec"
+		latinName="THAUMUS AUDAX"
+		points="10"
+		strength="5"
+		armour="0"
+		hitPoints="4"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		speed="160.0"
+		moves="1"
+		pause="180"
+		diagonal="true"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="3"
+		roar="gidrah-mars-02-roar.buffer"
+		amb="gidrah-mars-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="24"
+	>
+		<research>multiblaster</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.mars.02.spec"
+		latinName="ARACHIS REX"
+		angry="true"
+		strength="6"
+		points="50"
+		armour="4"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		speed="160.0"
+		moves="1"
+		pause="180"
+		diagonal="true"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="5"
+		roar="gidrah-mars-02-roar.buffer"
+		amb="gidrah-mars-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="24"
+	>
+		<research>multiblaster</research>
+		<research>biology</research>
+	</gidrah>
+
+
+	<!-- Armoured ticks, and angry gid spawns gidlets -->
+
+	<gidrah
+		name="gidrah.mars.03.spec"
+		latinName="THYLUS IXODIDAE"
+		points="10"
+		strength="6"
+		hitPoints="4"
+		armour="8"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="12.0"
+		pause="40"
+		moves="1"
+		diagonal="true"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-mars-03-roar.buffer"
+		amb="gidrah-mars-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="28"
+	>
+		<research>blastcannon</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.mars.03.spec"
+		latinName="REGINA IXODIDAE"
+		angry="true"
+		strength="7"
+		points="50"
+		hitPoints="16"
+		armour="12"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="12.0"
+		pause="40"
+		moves="1"
+		diagonal="true"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="7"
+		spawn="gidlet.mars"
+		spawnType="2"
+		spawnRate="16,24"
+		roar="gidrah-mars-03-roar.buffer"
+		amb="gidrah-mars-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="28"
+	>
+		<research>blastcannon</research>
+		<research>clustermines | barracks</research>
+	</gidrah>
+	
+	<!-- Wraiths -->
+	
+	<gidrah
+		name="gidrah.mars.04.spec"
+		latinName="ERIDANIUS PHASMATIS"
+		points="50"
+		strength="2"
+		wraith="true"
+		hitPoints="2"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="8.0"
+		deflectEmitter="gidrah.mars.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-mars-04-roar.buffer"
+		amb="gidrah-mars-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="32"
+	>
+		<research>capacitor</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.mars.04.spec"
+		latinName="ERIDANIUS EFFIGIA"
+		angry="true"
+		strength="3"
+		wraith="true"
+		points="150"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="8.0"
+		deflectEmitter="gidrah.mars.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-mars-04-roar.buffer"
+		amb="gidrah-mars-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="32"
+	>
+		<research>capacitor</research>
+	</gidrah>
+
+	
+	
+	
+	<!-- BOSS ======================================================================================================================== -->
+
+	
+	<gidrah
+		name="gidrah.mars.boss.spec"
+		points="3000"
+		strength="100"
+		boss="true"
+		hitPoints="250"
+		hitPointsX="0"
+		hitPointsY="-9"
+		armour="8"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="dumb.brain"
+		speed="3.0"
+		deflectEmitter="gidrah.mars.deflect.boss.emitter"
+		deflectYOffset="28"
+		spawn="gidlet.mars"
+		spawnType="1"
+		spawnRate="200,600"	
+		roar="gidrah-mars-boss-roar.buffer"
+		amb="gidrah-mars-boss-amb.buffer"
+		death="gidrah.mars.boss.death.buffer"
+		medal="medal.mars_boss"
+	/>
+
+	
+</resources>

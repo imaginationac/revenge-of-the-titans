@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+<levelcolors
+	name="moon.01.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!121,220,147,255"/>
+	<color id="floor-fog" order="1" c="!124,205,78,255"/>
+	<color id="floor-alt" order="2" c="!118,215,129,255"/>
+	<color id="floor-alt-edge" order="3" c="!117,207,140,255"/>
+	<color id="attenuate" order="4" c="!130,214,57,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,238"/>
+	<color id="shadow" order="6" c="!118,255,64,197"/>
+	<color id="crater" order="7" c="!98,116,114,255"/>
+	<color id="crater-top" order="8" c="!119,219,159,255"/>
+	<color id="cliff-1" order="10" c="!46,116,255,255"/>
+	<color id="cliff-2" order="11" c="!47,73,191,255"/>
+	<color id="cliff-3" order="12" c="!48,71,193,255"/>
+	<color id="cliff-top-1" order="13" c="!48,116,202,255"/>
+	<color id="cliff-top-2" order="14" c="!55,126,238,255"/>
+		<color id="road-out" order="18" c="!117,207,140,255"/>
+	<color id="road-in" order="19" c="!118,215,129,255"/>
+	<color id="gidrah" order="20" c="!53,65,62,255"/>
+	<color id="buildings" order="21" c="!64,126,159,255"/>
+	<color id="buildings-alt" order="22" c="!50,191,255,255"/>
+
+	<color id="ruins" order="24" c="!53,119,190,255"/>
+	<color id="obstacle-vehicle" order="25" c="!52,130,162,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,198,196"/>
+	<color id="gui-mid" order="31" c="!0,255,226,161"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!125,91,103,255"/>
+	<color id="gui-glow" order="34" c="!123,255,255,108"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!121,194,122,255"/>
+	<color id="buildings-highlight" order="37" c="!124,148,255,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!53,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!53,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!53,93,95,255"/>
+
+</levelcolors>
+
+
+<levelcolors
+	name="moon.02.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!128,255,72,255"/>
+	<color id="floor-fog" order="1" c="!128,255,47,255"/>
+	<color id="floor-alt" order="2" c="!119,238,60,255"/>
+	<color id="floor-alt-edge" order="3" c="!128,255,65,255"/>
+	<color id="attenuate" order="4" c="!38,213,37,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,255"/>
+	<color id="shadow" order="6" c="!34,207,32,169"/>
+	<color id="crater" order="7" c="!122,255,64,255"/>
+	<color id="crater-top" order="8" c="!123,255,79,169"/>
+	<color id="cliff-1" order="10" c="!122,194,143,255"/>
+	<color id="cliff-2" order="11" c="!112,122,83,255"/>
+	<color id="cliff-3" order="12" c="!110,120,85,255"/>
+	<color id="cliff-top-1" order="13" c="!126,201,114,255"/>
+	<color id="cliff-top-2" order="14" c="!125,202,116,255"/>
+		<color id="road-in" order="18" c="!128,255,65,255"/>
+	<color id="road-out" order="19" c="!119,238,60,255"/>
+	<color id="gidrah" order="20" c="!0,0,0,255"/>
+	<color id="buildings" order="21" c="!125,220,119,255"/>
+	<color id="buildings-alt" order="22" c="!112,255,255,255"/>
+
+	<color id="ruins" order="24" c="!125,255,108,255"/>
+	<color id="obstacle-vehicle" order="25" c="!125,255,108,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!108,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,198,196"/>
+	<color id="gui-mid" order="31" c="!0,255,226,193"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!123,186,123,255"/>
+	<color id="gui-glow" order="34" c="!121,255,255,170"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!121,255,100,255"/>
+	<color id="buildings-highlight" order="37" c="!124,148,255,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!112,0,0,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!112,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!112,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="moon.03.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!118,255,73,255"/>
+	<color id="floor-fog" order="1" c="!116,255,57,255"/>
+	<color id="floor-alt" order="2" c="!116,228,58,255"/>
+	<color id="floor-alt-edge" order="3" c="!117,255,67,255"/>
+	<color id="attenuate" order="4" c="!123,255,10,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,255"/>
+	<color id="shadow" order="6" c="!112,255,152,255"/>
+	<color id="crater" order="7" c="!115,255,73,255"/>
+	<color id="crater-top" order="8" c="!116,255,89,172"/>
+	<color id="cliff-1" order="10" c="!114,255,136,255"/>
+	<color id="cliff-2" order="11" c="!112,99,136,255"/>
+	<color id="cliff-3" order="12" c="!107,89,143,255"/>
+	<color id="cliff-top-1" order="13" c="!115,255,130,255"/>
+	<color id="cliff-top-2" order="14" c="!121,218,125,255"/>
+		<color id="road-in" order="18" c="!117,255,67,255"/>
+	<color id="road-out" order="19" c="!116,228,58,255"/>
+	<color id="gidrah" order="20" c="!0,0,0,255"/>
+	<color id="buildings" order="21" c="!110,230,133,255"/>
+	<color id="buildings-alt" order="22" c="!0,255,255,255"/>
+
+	<color id="ruins" order="24" c="!114,230,116,255"/>
+	<color id="obstacle-vehicle" order="25" c="!114,232,122,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,211,196"/>
+	<color id="gui-mid" order="31" c="!0,255,226,180"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!110,212,108,255"/>
+	<color id="gui-glow" order="34" c="!114,255,255,154"/>
+	<color id="gui-off" order="35" c="!0,0,0,255"/>
+	<color id="buildings-shop-floor" order="36" c="!112,214,69,255"/>
+	<color id="buildings-highlight" order="37" c="!124,148,255,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!112,140,70,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!112,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!112,93,95,255"/>
+</levelcolors>
+
+
+
+<levelcolors
+	name="moon.04.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!137,173,200,255"/>
+	<color id="floor-fog" order="1" c="!125,188,119,255"/>
+	<color id="floor-alt" order="2" c="!119,145,144,255"/>
+	<color id="floor-alt-edge" order="3" c="!126,152,164,255"/>
+	<color id="attenuate" order="4" c="!100,255,82,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,255"/>
+	<color id="shadow" order="6" c="!114,255,255,198"/>
+	<color id="crater" order="7" c="!116,167,134,255"/>
+	<color id="crater-top" order="8" c="!124,144,173,255"/>
+	<color id="cliff-1" order="10" c="!120,148,255,255"/>
+	<color id="cliff-2" order="11" c="!120,220,244,255"/>
+	<color id="cliff-3" order="12" c="!125,185,213,255"/>
+	<color id="cliff-top-1" order="13" c="!122,186,255,255"/>
+	<color id="cliff-top-2" order="14" c="!121,184,255,255"/>
+		<color id="road-in" order="18" c="!126,152,164,255"/>
+	<color id="road-out" order="19" c="!119,145,144,255"/>
+	<color id="gidrah" order="20" c="!125,0,0,255"/>
+	<color id="buildings" order="21" c="!114,106,146,255"/>
+	<color id="buildings-alt" order="22" c="!119,255,255,255"/>
+
+	<color id="ruins" order="24" c="!114,144,184,255"/>
+	<color id="obstacle-vehicle" order="25" c="!115,107,147,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,198,196"/>
+	<color id="gui-mid" order="31" c="!0,255,226,193"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!115,184,109,255"/>
+	<color id="gui-glow" order="34" c="!115,255,255,105"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!121,255,105,255"/>
+	<color id="buildings-highlight" order="37" c="!124,146,255,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!125,0,0,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!125,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!125,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="moon.05.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!136,130,238,255"/>
+	<color id="floor-fog" order="1" c="!125,87,111,255"/>
+	<color id="floor-alt" order="2" c="!134,130,202,255"/>
+	<color id="floor-alt-edge" order="3" c="!137,141,226,255"/>
+	<color id="attenuate" order="4" c="!95,145,65,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,218"/>
+	<color id="shadow" order="6" c="!116,255,255,255"/>
+	<color id="crater" order="7" c="!124,109,177,255"/>
+	<color id="crater-top" order="8" c="!136,114,255,255"/>
+	<color id="cliff-1" order="10" c="!110,91,212,255"/>
+	<color id="cliff-2" order="11" c="!106,77,204,255"/>
+	<color id="cliff-3" order="12" c="!105,62,197,255"/>
+	<color id="cliff-top-1" order="13" c="!119,114,234,255"/>
+	<color id="cliff-top-2" order="14" c="!123,114,236,255"/>
+		<color id="road-in" order="18" c="!137,141,226,255"/>
+	<color id="road-out" order="19" c="!134,130,202,255"/>
+	<color id="gidrah" order="20" c="!37,108,115,255"/>
+	<color id="buildings" order="21" c="!104,87,201,255"/>
+	<color id="buildings-alt" order="22" c="!32,255,255,255"/>
+
+	<color id="ruins" order="24" c="!103,85,219,255"/>
+	<color id="obstacle-vehicle" order="25" c="!102,81,219,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,198,184"/>
+	<color id="gui-mid" order="31" c="!0,255,226,198"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!114,96,61,255"/>
+	<color id="gui-glow" order="34" c="!113,159,255,86"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!115,140,143,255"/>
+	<color id="buildings-highlight" order="37" c="!124,148,255,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!37,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!37,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!37,93,95,255"/>
+</levelcolors>
+
+
+
+<levelcolors
+	name="moon.06.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!42,44,226,255"/>
+	<color id="floor-fog" order="1" c="!86,63,136,255"/>
+	<color id="floor-alt" order="2" c="!49,50,201,255"/>
+	<color id="floor-alt-edge" order="3" c="!41,50,216,255"/>
+	<color id="attenuate" order="4" c="!160,116,57,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,219"/>
+	<color id="shadow" order="6" c="!57,158,255,215"/>
+	<color id="crater" order="7" c="!48,79,173,255"/>
+	<color id="crater-top" order="8" c="!34,37,251,255"/>
+	<color id="cliff-1" order="10" c="!37,96,255,255"/>
+	<color id="cliff-2" order="11" c="!58,57,255,255"/>
+	<color id="cliff-3" order="12" c="!102,55,255,255"/>
+	<color id="cliff-top-1" order="13" c="!33,121,255,255"/>
+	<color id="cliff-top-2" order="14" c="!73,122,255,255"/>
+		<color id="road-in" order="18" c="!41,50,216,255"/>
+	<color id="road-out" order="19" c="!49,50,201,255"/>
+	<color id="gidrah" order="20" c="!32,71,75,255"/>
+	<color id="buildings" order="21" c="!32,116,233,255"/>
+	<color id="buildings-alt" order="22" c="!43,255,255,255"/>
+
+	<color id="ruins" order="24" c="!33,114,255,255"/>
+	<color id="obstacle-vehicle" order="25" c="!32,115,255,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,198,196"/>
+	<color id="gui-mid" order="31" c="!0,255,194,218"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!45,106,101,255"/>
+	<color id="gui-glow" order="34" c="!68,68,255,101"/>
+	<color id="gui-off" order="35" c="!0,255,37,131"/>
+	<color id="buildings-shop-floor" order="36" c="!59,112,116,255"/>
+	<color id="buildings-highlight" order="37" c="!29,89,255,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!32,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!32,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!32,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="moon.07.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!44,62,193,255"/>
+	<color id="floor-fog" order="1" c="!58,87,143,255"/>
+	<color id="floor-alt" order="2" c="!44,70,173,255"/>
+	<color id="floor-alt-edge" order="3" c="!45,68,186,255"/>
+	<color id="attenuate" order="4" c="!57,255,22,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,230"/>
+	<color id="shadow" order="6" c="!42,255,211,129"/>
+	<color id="crater" order="7" c="!44,78,169,255"/>
+	<color id="crater-top" order="8" c="!44,62,209,255"/>
+	<color id="cliff-1" order="10" c="!47,71,255,255"/>
+	<color id="cliff-2" order="11" c="!43,53,255,255"/>
+	<color id="cliff-3" order="12" c="!43,51,255,255"/>
+	<color id="cliff-top-1" order="13" c="!51,85,236,255"/>
+	<color id="cliff-top-2" order="14" c="!47,77,237,255"/>
+		<color id="road-in" order="18" c="!45,68,186,255"/>
+	<color id="road-out" order="19" c="!44,70,173,255"/>
+	<color id="gidrah" order="20" c="!42,76,80,255"/>
+	<color id="buildings" order="21" c="!36,76,184,255"/>
+	<color id="buildings-alt" order="22" c="!42,212,255,255"/>
+
+	<color id="ruins" order="24" c="!33,97,220,255"/>
+	<color id="obstacle-vehicle" order="25" c="!33,97,220,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,197,196"/>
+	<color id="gui-mid" order="31" c="!0,255,206,218"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!47,139,148,255"/>
+	<color id="gui-glow" order="34" c="!49,122,255,89"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!47,145,144,255"/>
+	<color id="buildings-highlight" order="37" c="!50,112,255,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!42,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!42,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!42,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="moon.08.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!52,68,126,255"/>
+	<color id="floor-fog" order="1" c="!46,68,119,255"/>
+	<color id="floor-alt" order="2" c="!55,68,100,255"/>
+	<color id="floor-alt-edge" order="3" c="!53,70,115,255"/>
+	<color id="attenuate" order="4" c="!130,255,79,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,169"/>
+	<color id="shadow" order="6" c="!135,255,17,187"/>
+	<color id="crater" order="7" c="!50,72,98,255"/>
+	<color id="crater-top" order="8" c="!57,72,134,255"/>
+	<color id="cliff-1" order="10" c="!51,30,76,255"/>
+	<color id="cliff-2" order="11" c="!51,26,49,255"/>
+	<color id="cliff-3" order="12" c="!56,28,54,255"/>
+	<color id="cliff-top-1" order="13" c="!56,61,100,255"/>
+	<color id="cliff-top-2" order="14" c="!56,60,101,255"/>
+		<color id="road-in" order="18" c="!53,70,115,255"/>
+	<color id="road-out" order="19" c="!55,68,100,255"/>
+	<color id="gidrah" order="20" c="!51,0,0,255"/>
+	<color id="buildings" order="21" c="!128,153,53,255"/>
+	<color id="buildings-alt" order="22" c="!114,255,255,255"/>
+
+	<color id="ruins" order="24" c="!56,61,50,255"/>
+	<color id="obstacle-vehicle" order="25" c="!54,66,54,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,197,196"/>
+	<color id="gui-mid" order="31" c="!0,255,211,187"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!100,139,108,255"/>
+	<color id="gui-glow" order="34" c="!100,136,255,65"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!101,151,180,255"/>
+	<color id="buildings-highlight" order="37" c="!58,105,218,245"/>
+	
+	<color id="gidrah-boss" order="40" c="!51,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!51,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!51,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="moon.09.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!54,70,76,255"/>
+	<color id="floor-fog" order="1" c="!72,45,79,255"/>
+	<color id="floor-alt" order="2" c="!78,55,64,255"/>
+	<color id="floor-alt-edge" order="3" c="!60,68,71,255"/>
+	<color id="attenuate" order="4" c="!134,203,123,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,169"/>
+	<color id="shadow" order="6" c="!125,181,107,164"/>
+	<color id="crater" order="7" c="!73,57,67,255"/>
+	<color id="crater-top" order="8" c="!52,76,83,255"/>
+	<color id="cliff-1" order="10" c="!62,61,87,255"/>
+	<color id="cliff-2" order="11" c="!94,46,72,255"/>
+	<color id="cliff-3" order="12" c="!94,46,71,255"/>
+	<color id="cliff-top-1" order="13" c="!55,73,94,255"/>
+	<color id="cliff-top-2" order="14" c="!52,70,94,255"/>
+		<color id="road-in" order="18" c="!60,68,71,255"/>
+	<color id="road-out" order="19" c="!78,55,64,255"/>
+	<color id="gidrah" order="20" c="!94,0,0,255"/>
+	<color id="buildings" order="21" c="!54,151,47,255"/>
+	<color id="buildings-alt" order="22" c="!31,205,255,255"/>
+
+	<color id="ruins" order="24" c="!54,89,40,255"/>
+	<color id="obstacle-vehicle" order="25" c="!55,82,40,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,197,196"/>
+	<color id="gui-mid" order="31" c="!0,255,205,176"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!40,115,161,255"/>
+	<color id="gui-glow" order="34" c="!42,115,255,73"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!39,123,172,255"/>
+	<color id="buildings-highlight" order="37" c="!73,65,191,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!94,94,20,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!94,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!94,93,95,255"/>
+</levelcolors>
+
+
+<levelcolors
+	name="moon.10.colors"
+	maxAttenuation="1.0"
+>
+	<color id="floor" c="!52,70,47,255"/>
+	<color id="floor-fog" order="1" c="!53,72,28,255"/>
+	<color id="floor-alt" order="2" c="!52,85,39,255"/>
+	<color id="floor-alt-edge" order="3" c="!53,86,44,255"/>
+	<color id="attenuate" order="4" c="!130,255,32,255"/>
+	<color id="maxAttenuation" order="5" c="!0,255,255,255"/>
+	<color id="shadow" order="6" c="!58,255,44,143"/>
+	<color id="crater" order="7" c="!52,82,40,255"/>
+	<color id="crater-top" order="8" c="!50,75,54,255"/>
+	<color id="cliff-1" order="10" c="!39,78,91,255"/>
+	<color id="cliff-2" order="11" c="!45,71,89,255"/>
+	<color id="cliff-3" order="12" c="!42,63,76,255"/>
+	<color id="cliff-top-1" order="13" c="!42,83,79,255"/>
+	<color id="cliff-top-2" order="14" c="!40,80,76,255"/>
+	<color id="road-in" order="18" c="!53,86,44,255"/>
+	<color id="road-out" order="19" c="!52,85,39,255"/>
+	<color id="gidrah" order="20" c="!45,0,0,255"/>
+	<color id="buildings" order="21" c="!45,78,85,255"/>
+	<color id="buildings-alt" order="22" c="!46,155,255,255"/>
+
+	<color id="ruins" order="24" c="!45,87,73,255"/>
+	<color id="obstacle-vehicle" order="25" c="!46,87,93,255"/>
+	<color id="crystal" order="27" c="!122,141,182,255"/>
+	<color id="crystal-glow" order="28" c="!112,255,255,255"/>
+	<color id="gui-dark" order="30" c="!0,255,197,186"/>
+	<color id="gui-mid" order="31" c="!0,255,226,205"/>
+	<color id="gui-bright" order="32" c="!0,255,255,255"/>
+	<color id="gui-back" order="33" c="!45,139,119,255"/>
+	<color id="gui-glow" order="34" c="!50,111,255,78"/>
+	<color id="gui-off" order="35" c="!0,0,0,131"/>
+	<color id="buildings-shop-floor" order="36" c="!44,121,115,255"/>
+	<color id="buildings-highlight" order="37" c="!46,148,101,255"/>
+	
+	<color id="gidrah-boss" order="40" c="!45,0,0,255"/>
+	<color id="gidrah-mars-boss" order="41" c="!45,92,228,220"/>
+	<color id="gidrah-wings" order="42" c="!45,93,95,255"/>
+</levelcolors>
+
+
+
+</resources>

@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Earth tiles -->
+<resources>
+	<tileset name="moon.tileset" description="Moon Tiles" default_="">
+
+		<include resource="ruins-moon.xml" />
+		<include resource="craters.xml" />
+
+		<!-- Only easy gidrahs come from mid spawnpoints -->		
+		<spawnpoint name="spawnpoint.mid.moon" i="19036" layer="2" image="tiles.road.4.0" xoffset="0" yoffset="0" type="1">
+			<decal image="spriteimage.gidrah.earth.01.01" layer="5" scale="2.0"/>
+		</spawnpoint>
+
+
+		<!--  STANDARD FLOOR ========================================================================================================================== -->
+			
+		
+		<!--  ALT FLOOR ========================================================================================================================== -->
+		
+		
+		<!--  WALL EDGE FLOOR ========================================================================================================================== -->
+					
+		
+		<!-- FLOOR 3 - not used at the mo ============================================================================================================== -->
+		
+
+		<!--  OBSTACLES ========================================================================================================================== -->
+
+			
+		<obstacle name="moon.obstacle.vehicle.1" i="11400" layer="2" obstacle="moon.vehicle.1"/>
+		<obstacle name="moon.obstacle.vehicle.2" i="11401" layer="2" obstacle="moon.vehicle.2"/>
+		<obstacle name="moon.obstacle.vehicle.3" i="11402" layer="2" obstacle="moon.vehicle.3"/>
+		<obstacle name="moon.obstacle.vehicle.4" i="11403" layer="2" obstacle="moon.vehicle.4"/>
+		<obstacle name="moon.obstacle.vehicle.5" i="11404" layer="2" obstacle="moon.vehicle.5"/>
+
+		<obstacle name="moon.obstacle.vehicle.burning.1" i="11405" layer="2" obstacle="moon.vehicle.burning.1"/>
+		<obstacle name="moon.obstacle.vehicle.burning.2" i="11406" layer="2" obstacle="moon.vehicle.burning.2"/>
+		<obstacle name="moon.obstacle.vehicle.burning.3" i="11407" layer="2" obstacle="moon.vehicle.burning.3"/>
+		<obstacle name="moon.obstacle.vehicle.burning.4" i="11408" layer="2" obstacle="moon.vehicle.burning.4"/>
+		<obstacle name="moon.obstacle.vehicle.burning.5" i="11409" layer="2" obstacle="moon.vehicle.burning.5"/>		
+		
+		<obstacle name="moon.obstacle.pod.1" i="11410" layer="2" obstacle="moon.pod.1"/>
+		<obstacle name="moon.obstacle.pod.2" i="11411" layer="2" obstacle="moon.pod.2"/>
+		<obstacle name="moon.obstacle.pod.3" i="11412" layer="2" obstacle="moon.pod.3"/>
+		<obstacle name="moon.obstacle.pod.4" i="11413" layer="2" obstacle="moon.pod.4"/>
+		<obstacle name="moon.obstacle.pod.5" i="11414" layer="2" obstacle="moon.pod.5"/>
+
+		<obstacle name="moon.obstacle.pod.burning.1" i="11415" layer="2" obstacle="moon.pod.burning.1"/>
+		<obstacle name="moon.obstacle.pod.burning.2" i="11416" layer="2" obstacle="moon.pod.burning.2"/>
+		<obstacle name="moon.obstacle.pod.burning.3" i="11417" layer="2" obstacle="moon.pod.burning.3"/>
+		<obstacle name="moon.obstacle.pod.burning.4" i="11418" layer="2" obstacle="moon.pod.burning.4"/>
+		<obstacle name="moon.obstacle.pod.burning.5" i="11419" layer="2" obstacle="moon.pod.burning.5"/>	
+
+
+
+		<!--  ROADS  ========================================================================================================================== -->
+
+
+		<detail name="moon.road.0" i="11600" layer="1" spriteLayer="3" image="tiles.road.0.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.0.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.1" i="11601" layer="1" spriteLayer="3" image="tiles.road.1.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.1.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.2" i="11602" layer="1" spriteLayer="3" image="tiles.road.2.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.2.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.3" i="11603" layer="1" spriteLayer="3" image="tiles.road.3.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.3.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.4" i="11604" layer="1" spriteLayer="3" image="tiles.road.4.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.4.4" colored="road-out"/></layers></layers>
+		</detail>
+		
+		<!--  vertical -->
+		
+		<detail name="moon.road.5" i="11605" layer="1" spriteLayer="3" image="tiles.road.5.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.5.4" colored="road-out"/></layers></layers>
+			<random>
+				<array>
+					<item>moon.road.5</item>
+					<item>moon.road.5</item>
+					<item>moon.road.5</item>
+					<item>moon.road.5</item>
+					<item>moon.road.5</item>
+					<item>moon.road.5</item>
+					<item>moon.road.5</item>
+					<item>moon.road.5</item>
+
+					<item>moon.road.5.01</item>
+					<item>moon.road.5.02</item>
+					<item>moon.road.5.03</item>
+					<item>moon.road.5.04</item>
+					<item>moon.road.5.05</item>
+					<item>moon.road.5.06</item>
+					<item>moon.road.5.07</item>
+					<item>moon.road.5.08</item>
+					<item>moon.road.5.09</item>
+					<item>moon.road.5.10</item>
+					<item>moon.road.5.11</item>
+					<item>moon.road.5.12</item>
+					<item>moon.road.5.13</item>
+					<item>moon.road.5.14</item>
+					<item>moon.road.5.15</item>
+					<item>moon.road.5.16</item>
+				</array>
+			</random>
+		</detail>
+		
+		<detail name="moon.road.6" i="11606" layer="1" spriteLayer="3" image="tiles.road.6.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.6.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.7" i="11607" layer="1" spriteLayer="3" image="tiles.road.7.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.7.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.8" i="11608" layer="1" spriteLayer="3" image="tiles.road.8.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.8.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.9" i="11609" layer="1" spriteLayer="3" image="tiles.road.9.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.9.4" colored="road-out"/></layers></layers>
+		</detail>
+		
+		<!--  horizontal -->
+		
+		<detail name="moon.road.10" i="11610" layer="1" spriteLayer="3" image="tiles.road.10.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.10.4" colored="road-out"/></layers></layers>
+			<random>
+				<array>
+					<item>moon.road.10</item>
+					<item>moon.road.10</item>
+					<item>moon.road.10</item>
+					<item>moon.road.10</item>
+					<item>moon.road.10</item>
+					<item>moon.road.10</item>
+					<item>moon.road.10</item>
+					<item>moon.road.10</item>
+
+					<item>moon.road.10.01</item>
+					<item>moon.road.10.02</item>
+					<item>moon.road.10.03</item>
+					<item>moon.road.10.04</item>
+					<item>moon.road.10.05</item>
+					<item>moon.road.10.06</item>
+					<item>moon.road.10.07</item>
+					<item>moon.road.10.08</item>
+					<item>moon.road.10.09</item>
+					<item>moon.road.10.10</item>
+					<item>moon.road.10.11</item>
+					<item>moon.road.10.12</item>
+					<item>moon.road.10.13</item>
+					<item>moon.road.10.14</item>
+					<item>moon.road.10.15</item>
+					<item>moon.road.10.16</item>
+				</array>
+			</random>
+		</detail>
+		
+		<detail name="moon.road.11" i="11611" layer="1" spriteLayer="3" image="tiles.road.11.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.11.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.12" i="11612" layer="1" spriteLayer="3" image="tiles.road.12.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.12.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.13" i="11613" layer="1" spriteLayer="3" image="tiles.road.13.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.13.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.14" i="11614" layer="1" spriteLayer="3" image="tiles.road.14.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.14.4" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.15" i="11615" layer="1" spriteLayer="3" image="tiles.road.15.7" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="1" attenuated="true" image="tiles.road.15.4" colored="road-out"/></layers></layers>
+		</detail>
+
+
+		<!--  random horizontal -->
+
+		<detail name="moon.road.10.01" i="11620" layer="1" spriteLayer="3" image="tiles.road.0.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.0.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.02" i="11621" layer="1" spriteLayer="3" image="tiles.road.1.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.1.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.03" i="11622" layer="1" spriteLayer="3" image="tiles.road.2.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.2.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.04" i="11623" layer="1" spriteLayer="3" image="tiles.road.3.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.3.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.05" i="11624" layer="1" spriteLayer="3" image="tiles.road.4.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.4.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.06" i="11625" layer="1" spriteLayer="3" image="tiles.road.5.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.5.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.07" i="11626" layer="1" spriteLayer="3" image="tiles.road.6.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.6.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.08" i="11627" layer="1" spriteLayer="3" image="tiles.road.7.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.7.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.09" i="11628" layer="1" spriteLayer="3" image="tiles.road.8.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.8.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.10" i="11629" layer="1" spriteLayer="3" image="tiles.road.9.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.9.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.11" i="11630" layer="1" spriteLayer="3" image="tiles.road.10.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.10.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.12" i="11631" layer="1" spriteLayer="3" image="tiles.road.11.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.11.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.13" i="11632" layer="1" spriteLayer="3" image="tiles.road.12.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.12.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.14" i="11633" layer="1" spriteLayer="3" image="tiles.road.13.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.13.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.15" i="11634" layer="1" spriteLayer="3" image="tiles.road.14.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.14.5" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.10.16" i="11635" layer="1" spriteLayer="3" image="tiles.road.15.8" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.15.5" colored="road-out"/></layers></layers>
+		</detail>
+
+		<!--  random vertical -->
+
+		<detail name="moon.road.5.01" i="11640" layer="1" spriteLayer="3" image="tiles.road.0.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.0.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.02" i="11641" layer="1" spriteLayer="3" image="tiles.road.1.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.1.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.03" i="11642" layer="1" spriteLayer="3" image="tiles.road.2.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.2.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.04" i="11643" layer="1" spriteLayer="3" image="tiles.road.3.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.3.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.05" i="11644" layer="1" spriteLayer="3" image="tiles.road.4.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.4.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.06" i="11645" layer="1" spriteLayer="3" image="tiles.road.5.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.5.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.07" i="11646" layer="1" spriteLayer="3" image="tiles.road.6.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.6.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.08" i="11647" layer="1" spriteLayer="3" image="tiles.road.7.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.7.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.09" i="11648" layer="1" spriteLayer="3" image="tiles.road.8.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.8.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.10" i="11649" layer="1" spriteLayer="3" image="tiles.road.9.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.9.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.11" i="11650" layer="1" spriteLayer="3" image="tiles.road.10.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.10.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.12" i="11651" layer="1" spriteLayer="3" image="tiles.road.11.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.11.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.13" i="11652" layer="1" spriteLayer="3" image="tiles.road.12.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.12.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.14" i="11653" layer="1" spriteLayer="3" image="tiles.road.13.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.13.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.15" i="11654" layer="1" spriteLayer="3" image="tiles.road.14.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.14.6" colored="road-out"/></layers></layers>
+		</detail>
+		<detail name="moon.road.5.16" i="11655" layer="1" spriteLayer="3" image="tiles.road.15.9" attenuated="true" colored="road-in">
+			<layers><layers><sprite layer="3" sublayer="2" attenuated="true" image="tiles.road.15.6" colored="road-out"/></layers></layers>
+		</detail>
+
+
+	</tileset>
+
+
+
+  
+  	<!-- TRANSITION BETWEEN FLOOR AND ALT FLOOR ========================================================================================================================== -->
+
+
+	
+
+
+</resources>
+

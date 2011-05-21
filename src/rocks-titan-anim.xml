@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+	<animation name="titan.rock.01.anim">
+		<frame i="spriteimage.titan.rock.glow.01" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.rock.02.anim">
+		<frame i="spriteimage.titan.rock.glow.02" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.rock.03.anim">
+		<frame i="spriteimage.titan.rock.glow.03" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.rock.04.anim">
+		<frame i="spriteimage.titan.rock.glow.04" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.rock.05.anim">
+		<frame i="spriteimage.titan.rock.glow.05" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.rock.06.anim">
+		<frame i="spriteimage.titan.rock.glow.06" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.rock.07.anim">
+		<frame i="spriteimage.titan.rock.glow.07" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.rock.08.anim">
+		<frame i="spriteimage.titan.rock.glow.08" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+
+	<animation name="titan.large.01.anim">
+		<frame i="spriteimage.titan.large.glow.01" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.large.02.anim">
+		<frame i="spriteimage.titan.large.glow.02" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.large.03.anim">
+		<frame i="spriteimage.titan.large.glow.03" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.large.04.anim">
+		<frame i="spriteimage.titan.large.glow.04" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.large.05.anim">
+		<frame i="spriteimage.titan.large.glow.05" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.large.06.anim">
+		<frame i="spriteimage.titan.large.glow.06" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.large.07.anim">
+		<frame i="spriteimage.titan.large.glow.07" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.large.08.anim">
+		<frame i="spriteimage.titan.large.glow.08" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>	
+
+	<animation name="titan.xLarge.01.anim">
+		<frame i="spriteimage.titan.xLarge.glow.01" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.xLarge.02.anim">
+		<frame i="spriteimage.titan.xLarge.glow.02" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.xLarge.03.anim">
+		<frame i="spriteimage.titan.xLarge.glow.03" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.xLarge.04.anim">
+		<frame i="spriteimage.titan.xLarge.glow.04" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.xLarge.05.anim">
+		<frame i="spriteimage.titan.xLarge.glow.05" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.xLarge.06.anim">
+		<frame i="spriteimage.titan.xLarge.glow.06" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.xLarge.07.anim">
+		<frame i="spriteimage.titan.xLarge.glow.07" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>
+	<animation name="titan.xLarge.08.anim">
+		<frame i="spriteimage.titan.xLarge.glow.08" d="0" />
+		<frame i="titan.wall.glow.anim" d="0" />
+	</animation>	
+
+
+
+
+	<animation name="titan.wall.glow.anim">
+
+		
+		<label id="start"/>
+		<animcolor a="0" d="20"/>
+		<random>
+			<dest id="on1" n="1"/>
+			<dest id="start" n="20"/>
+		</random>
+		<label id="on1"/>
+			<animcolor a="0" d="1"/>
+			<animcolor a="0" d="1"/>
+			<animcolor a="1" d="1"/>
+			<animcolor a="2" d="1"/>
+			<animcolor a="3" d="1"/>
+			<animcolor a="4" d="1"/>
+			<animcolor a="5" d="1"/>
+			<animcolor a="7" d="1"/>
+			<animcolor a="8" d="1"/>
+			<animcolor a="10" d="1"/>
+			<animcolor a="12" d="1"/>
+			<animcolor a="15" d="1"/>
+			<animcolor a="17" d="1"/>
+			<animcolor a="20" d="1"/>
+			<animcolor a="23" d="1"/>
+			<animcolor a="26" d="1"/>
+			<animcolor a="29" d="1"/>
+			<animcolor a="33" d="1"/>
+			<animcolor a="37" d="1"/>
+			<animcolor a="41" d="1"/>
+			<animcolor a="45" d="1"/>
+			<animcolor a="49" d="1"/>
+			<animcolor a="54" d="1"/>
+			<animcolor a="59" d="1"/>
+			<animcolor a="64" d="1"/>
+			<animcolor a="69" d="1"/>
+			<animcolor a="74" d="1"/>
+			<animcolor a="80" d="1"/>
+			<animcolor a="86" d="1"/>
+			<animcolor a="92" d="1"/>
+			<animcolor a="98" d="1"/>
+			<animcolor a="104" d="1"/>
+			<animcolor a="111" d="1"/>
+			<animcolor a="118" d="1"/>
+			<animcolor a="125" d="1"/>
+			<animcolor a="132" d="1"/>
+			<animcolor a="140" d="1"/>
+			<animcolor a="147" d="1"/>
+			<animcolor a="155" d="1"/>
+			<animcolor a="163" d="1"/>
+			<animcolor a="171" d="1"/>
+			<animcolor a="180" d="1"/>
+			<animcolor a="189" d="1"/>
+			<animcolor a="197" d="1"/>
+			<animcolor a="207" d="1"/>
+			<animcolor a="216" d="1"/>
+			<animcolor a="225" d="1"/>
+			<animcolor a="235" d="1"/>
+			<animcolor a="245" d="1"/>
+			<animcolor a="255" d="5"/>
+			<animcolor a="255" d="1"/>
+			<animcolor a="255" d="1"/>
+			<animcolor a="254" d="1"/>
+			<animcolor a="254" d="1"/>
+			<animcolor a="254" d="1"/>
+			<animcolor a="253" d="1"/>
+			<animcolor a="252" d="1"/>
+			<animcolor a="251" d="1"/>
+			<animcolor a="251" d="1"/>
+			<animcolor a="250" d="1"/>
+			<animcolor a="248" d="1"/>
+			<animcolor a="247" d="1"/>
+			<animcolor a="246" d="1"/>
+			<animcolor a="245" d="1"/>
+			<animcolor a="243" d="1"/>
+			<animcolor a="242" d="1"/>
+			<animcolor a="240" d="1"/>
+			<animcolor a="238" d="1"/>
+			<animcolor a="236" d="1"/>
+			<animcolor a="235" d="1"/>
+			<animcolor a="233" d="1"/>
+			<animcolor a="231" d="1"/>
+			<animcolor a="228" d="1"/>
+			<animcolor a="226" d="1"/>
+			<animcolor a="224" d="1"/>
+			<animcolor a="222" d="1"/>
+			<animcolor a="219" d="1"/>
+			<animcolor a="217" d="1"/>
+			<animcolor a="215" d="1"/>
+			<animcolor a="212" d="1"/>
+			<animcolor a="209" d="1"/>
+			<animcolor a="207" d="1"/>
+			<animcolor a="204" d="1"/>
+			<animcolor a="201" d="1"/>
+			<animcolor a="199" d="1"/>
+			<animcolor a="196" d="1"/>
+			<animcolor a="193" d="1"/>
+			<animcolor a="190" d="1"/>
+			<animcolor a="187" d="1"/>
+			<animcolor a="184" d="1"/>
+			<animcolor a="181" d="1"/>
+			<animcolor a="178" d="1"/>
+			<animcolor a="175" d="1"/>
+			<animcolor a="172" d="1"/>
+			<animcolor a="168" d="1"/>
+			<animcolor a="165" d="1"/>
+			<animcolor a="162" d="1"/>
+			<animcolor a="159" d="1"/>
+			<animcolor a="156" d="1"/>
+			<animcolor a="152" d="1"/>
+			<animcolor a="149" d="1"/>
+			<animcolor a="146" d="1"/>
+			<animcolor a="142" d="1"/>
+			<animcolor a="139" d="1"/>
+			<animcolor a="136" d="1"/>
+			<animcolor a="132" d="1"/>
+			<animcolor a="129" d="1"/>
+			<animcolor a="126" d="1"/>
+			<animcolor a="123" d="1"/>
+			<animcolor a="119" d="1"/>
+			<animcolor a="116" d="1"/>
+			<animcolor a="113" d="1"/>
+			<animcolor a="109" d="1"/>
+			<animcolor a="106" d="1"/>
+			<animcolor a="103" d="1"/>
+			<animcolor a="99" d="1"/>
+			<animcolor a="96" d="1"/>
+			<animcolor a="93" d="1"/>
+			<animcolor a="90" d="1"/>
+			<animcolor a="87" d="1"/>
+			<animcolor a="83" d="1"/>
+			<animcolor a="80" d="1"/>
+			<animcolor a="77" d="1"/>
+			<animcolor a="74" d="1"/>
+			<animcolor a="71" d="1"/>
+			<animcolor a="68" d="1"/>
+			<animcolor a="65" d="1"/>
+			<animcolor a="62" d="1"/>
+			<animcolor a="59" d="1"/>
+			<animcolor a="56" d="1"/>
+			<animcolor a="54" d="1"/>
+			<animcolor a="51" d="1"/>
+			<animcolor a="48" d="1"/>
+			<animcolor a="46" d="1"/>
+			<animcolor a="43" d="1"/>
+			<animcolor a="40" d="1"/>
+			<animcolor a="38" d="1"/>
+			<animcolor a="36" d="1"/>
+			<animcolor a="33" d="1"/>
+			<animcolor a="31" d="1"/>
+			<animcolor a="29" d="1"/>
+			<animcolor a="27" d="1"/>
+			<animcolor a="24" d="1"/>
+			<animcolor a="22" d="1"/>
+			<animcolor a="20" d="1"/>
+			<animcolor a="19" d="1"/>
+			<animcolor a="17" d="1"/>
+			<animcolor a="15" d="1"/>
+			<animcolor a="13" d="1"/>
+			<animcolor a="12" d="1"/>
+			<animcolor a="10" d="1"/>
+			<animcolor a="9" d="1"/>
+			<animcolor a="8" d="1"/>
+			<animcolor a="7" d="1"/>
+			<animcolor a="5" d="1"/>
+			<animcolor a="4" d="1"/>
+			<animcolor a="4" d="1"/>
+			<animcolor a="3" d="1"/>
+			<animcolor a="2" d="1"/>
+			<animcolor a="1" d="1"/>
+			<animcolor a="1" d="1"/>
+			<animcolor a="1" d="1"/>
+			<animcolor a="0" d="1"/>
+			<animcolor a="0" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+</resources>

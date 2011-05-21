@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Player units! -->
+
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<animation name="earth.unit.dead.anim">
+		<loop count="10"/>
+			<animcolor a="+-25" d="2"/>				
+			<repeat seq="1"/>
+		<event id="1"/>
+	</animation>
+
+	<animation name="earth.unit.dead.ground.anim">
+		<frame i="spriteimage.unit.1.ground.01" d="50"/>
+		<frame i="earth.unit.dead.anim" d="0"/>
+	</animation>
+
+
+	<animation name="earth.unit.01.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.1.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.1.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.1.02" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.1.02" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.1.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.1.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.1.03" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.1.03" d="1" childYOffset="0.0"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="earth.unit.01.dead.anim">
+		<frame i="spriteimage.unit.1.01" d="50"/>
+		<frame i="earth.unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="earth.unit.01.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.1.glow.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.unit.1.glow.01" d="9" />
+			<frame i="spriteimage.unit.1.glow.02" d="1" />
+			<frame i="spriteimage.unit.1.glow.03" d="19" />
+			<frame i="spriteimage.unit.1.glow.02" d="3" />
+			<frame i="spriteimage.unit.1.glow.01" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="continue"/>
+			<frame i="spriteimage.unit.1.glow.01" d="7" />
+			<frame i="spriteimage.unit.1.glow.02" d="1" />
+			<frame i="spriteimage.unit.1.glow.03" d="14" />
+			<frame i="spriteimage.unit.1.glow.02" d="4" />
+		<goto id="start"/>
+	</animation>
+
+			
+	<unit
+		name="earth.unit.01"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="unit.brain"
+		weapon="miniblaster.weapon"
+		hitPoints="1"
+		speed="80"
+		range="64.0"
+	>
+		<appearance>
+			<layers scale="0.4">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.01.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.01.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.4">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.1.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.01.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.4">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.01.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="earth.unit.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>
+	
+	<!--  Buffed unit -->
+	<unit
+		name="earth.unit.02"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="unit.brain"
+		weapon="miniblaster.weapon"
+		hitPoints="1"
+		speed="60"
+		range="72.0"
+	>
+		<appearance>
+			<layers scale="0.45">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.01.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.01.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.45">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.1.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.01.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.45">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.01.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="earth.unit.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>
+
+
+	<!--  Sergeant -->
+
+	<animation name="earth.unit.03.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.2.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.2.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.2.02" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.2.02" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.2.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.2.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.2.03" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.2.03" d="1" childYOffset="0.0"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="earth.unit.03.dead.anim">
+		<frame i="spriteimage.unit.2.01" d="50"/>
+		<frame i="earth.unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="earth.unit.03.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.2.glow.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.unit.2.glow.01" d="9" />
+			<frame i="spriteimage.unit.2.glow.02" d="1" />
+			<frame i="spriteimage.unit.2.glow.03" d="19" />
+			<frame i="spriteimage.unit.2.glow.02" d="3" />
+			<frame i="spriteimage.unit.2.glow.01" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="continue"/>
+			<frame i="spriteimage.unit.2.glow.01" d="7" />
+			<frame i="spriteimage.unit.2.glow.02" d="1" />
+			<frame i="spriteimage.unit.2.glow.03" d="14" />
+			<frame i="spriteimage.unit.2.glow.02" d="4" />
+		<goto id="start"/>
+	</animation>
+
+
+
+
+	<unit
+		name="earth.unit.03"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="unit.brain"
+		weapon="miniheavyblaster.weapon"
+		hitPoints="1"
+		speed="80"
+		range="80.0"
+	>
+		<appearance>
+			<layers scale="0.525">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.03.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.03.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.525">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.2.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.03.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.525">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.03.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="earth.unit.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>
+	
+	
+</resources>

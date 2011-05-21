@@ -1,0 +1,491 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+		<wall name="earth.wall.small.1.01" inherit="earth.wall.spec" i="121"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.1.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="24,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="10,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="20,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.1.02" inherit="earth.wall.spec" i="122"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.1.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="8,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="25,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="12,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.02" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.1.03" inherit="earth.wall.spec" i="123"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.1.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="27,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="9,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="12,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="14,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.03" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.1.04" inherit="earth.wall.spec" i="124"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.1.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="21,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="9,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="18,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.04" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.1.05" inherit="earth.wall.spec" i="125"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.1.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="27,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="9,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="13,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.05" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.1.06" inherit="earth.wall.spec" i="126"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.1.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="30,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="10,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="17,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.06" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.1.07" inherit="earth.wall.spec" i="127"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.1.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="10,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="25,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="15,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.07" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.1.08" inherit="earth.wall.spec" i="128"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.1.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="30,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="16,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="27,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.08" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.2.01" inherit="earth.wall.spec" i="129"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.2.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="25,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="6,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="11,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.2.02" inherit="earth.wall.spec" i="130"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.2.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="29,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.03" />
+			<sprite layer="5" sublayer="2" offset="6,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="19,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.02" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.2.03" inherit="earth.wall.spec" i="131"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.2.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="31,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="9,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="12,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.03" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.2.04" inherit="earth.wall.spec" i="132"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.2.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="26,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="9,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="18,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.04" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.2.05" inherit="earth.wall.spec" i="133"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.2.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="9,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="14,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.05" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.2.06" inherit="earth.wall.spec" i="134"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.2.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="8,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="17,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.07" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.2.07" inherit="earth.wall.spec" i="135"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.2.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="26,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="6,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.03" />
+			<sprite layer="5" sublayer="2" offset="15,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.07" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.2.08" inherit="earth.wall.spec" i="136"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.2.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="25,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="6,26" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="17,4" ySortOffset="4" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.08" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.3.01" inherit="earth.wall.spec" i="137"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.3.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="10,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="19,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.3.02" inherit="earth.wall.spec" i="138"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.3.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="20,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="13,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.02" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.3.03" inherit="earth.wall.spec" i="139"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.3.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="18,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="17,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.03" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.3.04" inherit="earth.wall.spec" i="140"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.3.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.04" />
+			<sprite layer="5" sublayer="2" offset="8,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.3.05" inherit="earth.wall.spec" i="141"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.3.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="8,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.3.06" inherit="earth.wall.spec" i="142"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.3.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.03" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="24,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.3.07" inherit="earth.wall.spec" i="143"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.3.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="24,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.small.3.08" inherit="earth.wall.spec" i="144"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.small.3.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="24,27" ySortOffset="27" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.1.01" inherit="earth.wall.spec" i="145"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.2.01" inherit="earth.wall.spec" i="146"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.1.02" inherit="earth.wall.spec" i="147"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.02" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.1.03" inherit="earth.wall.spec" i="148"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.03" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.1.04" inherit="earth.wall.spec" i="149"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.04" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.1.05" inherit="earth.wall.spec" i="150"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.05" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.1.06" inherit="earth.wall.spec" i="151"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.06" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.1.07" inherit="earth.wall.spec" i="152"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.07" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.1.08" inherit="earth.wall.spec" i="153"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.08" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.2.02" inherit="earth.wall.spec" i="154"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="18,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.02" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.2.03" inherit="earth.wall.spec" i="155"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="14,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.03" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.2.04" inherit="earth.wall.spec" i="156"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="20,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.04" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.2.05" inherit="earth.wall.spec" i="157"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="12,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.04" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.05" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.2.06" inherit="earth.wall.spec" i="158"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="22,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.03" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.06" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.2.07" inherit="earth.wall.spec" i="159"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="10,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.02" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.07" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.medium.2.08" inherit="earth.wall.spec" i="160"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="4,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.large.08" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.01" inherit="earth.wall.cliff.spec" i="161"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="4,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.01" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="9" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.01" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.01" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.02" inherit="earth.wall.cliff.spec" i="162"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="4,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.02" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="9" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.02" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.02" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.02" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.03" inherit="earth.wall.cliff.spec" i="163"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.03" />
+			<sprite layer="5" sublayer="2" offset="4,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.04" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.03" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="9" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.03" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.03" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.03" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.04" inherit="earth.wall.cliff.spec" i="164"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="4,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.03" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.04" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="9" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.04" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.04" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.04" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.05" inherit="earth.wall.cliff.spec" i="165"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="4,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.02" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.05" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="9" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.05" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.05" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.05" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.06" inherit="earth.wall.cliff.spec" i="166"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="4,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.01" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.06" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="9" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.06" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.06" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.06" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.07" inherit="earth.wall.cliff.spec" i="167"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="4,0" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.02" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.07" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="9" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.07" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.07" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.07" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.14" inherit="earth.wall.cliff.spec" i="168"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.14.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.02" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.07" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="25" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.07" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.07" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.07" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.13" inherit="earth.wall.cliff.spec" i="169"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.13.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.03" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.06" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="25" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.06" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.06" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.06" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.12" inherit="earth.wall.cliff.spec" i="170"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.12.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.04" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.05" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="25" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.05" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.05" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.05" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.11" inherit="earth.wall.cliff.spec" i="171"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.11.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.04" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="25" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.04" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.04" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.04" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.10" inherit="earth.wall.cliff.spec" i="172"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.10.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.03" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="25" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.03" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.03" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.03" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.09" inherit="earth.wall.cliff.spec" i="173"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.09.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.02" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="25" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.02" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.02" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.02" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.cliff.08" inherit="earth.wall.cliff.spec" i="174"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="shadow" attenuated="true" image="spriteimage.earth.wall.cliff.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" bottomColored="floor-fog" topColored="cliff-1" attenuated="true" image="spriteimage.cliff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.01" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="25" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.top.01" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" bottomColored="floor-fog" topColored="cliff-2" attenuated="true" image="spriteimage.cliff.xLarge.side.01" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" colored="cliff-top-1" attenuated="true" image="spriteimage.cliff.xLarge.side.top.01" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.internal.01" inherit="earth.wall.internal.spec" i="175"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.08" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="6" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.top.08" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.side.08" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.side.top.08" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.internal.02" inherit="earth.wall.internal.spec" i="176"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.09" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="6" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.top.09" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.side.09" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.side.top.09" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.internal.03" inherit="earth.wall.internal.spec" i="177"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.10" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="6" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.top.10" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.side.10" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.side.top.10" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.internal.04" inherit="earth.wall.internal.spec" i="178"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.11" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="6" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.top.11" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.side.11" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.side.top.11" />
+		</layers></layers></wall>
+
+		<wall name="earth.wall.internal.05" inherit="earth.wall.internal.spec" i="179"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.12" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="9" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.top.12" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" bottomColored="floor-fog" topColored="cliff-3" attenuated="true" image="spriteimage.cliff.xLarge.side.12" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" colored="cliff-top-2" attenuated="true" image="spriteimage.cliff.xLarge.side.top.12" />
+		</layers></layers></wall>
+
+		
+
+
+
+
+</resources>

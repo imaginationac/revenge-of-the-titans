@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Titan Gidrahs -->
+<resources>
+
+	<!-- Load all the tags -->
+	<include resource="tags.xml" />
+
+	<include resource="gidrahs-titan-anim.xml" />
+	<include resource="gidrahs-titan-flying-anim.xml" />
+	<include resource="gidrahs-titan-wraith-anim.xml" />
+	<include resource="gidrahs-titan-gidlets-anim.xml" />
+	<include resource="gidrahs-titan-boss.xml" />
+	
+	<gidrah
+		name="gidlet.titan.01.spec"
+		points="5"
+		strength="2"
+		hitPoints="1"
+		bounds="0,0,4,4"
+		offset="2,1"
+		brain="tactical.brain"
+		speed="10.0"
+		gidlet="true"
+		roar="gidrah-titan-gidlet-roar.buffer"
+		amb="gidrah-titan-gidlet-amb.buffer"
+		death="gidrah.06.death.buffer"
+	/>	
+	
+	<gidrah
+		name="gidrah.titan.01.spec"
+		latinName="GIDRUS TITANUS"
+		points="10"
+		strength="4"
+		hitPoints="10"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="48.0"
+		moves="2"
+		pause="200"
+		deflectEmitter="gidrah.titan.deflect.emitter"
+		deflectYOffset="1"
+		roar="gidrah-titan-01-roar.buffer"
+		amb="gidrah-titan-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="32"		
+	>
+		<research>reactor</research>
+	</gidrah>	
+
+	<gidrah
+		name="angrygidrah.titan.01.spec"
+		latinName="MAXIMUS TITANUS"
+		angry="true"
+		strength="5"
+		points="50"
+		armour="4"
+		hitPoints="24"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="48.0"
+		moves="2"
+		pause="200"
+		deflectEmitter="gidrah.titan.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-titan-01-roar.buffer"
+		amb="gidrah-titan-01-amb.buffer"
+		death="gidrah.01.death.buffer"
+		minLevel="32"
+		spawn="gidlet.titan.01"
+		spawnType="1"
+		spawnRate="360,720"	
+		
+	>
+		<research>reactor</research>
+	</gidrah>
+
+
+
+	<gidrah
+		name="gidrah.titan.02.spec"
+		latinName="TERMES MALUS"
+		points="10"
+		strength="4"
+		hitPoints="8"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		speed="16.0"
+		deflectEmitter="gidrah.titan.deflect.emitter"
+		deflectYOffset="1"
+		roar="gidrah-titan-02-roar.buffer"
+		amb="gidrah-titan-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="55"	
+		
+		weapon="gidrah.weapon.small"
+		beamOffset="0,10"
+		minWeaponRange="50.0"
+		maxWeaponRange="300.0"
+			
+	>
+		<research>shieldgenerator</research>
+	</gidrah>	
+
+	<gidrah
+		name="angrygidrah.titan.02.spec"
+		latinName="TERMES REX"
+		angry="true"
+		strength="5"
+		points="50"
+		armour="12"
+		hitPoints="16"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="clever.brain"
+		speed="16.0"
+		deflectEmitter="gidrah.titan.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-titan-02-roar.buffer"
+		amb="gidrah-titan-02-amb.buffer"
+		death="gidrah.02.death.buffer"
+		minLevel="55"
+		
+		weapon="gidrah.weapon.small"
+		beamOffset="0,10"
+		minWeaponRange="50.0"
+		maxWeaponRange="300.0"
+		
+	>
+		<research>shieldgenerator</research>
+	</gidrah>
+
+	<!-- tank -->
+
+	<gidrah
+		name="gidrah.titan.03.spec"
+		latinName="XENARTHRA MINOR"
+		points="50"
+		strength="5"
+		hitPoints="12"
+		armour="8"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="16.0"
+		deflectEmitter="gidrah.titan.deflect.emitter"
+		deflectYOffset="1"
+		roar="gidrah-titan-03-roar.buffer"
+		amb="gidrah-titan-03-amb.buffer"
+		death="gidrah.03.death.buffer"	
+		minLevel="57"
+		
+		weapon="gidrah.weapon.large"
+		beamOffset="0,10"
+		minWeaponRange="100.0"
+		maxWeaponRange="350.0"	
+	>
+		<research>shieldgenerator</research>
+		<research>rockets</research>
+	</gidrah>	
+
+	<gidrah
+		name="angrygidrah.titan.03.spec"
+		latinName="XENARTHRA MAJOR"
+		angry="true"
+		strength="6"
+		points="250"
+		armour="12"
+		hitPoints="24"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="16.0"
+		deflectEmitter="gidrah.titan.deflect.large.emitter"
+		deflectYOffset="3"
+		roar="gidrah-titan-03-roar.buffer"
+		amb="gidrah-titan-03-amb.buffer"
+		death="gidrah.03.death.buffer"
+		minLevel="57"
+		
+		weapon="gidrah.weapon.large"
+		beamOffset="0,10"
+		minWeaponRange="50.0"
+		maxWeaponRange="550.0"			
+		
+	>
+		<research>shieldgenerator</research>
+		<research>rockets</research>
+	</gidrah>
+
+	<!-- flying -->
+
+	<gidrah
+		name="gidrah.titan.04.spec"
+		latinName="TITANUS CHIROPTERA"
+		points="50"
+		strength="4"
+		hitPoints="4"
+		bounds="0,50,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		flying="true"
+		height="50.0"
+		speed="10.0"
+		deflectEmitter="gidrah.titan.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-titan-04-roar.buffer"
+		amb="gidrah-titan-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="60"
+		
+		weapon="gidrah.weapon.fast"
+		beamOffset="0,10"
+		minWeaponRange="5.0"
+		maxWeaponRange="150.0"			
+	>
+		<research>laser</research>
+		<research>decoy</research>
+		<research>shieldgenerator</research>
+	</gidrah>
+	
+	<gidrah
+		name="angrygidrah.titan.04.spec"
+		latinName="MORTUS CHIROPTERA"
+		angry="true"
+		strength="8"
+		points="250"
+		hitPoints="12"
+		bounds="0,75,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		flying="true"
+		height="75"
+		speed="10.0"
+		deflectEmitter="gidrah.titan.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-titan-04-roar.buffer"
+		amb="gidrah-titan-04-amb.buffer"
+		death="gidrah.04.death.buffer"
+		minLevel="60"
+	
+		weapon="gidrah.weapon.fast"
+		beamOffset="0,10"
+		minWeaponRange="5.0"
+		maxWeaponRange="150.0"		
+	>
+		<research>laser</research>
+		<research>decoy</research>
+		<research>shieldgenerator</research>
+	</gidrah>
+	
+
+
+	<!-- Wraiths -->
+	
+	<gidrah
+		name="gidrah.titan.05.spec"
+		points="50"
+		strength="6"
+		wraith="true"
+		hitPoints="6"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="16.0"
+		deflectEmitter="gidrah.titan.deflect.emitter"
+		deflectYOffset="4"
+		roar="gidrah-titan-05-roar.buffer"
+		amb="gidrah-titan-05-amb.buffer"
+		death="gidrah.05.death.buffer"
+		minLevel="62"
+	>
+		<research>capacitor</research>
+		<research>decoy</research>
+	</gidrah>
+
+	<gidrah
+		name="angrygidrah.titan.05.spec"
+		angry="true"
+		strength="7"
+		wraith="true"
+		points="150"
+		hitPoints="20"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="tactical.brain"
+		speed="16.0"
+		deflectEmitter="gidrah.titan.deflect.large.emitter"
+		deflectYOffset="7"
+		roar="gidrah-titan-05-roar.buffer"
+		amb="gidrah-titan-05-amb.buffer"
+		death="gidrah.05.death.buffer"
+		minLevel="62"
+	>
+		<research>capacitor</research>
+		<research>decoy</research>
+	</gidrah>
+
+
+
+	<!-- BOSS ======================================================================================================================== -->
+	
+	<gidrah
+		name="gidrah.titan.boss.spec"
+		points="5000"
+		strength="100"
+		boss="true"
+		hitPoints="750" 
+		hitPointsX="0"
+		hitPointsY="-9"
+		armour="12"
+		bounds="0,0,16,16"
+		offset="8,4"
+		brain="boss.brain"
+		speed="1.75"
+		deflectEmitter="gidrah.titan.deflect.boss.emitter"
+		deflectXOffset="15"
+		deflectYOffset="68"
+		roar="gidrah-titan-boss-roar.buffer"
+		amb="gidrah-titan-boss-amb.buffer"
+		spawn="gidlet.titan.02"
+		spawnType="1"
+		spawnRate="180,360"
+		spawnRange="16,20"
+		weapon="gidrah.weapon.boss"
+		disruptorProof="true"
+		beamOffset="0,10"
+		minWeaponRange="100.0"
+		maxWeaponRange="500.0"
+		death="gidrah.titan.boss.death.buffer"
+		medal="medal.titan_boss"
+	>
+	</gidrah>
+
+	<!-- boss retinue -->
+
+	<gidrah
+		name="gidlet.titan.02.spec"
+		inherit="gidlet.titan.01"
+		speed="1.75"
+		maxSpeed="3.5"
+	/>	
+	
+	
+	
+	<animation name="gidrah.titan.boss.boss.light.01.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.01" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.boss.light.02.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.02" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.boss.light.03.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.03" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.boss.light.04.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.04" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.boss.light.05.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.05" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.boss.light.06.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.06" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.boss.light.07.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.07" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.boss.light.08.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.08" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.boss.light.09.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.09" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>		
+	<animation name="gidrah.titan.boss.boss.light.10.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.10" d="0" />
+		<frame i="titan.boss.head.lights.anim" d="0" />
+	</animation>			
+	
+	<animation name="titan.boss.head.lights.anim">
+		<label id="start"/>
+		<animcolor a="0" d="3"/>
+		<random>
+			<dest id="on1" n="1"/>
+			<dest id="start" n="10"/>
+		</random>
+		<label id="on1"/>
+			<animcolor a="0" d="2" />
+			<animcolor a="113" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="255" d="2" />
+			<animcolor a="230" d="2" />
+			<animcolor a="205" d="2" />
+			<animcolor a="181" d="2" />
+			<animcolor a="158" d="2" />
+			<animcolor a="137" d="2" />
+			<animcolor a="118" d="2" />
+			<animcolor a="101" d="2" />
+			<animcolor a="87" d="2" />
+			<animcolor a="74" d="2" />
+			<animcolor a="63" d="2" />
+			<animcolor a="53" d="2" />
+			<animcolor a="45" d="2" />
+			<animcolor a="38" d="2" />
+			<animcolor a="31" d="2" />
+			<animcolor a="26" d="2" />
+			<animcolor a="21" d="2" />
+			<animcolor a="17" d="2" />
+			<animcolor a="13" d="2" />
+			<animcolor a="10" d="2" />
+			<animcolor a="8" d="2" />
+			<animcolor a="6" d="2" />
+			<animcolor a="4" d="2" />
+			<animcolor a="2" d="2" />
+			<animcolor a="1" d="2" />
+			<animcolor a="1" d="2" />
+			<animcolor a="0" d="2" />
+		<goto id="start"/>
+	</animation>	
+	
+	<animation name="gidrah.titan.boss.attack.boss.light.01.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.01" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.attack.boss.light.02.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.02" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.attack.boss.light.03.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.03" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.attack.boss.light.04.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.04" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.attack.boss.light.05.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.05" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.attack.boss.light.06.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.06" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.attack.boss.light.07.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.07" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.attack.boss.light.08.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.08" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>	
+	<animation name="gidrah.titan.boss.attack.boss.light.09.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.09" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>		
+	<animation name="gidrah.titan.boss.attack.boss.light.10.anim">
+		<frame i="spriteimage.gidrah.titan.boss.light.10" d="0" />
+		<frame i="titan.boss.head.lights.attack.anim" d="0" />
+	</animation>		
+
+	<animation name="titan.boss.head.lights.attack.anim">
+		<label id="start"/>
+		<animcolor a="0" d="1"/>
+		<random>
+			<dest id="on1" n="1"/>
+			<dest id="start" n="5"/>
+		</random>
+		<label id="on1"/>
+
+			<animcolor a="1" d="3" />
+			<animcolor a="4" d="3" />
+			<animcolor a="7" d="3" />
+			<animcolor a="10" d="3" />
+			<animcolor a="15" d="3" />
+			<animcolor a="20" d="3" />
+			<animcolor a="26" d="3" />
+			<animcolor a="32" d="3" />
+			<animcolor a="39" d="3" />
+			<animcolor a="47" d="3" />
+			<animcolor a="55" d="3" />
+			<animcolor a="63" d="3" />
+			<animcolor a="71" d="3" />
+			<animcolor a="80" d="3" />
+			<animcolor a="89" d="3" />
+			<animcolor a="99" d="3" />
+			<animcolor a="108" d="3" />
+			<animcolor a="117" d="3" />
+			<animcolor a="127" d="3" />
+			<animcolor a="137" d="3" />
+			<animcolor a="146" d="3" />
+			<animcolor a="155" d="3" />
+			<animcolor a="165" d="3" />
+			<animcolor a="174" d="3" />
+			<animcolor a="183" d="3" />
+			<animcolor a="191" d="3" />
+			<animcolor a="199" d="3" />
+			<animcolor a="207" d="3" />
+			<animcolor a="215" d="3" />
+			<animcolor a="222" d="3" />
+			<animcolor a="228" d="3" />
+			<animcolor a="234" d="3" />
+			<animcolor a="239" d="3" />
+			<animcolor a="244" d="3" />
+			<animcolor a="247" d="3" />
+			<animcolor a="250" d="3" />
+			<animcolor a="253" d="3" />
+			<animcolor a="254" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+			<animcolor a="255" d="3" />
+
+			<animcolor a="0" d="29" />
+			<goto id="on1"/>
+			
+	</animation>	
+
+	
+</resources>
