@@ -32,6 +32,7 @@
 package com.shavenpuppy.jglib.opengl;
 
 import com.shavenpuppy.jglib.MultiBuffer;
+import com.shavenpuppy.jglib.Resource;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -39,7 +40,7 @@ import static org.lwjgl.opengl.GL11.*;
  * A Distance Attenuation texture. This is a 1D luminance texture which simply fades from full
  * brightness at 0.0, through to black at 1.0.
  */
-public class GLDistanceAttenuationTexture extends GLResource implements GLRenderableObject {
+public class GLDistanceAttenuationTexture extends Resource implements GLRenderableObject {
 
 	private static final long serialVersionUID = 1L;
 
@@ -76,7 +77,7 @@ public class GLDistanceAttenuationTexture extends GLResource implements GLRender
 	}
 
 	@Override
-	protected void doGLCreate() {
+	protected void doCreate() {
 
 		// 1. Generate a texture ID
 		textureId = glGenTextures();
@@ -100,7 +101,7 @@ public class GLDistanceAttenuationTexture extends GLResource implements GLRender
 	}
 
 	@Override
-	protected void doGLDestroy() {
+	protected void doDestroy() {
 		if (textureId != 0) {
 			glDeleteTextures(textureId);
 			textureId = 0;

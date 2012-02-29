@@ -45,7 +45,7 @@ import com.shavenpuppy.jglib.*;
  */
 public class WaveResource extends Resource implements WaveWrapper {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Resource data

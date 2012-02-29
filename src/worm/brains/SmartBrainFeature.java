@@ -44,6 +44,8 @@ import worm.entities.Factory;
  */
 public class SmartBrainFeature extends BrainFeature {
 
+	private static final long serialVersionUID = 1L;
+
 	private static SmartBrainFeature instance;
 
 	private float baseFactor, defaultFactor;
@@ -90,7 +92,7 @@ public class SmartBrainFeature extends BrainFeature {
 		float mapX = entity.getX();
 		for (int i = 0; i < n; i ++) {
 			Building newTarget = buildings.get(i);
-			if (newTarget.isActive() && newTarget.isAttackableByGidrahs() && newTarget.isWorthAttacking()) {
+			if (newTarget.isActive() && !newTarget.isCloaked() && newTarget.isAttackableByGidrahs() && newTarget.isWorthAttacking()) {
 				float factor;
 				if (newTarget.isApparentlyValuable()) {
 					factor = baseFactor;

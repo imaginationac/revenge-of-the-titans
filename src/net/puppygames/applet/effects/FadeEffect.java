@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package net.puppygames.applet.effects;
 
@@ -16,12 +16,12 @@ public abstract class FadeEffect extends Effect {
 	private int tick;
 	private boolean fading;
 	private int alpha = 255;
-	
+
 	public FadeEffect(int duration, int fadeDuration) {
 		this.duration = duration;
 		this.fadeDuration = fadeDuration;
 	}
-	
+
 	public void reset() {
 		fading = false;
 		tick = 0;
@@ -35,16 +35,13 @@ public abstract class FadeEffect extends Effect {
 			tick = 0;
 		}
 	}
-	
+
 	public int getAlpha() {
 		return alpha;
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doTick()
-	 */
 	@Override
-	protected void doTick() {
+	protected final void doTick() {
 		tick ++;
 		if (fading) {
 			alpha = (int) LinearInterpolator.instance.interpolate(255.0f, 0.0f, (float) tick / (float) fadeDuration);
@@ -54,14 +51,20 @@ public abstract class FadeEffect extends Effect {
 				tick = 0;
 			}
 		}
+		onTicked();
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Tickable#isActive()
-	 */
+	protected void onTicked() {
+	}
+
 	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		return !fading || tick < fadeDuration;
+	}
+
+	@Override
+	protected final void render() {
+		// Don't actually need to do anything
 	}
 
 }

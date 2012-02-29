@@ -52,7 +52,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class ColorSequenceResource extends Resource implements ColorSequenceWrapper {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The sequence */
 	private ArrayList<SequenceEntry> sequence;
@@ -79,7 +79,7 @@ public class ColorSequenceResource extends Resource implements ColorSequenceWrap
 	/** Each entry in the sequence is a SequenceEntry */
 	public static class SequenceEntry implements Serializable {
 
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 
 		private ReadableColor color;
 		private int duration; // The number of frames to hold this color for

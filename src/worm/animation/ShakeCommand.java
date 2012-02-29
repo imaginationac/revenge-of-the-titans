@@ -35,8 +35,8 @@ import org.w3c.dom.Element;
 
 import worm.screens.GameScreen;
 
-import com.shavenpuppy.jglib.sprites.Animated;
 import com.shavenpuppy.jglib.sprites.Command;
+import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
 /**
@@ -57,7 +57,7 @@ public class ShakeCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated, int)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		GameScreen.shake(amount);
 		target.setSequence(target.getSequence() + 1);
 		return true; // Always go to the next

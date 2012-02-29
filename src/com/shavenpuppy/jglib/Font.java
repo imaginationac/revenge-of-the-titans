@@ -31,7 +31,13 @@
  */
 package com.shavenpuppy.jglib;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Serializable;
 
 import org.lwjgl.util.Point;
 import org.lwjgl.util.Rectangle;
@@ -42,11 +48,12 @@ import org.lwjgl.util.Rectangle;
  */
 public final class Font implements Serializable {
 
-	static final long serialVersionUID = 4L;
+	private static final long serialVersionUID = 5L;
+	private static final int MAGIC = 0x4321;
 
 	/** Handy bounds */
-	private static final Rectangle tempBounds = new Rectangle();
-	private static final Point tempPoint = new Point();
+	private static final Rectangle TEMPBOUNDS = new Rectangle();
+	private static final Point TEMPPOINT = new Point();
 
 	/** The font's name */
 	private String name;
@@ -99,13 +106,60 @@ public final class Font implements Serializable {
 
 	}
 
-	public static Font importSerialised(String filename) throws Exception
-	{
+	public static Font importSerialised(String filename) throws Exception {
 		InputStream fIn = Font.class.getClassLoader().getResourceAsStream(filename);
 		BufferedInputStream bIn = new BufferedInputStream(fIn);
-		ObjectInputStream oIn = new ObjectInputStream(bIn);
+		Font ret = new Font();
+		ret.readExternal(bIn);
+		return ret;
+	}
 
-		return (Font)oIn.readObject();
+	public void writeExternal(OutputStream os) throws IOException {
+		DataOutputStream dos = new DataOutputStream(os);
+
+		dos.writeInt(MAGIC);
+		dos.writeUTF(name);
+		dos.writeBoolean(bold);
+		dos.writeBoolean(italic);
+		dos.writeInt(ascent);
+		dos.writeInt(descent);
+		dos.writeInt(leading);
+		dos.writeInt(size);
+		dos.writeInt(glyph.length);
+		for (Glyph g : glyph) {
+			g.writeExternal(dos);
+		}
+		dos.writeInt(map.length);
+		for (int i : map) {
+			dos.writeInt(i);
+		}
+		image.writeExternal(dos);
+	}
+
+	public void readExternal(InputStream is) throws IOException {
+		DataInputStream dis = new DataInputStream(is);
+		int magic = dis.readInt();
+		if (magic != MAGIC) {
+			throw new IOException("Expected "+MAGIC+" but got "+magic);
+		}
+		name = dis.readUTF();
+		bold = dis.readBoolean();
+		italic = dis.readBoolean();
+		ascent = dis.readInt();
+		descent = dis.readInt();
+		leading = dis.readInt();
+		size = dis.readInt();
+		glyph = new Glyph[dis.readInt()];
+		for (int i = 0; i < glyph.length; i ++) {
+			glyph[i] = new Glyph();
+			glyph[i].readExternal(dis);
+		}
+		map = new int[dis.readInt()];
+		for (int i = 0; i < map.length; i ++) {
+			map[i] = dis.readInt();
+		}
+		image = new Image();
+		image.readExternal(dis);
 	}
 
 	/**
@@ -197,11 +251,11 @@ public final class Font implements Serializable {
 		int penX = 0;
 		for (int i = start; i < end; i ++) {
 			Glyph next = map(text.charAt(i));
-			next.getBounds(tempBounds);
-			next.getBearing(tempPoint);
-			tempBounds.setLocation(tempPoint.getX() + penX - next.getKerningAfter(last), tempPoint.getY());
-			tempBounds.setWidth(Math.max(tempBounds.getWidth(), next.getAdvance()));
-			dest.add(tempBounds);
+			next.getBounds(TEMPBOUNDS);
+			next.getBearing(TEMPPOINT);
+			TEMPBOUNDS.setLocation(TEMPPOINT.getX() + penX - next.getKerningAfter(last), TEMPPOINT.getY());
+			TEMPBOUNDS.setWidth(Math.max(TEMPBOUNDS.getWidth(), next.getAdvance()));
+			dest.add(TEMPBOUNDS);
 			penX += next.getAdvance() - next.getKerningAfter(last);
 			last = next;
 		}

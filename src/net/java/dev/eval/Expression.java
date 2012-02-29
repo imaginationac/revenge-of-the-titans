@@ -143,7 +143,7 @@ public class Expression {
 	 *            the values to use in the expression.
 	 * @return the result of the evaluation
 	 */
-	public BigDecimal eval(Map variables) {
+	public BigDecimal eval(Map<?,?> variables) {
 		return this.rootOperation.eval(variables);
 	}
 
@@ -153,7 +153,7 @@ public class Expression {
 	 * @return the result of the evaluation
 	 */
 	public BigDecimal eval() {
-		return this.eval((Map) null);
+		return this.eval((Map<?,?>) null);
 	}
 
 	/**
@@ -165,7 +165,7 @@ public class Expression {
 	 *            the values to use in the evaluation.
 	 * @return the result of the evaluation
 	 */
-	public static BigDecimal eval(String expression, Map variables) {
+	public static BigDecimal eval(String expression, Map<?,?> variables) {
 		return new Expression(expression).eval(variables);
 	}
 

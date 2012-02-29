@@ -41,7 +41,8 @@ import worm.WormGameState;
 import worm.entities.Gidrah;
 
 import com.shavenpuppy.jglib.Resource;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Command;
+import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.FPMath;
 import com.shavenpuppy.jglib.util.XMLUtil;
 import com.shavenpuppy.jglib.vector.Vector3i;
@@ -69,11 +70,10 @@ public class LightAngleCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		int currentSequence = target.getSequence();
-		ISprite sprite = (ISprite) target;
-		float x = sprite.getX()+sprite.getOffset(null).getX();
-		float y = sprite.getY()+sprite.getOffset(null).getY();
+		float x = target.getX()+target.getOffset(null).getX();
+		float y = target.getY()+target.getOffset(null).getY();
 		WormGameState gameState = Worm.getGameState();
 		if (gameState == null) {
 			target.setSequence(currentSequence + 1);
@@ -87,7 +87,7 @@ public class LightAngleCommand extends Command {
 		int n = gidrahs.size();
 		if (n == 0) {
 			// No gidrahs left!
-			sprite.setVisible(false);
+			target.setVisible(false);
 			target.setSequence(currentSequence + 1);
 			return true;
 		}
@@ -108,7 +108,7 @@ public class LightAngleCommand extends Command {
 			}
 		}
 		if (gidrahTarget == null) {
-			sprite.setVisible(false);
+			target.setVisible(false);
 			target.setSequence(currentSequence + 1);
 			return true;
 		}
@@ -117,7 +117,7 @@ public class LightAngleCommand extends Command {
 		float py = gidrahTarget.getMapY();
 
 		int targetAngle = FPMath.fpYaklyDegrees(Math.atan2(py - y, px - x));
-		int currentAngle = sprite.getAngle();
+		int currentAngle = target.getAngle();
 
 		int newAngle;
 		int diff = Math.abs(targetAngle - currentAngle);
@@ -141,11 +141,11 @@ public class LightAngleCommand extends Command {
 			newAngle += 65536;
 		}
 
-		sprite.setVisible(true);
-		sprite.setAngle(newAngle);
+		target.setVisible(true);
+		target.setAngle(newAngle);
 		int xScale = FPMath.fpValue(bestDist/maxDist*2.5);
 		int yScale = FPMath.fpValue((1.0f-bestDist/maxDist)*0.5+0.25);
-		sprite.setScale(xScale,yScale);
+		target.setScale(xScale,yScale);
 		target.setSequence(currentSequence + 1);
 		return true; // Execute the next command
 	}

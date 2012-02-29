@@ -60,6 +60,96 @@
 		fadeDuration="1.0"
 	emitterScale="0.75" /> <!-- testing! --> 
 	
+	
+	<!-- snow -->
+
+	<emitter
+		name="a.snow.emitter"
+		duration="128.0, 512.0"
+		infinite="true"
+		particlesPerTick="1.0, 16.0"
+		layer="10"
+		velocity="0.0, 600.0"
+		acceleration="-600.0"
+		particleDuration="1.0"
+		fadeDuration="1.0"
+		angle="0.0"
+		delayAfter="1.0, 64.0"
+		forceEmit="true"
+	>
+		<slave><emitter inherit="snow.emitter"/></slave>
+	</emitter>
+
+	<emitter
+		name="a.snow.titles.front.emitter"
+		inherit="a.snow.emitter"
+		particlesPerTick="0.0, 4.0"
+	>
+		<slave><emitter inherit="snow.emitter" layer="-2" particleDuration="120.0, 150.0" fadeDuration="30.0, 60.0" emitterScale="1,1.5"/></slave>
+	</emitter>
+	
+	<emitter
+		name="a.snow.titles.back.emitter"
+		inherit="a.snow.emitter"
+		particlesPerTick="1.0, 25.0"
+	>
+		<slave><emitter inherit="snow.emitter" layer="-4" particleDuration="150.0, 220.0" startHue="0.48,0.50" endHue="0.48" startSaturation="1.0" endSaturation="1.0" startBrightness="0.7,1" endBrightness="0.3,0.7" emitterScale="0.85,0.9"/></slave>
+	</emitter>	
+
+	<emitter
+		name="a.snow.gameover.front.emitter"
+		inherit="a.snow.emitter"
+		particlesPerTick="-1.0, 1.0" velocity="0.0, 320.0" acceleration="-320.0"
+	>
+		<slave><emitter inherit="snow.emitter" layer="0" particleDuration="120.0, 150.0" fadeDuration="30.0, 60.0" emitterScale="1,1.5"/></slave>
+	</emitter>
+	
+	<emitter
+		name="a.snow.gameover.back.emitter"
+		inherit="a.snow.emitter"
+		particlesPerTick="-2.0, 6.0" velocity="0.0, 320.0" acceleration="-320.0"
+	>
+		<slave><emitter inherit="snow.emitter" layer="-8" particleDuration="150.0, 220.0" startHue="0.5,0.54" endHue="0.5" startSaturation="1.0" endSaturation="1.0" startBrightness="0.7,1" endBrightness="0.3,0.7" emitterScale="0.85,0.9"/></slave>
+	</emitter>	
+
+	<emitter
+		name="snow.emitter"
+		tag="snow"
+		duration="300.0, 400.0"
+		infinite="true"
+		particlesPerTick="-4.0, 1.0"
+		appearance="snow.anim"
+		layer="8"
+		velocity="0.5, 1.0"
+		acceleration="-0.001, -0.002"
+		startScale="0.15, 0.25"
+		scale="0.15, 0.2"
+		endScale="0.075, 0.125"
+		gravityX="-0.003, 0.003"
+		particleDuration="100.0, 200.0"
+		fadeDuration="100.0, 200.0"
+		startHue="0.5,0.52"
+		startSaturation="0.0, 1.0"
+		startBrightness="1.0"
+		endHue="0.5"
+		endSaturation="0.0, 1.0"
+		endBrightness="0.5,1.0"
+		angle="240.0, 300.0"
+		emitterScale="1.0"
+		relativeRotate="true"
+		forceEmit="true"
+	/>
+
+	<animation name="snow.anim">
+		<frame i="spriteimage.particle.glowing.snow.01" d="0"/>
+		<!-- rotate doesnt work 
+			<angle angle="+256" d="2"/>
+			<goto seq="1"/> 
+		-->
+	</animation>	
+	
+	
+	
 	<emitter
 		name="steam.emitter"
 		tag="smoke"
@@ -116,41 +206,35 @@
 		endHue="0.48"
 		emitterScale="0.75"
 	/>	
-	
-	
-	<!-- 
+
 	<emitter
-		name="steam.burst.emitter"
+		name="dronefactory.left.steam.emitter"
 		tag="smoke"
-		duration="3.0"
-		infinite="true"
-		particlesPerTick="4.0"
-		appearance="smoke.animation"
+		inherit="barracks.steam.emitter"
+		angle="135.0"
+	/>	
+	
+	<emitter
+		name="dronefactory.right.steam.emitter"
+		tag="smoke"
+		inherit="barracks.steam.emitter"
+		angle="45.0"
+	/>		
+	
+	<emitter
+		name="test.coords.emitter"
+		duration="2.0"
+		particlesPerTick="2.0"
+		appearance="spriteimage.particle.glowing.3px.01"
 		layer="5"
 		sublayer="2"
-		velocity="1.0, 1.5"
-		acceleration="-0.035"
-		radius="0.0, 3.0"
-		startScale="0.1, 0.2"
-		scale="0.5, 0.6"
-		endScale="1.0, 1.5"
-		gravityX="-0.0015, 0.0015"
-		gravityY="-5.0E-4, 0.0015"
-		particleDuration="25.0, 30.0"
-		fadeDuration="75.0, 200.0"
-		startHue="0.2"
-		startSaturation="0.0"
-		startBrightness="1.0"
-		endHue="0.2"
-		endSaturation="0.3"
-		endBrightness="0.9"
-		angle="75.0, 105.0"
-		delayAfter="166.0"
-		relativeRotate="true"
-		emitterScale="0.75"
+		startScale="0.1"
+		scale="0.1"
+		endScale="0.1"
+		particleDuration="1500"
+		fadeDuration="10000"
 		doYOffset="true"
-	/>
-	 -->
+	/> 	
 	 
 	<emitter
 		name="steam.burst.emitter"
@@ -982,6 +1066,41 @@
 		<chain><emitter inherit="flash.emitter" emitterScale="0.5" fadeDuration="8,12" /></chain>
 	</emitter>	
 	
+
+
+
+	<!-- damaged buildings -->
+	
+	<emitter name="damaged.building.1x1.fire.emitter" inherit="ruins.flame.emitter" velocity="0.0, 10.0" particlesPerTick="-20.0, 1.0">
+		<slave><emitter	inherit="fire.smoke.emitter" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>		
+
+	<emitter name="damaged.building.2x2.fire.emitter" inherit="ruins.flame.emitter" velocity="0.0, 18.0" particlesPerTick="-18.0, 1.0">
+		<slave><emitter	inherit="fire.smoke.emitter" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+
+	<emitter name="damaged.building.3x3.fire.emitter" inherit="ruins.flame.emitter" velocity="0.0, 22.0" particlesPerTick="-16.0, 1.0">
+		<slave><emitter	inherit="fire.smoke.emitter" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+
+	<emitter name="damaged.building.4x4.fire.emitter" inherit="ruins.flame.emitter" velocity="0.0, 28.0" particlesPerTick="-14.0, 1.0">
+		<slave><emitter	inherit="fire.smoke.emitter" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+	
+	<emitter name="damaged.building.5x5.fire.emitter" inherit="ruins.flame.emitter" velocity="0.0, 50.0" particlesPerTick="-12.0, 1.0">
+		<slave><emitter	inherit="fire.smoke.emitter" delay="1">
+			<chain><emitter inherit="flame.glow.emitter">
+				<slave><emitter inherit="flame.sparks.emitter" delay="1"/></slave>
+	</emitter></chain></emitter></slave></emitter>	
+
 	
 	
 	<!-- ruins on fire -->

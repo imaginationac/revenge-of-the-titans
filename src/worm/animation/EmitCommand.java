@@ -41,7 +41,8 @@ import worm.Entity;
 import worm.screens.GameScreen;
 
 import com.shavenpuppy.jglib.Resources;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Command;
+import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.FPMath;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -76,7 +77,7 @@ public class EmitCommand extends Command {
 	}
 
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		int currentSequence = target.getSequence();
 		target.setSequence(currentSequence + 1);
 

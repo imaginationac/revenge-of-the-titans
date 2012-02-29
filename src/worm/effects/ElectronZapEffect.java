@@ -34,19 +34,31 @@ package worm.effects;
 import java.util.ArrayList;
 
 import net.puppygames.applet.Game;
-import net.puppygames.applet.TickableObject;
-import net.puppygames.applet.effects.*;
+import net.puppygames.applet.effects.Effect;
+import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.EmitterFeature;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadablePoint;
+import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Entity;
+import worm.GameMap;
+import worm.Layers;
+import worm.MapRenderer;
+import worm.Tile;
+import worm.Worm;
+import worm.WormGameState;
 import worm.screens.GameScreen;
 
-import com.shavenpuppy.jglib.interpolators.*;
+import com.shavenpuppy.jglib.interpolators.Interpolator;
+import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
+import com.shavenpuppy.jglib.interpolators.SineInterpolator;
 import com.shavenpuppy.jglib.openal.ALBuffer;
 import com.shavenpuppy.jglib.opengl.ColorUtil;
 import com.shavenpuppy.jglib.opengl.GLRenderable;
 import com.shavenpuppy.jglib.sound.SoundEffect;
+import com.shavenpuppy.jglib.util.ShortList;
 import com.shavenpuppy.jglib.util.Util;
 
 import static org.lwjgl.opengl.GL11.*;
@@ -74,20 +86,27 @@ public class ElectronZapEffect extends Effect {
 				if (ratio < 0.5f) {
 					return SineInterpolator.instance.interpolate(a, b, ratio * 2.0f);
 				} else {
-					return SineInterpolator.instance.interpolate(b, a, (ratio - 0.5f) * 2.0f);
+					return SineInterpolator.instance.interpolate(a, b, 1.0f - (ratio - 0.5f) * 2.0f);
 				}
-			}
-
-			@Override
-			public int interpolate(int a, int b, int ratio) {
-				// Not implemented, don't need it
-				return 0;
 			}
 		};
 	}
 
+	private static final GLRenderable SETUP = new GLRenderable() {
+		@Override
+		public void render() {
+			glDisable(GL_TEXTURE_2D);
+			glEnable(GL_BLEND);
+			glBlendFunc(GL_ONE, GL_ONE);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+		}
+	};
+
 	private static final ArrayList<Entity> TEMP_ENTITIES = new ArrayList<Entity>();
 	private static final Rectangle TEMP_RECT = new Rectangle();
+
+	/** Rendering indices */
+	private final ShortList indices = new ShortList(true, 32);
 
 	private final float maxWidth;
 	private final float maxWobble;
@@ -122,9 +141,6 @@ public class ElectronZapEffect extends Effect {
 
 	/** Number of segments */
 	private int numSegments;
-
-	/** Sprite */
-	private TickableObject tickableObject;
 
 	/** Indices start and end */
 	private int start, end, startPos, endPos;
@@ -233,10 +249,6 @@ public class ElectronZapEffect extends Effect {
 	}
 
 	@Override
-	protected void doRender() {
-	}
-
-	@Override
 	public void finish() {
 		if (!fading) {
 			fading = true;
@@ -298,7 +310,6 @@ public class ElectronZapEffect extends Effect {
 				}
 
 				// Check collision with entities
-
 				if (ox != x || oy != y) {
 					TEMP_ENTITIES.clear();
 					TEMP_RECT.setBounds(x, y, 1, 1);
@@ -339,7 +350,7 @@ public class ElectronZapEffect extends Effect {
 	}
 
 	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		return (!fading || tick < FADE_DURATION) && !done;
 	}
 
@@ -347,10 +358,6 @@ public class ElectronZapEffect extends Effect {
 	protected void doRemove() {
 		done = true;
 
-		if (tickableObject != null) {
-			tickableObject.remove();
-			tickableObject = null;
-		}
 		if (soundEffect != null) {
 			soundEffect.stop(this);
 			soundEffect = null;
@@ -358,47 +365,43 @@ public class ElectronZapEffect extends Effect {
 	}
 
 	@Override
-	protected void doSpawn() {
-		tickableObject = new TickableObject() {
-			@Override
-			protected void render() {
-				if (!isStarted() || !isVisible()) {
-					return;
-				}
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glDisable(GL_TEXTURE_2D);
-						glEnable(GL_BLEND);
-						glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-						glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-					}
-				});
-				int endAlpha = fading ? (int) LinearInterpolator.instance.interpolate(255.0f, 0.0f, (float) tick / FADE_DURATION) : 255;
+	protected void render() {
+		if (!isStarted() || !isVisible()) {
+			return;
+		}
+		glRender(SETUP);
+		int endAlpha = fading ? (int) LinearInterpolator.instance.interpolate(255.0f, 0.0f, (float) tick / FADE_DURATION) : 255;
 
-				glBegin(GL_TRIANGLE_STRIP);
-				for (int i = 0; i < numSegments; i ++) {
-					if (i == 0 || i == numSegments - 1) {
-						ColorUtil.setGLColor(color0, 0, this);
-					} else {
-						ColorUtil.setGLColor(color0, endAlpha * alpha / 255, this);
-					}
-					glVertex2f(x2[i], y2[i]);
-					glVertex2f(x3[i], y3[i]);
-				}
-				glEnd();
+		indices.ensureCapacity(numSegments * 4);
+		indices.clear();
 
-				glBegin(GL_TRIANGLE_STRIP);
-				ColorUtil.setGLColor(color1, endAlpha * alpha / 255, this);
-				for (int i = 0; i < numSegments; i ++) {
-					glVertex2f(x0[i], y0[i]);
-					glVertex2f(x1[i], y1[i]);
-				}
-				glEnd();
+		for (int i = 0; i < numSegments; i ++) {
+			if (i == 0 || i == numSegments - 1) {
+				ColorUtil.setGLColorPre(color0, 0, this);
+			} else {
+				ColorUtil.setGLColorPre(color0, endAlpha * alpha / 255, this);
 			}
-		};
-		tickableObject.setLayer(Layers.CAPACITOR_EFFECT);
-		tickableObject.spawn(getScreen());
+			indices.add(glVertex2f(x2[i], y2[i]));
+			indices.add(glVertex2f(x3[i], y3[i]));
+		}
+		glRender(GL_TRIANGLE_STRIP, indices.toArray(null));
+
+		indices.clear();
+		ColorUtil.setGLColorPre(color1, endAlpha * alpha / 255, this);
+		for (int i = 0; i < numSegments; i ++) {
+			indices.add(glVertex2f(x0[i], y0[i]));
+			indices.add(glVertex2f(x1[i], y1[i]));
+		}
+		glRender(GL_TRIANGLE_STRIP, indices.toArray(null));
+	}
+
+	@Override
+	protected void doSpawnEffect() {
 		soundEffect = Game.allocateSound(soundBuffer, 1.0f, 1.0f, this);
+	}
+
+	@Override
+	public int getDefaultLayer() {
+		return Layers.CAPACITOR_EFFECT;
 	}
 }

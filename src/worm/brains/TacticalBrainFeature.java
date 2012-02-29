@@ -35,7 +35,9 @@ import java.util.ArrayList;
 
 import worm.Entity;
 import worm.Worm;
-import worm.entities.*;
+import worm.entities.Building;
+import worm.entities.Factory;
+import worm.entities.Turret;
 import worm.weapons.WeaponFeature.WeaponInstance;
 
 /**
@@ -43,6 +45,8 @@ import worm.weapons.WeaponFeature.WeaponInstance;
  * @author Cas
  */
 public class TacticalBrainFeature extends BrainFeature {
+
+	private static final long serialVersionUID = 1L;
 
 	private float baseFactor;
 	private float factoryFactor;
@@ -77,7 +81,7 @@ public class TacticalBrainFeature extends BrainFeature {
 		float mapX = entity.getX();
 		for (int i = 0; i < n; i ++) {
 			Building newTarget = buildings.get(i);
-			if (newTarget.isActive() && newTarget.isAttackableByGidrahs()) {
+			if (newTarget.isActive() && !newTarget.isCloaked() && newTarget.isAttackableByGidrahs()) {
 				float factor;
 				if (newTarget.isApparentlyValuable()) {
 					factor = baseFactor;

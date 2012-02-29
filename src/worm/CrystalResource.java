@@ -74,4 +74,9 @@ public interface CrystalResource {
 	float getMapX();
 	float getMapY();
 
+	/**
+	 * Clear this crystal off the map
+	 */
+	void clearMap();
+
 }

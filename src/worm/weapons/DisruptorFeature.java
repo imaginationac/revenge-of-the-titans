@@ -33,11 +33,16 @@ package worm.weapons;
 
 import java.util.ArrayList;
 
-import net.puppygames.applet.effects.*;
+import net.puppygames.applet.effects.BlastEffect;
+import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.EmitterFeature;
+import net.puppygames.applet.effects.StrobeEffect;
 
 import org.lwjgl.util.Color;
 
-import worm.*;
+import worm.Entity;
+import worm.Worm;
+import worm.WormGameState;
 import worm.entities.Building;
 import worm.entities.Turret;
 import worm.screens.GameScreen;

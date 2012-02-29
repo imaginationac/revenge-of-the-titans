@@ -44,7 +44,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class RandomDelayCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The minimum time delay, in ticks */
 	private int minDelay;
@@ -63,10 +63,10 @@ public class RandomDelayCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 
 		int tick = target.getTick();
-		// If the tick is currently zero it means this is the first execution of
+		// If the tick is currently 0 it means this is the first execution of
 		// the command, so we should pick a random value.
 		if (tick == 0) {
 			tick = Util.random(minDelay, maxDelay);
@@ -74,8 +74,7 @@ public class RandomDelayCommand extends Command {
 		// Otherwise decrement the tick, and if it reaches zero,
 		// signal that we want to carry on with the next command by
 		// by returning true:
-		tick -= tickRate;
-		target.setTick(tick);
+		target.setTick(--tick);
 
 		if (tick == 0) {
 			target.setSequence(target.getSequence() + 1);

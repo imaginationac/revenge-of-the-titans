@@ -42,5 +42,7 @@ public interface Mode {
 	static final int MODE_ZAP = 3;
 	static final int MODE_DRAG = 4;
 	static final int MODE_SELL = 5;
+	static final int MODE_SCROLL = 6;
+	static final int MODE_SELECT = 7;
 
 }

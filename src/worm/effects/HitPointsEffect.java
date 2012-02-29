@@ -73,7 +73,7 @@ public class HitPointsEffect extends Effect {
 	}
 
 	@Override
-	protected void doSpawn() {
+	protected void doSpawnEffect() {
 		hitPoints = building.getHitPoints();
 		updateImage();
 	}
@@ -99,7 +99,7 @@ public class HitPointsEffect extends Effect {
 	protected void doUpdate() {
 		if (layers != null) {
 			for (int i = 0; i < layers.getSprites().length; i ++) {
-				layers.getSprite(i).setLocation(building.getScreenX(), building.getScreenY(), 0.0f);
+				layers.getSprite(i).setLocation(building.getScreenX(), building.getScreenY());
 			}
 		}
 	}
@@ -164,15 +164,12 @@ public class HitPointsEffect extends Effect {
 	}
 
 	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		return !done;
 	}
 
 	@Override
-	protected void doRender() {
-		// Nothing to render
+	protected void render() {
+		// Nothing to actually render
 	}
-
-
-
 }

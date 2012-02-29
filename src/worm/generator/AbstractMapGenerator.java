@@ -31,19 +31,38 @@
  */
 package worm.generator;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 import net.puppygames.applet.Game;
+import net.puppygames.applet.GameInputStream;
+import net.puppygames.applet.GameOutputStream;
+import net.puppygames.applet.RoamingFile;
 
 import org.lwjgl.util.Point;
 import org.lwjgl.util.ReadablePoint;
 
-import worm.*;
+import worm.GameMap;
+import worm.IntGrid;
+import worm.Res;
+import worm.Tile;
+import worm.Worm;
+import worm.WormGameState;
 import worm.features.LevelFeature;
 import worm.path.AStar;
 import worm.path.Topology;
-import worm.tiles.*;
+import worm.tiles.Crystal;
+import worm.tiles.Exclude;
+import worm.tiles.Ruin;
+import worm.tiles.TotalExclude;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
 import com.shavenpuppy.jglib.util.IntList;
@@ -58,6 +77,9 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 
 	/* chaz hack - amount of random tile 2 */
 	private static final double RANDOM_ROCKY_THRESHOLD = 0.05;
+
+	/** Bucket of common properties for generator classes */
+	protected final MapGeneratorParams mapGeneratorParams;
 
 	/** The template; this provides tile sets for various features */
 	protected final MapTemplate template;
@@ -116,14 +138,15 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 	 * @param levelInWorld
 	 * @param levelFeature
 	 */
-	public AbstractMapGenerator(MapTemplate template, int level, int levelInWorld, LevelFeature levelFeature) {
+	public AbstractMapGenerator(MapTemplate template, MapGeneratorParams mapGeneratorParams) {
+		this.mapGeneratorParams = mapGeneratorParams;
 		this.template = template;
-		this.level = level;
-		this.levelInWorld = levelInWorld;
-		this.levelFeature = levelFeature;
+		this.level = mapGeneratorParams.getLevel();
+		this.levelInWorld = mapGeneratorParams.getLevelInWorld();
+		this.levelFeature = mapGeneratorParams.getLevelFeature();
 		this.scenery = levelFeature.getScenery();
 
-		if (Worm.getGameState().getGameMode() != WormGameState.GAME_MODE_SURVIVAL) {
+		if (mapGeneratorParams.getGameMode() != WormGameState.GAME_MODE_SURVIVAL && mapGeneratorParams.getGameMode() != WormGameState.GAME_MODE_XMAS) {
 			Util.setSeed(getSeed());
 		}
 	}
@@ -204,8 +227,7 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 
 	protected final long getSeed() {
 		String levelName = levelFeature.getTitle();
-		WormGameState gameState = Worm.getGameState();
-		int gameMode = gameState.getGameMode();
+		int gameMode = mapGeneratorParams.getGameMode();
 		duff = Worm.getExtraLevelData(Game.getPlayerSlot(), level, gameMode, "duff_" + levelName, 0);
 		long unique = Game.getPlayerSlot().getPreferences().getLong("unique_"+gameMode, 0L);
 		if (unique == 0L) {
@@ -216,22 +238,22 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 		long seed =
 					((Game.getPlayerSlot().getName().hashCode() + duff + WormGameState.getDifficultyAdjust(level, gameMode)))
 				|
-					(((long) Float.floatToRawIntBits(gameState.getBasicDifficulty())) << 32L);
+					(((long) Float.floatToRawIntBits(mapGeneratorParams.getBasicDifficulty())) << 32L);
 
-		seed ^= gameState.getResearchHash();
+		seed ^= mapGeneratorParams.getResearchHash();
 		seed ^= unique;
 		return seed;
 	}
 
 	private String getFileName() {
 		String levelName = levelFeature.getTitle();
-		int gameMode = Worm.getGameState().getGameMode();
+		int gameMode = mapGeneratorParams.getGameMode();
 		long seed = getSeed();
 		return Game.getPlayerDirectoryPrefix()+levelName.replace(' ', '_')+"_"+gameMode+"_"+Long.toHexString(seed)+".dat";
 	}
 
 	private boolean exists() {
-		return level != -1 && new File(getFileName()).exists();
+		return level != -1 && new RoamingFile(getFileName()).exists();
 	}
 
 	/**
@@ -242,15 +264,12 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 		if (!exists()) {
 			throw new IOException(getFileName()+" does not exist");
 		}
-		File file = new File(getFileName());
-		FileInputStream fis = null;
-		BufferedInputStream bis = null;
+		GameInputStream gis = null;
 		ObjectInputStream ois = null;
 		GameMap ret = null;
 		try {
-			fis = new FileInputStream(file);
-			bis = new BufferedInputStream(fis);
-			ois = new ObjectInputStream(bis);
+			gis = new GameInputStream(getFileName());
+			ois = new ObjectInputStream(gis);
 
 			ret = (GameMap) ois.readObject();
 			return ret;
@@ -259,8 +278,8 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 
 		} finally {
 			try {
-				if (fis != null) {
-					fis.close();
+				if (gis != null) {
+					gis.close();
 				}
 			} catch (IOException e) {
 			}
@@ -268,21 +287,18 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 	}
 
 	private void save(GameMap gameMap) throws IOException {
-		File file = new File(getFileName());
-		FileOutputStream fos = null;
-		BufferedOutputStream bos = null;
+		GameOutputStream gos = null;
 		ObjectOutputStream oos = null;
 		try {
-			fos = new FileOutputStream(file);
-			bos = new BufferedOutputStream(fos);
-			oos = new ObjectOutputStream(bos);
+			gos = new GameOutputStream(getFileName());
+			oos = new ObjectOutputStream(gos);
 
 			oos.writeObject(gameMap);
 			oos.flush();
 		} finally {
 			try {
-				if (fos != null) {
-					fos.close();
+				if (gos != null) {
+					gos.close();
 				}
 			} catch (IOException e) {
 			}
@@ -512,7 +528,7 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 
 		for (int yy = 0; yy < h; yy ++) {
 			for (int xx = 0; xx < w; xx ++) {
-				assert map.getValue(x + xx, y + yy) == FLOOR;
+				//assert map.getValue(x + xx, y + yy) == FLOOR : "Argh! Map is "+map.getValue(x + xx, y + yy)+" not FLOOR!";
 
 				int val;
 				if (bThruMap != null) {
@@ -624,6 +640,10 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 	 * @return true if the map is valid, false if not
 	 */
 	private boolean isValid() {
+		if (spawnPoints.size() == 0 && levelFeature.useFixedSpawnPoints()) {
+			System.out.println("NO SPAWNPOINTS!");
+			return false;
+		}
 		IntList path = new IntList(true, getWidth() + getHeight());
 		int[] steps = new int[1];
 		SolidCheck check = new SolidCheck() {
@@ -1116,7 +1136,7 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 							char type = formation[currentFormation ++];
 							Res.getSouthSpawnPoint(type - '1').toMap(ret, x, y, true);
 						} else if (y == map.getHeight() - 1) {
-							char type = formation[currentFormation ++];
+							char type = mapGeneratorParams.getGameMode() == WormGameState.GAME_MODE_XMAS ? '1' : formation[currentFormation ++]; // Xmas Hax!
 							Res.getNorthSpawnPoint(type - '1').toMap(ret, x, y, true);
 						} else {
 							template.getMidSpawn().toMap(ret, x, y, true);
@@ -1203,7 +1223,7 @@ abstract class AbstractMapGenerator implements MapGenerator, SimpleTiles {
 			Thread.yield();
 		}
 
-		if (level != -1) {
+		if (mapGeneratorParams.getGameMode() == WormGameState.GAME_MODE_CAMPAIGN || mapGeneratorParams.getGameMode() == WormGameState.GAME_MODE_ENDLESS) {
 			try {
 				save(ret);
 			} catch (IOException e) {

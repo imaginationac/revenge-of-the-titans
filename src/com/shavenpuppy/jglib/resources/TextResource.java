@@ -33,17 +33,18 @@ package com.shavenpuppy.jglib.resources;
 
 import java.io.IOException;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Element;
 
 import com.shavenpuppy.jglib.Resource;
 import com.shavenpuppy.jglib.XMLResourceWriter;
+import com.shavenpuppy.jglib.util.XMLUtil;
 
 /**
  * A simple text resource
  */
-public class TextResource extends Resource {
+public class TextResource extends Resource implements TextWrapper {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The text
@@ -64,61 +65,60 @@ public class TextResource extends Resource {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#load(org.w3c.dom.Element, com.shavenpuppy.jglib.Resource.Loader)
-	 */
 	@Override
 	public void load(Element element, Loader loader) throws Exception {
 		super.load(element, loader);
 
-		NodeList children = element.getChildNodes();
-		if (children.getLength() != 1) {
-			throw new Exception("Text resource needs some text!");
-		}
-		Text node = (Text) children.item(0);
-		text = format(node.getNodeValue().trim());
+		text = format(XMLUtil.getText(element, ""));
+//		System.out.println(text);
+//
+//		NodeList children = element.getChildNodes();
+//		if (children.getLength() != 1) {
+//			throw new Exception("Text resource needs some text!");
+//		}
+//		Text node = (Text) children.item(0);
+//		text = format(node.getNodeValue().trim());
 	}
 
-	/**
-	 * Strips out whitespace etc. from XML text blocks
-	 * @param raw
-	 * @return formatted string
-	 */
+//	/**
+//	 * Strips out whitespace etc. from XML text blocks
+//	 * @param raw
+//	 * @return formatted string
+//	 */
+//	private String format(String raw) {
+//		StringBuilder ret = new StringBuilder(raw.length());
+//		boolean ignoreWhiteSpace = true;
+//		boolean addSpace = false;
+//		for (int i = 0; i < raw.length(); i ++) {
+//			char c = raw.charAt(i);
+//			if (Character.isWhitespace(c)) {
+//				if (ignoreWhiteSpace) {
+//					continue;
+//				} else {
+//					ignoreWhiteSpace = true;
+//					addSpace = true;
+//				}
+//			} else {
+//				ignoreWhiteSpace = false;
+//				if (addSpace) {
+//					ret.append(' ');
+//					addSpace = false;
+//				}
+//				ret.append(c);
+//			}
+//		}
+//		return ret.toString();
+//	}
+
 	private String format(String raw) {
-		StringBuilder ret = new StringBuilder(raw.length());
-		boolean ignoreWhiteSpace = true;
-		boolean addSpace = false;
-		for (int i = 0; i < raw.length(); i ++) {
-			char c = raw.charAt(i);
-			if (Character.isWhitespace(c)) {
-				if (ignoreWhiteSpace) {
-					continue;
-				} else {
-					ignoreWhiteSpace = true;
-					addSpace = true;
-				}
-			} else {
-				ignoreWhiteSpace = false;
-				if (addSpace) {
-					ret.append(' ');
-					addSpace = false;
-				}
-				ret.append(c);
-			}
-		}
-		return ret.toString();
+		return raw;
 	}
 
-	/**
-	 * @return the text
-	 */
-	public final String getText() {
+	@Override
+    public final String getText() {
 		return text;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#doToXML(com.shavenpuppy.jglib.XMLResourceWriter)
-	 */
 	@Override
 	protected void doToXML(XMLResourceWriter writer) throws IOException {
 		writer.writeText(text);

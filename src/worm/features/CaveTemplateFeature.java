@@ -33,6 +33,7 @@ package worm.features;
 
 import worm.generator.CaveMapGenerator;
 import worm.generator.MapGenerator;
+import worm.generator.MapGeneratorParams;
 
 /**
  * Template for map generation
@@ -94,8 +95,8 @@ public class CaveTemplateFeature extends BaseTemplateFeature {
 	 * @see worm.generator.MapTemplate#createGenerator(int)
 	 */
 	@Override
-	public MapGenerator createGenerator(int level, int levelInWorld, LevelFeature levelFeature) {
-		return new CaveMapGenerator(this, level, levelInWorld, levelFeature);
+	public MapGenerator createGenerator(MapGeneratorParams mapGeneratorParams) {
+		return new CaveMapGenerator(this, mapGeneratorParams);
 	}
 
 }

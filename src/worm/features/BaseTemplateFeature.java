@@ -33,7 +33,9 @@ package worm.features;
 
 import worm.Tile;
 import worm.generator.MapTemplate;
-import worm.tiles.*;
+import worm.tiles.BasePoint;
+import worm.tiles.FloorTile;
+import worm.tiles.SpawnPoint;
 
 import com.shavenpuppy.jglib.resources.Feature;
 

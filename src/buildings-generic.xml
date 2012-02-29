@@ -424,8 +424,6 @@
 
 	<animation name="generic.barracks.glow.animation">
 		
-		<label id="start"/>
-		<frame i="spriteimage.generic.barracks.glow.01" d="100"/>
 		<frame i="spriteimage.generic.barracks.glow.02" d="7"/>
 		<frame i="spriteimage.generic.barracks.glow.03" d="6"/>
 		<frame i="spriteimage.generic.barracks.glow.04" d="5"/>		
@@ -436,18 +434,29 @@
 		<frame i="spriteimage.generic.barracks.glow.06" d="2"/>
 		<frame i="spriteimage.generic.barracks.glow.05" d="2"/>	
 		
-		<loop count="8"/>
-			<label id="loop"/>
+		<loop count="4"/>
+			<label id="loop1"/>
 			<frame i="spriteimage.generic.barracks.glow.08" d="2"/>		
 			<frame i="spriteimage.generic.barracks.glow.09" d="2"/>
-		<repeat id="loop"/>
+		<repeat id="loop1"/>
 		
+		<frame i="spriteimage.generic.barracks.glow.08" d="2"/>		
+		<event id="1"/>
+		<frame i="spriteimage.generic.barracks.glow.09" d="2"/>
+		
+		<loop count="4"/>
+			<label id="loop2"/>
+			<frame i="spriteimage.generic.barracks.glow.08" d="2"/>		
+			<frame i="spriteimage.generic.barracks.glow.09" d="2"/>
+		<repeat id="loop2"/>
+				
 		<frame i="spriteimage.generic.barracks.glow.08" d="2"/>
 		<frame i="spriteimage.generic.barracks.glow.09" d="3"/>
 		<frame i="spriteimage.generic.barracks.glow.10" d="4"/>
 		<frame i="spriteimage.generic.barracks.glow.11" d="5"/>
-		
-		<goto id="start"/>
+		<event id="2"/>
+		<frame i="spriteimage.generic.barracks.glow.01" d="2"/>
+	
 	</animation>	
 
 	<animation name="generic.barracks.dead.animation">
@@ -1354,6 +1363,255 @@
 
 
 
+	<!--  NEW BUILDINGS -->
+
+	<animation name="generic.tankfactory.spawn.glow.animation">
+		
+		<frame i="spriteimage.generic.tankfactory.glow.02" d="8"/>
+		<frame i="spriteimage.generic.tankfactory.glow.03" d="7"/>
+		<frame i="spriteimage.generic.tankfactory.glow.04" d="6"/>		
+		<frame i="spriteimage.generic.tankfactory.glow.05" d="6"/>
+		<frame i="spriteimage.generic.tankfactory.glow.06" d="6"/>		
+		<frame i="spriteimage.generic.tankfactory.glow.07" d="25"/>
+
+		<frame i="spriteimage.generic.tankfactory.glow.06" d="2"/>
+		<frame i="spriteimage.generic.tankfactory.glow.05" d="2"/>	
+		
+		<loop count="8"/>
+			<label id="loop1"/>
+			<frame i="spriteimage.generic.tankfactory.glow.08" d="2"/>		
+			<frame i="spriteimage.generic.tankfactory.glow.09" d="2"/>
+		<repeat id="loop1"/>
+		
+		<frame i="spriteimage.generic.tankfactory.glow.08" d="2"/>	
+		<event id="1"/>
+		<frame i="spriteimage.generic.tankfactory.glow.09" d="2"/>
+		
+		<loop count="4"/>
+			<label id="loop2"/>
+			<frame i="spriteimage.generic.tankfactory.glow.08" d="2"/>		
+			<frame i="spriteimage.generic.tankfactory.glow.09" d="2"/>
+		<repeat id="loop2"/>	
+		
+		<frame i="spriteimage.generic.tankfactory.glow.08" d="2"/>
+		<frame i="spriteimage.generic.tankfactory.glow.09" d="3"/>
+		<frame i="spriteimage.generic.tankfactory.glow.10" d="4"/>
+		<frame i="spriteimage.generic.tankfactory.glow.11" d="5"/>
+		<event id="2"/>
+		<frame i="spriteimage.generic.tankfactory.glow.01" d="2"/>
+
+	</animation>	
+
+	<animation name="generic.tankfactory.glow.animation">
+		<label id="start"/>
+		<loop count="3"/> 
+			<label id="loop1"/>
+			<frame i="spriteimage.generic.tankfactory.glow.01" d="20"/>
+			<frame i="spriteimage.generic.tankfactory.glow.12" d="3"/>
+			<frame i="spriteimage.generic.tankfactory.glow.13" d="3"/>
+			<frame i="spriteimage.generic.tankfactory.glow.14" d="4"/>
+		<repeat id="loop1"/> 	
+		<frame i="spriteimage.generic.tankfactory.glow.01" d="50"/>
+		<goto id="start"/>
+	</animation>	
+
+	<animation name="generic.tankfactory.dead.animation">
+		<frame i="spriteimage.generic.tankfactory.02" d="0"/>
+		<frame i="building.4x4.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tankfactory.dead.ground.animation">
+		<frame i="spriteimage.generic.tankfactory.ground.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>	
+	<animation name="generic.tankfactory.dead.top.animation">
+		<frame i="spriteimage.generic.tankfactory.top.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>
+
+
+
+	<animation name="generic.repairdrones.glow.animation">
+		
+		<frame i="spriteimage.generic.repairdrones.glow.02" d="7"/>
+		<frame i="spriteimage.generic.repairdrones.glow.03" d="6"/>
+		<frame i="spriteimage.generic.repairdrones.glow.04" d="5"/>		
+		<frame i="spriteimage.generic.repairdrones.glow.05" d="5"/>
+		<frame i="spriteimage.generic.repairdrones.glow.06" d="5"/>		
+		<frame i="spriteimage.generic.repairdrones.glow.07" d="20"/>
+
+		<frame i="spriteimage.generic.repairdrones.glow.06" d="2"/>
+		<frame i="spriteimage.generic.repairdrones.glow.05" d="2"/>	
+		
+		<loop count="4"/>
+			<label id="loop1"/>
+			<frame i="spriteimage.generic.repairdrones.glow.08" d="2"/>		
+			<frame i="spriteimage.generic.repairdrones.glow.09" d="2"/>
+		<repeat id="loop1"/>
+		
+		<frame i="spriteimage.generic.repairdrones.glow.08" d="2"/>		
+		<event id="1"/>
+		<frame i="spriteimage.generic.repairdrones.glow.09" d="2"/>
+		
+		<loop count="4"/>
+			<label id="loop2"/>
+			<frame i="spriteimage.generic.repairdrones.glow.08" d="2"/>		
+			<frame i="spriteimage.generic.repairdrones.glow.09" d="2"/>
+		<repeat id="loop2"/>
+		
+		<frame i="spriteimage.generic.repairdrones.glow.08" d="2"/>
+		<frame i="spriteimage.generic.repairdrones.glow.09" d="3"/>
+		<frame i="spriteimage.generic.repairdrones.glow.10" d="4"/>
+		<frame i="spriteimage.generic.repairdrones.glow.11" d="5"/>
+		<event id="2"/>
+		<frame i="spriteimage.generic.repairdrones.glow.01" d="2"/>
+		
+	</animation>	
+
+	<animation name="generic.repairdrones.dead.animation">
+		<frame i="spriteimage.generic.repairdrones.02" d="0"/>
+		<frame i="building.4x4.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.repairdrones.dead.ground.animation">
+		<frame i="spriteimage.generic.repairdrones.ground.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>	
+	<animation name="generic.repairdrones.dead.top.animation">
+		<frame i="spriteimage.generic.repairdrones.top.01" d="0"/>
+		<frame i="building.4x4.dead.misc.anim" d="1"/>
+	</animation>
+	
+
+	<animation name="generic.scarecrow.glow.animation">
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.scarecrow.glow.01" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.02" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.03" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.04" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.05" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.06" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.07" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.08" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.09" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.10" d="2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.11" d="2"/>
+		<animcolor a="128" d="2"/>
+		<animcolor a="64" d="2"/>
+		<animcolor a="50" d="2"/>
+		<animcolor a="40" d="2"/>
+		<animcolor a="30" d="2"/>
+		<goto seq="0"/>
+	</animation>	
+
+	<animation name="generic.scarecrow.skull.animation">
+		<frame i="spriteimage.generic.scarecrow.glow.12" d="0"/>
+		<animcolor a="255" d="0"/>
+		
+		<random>
+			<dest id="glow1" n="4"/>
+			<dest id="glow2"/>
+			<dest id="glow3"/>
+			<dest id="glow4"/>
+			<dest id="glow5"/>
+			<dest id="glowDown"/>
+		</random>		
+		
+		<label id="glow1"/>
+		<frame i="spriteimage.generic.scarecrow.glow.12" d="3"/>
+		<goto seq="0"/>	
+		
+		<label id="glow2"/>
+		<frame i="spriteimage.generic.scarecrow.glow.13" d="3"/>
+		<goto seq="0"/>
+		
+		<label id="glow3"/>
+		<frame i="spriteimage.generic.scarecrow.glow.14" d="3"/>
+		<goto seq="0"/>
+		
+		<label id="glow4"/>
+		<animcolor a="128" d="0"/>
+		<frame i="spriteimage.generic.scarecrow.glow.14" d="3"/>
+		<goto seq="0"/>
+
+		<label id="glow5"/>
+		<animcolor a="0" d="0"/>
+		<frame i="spriteimage.generic.scarecrow.glow.14" d="3"/>
+		<goto seq="0"/>
+
+		<label id="glowDown"/>
+			<frame i="spriteimage.generic.scarecrow.glow.12" d="3"/>
+			<frame i="spriteimage.generic.scarecrow.glow.13" d="3"/>
+			<frame i="spriteimage.generic.scarecrow.glow.14" d="3"/>
+			<animcolor a="128" d="3"/>
+			<animcolor a="64" d="3"/>
+			<animcolor a="50" d="4"/>
+			<animcolor a="40" d="5"/>
+			<animcolor a="30" d="6"/>
+			<label id="glowDownLoop"/>
+			<animcolor a="20" d="7"/>
+		<random>
+			<dest id="glowDownLoop" n="5"/>
+			<dest id="glow1"/>
+			<dest id="glow2"/>
+			<dest id="glow3"/>
+			<dest id="glow4"/>
+			<dest id="glow5"/>
+		</random>	
+	</animation>	
+	
+	<animation name="generic.scarecrow.dead.animation">
+		<frame i="spriteimage.generic.scarecrow.02" d="0"/>
+		<frame i="building.2x2.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.scarecrow.dead.ground.animation">
+		<frame i="spriteimage.generic.scarecrow.ground.01" d="0"/>
+		<frame i="building.2x2.dead.misc.anim" d="1"/>
+	</animation>	
+
+	
+	<animation name="generic.cloakingdevice.glow.animation">
+		<random>
+			<dest seq="1"/>
+			<dest seq="3"/>
+			<dest seq="5"/>
+			<dest seq="7"/>
+		</random>		
+		<frame i="spriteimage.generic.cloakingdevice.glow.01" d="3"/>
+		<goto seq="0"/>	
+		<frame i="spriteimage.generic.cloakingdevice.glow.02" d="3"/>
+		<goto seq="0"/>
+		<frame i="spriteimage.generic.cloakingdevice.glow.03" d="3"/>
+		<goto seq="0"/>
+		<frame i="spriteimage.generic.cloakingdevice.glow.04" d="3"/>
+		<goto seq="0"/>
+	</animation>	
+	<animation name="generic.cloakingdevice.dead.animation">
+		<frame i="spriteimage.generic.cloakingdevice.02" d="0"/>
+		<frame i="building.3x3.dead.anim" d="1"/>
+	</animation>	
+	<animation name="generic.cloakingdevice.dead.ground.animation">
+		<frame i="spriteimage.generic.cloakingdevice.ground.01" d="0"/>
+		<frame i="building.3x3.dead.misc.anim" d="1"/>
+	</animation>	
+	
+	<animation name="generic.cloakingdevice.glow.2.animation">
+		<goto seq="9"/>
+		<animcolor a="135" d="6"/>
+		<animcolor a="195" d="5"/>
+		<animcolor a="235" d="4"/>		
+		<animcolor a="255" d="0"/>
+		<frame i="spriteimage.generic.cloakingdevice.glow.08" d="4"/>
+		<frame i="spriteimage.generic.cloakingdevice.glow.07" d="5"/>		
+		<frame i="spriteimage.generic.cloakingdevice.glow.06" d="6"/>
+		<frame i="spriteimage.generic.cloakingdevice.glow.05" d="30"/>
+		<frame i="spriteimage.generic.cloakingdevice.glow.06" d="6"/>
+		<frame i="spriteimage.generic.cloakingdevice.glow.07" d="5"/>
+		<frame i="spriteimage.generic.cloakingdevice.glow.08" d="4"/>
+		<animcolor a="235" d="4"/>
+		<animcolor a="195" d="5"/>
+		<animcolor a="135" d="6"/>
+		<goto seq="1"/>
+	</animation>	
+
 	<!--  factory emitters -->
 
 	<property key="factory_beam_start_hue" value="0.17" />
@@ -1412,6 +1670,8 @@
 		offset="=$4x4offsetX,$4x4offsetY"
 		floor="-4"
 		research="factory"
+		flamesOffset="=$4x4xFire,$4x4yFloor*0.5"
+		flamesEmitter="damaged.building.4x4.fire.emitter"
 	>
 		<beamStartEmitter>
 			<emitter inherit="factory.beam.start.emitter" />	
@@ -1435,6 +1695,7 @@
 			<layers scale="0.5">
 				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.02"/>
 				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.factory.ground.01"/>
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.factory.back.01"/>
 				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.factory.off.animation"/>
 				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.factory.top.01"/>
 				<sprite layer="5" sublayer="5" offset="0,0" animation="generic.factory.glow.shutdown.animation"/>
@@ -1491,6 +1752,8 @@
 		offset="=$3x3offsetX,$3x3offsetY"
 		floor="-4"
 		research="reactor"
+		flamesOffset="=$3x3xFire,$3x3yFloor*0.5"
+		flamesEmitter="damaged.building.3x3.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -1548,6 +1811,8 @@
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="shieldgenerator"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -1604,6 +1869,8 @@
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="decoy"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -1659,6 +1926,8 @@
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="warehouse"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -1715,18 +1984,36 @@
 		offset="=$4x4offsetX,$4x4offsetY"
 		floor="-4"
 		research="barracks"
+		spawnOffset="-3,-5"
+		flamesOffset="=$4x4xFire,$4x4yFloor*0.5"
+		flamesEmitter="damaged.building.4x4.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
 				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.01"/>
 				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barracks.ground.01"/>
 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.barracks.back.01"/>
-				<emitter offset="50,9" ySortOffset="65" emitter="barracks.steam.emitter"/>
+				<emitter offset="50,9" ySortOffset="63" emitter="barracks.steam.emitter"/>
 				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.barracks.01"/>
 				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.barracks.top.01"/>
-				<sprite layer="5" sublayer="5" offset="0,0" attenuated="false" animation="generic.barracks.glow.animation"/>	
+				<sprite layer="5" sublayer="5" offset="0,0" attenuated="false" image="spriteimage.generic.barracks.glow.01"/>	
 			</layers>
 		</appearance> 
+		
+		<spawnAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="5" offset="0,0" attenuated="false" animation="generic.barracks.glow.animation"/>	
+				
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.barracks.ground.01"/>
+				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.barracks.back.01"/>
+				<emitter offset="50,9" ySortOffset="63" emitter="barracks.steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.barracks.01"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.barracks.top.01"/>
+			</layers>
+		</spawnAppearance> 		
+		
+		
 		<deathAppearance>
 			<layers scale="0.5">
 				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.barracks.dead.animation"/>
@@ -1738,7 +2025,6 @@
 				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
 				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
 				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
-				<!-- <emitter offset="=$4x4x,0" ySortOffset="=$4x4y" emitter="test.coords.emitter"/> -->
 			</layers>
 		</deathAppearance>		
 		<shieldedAppearance>
@@ -1775,6 +2061,8 @@
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="collector"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -1838,6 +2126,8 @@
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="scanner"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -1892,6 +2182,8 @@
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="battery"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -1946,6 +2238,8 @@
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="coolingtower"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2007,6 +2301,8 @@
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="autoloader"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2070,6 +2366,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="capacitor"
+		flamesOffset="=$3x3xFire,$3x3yFloor*0.5"
+		flamesEmitter="damaged.building.3x3.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2133,6 +2431,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="blaster"
+		flamesOffset="=$3x3xFire,$3x3yFloor*0.5"
+		flamesEmitter="damaged.building.3x3.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2213,6 +2513,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="heavyblaster"
+		flamesOffset="=$3x3xFire,$3x3yFloor*0.5"
+		flamesEmitter="damaged.building.3x3.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2296,6 +2598,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="multiblaster"
+		flamesOffset="=$3x3xFire,$3x3yFloor*0.5"
+		flamesEmitter="damaged.building.3x3.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2376,6 +2680,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="blastcannon"
+		flamesOffset="=$3x3xFire,$3x3yFloor*0.5"
+		flamesEmitter="damaged.building.3x3.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2458,6 +2764,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="spreadercannon"
+		flamesOffset="=$3x3xFire,$3x3yFloor*0.5"
+		flamesEmitter="damaged.building.3x3.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2538,6 +2846,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="assaultcannon"
+		flamesOffset="=$4x4xFire,$4x4yFloor*0.5"
+		flamesEmitter="damaged.building.4x4.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2621,6 +2931,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="rockets"
+		flamesOffset="=$4x4xFire,$4x4yFloor*0.5"
+		flamesEmitter="damaged.building.4x4.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2701,6 +3013,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="laser"
+		flamesOffset="=$4x4xFire,$4x4yFloor*0.5"
+		flamesEmitter="damaged.building.4x4.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -2784,6 +3098,8 @@
 		beamLayer="10"
 		floor="-4"
 		research="disruptor"
+		flamesOffset="=$4x4xFire,$4x4yFloor*0.5"
+		flamesEmitter="damaged.building.4x4.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -3027,6 +3343,8 @@
 		offset="=$1x1offsetX,$1x1offsetY"
 		floor="-4"
 		research="concrete"
+		flamesOffset="=$1x1xFire,$1x1yFloor*0.5"
+		flamesEmitter="damaged.building.1x1.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -3084,6 +3402,8 @@
 		offset="=$1x1offsetX,$1x1offsetY"
 		floor="-4"
 		research="steel"
+		flamesOffset="=$1x1xFire,$1x1yFloor*0.5"
+		flamesEmitter="damaged.building.1x1.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -3153,6 +3473,8 @@
 		offset="=$1x1offsetX,$1x1offsetY"
 		floor="-4"
 		research="titanium"
+		flamesOffset="=$1x1xFire,$1x1yFloor*0.5"
+		flamesEmitter="damaged.building.1x1.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -3228,6 +3550,8 @@
 		offset="=$1x1offsetX,$1x1offsetY"
 		floor="-4"
 		research="nanomesh"
+		flamesOffset="=$1x1xFire,$1x1yFloor*0.5"
+		flamesEmitter="damaged.building.1x1.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
@@ -3353,13 +3677,44 @@
 		offset="=$4x4offsetX,$4x4offsetY"
 		floor="-4"
 		research="tankfactory"
+		spawnOffset="-4,-5"
+		flamesOffset="=$4x4xFire,$4x4yFloor*0.5"
+		flamesEmitter="damaged.building.4x4.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tankfactory.ground.01"/>
+				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tankfactory.back.01"/>
+				<emitter offset="28,9" ySortOffset="67" emitter="barracks.steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tankfactory.01"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.tankfactory.top.01"/>
+				<sprite layer="5" sublayer="5" offset="0,0" attenuated="false" animation="generic.tankfactory.glow.animation"/>	
 			</layers>
 		</appearance> 
+		<spawnAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="5" offset="0,0" attenuated="false" animation="generic.tankfactory.spawn.glow.animation"/>	
+
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.tankfactory.ground.01"/>
+				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tankfactory.back.01"/>
+				<emitter offset="28,9" ySortOffset="67" emitter="barracks.steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.tankfactory.01"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.tankfactory.top.01"/>
+			</layers>
+		</spawnAppearance> 
 		<deathAppearance>
 			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.tankfactory.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.4x4.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.tankfactory.dead.ground.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" animation="generic.tankfactory.dead.top.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.start.emitter"/> 
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.end.emitter"/>
+				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
 			</layers>
 		</deathAppearance>		
 		<shieldedAppearance>
@@ -3378,6 +3733,10 @@
 		
 		<shopAppearance>
 			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.tankfactory.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.tankfactory.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.tankfactory.top.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" image="spriteimage.info.tankfactory.glow.01"/>
 			</layers>
 		</shopAppearance> 
 		
@@ -3391,13 +3750,46 @@
 		offset="=$4x4offsetX,$4x4offsetY"
 		floor="-4"
 		research="repairdrones"
+		spawnOffset="-3,-6"
+		flamesOffset="=$4x4xFire,$4x4yFloor*0.5"
+		flamesEmitter="damaged.building.4x4.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.repairdrones.ground.01"/>
+				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.repairdrones.back.01"/>
+				<emitter offset="25,9" ySortOffset="53" emitter="dronefactory.left.steam.emitter"/>
+				<emitter offset="57,9" ySortOffset="53" emitter="dronefactory.right.steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.repairdrones.01"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.repairdrones.top.01"/>
+				<sprite layer="5" sublayer="5" offset="0,0" attenuated="false" image="spriteimage.generic.repairdrones.glow.01"/>
 			</layers>
 		</appearance> 
+		<spawnAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="5" offset="0,0" attenuated="false" animation="generic.repairdrones.glow.animation"/>	
+				
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.4x4.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.repairdrones.ground.01"/>
+				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.repairdrones.back.01"/>
+				<emitter offset="25,9" ySortOffset="53" emitter="dronefactory.left.steam.emitter"/>
+				<emitter offset="57,9" ySortOffset="53" emitter="dronefactory.right.steam.emitter"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.repairdrones.01"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.repairdrones.top.01"/>
+			</layers>
+		</spawnAppearance> 
 		<deathAppearance>
 			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.repairdrones.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.4x4.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.repairdrones.dead.ground.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" attenuated="false" colored="buildings-alt" animation="generic.repairdrones.dead.top.animation"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.start.emitter"/> 
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.end.emitter"/>
+				<emitter offset="=$4x4xFire,$4x4yFloor" ySortOffset="0" emitter="building.4x4.fire.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4ySparks" emitter="building.4x4.explosion.sparks.emitter"/>
+				<emitter offset="=$4x4x,0" ySortOffset="=$4x4yExplode" emitter="building.4x4.explosion.flash.emitter"/>
 			</layers>
 		</deathAppearance>		
 		<shieldedAppearance>
@@ -3416,6 +3808,10 @@
 		
 		<shopAppearance>
 			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.repairdrones.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.repairdrones.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.repairdrones.top.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" image="spriteimage.info.repairdrones.glow.01"/>
 			</layers>
 		</shopAppearance> 
 		
@@ -3423,19 +3819,34 @@
 	
 	
 	<instance
-		class="worm.buildings.TurretBuildingFeature"
+		class="worm.buildings.ScarecrowBuildingFeature"
 		name="building.generic.scarecrow"
 		inherit="scarecrow.building.spec"
 		offset="=$2x2offsetX,$2x2offsetY"
 		floor="-4"
 		research="scarecrow"
+		flamesOffset="=$2x2xFire,$2x2yFloor*0.5"
+		flamesEmitter="damaged.building.2x2.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.2x2.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.scarecrow.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.scarecrow.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" animation="generic.scarecrow.glow.animation"/>
+				<sprite layer="5" sublayer="4" offset="0,0" animation="generic.scarecrow.skull.animation"/>
 			</layers>
 		</appearance>
 		<deathAppearance>
 			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.scarecrow.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.2x2.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.scarecrow.dead.ground.animation"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.start.emitter"/> 
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.end.emitter"/>
+				<emitter offset="=$2x2xFire,$2x2yFloor" ySortOffset="0" emitter="building.2x2.fire.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2ySparks" emitter="building.2x2.explosion.sparks.emitter"/>
+				<emitter offset="=$2x2x,0" ySortOffset="=$2x2yExplode" emitter="building.2x2.explosion.flash.emitter"/>
 			</layers>
 		</deathAppearance>	
 		<shieldedAppearance>
@@ -3454,44 +3865,69 @@
 		
 		<shopAppearance>
 			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.scarecrow.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.scarecrow.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.scarecrow.top.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.scarecrow.glow.01"/>
 			</layers>
-		</shopAppearance>		
+		</shopAppearance>	
 		
 	</instance>	
 	
 
 	<instance
-		class="worm.buildings.TurretBuildingFeature"
+		class="worm.buildings.CloakBuildingFeature"
 		name="building.generic.cloakingdevice"
 		inherit="cloakingdevice.building.spec"
-		offset="=$2x2offsetX,$2x2offsetY"
+		offset="=$3x3offsetX,$3x3offsetY"
 		floor="-4"
 		research="cloakingdevice"
+		flamesOffset="=$3x3xFire,$3x3yFloor*0.5"
+		flamesEmitter="damaged.building.3x3.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" image="spriteimage.generic.3x3.base.01"/>
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.generic.cloakingdevice.ground.01"/>
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.generic.cloakingdevice.01"/>
+				<sprite layer="5" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.generic.cloakingdevice.top.01"/>
+				<sprite layer="5" sublayer="5" offset="0,0" animation="generic.cloakingdevice.glow.animation"/>	
+				<sprite layer="5" sublayer="5" offset="0,0" animation="generic.cloakingdevice.glow.2.animation"/>	
 			</layers>
 		</appearance>
 		<deathAppearance>
 			<layers scale="0.5">
+				<sprite layer="5" offset="0,0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="generic.cloakingdevice.dead.animation"/>
+				<sprite layer="4" offset="0,0" colored="floor" attenuated="true" animation="building.3x3.dead.base.anim"/>
+				<sprite layer="4" sublayer="2" offset="0,0" attenuated="true" colored="shadow" animation="generic.cloakingdevice.dead.ground.animation"/>
+				<sprite layer="4" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" animation="generic.cloakingdevice.dead.top.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.start.emitter"/> 
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.end.emitter"/>
+				<emitter offset="=$3x3xFire,$3x3yFloor" ySortOffset="0" emitter="building.3x3.fire.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3ySparks" emitter="building.3x3.explosion.sparks.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3yExplode" emitter="building.3x3.explosion.flash.emitter"/>
 			</layers>
 		</deathAppearance>	
 		<shieldedAppearance>
 			<layers scale="0.5">
-				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.2x2.animation"/>
-				<emitter offset="=$2x2x,$2x2y" emitter="shield.2x2.emitter"/>
-				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="shield.sparkle.2x2.emitter"/>
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="shield.3x3.animation"/>
+				<emitter offset="=$3x3x,$3x3y" emitter="shield.3x3.emitter"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="shield.sparkle.3x3.emitter"/>
 			</layers>
 		</shieldedAppearance>
 		<forcefieldAppearance>
 			<layers scale="0.5">
-				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.2x2.animation"/>
-				<emitter offset="=$2x2x,0" ySortOffset="=$2x2y" emitter="forcefield.sparkle.2x2.emitter"/>
+				<sprite layer="5" sublayer="6" offset="0,0" attenuated="false" animation="forcefield.3x3.animation"/>
+				<emitter offset="=$3x3x,0" ySortOffset="=$3x3y" emitter="forcefield.sparkle.3x3.emitter"/>
 			</layers>
 		</forcefieldAppearance>
 		
 		<shopAppearance>
 			<layers scale="0.5">
+				<sprite layer="10" sublayer="1" offset="0,0" image="spriteimage.info.cloakingdevice.ground.01"/>
+				<sprite layer="10" sublayer="2" offset="0,0" bottomColored="buildings-shop-floor" topColored="buildings" image="spriteimage.info.cloakingdevice.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" attenuated="false" colored="buildings-alt" image="spriteimage.info.cloakingdevice.top.01"/>
+				<sprite layer="10" sublayer="3" offset="0,0" image="spriteimage.info.cloakingdevice.glow.01"/>
 			</layers>
 		</shopAppearance>		
 		

@@ -32,9 +32,14 @@
 package worm.buildings;
 
 
-import worm.*;
+import org.lwjgl.util.Point;
+
+import worm.Barracks;
+import worm.Worm;
+import worm.WormGameState;
 import worm.entities.Building;
 import worm.entities.Unit;
+import worm.features.LayersFeature;
 import worm.features.ResearchFeature;
 import worm.features.UnitFeature;
 import worm.screens.GameScreen;
@@ -68,6 +73,12 @@ public class BarracksBuildingFeature extends BuildingFeature {
 	/** Buffed cost */
 	private int buffedCost;
 
+	/** Spawn appearance */
+	private LayersFeature spawnAppearance;
+
+	/** Spawn offset */
+	private Point spawnOffset;
+
 	/*
 	 * Transient data
 	 */
@@ -87,6 +98,11 @@ public class BarracksBuildingFeature extends BuildingFeature {
 		private int tick;
 		private int counter;
 		private int numUnits;
+		private int phase;
+
+		private static final int PHASE_NORMAL = 0;
+		private static final int PHASE_SPAWN = 1;
+		private static final int PHASE_WAIT = 2;
 
 		/**
 		 * @param feature
@@ -96,7 +112,7 @@ public class BarracksBuildingFeature extends BuildingFeature {
 		protected BarracksBuildingInstance(boolean ghost) {
 			super(BarracksBuildingFeature.this, ghost);
 
-			buffed = Worm.getGameState().isResearched(ResearchFeature.DROIDBUFF);
+			buffed = buffedCost > getCost() && Worm.getGameState().isResearched(ResearchFeature.DROIDBUFF);
 			productionRate = buffed ? buffedProductionRate : baseProductionRate;
 		}
 
@@ -117,26 +133,76 @@ public class BarracksBuildingFeature extends BuildingFeature {
 				return;
 			}
 
+			switch (phase) {
+				case PHASE_NORMAL:
+					tickNormal();
+					break;
+				case PHASE_SPAWN:
+					tickSpawn();
+					break;
+				case PHASE_WAIT:
+					tickWait();
+					break;
+				default:
+					assert false : "Unknown phase "+phase;
+			}
+		}
+
+		private void tickNormal() {
 			tick ++;
 			if (tick >= getProductionRate()) {
 				cancelUndo();
-				tick = 0;
-				UnitFeature uf;
-				if (buffed) {
-					counter ++;
-					if (counter >= getMaxUnits()) {
-						counter = 0;
-						uf = sergeantFeature;
-					} else {
-						uf = buffedUnitFeature;
-					}
+
+				if (spawnAppearance != null) {
+					// Start spawn animation
+					phase = PHASE_SPAWN;
+					updateAppearance();
 				} else {
-					uf = unitFeature;
+					tick = 0;
+					spawnUnit();
 				}
-				numUnits ++;
-				uf.spawn(this, GameScreen.getInstance(), getTileX(), getTileY());
 
 			}
+		}
+
+		private void tickSpawn() {
+			// Wait for event 1
+			if (getEvent() == 1) {
+				// Spawn!
+				spawnUnit();
+				phase = PHASE_WAIT;
+			}
+		}
+
+		private void tickWait() {
+			// Wait for event 2
+			if (getEvent() == 2) {
+				// Back to normal
+				tick = 0;
+				phase = PHASE_NORMAL;
+				updateAppearance();
+			}
+		}
+
+		private void spawnUnit() {
+			UnitFeature uf;
+			if (buffed) {
+				counter ++;
+				if (counter >= getMaxUnits()) {
+					counter = 0;
+					uf = sergeantFeature;
+				} else {
+					uf = buffedUnitFeature;
+				}
+			} else {
+				uf = unitFeature;
+			}
+			numUnits ++;
+			uf.spawn(this, GameScreen.getInstance(), getX() + spawnOffset.getX(), getY() + spawnOffset.getY());
+		}
+
+		boolean isSpawning() {
+			return phase == PHASE_SPAWN;
 		}
 
 		private int getProductionRate() {
@@ -173,7 +239,7 @@ public class BarracksBuildingFeature extends BuildingFeature {
 
 	@Override
 	public boolean isAffectedBy(BuildingFeature feature) {
-		return feature instanceof ReactorBuildingFeature || feature instanceof ShieldGeneratorBuildingFeature;
+		return feature instanceof ReactorBuildingFeature || feature instanceof ShieldGeneratorBuildingFeature || feature instanceof CloakBuildingFeature;
 	}
 
 	@Override
@@ -183,10 +249,20 @@ public class BarracksBuildingFeature extends BuildingFeature {
 
 	@Override
 	public int getShopValue() {
-		if (Worm.getGameState().isResearched(ResearchFeature.DROIDBUFF)) {
+		if (buffedCost > 0 && Worm.getGameState().isResearched(ResearchFeature.DROIDBUFF)) {
 			return buffedCost;
 		} else {
 			return super.getShopValue();
+		}
+	}
+
+	@Override
+	public LayersFeature getAppearance(Building building) {
+		BarracksBuildingInstance bbi = (BarracksBuildingInstance) building;
+		if (bbi.isSpawning() && spawnAppearance != null) {
+			return spawnAppearance;
+		} else {
+		    return super.getAppearance(building);
 		}
 	}
 }

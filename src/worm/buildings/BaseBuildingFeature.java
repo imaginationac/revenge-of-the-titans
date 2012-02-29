@@ -120,9 +120,6 @@ public class BaseBuildingFeature extends BuildingFeature {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see storm.BuildingFeature#doSpawn()
-	 */
 	@Override
 	public Building doSpawn(boolean ghost) {
 		return new BaseBuildingInstance(ghost);

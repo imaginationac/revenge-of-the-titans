@@ -32,8 +32,9 @@
 package worm.generator;
 
 import worm.Tile;
-import worm.features.LevelFeature;
-import worm.tiles.*;
+import worm.tiles.BasePoint;
+import worm.tiles.FloorTile;
+import worm.tiles.SpawnPoint;
 
 
 /**
@@ -48,7 +49,7 @@ public interface MapTemplate {
 	 * @param levelFeature The levelfeature itself
 	 * @return a {@link MapGenerator}
 	 */
-	public MapGenerator createGenerator(int level, int levelInWorld, LevelFeature levelFeature);
+	public MapGenerator createGenerator(MapGeneratorParams mapGeneratorParams);
 
 	/**
 	 * @return the fill tile index; this will either be a wall or a floor

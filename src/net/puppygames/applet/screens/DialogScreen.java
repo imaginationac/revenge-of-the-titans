@@ -106,6 +106,16 @@ public class DialogScreen extends Screen {
 		open();
 	}
 
+	/**
+	 * Sets the title and message and opens the dialog, and sets the callback to
+	 * run after this dialog is closed. This callback is executed no matter
+	 * which option was chosen. Find out which option was chosen with
+	 * @param callback the callback to set
+	 */
+	public void doModal(String title, String message) {
+		doModal(title, message, null);
+	}
+
 	/* (non-Javadoc)
 	 * @see net.puppygames.applet.Screen#onClose()
 	 */

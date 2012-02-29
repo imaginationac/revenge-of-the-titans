@@ -31,14 +31,16 @@
  */
 package worm.screens;
 
-import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.effects.Emitter;
 import net.puppygames.applet.effects.EmitterFeature;
 
 import org.lwjgl.input.Mouse;
 
-import worm.features.*;
+import worm.features.Setting;
+import worm.features.SettingFeature;
+import worm.features.StoryFeature;
 
 import com.shavenpuppy.jglib.Resources;
 
@@ -46,6 +48,8 @@ import com.shavenpuppy.jglib.Resources;
  * The Complete Game Screen ends the game when the player finishes all the levels
  */
 public class CompleteGameScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static CompleteGameScreen instance;
 
@@ -113,7 +117,7 @@ public class CompleteGameScreen extends Screen {
 	protected void onClicked(String id) {
 		if (ID_OK.equals(id)) {
 			close();
-			Game.endGame();
+			MiniGame.endGame();
 		}
 	}
 

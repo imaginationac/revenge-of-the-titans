@@ -31,45 +31,54 @@
  */
 package worm;
 
-import java.io.*;
-import java.util.*;
+import java.io.Serializable;
+import java.util.Calendar;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.GameState;
+import net.puppygames.applet.MiniGame;
+import net.puppygames.applet.PlayerSlot;
+import net.puppygames.applet.Screen;
 import net.puppygames.applet.effects.LabelEffect;
 import net.puppygames.applet.effects.Particle;
 import net.puppygames.applet.screens.DialogScreen;
 import net.puppygames.applet.screens.NagScreen;
-import net.puppygames.gamecommerce.shared.NewsletterIncentive;
+import net.puppygames.gamecommerce.shared.RegistrationDetails;
+import net.puppygames.steam.NotificationPosition;
+import net.puppygames.steam.Steam;
+import net.puppygames.steam.SteamException;
 
 import org.lwjgl.Sys;
-import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.util.Rectangle;
+import org.lwjgl.util.Point;
 
 import worm.animation.SimpleThingWithLayers;
 import worm.features.LayersFeature;
-import worm.features.PrizeFeature;
-import worm.screens.*;
+import worm.screens.ChooseGameModeScreen;
+import worm.screens.GameScreen;
 
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
 import com.shavenpuppy.jglib.openal.ALBuffer;
-import com.shavenpuppy.jglib.resources.*;
-import com.shavenpuppy.jglib.sprites.*;
-import com.shavenpuppy.jglib.util.Util;
+import com.shavenpuppy.jglib.resources.Attenuator;
+import com.shavenpuppy.jglib.resources.AttenuatorFeature;
+import com.shavenpuppy.jglib.resources.MappedColor;
+import com.shavenpuppy.jglib.sprites.SoundCommand;
+import com.shavenpuppy.jglib.sprites.Sprite;
+import com.shavenpuppy.jglib.sprites.SpriteAllocator;
+import com.shavenpuppy.jglib.sprites.SpriteEngine;
+import com.shavenpuppy.jglib.sprites.SpriteImage;
+import com.shavenpuppy.jglib.sprites.StaticSpriteEngine;
 
 /**
- * $Id: Worm.java,v 1.56 2010/11/06 17:20:03 foo Exp $
- * The Puppytron game
- * <p>
- * @author $Author: foo $
- * @version $Revision: 1.56 $
+ * Revenge of the Titans game
  */
-public class Worm extends Game {
+public class Worm extends MiniGame {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final boolean TESTSIGNUP = false;
+	private static final boolean TEST_XMAS = true; // Only honoured if DEBUG is also true
+	private static final boolean FORCE_XMAS = true; // Force Xmas to this value when TEST_XMAS is true
 
 	public static final float MAX_LOUD_ATTENUATION_DISTANCE = 1280.0f;
 	public static final float MAX_ATTENUATION_DISTANCE = 720.f;
@@ -90,8 +99,9 @@ public class Worm extends Game {
 	public static final Attenuator ATTENUATOR = new Attenuator() {
 		@Override
 		public float getVolume(float x, float y) {
-			double ddx = -GameScreen.getSpriteOffset().getX() + Game.getWidth() / 2.0f - x;
-			double ddy = -GameScreen.getSpriteOffset().getY() + Game.getHeight() / 2.0f  - y;
+			Point spriteOffset = GameScreen.getSpriteOffset();
+			double ddx = -spriteOffset.getX() + Game.getWidth() / 2.0f - x;
+			double ddy = -spriteOffset.getY() + Game.getHeight() / 2.0f  - y;
 			double dist = Math.sqrt(ddx * ddx + ddy * ddy);
 			return LinearInterpolator.instance.interpolate(1.0f, MIN_ATTENUATION_GAIN, (float) dist / MAX_ATTENUATION_DISTANCE);
 		}
@@ -99,8 +109,9 @@ public class Worm extends Game {
 	public static final Attenuator LOUD_ATTENUATOR = new Attenuator() {
 		@Override
 		public float getVolume(float x, float y) {
-			double ddx = -GameScreen.getSpriteOffset().getX() + Game.getWidth() / 2.0f - x;
-			double ddy = -GameScreen.getSpriteOffset().getY() + Game.getHeight() / 2.0f  - y;
+			Point spriteOffset = GameScreen.getSpriteOffset();
+			double ddx = -spriteOffset.getX() + Game.getWidth() / 2.0f - x;
+			double ddy = -spriteOffset.getY() + Game.getHeight() / 2.0f  - y;
 			double dist = Math.sqrt(ddx * ddx + ddy * ddy);
 			return LinearInterpolator.instance.interpolate(1.0f, MIN_ATTENUATION_GAIN, (float) dist / MAX_LOUD_ATTENUATION_DISTANCE);
 		}
@@ -124,37 +135,35 @@ public class Worm extends Game {
 		}
 	};
 
+	private static boolean xmas;
+
 	static {
 		Resources.put(ATTENUATOR_FEATURE);
 		Resources.put(LOUD_ATTENUATOR_FEATURE);
 		Resources.put(DEFAULT_ATTENUATOR_FEATURE);
+
+		Calendar c = Calendar.getInstance();
+		int month = c.get(Calendar.MONTH);
+		int day = c.get(Calendar.DAY_OF_MONTH);
+		if ((month == Calendar.DECEMBER && day >= 19) || (month == Calendar.JANUARY && day < 9) || (TEST_XMAS && DEBUG)) {
+			xmas = TEST_XMAS && DEBUG ? FORCE_XMAS : true;
+		}
 	}
 
 	private static final SpriteAllocator MOUSE_SPRITE_ALLOCATOR = new SpriteAllocator() {
+        private static final long serialVersionUID = 1L;
+
 		@Override
 		public Sprite allocateSprite(Serializable owner) {
-			return instance.mouseSpriteEngine.allocate(owner);
+			return instance.mouseSpriteEngine.allocateSprite(owner);
 		}
 	};
-
-	/** Max mouse speed */
-	public static final int MOUSE_MAX_SCALE = 10;
-
-	/** Mouse speed multiplier */
-	public static final int MOUSE_SPEED_MULTIPLIER = 3;
-
-	/** Mouse speed */
-	private static int mouseSpeed = MOUSE_MAX_SCALE / MOUSE_SPEED_MULTIPLIER;
 
 	/** Global mouse pointers rendered using this very small sprite engine */
 	private transient SpriteEngine mouseSpriteEngine;
 
 	/** Mouse pointer */
 	private transient SimpleThingWithLayers mouseLayers;
-
-	/** Current scaled mouse coordinates */
-	private transient float mouseDX, mouseDY, mouseX, mouseY;
-
 
 	/*
 	 * Options
@@ -180,19 +189,18 @@ public class Worm extends Game {
 	}
 
 	private void updateMouse() {
+		boolean insideWindow = Mouse.isInsideWindow() && !Game.isPaused();
 		if (mouseLayers.getSprites() != null) {
 			float lx = physicalXtoLogicalX(getMouseX());
 			float ly = physicalYtoLogicalY(getMouseY());
 			for (int i = 0; i < mouseLayers.getSprites().length; i++) {
-				mouseLayers.getSprite(i).setLocation(lx, ly, 0.0f);
+				mouseLayers.getSprite(i).setLocation(lx, ly);
+				mouseLayers.getSprite(i).setVisible(insideWindow);
 			}
 		}
 		mouseSpriteEngine.tick();
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Game#setGameState(net.puppygames.applet.GameState)
-	 */
 	@Override
 	protected void setGameState(GameState newGameState) {
 		super.setGameState(newGameState);
@@ -220,7 +228,7 @@ public class Worm extends Game {
 
 	@Override
 	protected void doShowHelp() {
-		Sys.openURL("http://www.puppygames.net/revenge-of-the-titans/help");
+		Sys.openURL("http://www.puppygames.net/revenge-of-the-titans/help/" + getLanguage());
 	}
 
 	@Override
@@ -236,13 +244,18 @@ public class Worm extends Game {
 		mouseLayers = new SimpleThingWithLayers(MOUSE_SPRITE_ALLOCATOR);
 
 		setMouseAppearance(Res.getMousePointer());
-		mouseSpeed = getPreferences().getInt("mouseSpeed", mouseSpeed);
-
-		prefsSaver = new PrefsSaverThread();
-		prefsSaver.start();
 
 		Particle.setMaxParticles(4096);
 		SoundCommand.setDefaultAttenuator(DEFAULT_ATTENUATOR_FEATURE);
+
+		if (isUsingSteam() && Steam.isCreated() && Steam.isSteamRunning()) {
+			Steam.getUtils().setOverlayNotificationPosition(NotificationPosition.TopRight);
+			try {
+			Steam.getUserStats().requestCurrentStats();
+			} catch (SteamException e) {
+				System.err.println("Failed to request user stats due to "+e);
+			}
+		}
 	}
 
 	public static void setInstance(Worm instance) {
@@ -257,7 +270,7 @@ public class Worm extends Game {
 
 	@Override
 	protected void doEndGame() {
-		if (Game.isDemoExpired()) {
+		if (MiniGame.isDemoExpired()) {
 			NagScreen.show("You know you want to!", true);
 		} else {
 			net.puppygames.applet.screens.TitleScreen.show();
@@ -265,32 +278,7 @@ public class Worm extends Game {
 	}
 
 	@Override
-	protected void doGameTick() {
-		int newMouseDX = Mouse.getDX() * MOUSE_SPEED_MULTIPLIER * getMouseSpeed();
-		int newMouseDY = Mouse.getDY() * MOUSE_SPEED_MULTIPLIER * getMouseSpeed();
-		float newMouseX = mouseX + newMouseDX;
-		float newMouseY = mouseY + newMouseDY;
-		Rectangle viewPort = getViewPort();
-		int minX = viewPort.getX() * Worm.MOUSE_MAX_SCALE;
-		int maxX = (viewPort.getWidth() + viewPort.getX()) * Worm.MOUSE_MAX_SCALE  - 1;
-		mouseX = Math.max(minX, Math.min(maxX, newMouseX));
-		int minY = viewPort.getY() * Worm.MOUSE_MAX_SCALE;
-		int maxY = (viewPort.getHeight() + viewPort.getY()) * Worm.MOUSE_MAX_SCALE - 1;
-		mouseY = Math.max(minY, Math.min(maxY, newMouseY));
-		mouseDX = 0.0f;
-		mouseDY = 0.0f;
-		if (!isCatchUp()) {
-			if (newMouseX < minX) {
-				mouseDX = (newMouseX - minX) * getWidth() / (Worm.MOUSE_MAX_SCALE * viewPort.getWidth());
-			} else if (newMouseX >= maxX) {
-				mouseDX = (newMouseX - maxX) * getWidth() / (Worm.MOUSE_MAX_SCALE * viewPort.getWidth());
-			}
-			if (newMouseY < minY) {
-				mouseDY = (newMouseY - minY) * getHeight() / (Worm.MOUSE_MAX_SCALE * viewPort.getHeight());
-			} else if (newMouseY >= maxY) {
-				mouseDY = (newMouseY - maxY) * getHeight() / (Worm.MOUSE_MAX_SCALE * viewPort.getHeight());
-			}
-		}
+	protected void doTick() {
 		updateMouse();
 
 		GameScreen gameScreen = GameScreen.getInstance();
@@ -300,61 +288,12 @@ public class Worm extends Game {
 			}
 			gameScreen.clearFastForward();
 		}
-
-		if (DEBUG) {
-			if (wasKeyPressed(Keyboard.KEY_F2)) {
-				//setSize(Util.random(640, 960), 640);
-				//setSize(1138,640); //16:9 widescreen
-				setSize(569,320); //16:9 widescreen
-			}
-
-			if (wasKeyPressed(Keyboard.KEY_F3)) {
-				setSize(640,Util.random(640, 960) );
-			}
-
-			if (wasKeyPressed(Keyboard.KEY_F4)) {
-				setSize(640,640);
-			}
-
-			if (wasKeyPressed(Keyboard.KEY_F5)) {
-				setSize(816, 640);
-			}
-
-		}
 	}
 
 	@Override
-	protected int doGetMouseX() {
-		return (int) (mouseX / Worm.MOUSE_MAX_SCALE);
-	}
-
-	@Override
-	protected int doGetMouseY() {
-		return (int) (mouseY / Worm.MOUSE_MAX_SCALE);
-	}
-
-	public static float getMouseDX() {
-		return instance.mouseDX;
-	}
-
-	public static float getMouseDY() {
-		return instance.mouseDY;
-	}
-
-	/**
-	 * @return the mouse speed (0..{@link #MOUSE_MAX_SCALE})
-	 */
-	public static int getMouseSpeed() {
-		return mouseSpeed;
-	}
-
-	/**
-	 * @param newSpeed
-	 */
-	public static void setMouseSpeed(int newSpeed) {
-		mouseSpeed = newSpeed;
-		getPreferences().putInt("mouseSpeed", newSpeed);
-		flushPrefs();
+	protected void onPaused() {
+		updateMouse();
+		Screen.tickAllScreens();
 	}
 
 	/**
@@ -497,7 +436,7 @@ public class Worm extends Game {
 
 	@Override
 	protected void onGameSaved() {
-		LabelEffect le = new LabelEffect(net.puppygames.applet.Res.getBigFont(), "GAME SAVED", new MappedColor("titles.colormap:text-bold"), new MappedColor("titles.colormap:text-dark"), 180, 60);
+		LabelEffect le = new LabelEffect(net.puppygames.applet.Res.getBigFont(), getMessage("ultraworm.worm.game_saved"), new MappedColor("titles.colormap:text-bold"), new MappedColor("titles.colormap:text-dark"), 180, 60);
 		le.setLayer(100);
 		le.setLocation(Game.getWidth() / 2, Game.getHeight() / 2);
 		le.setSound((ALBuffer) Resources.get("gamesaved.buffer"));
@@ -507,7 +446,7 @@ public class Worm extends Game {
 	@Override
 	protected void doRequestExit() {
 		final DialogScreen reallyDialog = (DialogScreen) Resources.get("yescancel.dialog");
-		reallyDialog.doModal("EXIT GAME", "REALLY EXIT THE GAME?", new Runnable() {
+		reallyDialog.doModal(getMessage("ultraworm.worm.exit_game"), getMessage("ultraworm.worm.exit_question"), new Runnable() {
 			@Override
 			public void run() {
 				if (reallyDialog.getOption() == DialogScreen.OK_OPTION) {
@@ -609,95 +548,25 @@ public class Worm extends Game {
 	@Override
 	protected void onBeginNewGame() {
 		// Open the game mode choice dialog
-		ChooseGameModeScreen.show();
-	}
-
-	/**
-	 * Choose a random valid prize
-	 * @return a {@link PrizeFeature}, or null
-	 */
-	private PrizeFeature choosePrize() {
-		List<PrizeFeature> prizes = new ArrayList<PrizeFeature>(PrizeFeature.getPrizes());
-		Collections.shuffle(prizes);
-		for (PrizeFeature pf : prizes) {
-			if (pf.isValid()) {
-				return pf;
-			}
+		if (xmas) {
+			((ChooseGameModeScreen)Resources.get("choose-game-mode-xmas.screen")).open();
+		} else {
+			((ChooseGameModeScreen)Resources.get("choose-game-mode.screen")).open();
 		}
-		return null;
 	}
 
-	public static NagState getNagState() {
-		return NagState.valueOf(getPreferences().get("nagstate", NagState.NOT_YET_SHOWN.name()));
-	}
-
-	public static void setNagState(NagState newNagState) {
-		getPreferences().put("nagstate", newNagState.name());
-		flushPrefs();
-	}
-
-	@SuppressWarnings("unused")
 	@Override
 	protected void onPreRegisteredStartup() {
 		if (getPlayerSlot() == null) {
-			showTitleScreen();
+			MiniGame.showTitleScreen();
 			return;
 		}
-		NagState nagState = getNagState();
-		if (TESTSIGNUP && DEBUG) {
-			nagState = NagState.NOT_YET_SHOWN;
-		}
-		switch (nagState) {
-			case NOT_YET_SHOWN:
-				PrizeFeature prize = choosePrize();
-				if (prize != null) {
-					SignUpScreen.show(prize);
-				} else {
-					showTitleScreen();
-				}
-				break;
-			case PRIZE_AWAITS:
-				// Restore the incentive file
-				FileInputStream fis = null;
-				BufferedInputStream bis = null;
-				ObjectInputStream ois = null;
-				try {
-					fis = new FileInputStream(getIncentiveFile());
-					bis = new BufferedInputStream(fis);
-					ois = new ObjectInputStream(bis);
-					NewsletterIncentive ni = (NewsletterIncentive) ois.readObject();
-					if (!ni.validate()) {
-						throw new Exception("Existing incentive file is invalid.");
-					}
-					UnlockBonusScreen.show(ni);
-				} catch (Exception e) {
-					e.printStackTrace(System.err);
-					showTitleScreen();
-				} finally {
-					if (fis != null) {
-						try {
-							fis.close();
-						} catch (IOException e) {
-						}
-					}
-				}
-				break;
-			case DONT_NAG:
-			case REDEEMED:
-				showTitleScreen();
-				break;
-			default:
-				assert false : "Unknown nag state "+nagState;
-		}
-	}
-
-	public static File getIncentiveFile() {
-		return new File(Game.getDirectoryPrefix() + "incentive.dat");
+		super.onPreRegisteredStartup();
 	}
 
 	@Override
-	protected File getRestoreFile() {
-		return new File(getPlayerDirectoryPrefix() + "savedGame_"+newMode+".dat");
+	protected String getRestoreFile() {
+		return getPlayerDirectoryPrefix() + "savedGame_"+newMode+".dat";
 	}
 
 	/**
@@ -707,8 +576,8 @@ public class Worm extends Game {
 	public static void newGame(int mode) {
 		newMode = mode;
 		// Is there a saved game file?
-		if (isRestoreAvailable()) {
-			restoreGame();
+		if (MiniGame.isRestoreAvailable()) {
+			MiniGame.restoreGame();
 		} else {
 			cleanGame();
 		}
@@ -730,5 +599,24 @@ public class Worm extends Game {
 	protected void onRestoreGameFailed(Exception e) {
 		// Clean up the GameScreen
 		GameScreen.getInstance().panic();
+	}
+
+	/**
+	 * Registration check for allowing Sandbox mode.
+	 */
+	public static boolean isSandboxRegistered() {
+		RegistrationDetails sandboxRegistrationDetails = null;
+		try {
+			sandboxRegistrationDetails = RegistrationDetails.checkRegistration("Sandbox Mode");
+		} catch (Exception e) {
+		}
+		return (sandboxRegistrationDetails!=null ? true : false);
+	}
+
+	/**
+	 * @return true if it's Christmas!
+	 */
+	public static boolean isXmas() {
+		return xmas;
 	}
 }

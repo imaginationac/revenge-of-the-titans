@@ -31,15 +31,28 @@
  */
 package com.shavenpuppy.jglib.resources;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.lang.reflect.Constructor;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
+import com.shavenpuppy.jglib.IResource;
 import com.shavenpuppy.jglib.Resource;
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.util.XMLUtil;
@@ -60,10 +73,10 @@ public class ResourceConverter implements Resource.Loader {
 	static final Class<?>[] namedSig = new Class[] {String.class};
 	static final Class<?>[] unnamedSig = new Class[] {};
 
-	private Map<String, Class<? extends Resource>> typeMap = new HashMap<String, Class<? extends Resource>>();
+	private Map<String, Class<? extends IResource>> typeMap = new HashMap<String, Class<? extends IResource>>();
 
 	// A stack of temporary mappings
-	Stack<Map<String, Class<? extends Resource>>> stack = new Stack<Map<String, Class<? extends Resource>>>();
+	Stack<Map<String, Class<? extends IResource>>> stack = new Stack<Map<String, Class<? extends IResource>>>();
 
 	/** Overwrite mode */
 	private boolean overwrite;
@@ -245,7 +258,7 @@ public class ResourceConverter implements Resource.Loader {
 	 * @see com.shavenpuppy.jglib.Resource.Loader#load(org.w3c.dom.Element)
 	 */
 	@Override
-	public Resource load(Element featureElement) throws Exception {
+	public IResource load(Element featureElement) throws Exception {
 		if (featureElement.getNodeName().equals("include")) {
 			String name = featureElement.getAttribute("resource");
 			if (name == null) {
@@ -267,12 +280,11 @@ public class ResourceConverter implements Resource.Loader {
 				throw new Exception("Missing 'class' attribute");
 			}
 
-			@SuppressWarnings("unchecked")
 			Class<? extends Resource> clazz = (Class<? extends Resource>) Class.forName(className, true, getClassLoader());
 			if (!Resource.class.isAssignableFrom(clazz)) {
 				throw new Exception(clazz + " is not a Resource.");
 			}
-			Class<? extends Resource> oldClazz = typeMap.get(tag);
+			Class<? extends IResource> oldClazz = typeMap.get(tag);
 			typeMap.put(tag, clazz);
 			Resources.registerTag(clazz, tag); // useful
 			if (oldClazz == null) {
@@ -288,7 +300,6 @@ public class ResourceConverter implements Resource.Loader {
 				throw new Exception("Missing 'class' attribute");
 			}
 
-			@SuppressWarnings("unchecked")
 			Class<? extends Resource> clazz = (Class<? extends Resource>) Class.forName(className, true, getClassLoader());
 			if (!Resource.class.isAssignableFrom(clazz)) {
 				throw new Exception(clazz + " is not a Resource.");
@@ -306,7 +317,7 @@ public class ResourceConverter implements Resource.Loader {
 			return null;
 		}
 
-		Class<? extends Resource> featureClass = typeMap.get(featureElement.getTagName());
+		Class<? extends IResource> featureClass = typeMap.get(featureElement.getTagName());
 		if (featureClass == null) {
 			featureClass = Resources.getMapping(featureElement.getTagName());
 			if (featureClass == null) {
@@ -320,10 +331,10 @@ public class ResourceConverter implements Resource.Loader {
 	/**
 	 * Load an instance of the class specified
 	 */
-	private Resource loadInstance(boolean isInstance, Element featureElement, Class<? extends Resource> featureClass) throws Exception {
+	private IResource loadInstance(boolean isInstance, Element featureElement, Class<? extends IResource> featureClass) throws Exception {
 		// Check that we're creating something appropriate...
 		assert Resource.class.isAssignableFrom(featureClass) : featureClass.getName() + " is not a Resource";
-		Constructor<? extends Resource> namedCtor = null, unnamedCtor = null;
+		Constructor<? extends IResource> namedCtor = null, unnamedCtor = null;
 		boolean canBeUnNamed = false, canBeNamed = false, named = false;
 		try {
 			namedCtor = featureClass.getConstructor(namedSig);
@@ -342,7 +353,7 @@ public class ResourceConverter implements Resource.Loader {
 
 		// Construct a new instance
 		try {
-			Resource newFeature = null;
+			IResource newFeature = null;
 			String name = null;
 			name = featureElement.getAttribute("name");
 			named = !"".equals(name);
@@ -419,22 +430,14 @@ public class ResourceConverter implements Resource.Loader {
 					}
 				} else {
 					// And stash it in the Resources
-					named = newFeature.getName() != null;
-					if (named) {
-						if (!overwrite && Resources.exists(name)) {
-							throw new Exception("Resource " + newFeature + " has already been defined.");
-						}
-						Resources.put(newFeature);
-						if (loadedListener != null) {
-							loadedListener.resourceLoaded(newFeature);
-						}
-						log("Resource " + newFeature + ": loaded");
-					} else {
-						Resources.add(newFeature);
-						if (loadedListener != null) {
-							loadedListener.resourceLoaded(newFeature);
-						}
+					if (!overwrite && Resources.exists(name)) {
+						throw new Exception("Resource " + newFeature + " has already been defined.");
 					}
+					Resources.put(newFeature);
+					if (loadedListener != null) {
+						loadedListener.resourceLoaded(newFeature);
+					}
+					log("Resource " + newFeature + ": loaded");
 				}
 			}
 			return newFeature;
@@ -487,15 +490,15 @@ public class ResourceConverter implements Resource.Loader {
 	 * @see com.shavenpuppy.jglib.Resource.Loader#pushMap(Map)
 	 */
 	@Override
-	public void pushMap(Map<String, Class<? extends Resource>> map) {
+	public void pushMap(Map<String, Class<? extends IResource>> map) {
 		stack.push(typeMap);
-		typeMap = new HashMap<String, Class<? extends Resource>>(typeMap);
+		typeMap = new HashMap<String, Class<? extends IResource>>(typeMap);
 		typeMap.putAll(map);
 
 		// Permanently remember tags
-		for (Map.Entry<String, Class<? extends Resource>> entry : typeMap.entrySet()) {
+		for (Map.Entry<String, Class<? extends IResource>> entry : typeMap.entrySet()) {
 			String tag = entry.getKey();
-			Class<? extends Resource> clazz = entry.getValue();
+			Class<? extends IResource> clazz = entry.getValue();
 			Resources.registerTag(clazz, tag);
 		}
 	}
@@ -504,11 +507,11 @@ public class ResourceConverter implements Resource.Loader {
 	 * @see com.shavenpuppy.jglib.Resource.Loader#popMap()
 	 */
 	@Override
-	public Map<String, Class<? extends Resource>> popMap() {
+	public Map<String, Class<? extends IResource>> popMap() {
 		if (stack.size() == 0) {
 			return null;
 		}
-		Map<String, Class<? extends Resource>> existingMap = typeMap;
+		Map<String, Class<? extends IResource>> existingMap = typeMap;
 		typeMap = stack.pop();
 		return existingMap;
 	}

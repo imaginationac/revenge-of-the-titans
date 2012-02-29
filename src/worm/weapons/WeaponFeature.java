@@ -38,14 +38,19 @@ import net.puppygames.applet.Game;
 
 import org.lwjgl.util.ReadableColor;
 
-import worm.*;
+import worm.Entity;
+import worm.Res;
+import worm.Statistics;
+import worm.Worm;
 import worm.entities.Building;
 import worm.features.BulletFeature;
 import worm.features.ResearchFeature;
 import worm.screens.GameScreen;
 
 import com.shavenpuppy.jglib.openal.ALBuffer;
-import com.shavenpuppy.jglib.resources.*;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.Range;
+import com.shavenpuppy.jglib.resources.ResourceArray;
 import com.shavenpuppy.jglib.sound.SoundEffect;
 import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.Util;
@@ -68,9 +73,6 @@ public class WeaponFeature extends Feature implements Statistics {
 	protected int maxBatteries;
 	protected int maxReactors;
 	protected int maxAutoloaders;
-
-	/** Description */
-	private String description;
 
 	/** Firing rate (either in ticks, when expressed as a range for units/gidrahs, or in rounds / minute (3600 ticks)) */
 	private Range fireRate;
@@ -403,13 +405,6 @@ public class WeaponFeature extends Feature implements Statistics {
 		return new WeaponInstance(entity);
 	}
 
-	/**
-	 * @return Returns the description.
-	 */
-	public String getDescription() {
-		return description;
-	}
-
 	public boolean isLaser() {
 		return false;
 	}
@@ -463,26 +458,27 @@ public class WeaponFeature extends Feature implements Statistics {
 	}
 
 	public void getResearchStats(StringBuilder stats_1_text, StringBuilder stats_2_text) {
-		stats_1_text.append("\n{font:tinyfont.glfont color:text}DAMAGE: {color:text-bold}");
+		stats_1_text.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.weaponstats.damage")+": {color:text-bold}");
 		stats_1_text.append(getDamageStats());
 
-		stats_2_text.append("\n{color:text}FIRERATE: {color:text-bold}");
+		stats_2_text.append("\n{color:text}"+Game.getMessage("ultraworm.weaponstats.firerate")+": {color:text-bold}");
 		stats_2_text.append(getFireRateDescription());
 
-		stats_2_text.append("\n{color:text}AMMO: {color:text-bold}");
+		stats_2_text.append("\n{color:text}"+Game.getMessage("ultraworm.weaponstats.ammo")+": {color:text-bold}");
 		stats_2_text.append(getMagazine());
 		if (Worm.getGameState().isResearched(ResearchFeature.BATTERY)) {
 			stats_2_text.append("+");
 			stats_2_text.append(getAmmoPerBattery());
-			stats_2_text.append("/BATTERY");
+			stats_2_text.append("/");
+			stats_2_text.append(Game.getMessage("ultraworm.weaponstats.battery"));
 		}
-		stats_2_text.append("\n{color:text}RELOAD: {color:text-bold}");
+		stats_2_text.append("\n{color:text}"+Game.getMessage("ultraworm.weaponstats.reload")+": {color:text-bold}");
 		stats_2_text.append(getReloadSpeed() / 60);
 
 		if (Worm.getGameState().isResearched(ResearchFeature.AUTOLOADER)) {
 			stats_2_text.append("-");
 			stats_2_text.append(getReloadPerReactor() / 60);
-			stats_2_text.append("s/RELOADER");
+			stats_2_text.append("s/"+Game.getMessage("ultraworm.weaponstats.reloader"));
 		} else {
 			stats_2_text.append("s");
 		}
@@ -497,7 +493,7 @@ public class WeaponFeature extends Feature implements Statistics {
 	protected String getArmourPiercingStats() {
 		StringBuilder sb = new StringBuilder();
 		if (bullet != null && bullet.getArmourPiercing() > 0) {
-			sb.append("\n armour piercing: ");
+			sb.append("\n "+Game.getMessage("ultraworm.weaponstats.armour_piercing")+": ");
 			sb.append(bullet.getArmourPiercing());
 		}
 		return sb.toString();
@@ -506,27 +502,27 @@ public class WeaponFeature extends Feature implements Statistics {
 	protected String getStunStats() {
 		StringBuilder sb = new StringBuilder();
 		if (bullet != null && bullet.getStun() > 0) {
-			sb.append("\n stun: ");
+			sb.append("\n "+Game.getMessage("ultraworm.weaponstats.stun")+": ");
 			DecimalFormat df = new DecimalFormat("#.#");
 			sb.append(df.format(bullet.getStun() * .016666666667));
-			sb.append(" SEC");
+			sb.append(" "+Game.getMessage("ultraworm.weaponstats.time_unit"));
 		}
 		return sb.toString();
 	}
 
 	@Override
 	public void appendFullStats(StringBuilder dest) {
-		dest.append("\n firerate: ");
+		dest.append("\n "+Game.getMessage("ultraworm.weaponstats.firerate_lowercase")+": ");
 		dest.append(getFireRateDescription().toUpperCase());
-		dest.append("\n damage: ");
+		dest.append("\n "+Game.getMessage("ultraworm.weaponstats.damage_lowercase")+": ");
 		dest.append(getDamageStats());
 		dest.append(getArmourPiercingStats());
 		dest.append(getStunStats());
-		dest.append("\n ammo: ");
+		dest.append("\n "+Game.getMessage("ultraworm.weaponstats.ammo_lowercase")+": ");
 		dest.append(getMagazine());
-		dest.append("\n reload time: ");
+		dest.append("\n "+Game.getMessage("ultraworm.weaponstats.reload_time")+": ");
 		dest.append(getReloadSpeed() / 60);
-		dest.append(" SECS");
+		dest.append(" "+Game.getMessage("ultraworm.weaponstats.time_units"));
 	}
 
 	@Override

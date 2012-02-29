@@ -44,7 +44,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class SubCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The subroutine */
 	private String id;
@@ -62,7 +62,7 @@ public class SubCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		target.pushSequence();
 		target.setAnimation(animation);
 		target.tick(); // Some hackery goin on here! We end up recursing so we might be several stack levels deep.

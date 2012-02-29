@@ -32,6 +32,7 @@
 package net.puppygames.applet.screens;
 
 import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
 import net.puppygames.applet.Screen;
 
 /**
@@ -41,6 +42,9 @@ import net.puppygames.applet.Screen;
  * @version $Revision: 1.2 $
  */
 public class GenericButtonHandler implements GenericButtons {
+
+	private static final String REGISTERED_AREAS = "REGISTERED_AREAS";
+	private static final String DEMO_AREAS = "DEMO_AREAS";
 
 	/**
 	 * No c'tor
@@ -58,27 +62,28 @@ public class GenericButtonHandler implements GenericButtons {
 				NagScreen.show("Nag! Nag! Nag! Buy! Buy! Buy!", true);
 			}
 		} else if (id.equals(BUY)) {
-			Game.buy(true);
+			MiniGame.buy(true);
 		} else if (id.equals(REDEFINE_KEYS)) {
 			Game.redefineKeys();
 		} else if (id.equals(PLAY)) {
-			Game.beginNewGame();
+			MiniGame.beginNewGame();
 		} else if (id.equals(HISCORES)) {
-			Game.showHiscores();
+			MiniGame.showHiscores();
 		} else if (id.equals(CREDITS)) {
-			Game.showCredits();
+			MiniGame.showCredits();
 		} else if (id.equals(OPTIONS)) {
-			Game.showOptions();
+			MiniGame.showOptions();
 		} else if (id.equals(HELP)) {
-			Game.showHelp();
+			MiniGame.showHelp();
 		} else if (id.equals(MOREGAMES)) {
-			Game.showMoreGames();
+			MiniGame.showMoreGames();
 		}
 	}
 
 	public static void onOpen(Screen screen) {
-		screen.setVisible(BUY, !Game.isRegistered());
-		screen.setVisible(MOREGAMES, !Game.isRegistered());
+		screen.setGroupVisible(REGISTERED_AREAS, Game.isRegistered());
+		screen.setGroupVisible(DEMO_AREAS, !Game.isRegistered());
+		screen.setEnabled(BUY, !Game.isRegistered());
 		screen.setVisible(EXIT, true);
 	}
 }

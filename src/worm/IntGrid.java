@@ -73,12 +73,12 @@ public class IntGrid implements Serializable {
 		if (x < 0) {
 			x = 0;
 		} else if (x >= width) {
-			x = width;
+			x = width - 1;
 		}
 		if (y < 0) {
 			y = 0;
 		} else if (y >= height) {
-			y = height;
+			y = height - 1;
 		}
 		int idx = getIndex(x, y);
 		if (idx == -1) {

@@ -31,6 +31,7 @@
  */
 package worm.screens;
 
+import net.puppygames.applet.Game;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.screens.DialogScreen;
 import worm.Res;
@@ -38,12 +39,14 @@ import worm.Worm;
 
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.resources.ColorMapFeature;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.sprites.Appearance;
 
 /**
  * The ingame menu
  */
 public class MenuScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static MenuScreen instance;
 
@@ -104,9 +107,9 @@ public class MenuScreen extends Screen {
 
 		setGroupVisible(GROUP_LABELS, false);
 
-		String world = Worm.getGameState().getWorld().getTitle();
+		String world = Worm.getGameState().getWorld().getUntranslated();
 		ColorMapFeature.getDefaultColorMap().copy((ColorMapFeature) Resources.get(world+".colormap"));
-		getArea(BACKGROUND).setMouseOffAppearance((AnimatedAppearanceResource) Resources.get(world+".research.background.anim"));
+		getArea(BACKGROUND).setMouseOffAppearance((Appearance) Resources.get(world+".research.background.anim"));
 
 		Worm.setMouseAppearance(Res.getMousePointer());
 
@@ -131,7 +134,7 @@ public class MenuScreen extends Screen {
 			MedalsScreen.show();
 
 		} else if (ID_RESTART.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("RESTART LEVEL", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.menuscreen.restart_level"), Game.getMessage("ultraworm.menuscreen.confirm"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();
@@ -141,7 +144,7 @@ public class MenuScreen extends Screen {
 				}
 			});
 		} else if (ID_EASIER.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("NEW EASIER LEVEL", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.menuscreen.new_easier_level"), Game.getMessage("ultraworm.menuscreen.confirm"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();
@@ -155,7 +158,7 @@ public class MenuScreen extends Screen {
 			Worm.getGameState().save();
 			close();
 		} else if (ID_QUIT.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("QUIT GAME", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.menuscreen.quit_game"), Game.getMessage("ultraworm.menuscreen.confirm"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();
@@ -165,7 +168,7 @@ public class MenuScreen extends Screen {
 				}
 			});
 		} else if (ID_ABANDON.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("QUIT TO LEVEL SELECT", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.menuscreen.quit_to_level_select"), Game.getMessage("ultraworm.menuscreen.confirm"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();

@@ -31,14 +31,23 @@
  */
 package worm.features;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
-import com.shavenpuppy.jglib.resources.*;
+import com.shavenpuppy.jglib.resources.Data;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.TextResource;
 
 /**
  * Research items
  */
 public class ResearchFeature extends Feature {
+
+	private static final long serialVersionUID = 1L;
 
 	public static final String BIOLOGY = "biology"; // +1 Damage
 	public static final String ANATOMY = "anatomy"; // +1 AP

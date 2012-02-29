@@ -31,6 +31,7 @@
  */
 package worm.features;
 
+import net.puppygames.applet.PrizeFeature;
 import worm.Worm;
 import worm.WormGameState;
 import worm.powerups.PowerupFeature;
@@ -42,6 +43,8 @@ import com.shavenpuppy.jglib.Resources;
  */
 public class MultiPrizeFeature extends PrizeFeature {
 
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * C'tor
 	 * @param name
@@ -52,7 +55,8 @@ public class MultiPrizeFeature extends PrizeFeature {
 
 	@Override
 	public boolean isValid() {
-		return Worm.getMaxLevel(WormGameState.GAME_MODE_CAMPAIGN) < WormGameState.MAX_LEVELS;
+		int maxLevel = Worm.getMaxLevel(WormGameState.GAME_MODE_CAMPAIGN);
+		return maxLevel >= 5 && maxLevel < WormGameState.MAX_LEVELS;
 	}
 
 	@Override

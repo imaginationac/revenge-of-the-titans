@@ -31,28 +31,36 @@
  */
 package com.shavenpuppy.jglib.sprites;
 
+import com.shavenpuppy.jglib.IResource;
+
 
 /**
  * A SpriteRenderer renders multiple sprites. In usage, one should call {@link #preRender()}, then
  * {@link #render(Sprite)} for each sprite to be drawn, then {@link #postRender()}.
  */
-public interface SpriteRenderer {
+public interface SpriteRenderer extends IResource {
 
 	/**
 	 * Render the sprite. The sprite itself is copied and subsequent changes to the sprite will not
 	 * be reflected in the SpriteRenderer
 	 * @param sprite The sprite to render; may not be null
 	 */
-	public abstract void render(Sprite sprite);
+	void render(Sprite sprite);
 
 	/**
 	 * Called after all {@link #render(Sprite)} calls have been made. This should reset the
 	 * sprite renderer ready for the next frame.
 	 */
-	public abstract void postRender();
+	void postRender();
 
 	/**
 	 * Call before any calls to {@link #render(Sprite)}, at the beginning of a frame
 	 */
-	public abstract void preRender();
+	void preRender();
+
+	/**
+	 * Sets the alpha blend for the entire engine
+	 * @param alpha 0.0f ... 1.0.f
+	 */
+	void setAlpha(float alpha);
 }

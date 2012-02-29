@@ -53,6 +53,8 @@ public abstract class InterpolatorBase implements Interpolator {
 			return SineInterpolator.instance;
 		} else if (name.equals("linear")) {
 			return LinearInterpolator.instance;
+		} else if (name.equals("oldcosine")) {
+			return OldCosineInterpolator.instance;
 		} else {
 			throw new RuntimeException("Interpolator '"+name+"' is not defined.");
 		}

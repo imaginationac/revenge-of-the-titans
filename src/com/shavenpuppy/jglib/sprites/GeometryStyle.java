@@ -31,45 +31,108 @@
  */
 package com.shavenpuppy.jglib.sprites;
 
-import java.nio.BufferOverflowException;
 import java.util.ArrayList;
 
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.OpenGLException;
 import org.lwjgl.util.ReadableColor;
 import org.lwjgl.util.ReadablePoint;
 import org.lwjgl.util.vector.ReadableVector2f;
-import org.lwjgl.util.vector.ReadableVector3f;
 
 import com.shavenpuppy.jglib.opengl.GLRenderable;
 import com.shavenpuppy.jglib.util.FloatList;
+import com.shavenpuppy.jglib.util.ShortList;
 
 import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL12.*;
 
 /**
- * Renders arbitrary OpenGL geometry using VBOs. Every little bit of geometry
- * needs its own new instance of GeometryStyle. To use, override
- * {@link #render()} to call immediate-mode style commands, and
- * {@link #render()} to render it all.
+ * Renders arbitrary OpenGL geometry using VBOs.
  */
 public abstract class GeometryStyle extends AbstractStyle implements SimpleRenderer {
 
 	/** Geometry runs */
 	private final ArrayList<GeometryRun> geometry = new ArrayList<GeometryRun>(1);
 
-	/** Current geometry run, or null */
-	private transient GeometryRun current;
+	/** The geometry data, which describes a list of vertices, and a list of indices */
+	private transient GeometryData data;
 
+	/** Vertices: this is the vertex data from the {@link #data} member */
 	private transient FloatList vertices;
+
+	/** Number of vertices */
+	private transient short numVertices;
+
+	/** Indices: this is the index data from the {@link #data} member */
+	private transient ShortList indices;
+
+	/** Current u/v coordinates */
 	private transient float u, v;
+
+	/** Current color (RGBA packed) */
 	private transient int c;
-	private transient boolean inBeginEnd;
+
+	/** Whether the geometry specified has color and/or texture coordinates */
 	private transient boolean hasColor, hasTexture;
 
-	private class GeometryRun {
+	/** The last bit of RenderableGeometry we did */
+	private transient MeshGeometry previous;
+
+	/**
+	 * Describes either a "renderable" (arbitrary OpenGL commands) or a call to glDrawRangeElements that will
+	 * draw geometry specified in the geometry data.
+	 */
+	private interface GeometryRun {
+		/**
+		 * Render using the given vertex offset and index offset
+		 * @param vertexOffset
+		 * @param indexOffset
+		 */
+		void render(int vertexOffset, int indexOffset);
+	}
+
+	private static class RenderableGeometry implements GeometryRun {
+
+		/** Renderable command */
 		GLRenderable renderable;
-		int type;
-		int startVertex, endVertex;
+
+		/**
+		 * C'tor
+		 * @param renderable
+		 */
+		public RenderableGeometry(GLRenderable renderable) {
+	        this.renderable = renderable;
+        }
+
+		@Override
+		public void render(int vertexOffset, int indexOffset) {
+			renderable.render();
+		}
+
+	}
+
+	private class MeshGeometry implements GeometryRun {
+
+		int primitiveType;
+		int numIndices;
+		int offset;
+
+		/**
+		 * C'tor
+         * @param primitiveType
+         * @param startVertex
+         * @param endVertex
+         * @param numIndices
+         */
+        public MeshGeometry(int primitiveType, int offset, int numIndices) {
+	        this.primitiveType = primitiveType;
+	        this.numIndices = numIndices;
+	        this.offset = offset;
+        }
+
+		@Override
+		public void render(int vertexOffset, int indexOffset) {
+			glDrawRangeElements(primitiveType, vertexOffset, vertexOffset + numVertices, numIndices, GL_UNSIGNED_SHORT, offset + indexOffset);
+		}
+
 	}
 
 	public GeometryStyle() {
@@ -86,14 +149,19 @@ public abstract class GeometryStyle extends AbstractStyle implements SimpleRende
 	}
 
 	@Override
-	public final FloatList build() {
+	public final GeometryData build() {
 		// Write the geometry to the buffer
-		if (vertices == null) {
-			vertices = new FloatList(true, 128);
+		if (data == null) {
+			data = new GeometryData(new FloatList(true, 128), new ShortList(true, 128));
+			vertices = data.getVertexData();
+			indices = data.getIndexData();
 		}
-		vertices.clear();
+
+		// TODO: optimise for static geometry - don't clear away everything, only call render() once, etc.
+		data.clear();
+		numVertices = 0;
 		render();
-		return vertices;
+		return data;
 	}
 
 	@Override
@@ -111,80 +179,58 @@ public abstract class GeometryStyle extends AbstractStyle implements SimpleRende
 	protected abstract void render();
 
 	@Override
-	public void glBegin(int type) {
-		assert !inBeginEnd;
+	public void glRender(GLRenderable renderable) {
+		geometry.add(new RenderableGeometry(renderable));
+		// Stop continuation
+		previous = null;
+	}
 
-		if (current == null) {
-			current = new GeometryRun();
-			current.type = type;
-			current.startVertex = current.endVertex = vertices.size() >> 3;
+	private static boolean isContinuable(int type) {
+    	return type == GL_TRIANGLES || type == GL_QUADS || type == GL_POINTS || type == GL_LINES;
+    }
+
+	@Override
+	public void glRender(final int primitiveType, final short[] indices) {
+		if (indices.length == 0) {
+			return;
+		}
+		// If the last GeometryRun was the same type and is continuable, we'll extend it instead of doing a new one
+		MeshGeometry gr;
+		if (previous != null && previous.primitiveType == primitiveType && isContinuable(primitiveType)) {
+			gr = previous;
+			gr.numIndices += indices.length;
+		} else {
+			gr = new MeshGeometry(primitiveType, this.indices.size() * 2, indices.length);
+			geometry.add(gr);
+			previous = gr;
 		}
 
-		inBeginEnd = true;
+		this.indices.addAll(indices);
 	}
 
 	@Override
-	public void glRender(final GLRenderable renderable) {
-		if (inBeginEnd) {
-			throw new OpenGLException("Must call glEnd first");
-		}
-		GeometryRun gr = new GeometryRun();
-		gr.renderable = renderable;
-		geometry.add(gr);
+	public short glVertex2f(float x, float y) {
+		vertices.add(x);
+		vertices.add(y);
+		vertices.add(u);
+		vertices.add(v);
+		vertices.add(Float.intBitsToFloat(c));
+		return numVertices ++;
 	}
 
 	@Override
-	public void glEnd() {
-		if (!inBeginEnd) {
-			throw new OpenGLException("Must call glBegin first");
-		}
-		current.endVertex = vertices.size() >> 3;
-		if (current.endVertex - current.startVertex > 0) {
-			geometry.add(current);
-		}
-		current = null;
-		inBeginEnd = false;
+    public short getVertexOffset() {
+		return numVertices;
 	}
 
 	@Override
-	public void glVertex2f(float x, float y) {
-		glVertex3f(x, y, 0.0f);
+	public short glVertex(ReadablePoint vertex) {
+		return glVertex2f(vertex.getX(), vertex.getY());
 	}
 
 	@Override
-	public void glVertex3f(float x, float y, float z) {
-		if (!inBeginEnd) {
-			throw new OpenGLException("Must call glBegin first");
-		}
-
-		try {
-			vertices.add(x);
-			vertices.add(y);
-			vertices.add(z);
-			vertices.add(u);
-			vertices.add(v);
-			vertices.add(0.0f); // tex1 coords
-			vertices.add(0.0f);
-			vertices.add(Float.intBitsToFloat(c));
-		} catch (BufferOverflowException e) {
-			inBeginEnd = false;
-			throw e;
-		}
-	}
-
-	@Override
-	public void glVertex(ReadablePoint vertex) {
-		glVertex2f(vertex.getX(), vertex.getY());
-	}
-
-	@Override
-	public void glVertex(ReadableVector2f vertex) {
-		glVertex2f(vertex.getX(), vertex.getY());
-	}
-
-	@Override
-	public void glVertex(ReadableVector3f vertex) {
-		glVertex3f(vertex.getX(), vertex.getY(), vertex.getZ());
+	public short glVertex(ReadableVector2f vertex) {
+		return glVertex2f(vertex.getX(), vertex.getY());
 	}
 
 	@Override
@@ -192,6 +238,12 @@ public abstract class GeometryStyle extends AbstractStyle implements SimpleRende
 		this.u = u;
 		this.v = v;
 		hasTexture = true;
+	}
+
+	@Override
+	public void glColori(int color) {
+		this.c = color;
+		hasColor = true;
 	}
 
 	@Override
@@ -221,35 +273,35 @@ public abstract class GeometryStyle extends AbstractStyle implements SimpleRende
 	}
 
 	@Override
-	public final void render(int vertexOffset) {
+	public final void render(int vertexOffset, int indexOffset) {
 		glEnableClientState(GL_VERTEX_ARRAY);
 		if (hasColor) {
 			glEnableClientState(GL_COLOR_ARRAY);
+		} else {
+			glDisableClientState(GL_COLOR_ARRAY);
 		}
 		if (hasTexture) {
 			glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+		} else {
+			glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		}
 		int n = geometry.size();
 		for (int i = 0; i < n; i++) {
 			GeometryRun run = geometry.get(i);
-			if (run.renderable != null) {
-				run.renderable.render();
-			} else if (run.endVertex - run.startVertex > 0) {
-				GL11.glDrawArrays(run.type, run.startVertex + vertexOffset, run.endVertex - run.startVertex);
-			} else {
-				// System.out.println("Empty run!");
-			}
+			run.render(vertexOffset, indexOffset * 2);
 		}
 		geometry.clear();
+		previous = null;
 		if (hasColor) {
-			glDisableClientState(GL_COLOR_ARRAY);
 			hasColor = false;
 		}
 		if (hasTexture) {
-			glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 			hasTexture = false;
 		}
-		glDisableClientState(GL_VERTEX_ARRAY);
+		glEnableClientState(GL_COLOR_ARRAY);
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+//		glDisableClientState(GL_VERTEX_ARRAY);
+
 	}
 
 }

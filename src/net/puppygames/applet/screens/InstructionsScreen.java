@@ -43,7 +43,7 @@ import net.puppygames.applet.Screen;
  */
 public class InstructionsScreen extends Screen {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** End screen instance */
 	private static InstructionsScreen instance;
@@ -55,9 +55,6 @@ public class InstructionsScreen extends Screen {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see genesis.Feature#doRegister()
-	 */
 	@Override
 	protected void doRegister() {
 		instance = this;
@@ -80,17 +77,11 @@ public class InstructionsScreen extends Screen {
 		instance.open();
 	}
 
-	/* (non-Javadoc)
-	 * @see genesis.Screen#onClicked(java.lang.String)
-	 */
 	@Override
 	protected void onClicked(String id) {
 		GenericButtonHandler.onClicked(id);
 	}
 
-	/* (non-Javadoc)
-	 * @see genesis.Screen#onOpen()
-	 */
 	@Override
 	protected void onOpen() {
 		GenericButtonHandler.onOpen(this);

@@ -159,13 +159,48 @@ public class Score implements Serializable, Comparable<Score> {
 			);
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
-	public String toString() {
-		return "Score["+game+", "+group+", "+name+", "+medals+", "+points+", "+installation+"]";
-	}
+    public String toString() {
+	    StringBuilder builder = new StringBuilder();
+	    builder.append("Score [");
+	    if (name != null) {
+		    builder.append("name=");
+		    builder.append(name);
+		    builder.append(", ");
+	    }
+	    builder.append("points=");
+	    builder.append(points);
+	    builder.append(", installation=");
+	    builder.append(installation);
+	    builder.append(", ");
+	    if (game != null) {
+		    builder.append("game=");
+		    builder.append(game);
+		    builder.append(", ");
+	    }
+	    if (version != null) {
+		    builder.append("version=");
+		    builder.append(version);
+		    builder.append(", ");
+	    }
+	    builder.append("rank=");
+	    builder.append(rank);
+	    builder.append(", ");
+	    if (group != null) {
+		    builder.append("group=");
+		    builder.append(group);
+		    builder.append(", ");
+	    }
+	    if (medals != null) {
+		    builder.append("medals=");
+		    builder.append(medals);
+		    builder.append(", ");
+	    }
+	    builder.append("registered=");
+	    builder.append(registered);
+	    builder.append("]");
+	    return builder.toString();
+    }
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
@@ -241,6 +276,11 @@ public class Score implements Serializable, Comparable<Score> {
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
+
+	public void setVersion(String version) {
+	    this.version = version;
+    }
+
 	/**
 	 * @return Returns the group.
 	 */

@@ -1,0 +1,538 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Moon levels -->
+<resources>
+
+	<include resource="tags.xml"/>
+
+	<!-- Colors -->
+
+	<include resource="colours-moon.xml"/>
+
+
+
+	<!-- Roads -->
+	<array name="moon.roads">
+		<item>moon.road.0</item>
+		<item>moon.road.1</item>
+		<item>moon.road.2</item>
+		<item>moon.road.3</item>
+		<item>moon.road.4</item>
+		<item>moon.road.5</item>
+		<item>moon.road.6</item>
+		<item>moon.road.7</item>
+		<item>moon.road.8</item>
+		<item>moon.road.9</item>
+		<item>moon.road.10</item>
+		<item>moon.road.11</item>
+		<item>moon.road.12</item>
+		<item>moon.road.13</item>
+		<item>moon.road.14</item>
+		<item>moon.road.15</item>
+	</array>
+	
+	
+	<!-- Basic values for scenery -->
+	<scenery
+		name="moon.scenery.base"
+		minObstacles="10"
+		maxObstacles="25"
+		absMaxRuins="30"
+		maxRuins="10"
+		maxRuinClusters="20"
+		minRuinClusterSize="1.0"
+		maxRuinClusterSize="20.0"
+		roads="moon.roads"
+		randomRockyThreshold="0.1"
+	>
+		<ruins>
+			<array>	
+				<item>moon.ruin.2x1.01</item>
+				<item>moon.ruin.2x1.02</item>
+				<item>moon.ruin.2x1.03</item>
+				<item>moon.ruin.2x1.04</item>
+				<item>moon.ruin.2x1.05</item>
+				<item>moon.ruin.2x1.06</item>
+				<item>moon.ruin.2x2.02</item>
+				<item>moon.ruin.2x2.01</item>
+				<item>moon.ruin.2x2.03</item>
+				<item>moon.ruin.2x2.04</item>
+				<item>moon.ruin.2x2.05</item>
+				<item>moon.ruin.2x2.06</item>
+				<item>moon.ruin.2x2.07</item>
+				<item>moon.ruin.2x2.08</item>
+				<item>moon.ruin.2x2.09</item>
+				<item>moon.ruin.2x2.10</item>
+				<item>moon.ruin.3x2.04</item>
+				<item>moon.ruin.3x2.03</item>
+				<item>moon.ruin.3x2.02</item>
+				<item>moon.ruin.3x2.01</item>
+				<item>moon.ruin.4x2.01</item>
+				<item>moon.ruin.4x2.02</item>
+				<item>moon.ruin.4x2.03</item>
+				<item>moon.ruin.4x2.04</item>
+				<item>moon.ruin.4x2.05</item>
+				<item>moon.ruin.4x2.06</item>
+
+				<item>moon.craters.3x2.01</item>
+				<item>moon.craters.4x2.01</item>
+				<item>moon.craters.2x2.01</item>
+				<item>moon.craters.2x1.01</item>
+				<item>moon.craters.3x2.02</item>
+				<item>moon.craters.3x2.03</item>
+				<item>moon.craters.3x2.04</item>
+				<item>moon.craters.4x2.02</item>
+				<item>moon.craters.4x2.03</item>
+				<item>moon.craters.4x2.04</item>
+				<item>moon.craters.2x1.02</item>
+				<item>moon.craters.2x1.03</item>
+				<item>moon.craters.2x1.04</item>
+				<item>moon.craters.2x2.02</item>
+				<item>moon.craters.2x2.03</item>
+				<item>moon.craters.2x2.04</item>
+
+			</array>	
+		</ruins>
+	
+		<crystals>
+			<array>	
+				<item>crystal.2tone.small.1</item>
+				<item>crystal.2tone.small.2</item>
+				<item>crystal.2tone.small.3</item>
+				<item>crystal.2tone.small.4</item>
+				<item>crystal.2tone.small.5</item>
+				<item>crystal.2tone.small.6</item>	
+				<item>crystal.2tone.small.7</item>
+				<item>crystal.2tone.small.8</item>	
+				<item>crystal.2tone.medium.1</item>
+				<item>crystal.2tone.medium.2</item>
+				<item>crystal.2tone.medium.3</item>
+				<item>crystal.2tone.medium.4</item>
+				<item>crystal.2tone.medium.5</item>
+				<item>crystal.2tone.medium.6</item>
+				<item>crystal.2tone.medium.7</item>
+				<item>crystal.2tone.medium.8</item>
+				<item>crystal.2tone.large.1</item>
+				<item>crystal.2tone.large.2</item>
+				<item>crystal.2tone.large.3</item>
+				<item>crystal.2tone.large.4</item>
+				<item>crystal.2tone.large.5</item>
+				<item>crystal.2tone.large.6</item>
+				<item>crystal.2tone.large.7</item>
+				<item>crystal.2tone.large.8</item>
+			</array>	
+		</crystals>
+		
+		<obstacles>
+			<array>
+
+				<item>moon.obstacle.pod.1</item>
+				<item>moon.obstacle.pod.2</item>
+				<item>moon.obstacle.pod.3</item>
+				<item>moon.obstacle.pod.4</item>					
+				<item>moon.obstacle.pod.5</item>						
+				<item>moon.obstacle.pod.burning.1</item>
+				<item>moon.obstacle.pod.burning.2</item>
+				<item>moon.obstacle.pod.burning.3</item>
+				<item>moon.obstacle.pod.burning.4</item>					
+				<item>moon.obstacle.pod.burning.5</item>					
+				
+			</array>
+		</obstacles>
+		
+		<roadObstacles>
+			<array>
+				<!--  Only cars appear on roads as obstacles -->
+
+				<item>moon.obstacle.vehicle.1</item>
+				<item>moon.obstacle.vehicle.2</item>
+				<item>moon.obstacle.vehicle.3</item>
+				<item>moon.obstacle.vehicle.4</item>					
+				<item>moon.obstacle.vehicle.5</item>						
+				<item>moon.obstacle.vehicle.burning.1</item>
+				<item>moon.obstacle.vehicle.burning.2</item>
+				<item>moon.obstacle.vehicle.burning.3</item>
+				<item>moon.obstacle.vehicle.burning.4</item>					
+				<item>moon.obstacle.vehicle.burning.5</item>	
+						
+			</array>
+		</roadObstacles>
+	</scenery>
+
+
+	<scenery
+		name="moon.scenery.craters"
+		inherit="moon.scenery.base"
+		minObstacles="8"
+		maxObstacles="20"
+		absMaxRuins="20"
+		maxRuins="10"
+		maxRuinClusters="10"
+		minRuinClusterSize="1.0"
+		maxRuinClusterSize="10.0"
+		roads="moon.roads"
+		randomRockyThreshold="0.175"
+	>
+		<ruins>
+			<array>	
+				
+				<item>moon.ruin.2x1.01</item>
+				<item>moon.ruin.2x1.02</item>
+				<item>moon.ruin.2x1.03</item>
+				<item>moon.ruin.2x1.04</item>
+				<item>moon.ruin.2x1.05</item>
+				<item>moon.ruin.2x1.06</item>
+				<item>moon.ruin.2x2.02</item>
+				<item>moon.ruin.2x2.01</item>
+				<item>moon.ruin.2x2.03</item>
+				<item>moon.ruin.2x2.04</item>
+				<item>moon.ruin.2x2.05</item>
+				<item>moon.ruin.2x2.06</item>
+				<item>moon.ruin.2x2.07</item>
+				<item>moon.ruin.2x2.08</item>
+				<item>moon.ruin.2x2.09</item>
+				<item>moon.ruin.2x2.10</item>
+				
+				<item>moon.craters.3x2.01</item>
+				<item>moon.craters.4x2.01</item>
+				<item>moon.craters.2x2.01</item>
+				<item>moon.craters.2x1.01</item>
+				<item>moon.craters.3x2.02</item>
+				<item>moon.craters.3x2.03</item>
+				<item>moon.craters.3x2.04</item>
+				<item>moon.craters.4x2.02</item>
+				<item>moon.craters.4x2.03</item>
+				<item>moon.craters.4x2.04</item>
+				<item>moon.craters.2x1.02</item>
+				<item>moon.craters.2x1.03</item>
+				<item>moon.craters.2x1.04</item>
+				<item>moon.craters.2x2.02</item>
+				<item>moon.craters.2x2.03</item>
+				<item>moon.craters.2x2.04</item>
+
+				<item>moon.craters.3x2.01</item>
+				<item>moon.craters.4x2.01</item>
+				<item>moon.craters.2x2.01</item>
+				<item>moon.craters.2x1.01</item>
+				<item>moon.craters.3x2.02</item>
+				<item>moon.craters.3x2.03</item>
+				<item>moon.craters.3x2.04</item>
+				<item>moon.craters.4x2.02</item>
+				<item>moon.craters.4x2.03</item>
+				<item>moon.craters.4x2.04</item>
+				<item>moon.craters.2x1.02</item>
+				<item>moon.craters.2x1.03</item>
+				<item>moon.craters.2x1.04</item>
+				<item>moon.craters.2x2.02</item>
+				<item>moon.craters.2x2.03</item>
+				<item>moon.craters.2x2.04</item>
+
+				<item>moon.craters.3x2.01</item>
+				<item>moon.craters.4x2.01</item>
+				<item>moon.craters.2x2.01</item>
+				<item>moon.craters.2x1.01</item>
+				<item>moon.craters.3x2.02</item>
+				<item>moon.craters.3x2.03</item>
+				<item>moon.craters.3x2.04</item>
+				<item>moon.craters.4x2.02</item>
+				<item>moon.craters.4x2.03</item>
+				<item>moon.craters.4x2.04</item>
+				<item>moon.craters.2x1.02</item>
+				<item>moon.craters.2x1.03</item>
+				<item>moon.craters.2x1.04</item>
+				<item>moon.craters.2x2.02</item>
+				<item>moon.craters.2x2.03</item>
+				<item>moon.craters.2x2.04</item>
+	
+			</array>	
+		</ruins>
+	</scenery>
+
+	<character
+		name="moon.char"
+		animated="true"
+		color="moon.colormap:text"
+		boldColor="moon.colormap:text-bold"
+		left="true"
+		textSpeed="3"
+	>
+		<sounds>
+			<array>
+				<item>textBeep.buffer</item>
+			</array>
+		</sounds>
+	</character>
+	
+	<character
+		name="moon.intro.char"
+		inherit="moon.char"
+		textSpeed="2"
+	/>
+
+	<setting
+		name="moon.intro.setting"
+		worldIntro="true"
+		position="0,0"
+		size="320,320"
+	>
+		<background>
+			<layers scale="0.6175">
+				<sprite layer="-1"><animation><animation>
+					<offset x="2" y="2" d="0"/>
+					<frame i="spriteimage.map.moon.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>	
+		</background>
+		
+		<actor character="moon.char" 		 position="0,0" bounds="25,275,300,20" expand="down" />
+		<actor character="moon.intro.char"   position="0,0" bounds="25,33,280,60" expand="up" leading="1" />
+	
+	</setting>
+
+    
+	<!-- World definition -->
+	<world
+		name="moon.world"
+		untranslated="MOON"
+		title="=$world.moon.title"
+		base="building.moon.base"
+		setting="moon.intro.setting"
+		weaponSetting="moon.weapon.setting"
+		buildingSetting="moon.building.setting"
+		techSetting="moon.tech.setting"
+		stream="moon.stream"
+		survivalMaxType0="1"
+		survivalMaxType1="1"
+		survivalMaxType2="0"
+		survivalMaxType3="-1"
+		survivalMaxBoss="1"
+	>
+		
+		<story>
+			<char id="moon.char">=world.moon.intro1.text</char>
+			<char id="moon.intro.char">=world.moon.intro2.text</char>
+		</story>
+
+		<template>
+			<plainstemplate name="moon.template"
+				floor0="earth.floor.0"
+				floor1="earth.floor.1"
+				floor2="earth.floor.2"
+				floor3="earth.floor.3"				
+				floorTransitions="earth.transitions"
+				base="basepoint.1"
+				
+				wall="earth.walls"
+				internalWall="earth.internalWalls"
+				
+				midSpawn="spawnpoint.mid.moon"
+
+				minBlotchSize="3.0"
+				maxBlotchSize="16.0"
+				minBlotches="20"
+				maxBlotches="30"
+
+				minMainTunnelWidth="3.0"
+				maxMainTunnelWidth="12.0"
+				minSpawnTunnelWidth="3.0"
+				maxSpawnTunnelWidth="7.0"
+			/>
+		</template>
+		
+		<!-- Gidrahs -->
+		<gidrahs>
+			<array>
+				<item>gidrah.moon.01</item>
+				<item>gidrah.moon.02</item>
+				<item>gidrah.moon.03</item>
+			</array>
+		</gidrahs>
+		
+		<!-- Angry gidrahs -->
+		<angryGidrahs>
+			<array>
+				<item>angrygidrah.moon.01</item>
+				<item>angrygidrah.moon.02</item>
+				<item>angrygidrah.moon.03</item>
+			</array>
+		</angryGidrahs>
+	</world>
+	
+	<!-- Story settings -->
+
+	<setting
+		name="moon.setting.spec"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+140"/>
+					<scale xscale="1.1" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.moon.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+	<setting name="moon.general.setting" inherit="moon.setting.spec" position="0,30" >
+		<actor character="moon.custerd.char"	position="140,100" bounds="80,188,160,10" expand="up" />
+	</setting>
+
+	<setting name="moon.info.setting" inherit="moon.setting.spec">
+		<actor character="moon.custerd.info.char"	position="110,68" bounds="150,155,135,100" expand="up" />
+		<actor character="earth.info.crystals.char"	position="88,225" bounds="150,155,135,100" expand="up" fade="true"/>
+	</setting>
+
+	<setting name="moon.tech.setting" inherit="moon.setting.spec">
+		<actor character="moon.tech-left.char" 		position="55,79" 	bounds="115,130,150,25" expand="down" />
+		
+		<actor character="moon.tech.physics.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.biology.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.chemistry.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.efficiency.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.psychology.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.nuclear.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.explosives.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.textiles.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.automation.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.barometrics.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.optics.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.ballistics.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.robotics.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.forcefields.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.anatomy.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="moon.tech.extraction.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		
+		<actor character="moon.tech.ionisation.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.lithium.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.sodium.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.precision.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.advancedexplosives.char"	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.plastic.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.nanohardening.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.finetuning.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.droidbuff.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.nanotechnology.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.splitter.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.multibarrel.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.amplifiers.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.lasertech.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.shells.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.shielding.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.xrays.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		
+		<actor character="moon.tech.coffee.char" 				position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.grant.char" 				position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.reinforcements.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.strongercoffee.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.extrabarricades.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.extramines.char" 			position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="moon.tech.powerups.char" 				position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+	</setting>
+
+	<setting name="moon.gidrah.setting" inherit="moon.setting.spec">
+		<actor character="moon.tech-gidrah.char" 	position="260,70" bounds="55,120,144,25" expand="down" mirrored="true" />
+		<actor character="moon.custerd-gidrah.char" position="260,74" bounds="55,120,136,25" expand="down" mirrored="true" />
+
+		<actor character="moon.gidrah.01.char" 		position="108,195" bounds="185,165,111,110" expand="down" fade="true" />
+		<actor character="moon.gidrah.02.char" 		position="108,195" bounds="185,165,111,110" expand="down" fade="true" />
+		<actor character="moon.gidrah.03.char" 		position="108,195" bounds="185,165,111,110" expand="down" fade="true" />
+		<actor character="moon.angry.01.char" 		position="108,185" bounds="185,165,111,110" expand="down" fade="true" />
+		<actor character="moon.angry.02.char" 		position="108,185" bounds="185,165,111,118" expand="down" fade="true" />
+		<actor character="moon.angry.03.char" 		position="108,185" bounds="185,165,111,118" expand="down" fade="true" />
+	</setting>
+
+	<setting name="moon.building.setting" inherit="moon.setting.spec" >
+		<actor character="moon.custerd.char"	position="=225,$res.b.gen.pic.y" bounds="=160,$res.b.gen.y,135,10" expand="up" mirrored="true" />
+		<actor character="moon.tech.char" 		position="=215,$res.b.boff.pic.y" bounds="=$res.b.boff.x,$res.b.boff.y,$res.b.boff.w,10" expand="up" mirrored="true" />
+		
+		<actor character="moon.scanner.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="moon.reactor.char" 			position="=$res.b.pic.x,$res.b.pic.y+5" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="moon.battery.char" 			position="=$res.b.pic.x,$res.b.pic.y+20" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="moon.cooling.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="moon.warehouse.char" 		position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="moon.collector.char" 		position="=$res.b.pic.x,$res.b.pic.y+5" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="moon.barracks.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="moon.shieldgenerator.char" 	position="=$res.b.pic.x,$res.b.pic.y+$res.b.pic.shieldgen.o" 		bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="moon.autoloader.char" 		position="=$res.b.pic.x,$res.b.pic.y" 		bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+			
+		<actor character="moon.concrete.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="moon.steel.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="moon.moonium.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="moon.nanomesh.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+
+		<actor character="moon.mine.char" 				position="=$res.b.mine.pic.x,235" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="moon.clustermines.char" 		position="=$res.b.mine.pic.x,230" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="moon.blastmine.char" 		position="=$res.b.mine.pic.x,225" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="moon.decoy.char" 			position="=$res.b.mine.pic.x,215" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		
+		<actor character="moon.tangleweb.char" 		position="=$res.b.pic.x,$res.b.pic.y+15" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" 		expand="down" fade="true"/>
+		<actor character="moon.tankfactory.char" 		position="=$res.b.pic.x,$res.b.pic.y-20" 	bounds="=$res.b.x,$res.b.y-20,$res.b.w,$res.b.h" 	expand="down" fade="true"/>
+		<actor character="moon.repairdrones.char" 		position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h"		expand="down" fade="true"/>
+		<actor character="moon.scarecrow.char" 		position="=$res.b.pic.x,$res.b.pic.y" 		bounds="=$res.b.x,$res.b.y-10,$res.b.w,$res.b.h" 	expand="down" fade="true"/>
+		<actor character="moon.cloakingdevice.char" 	position="=$res.b.pic.x,$res.b.pic.y+$res.b.pic.cloak.o" 	bounds="=$res.b.x,$res.b.y-10,$res.b.w,$res.b.h"	expand="down" fade="true"/>
+	
+	</setting>
+
+	<setting name="moon.weapon.setting" inherit="moon.setting.spec" >
+		<actor character="moon.custerd-left.char" 	position="58,80" 	bounds="128,83,150,60" expand="down" />
+		<actor character="moon.tech-left.char" 		position="60,70" 	bounds="128,83,150,60" expand="down" />
+		
+		<actor character="moon.blaster.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="moon.factory.char" 		position="225,210" 	bounds="35,163,250,90"  expand="down" fade="true"/>
+		<actor character="moon.capacitor.char" 		position="225,210" 	bounds="35,163,250,90" expand="down" fade="true"/>
+		<actor character="moon.heavyblaster.char" 	position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="moon.shotgun.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="moon.multiblaster.char" 	position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="moon.blastcannon.char" 	position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="moon.assault.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="moon.rocket.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="moon.laser.char" 			position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="moon.disruptor.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>		
+	</setting>
+
+	<setting name="moon.level.10.setting" inherit="alert.setting.spec" >
+		<actor character="moon.boss.char" 			position="95,130" bounds="30,100,145,190" expand="down" fade="true" />
+		<actor character="moon.custerd.alert.char" 	position="260,55" bounds="188,145,113,20" expand="up" mirrored="true" />
+	</setting>
+	
+	
+	<include resource="levels-moon.xml"/>
+	
+</resources>

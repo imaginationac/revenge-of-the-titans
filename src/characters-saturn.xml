@@ -45,7 +45,7 @@
 	<widgetbackground name="saturn.human-speech-right.background" inherit="human-speech-right.background" color="saturn.colormap:bubble" insets="40,24,24,24" />		
 	<widgetbackground name="saturn.human-speech-left.background" inherit="human-speech-left.background" color="saturn.colormap:bubble" insets="28,24,40,24" />		
 	<widgetbackground name="saturn.info.background" inherit="info.background" color="saturn.colormap:bubble" insets="24,28,24,24" />	
-	<widgetbackground name="saturn.tech.background" inherit="info.background" color="saturn.colormap:bubble" insets="135,28,24,24" />	
+	<widgetbackground name="saturn.tech.background" inherit="info.background" color="saturn.colormap:bubble" insets="=$research.tech.inset.l,28,24,24" />	
 	<widgetbackground name="saturn.delivery.background" inherit="info.background" color="saturn.colormap:bubble" insets="145,28,24,24" />	
 
 
@@ -890,6 +890,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="saturn.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tankfactory.ground.01"/>				
+				<sprite layer="11" bottomColored="saturn.colormap:info-floor" topColored="saturn.colormap:info-building" image="spriteimage.info.tankfactory.01"/>
+				<sprite layer="12" image="spriteimage.info.tankfactory.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.tankfactory.top.01" colored="saturn.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -900,6 +905,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="saturn.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.repairdrones.ground.01"/>				
+				<sprite layer="11" bottomColored="saturn.colormap:info-floor" topColored="saturn.colormap:info-building" image="spriteimage.info.repairdrones.01"/>
+				<sprite layer="12" image="spriteimage.info.repairdrones.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.repairdrones.top.01" colored="saturn.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -910,6 +920,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="saturn.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.scarecrow.ground.01"/>				
+				<sprite layer="11" bottomColored="saturn.colormap:info-floor" topColored="saturn.colormap:info-building" image="spriteimage.info.scarecrow.01"/>
+				<sprite layer="12" image="spriteimage.info.scarecrow.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.scarecrow.top.01" colored="saturn.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -920,9 +935,15 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="saturn.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.cloakingdevice.ground.01"/>				
+				<sprite layer="11" bottomColored="saturn.colormap:info-floor" topColored="saturn.colormap:info-building" image="spriteimage.info.cloakingdevice.01"/>
+				<sprite layer="12" image="spriteimage.info.cloakingdevice.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.cloakingdevice.top.01" colored="saturn.colormap:info-alt" />
 			</layers>
 		</idleLayers>
-	</character>	
+	</character>
+	
 	
 	<!-- MINES ============================================================================================================================ -->
 	

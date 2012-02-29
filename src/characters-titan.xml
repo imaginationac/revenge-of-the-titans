@@ -45,7 +45,7 @@
 	<widgetbackground name="titan.human-speech-right.background" inherit="human-speech-right.background" color="titan.colormap:bubble" insets="40,24,24,24" />		
 	<widgetbackground name="titan.human-speech-left.background" inherit="human-speech-left.background" color="titan.colormap:bubble" insets="28,24,40,24" />		
 	<widgetbackground name="titan.info.background" inherit="info.background" color="titan.colormap:bubble" insets="24,28,24,24" />	
-	<widgetbackground name="titan.tech.background" inherit="info.background" color="titan.colormap:bubble" insets="135,28,24,24" />	
+	<widgetbackground name="titan.tech.background" inherit="info.background" color="titan.colormap:bubble" insets="=$research.tech.inset.l,28,24,24" />	
 	<widgetbackground name="titan.human-speech-bottom.background" inherit="human-speech-bottom.background" color="titan.colormap:bubble" insets="24,24,24,40" />
 	<widgetbackground name="titan.delivery.background" inherit="info.background" color="titan.colormap:bubble" insets="145,28,24,24" />	
 
@@ -1539,6 +1539,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tankfactory.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.tankfactory.01"/>
+				<sprite layer="12" image="spriteimage.info.tankfactory.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.tankfactory.top.01" colored="titan.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -1549,6 +1554,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.repairdrones.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.repairdrones.01"/>
+				<sprite layer="12" image="spriteimage.info.repairdrones.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.repairdrones.top.01" colored="titan.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -1559,6 +1569,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.scarecrow.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.scarecrow.01"/>
+				<sprite layer="12" image="spriteimage.info.scarecrow.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.scarecrow.top.01" colored="titan.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -1569,9 +1584,15 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="titan.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.cloakingdevice.ground.01"/>				
+				<sprite layer="11" bottomColored="titan.colormap:info-floor" topColored="titan.colormap:info-building" image="spriteimage.info.cloakingdevice.01"/>
+				<sprite layer="12" image="spriteimage.info.cloakingdevice.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.cloakingdevice.top.01" colored="titan.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
+	
 	
 
 	<!-- BARRICADES ============================================================================================================================ -->

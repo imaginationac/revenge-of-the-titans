@@ -44,7 +44,7 @@ import com.shavenpuppy.jglib.opengl.GLBaseTexture;
  */
 public class ImageBank extends Resource {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The texture name */
 	private String textureName;

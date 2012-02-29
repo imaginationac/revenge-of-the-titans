@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import org.lwjgl.util.Point;
 
 import worm.features.CaveTemplateFeature;
-import worm.features.LevelFeature;
 
 import com.shavenpuppy.jglib.algorithms.Bresenham;
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
@@ -55,8 +54,8 @@ public class CaveMapGenerator extends BaseMapGenerator {
 	 * @param level
 	 * @param levelFeature TODO
 	 */
-	public CaveMapGenerator(CaveTemplateFeature template, int level, int levelInWorld, LevelFeature levelFeature) {
-		super(template, level, levelInWorld, levelFeature);
+	public CaveMapGenerator(CaveTemplateFeature template, MapGeneratorParams mapGeneratorParams) {
+		super(template, mapGeneratorParams);
 
 		caveTemplate = template;
 	}

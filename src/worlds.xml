@@ -34,10 +34,10 @@
 <!-- Worlds -->
 <resources>
 
-	<include resource="levels-earth.xml"/>
-	<include resource="levels-moon.xml"/>
-	<include resource="levels-mars.xml"/>
-	<include resource="levels-saturn.xml"/>
-	<include resource="levels-titan.xml"/>
+	<include resource="world-earth.xml"/>
+	<include resource="world-moon.xml"/>
+	<include resource="world-mars.xml"/>
+	<include resource="world-saturn.xml"/>
+	<include resource="world-titan.xml"/>
 	
 </resources>

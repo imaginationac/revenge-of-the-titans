@@ -35,11 +35,16 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.net.URL;
 
-import org.lwjgl.opengl.*;
+import org.lwjgl.opengl.ContextCapabilities;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GLContext;
+import org.lwjgl.opengl.OpenGLException;
 import org.lwjgl.util.glu.GLU;
 import org.w3c.dom.Element;
 
-import com.shavenpuppy.jglib.*;
+import com.shavenpuppy.jglib.Image;
+import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.resources.ImageWrapper;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -55,7 +60,7 @@ import static org.lwjgl.util.glu.GLU.*;
  */
 public class GLTexture extends GLBaseTexture {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Resource data
@@ -88,9 +93,6 @@ public class GLTexture extends GLBaseTexture {
 
 	/** A source image */
 	protected transient Image image;
-
-	/** Any palette associated with the image */
-	protected transient Palette palette;
 
 	/** The width and height of the texture. 1D textures have no height */
 	protected transient int width, height;
@@ -204,8 +206,6 @@ public class GLTexture extends GLBaseTexture {
 				} else {
 					throw new IllegalArgumentException("BGRA image format is not supported.");
 				}
-			case Image.PALETTED:
-				return GL_COLOR_INDEX;
 			default:
 				throw new IllegalArgumentException("Unknown image format.");
 		}
@@ -272,8 +272,6 @@ public class GLTexture extends GLBaseTexture {
 			if (srcFormat == -1) {
 				srcFormat = decodeSourceFormat(textureImage);
 			}
-			palette = textureImage.getPalette();
-			assert !(srcFormat == Image.PALETTED && palette == null) : "No palette in image";
 
 			if (srcFormat == -1) {
 				srcFormat = dstFormat;
@@ -303,33 +301,7 @@ public class GLTexture extends GLBaseTexture {
 				case GL_ABGR_EXT :
 					elements = 4;
 					break;
-	/*			case GL11.GL_COLOR_INDEX:
-					elements = 1;
-					int paletteFormat;
-					switch (palette.getFormat()) {
-						case Palette.ABGR:
-							if (capabilities.GL_EXT_abgr)
-								paletteFormat = EXTAbgr.GL_ABGR_EXT;
-							else
-								throw new OpenGLException("ABGR is not a supported palette format");
-							break;
-						case Palette.ARGB:
-							throw new OpenGLException("ARGB is not a supported palette format");
-						case Palette.BGRA:
-							if (capabilities.GL_EXT_bgra)
-								paletteFormat = EXTBgra.GL_BGRA_EXT;
-							else
-								throw new OpenGLException("BGRA is not a supported palette format");
-							break;
-						case Palette.RGBA:
-							paletteFormat = GL11.GL_RGBA;
-							break;
-						default:
-							throw new OpenGLException("Unknown palette format "+palette.getFormat());
-					}
-					GL11.glColorTable(target, GL11.GL_RGBA, palette.getSize(), paletteFormat, GL11.GL_UNSIGNED_BYTE, palette.getBuffer());
-					break;
-	*/			default :
+				default :
 					throw new OpenGLException("Unknown format "+srcFormat);
 
 			}

@@ -31,14 +31,27 @@
  */
 package worm.features;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Anchor;
+import net.puppygames.applet.Bounded;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.Screen;
+import net.puppygames.applet.TickableObject;
 import net.puppygames.applet.effects.Effect;
 import net.puppygames.applet.effects.Emitter;
 
 import org.lwjgl.input.Mouse;
-import org.lwjgl.util.*;
+import org.lwjgl.util.Dimension;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableRectangle;
+import org.lwjgl.util.Rectangle;
 import org.w3c.dom.Element;
 
 import worm.Statistics;
@@ -47,7 +60,9 @@ import worm.animation.SimpleThingWithLayers;
 import worm.features.StoryFeature.ParagraphFeature;
 
 import com.shavenpuppy.jglib.Resources;
-import com.shavenpuppy.jglib.resources.*;
+import com.shavenpuppy.jglib.resources.Background;
+import com.shavenpuppy.jglib.resources.Data;
+import com.shavenpuppy.jglib.resources.Feature;
 import com.shavenpuppy.jglib.sprites.SimpleRenderer;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -213,12 +228,12 @@ public class SettingFeature extends Feature {
 			bounds.setBounds(x, y, w, h);
 			if (backgroundLayers != null && backgroundLayers.getSprites() != null) {
 				for (int i = 0; i < backgroundLayers.getSprites().length; i ++) {
-					backgroundLayers.getSprite(i).setLocation(x, y, 0.0f);
+					backgroundLayers.getSprite(i).setLocation(x, y);
 				}
 			}
 		}
 		@Override
-		protected void doSpawn() {
+		protected void doSpawnEffect() {
 			// Create area bg
 			if (bgFeature != null) {
 				bgInstance = new BGInstance(bgFeature.spawn());
@@ -339,10 +354,6 @@ public class SettingFeature extends Feature {
 		}
 
 		@Override
-		protected void doRender() {
-		}
-
-		@Override
 		protected void doTick() {
 			if (Mouse.isButtonDown(0)) {
 				if (!waitForMouse) {
@@ -373,8 +384,13 @@ public class SettingFeature extends Feature {
 		}
 
 		@Override
-		public boolean isActive() {
+		public boolean isEffectActive() {
 			return !done;
+		}
+
+		@Override
+		protected void render() {
+			// Nothing to render
 		}
 
 		@Override

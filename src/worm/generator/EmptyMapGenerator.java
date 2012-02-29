@@ -31,7 +31,6 @@
  */
 package worm.generator;
 
-import worm.features.LevelFeature;
 
 /**
  * No spawnpoints or rocks in Survival mode
@@ -44,8 +43,8 @@ public class EmptyMapGenerator extends BaseMapGenerator {
 	 * @param level
 	 * @param levelFeature TODO
 	 */
-	public EmptyMapGenerator(MapTemplate template, int level, int levelInWorld, LevelFeature levelFeature) {
-		super(template, level, levelInWorld, levelFeature);
+	public EmptyMapGenerator(MapTemplate template, MapGeneratorParams mapGeneratorParams) {
+		super(template, mapGeneratorParams);
 	}
 
 	@Override

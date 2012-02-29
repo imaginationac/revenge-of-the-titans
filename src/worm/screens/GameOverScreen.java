@@ -32,14 +32,17 @@
 package worm.screens;
 
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Area;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.Screen;
 import net.puppygames.applet.effects.LabelEffect;
 
 import org.lwjgl.input.Mouse;
 import org.lwjgl.util.ReadableColor;
 
-import worm.*;
 import worm.Res;
+import worm.Worm;
+import worm.WormGameState;
 
 import com.shavenpuppy.jglib.resources.MappedColor;
 
@@ -48,6 +51,8 @@ import com.shavenpuppy.jglib.resources.MappedColor;
  * The game over screen is shown when you is deaded
  */
 public class GameOverScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static GameOverScreen instance;
 
@@ -97,7 +102,7 @@ public class GameOverScreen extends Screen {
 		int delay = 30;
 
 
-		LabelEffect le = new LabelEffect(net.puppygames.applet.Res.getSmallFont(), "MISSION FAILED!", ReadableColor.WHITE, endColor, 180, END_OF_GAME_DURATION * 1000);
+		LabelEffect le = new LabelEffect(net.puppygames.applet.Res.getSmallFont(), Game.getMessage("ultraworm.gameover.mission_failed"), ReadableColor.WHITE, endColor, 180, END_OF_GAME_DURATION * 1000);
 		le.setLocation(Game.getWidth() / 2.0f, ypos);
 		le.setDelay(delay);
 		le.setSound(Res.getEndLevelBonusSound());
@@ -107,7 +112,7 @@ public class GameOverScreen extends Screen {
 		ypos -= 16.0f;
 		delay += 60;
 
-		LabelEffect le2 = new LabelEffect(net.puppygames.applet.Res.getTinyFont(), "BASE DESTROYED", ReadableColor.WHITE, endColor, 180, END_OF_GAME_DURATION * 1000);
+		LabelEffect le2 = new LabelEffect(net.puppygames.applet.Res.getTinyFont(), Game.getMessage("ultraworm.gameover.base_destroyed"), ReadableColor.WHITE, endColor, 180, END_OF_GAME_DURATION * 1000);
 		le2.setLocation(Game.getWidth() / 2.0f, ypos);
 		le2.setDelay(delay);
 		le2.setSound(Res.getEndLevelBonusSound());
@@ -129,10 +134,15 @@ public class GameOverScreen extends Screen {
 
 	@Override
 	protected void onClose() {
-		if (Worm.getGameState().getGameMode() == WormGameState.GAME_MODE_SURVIVAL) {
-			SurvivalEndGameScreen.show();
-		} else {
-			EndGameScreen.show();
+		switch (Worm.getGameState().getGameMode()) {
+			case WormGameState.GAME_MODE_SURVIVAL:
+				SurvivalEndGameScreen.show();
+				break;
+			case WormGameState.GAME_MODE_XMAS:
+				XmasEndGameScreen.show();
+				break;
+			default:
+				EndGameScreen.show();
 		}
 	}
 

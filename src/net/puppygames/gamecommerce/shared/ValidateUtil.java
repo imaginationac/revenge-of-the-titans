@@ -137,11 +137,9 @@ public final class ValidateUtil {
 	 * @return true if it's valid
 	 */
 	public static boolean isAddress(String address) {
-		int len = 0;
 		for (int i = 0; i < address.length(); i ++) {
 			char c = address.charAt(i);
 			if (Character.isLetterOrDigit(c)) {
-				len ++;
 				continue;
 			}
 			if (c == ' ') {
@@ -152,7 +150,7 @@ public final class ValidateUtil {
 			}
 			return false;
 		}
-		return true;
+		return address.length() > 0;
 	}
 
 

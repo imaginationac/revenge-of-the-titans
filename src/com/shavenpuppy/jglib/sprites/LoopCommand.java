@@ -42,7 +42,7 @@ import com.shavenpuppy.jglib.XMLResourceWriter;
  */
 public class LoopCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The loop count */
 	private int count;
@@ -58,7 +58,7 @@ public class LoopCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		target.setLoop(count);
 		target.setSequence(target.getSequence() + 1);
 		return true; // Always go immediately to the next command

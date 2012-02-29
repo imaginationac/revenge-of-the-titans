@@ -37,7 +37,6 @@ import java.util.Enumeration;
 
 /**
  * A utility class to check to see if the user is online.
- * @author foo
  */
 public final class CheckOnline {
 

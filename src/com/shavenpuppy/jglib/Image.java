@@ -30,7 +30,14 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package com.shavenpuppy.jglib;
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.Serializable;
 import java.nio.ByteBuffer;
 
 import com.shavenpuppy.jglib.resources.ImageWrapper;
@@ -39,7 +46,8 @@ import com.shavenpuppy.jglib.resources.ImageWrapper;
  */
 public class Image implements Serializable, ImageWrapper {
 
-	static final long serialVersionUID = 7L;
+	private static final long serialVersionUID = 8L;
+	private static final int MAGIC = 0x1234;
 
 	/** JPEG Compression interface */
 	public interface JPEGCompressor {
@@ -51,7 +59,7 @@ public class Image implements Serializable, ImageWrapper {
 		 * @return dest
 		 * @throws Exception
 		 */
-		public ByteBuffer compress(int width, int height, ByteBuffer src) throws Exception;
+		ByteBuffer compress(int width, int height, ByteBuffer src) throws Exception;
 	}
 
 	/** JPEG Decompression interface */
@@ -62,7 +70,7 @@ public class Image implements Serializable, ImageWrapper {
 		 * @param dest
 		 * @throws Exception
 		 */
-		public void decompress(ByteBuffer src, ByteBuffer dest) throws Exception;
+		void decompress(ByteBuffer src, ByteBuffer dest) throws Exception;
 	}
 
 
@@ -71,25 +79,6 @@ public class Image implements Serializable, ImageWrapper {
 
 	/** JPEG decompressor */
 	private static JPEGDecompressor decompressor;
-
-	/** The image data */
-	private transient WrappedBuffer wrappedData;
-	private transient ByteBuffer data;
-
-	/** The image dimensions */
-	private int width, height;
-
-	/** Image type */
-	private int type;
-
-	/** Use JPEG compressor on serialize/deserialize */
-	private boolean useJPEG;
-
-	/** Use delta-planar compression */
-	private boolean deltaPlanar;
-
-	/** Palette, if any */
-	private Palette palette;
 
 	/*
 	 * Supported image types.
@@ -108,20 +97,24 @@ public class Image implements Serializable, ImageWrapper {
 	public static final int ABGR = 5;
 	public static final int BGR = 6;
 	public static final int BGRA = 7;
-	public static final int PALETTED = 8;
 
 	/*
 	 * Maps types to pixel sizes in bytes
 	 */
-	private static final int[] typeToSize = new int[] {3,4,1,2,4,4,3,4,1};
+	private static final int[] TYPE_TO_SIZE = new int[] {3,4,1,2,4,4,3,4};
 
-//	/*
-//	 * Magic number
-//	 */
-//	private static final int MAGIC = 0xF00B;
-//	private static final int VERSION = 3;
-//
-//	private transient int numDisposed, numRead;
+	/** The image data */
+	private transient WrappedBuffer wrappedData;
+	private transient ByteBuffer data;
+
+	/** The image dimensions */
+	private transient int width, height;
+
+	/** Image type */
+	private transient int type;
+
+	/** Use JPEG compressor on serialize/deserialize */
+	private transient boolean useJPEG;
 
 	/**
 	 * Constructor for SpriteImage, used by serialization.
@@ -131,48 +124,45 @@ public class Image implements Serializable, ImageWrapper {
 	}
 
 	/**
-	 * Dispose of the data buffer and palette.
+	 * Dispose of the data buffer
 	 */
 	public void dispose() {
-//		System.out.println("Image "+this+" disposed "+(++numDisposed)+" times, read "+numRead+" times");
 		data = null;
-		palette = null;
 		wrappedData.dispose();
 	}
 
 	/**
-	 * Constructor for SpriteImage.
+	 * C'tor
+	 * @param width
+	 * @param height
+	 * @param type
 	 */
 	public Image(int width, int height, int type) {
 		this.width = width;
 		this.height = height;
 		this.type = type;
 
-		wrappedData = DirectBufferAllocator.allocate(width * height * typeToSize[type]);
+		wrappedData = DirectBufferAllocator.allocate(width * height * TYPE_TO_SIZE[type]);
 		data = wrappedData.getBuffer();
-		//data = ByteBuffer.allocateDirect(width * height * typeToSize[type]).order(ByteOrder.nativeOrder());
-		if (type == PALETTED) {
-			palette = new Palette(Palette.RGBA, 256);
-		}
 	}
 
 	/**
-	 * Constructor for SpriteImage.
+	 * C'tor
+	 * @param width
+	 * @param height
+	 * @param type
+	 * @param img
 	 */
 	public Image(int width, int height, int type, byte[] img) {
 		this.width = width;
 		this.height = height;
 		this.type = type;
 
-		assert width * height * typeToSize[type] == img.length : "Image is incorrect size.";
-		//data = ByteBuffer.allocateDirect(img.length).order(ByteOrder.nativeOrder());
+		assert width * height * TYPE_TO_SIZE[type] == img.length : "Image is incorrect size.";
 		wrappedData = DirectBufferAllocator.allocate(img.length);
 		data = wrappedData.getBuffer();
 		data.put(img);
 		data.flip();
-		if (type == PALETTED) {
-			palette = new Palette(Palette.RGBA, 256);
-		}
 	}
 
 	/**
@@ -188,13 +178,10 @@ public class Image implements Serializable, ImageWrapper {
 		this.height = height;
 		this.type = type;
 
-		assert width * height * typeToSize[type] == imageData.remaining() : "Image is incorrect size.";
+		assert width * height * TYPE_TO_SIZE[type] == imageData.remaining() : "Image is incorrect size.";
 		assert imageData.isDirect() : "Image must be stored in a direct byte buffer.";
 
 		data = imageData.slice();
-		if (type == PALETTED) {
-			palette = new Palette(Palette.RGBA, 256);
-		}
 	}
 
 
@@ -203,32 +190,41 @@ public class Image implements Serializable, ImageWrapper {
 	 * SpriteImage loader
 	 */
 	public static Image read(InputStream is) throws Exception {
-		return (Image) (new ObjectInputStream(is)).readObject();
-//		Image ret = new Image();
-//		ret.readExternal(new ObjectInputStream(is));
-//		return ret;
+		Image ret = new Image();
+		ret.readExternal(new DataInputStream(is));
+		return ret;
 	}
 
 	/**
 	 * SpriteImage writer
 	 */
 	public static void write(Image image, OutputStream os) throws Exception {
-		ObjectOutputStream oos = new ObjectOutputStream(os);
-		oos.writeObject(image);
-		oos.flush();
-		oos.reset();
+		image.writeExternal(os);
+	}
 
-//		image.writeExternal(oos);
-//		oos.flush();
-//		oos.reset();
+	public void writeExternal(OutputStream os) throws IOException {
+		DataOutputStream dos = new DataOutputStream(os);
+		doWrite(dos);
+		dos.flush();
 	}
 
 	private void writeObject(ObjectOutputStream stream) throws IOException {
 		stream.defaultWriteObject();
+		DataOutputStream dos = new DataOutputStream(stream);
+		doWrite(dos);
+		dos.flush();
+	}
+
+	private void doWrite(DataOutputStream stream) throws IOException {
+		stream.writeInt(MAGIC);
+		stream.writeInt(width);
+		stream.writeInt(height);
+		stream.writeInt(type);
+		stream.writeInt(useJPEG ? 1 : 0);
 
 		data.rewind();
 
-		if (useJPEG && hasAlpha() && typeToSize[type] == 4) {
+		if (useJPEG && hasAlpha() && TYPE_TO_SIZE[type] == 4) {
 			// Use special JPEG compression. First extract a 3byte BGR image from our source
 			ByteBuffer bgr = extractBGR();
 			// Compress it
@@ -245,7 +241,7 @@ public class Image implements Serializable, ImageWrapper {
 			// Extract the alpha
 			compressed = createAlphaDelta();
 			stream.write(compressed.array());
-		} else if (useJPEG && !hasAlpha() && typeToSize[type] == 3) {
+		} else if (useJPEG && !hasAlpha() && TYPE_TO_SIZE[type] == 3) {
 			// Use normal JPEG compression.
 			ByteBuffer compressed;
 			try {
@@ -257,29 +253,41 @@ public class Image implements Serializable, ImageWrapper {
 			stream.writeInt(compressed.capacity());
 			System.out.println("Compressed image to "+compressed.capacity()+" bytes, down from "+(width * height * 3));
 			stream.write(compressed.array());
-		} else if (deltaPlanar) {
-			// Use delta planar compression.
-			ByteBuffer split = splitIntoPlanes();
-			split.rewind();
-			stream.write(split.array());
 		} else {
 			byte[] buf = new byte[data.limit() - data.position()];
 			data.get(buf);
 			data.flip();
+			stream.writeInt(buf.length);
 			stream.write(buf);
 		}
 
 	}
 
-	private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-		stream.defaultReadObject();
+	public void readExternal(InputStream is) throws IOException {
+		DataInputStream stream = new DataInputStream(is);
+		int magic = stream.readInt();
+		if (magic != MAGIC) {
+			throw new IOException("Stream corrupt - expected magic number "+MAGIC+" but got "+magic);
+		}
+		width = stream.readInt();
+		if (width <= 0) {
+			throw new IOException("Illegal width: got "+width);
+		}
+		height = stream.readInt();
+		if (height <= 0) {
+			throw new IOException("Illegal height: got "+height);
+		}
+		type = stream.readInt();
+		if (type < 0 || type > 7) {
+			throw new IOException("Illegal type: got "+type);
+		}
+		useJPEG = stream.readInt() == 1;
 
-		int length = width * height * typeToSize[type];
+		int length = width * height * TYPE_TO_SIZE[type];
 		wrappedData = DirectBufferAllocator.allocate(length);
 		data = wrappedData.getBuffer();
-		//data = ByteBuffer.allocateDirect(length).order(ByteOrder.nativeOrder());
 
-		if (useJPEG && hasAlpha() && typeToSize[type] == 4) {
+		if (useJPEG && hasAlpha() && TYPE_TO_SIZE[type] == 4) {
 			// Use special JPEG decompression
 			int compressedSize = stream.readInt();
 			ByteBuffer compressed = ByteBuffer.allocate(compressedSize);
@@ -301,7 +309,7 @@ public class Image implements Serializable, ImageWrapper {
 			stream.readFully(buf);
 			alphaDelta.put(buf).flip();
 			mergeAlphaDelta(alphaDelta);
-		} else if (useJPEG && !hasAlpha() && typeToSize[type] == 3) {
+		} else if (useJPEG && !hasAlpha() && TYPE_TO_SIZE[type] == 3) {
 			// Use normal JPEG decompression
 			int compressedSize = stream.readInt();
 			ByteBuffer compressed = ByteBuffer.allocate(compressedSize);
@@ -317,20 +325,24 @@ public class Image implements Serializable, ImageWrapper {
 				throw new IOException("Failed to decompress: "+e.getMessage(), e);
 			}
 			data.rewind();
-		} else if (deltaPlanar) {
-			// Use normal delta-planar decompression
-			ByteBuffer deltaPlanes = ByteBuffer.allocateDirect(length);
-			byte[] buf = new byte[length];
-			stream.readFully(buf);
-			deltaPlanes.put(buf);
-			mergePlanes(deltaPlanes);
 		} else {
 			// Fast image read
+			int actualLength = stream.readInt();
+			if (actualLength != length) {
+				throw new IOException("Corrupt: expected length "+length+", but read "+actualLength+" from stream");
+			}
 			byte[] buf = new byte[length];
 			stream.readFully(buf);
 			data.put(buf);
 			data.flip();
 		}
+	}
+
+	private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+		stream.defaultReadObject();
+
+		DataInputStream dis = new DataInputStream(stream);
+		readExternal(dis);
 	}
 
 
@@ -439,98 +451,6 @@ public class Image implements Serializable, ImageWrapper {
 	}
 
 	/**
-	 * Splits the data up into separate planes
-	 * @returns a new ByteBuffer with the data in it
-	 */
-	private ByteBuffer splitIntoPlanes() {
-
-		ByteBuffer buf = ByteBuffer.allocate(data.capacity());
-
-		switch (type) {
-			case LUMINANCE:
-			case PALETTED:
-				buf.put(data);
-				return buf;
-
-			case LUMINANCE_ALPHA:
-				buf.position(buf.capacity() / 2);
-				ByteBuffer alpha = buf.slice();
-				buf.position(0);
-				for (int y = 0; y < height; y ++) {
-					int ol = 0, oa = 0, nl = 0, na = 0;
-					for (int x = 0; x < width; x ++) {
-						nl = data.get();
-						na = data.get();
-						buf.put((byte) (nl - ol));
-						alpha.put((byte) (na - oa));
-						ol = nl;
-						oa = na;
-					}
-				}
-				break;
-			case RGB:
-			case BGR:
-			{
-				buf.position(buf.capacity() / 3);
-				ByteBuffer buf1 = buf.slice();
-				buf.position(2 * buf.capacity() / 3);
-				ByteBuffer buf2 = buf.slice();
-				buf.position(0);
-				for (int y = 0; y < height; y ++) {
-					int o0 = 0, o1 = 0, o2 = 0, n0 = 0, n1 = 0, n2 = 0;
-					for (int x = 0; x < width; x ++) {
-						n0 = data.get();
-						n1 = data.get();
-						n2 = data.get();
-						buf.put((byte) (n0 - o0));
-						buf1.put((byte) (n1 - o1));
-						buf2.put((byte) (n2 - o2));
-						o0 = n0;
-						o1 = n1;
-						o2 = n2;
-					}
-				}
-			}
-			break;
-			case RGBA:
-			case ABGR:
-			case ARGB:
-			case BGRA:
-			{
-				buf.position(buf.capacity() / 4);
-				ByteBuffer buf1 = buf.slice();
-				buf.position(2 * buf.capacity() / 4);
-				ByteBuffer buf2 = buf.slice();
-				buf.position(3 * buf.capacity() / 4);
-				ByteBuffer buf3 = buf.slice();
-				buf.position(0);
-				for (int y = 0; y < height; y ++) {
-					int o0 = 0, o1 = 0, o2 = 0, o3 = 0, n0 = 0, n1 = 0, n2 = 0, n3 = 0;
-					for (int x = 0; x < width; x ++) {
-						n0 = data.get();
-						n1 = data.get();
-						n2 = data.get();
-						n3 = data.get();
-						buf.put((byte) (n0 - o0));
-						buf1.put((byte) (n1 - o1));
-						buf2.put((byte) (n2 - o2));
-						buf3.put((byte) (n3 - o3));
-						o0 = n0;
-						o1 = n1;
-						o2 = n2;
-						o3 = n3;
-					}
-				}
-			}
-			break;
-		}
-
-		data.rewind();
-
-		return buf;
-	}
-
-	/**
 	 * Return a delta-compressed alpha channel
 	 * @return alpha
 	 */
@@ -552,87 +472,6 @@ public class Image implements Serializable, ImageWrapper {
 			}
 		}
 		return buf;
-	}
-
-	/**
-	 * Merges the data from separate planes
-	 * @param buf The source data
-	 */
-	private void mergePlanes(ByteBuffer buf) {
-
-		buf.flip();
-
-		switch (type) {
-			case LUMINANCE:
-			case PALETTED:
-				data.put(buf);
-				return;
-
-			case LUMINANCE_ALPHA:
-				buf.position(buf.capacity() / 2);
-				ByteBuffer alpha = buf.slice();
-				buf.position(0);
-				for (int y = 0; y < height; y ++) {
-					int ol = 0, oa = 0;
-					for (int x = 0; x < width; x ++) {
-						ol += buf.get();
-						oa += alpha.get();
-						data.put((byte) ol);
-						data.put((byte) oa);
-					}
-				}
-				break;
-			case RGB:
-			case BGR:
-			{
-				buf.position(buf.capacity() / 3);
-				ByteBuffer buf0 = buf.slice();
-				buf.position(2 * buf.capacity() / 3);
-				ByteBuffer buf1 = buf.slice();
-				buf.position(0);
-				for (int y = 0; y < height; y ++) {
-					int o0 = 0, o1 = 0, o2 = 0;
-					for (int x = 0; x < width; x ++) {
-						o0 += buf.get();
-						o1 += buf0.get();
-						o2 += buf1.get();
-						data.put((byte) o0);
-						data.put((byte) o1);
-						data.put((byte) o2);
-					}
-				}
-			}
-				break;
-			case RGBA:
-			case ABGR:
-			case ARGB:
-			case BGRA:
-			{
-				buf.position(buf.capacity() / 4);
-				ByteBuffer buf0 = buf.slice();
-				buf.position(2 * buf.capacity() / 4);
-				ByteBuffer buf1 = buf.slice();
-				buf.position(3 * buf.capacity() / 4);
-				ByteBuffer buf2 = buf.slice();
-				buf.position(0);
-				for (int y = 0; y < height; y ++) {
-					int o0 = 0, o1 = 0, o2 = 0, o3 = 0;
-					for (int x = 0; x < width; x ++) {
-						o0 += buf.get();
-						o1 += buf0.get();
-						o2 += buf1.get();
-						o3 += buf2.get();
-						data.put((byte) o0);
-						data.put((byte) o1);
-						data.put((byte) o2);
-						data.put((byte) o3);
-					}
-				}
-			}
-				break;
-		}
-
-		data.flip();
 	}
 
 	/**
@@ -708,33 +547,8 @@ public class Image implements Serializable, ImageWrapper {
 		buffer.append(type);
 		buffer.append(", useJPEG=");
 		buffer.append(useJPEG);
-		buffer.append(", deltaPlanar=");
-		buffer.append(deltaPlanar);
-		buffer.append(", ");
-		if (palette != null) {
-			buffer.append("palette=");
-			buffer.append(palette);
-		}
 		buffer.append("]");
 		return buffer.toString();
-	}
-
-	/**
-	 * Returns the palette.
-	 * @return Palette
-	 */
-	public Palette getPalette() {
-		return palette;
-	}
-
-	/**
-	 * Sets the palette.
-	 * @param palette The palette to set
-	 */
-	public void setPalette(Palette palette) {
-		assert type == PALETTED : "Not a paletted image.";
-		assert palette != null : "Cannot set a null palette.";
-		this.palette = palette;
 	}
 
 	/**
@@ -745,14 +559,6 @@ public class Image implements Serializable, ImageWrapper {
 	 */
 	public void setUseJPEG(boolean useJPEG) {
 		this.useJPEG = useJPEG;
-	}
-
-	/**
-	 * Sets lossless compression method.
-	 * @param deltaPlanar true to use delta-planar compression
-	 */
-	public void setDeltaPlanar(boolean deltaPlanar) {
-		this.deltaPlanar = deltaPlanar;
 	}
 
 	/**
@@ -780,9 +586,6 @@ public class Image implements Serializable, ImageWrapper {
 		return type == LUMINANCE_ALPHA || type == RGBA || type == ARGB || type == ABGR || type == BGRA;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.ImageWrapper#getImage()
-	 */
 	@Override
 	public Image getImage() {
 		return this;

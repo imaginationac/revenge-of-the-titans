@@ -32,34 +32,86 @@
 
 package net.puppygames.applet;
 
-import java.io.*;
-import java.net.*;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.Transparency;
+import java.awt.color.ColorSpace;
+import java.awt.image.BufferedImage;
+import java.awt.image.ColorModel;
+import java.awt.image.ComponentColorModel;
+import java.awt.image.DataBuffer;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.nio.ByteBuffer;
 import java.rmi.Naming;
-import java.text.*;
-import java.util.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Properties;
+import java.util.StringTokenizer;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
-import net.puppygames.applet.effects.EffectFeature;
-import net.puppygames.applet.effects.SFX;
-import net.puppygames.applet.screens.*;
-import net.puppygames.gamecommerce.shared.*;
+import javax.imageio.ImageIO;
 
+import net.puppygames.applet.effects.SFX;
+import net.puppygames.applet.screens.BindingsScreen;
+import net.puppygames.applet.screens.TitleScreen;
+import net.puppygames.gamecommerce.shared.GameInfo;
+import net.puppygames.gamecommerce.shared.GameInfoServerRemote;
+import net.puppygames.gamecommerce.shared.RegistrationDetails;
+//import net.puppygames.steam.Steam;
+
+import org.lwjgl.BufferUtils;
 import org.lwjgl.LWJGLException;
+import org.lwjgl.LWJGLUtil;
 import org.lwjgl.Sys;
-import org.lwjgl.input.*;
-import org.lwjgl.openal.AL10;
-import org.lwjgl.opengl.*;
+import org.lwjgl.input.Controllers;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+import org.lwjgl.openal.AL;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.util.Rectangle;
 import org.lwjgl.util.Timer;
 
-import com.shavenpuppy.jglib.*;
+import com.shavenpuppy.jglib.IResource;
+import com.shavenpuppy.jglib.Image;
 import com.shavenpuppy.jglib.Image.JPEGDecompressor;
+import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.Resources;
+import com.shavenpuppy.jglib.Wave;
 import com.shavenpuppy.jglib.jpeg.JPEGDecoder;
 import com.shavenpuppy.jglib.openal.ALBuffer;
 import com.shavenpuppy.jglib.openal.ALStream;
-import com.shavenpuppy.jglib.resources.*;
+import com.shavenpuppy.jglib.resources.ClassLoaderResource;
+import com.shavenpuppy.jglib.resources.Data;
+import com.shavenpuppy.jglib.resources.DynamicResource;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.ResourceConverter;
+import com.shavenpuppy.jglib.resources.ResourceLoadedListener;
+import com.shavenpuppy.jglib.resources.StringArray;
+import com.shavenpuppy.jglib.resources.TextResource;
+import com.shavenpuppy.jglib.resources.TextWrapper;
 import com.shavenpuppy.jglib.sound.SoundEffect;
 import com.shavenpuppy.jglib.sound.SoundPlayer;
 import com.shavenpuppy.jglib.sprites.SoundCommand;
@@ -68,11 +120,10 @@ import com.shavenpuppy.jglib.util.Util;
 
 import static org.lwjgl.opengl.GL11.*;
 
+import static org.lwjgl.openal.AL10.*;
+
 /**
- * $Id: Game.java,v 1.56 2010/10/17 21:04:01 foo Exp $ Abstract base class for a "game"
- *
- * @author $Author: foo $
- * @version $Revision: 1.56 $
+ * The main Game class
  */
 public abstract class Game extends Feature {
 
@@ -82,10 +133,8 @@ public abstract class Game extends Feature {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String RESTORE_GAME_DIALOG_FEATURE = "restore_game.dialog";
-	private static final String SAVE_GAME_EFFECT_FEATURE = "save_game.effect";
 	private static final String DEFAULT_GAME_RESOURCE_NAME = "game.puppygames";
-	private static final String DEFAULT_USER_PREFS_FILENAME = "prefs.xml";
+	private static final String DEFAULT_ROAMING_PREFS_FILENAME = "prefs.xml";
 
 	public static final boolean DEBUG = false;
 	private static final boolean REGISTERED = false;
@@ -96,17 +145,14 @@ public abstract class Game extends Feature {
 	private static final boolean[] KEYDOWN = new boolean[Keyboard.KEYBOARD_SIZE];
 	private static final boolean[] KEYWASDOWN = new boolean[Keyboard.KEYBOARD_SIZE];
 
+	/** Mouse events */
+	private static final List<MouseEvent> MOUSEEVENTS = new ArrayList<MouseEvent>();
+
 	/** Restore filename */
 	protected static final String RESTORE_FILE = "restore.dat";
 
 	/** Force run even when not focused */
 	private static boolean alwaysRun;
-
-	/** Do the Buy page */
-	private static boolean doBuy;
-
-	/** Prevent the Buy page appearing */
-	private static boolean preventBuy;
 
 	/** Pause enabled */
 	private static boolean pauseEnabled = true;
@@ -136,22 +182,19 @@ public abstract class Game extends Feature {
 	private static boolean registered;
 
 	/** Unique installation number */
-	private static long installation;
+	protected static long installation;
 
-	/** Score group */
-	private static String scoreGroup;
+	/** Global Puppy Games preferences */
+	private static Preferences GLOBALPREFS;
 
-	/** Game preferences */
-	private static Preferences PREFS, GLOBALPREFS;
+	/** Local Puppy Games preferences */
+	private static Preferences LOCALPREFS;
+
+	/** Roaming game preferences */
+	private static Preferences ROAMINGPREFS;
 
 	/** Configuration */
-	private static Configuration configuration;
-
-	/** Games this session */
-	private static int playedThisSession;
-
-	/** Instructions shown? */
-	private static boolean shownInstructions;
+	protected static Configuration configuration;
 
 	/** Singleton */
 	private static Game game;
@@ -168,14 +211,14 @@ public abstract class Game extends Feature {
 	/** Music */
 	private static SoundEffect music;
 
+	/** Roaming files directory prefix */
+	private static String roamingDirPrefix;
+
 	/** Local files directory prefix */
-	private static String dirPrefix;
+	private static String localDirPrefix;
 
 	/** Stash the local log here */
 	private static String GAMEINFO_FILE;
-
-	/** Ticks played so far */
-	private static int playedTicks;
 
 	/** Music volume 0..100 */
 	private static int musicVolume;
@@ -183,26 +226,11 @@ public abstract class Game extends Feature {
 	/** Effects volume 0..100 */
 	private static int sfxVolume;
 
-	/** Initial display mode */
-	private static DisplayMode initialMode;
-
 	/** Display bounds */
 	private static Rectangle viewPort;
 
-	/** Game state */
-	private static GameState gameState;
-
-	/** Allow saving the game */
-	private static boolean allowSave = true;
-
-	/** Top screen */
-	public static Screen topScreen;
-
 	/** Game title */
 	private static String title;
-
-	/** Internal title, used for local prefs */
-	private static String internalTitle;
 
 	/** Version */
 	private static String version;
@@ -210,14 +238,11 @@ public abstract class Game extends Feature {
 	/** Internal version, used for local settings */
 	private static String internalVersion;
 
-	/** Restore game dialog */
-	private static DialogScreen restoreGameDialog;
+	/** Steam App ID */
+	private static int appID;
 
 	/** Current player slot */
 	private static PlayerSlot playerSlot;
-
-	/** Custom display mode */
-	private static boolean customDisplayMode;
 
 	/** Viewport offset */
 	private static int viewportXoffset, viewportYoffset, viewportWidth, viewportHeight;
@@ -230,6 +255,13 @@ public abstract class Game extends Feature {
 
 	/** Mod name */
 	private static String modName;
+
+	/** Frame mouse visibility */
+	private static boolean mouseVisible = true;
+
+	/** Current FPS */
+	private static final int[] FPS = new int[60];
+	private static int fps = 0, currentFPS = 60;
 
 	static {
 		Image.setDecompressor(new JPEGDecompressor() {
@@ -249,6 +281,9 @@ public abstract class Game extends Feature {
 	/*
 	 * Feature data
 	 */
+
+	/** Display title */
+	private String displayTitle;
 
 	/** Game dimensions */
 	private int width, height;
@@ -287,11 +322,16 @@ public abstract class Game extends Feature {
 	@Data
 	private String moreGamesURL = "www.puppygames.net";
 
+	/** Splash screen name (NOT mirrored by a transient Splash) */
+	@Data
+	private String splash = "splash.screen";
+
+	/** Window Icon */
+	@Data
+	private String icon;
+
 	/** Default to fullscreen */
 	private int defaultFullscreen = 0;
-
-	/** Don't allow remote hiscores */
-	private boolean dontUseRemoteHiscores;
 
 	/** Don't check for messages? */
 	private boolean dontCheckMessages;
@@ -300,13 +340,13 @@ public abstract class Game extends Feature {
 	private boolean useSlotManagement;
 
 	/** Sound voices */
-	private int soundVoices = 64;
-
-	/** Use variable window sizing */
-	private boolean useWindowSizing;
+	private int soundVoices = 32;
 
 	/** GUI scale in pixels */
 	private int scale;
+
+	/** Don't scale the game */
+	private boolean dontScale;
 
 	/** Preregistered? */
 	private boolean preregistered;
@@ -327,29 +367,32 @@ public abstract class Game extends Feature {
 	@Data
 	private String preregisteredLanguage;
 
+	/** Language 2-char code (en, de, etc) */
+	@Data
+	private String language = "en"; // Defaults to English
+
+	/** Default input mode */
+	private String defaultInputMode = InputDeviceType.DESKTOP.name();
+
 	/*
 	 * Transient data
 	 */
-
-	/** Window size */
-	private transient float windowSize;
 
 	private transient int panic;
 
 	private transient boolean wasGrabbed;
 
-	private transient boolean submitRemoteHiscores;
-
-	private transient int logicalWidth;
-
-	private transient int logicalHeight;
+	private transient int logicalWidth, logicalHeight;
 
 	private transient boolean catchUp;
 
 	private transient float masterGain, targetMasterGain;
 
+	/** Current input mode */
+	private transient InputDeviceType inputMode;
+
 	/** Prefs saver */
-	public static PrefsSaverThread prefsSaver;
+	private static PrefsSaverThread prefsSaver;
 
 	public static class PrefsSaverThread extends Thread {
 
@@ -425,7 +468,7 @@ public abstract class Game extends Feature {
 	/**
 	 * @return Returns the game.
 	 */
-	public static Game getGame() {
+    public static Game getGame() {
 		return game;
 	}
 
@@ -472,6 +515,13 @@ public abstract class Game extends Feature {
 	}
 
 	/**
+	 * @return Returns the display title.
+	 */
+	public static String getDisplayTitle() {
+		return game.displayTitle;
+	}
+
+	/**
 	 * @return Returns the version.
 	 */
 	public static String getVersion() {
@@ -491,6 +541,13 @@ public abstract class Game extends Feature {
 	public static String getWebsite() {
 		return game.website;
 	}
+
+	/**
+	 * @return the URL for more games
+	 */
+	public static String getMoreGamesURL() {
+	    return game.moreGamesURL;
+    }
 
 	/**
 	 * @return the download URL
@@ -522,6 +579,13 @@ public abstract class Game extends Feature {
 	}
 
 	/**
+	 * @return Returns the URL from where you can buy this game
+	 */
+	public static String getBuyURL() {
+	    return game.buyURL;
+    }
+
+	/**
 	 * @return Returns the configuration.
 	 */
 	public static Configuration getConfiguration() {
@@ -550,10 +614,17 @@ public abstract class Game extends Feature {
 	}
 
 	/**
-	 * @return Returns the game preferences.
+	 * @return Returns the local Puppygames preferences.
 	 */
-	public static Preferences getPreferences() {
-		return PREFS;
+	public static Preferences getLocalPreferences() {
+		return LOCALPREFS;
+	}
+
+	/**
+	 * @return Returns the roaming game preferences.
+	 */
+	public static Preferences getRoamingPreferences() {
+		return ROAMINGPREFS;
 	}
 
 	/**
@@ -593,10 +664,10 @@ public abstract class Game extends Feature {
 		}
 
 		boolean append = true;
-		File outFile = new File(dirPrefix + File.separator + fileName);
+		File outFile = new File(localDirPrefix + File.separator + fileName);
 		if (outFile.exists()) {
 			if (outFile.length() > 65535) {
-				outFile.renameTo(new File(dirPrefix + File.separator + fileName + ".old"));
+				outFile.renameTo(new File(localDirPrefix + File.separator + fileName + ".old"));
 				append = false;
 			}
 		}
@@ -631,18 +702,44 @@ public abstract class Game extends Feature {
 
 	}
 
+	private static void badDrivers() {
+		String message = ((TextWrapper) Resources.get("lwjglapplets.game.baddrivers")).getText().replace("[title]", getDisplayTitle());
+		Game.alert(message);
+		Support.doSupport("opengl");
+		exit();
+	}
+
 	/**
 	 * Initialise the game. This must be called <strong>outside</strong> of the AWT thread!
 	 * @param resourcesStream An InputStream for reading in a compiled resource data file, created by the JGLIB ResourceConverter
 	 * tool.
 	 * @throws Exception if the game fails to initialise correctly
 	 */
-	public static synchronized void init(Properties properties, InputStream resourcesStream) throws Exception {
+	public static void init(Properties properties, InputStream resourcesStream) throws Exception {
 		if (initialised) {
 			return;
 		}
 		initialised = true;
 		finished = false;
+
+		// Timer hack
+		@SuppressWarnings("unused")
+		Thread timerHack = new Thread() {
+			{
+				this.setDaemon(true);
+				this.start();
+			}
+
+			@Override
+            public void run() {
+				while (true) {
+					try {
+						Thread.sleep(Integer.MAX_VALUE);
+					} catch (InterruptedException ex) {
+					}
+				}
+			}
+		};
 
 		Game.properties = properties;
 
@@ -658,6 +755,41 @@ public abstract class Game extends Feature {
 		} else {
 			Game.internalVersion = Game.version;
 		}
+		TextResource steamID = ((TextResource) Resources.peek("steam_app_id"));
+		if (steamID != null) {
+			Game.appID = Integer.parseInt(steamID.getText().trim());
+		} else {
+			Game.appID = 0;
+		}
+
+		// Find the game we want
+		String gameResource;
+		try {
+			gameResource = System.getProperty("net.puppygames.applet.Game.gameResource", properties.getProperty("gameresource", DEFAULT_GAME_RESOURCE_NAME));
+		} catch (SecurityException e) {
+			e.printStackTrace(System.err);
+			gameResource = DEFAULT_GAME_RESOURCE_NAME;
+		}
+
+		System.out.println("Game resource: "+gameResource);
+		game = (Game) Resources.peek(gameResource);
+		if (game.displayTitle == null) {
+			game.displayTitle = title;
+		}
+		System.out.println(new Date() + " Game: " + title + " " + version + " ["+internalVersion+"]");
+
+//		// Maybe init Steam
+//		if (isUsingSteam()) {
+//			try {
+//				initSteam();
+//			} catch (Exception e) {
+//				e.printStackTrace(System.err);
+//				String message = ((TextWrapper) Resources.get("lwjglapplets.game.steamerror")).getText().replace("[title]", getTitle()); // Can't use display title yet
+//				Game.alert(message);
+//				exit();
+//			}
+//		}
+
 		// Initialise local filesystem
 		initFiles();
 
@@ -673,8 +805,6 @@ public abstract class Game extends Feature {
 			}
 		}
 
-		System.out.println(new Date() + " Game: " + title + " " + version + " ["+internalVersion+"]");
-
 		// Create preferences and determine / generate installation number
 		GLOBALPREFS = Preferences.userNodeForPackage(Game.class);
 		installation = GLOBALPREFS.getLong("installation", 0);
@@ -684,52 +814,56 @@ public abstract class Game extends Feature {
 		}
 		System.out.println("Serial " + installation);
 
+		// Local prefs are just that: local
+		LOCALPREFS = Preferences.userNodeForPackage(Game.class).node(title+" Local");
 
-		// Find the game we want
-		String gameResource;
-		try {
-			gameResource = System.getProperty("net.puppygames.applet.Game.gameResource", properties.getProperty("gameresource", DEFAULT_GAME_RESOURCE_NAME));
-		} catch (SecurityException e) {
-			e.printStackTrace(System.err);
-			gameResource = DEFAULT_GAME_RESOURCE_NAME;
-		}
 
-		System.out.println("Game resource: "+gameResource);
-		game = (Game) Resources.peek(gameResource);
-
-		// Load prefs from backup file
-		FileInputStream fis = null;
-		BufferedInputStream bis = null;
-		File prefsFile = new File(getUserPrefsFileName());
-		boolean zapPrefs = false;
+		// Load roaming prefs from backup file
+		ROAMINGPREFS = Preferences.userNodeForPackage(Game.class).node(title);
+		GameInputStream gis = null;
+		RoamingFile prefsFile = new RoamingFile(getRoamingPrefsFileName());
+		boolean zapPrefs = false, backupDone = false;
+		ByteArrayOutputStream baos = new ByteArrayOutputStream(1024 * 1024);
 		if (prefsFile.exists()) {
+			// Back up the prefs before we attempt to import it
+			writePrefs(baos);
+			backupDone = true;
 			try {
-				fis = new FileInputStream(prefsFile);
-				bis = new BufferedInputStream(fis);
-				Preferences.importPreferences(bis);
-				System.out.println("Loaded preferences file "+prefsFile);
+				gis = new GameInputStream(getRoamingPrefsFileName());
+				Preferences.importPreferences(gis);
+				if (DEBUG) {
+					System.out.println("Loaded preferences file "+getRoamingPrefsFileName());
+				}
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
 				zapPrefs = true;
 			} finally {
-				if (fis != null) {
+				if (gis != null) {
 					try {
-						fis.close();
+						gis.close();
 					} catch (IOException e) {
 					}
 				}
 			}
 		} else {
-			System.out.println("Preferences file "+prefsFile+" does not exist.");
+			System.out.println("Preferences file "+getRoamingPrefsFileName()+" does not exist.");
 			zapPrefs = true;
 		}
-		PREFS = Preferences.userNodeForPackage(Game.class).node(title);
 		if (zapPrefs) {
-			PREFS.removeNode();
-			PREFS.flush();
-			PREFS = null;
-			PREFS = Preferences.userNodeForPackage(Game.class).node(title);
-			doFlushPrefs();
+			try {
+				ROAMINGPREFS.removeNode();
+				ROAMINGPREFS.flush();
+				ROAMINGPREFS = null;
+				ROAMINGPREFS = Preferences.userNodeForPackage(Game.class).node(title);
+				// Restore backup
+				if (backupDone) {
+					Preferences.importPreferences(new ByteArrayInputStream(baos.toByteArray()));
+				}
+				doFlushPrefs();
+			} catch (Exception e) {
+				e.printStackTrace(System.err);
+				// Carry on anyway
+			}
 		}
 
 		prefsSaver = new PrefsSaverThread();
@@ -737,7 +871,7 @@ public abstract class Game extends Feature {
 
 
 		// Load or create configuration
-		byte[] cfg = PREFS.getByteArray("configuration", null);
+		byte[] cfg = LOCALPREFS.getByteArray("configuration", null);
 		if (cfg == null) {
 			// No configuration present so create a new one
 			createConfiguration();
@@ -762,23 +896,33 @@ public abstract class Game extends Feature {
 		checkRegistration();
 
 		// Check for bad exit last time (only caused by VM crashes or machine crashes)
-		boolean wasBadExit = PREFS.getBoolean("badexit", false);
+		boolean wasBadExit = LOCALPREFS.getBoolean("badexit", false);
 
 		// Initialise a gameinfo object so we can log things
 		gameInfo = new GameInfo(getTitle(), getVersion(), getInstallation(), wasBadExit, org.lwjgl.opengl.Display.getAdapter(), org.lwjgl.opengl.Display.getVersion(), configuration.encode());
 
-		System.out.println("Starting " + getTitle() + " " + getVersion());
+		System.out.println("Starting " + getTitle() + " " + getVersion()+" (language: "+game.language+")");
 
 		// If there was a bad exit, let's put up a message
 		if (wasBadExit && !DEBUG) {
-			Game.alert(getTitle() + " did not shut down correctly last time you tried to play.\n\nIf you are experiencing problems or bugs please " + ("".equals(getSupportEmail()) ? "visit " + getContactURL() : "contact " + getSupportEmail()) + "\nand tell us!");
+			String shutdownMessage;
+			if ("".equals(getSupportEmail())) {
+				shutdownMessage = ((TextWrapper) Resources.get("lwjglapplets.game.badexit.url.message")).getText().replace("[url]", getSupportURL());
+			} else {
+				shutdownMessage = ((TextWrapper) Resources.get("lwjglapplets.game.badexit.email.message")).getText().replace("[email]", getSupportEmail());
+			}
+			shutdownMessage = shutdownMessage.replace("[title]", getTitle());
+			Game.alert(shutdownMessage);
 			Support.doSupport("crash");
 		}
 
 		// Set the bad exit flag. The only way to clear it is to exit the game
 		// cleanly via the exit() method.
-		PREFS.putBoolean("badexit", true);
+		LOCALPREFS.putBoolean("badexit", true);
 		flushPrefs();
+
+		// Load DLC
+		loadDLC();
 
 		// Load mod if any is specified
 		loadMods();
@@ -792,7 +936,9 @@ public abstract class Game extends Feature {
 		try {
 			Controllers.create();
 		} catch (Exception e) {
-			System.err.println("No gamepads or joysticks enabled due to " + e);
+			if (DEBUG) {
+				System.err.println("No gamepads or joysticks enabled due to " + e);
+			}
 		}
 
 		// Initialise display
@@ -801,42 +947,57 @@ public abstract class Game extends Feature {
 		} catch (Exception e) {
 			e.printStackTrace(System.err);
 			gameInfo.setException(e);
-			Game.alert("You need to get new graphics card drivers in order to play " + getTitle() + ".\nPlease contact your system vendor for assistance.");
-			Support.doSupport("opengl");
-			exit();
+			badDrivers();
+		}
+
+		// Update gameinfo
+		try {
+			String glvendor = glGetString(GL_VENDOR);
+			String glrenderer = glGetString(GL_RENDERER);
+			String glversion = glGetString(GL_VERSION);
+			String gldriver = null;
+			int i = glversion.indexOf(' ');
+			if (i != -1) {
+				gldriver = glversion.substring(i + 1);
+				glversion = glversion.substring(0, i);
+			}
+			gameInfo.update(glvendor, glrenderer, glversion, gldriver, registrationDetails);
+			System.out.println("GL Vendor "+glvendor+", GL Renderer "+glrenderer+", GL Version "+glversion+", "+(gldriver != null ? "GL Driver "+gldriver : ""));
+		} catch (Exception e) {
+			e.printStackTrace(System.err);
+			badDrivers();
+			return;
 		}
 
 		// Show the splash screen
-		Display.setVSyncEnabled(false);
-		Splash splash = Splash.getInstance();
-		if (splash != null) {
+		//Display.setVSyncEnabled(false);
+		Splash splashInstance = Resources.peek(game.splash);
+		if (splashInstance != null) {
 			try {
-				splash.create();
+				splashInstance.create();
+				Resources.setCreatingCallback(splashInstance);
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
-				splash = null;
+				splashInstance = null;
+				badDrivers();
+				return;
 			}
 		}
 
 		// Autocreate features
 		SFX.createSFX();
-		Res.createResources();
-		Feature.autoCreate();
+		try {
+			Res.createResources();
+			Feature.autoCreate();
+		} catch (Exception e) {
+			e.printStackTrace(System.err);
+			gameInfo.setException(e);
+			badDrivers();
+			return;
+		}
 
 		// We're in Run Mode now
 		Resources.setRunMode(true);
-
-		// Update gameinfo
-		String glvendor = glGetString(GL_VENDOR);
-		String glrenderer = glGetString(GL_RENDERER);
-		String glversion = glGetString(GL_VERSION);
-		String gldriver = null;
-		int i = glversion.indexOf(' ');
-		if (i != -1) {
-			gldriver = glversion.substring(i + 1);
-			glversion = glversion.substring(0, i);
-		}
-		gameInfo.update(glvendor, glrenderer, glversion, gldriver, registrationDetails);
 
 		// Force sleep?
 		forceSleep = properties.getProperty("sleep", Runtime.getRuntime().availableProcessors() > 1 ? "false" : "true").equalsIgnoreCase("true");
@@ -844,20 +1005,24 @@ public abstract class Game extends Feature {
 		// Finally, create the game
 		game.create();
 
+		// Init input mode
+		initInput();
+
 		// Load keyboard bindings
 		loadBindings();
 
 		// That's enough of the loading screen...
-		if (splash != null) {
-			splash.destroy();
-			splash = null;
+		if (splashInstance != null) {
+			Resources.setCreatingCallback(null);
+			splashInstance.destroy();
+			splashInstance = null;
 		}
 
 		initVsync();
 
 		// If slot managed, read current slot:
 		if (isSlotManaged()) {
-			String slotName = PREFS.get("slot_"+getInternalVersion(), null);
+			String slotName = ROAMINGPREFS.get("slot_"+getInternalVersion(), null);
 			if (slotName != null) {
 				PlayerSlot slot = new PlayerSlot(slotName);
 				if (slot.exists()) {
@@ -873,17 +1038,16 @@ public abstract class Game extends Feature {
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
 
+		game.onInit();
+
 		// Show title screen or registration screen as appropriate
 		if (!isRegistered() || TESTREGISTER) {
-			showRegisterScreen();
+			unregisteredStartup();
 		} else if (REGISTERED || game.preregistered) {
 			preRegisteredStartup();
 		} else {
-			showTitleScreen();
+			registeredStartup();
 		}
-
-		// Remote hiscores?
-		game.submitRemoteHiscores = PREFS.getBoolean("submitremotehiscores", !game.dontUseRemoteHiscores);
 
 		// Now run!
 		resourcesStream.close();
@@ -894,9 +1058,15 @@ public abstract class Game extends Feature {
 			System.err.println("Set exception to " + t + " : " + t.getMessage()+" Stack trace follows:");
 			t.printStackTrace(System.err);
 			gameInfo.setException(t);
-		} finally {
-			exit();
 		}
+
+		exit();
+	}
+
+	/**
+	 * Called by {@link #init(Properties, InputStream)} just before we show any screens and start running the game
+	 */
+	protected void onInit() {
 	}
 
 	/**
@@ -907,15 +1077,39 @@ public abstract class Game extends Feature {
 	}
 
 	protected void onPreRegisteredStartup() {
-		// Default behaviour, just open the title screen
-		showTitleScreen();
+	}
+
+	private static void unregisteredStartup() {
+		game.onUnregisteredStartup();
+	}
+
+	protected void onUnregisteredStartup() {
+	}
+
+	private static void registeredStartup() {
+		game.onRegisteredStartup();
+	}
+
+	protected void onRegisteredStartup() {
 	}
 
 	/**
-	 * Get the local app settings dir
+	 * Get the roaming app settings dir
 	 * @return String
 	 */
-	private static String getSettingsDir() {
+//	private static String getRoamingSettingsDir() {
+//		if (isUsingSteamCloud()) {
+//			return "";
+//		} else {
+//			return getLocalSettingsDir();
+//		}
+//	}
+
+	/**
+	 * Get the local settings dir
+	 * @return String
+	 */
+	private static String getLocalSettingsDir() {
 		return
 			properties.getProperty
 				(
@@ -929,24 +1123,34 @@ public abstract class Game extends Feature {
 	}
 
 	/**
-	 * Get the directory prefix
-	 * @return the directory prefix for "global" local settings, for all slots (includes trailing slash)
+	 * Get the directory prefix for roaming files (includes trailing slash); these may be stored locally
+	 * @return String
 	 */
-	public static String getDirectoryPrefix() {
-		return dirPrefix;
+	public static String getRoamingDirectoryPrefix() {
+		return roamingDirPrefix;
 	}
+
+	/**
+	 * Get the directory prefix for local files (includes trailing slash)
+	 * @return String
+	 */
+	public static String getLocalDirPrefix() {
+	    return localDirPrefix;
+    }
 
 	/**
 	 * Get the player directory prefix
 	 * @return the directory prefix for the current player's "slot" local settings (includes trailing slash)
 	 */
 	public static String getPlayerDirectoryPrefix() {
-		String ret = dirPrefix + "slots_" + getInternalVersion() + File.separator + playerSlot.getName();
+		String ret = getRoamingDirectoryPrefix() + "slots_" + getInternalVersion() + File.separator + playerSlot.getName();
 		// Lazy creation
-		File f = new File(ret);
-		if (!f.exists()) {
-			f.mkdirs();
-		}
+//		if (!isUsingSteamCloud()) {
+//			File f = new File(ret);
+//			if (!f.exists()) {
+//				f.mkdirs();
+//			}
+//		}
 		return ret + File.separator;
 	}
 
@@ -955,7 +1159,7 @@ public abstract class Game extends Feature {
 	 * @return the directory prefix for all the player slots (includes trailing slash)
 	 */
 	public static String getSlotDirectoryPrefix() {
-		String ret = dirPrefix + "slots_" + getInternalVersion();
+		String ret = getRoamingDirectoryPrefix() + "slots_" + getInternalVersion();
 		// Lazy creation
 		File f = new File(ret);
 		if (!f.exists()) {
@@ -964,41 +1168,49 @@ public abstract class Game extends Feature {
 		return ret + File.separator;
 	}
 
+	/**
+	 * Initialise all the file paths we need (local and roaming directories and prefixes)
+	 */
 	private static void initFiles() {
-		boolean dirPrefixExists;
-		String settingsDirName = getSettingsDir() + File.separator + "." + getTitle().replace(' ', '_').toLowerCase() + '_' + getInternalVersion();
-		System.out.println("settingsDirName="+settingsDirName);
-		File settingsDir = new File(settingsDirName);
-		if (!settingsDir.exists()) {
-			System.out.println("Creating settingsDir: "+settingsDirName);
-			settingsDir.mkdirs();
-			dirPrefixExists = settingsDir.exists();
-		} else {
-			dirPrefixExists = true;
-		}
-		dirPrefix = dirPrefixExists ? settingsDirName + File.separator : getSettingsDir() + File.separator;
-		System.out.println("dirPrefix="+dirPrefix);
-		GAMEINFO_FILE = dirPrefix + "log.dat";
-	}
+		boolean remoteDirPrefixExists;
+		String remoteSettingsDirName = getRoamingSettingsDir() + File.separator + "." + getTitle().replace(' ', '_').toLowerCase() + '_' + getInternalVersion();
+		System.out.println("Roaming settings dir name="+remoteSettingsDirName);
+//		if (!isUsingSteamCloud()) {
+                File settingsDir = new File(remoteSettingsDirName);
+                if (!settingsDir.exists()) {
+                        System.out.println("Creating roaming settings dir: "+remoteSettingsDirName);
+                        settingsDir.mkdirs();
+                        remoteDirPrefixExists = settingsDir.exists();
+                } else {
+                        remoteDirPrefixExists = true;
+                }
+//		} else {
+//			remoteDirPrefixExists = true;
+//		}
 
-	/**
-	 * Write tix out so we can count how long the player has played for
-	 */
-	private static void writeTix() {
-		// Write tix
-		int tix = PREFS.getInt("tix", 0);
-		int newTix = playedTicks / getFrameRate();
-		tix += newTix;
-		playedTicks = 0;
-		gameInfo.addTime(newTix);
-		PREFS.putInt("tix", tix);
-	}
+		boolean localDirPrefixExists;
+		String localSettingsDirName = getLocalSettingsDir() + File.separator + "." + getTitle().replace(' ', '_').toLowerCase() + '_' + getInternalVersion();
+		System.out.println("Local settings dir name="+localSettingsDirName);
+//		if (!isUsingSteamCloud()) {
+                File localSettingsDir = new File(localSettingsDirName);
+                if (!localSettingsDir.exists()) {
+                        System.out.println("Creating local settings dir: "+localSettingsDirName);
+                        localSettingsDir.mkdirs();
+                        localDirPrefixExists = localSettingsDir.exists();
+                } else {
+                        localDirPrefixExists = true;
+                }
+//		} else {
+//			localDirPrefixExists = true;
+//		}
 
-	/**
-	 * Call this every frame that the game is being played.
-	 */
-	public static void onTicked() {
-		playedTicks++;
+
+		localDirPrefix = localDirPrefixExists ? localSettingsDirName + File.separator : getRoamingSettingsDir() + File.separator;
+		roamingDirPrefix = remoteDirPrefixExists ? remoteSettingsDirName + File.separator : getRoamingSettingsDir() + File.separator;
+
+		System.out.println("Local dir prefix="+localDirPrefix);
+		System.out.println("Roaming dir prefix="+roamingDirPrefix);
+		GAMEINFO_FILE = localDirPrefix + "log.dat";
 	}
 
 	/**
@@ -1006,7 +1218,6 @@ public abstract class Game extends Feature {
 	 * GameInfo, and send it to the server. If we're offline or unsuccessful we'll write it to disk for a rainy day. The log is
 	 * deleted once it's sent successfully.
 	 */
-	@SuppressWarnings("unchecked")
 	private static void writeLog() {
 		if (gameInfo == null) {
 			System.out.println("No game info log");
@@ -1018,7 +1229,7 @@ public abstract class Game extends Feature {
 		}
 
 		// Find and load any existing log
-		File log = new File(getSettingsDir() + File.separator + GAMEINFO_FILE);
+		File log = new File(getLocalSettingsDir() + File.separator + GAMEINFO_FILE);
 		List<GameInfo> logList = null;
 		if (log.exists()) {
 			ObjectInputStream ois = null;
@@ -1065,7 +1276,7 @@ public abstract class Game extends Feature {
 		}
 		if (gameInfo != null) {
 			// Update gameInfo
-			writeTix();
+			game.updateLog();
 			logList.add(gameInfo);
 		}
 
@@ -1125,90 +1336,9 @@ public abstract class Game extends Feature {
 	}
 
 	/**
-	 * Clear the buy flag
+	 * Update the log with any information before writing it
 	 */
-	public static void clearBuy() {
-		preventBuy = true;
-	}
-
-	/**
-	 * Show the "More Games" URL
-	 */
-	public static void showMoreGames() {
-		preventBuy = true;
-		Runtime.getRuntime().addShutdownHook(new Thread() {
-			@Override
-			public void run() {
-				try {
-					String page;
-					PREFS.putBoolean("showregister", true);
-					if (Resources.exists("moregames_url")) {
-						TextResource tr = (TextResource) Resources.get("moregames_url");
-						page = tr.getText();
-					} else if (game.moreGamesURL != null && !"".equals(game.moreGamesURL)) {
-						page = game.moreGamesURL;
-					} else if (!System.getProperty("moregames_url", "!").equals("!")) {
-						page = System.getProperty("moregames_url");
-					} else {
-						page = "http://" + getWebsite();
-					}
-					if (!Sys.openURL(page)) {
-						throw new Exception("Failed to open URL "+page);
-					}
-				} catch (Exception e) {
-					e.printStackTrace(System.err);
-					Game.alert("Please open your web browser on the page http://" + getWebsite());
-				}
-			}
-		});
-		exit();
-	}
-
-	/**
-	 * Buy the game
-	 */
-	public static void buy(boolean doExit) {
-		if (!doBuy) {
-			doBuy = true;
-			Runtime.getRuntime().addShutdownHook(new Thread() {
-				@Override
-				public void run() {
-					if (isRegistered() || preventBuy) {
-						return;
-					}
-					PREFS.putBoolean("showregister", true);
-					try {
-						String page;
-						if (Resources.exists("buy_url")) {
-							TextResource tr = (TextResource) Resources.get("buy_url");
-							page = tr.getText();
-						} else if (game.buyURL != null && !"".equals(game.buyURL)) {
-							page = game.buyURL;
-						} else if (!System.getProperty("buy_url", "!").equals("!")) {
-							page = System.getProperty("buy_url");
-						} else {
-							page = "http://" + getWebsite() + "/purchase/buy.php?game=" + URLEncoder.encode(getTitle(), "utf-8") + "&configuration=" + URLEncoder.encode(configuration.encode(), "utf-8") + "@installation@";
-						}
-						String replacement = "&installation=" + URLEncoder.encode(String.valueOf(installation), "utf-8");
-						int idx = page.indexOf("@installation@");
-						if (idx != -1) {
-							StringBuilder sb = new StringBuilder(page);
-							sb.replace(idx, idx + 14, replacement);
-							page = sb.toString();
-						}
-						if (!Sys.openURL(page)) {
-							throw new Exception("Failed to open URL "+page);
-						}
-					} catch (Exception e) {
-						e.printStackTrace(System.err);
-						Game.alert("Please open your web browser on the page http://" + getWebsite());
-					}
-				}
-			});
-		}
-		if (doExit) {
-			exit();
-		}
+	protected void updateLog() {
 	}
 
 	public static void requestExit() {
@@ -1223,7 +1353,7 @@ public abstract class Game extends Feature {
 	/**
 	 * Exit the program
 	 */
-	public static synchronized void exit() {
+	public static void exit() {
 		if (!initialised) {
 			return;
 		}
@@ -1248,19 +1378,18 @@ public abstract class Game extends Feature {
 
 		// If we got here, it's because of a nice clean exit. We'll clear the
 		// bad exit flag.
-		if (PREFS != null) {
-			PREFS.putBoolean("badexit", false);
+		if (LOCALPREFS != null) {
+			LOCALPREFS.putBoolean("badexit", false);
 		}
 		if (prefsSaver != null) {
 			prefsSaver.finish();
 			prefsSaver = null;
 		}
 
-		// And nag :)
-		if (game != null && !preventBuy) {
-			buy(false);
-		}
 
+//		Steam.destroy();
+		AL.destroy();
+		Display.destroy();
 		System.exit(0);
 	}
 
@@ -1354,7 +1483,7 @@ public abstract class Game extends Feature {
 	public static void playMusic(ALStream buf, int fade, float gain) {
 		// Maybe don't do anything
 		if (music == null && buf == null || music != null && (music.getStream() == null || buf == music.getStream().getSourceStream())) {
-			if (music != null) {
+			if (music != null && music.getStream() != null) {
 				music.setFade(fade + 1, gain * music.getStream().getSourceStream().getGain() * musicVolume / 100.0f, false, Game.class);
 			}
 			return;
@@ -1451,15 +1580,17 @@ public abstract class Game extends Feature {
 			soundPlayer = new SoundPlayer(game.soundVoices);
 			soundPlayer.create();
 			SoundCommand.setDefaultSoundPlayer(soundPlayer);
-			musicVolume = PREFS.getInt("musicvolume", 70);
-			sfxVolume = PREFS.getInt("sfxvolume", 70);
+			musicVolume = LOCALPREFS.getInt("musicvolume", 70);
+			sfxVolume = LOCALPREFS.getInt("sfxvolume", 70);
 
 			music = null;
 		} catch (Exception e) {
 			sfxEnabled = false;
 			musicEnabled = false;
 			e.printStackTrace();
-			Game.alert("You need a sound card to to hear the sound effects and music in " + getTitle() + ".\n\nYou may have a suitable card but not have appropriate drivers.\n\nPlease contact " + getSupportEmail() + " for assistance or visit our website if you need help finding drivers for your sound card.");
+			String message = ((TextWrapper) Resources.get("lwjglapplets.game.badsound")).getText().replace("[title]", getDisplayTitle());
+			message = message.replace("[email]", getSupportEmail());
+			Game.alert(message);
 			Support.doSupport("openal");
 			if (org.lwjgl.openal.AL.isCreated()) {
 				org.lwjgl.openal.AL.destroy();
@@ -1467,44 +1598,110 @@ public abstract class Game extends Feature {
 		}
 	}
 
+	private static ByteBuffer imageToBuffer(BufferedImage src, int size) {
+		ColorModel ccm = new ComponentColorModel(ColorSpace.getInstance(ColorSpace.CS_LINEAR_RGB), true, false, Transparency.TRANSLUCENT, DataBuffer.TYPE_BYTE);
+		ByteBuffer ret = BufferUtils.createByteBuffer(size * size * 4);
+		BufferedImage scaledImage = new BufferedImage(ccm, ccm.createCompatibleWritableRaster(size, size), false, null);
+		Graphics2D g2d = (Graphics2D) scaledImage.getGraphics();
+		g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+		g2d.drawImage(src, 0, 0, size, size, null);
+		g2d.dispose();
+		byte[] data = (byte[]) scaledImage.getData().getDataElements(0, 0, size, size, new byte[size * size * 4]);
+		ret.put(data);
+		ret.rewind();
+		return ret;
+	}
+
+	/**
+	 * Creates the AWT display
+	 * @throws LWJGLException
+	 */
+	private static void createDisplay() throws LWJGLException {
+		// Load window size from prefs, or choose something sensible based on initial desktop display resolution
+		setWindowSizeFromPreferences();
+
+		Display.setResizable(true);
+		try {
+	        BufferedImage iconImage = ImageIO.read(Thread.currentThread().getContextClassLoader().getResource(game.icon));
+			ByteBuffer[] imageBuffer = null;
+			switch (LWJGLUtil.getPlatform()) {
+				case LWJGLUtil.PLATFORM_WINDOWS:
+					// Create 16x16 and 32x32 icons, as well as the original one
+					imageBuffer = new ByteBuffer[3];
+					imageBuffer[0] = imageToBuffer(iconImage, iconImage.getWidth());
+					imageBuffer[1] = imageToBuffer(iconImage, 16);
+					imageBuffer[2] = imageToBuffer(iconImage, 32);
+					break;
+				case LWJGLUtil.PLATFORM_MACOSX:
+					// One 128x128 icon
+					imageBuffer = new ByteBuffer[1];
+					imageBuffer[0] = imageToBuffer(iconImage, 128);
+					break;
+				case LWJGLUtil.PLATFORM_LINUX:
+					// One 32x32 icon
+					imageBuffer = new ByteBuffer[1];
+					imageBuffer[0] = imageToBuffer(iconImage, 32);
+					break;
+			}
+
+			if (imageBuffer != null) {
+				Display.setIcon(imageBuffer);
+			}
+		} catch (IOException e) {
+			e.printStackTrace(System.err);
+		}
+		Display.setTitle(getDisplayTitle());
+		Display.create();
+	}
+
+	private static void setWindowSizeFromPreferences() throws LWJGLException {
+		int desktopWidth = Display.getDesktopDisplayMode().getWidth();
+		int desktopHeight = Display.getDesktopDisplayMode().getHeight();
+		int width = Math.max(game.scale, Math.min(desktopWidth, getLocalPreferences().getInt("window.width", (desktopWidth * 4) / 5)));
+		int height = Math.max(game.scale, Math.min(desktopHeight, getLocalPreferences().getInt("window.height", (desktopHeight * 4) / 5)));
+		game.width = width;
+		game.height = height;
+		Display.setDisplayMode(new DisplayMode(width, height));
+	}
+
 	/**
 	 * Initialise the display
 	 * @throws Exception if the display fails to initialise, probably because the graphics card has no OpenGL drivers
 	 */
 	private static void initDisplay() throws Exception {
-		Display.setTitle(getTitle());
-		if (Display.getParent() != null) {
-			initialMode = new DisplayMode(Display.getParent().getWidth(), Display.getParent().getHeight());
-			customDisplayMode = false;
+
+		if (properties.containsKey("vx")) {
+			viewportXoffset = Integer.parseInt(properties.getProperty("vx", "0"));
 		} else {
-			if (properties.containsKey("width") && properties.containsKey("height")) {
-				initialMode = new DisplayMode(Integer.parseInt(properties.getProperty("width", "800")), Integer.parseInt(properties.getProperty("height", "600")));
-				customDisplayMode = true;
-			} else {
-				initialMode = Display.getDesktopDisplayMode();
-				customDisplayMode = false;
-			}
-			if (properties.containsKey("vx")) {
-				viewportXoffset = Integer.parseInt(properties.getProperty("vx", "0"));
-			}
-			if (properties.containsKey("vy")) {
-				viewportYoffset = Integer.parseInt(properties.getProperty("vy", "0"));
-			}
-			if (properties.containsKey("vw")) {
-				viewportWidth = Integer.parseInt(properties.getProperty("vw", "0"));
-			}
-			if (properties.containsKey("vh")) {
-				viewportHeight = Integer.parseInt(properties.getProperty("vh", "0"));
-			}
+			viewportXoffset = 0;
 		}
-		if ("!".equals(PREFS.get("fullscreen2", "!"))) {
-			PREFS.putInt("fullscreen2", game.defaultFullscreen);
+		if (properties.containsKey("vy")) {
+			viewportYoffset = Integer.parseInt(properties.getProperty("vy", "0"));
+		} else {
+			viewportYoffset = 0;
 		}
+		if (properties.containsKey("vw")) {
+			viewportWidth = Integer.parseInt(properties.getProperty("vw", "0"));
+		} else {
+			viewportWidth = Display.getDesktopDisplayMode().getWidth();
+		}
+		if (properties.containsKey("vh")) {
+			viewportHeight = Integer.parseInt(properties.getProperty("vh", "0"));
+		} else {
+			viewportHeight = Display.getDesktopDisplayMode().getHeight();
+		}
+
+		if ("!".equals(LOCALPREFS.get("fullscreen2", "!"))) {
+			LOCALPREFS.putInt("fullscreen2", game.defaultFullscreen);
+		}
+
+		createDisplay();
+
 		// Determine fullscreenness
 		if (Boolean.getBoolean("net.puppygames.applet.Game.windowed")) {
 			setFullscreen(false);
 		} else {
-			int fs = PREFS.getInt("fullscreen2", 0);
+			int fs = LOCALPREFS.getInt("fullscreen2", 0);
 			switch (fs) {
 				case 0:
 					setFullscreen(configuration.isFullscreen());
@@ -1525,18 +1722,67 @@ public abstract class Game extends Feature {
 	 */
 	public static void setFullscreen(boolean fullscreen) throws Exception {
 		try {
-			if (fullscreen || customDisplayMode) {
-				try {
-					initFullscreen();
-				} catch (LWJGLException e) {
-					fullscreen = false;
-					initWindow();
+
+			try {
+				if (Mouse.isCreated()) {
+					Mouse.destroy();
 				}
-			} else {
-				initWindow();
+			} catch (Exception e) {
+				e.printStackTrace(System.err);
+			}
+			try {
+				if (Keyboard.isCreated()) {
+					Keyboard.destroy();
+				}
+			} catch (Exception e) {
+				e.printStackTrace(System.err);
 			}
 
-			PREFS.putInt("fullscreen2", fullscreen ? 2 : 1);
+			// Use the desktop display mode
+			if (fullscreen) {
+				Display.setDisplayModeAndFullscreen(Display.getDesktopDisplayMode());
+			} else {
+				Display.setFullscreen(false);
+				setWindowSizeFromPreferences();
+			}
+			game.width = Display.getWidth();
+			game.height = Display.getHeight();
+			if (Display.isCreated()) {
+				Display.update();
+			}
+			initVsync();
+			if (!Display.isCreated()) {
+				Display.create();
+			}
+			try {
+				Mouse.create();
+			} catch (Exception e) {
+				e.printStackTrace(System.err);
+			}
+			try {
+				Keyboard.create();
+			} catch (Exception e) {
+				e.printStackTrace(System.err);
+			}
+
+			// Properly clear the entire display
+			viewPort = new Rectangle(0, 0, Display.getWidth(), Display.getHeight());
+			resetViewport();
+			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);
+			Display.update();
+			Display.setResizable(false);
+			if (!fullscreen) {
+				Display.setResizable(true);
+			}
+
+			doResize();
+
+			LOCALPREFS.putInt("fullscreen2", fullscreen ? 2 : 1);
+			try {
+				LOCALPREFS.sync();
+			} catch (BackingStoreException e) {
+			}
 		} catch (Exception e) {
 			System.err.println("Failed to set fullscreen=" + fullscreen + " due to " + e);
 			throw e;
@@ -1555,130 +1801,8 @@ public abstract class Game extends Feature {
 		}
 	}
 
-	private static int getRecommendedBPP() {
-		return PREFS.getInt("recommendedbpp", initialMode.getBitsPerPixel());
-	}
-
-	/**
-	 * Initialise fullscreen display (or a custom sized window)
-	 */
-	private static void initFullscreen() throws Exception {
-		System.out.println("Initialising full screen display");
-
-		// Use the desktop display mode
-		if (customDisplayMode) {
-			Display.setDisplayMode(initialMode);
-		} else {
-			Display.setDisplayModeAndFullscreen(Display.getDesktopDisplayMode());
-		}
-		if (Display.isCreated()) {
-			Display.update();
-		}
-		System.out.println("Set fullscreen displaymode to " + Display.getDisplayMode());
-		initVsync();
-		if (!Display.isCreated()) {
-			Display.create();
-		}
-
-		// Properly clear the entire display
-		viewPort = new Rectangle(0, 0, Display.getDisplayMode().getWidth(), Display.getDisplayMode().getHeight());
-		resetViewport();
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-		Display.update();
-
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		int displayWidth = viewportWidth == 0 ? Display.getDisplayMode().getWidth() : viewportWidth;
-		int displayHeight = viewportHeight == 0 ? Display.getDisplayMode().getHeight() : viewportHeight;
-
-		if (customDisplayMode || properties.containsKey("scale")) {
-			int smallest = Math.min(displayWidth, displayHeight);
-			int fits;
-			if (game.useWindowSizing) {
-				fits = smallest / game.scale;
-			} else {
-				fits = 1;
-			}
-			System.out.println("Scale "+properties.getProperty("scale", "!"));
-			game.logicalWidth = (int) (displayWidth / Math.max(1.0, Float.parseFloat(properties.getProperty("scale", String.valueOf(fits)))));
-			game.logicalHeight = (int) (displayHeight / Math.max(1.0, Float.parseFloat(properties.getProperty("scale", String.valueOf(fits)))));
-			viewPort = new Rectangle(viewportXoffset, viewportYoffset, displayWidth, displayHeight);
-		} else if (game.useWindowSizing) {
-			// Now we want to scale the game up to be the biggest it can be in the display's smallest dimension, so that it is an
-			// even multiple of the scale, and centre this viewport on the screen
-			// Fit the scale into the smaller dimension, and scale the other dimension
-			int ratio;
-			if (displayWidth < displayHeight) {
-				// Weirdy potrait orientation
-				// Height is smallest.
-				ratio = displayWidth / game.scale;
-			} else {
-				// Height is smallest.
-				ratio = displayHeight / game.scale;
-			}
-
-			game.logicalWidth = displayWidth / ratio;
-			game.logicalHeight = displayHeight / ratio;
-			viewPort = new Rectangle(viewportXoffset, viewportYoffset, displayWidth, displayHeight);
-		} else {
-			// TODO: FIX ALL THIS SO IT USES MULTIPLES OF THE WIDTH OR HEIGHT
-			game.logicalWidth = game.width;
-			game.logicalHeight = game.height;
-			int x, y, gw, gh;
-
-			if ((float) displayWidth / (float) displayHeight > (float) getWidth() / (float) getHeight()) {
-				// Fix height to the display, scale width accordingly
-				gh = displayHeight;
-				gw = (int) (game.width * (float) displayHeight / game.height);
-			} else {
-				// Fix width to the display, scale height accordingly
-				gw = displayWidth;
-				gh = (int) (game.height * (float) displayWidth / game.width);
-			}
-			System.out.println("Game scaled to " + gw + " x " + gh);
-			x = (displayWidth - gw) / 2 + viewportXoffset;
-			y = (displayHeight - gh) / 2 + viewportYoffset;
-			viewPort = new Rectangle(x, y, gw, gh);
-		}
-		glFrustum(-game.logicalWidth / 64.0, game.logicalWidth / 64.0, -game.logicalHeight / 64.0, game.logicalHeight / 64.0, 8, 65536);
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();
-		resetViewport();
-		Display.update();
-
-		Screen.onGameResized();
-	}
-
-	/**
-	 * Initialise windowed display
-	 */
-	private static void initWindow() throws Exception {
-		System.out.println("Initialising window");
-		Display.setFullscreen(false);
-		Display.setVSyncEnabled(false);
-		if (game.useWindowSizing) {
-			// Initialise width if we've not yet got window size
-			if (game.windowSize == 0.0f) {
-				setWindowSize(2.0f);
-				return;
-			}
-			Display.setDisplayMode(new DisplayMode(game.width, game.height));
-		} else if (initialMode.getWidth() > getWidth() * 3.125 && initialMode.getHeight() > getHeight() * 3.125) {
-			Display.setDisplayMode(new DisplayMode(game.width * 3, game.height * 3));
-		} else if (initialMode.getWidth() > getWidth() * 2.25 && initialMode.getHeight() > getHeight() * 2.25) {
-			Display.setDisplayMode(new DisplayMode(game.width * 2, game.height * 2));
-		} else {
-			Display.setDisplayMode(new DisplayMode(game.width, game.height));
-		}
-
-		if (!Display.isCreated()) {
-			Display.create();
-		}
-
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		if (game.useWindowSizing) {
+	private static void doResize() {
+		if (!game.dontScale) {
 			// Fit the scale into the smaller dimension, and scale the other dimension
 			if (game.width < game.height) {
 				// Weirdy potrait orientation
@@ -1695,24 +1819,28 @@ public abstract class Game extends Feature {
 			game.logicalWidth = game.width;
 			game.logicalHeight = game.height;
 		}
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
 		glFrustum(-game.logicalWidth / 64.0, game.logicalWidth / 64.0, -game.logicalHeight / 64.0, game.logicalHeight / 64.0, 8, 65536);
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
 
-		viewPort = new Rectangle(0, 0, Display.getDisplayMode().getWidth(), Display.getDisplayMode().getHeight());
+		if (Display.isFullscreen()) {
+			viewPort = new Rectangle(viewportXoffset, viewportYoffset, viewportWidth, viewportHeight);
+		} else {
+			viewPort = new Rectangle(0, 0, Display.getWidth(), Display.getHeight());
+		}
 		resetViewport();
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
 		Screen.onGameResized();
-		System.out.println("Window sized to "+Display.getDisplayMode());
 	}
 
 	/**
 	 * Reset the game viewport
 	 */
 	public static void resetViewport() {
-		System.out.println("Set viewport to "+viewPort);
-		GL11.glViewport(viewPort.getX(), viewPort.getY(), viewPort.getWidth(), viewPort.getHeight());
+//		System.out.println("Set viewport to "+viewPort);
+		glViewport(viewPort.getX(), viewPort.getY(), viewPort.getWidth(), viewPort.getHeight());
 	}
 
 	/**
@@ -1737,7 +1865,7 @@ public abstract class Game extends Feature {
 		// Check for preregistration-until date
 		if (game.preregisteredUntil != null) {
 			// Is game already installed?
-			if (PREFS.getLong("preregistered-installation", 0L) == generatePregregistrationKey()) {
+			if (LOCALPREFS.getLong("preregistered-installation", 0L) == generatePregregistrationKey()) {
 				boolean ok = true;
 
 				if (game.preregisteredLocale != null) {
@@ -1785,8 +1913,9 @@ public abstract class Game extends Feature {
 
 						if (ok) {
 							// Ok, we are now permanently registered
-							PREFS.putLong("preregistered-installation", generatePregregistrationKey());
+							LOCALPREFS.putLong("preregistered-installation", generatePregregistrationKey());
 							registered = true;
+							flushPrefs();
 							return;
 						}
 					}
@@ -1843,7 +1972,7 @@ public abstract class Game extends Feature {
 		oos.writeObject(configuration);
 		oos.flush();
 		byte[] cfg = baos.toByteArray();
-		PREFS.putByteArray("configuration", cfg);
+		LOCALPREFS.putByteArray("configuration", cfg);
 		oos.close();
 	}
 
@@ -1861,15 +1990,31 @@ public abstract class Game extends Feature {
 	 */
 	@SuppressWarnings("unused")
     private void run() {
+//    	// Linux hack
+//		if (LWJGLUtil.getPlatform() == LWJGLUtil.PLATFORM_LINUX && !Boolean.getBoolean("net.puppygames.applet.Game.dontAlwaysRun")) {
+//			setAlwaysRun(true);
+//		}
+
 		int ticksToDo = 1;
 		long then = Sys.getTime() & 0x7FFFFFFFFFFFFFFFL;
 		long framesTicked = 0;
 		long timerResolution = Sys.getTimerResolution();
 		while (!finished) {
+			if (!Display.isFullscreen() && (Display.getWidth() != game.width || Display.getHeight() != game.height)) {
+				game.width = Display.getWidth();
+				game.height = Display.getHeight();
+				doResize();
+				getLocalPreferences().putInt("window.width", game.width);
+				getLocalPreferences().putInt("window.height", game.height);
+				flushPrefs();
+			}
+
 			if (Display.isCloseRequested()) {
-				// Check for O/S close requests
-				exit();
-			} else if (Display.isActive() || alwaysRun) {
+				finished = true;
+				break;
+			}
+
+			if (Display.isDirty() || Display.isActive() || alwaysRun) {
 				// The window is in the foreground, so we should play the game
 				long now = Sys.getTime() & 0x7FFFFFFFFFFFFFFFL;
 				long currentTimerResolution = Sys.getTimerResolution();
@@ -1886,7 +2031,7 @@ public abstract class Game extends Feature {
 					long ticksElapsed = now - then;
 					double shouldHaveTickedThisMany = (double) (getFrameRate() * ticksElapsed) / (double) timerResolution;
 					ticksToDo = (int) Math.max(0.0, shouldHaveTickedThisMany - framesTicked);
-					if (ticksToDo > 5) {
+					if (ticksToDo > 20) {
 						// We're overrunning!
 						if (DEBUG) {
 							System.out.println("Frame overrun! "+ticksToDo);
@@ -1933,8 +2078,24 @@ public abstract class Game extends Feature {
 						}
 						Thread.yield();
 					}
-					framesTicked += ticksToDo;
+					if (ticksToDo > 0) {
+						fps ++;
+						if (fps == FPS.length) {
+							fps = 0;
+						}
+						FPS[fps] = getFrameRate() / ticksToDo;
+						int totalF = 0;
+						for (int i = 0; i < FPS.length; i ++) {
+							totalF += FPS[i];
+						}
+						currentFPS = totalF / FPS.length;
+						framesTicked += ticksToDo;
+					}
 					render();
+//					// Steam support
+//					if (isUsingSteam()) {
+//						Steam.tick();
+//					}
 					Display.update();
 				}
 				if (DEBUG || forceSleep) {
@@ -1947,7 +2108,15 @@ public abstract class Game extends Feature {
 				}
 
 				// Ensure we have sound
-				targetMasterGain = 1.0f;
+				if (isPaused()) {
+					targetMasterGain = 0.0f;
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+					}
+				} else {
+					targetMasterGain = 1.0f;
+				}
 
 			} else {
 				// The window is not in the foreground, so we can allow other stuff to run and
@@ -1970,7 +2139,6 @@ public abstract class Game extends Feature {
 				}
 			}
 
-
 			// Master gain
 			if (Math.abs(targetMasterGain - masterGain) < 0.1f) {
 				masterGain = targetMasterGain;
@@ -1980,7 +2148,7 @@ public abstract class Game extends Feature {
 				masterGain -= 0.1f;
 			}
 			if (isSFXEnabled()) {
-				AL10.alListenerf(AL10.AL_GAIN, masterGain);
+				alListenerf(AL_GAIN, masterGain);
 			}
 
 		}
@@ -1993,209 +2161,11 @@ public abstract class Game extends Feature {
 		return game.catchUp;
 	}
 
-
 	/**
-	 * @return true if the demo expired
+	 * @return mouse events since last update
 	 */
-	public static boolean isDemoExpired() {
-		return game.doIsDemoExpired();
-	}
-
-	protected boolean doIsDemoExpired() {
-		if (isRegistered()) {
-			return false;
-		}
-
-		int played = PREFS.getInt("played" + getVersion(), 0);
-		played ^= 0xAF6AD755;
-		played = played >> 16 & 0xFFFF | played << 16;
-		played ^= 0xCCCCCABE;
-
-		if (played == 0x1B9965D4) {
-			played = 0;
-		}
-		int tix = PREFS.getInt("tix", 0);
-		return played < 0 || (played > configuration.getMaxGames() && configuration.getMaxGames() > 0 || configuration.getMaxGames() == 0) && (tix > configuration.getMaxTime() && configuration.getMaxTime() > 0 || configuration.getMaxTime() == 0);
-	}
-
-	public static boolean maybeShowHelp() {
-		return game.doMaybeShowHelp();
-	}
-
-	/**
-	 * @return true if help is shown; false if you just want to start the game
-	 */
-	protected boolean doMaybeShowHelp() {
-		showHelp();
-		return true;
-	}
-
-	/**
-	 * Begin a new game
-	 */
-	public static void beginNewGame() {
-		System.out.println("Begin new game");
-		// If demo version, count down the number of plays
-		if (!isRegistered()) {
-			// If not played before and not registered, open help first
-			if (!shownInstructions && maybeShowHelp()) {
-				return;
-			}
-
-			int played = PREFS.getInt("played" + getVersion(), 0);
-			played ^= 0xAF6AD755;
-			played = played >> 16 & 0xFFFF | played << 16;
-			played ^= 0xCCCCCABE;
-
-			if (played == 0x1B9965D4) {
-				played = 0;
-			}
-			int tix = PREFS.getInt("tix", 0);
-			System.out.println("You have played " + getTitle() + " " + played + " times for " + tix / 60 + " minutes");
-			System.out.println("Max games " + configuration.getMaxGames() + " / max time " + configuration.getMaxTime() / 60 + " / max level " + configuration.getMaxLevel());
-			if (isDemoExpired() && (configuration.isCrippled() || playedThisSession > 0)) {
-				// Nag and quit on second game this session
-				NagScreen.show("Your demo has expired!", true);
-				return;
-			} else {
-				played++;
-				played ^= 0xCCCCCABE;
-				played = played >> 16 & 0xFFFF | played << 16;
-				played ^= 0xAF6AD755;
-				PREFS.putInt("played" + getVersion(), played);
-				gameInfo.onNewGame();
-				playedThisSession++;
-			}
-		}
-		SFX.newGame();
-
-		game.onBeginNewGame();
-	}
-
-	/**
-	 * Called to begin a new game.
-	 */
-	protected void onBeginNewGame() {
-		if (isRestoreAvailable()) {
-			// Ask to resume
-			restoreGame();
-		} else {
-			cleanGame();
-		}
-	}
-
-	/**
-	 * Game over
-	 */
-	public static void gameOver() {
-		SFX.gameOver();
-		game.doGameOver();
-	}
-
-	/**
-	 * Game over. This should put the game in a "dormant" state and display the "game over" message to the player. After a while
-	 * someone will call endGame() and put us back on the title screen.
-	 */
-	protected abstract void doGameOver();
-
-	/**
-	 * End the game and return to the title screen (or the hiscore entry screen)
-	 */
-	public static void endGame() {
-		writeTix();
-		game.doEndGame();
-	}
-
-	/**
-	 * End the game and return to the title screen (or the hiscore entry screen). The default is simply to return to the title
-	 * screen.
-	 */
-	protected void doEndGame() {
-		showTitleScreen();
-	}
-
-	/**
-	 * Show the options screen (if any)
-	 */
-	public static void showOptions() {
-		game.doShowOptions();
-	}
-
-	/**
-	 * Show the credits screen (if any)
-	 */
-	public static void showCredits() {
-		game.doShowCredits();
-	}
-
-	/**
-	 * Show credits screen (if any).
-	 */
-	protected void doShowCredits() {
-		CreditsScreen.show();
-	}
-
-	/**
-	 * Show the help screen (if any)
-	 */
-	public static void showHelp() {
-		shownInstructions = true;
-		game.doShowHelp();
-	}
-
-	/**
-	 * Show help screen (if any).
-	 */
-	protected void doShowHelp() {
-		InstructionsScreen.show();
-	}
-
-	/**
-	 * Show the title screen (if any)
-	 */
-	public static void showTitleScreen() {
-		game.doShowTitleScreen();
-	}
-
-	/**
-	 * Show the registration screen (if any)
-	 */
-	public static void showRegisterScreen() {
-		game.doShowRegisterScreen();
-	}
-
-	/**
-	 * Show the registration screen (if any)
-	 */
-	protected void doShowRegisterScreen() {
-		RegisterScreen.show();
-	}
-
-	/**
-	 * Show the title screen (if any)
-	 */
-	protected void doShowTitleScreen() {
-		TitleScreen.show();
-	}
-
-	/**
-	 * Show options screen (if any). Default is do nothing.
-	 */
-	protected void doShowOptions() {
-	}
-
-	/**
-	 * Show the hiscores screen (if any)
-	 */
-	public static void showHiscores() {
-		game.doShowHiscores();
-	}
-
-	/**
-	 * Show hiscores screen (if any).
-	 */
-	protected void doShowHiscores() {
-		HiscoresScreen.show(null);
+	public static List<MouseEvent> getMouseEvents() {
+		return MOUSEEVENTS;
 	}
 
 	/**
@@ -2204,6 +2174,14 @@ public abstract class Game extends Feature {
 	private void tick() {
 		// Process key & mouse bindings
 		Binding.poll();
+
+		// Process mouse events
+		MOUSEEVENTS.clear();
+		while (Mouse.next()) {
+			MouseEvent event = new MouseEvent();
+			event.fromMouse();
+			MOUSEEVENTS.add(event);
+		}
 
 		// Process keydowns
 		for (int i = 0; i < Keyboard.KEYBOARD_SIZE; i++) {
@@ -2237,10 +2215,10 @@ public abstract class Game extends Feature {
 
 		if (!paused) {
 			Timer.tick();
-			// Tick screens
-			Screen.tickAllScreens();
 			// Custom ticking
 			doTick();
+			// Tick screens
+			Screen.tickAllScreens();
 			// Now tick the sound engine
 			if (org.lwjgl.openal.AL.isCreated()) {
 				int n = soundPlayers.size();
@@ -2257,22 +2235,18 @@ public abstract class Game extends Feature {
 		if (game != null) {
 			if (paused) {
 				game.wasGrabbed = Mouse.isGrabbed();
-				Mouse.setGrabbed(false);
-				Display.setTitle(getTitle() + " [PAUSED]");
+				//Mouse.setGrabbed(false);
+				Display.setTitle(getDisplayTitle() + " [PAUSED]");
 				game.onPaused();
 			} else {
-				Mouse.setGrabbed(game.wasGrabbed);
-				Display.setTitle(getTitle());
+				//Mouse.setGrabbed(game.wasGrabbed);
+				Display.setTitle(getDisplayTitle());
 				game.onResumed();
 			}
 		}
 	}
 
-	private final void doTick() {
-		doGameTick();
-	}
-
-	protected abstract void doGameTick();
+	protected abstract void doTick();
 
 	protected void onPaused() {
 	}
@@ -2285,7 +2259,7 @@ public abstract class Game extends Feature {
 	 */
 	private void render() {
 		Screen.updateAllScreens();
-
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		glPushMatrix();
 		glTranslatef((float)(-logicalWidth / 2.0), (float)(-logicalHeight / 2.0), -256);
@@ -2308,20 +2282,6 @@ public abstract class Game extends Feature {
 	}
 
 	/**
-	 * @return Returns the scoreGroup.
-	 */
-	public static String getScoreGroup() {
-		return scoreGroup;
-	}
-
-	/**
-	 * @param scoreGroup The scoreGroup to set.
-	 */
-	public static void setScoreGroup(String scoreGroup) {
-		Game.scoreGroup = scoreGroup;
-	}
-
-	/**
 	 * Check for keyboard presses. After checking, the key down state is cleared.
 	 * @param key The keyboard key
 	 * @return true if the key has just been pressed
@@ -2336,7 +2296,11 @@ public abstract class Game extends Feature {
 	 * Called whenever a successful remote call is made, so we know that this app is allowed to contact teh intarweb.
 	 */
 	public static void onRemoteCallSuccess() {
-		PREFS.putBoolean("online", true);
+		LOCALPREFS.putBoolean("online", true);
+		try {
+			LOCALPREFS.flush();
+		} catch (BackingStoreException e) {
+		}
 	}
 
 	/**
@@ -2344,7 +2308,7 @@ public abstract class Game extends Feature {
 	 * @return boolean
 	 */
 	public static boolean isRemoteCallAllowed() {
-		return PREFS.getBoolean("online", false);
+		return LOCALPREFS.getBoolean("online", false);
 	}
 
 	/**
@@ -2362,7 +2326,11 @@ public abstract class Game extends Feature {
 				music.setGain(music.getBuffer().getGain() * vol, Game.class);
 			}
 		}
-		PREFS.putInt("musicvolume", musicVolume);
+		LOCALPREFS.putInt("musicvolume", musicVolume);
+		try {
+			LOCALPREFS.sync();
+		} catch (BackingStoreException e) {
+		}
 	}
 
 	/**
@@ -2371,7 +2339,11 @@ public abstract class Game extends Feature {
 	 */
 	public static void setSFXVolume(float vol) {
 		sfxVolume = (int) Math.max(0.0f, Math.min(100.0f, vol * 100.0f));
-		PREFS.putInt("sfxvolume", sfxVolume);
+		LOCALPREFS.putInt("sfxvolume", sfxVolume);
+		try {
+			LOCALPREFS.sync();
+		} catch (BackingStoreException e) {
+		}
 	}
 
 	/**
@@ -2399,11 +2371,30 @@ public abstract class Game extends Feature {
 	}
 
 	/**
+	 * Initialise input
+	 */
+	public static void initInput() {
+		try {
+			game.inputMode = InputDeviceType.valueOf(LOCALPREFS.get("inputmode", InputDeviceType.DESKTOP.name()));
+		} catch (Exception e) {
+			game.inputMode = InputDeviceType.valueOf(game.defaultInputMode);
+		}
+	}
+
+	/**
+	 * Get the game's input mode
+	 * @return the game's input mode
+	 */
+	public static InputDeviceType getInputMode() {
+	    return game.inputMode;
+    }
+
+	/**
 	 * Load the keyboard and mouse bindings, if possible. Fails silently.
 	 */
 	public static void loadBindings() {
 		try {
-			byte[] b = PREFS.getByteArray("bindings", null);
+			byte[] b = ROAMINGPREFS.getByteArray("bindings", null);
 			if (b == null) {
 				if (DEBUG) {
 					System.out.println("No bindings found, so using defaults.");
@@ -2426,7 +2417,8 @@ public abstract class Game extends Feature {
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream(1024);
 			Binding.save(baos);
-			PREFS.putByteArray("bindings", baos.toByteArray());
+			ROAMINGPREFS.putByteArray("bindings", baos.toByteArray());
+			flushPrefs();
 		} catch (Exception e) {
 			if (DEBUG) {
 				e.printStackTrace(System.err);
@@ -2442,77 +2434,32 @@ public abstract class Game extends Feature {
 	}
 
 	/**
-	 * Save the game
-	 */
-	public static void saveGame() {
-		game.doSaveGame();
-	}
-
-	protected String getSaveGameRegistryMagicLocation() {
-		return "tox";
-	}
-
-	protected void doSaveGame() {
-		if (!allowSave) {
-			return;
-		}
-
-		File file = game.getRestoreFile();
-
-		try {
-			FileOutputStream fos = new FileOutputStream(file);
-			BufferedOutputStream bos = new BufferedOutputStream(fos);
-			ObjectOutputStream oos = new ObjectOutputStream(bos);
-
-			// Set current magic number
-			gameState.setMagic(new Random().nextLong());
-			if (playerSlot != null) {
-				playerSlot.getPreferences().putLong(getSaveGameRegistryMagicLocation(), gameState.getMagic());
-			} else {
-				PREFS.putLong(getSaveGameRegistryMagicLocation(), gameState.getMagic());
-			}
-			// This restore file is now only valid when tox in prefs is the
-			// same as that in the file. As soon as we do a restore, we zap
-			// the tox value :)
-			oos.writeObject(gameState);
-			oos.flush();
-			fos.close();
-			allowSave = false;
-
-			onGameSaved();
-			flushPrefs();
-
-		} catch (Exception e) {
-			e.printStackTrace(System.err);
-		}
-
-		TitleScreen.show();
-	}
-
-	/**
-	 * Called when the game has been saved. Use it to pop up some sort of confirmation on the title screen
-	 */
-	protected void onGameSaved() {
-		((EffectFeature) Resources.get(SAVE_GAME_EFFECT_FEATURE)).spawn(TitleScreen.getInstance());
-	}
-
-	/**
-	 * Is there a game to restore?
-	 * @return boolean
-	 */
-	public static boolean isRestoreAvailable() {
-		return game.getRestoreFile().exists();
-	}
-
-	/**
 	 * Flushes all preferences (synchronously)
 	 */
 	private static void doFlushPrefs() {
+		GameOutputStream gos;
+        try {
+	        gos = new GameOutputStream(getRoamingPrefsFileName());
+			writePrefs(gos);
+			if (DEBUG) {
+				System.out.println("Saved preferences file "+getRoamingPrefsFileName());
+			}
+        } catch (IOException e) {
+	        e.printStackTrace(System.err);
+        }
+	}
+
+	/**
+	 * Synchronously write preferences to an output stream
+	 * @param os
+	 */
+	private static void writePrefs(OutputStream os) {
 		if (GLOBALPREFS != null) {
 			synchronized (GLOBALPREFS) {
 				try {
 					GLOBALPREFS.sync();
-					PREFS.sync();
+					LOCALPREFS.sync();
+					ROAMINGPREFS.sync();
 					if (playerSlot != null) {
 						playerSlot.getPreferences().sync();
 					}
@@ -2520,22 +2467,15 @@ public abstract class Game extends Feature {
 					e.printStackTrace(System.err);
 				}
 
-				// Now write backup file
-				FileOutputStream fos = null;
-				BufferedOutputStream bos = null;
-				File prefsFile = new File(getUserPrefsFileName());
 				try {
-					fos = new FileOutputStream(prefsFile);
-					bos = new BufferedOutputStream(fos);
-					PREFS.exportSubtree(bos);
-					bos.flush();
-					System.out.println("Saved preferences file "+prefsFile);
+					ROAMINGPREFS.exportSubtree(os);
+					os.flush();
 				} catch (Exception e) {
 					e.printStackTrace(System.err);
 				} finally {
-					if (fos != null) {
+					if (os != null) {
 						try {
-							fos.close();
+							os.close();
 						} catch (IOException e) {
 							e.printStackTrace(System.err);
 						}
@@ -2546,180 +2486,12 @@ public abstract class Game extends Feature {
 		}
 	}
 
-	public static String getUserPrefsFileName() {
-		return game.doGetUserPrefsFileName();
+	public static String getRoamingPrefsFileName() {
+		return game.doGetRoamingPrefsFileName();
 	}
 
-	protected String doGetUserPrefsFileName() {
-		return getDirectoryPrefix() + DEFAULT_USER_PREFS_FILENAME;
-	}
-
-	/**
-	 * Start a new game from scratch
-	 */
-	public static void cleanGame() {
-		File file = game.getRestoreFile();
-		if (file.exists() && !file.delete()) {
-			System.err.println("Failed to delete save file "+file);
-		}
-		allowSave = true;
-		game.onCleanGame();
-	}
-
-	/**
-	 * Called to start a new game from scratch after deleting the restore file
-	 */
-	protected void onCleanGame() {
-		setGameState(createGameState());
-		gameState.init();
-	}
-
-	/**
-	 * @return the File which we use to save games to
-	 */
-	protected File getRestoreFile() {
-		if (playerSlot != null) {
-			return new File(getPlayerDirectoryPrefix() + RESTORE_FILE);
-		} else {
-			return new File(getDirectoryPrefix() + RESTORE_FILE);
-		}
-	}
-
-	/**
-	 * Factory method to create a GameState
-	 * @return a GameState
-	 */
-	protected abstract GameState createGameState();
-
-	/**
-	 * Restore the game
-	 */
-	public static void restoreGame() {
-		game.onRestoreGame();
-	}
-
-	/**
-	 * Asks the user if they want to restore their game, and then either restores it, starts a clean game, or does nothing.
-	 */
-	protected void onRestoreGame() {
-		if (!isRestoreAvailable()) {
-			return;
-		}
-		topScreen = Screen.getTopScreen();
-		if (topScreen == null) {
-			return;
-		}
-		try {
-			restoreGameDialog = (DialogScreen) Resources.get(RESTORE_GAME_DIALOG_FEATURE);
-			restoreGameDialog.doModal("RESTORE GAME", "WOULD YOU LIKE TO RESTORE YOUR SAVED GAME?", new Runnable() {
-				@Override
-				public void run() {
-					topScreen.setEnabled(true);
-					switch (restoreGameDialog.getOption()) {
-						case DialogScreen.YES_OPTION:
-							doRestoreGame();
-							break;
-						case DialogScreen.NO_OPTION:
-							cleanGame();
-							break;
-						default:
-							// Do nothing
-							break;
-					}
-					restoreGameDialog = null;
-				}
-			});
-			topScreen.setEnabled(false);
-		} catch (Exception e) {
-			e.printStackTrace(System.err);
-			game.onRestoreGameFailed(e);
-		}
-	}
-
-	/**
-	 * Called when a restore game failed
-	 */
-	protected void onRestoreGameFailed(Exception e) {
-	}
-
-	/**
-	 * Restore the game
-	 */
-	protected void doRestoreGame() {
-		allowSave = true;
-		File file = getRestoreFile();
-		FileInputStream fis = null;
-		BufferedInputStream bis = null;
-		ObjectInputStream ois = null;
-		boolean exceptionOccurred = false;
-		try {
-			fis = new FileInputStream(file);
-			bis = new BufferedInputStream(fis);
-			ois = new ObjectInputStream(bis);
-			setGameState((GameState) ois.readObject());
-			// Check tox value in prefs...
-			long tox;
-			if (playerSlot != null) {
-				tox = playerSlot.getPreferences().getLong(getSaveGameRegistryMagicLocation(), 0L);
-			} else {
-				tox = PREFS.getLong(getSaveGameRegistryMagicLocation(), 0L);
-			}
-			if (!DEBUG && tox != gameState.getMagic()) {
-				throw new Exception("Invalid game state");
-			}
-			Resources.dequeue();
-			gameState.reinit();
-		} catch (Exception e) {
-			exceptionOccurred = true;
-			e.printStackTrace(System.err);
-			onRestoreGameFailed(e);
-		} finally {
-			if (ois != null) {
-				try {
-					ois.close();
-				} catch (Exception e) {
-				}
-			}
-			if (bis != null) {
-				try {
-					bis.close();
-				} catch (Exception e) {
-				}
-			}
-			if (fis != null) {
-				try {
-					fis.close();
-				} catch (Exception e) {
-				}
-			}
-			if (!Game.DEBUG) {
-				// Vape tox value
-				if (playerSlot != null) {
-					playerSlot.getPreferences().putLong("tox", new Random().nextLong());
-				} else {
-					PREFS.putLong("tox", new Random().nextLong());
-				}
-				flushPrefs();
-
-				// Now delete the file whatever happens. If an exception occurs, rename it instead.
-				if (exceptionOccurred) {
-					File newFile = new File(file.getPath()+".broken");
-					if (!file.renameTo(newFile)) {
-						System.err.println("Failed to rename "+file+" to "+newFile);
-					}
-				} else if (!file.delete()) {
-					System.err.println("Failed to delete save file");
-				}
-			}
-		}
-	}
-
-	/**
-	 * Set game state
-	 * @param newgameState
-	 */
-	protected void setGameState(GameState newGameState) {
-		Game.gameState = newGameState;
+	protected String doGetRoamingPrefsFileName() {
+		return getRoamingDirectoryPrefix() + DEFAULT_ROAMING_PREFS_FILENAME;
 	}
 
 	/**
@@ -2740,7 +2512,7 @@ public abstract class Game extends Feature {
 	 * Wraps alert messages
 	 */
 	public static void alert(String message) {
-		Sys.alert(getTitle(), message);
+		Sys.alert(getDisplayTitle(), message);
 	}
 
 	/**
@@ -2751,38 +2523,8 @@ public abstract class Game extends Feature {
 		Game.alwaysRun = alwaysRun;
 	}
 
-	/**
-	 * @return the dontUseRemoteHiscores
-	 */
-	public static boolean getDontUseRemoteHiscores() {
-		return game.dontUseRemoteHiscores;
-	}
-
 	public static boolean getDontCheckMessages() {
 		return game.dontCheckMessages;
-	}
-
-	public static boolean getSubmitRemoteHiscores() {
-		return !game.dontUseRemoteHiscores && game.submitRemoteHiscores;
-	}
-
-	public static void setSubmitRemoteHiscores(boolean set) {
-		game.submitRemoteHiscores = set;
-		synchronized (PREFS) {
-			PREFS.putBoolean("submitremotehiscores", !game.dontUseRemoteHiscores && game.submitRemoteHiscores);
-		}
-		new Thread() {
-			@Override
-			public void run() {
-				try {
-					synchronized (PREFS) {
-						PREFS.flush();
-					}
-				} catch (BackingStoreException e) {
-					e.printStackTrace(System.err);
-				}
-			}
-		}.start();
 	}
 
 	/**
@@ -2812,9 +2554,9 @@ public abstract class Game extends Feature {
 			throw new IllegalArgumentException("newSlot may not be null");
 		}
 		Game.playerSlot = newSlot;
-		PREFS.put("slot_"+getInternalVersion(), newSlot.getName());
+		ROAMINGPREFS.put("slot_"+getInternalVersion(), newSlot.getName());
 		try {
-			PREFS.flush();
+			ROAMINGPREFS.sync();
 		} catch (BackingStoreException e) {
 			e.printStackTrace(System.err);
 		}
@@ -2824,9 +2566,6 @@ public abstract class Game extends Feature {
 
 	protected void onSetPlayerSlot() {}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doCreate()
-	 */
 	@Override
 	protected void doCreate() {
 		super.doCreate();
@@ -2890,34 +2629,11 @@ public abstract class Game extends Feature {
 		return getHeight() * (physicalY - viewPort.getY()) / viewPort.getHeight();
 	}
 
-	public static void setWindowSize(float windowSize) {
-		float oldSize = game.windowSize;
-		try {
-			if (game.windowSize != windowSize || Display.isFullscreen() || customDisplayMode) {
-				game.windowSize = windowSize;
-				if (initialMode.getWidth() > initialMode.getHeight()) {
-					// Normal landscape mode
-					setSize((int) (initialMode.getWidth() * game.scale * windowSize / initialMode.getHeight()), (int) (game.scale * windowSize));
-				} else {
-					// Wierdy portrait mode
-					setSize((int) (game.scale * windowSize), (int) (initialMode.getHeight() * game.scale * windowSize / initialMode.getWidth()));
-				}
-			}
-		} catch (Exception e) {
-			game.windowSize = oldSize;
-		}
-	}
-
-	public static float getWindowSize() {
-		return game.windowSize;
-	}
-
+	/**
+	 * @return the game's default scale (logical pixels : real pixels)
+	 */
 	public static int getScale() {
 		return game.scale;
-	}
-
-	public static boolean getUseWindowSizing() {
-		return game.useWindowSizing;
 	}
 
 	/**
@@ -2925,7 +2641,7 @@ public abstract class Game extends Feature {
 	 * Throwable. The game becomes temporarily registered.
 	 */
 	public static void onRegistrationDisaster() {
-		if (PREFS.getBoolean("puppygames_exists", false)) {
+		if (LOCALPREFS.getBoolean("puppygames_exists", false)) {
 			return;
 		}
 		Game.registered = true;
@@ -2933,18 +2649,11 @@ public abstract class Game extends Feature {
 
 	public static void onRegistrationRecovery() {
 		Game.registered = false;
-		PREFS.putBoolean("puppygames_exists", true);
+		LOCALPREFS.putBoolean("puppygames_exists", true);
 		try {
-			PREFS.flush();
+			LOCALPREFS.flush();
 		} catch (BackingStoreException e) {
 		}
-	}
-
-	/**
-	 * @return true if we passed in width and height on commandline for a custom display resolution
-	 */
-	public static boolean isCustomDisplayMode() {
-		return customDisplayMode;
 	}
 
 	/**
@@ -2987,33 +2696,75 @@ public abstract class Game extends Feature {
 			if (jarPath.equals("")) {
 				continue;
 			}
-			File file = new File(jarPath);
-			if (!file.exists()) {
-				System.err.println("Mod at "+jarPath+" does not exist.");
-				continue;
+			loadMod(jarPath, false);
+		}
+	}
+
+	/**
+	 * Load DLC found under the /dlc directory
+	 */
+	private static final void loadDLC() {
+		File dlcDir = new File("dlc");
+		if (!dlcDir.exists()) {
+			return;
+		}
+		File[] dlc = dlcDir.listFiles(new FilenameFilter() {
+			@Override
+			public boolean accept(File dir, String name) {
+				return name.endsWith(".jar");
+			}
+		});
+		if (dlc == null) {
+			return;
+		}
+		for (File file : dlc) {
+			String jarPath;
+            try {
+	            jarPath = file.getCanonicalPath();
+				loadMod(jarPath, true);
+            } catch (IOException e) {
+            	System.err.println("failed to load DLC from jar "+file.getPath());
+	            e.printStackTrace(System.err);
+            }
+		}
+	}
+
+	/**
+	 * Load a mod or DLC
+	 * @param jarPath Full path to a .jar file
+	 * @param dlc Whether this is offical DLC or not
+	 */
+	private static final void loadMod(String jarPath, boolean dlc) {
+		File file = new File(jarPath);
+		if (!file.exists()) {
+			System.err.println((dlc ? "DLC" : "Mod")+" at "+jarPath+" does not exist.");
+			return;
+		}
+
+		try {
+			System.out.println("Loading "+(dlc ? "DLC" : "mod")+" at "+jarPath);
+			URLClassLoader cl = new URLClassLoader(new URL[] {file.toURI().toURL()});
+			ClassLoaderResource clr = new ClassLoaderResource("mod.loader");
+			clr.setClassLoader(cl);
+			Resources.put(clr);
+			if (cl.findResource("resources.dat") == null) {
+				// Load from xml instead
+				URL url = cl.getResource("resources.xml");
+				ResourceConverter rc = new ResourceConverter(new ResourceLoadedListener() {
+					@Override
+					public void resourceLoaded(IResource loadedResource) {
+						System.out.println("  Loaded "+loadedResource);
+					}
+				}, cl);
+				rc.setOverwrite(true);
+				rc.include(url.openStream());
+			} else {
+				URL url = cl.getResource("resources.dat");
+				Resources.load(url.openStream());
 			}
 
-			try {
-				System.out.println("Loading mod at "+jarPath);
-				URLClassLoader cl = new URLClassLoader(new URL[] {file.toURI().toURL()});
-				ClassLoaderResource clr = new ClassLoaderResource("mod.loader");
-				clr.setClassLoader(cl);
-				Resources.put(clr);
-				if (cl.findResource("resources.dat") == null) {
-					// Load from xml instead
-					URL url = cl.getResource("resources.xml");
-					ResourceConverter rc = new ResourceConverter(new ResourceLoadedListener() {
-						@Override
-						public void resourceLoaded(Resource loadedResource) {
-							System.out.println("  Loaded "+loadedResource);
-						}
-					}, cl);
-					rc.setOverwrite(true);
-					rc.include(url.openStream());
-				} else {
-					URL url = cl.getResource("resources.dat");
-					Resources.load(url.openStream());
-				}
+			// DLC doesn't affect the modded status of the game
+			if (!dlc) {
 				modded = true;
 				if (modName.length() > 0) {
 					modName += ",";
@@ -3029,10 +2780,64 @@ public abstract class Game extends Feature {
 				}
 				modName += n;
 				System.out.println("Successfully loaded mod "+n+" from "+jarPath);
-			} catch (Exception e) {
-				System.err.println("Failed to load mod at "+jarPath);
-				e.printStackTrace(System.err);
+			} else {
+				String n = ((TextResource) Resources.get("modName")).getText().trim();
+				System.out.println("Successfully loaded DLC "+n+" from "+jarPath);
 			}
+		} catch (Exception e) {
+			System.err.println("Failed to load "+(dlc ? "DLC" : "mod")+" at "+jarPath);
+			e.printStackTrace(System.err);
 		}
 	}
+
+	/**
+	 * @return the game's 2 character language
+	 */
+	public static String getLanguage() {
+		return game.language;
+	}
+
+	/**
+	 * Shortcut to get a bit of wrapped text
+	 * @param key Points to a {@link Resource} implementing {@link TextWrapper}
+	 * @return a String
+	 */
+	public static String getMessage(String key) {
+		return ((TextWrapper) Resources.get(key)).getText();
+	}
+
+	/**
+	 * @return true if we're using Steam
+	 */
+	public static boolean isUsingSteam() {
+		return Game.appID != 0;
+	}
+
+	/**
+	 * @return true if we're able to use the Steam cloud
+	 */
+//	public static boolean isUsingSteamCloud() {
+//		return isUsingSteam() && Steam.isCreated() && Steam.isSteamRunning() && Steam.getRemoteStorage().isCloudEnabledForAccount() && Steam.getRemoteStorage().isCloudEnabledForApp();
+//	}
+
+	/**
+	 * @return the Steam app ID, if we're using steam
+	 */
+	public static int getSteamAppID() {
+		return Game.appID;
+	}
+
+	/**
+	 * Initialise Steam.
+	 */
+//	private static void initSteam() {
+//		Steam.init(Game.appID);
+//	}
+
+	/**
+	 * @return the on-the-fly FPS counter
+	 */
+	public static int getFPS() {
+	    return currentFPS;
+    }
 }

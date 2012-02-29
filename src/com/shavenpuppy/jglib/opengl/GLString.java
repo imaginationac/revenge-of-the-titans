@@ -32,7 +32,9 @@
 package com.shavenpuppy.jglib.opengl;
 
 import org.lwjgl.opengl.OpenGLException;
-import org.lwjgl.util.*;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.Rectangle;
 
 import com.shavenpuppy.jglib.sprites.SimpleRenderable;
 import com.shavenpuppy.jglib.sprites.SimpleRenderer;
@@ -44,7 +46,7 @@ import static org.lwjgl.opengl.GL11.*;
  *
  * @author: cas
  */
-public class GLString implements GLRenderable, SimpleRenderable {
+public class GLString implements SimpleRenderable {
 
 	private GLFont font;
 
@@ -98,8 +100,7 @@ public class GLString implements GLRenderable, SimpleRenderable {
 		return coloured;
 	}
 
-	public GLString(String text, GLFont font)
-	{
+	public GLString(String text, GLFont font) {
 		this(text == null ? 0 : text.length());
 		setFont(font);
 		setText(text);
@@ -275,11 +276,6 @@ public class GLString implements GLRenderable, SimpleRenderable {
 	}
 
 	@Override
-	public void render() {
-		render(SimpleRenderer.GL_RENDERER);
-	}
-
-	@Override
 	public void render(SimpleRenderer renderer) {
 		if (font == null) {
 			throw new OpenGLException("Null font in "+this);
@@ -294,14 +290,12 @@ public class GLString implements GLRenderable, SimpleRenderable {
 				font.getTexture().render();
 				glEnable(GL_TEXTURE_2D);
 				glEnable(GL_BLEND);
-				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+				glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 				glEnableClientState(GL_COLOR_ARRAY);
 				glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 			}
 		});
-
-		renderer.glBegin(GL_QUADS);
 
 		// Render all the glyphs
 		for (int i = 0; i < buffer.length; i++) {
@@ -315,8 +309,6 @@ public class GLString implements GLRenderable, SimpleRenderable {
 				}
 			}
 		}
-
-		renderer.glEnd();
 	}
 
 	public void setAlpha(int alpha) {

@@ -32,6 +32,7 @@
 package net.puppygames.applet.screens;
 
 import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.widgets.PowerDisplay;
 import net.puppygames.applet.widgets.PowerDisplayFeature;
@@ -113,7 +114,7 @@ public class OptionsScreen extends Screen {
 		sfxVolumePowerDisplayInstance = sfxVolumePowerDisplay.spawn(this);
 		musicVolumePowerDisplayInstance.setUsed((int)(Game.getMusicVolume() * musicVolumePowerDisplayInstance.getMax()) + 1);
 		sfxVolumePowerDisplayInstance.setUsed((int)(Game.getSFXVolume() * sfxVolumePowerDisplayInstance.getMax()) + 1);
-		setVisible(OPTIONS_HISCORES_PANEL, !Game.getDontUseRemoteHiscores());
+		setVisible(OPTIONS_HISCORES_PANEL, !MiniGame.getDontUseRemoteHiscores());
 		enableButtons();
 		onResized();
 	}
@@ -128,17 +129,12 @@ public class OptionsScreen extends Screen {
 		getArea(FULLSCREEN_OFF).init();
 		getArea(ONLINE_HISCORES_ON).init();
 		getArea(ONLINE_HISCORES_OFF).init();
-		if (Game.isCustomDisplayMode()) {
-			setEnabled(FULLSCREEN_ON, false);
-			setEnabled(FULLSCREEN_OFF, false);
-		} else {
-			setEnabled(FULLSCREEN_ON, true);
-			setEnabled(FULLSCREEN_OFF, true);
-		}
+		setEnabled(FULLSCREEN_ON, true);
+		setEnabled(FULLSCREEN_OFF, true);
 		setVisible(FULLSCREEN_ON, Display.isFullscreen());
 		setVisible(FULLSCREEN_OFF, !Display.isFullscreen());
-		setVisible(ONLINE_HISCORES_ON, Game.getSubmitRemoteHiscores() && !Game.getDontUseRemoteHiscores());
-		setVisible(ONLINE_HISCORES_OFF, !Game.getSubmitRemoteHiscores() && !Game.getDontUseRemoteHiscores());
+		setVisible(ONLINE_HISCORES_ON, MiniGame.getSubmitRemoteHiscores() && !MiniGame.getDontUseRemoteHiscores());
+		setVisible(ONLINE_HISCORES_OFF, !MiniGame.getSubmitRemoteHiscores() && !MiniGame.getDontUseRemoteHiscores());
 	}
 
 	@Override
@@ -170,7 +166,6 @@ public class OptionsScreen extends Screen {
 				Game.setFullscreen(false);
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
-				Game.alert("Your machine won't do windowed mode.");
 			}
 			enableButtons();
 		} else if (FULLSCREEN_OFF.equals(id)) {
@@ -178,14 +173,13 @@ public class OptionsScreen extends Screen {
 				Game.setFullscreen(true);
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
-				Game.alert("Your machine won't do fullscreen mode.");
 			}
 			enableButtons();
 		} else if (ONLINE_HISCORES_ON.equals(id)) {
-			Game.setSubmitRemoteHiscores(false);
+			MiniGame.setSubmitRemoteHiscores(false);
 			enableButtons();
 		} else if (ONLINE_HISCORES_OFF.equals(id)) {
-			Game.setSubmitRemoteHiscores(true);
+			MiniGame.setSubmitRemoteHiscores(true);
 			enableButtons();
 		}
 	}

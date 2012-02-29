@@ -1,0 +1,732 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+
+
+
+	<!-- GIDRAH.hoff.BOSS ==================================================================================================  -->
+
+
+	<!-- BOSS WALK -->
+
+	<animation name="gidrah.hoff.boss.body.animation">
+
+		<frame i="spriteimage.boss.hoff.body.back.01" d="9" childYOffset="0"/>
+		<frame i="spriteimage.boss.hoff.body.back.01" d="1" childYOffset="2"/>
+		<frame i="spriteimage.boss.hoff.body.back.02" d="1" childYOffset="2"/>
+		<frame i="spriteimage.boss.hoff.body.back.02" d="1" childYOffset="4"/>
+		<frame i="spriteimage.boss.hoff.body.back.03" d="2" childYOffset="4"/>		
+		<frame i="spriteimage.boss.hoff.body.back.03" d="1" childYOffset="6"/>	
+		<frame i="spriteimage.boss.hoff.body.back.04" d="11" childYOffset="6"/>	
+		<frame i="spriteimage.boss.hoff.body.back.04" d="1" childYOffset="-2"/>			
+		<frame i="spriteimage.boss.hoff.body.back.11" d="4" childYOffset="-2"/>	
+		<frame i="spriteimage.boss.hoff.body.back.11" d="1" childYOffset="0"/>
+
+		<frame i="spriteimage.boss.hoff.body.back.01" d="9" childYOffset="0"/>
+		<frame i="spriteimage.boss.hoff.body.back.01" d="1" childYOffset="2"/>
+		<frame i="spriteimage.boss.hoff.body.back.05" d="1" childYOffset="2"/>
+		<frame i="spriteimage.boss.hoff.body.back.05" d="1" childYOffset="4"/>
+		<frame i="spriteimage.boss.hoff.body.back.06" d="2" childYOffset="4"/>		
+		<frame i="spriteimage.boss.hoff.body.back.06" d="1" childYOffset="6"/>	
+		<frame i="spriteimage.boss.hoff.body.back.07" d="11" childYOffset="6"/>	
+		<frame i="spriteimage.boss.hoff.body.back.07" d="1" childYOffset="-2"/>			
+		<frame i="spriteimage.boss.hoff.body.back.11" d="4" childYOffset="-2"/>	
+		<frame i="spriteimage.boss.hoff.body.back.11" d="1" childYOffset="0"/>
+		
+		<frame i="spriteimage.boss.hoff.body.back.01" d="9" childYOffset="0"/>
+		<frame i="spriteimage.boss.hoff.body.back.01" d="1" childYOffset="2"/>
+		<frame i="spriteimage.boss.hoff.body.back.08" d="1" childYOffset="2"/>
+		<frame i="spriteimage.boss.hoff.body.back.08" d="1" childYOffset="4"/>
+		<frame i="spriteimage.boss.hoff.body.back.09" d="2" childYOffset="4"/>		
+		<frame i="spriteimage.boss.hoff.body.back.09" d="1" childYOffset="6"/>	
+		<frame i="spriteimage.boss.hoff.body.back.10" d="11" childYOffset="6"/>	
+		<frame i="spriteimage.boss.hoff.body.back.10" d="1" childYOffset="-2"/>			
+		<frame i="spriteimage.boss.hoff.body.back.11" d="4" childYOffset="-2"/>	
+		<frame i="spriteimage.boss.hoff.body.back.11" d="1" childYOffset="0"/>
+				
+		<goto seq="0"/>
+	
+	</animation>	
+	
+	<animation name="gidrah.hoff.boss.body.idle.animation">
+		<frame i="spriteimage.boss.hoff.body.back.01" d="9" childYOffset="0"/>
+	</animation>	
+
+	<animation name="gidrah.hoff.boss.head.roar.animation">
+	
+		<!-- 100 frames roar - 4 open, 8 close, 88 roar -->
+		
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="10" />
+		<offset x="0" y="5" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="20" />
+		<offset x="0" y="10" d="1" />		
+
+		<sound attenuator="loud.attenuator" sound="gidrah-earth-boss-roar.buffer"/>
+		<sound attenuator="default.attenuator" sound="gidrah-earth-boss-amb.buffer"/>
+		
+		<loop count="4"/>
+		
+			<label id="roar" />
+			
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="2" childYOffset="26" />
+			<offset x="1" y="13" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="30" />
+			<offset x="-2" y="15" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="0" childYOffset="34" />
+			<offset x="0" y="17" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="2" childYOffset="28" />
+			<offset x="1" y="14" d="1" />		
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="34" />
+			<offset x="-2" y="17" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="4" childYOffset="24" />
+			<offset x="2" y="12" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="0" childYOffset="36" />
+			<offset x="0" y="18" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="2" childYOffset="26" />
+			<offset x="1" y="13" d="1" />	
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="34" />
+			<offset x="-2" y="17" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="4" childYOffset="30" />
+			<offset x="2" y="15" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-2" childYOffset="28" />
+			<offset x="-1" y="14" d="1" />
+
+		<repeat id="roar" />
+	
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="24" />
+		<offset x="0" y="12" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="16" />
+		<offset x="0" y="8" d="1" />	
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="10" />
+		<offset x="0" y="5" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="4" />
+		<offset x="0" y="2" d="1" />
+
+		<return/>
+
+	</animation>	
+	
+	
+	
+	<animation name="gidrah.hoff.boss.head.animation">
+	
+		<!-- 200 frames walk -->
+		<frame i="spriteimage.boss.hoff.head.01" d="0" childYOffset="0" />
+		<offset x="0" y="0" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="199" childYOffset="0" />
+		
+		<sub id="gidrah.hoff.boss.head.roar.animation"/>
+	
+		<goto seq="0" />
+	</animation>
+
+	<animation name="gidrah.hoff.boss.head.idle.animation">
+		<offset x="0" y="0" d="0" />
+		<frame i="spriteimage.boss.hoff.head.01" d="0" childYOffset="0" />
+	</animation>
+
+	<animation name="gidrah.hoff.boss.glow.animation">
+
+		<!-- 200 frames walk -->
+
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.01" d="31" />
+		
+		<!--  blink -->
+		
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.03" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.04" d="20" />
+		<frame i="spriteimage.boss.hoff.head.glow.03" d="4" />
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="5" />
+		
+		<frame i="spriteimage.boss.hoff.head.glow.01" d="134" />		
+
+		<!-- 100 frames roar -->
+
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.03" d="98" />
+	
+		<goto seq="0" />	
+	</animation>
+
+	<animation name="gidrah.hoff.boss.glow.idle.animation">
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="2" />
+	</animation>
+	
+
+
+	<!-- BOSS ATTACK! -->
+
+	<animation name="gidrah.hoff.boss.body.attack.animation">
+		<!--
+		<sound player="gidrah.player" attenuator="loud.attenuator" sound="gidrah-earth-boss-roar.buffer"/>
+		<sound player="gidrah.player" attenuator="default.attenuator" sound="gidrah-earth-boss-amb.buffer"/>
+		-->
+		<frame i="spriteimage.boss.hoff.body.back.01" d="35" />
+		<event id="1"/>
+		<frame i="spriteimage.boss.hoff.body.back.01" d="15" />
+		<event id="2"/>
+	</animation>	
+
+	<animation name="gidrah.hoff.boss.head.attack.animation">
+	
+		<!-- 50 frames attack -->
+	
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="4" />
+		<offset x="0" y="2" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="8" />
+		<offset x="0" y="4" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="12" />
+		<offset x="0" y="6" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="16" />
+		<offset x="0" y="8" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="20" />
+		<offset x="0" y="10" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="24" />
+		<offset x="0" y="12" d="2" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="28" />
+		<offset x="0" y="14" d="3" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="32" />
+		<offset x="0" y="16" d="4" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="34" />
+		<offset x="0" y="17" d="12" />
+
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="0" />
+		<offset x="0" y="0" d="14" />
+
+	</animation>
+
+
+	<animation name="gidrah.hoff.boss.glow.attack.animation">
+
+		<!-- 50 frames attack -->
+
+		<frame i="spriteimage.boss.hoff.head.glow.01" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.03" d="37" />
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="5" />	
+		<frame i="spriteimage.boss.hoff.head.glow.01" d="4" />
+		
+	</animation>
+
+
+
+
+
+	<!-- BOSS DEATH! -->
+
+
+	<animation name="gidrah.hoff.boss.head.death.roar.animation">
+	
+		<!-- 150 frames roar - 4 open, 24 close, 88 roar + 34 death -->
+		
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="10" />
+		<offset x="0" y="5" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="20" />
+		<offset x="0" y="10" d="1" />		
+		
+		<loop count="4"/>
+		
+			<label id="roar" />
+			
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="2" childYOffset="26" />
+			<offset x="1" y="13" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="30" />
+			<offset x="-2" y="15" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="0" childYOffset="34" />
+			<offset x="0" y="17" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="2" childYOffset="28" />
+			<offset x="1" y="14" d="1" />		
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="34" />
+			<offset x="-2" y="17" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="4" childYOffset="24" />
+			<offset x="2" y="12" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="0" childYOffset="36" />
+			<offset x="0" y="18" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="2" childYOffset="26" />
+			<offset x="1" y="13" d="1" />	
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="34" />
+			<offset x="-2" y="17" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="4" childYOffset="30" />
+			<offset x="2" y="15" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-2" childYOffset="28" />
+			<offset x="-1" y="14" d="1" />
+
+		<repeat id="roar" />
+	
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="4" childYOffset="26" />
+			<offset x="2" y="13" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-6" childYOffset="30" />
+			<offset x="-3" y="15" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="2" childYOffset="34" />
+			<offset x="1" y="17" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="28" />
+			<offset x="-2" y="14" d="1" />		
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="4" childYOffset="24" />
+			<offset x="2" y="12" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="32" />
+			<offset x="-2" y="16" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="6" childYOffset="28" />
+			<offset x="3" y="14" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-2" childYOffset="32" />
+			<offset x="-1" y="16" d="1" />	
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="6" childYOffset="24" />
+			<offset x="3" y="12" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="-4" childYOffset="28" />
+			<offset x="-2" y="14" d="1" />
+			<frame i="spriteimage.boss.hoff.head.01" d="1" childXOffset="0" childYOffset="34" />
+			<offset x="0" y="17" d="13" />
+	
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="28" />
+		<offset x="0" y="14" d="1" />	
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="16" />
+		<offset x="0" y="8" d="1" />
+		<frame i="spriteimage.boss.hoff.head.01" d="1" childYOffset="0" />
+		<offset x="0" y="0" d="19" />
+
+		<return/>
+
+	</animation>	
+
+
+	<animation name="gidrah.hoff.boss.death.right.fall.animation">
+		
+		<angle angle="+20" d="7"/>
+		<angle angle="+30" d="6"/>
+		<angle angle="+45" d="5"/>
+		<angle angle="+65" d="5"/>
+		<angle angle="+90" d="4"/>
+		<angle angle="+120" d="4"/>
+		<angle angle="+160" d="3"/>
+		<angle angle="+200" d="3"/>
+		<angle angle="+300" d="2"/>
+		<angle angle="+500" d="2"/>
+		<angle angle="+800" d="2"/>
+		<angle angle="+1200" d="2"/>		
+		<angle angle="16384" d="0"/>
+
+		<return/>
+	</animation>
+
+	<animation name="gidrah.hoff.boss.death.left.fall.animation">
+		
+		<angle angle="+-20" d="7"/>
+		<angle angle="+-30" d="6"/>
+		<angle angle="+-45" d="5"/>
+		<angle angle="+-65" d="5"/>
+		<angle angle="+-90" d="4"/>
+		<angle angle="+-120" d="4"/>
+		<angle angle="+-160" d="3"/>
+		<angle angle="+-200" d="3"/>
+		<angle angle="+-300" d="2"/>
+		<angle angle="+-500" d="2"/>
+		<angle angle="+-800" d="2"/>
+		<angle angle="+-1200" d="2"/>		
+		<angle angle="-16384" d="0"/>
+
+		<return/>
+	</animation>
+
+	<animation name="gidrah.hoff.boss.death.fade.animation">
+		
+		<alpha alpha="200" d="2"/>
+		<alpha alpha="150" d="2"/>
+		<alpha alpha="100" d="2"/>
+		<alpha alpha="90" d="2"/>
+		<alpha alpha="80" d="2"/>
+		<alpha alpha="70" d="2"/>
+		<alpha alpha="60" d="2"/>
+		<alpha alpha="50" d="2"/>
+		<alpha alpha="40" d="3"/>
+		<alpha alpha="30" d="4"/>
+		<alpha alpha="20" d="5"/>
+		<alpha alpha="12" d="6"/>
+		<alpha alpha="8" d="7"/>
+		
+		<alpha alpha="0" d="200"/>
+
+		<return/>
+	</animation>
+
+
+	<animation name="gidrah.hoff.boss.body.death.right.animation">
+		
+		<!-- roar -->
+		<frame i="spriteimage.boss.hoff.body.back.01" d="113" />
+		<shake amount="10"/>
+		<frame i="spriteimage.boss.hoff.body.back.01" d="37" />
+				
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<offset x="-11" y="0" d="0" />
+		<frame i="spriteimage.boss.hoff.death.right.back.01" d="0" />
+		
+		<sub id="gidrah.hoff.boss.death.right.fall.animation"/>
+		<shake amount="10"/>
+		
+		<alpha alpha="255" d="165"/>
+		<!-- <shake amount="16"/> -->
+		<alpha alpha="255" d="30"/>
+		<shake amount="32"/>
+		<alpha alpha="255" d="10"/>
+
+		<sub id="gidrah.hoff.boss.death.fade.animation"/>
+
+		<event id="1"/>
+
+	</animation>	
+
+
+	<animation name="gidrah.hoff.boss.body.death.left.animation">
+		
+		<!-- roar -->
+		<frame i="spriteimage.boss.hoff.body.back.01" d="113" />
+		<shake amount="10"/>
+		<frame i="spriteimage.boss.hoff.body.back.01" d="37" />
+		
+		<!-- blink -->
+				
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<offset x="11" y="0" d="0" />
+		<frame i="spriteimage.boss.hoff.death.left.back.01" d="0" />
+		
+		<sub id="gidrah.hoff.boss.death.left.fall.animation"/>
+		<shake amount="10"/>
+		
+		<alpha alpha="255" d="165"/>
+		<!-- <shake amount="16"/> -->
+		<alpha alpha="255" d="30"/>
+		<shake amount="32"/>
+		<alpha alpha="255" d="10"/>
+
+		<sub id="gidrah.hoff.boss.death.fade.animation"/>
+
+		<event id="1"/>
+
+	</animation>	
+
+
+	
+	<animation name="gidrah.hoff.boss.head.death.right.animation">
+		
+		<!-- roar -->
+		<offset x="0" y="0" d="0" />
+		<angle angle="0" d="0"/>	
+		<alpha alpha="255" d="0"/>
+		<sub id="gidrah.hoff.boss.head.death.roar.animation"/>
+		
+		<!-- blink -->
+			
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<offset x="-11" y="0" d="0" />
+		<frame i="spriteimage.boss.hoff.death.right.01" d="0" />
+		
+		<sub id="gidrah.hoff.boss.death.right.fall.animation"/>
+		<frame i="spriteimage.boss.hoff.death.right.02" d="0" />
+		
+		<alpha alpha="255" d="205"/>
+		<sub id="gidrah.hoff.boss.death.fade.animation"/>
+
+	</animation>	
+
+	<animation name="gidrah.hoff.boss.head.death.left.animation">
+		
+		<!-- roar -->
+		<offset x="0" y="0" d="0" />
+		<angle angle="0" d="0"/>	
+		<alpha alpha="255" d="0"/>
+		<sub id="gidrah.hoff.boss.head.death.roar.animation"/>
+		
+		<!-- blink -->
+			
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<offset x="11" y="0" d="0" />
+		<frame i="spriteimage.boss.hoff.death.left.01" d="0" />
+		
+		<sub id="gidrah.hoff.boss.death.left.fall.animation"/>
+		<frame i="spriteimage.boss.hoff.death.left.02" d="0" />
+		
+		<alpha alpha="255" d="205"/>
+		<sub id="gidrah.hoff.boss.death.fade.animation"/>
+
+	</animation>	
+
+
+
+	<animation name="gidrah.hoff.boss.glow.death.animation">
+
+		<offset x="0" y="0" d="0" />
+		<angle angle="0" d="0"/>
+		
+		<frame i="spriteimage.boss.hoff.head.glow.01" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.03" d="95" />
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="2" />
+		<frame i="spriteimage.boss.hoff.head.glow.01" d="22" />
+		<frame i="spriteimage.boss.hoff.head.glow.02" d="1" />
+		<frame i="spriteimage.boss.hoff.head.glow.03" d="1" />				
+
+		<frame i="spriteimage.boss.hoff.head.glow.04" d="25" />	
+		
+		<return/>
+	</animation>	
+	
+	<animation name="gidrah.hoff.boss.glow.death.right.animation">
+
+		<!-- roar -->
+	
+		<alpha alpha="255" d="0"/>
+		<sub id="gidrah.hoff.boss.glow.death.animation"/>
+			
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<offset x="-11" y="0" d="0" />
+		<frame i="spriteimage.boss.hoff.death.right.glow.01" d="0" />
+		
+		<sub id="gidrah.hoff.boss.death.right.fall.animation"/>
+		<alpha alpha="255" d="205"/>
+		
+		<sub id="gidrah.hoff.boss.death.fade.animation"/>
+
+	</animation>	
+
+	<animation name="gidrah.hoff.boss.glow.death.left.animation">
+
+		<!-- roar -->
+	
+		<alpha alpha="255" d="0"/>
+		<sub id="gidrah.hoff.boss.glow.death.animation"/>
+			
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<offset x="11" y="0" d="0" />
+		<frame i="spriteimage.boss.hoff.death.left.glow.01" d="0" />
+		
+		<sub id="gidrah.hoff.boss.death.left.fall.animation"/>
+		<alpha alpha="255" d="205"/>
+				
+		<sub id="gidrah.hoff.boss.death.fade.animation"/>
+
+	</animation>	
+	
+
+	<animation name="gidrah.hoff.boss.head.back.death.animation">
+
+		<!-- roar -->
+	
+		<alpha alpha="255" d="0"/>
+		<frame i="spriteimage.boss.hoff.mouth.back.01" d="150" />
+			
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<alpha alpha="0" d="250"/>
+
+	</animation>	
+
+	
+	
+			
+	<animation name="gidrah.hoff.boss.ground.death.right.animation">
+
+		<!-- roar -->
+		<offset x="0" y="0" d="0" />
+		<scale xscale="0.5" yscale="0.5" d="0"/>	
+		<frame i="spriteimage.boss.hoff.body.ground.01" d="150" />
+			
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<frame i="spriteimage.boss.hoff.body.ground.01" d="45" />
+		
+		<offset x="-40" y="0" d="0" />
+		<scale xscale="1.1" yscale="0.65" d="205"/>
+		
+		<sub id="gidrah.hoff.boss.death.fade.animation"/>
+
+	</animation>	
+	
+	
+	<animation name="gidrah.hoff.boss.ground.death.left.animation">
+
+		<!-- roar -->
+		<offset x="0" y="0" d="0" />
+		<scale xscale="0.5" yscale="0.5" d="0"/>
+		<frame i="spriteimage.boss.hoff.body.ground.01" d="150" />
+			
+		<!-- fall over 45 + 2 + 203 = 250 -->
+		
+		<frame i="spriteimage.boss.hoff.body.ground.01" d="45" />
+		
+		<offset x="40" y="0" d="0" />
+		<scale xscale="1.1" yscale="0.65" d="205"/>
+		
+		<sub id="gidrah.hoff.boss.death.fade.animation"/>
+
+	</animation>		
+	
+	
+	
+	
+	<gidrah
+		name="gidrah.hoff.boss.gfx.spec"
+		inherit="gidrah.hoff.boss.spec"
+		floor="-8"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="2" attenuated="true" offset="0,0" animation="gidrah.hoff.boss.body.animation" />
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.boss.hoff.body.ground.01"/>
+				<sprite layer="5" sublayer="0" doChildOffset="true" image="spriteimage.boss.hoff.mouth.back.01"/> <!-- mouth -->
+				<sprite layer="5" sublayer="3" doChildOffset="true" attenuated="true" animation="gidrah.hoff.boss.head.animation" />
+				<sprite layer="5" sublayer="5" doChildOffset="true" animation="gidrah.hoff.boss.glow.animation"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="2" attenuated="true" offset="0,0" animation="gidrah.hoff.boss.body.idle.animation" />
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.boss.hoff.body.ground.01"/>
+				<sprite layer="5" sublayer="0" doChildOffset="true" image="spriteimage.boss.hoff.mouth.back.01"/> <!-- mouth -->
+				<sprite layer="5" sublayer="3" doChildOffset="true" attenuated="true" animation="gidrah.hoff.boss.head.idle.animation" />
+				<sprite layer="5" sublayer="5" doChildOffset="true" animation="gidrah.hoff.boss.glow.idle.animation"/>
+			</layers>
+		</idleAppearance>
+		<attackAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="2" attenuated="true" offset="0,0" animation="gidrah.hoff.boss.body.attack.animation" />
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.boss.hoff.body.ground.01"/>
+				<sprite layer="5" sublayer="0" image="spriteimage.boss.hoff.mouth.back.01"/> <!-- mouth -->
+				<sprite layer="5" sublayer="3" attenuated="true" animation="gidrah.hoff.boss.head.attack.animation" />
+				<sprite layer="5" sublayer="5" doChildOffset="true" animation="gidrah.hoff.boss.glow.attack.animation"/>
+			</layers>
+		</attackAppearance>
+		<frozenAppearance>
+			<array>
+				<item><layers scale="0.5">
+					<sprite layer="5" sublayer="2" attenuated="true" offset="0,0" image="spriteimage.boss.hoff.body.back.01" />
+					<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.boss.hoff.body.ground.01"/>
+					<sprite layer="5" sublayer="3" attenuated="true" image="spriteimage.boss.hoff.head.01" />
+					<sprite layer="5" sublayer="6" attenuated="true" offset="0,0" image="spriteimage.boss.hoff.ice.glow.01"/>			
+					<emitter offset="28,0" ySortOffset="56" emitter="frozen.boss.sparkle.emitter" />
+				</layers></item>
+			</array>
+		</frozenAppearance>		
+		<deathAppearanceRight>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="2" attenuated="true" offset="0,0" animation="gidrah.hoff.boss.body.death.right.animation" />
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="gidrah.hoff.boss.ground.death.right.animation"/> 
+				<sprite layer="5" sublayer="0" doChildOffset="true" animation="gidrah.hoff.boss.head.back.death.animation"/> <!-- mouth -->
+				<sprite layer="5" sublayer="3" doChildOffset="true" attenuated="true" animation="gidrah.hoff.boss.head.death.right.animation" />
+				<sprite layer="5" sublayer="4" doChildOffset="true" animation="gidrah.hoff.boss.glow.death.right.animation"/>
+				
+				<emitter offset="25,0" ySortOffset="100" emitter="gidrah.hoff.death.boss.start.emitter"/>
+				<emitter offset="25,0" ySortOffset="100" emitter="gidrah.hoff.death.flash.boss.start.emitter"/>
+				<emitter offset="-105,0" emitter="gidrah.hoff.death.boss.fall.emitter"/>
+				<!-- <emitter offset="-55,8" emitter="gidrah.hoff.death.boss.mid.emitter"/>
+				<emitter offset="-55,28" emitter="gidrah.hoff.death.flash.boss.mid.emitter"/> -->
+				<emitter offset="-55,0" ySortOffset="8" emitter="gidrah.hoff.death.boss.end.emitter"/>
+				<emitter offset="-55,0" ySortOffset="8" emitter="gidrah.hoff.death.boss.end.sparks.emitter"/>
+				<emitter offset="-55,0" ySortOffset="28" emitter="gidrah.hoff.death.flash.boss.end.emitter"/>
+			</layers>
+		</deathAppearanceRight>
+		<deathAppearanceLeft>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="2" attenuated="true" offset="0,0" animation="gidrah.hoff.boss.body.death.left.animation" />
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="gidrah.hoff.boss.ground.death.left.animation"/> 
+				<sprite layer="5" sublayer="0" doChildOffset="true" animation="gidrah.hoff.boss.head.back.death.animation"/> <!-- mouth -->
+				<sprite layer="5" sublayer="3" doChildOffset="true" attenuated="true" animation="gidrah.hoff.boss.head.death.left.animation" />
+				<sprite layer="5" sublayer="4" doChildOffset="true" animation="gidrah.hoff.boss.glow.death.left.animation"/>
+				
+				<emitter offset="5,0" ySortOffset="100" emitter="gidrah.hoff.death.boss.start.emitter"/>
+				<emitter offset="5,0" ySortOffset="100" emitter="gidrah.hoff.death.flash.boss.start.emitter"/>
+				<emitter offset="30,0" emitter="gidrah.hoff.death.boss.fall.emitter"/>
+				<!-- <emitter offset="100,8" emitter="gidrah.hoff.death.boss.mid.emitter"/>
+				<emitter offset="100,28" emitter="gidrah.hoff.death.flash.boss.mid.emitter"/> -->
+				<emitter offset="100,0" ySortOffset="20" emitter="gidrah.hoff.death.boss.end.emitter"/>
+				<emitter offset="100,0" ySortOffset="8" emitter="gidrah.hoff.death.boss.end.sparks.emitter"/>
+				<emitter offset="100,0" ySortOffset="28" emitter="gidrah.hoff.death.flash.boss.end.emitter"/>
+			</layers>
+		</deathAppearanceLeft>		
+		
+	</gidrah>
+
+	<gidrah
+		name="gidrah.hoff.boss.1"
+		inherit="gidrah.hoff.boss.gfx.spec"
+		hitPoints="100"
+		armour="0"
+		speed="3.0"
+		medal="medal.xmas.1"
+	/>
+
+	<gidrah
+		name="gidrah.hoff.boss.2"
+		inherit="gidrah.hoff.boss.gfx.spec"
+		hitPoints="200"
+		armour="0"
+		speed="3.0"
+		medal="medal.xmas.2"
+	/>
+
+	<gidrah
+		name="gidrah.hoff.boss.3"
+		inherit="gidrah.hoff.boss.gfx.spec"
+		hitPoints="200"
+		armour="2"
+		speed="2.5"
+		medal="medal.xmas.3"
+	/>
+
+	<gidrah
+		name="gidrah.hoff.boss.4"
+		inherit="gidrah.hoff.boss.gfx.spec"
+		hitPoints="200"
+		armour="4"
+		speed="2.0"
+		medal="medal.xmas.4"
+	/>
+
+	<gidrah
+		name="gidrah.hoff.boss.5"
+		inherit="gidrah.hoff.boss.gfx.spec"
+		hitPoints="200"
+		armour="6"
+		speed="1.5"
+		medal="medal.xmas.victory"
+	/>
+	
+</resources>

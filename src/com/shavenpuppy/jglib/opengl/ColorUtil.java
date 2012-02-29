@@ -43,17 +43,28 @@ import com.shavenpuppy.jglib.sprites.SimpleRenderer;
  */
 public final class ColorUtil {
 
+	private static final float ALPHA_DIV = 1.0f / 255.0f;
 	/**
 	 * No construction
 	 */
 	private ColorUtil() {}
 
 	/**
-	 * Set a GL color
+	 * Multiplies the RGB values in color by its alpha, also modulated by incoming alpha
 	 * @param color
+	 * @param alpha
+	 * @param dest May be null
+	 * @return dest, or a new Color, if dest was null
 	 */
-	public static void setGLColor(ReadableColor color) {
-		setGLColor(color, SimpleRenderer.GL_RENDERER);
+	public static Color premultiply(ReadableColor color, int alpha, Color dest) {
+		float a = color.getAlpha() * alpha * ALPHA_DIV;
+		float preMultAlpha = a * ALPHA_DIV;
+		if (dest == null) {
+			dest = new Color((int) (color.getRed() * preMultAlpha), (int) (color.getGreen() * preMultAlpha), (int) (color.getBlue() * preMultAlpha), (int) a);
+		} else {
+			dest.set((int) (color.getRed() * preMultAlpha), (int) (color.getGreen() * preMultAlpha), (int) (color.getBlue() * preMultAlpha), (int) a);
+		}
+		return dest;
 	}
 
 	/**
@@ -64,15 +75,20 @@ public final class ColorUtil {
 		renderer.glColor4ub(color.getRedByte(), color.getGreenByte(), color.getBlueByte(), color.getAlphaByte());
 	}
 
-
 	/**
 	 * Set a GL color
 	 * @param color
-	 * @param alpha
 	 */
-	public static void setGLColor(ReadableColor color, int alpha) {
-		setGLColor(color, alpha, SimpleRenderer.GL_RENDERER);
+	public static void setGLColorPre(ReadableColor color, SimpleRenderer renderer) {
+		renderer.glColor4ub
+			(
+				(byte) (color.getRed() * color.getAlpha() * ALPHA_DIV),
+				(byte) (color.getGreen() * color.getAlpha() * ALPHA_DIV),
+				(byte) (color.getBlue() * color.getAlpha() * ALPHA_DIV),
+				color.getAlphaByte()
+			);
 	}
+
 
 	/**
 	 * Set a GL color
@@ -80,16 +96,18 @@ public final class ColorUtil {
 	 * @param alpha
 	 */
 	public static void setGLColor(ReadableColor color, int alpha, SimpleRenderer renderer) {
-		renderer.glColor4ub(color.getRedByte(), color.getGreenByte(), color.getBlueByte(), (byte) (color.getAlpha() * alpha >> 8));
+		renderer.glColor4ub(color.getRedByte(), color.getGreenByte(), color.getBlueByte(), (byte) (color.getAlpha() * alpha  * ALPHA_DIV));
 	}
 
 	/**
-	 * Set a GL color, modulated by another color
-	 * @param color1
-	 * @param color2
+	 * Set a GL color
+	 * @param color
+	 * @param alpha
 	 */
-	public static void setGLColor(ReadableColor color1, ReadableColor color2) {
-		setGLColor(color1, color2, SimpleRenderer.GL_RENDERER);
+	public static void setGLColorPre(ReadableColor color, int alpha, SimpleRenderer renderer) {
+		float a = color.getAlpha() * alpha * ALPHA_DIV;
+		float preMultAlpha = a * ALPHA_DIV;
+		renderer.glColor4ub((byte) (color.getRed() * preMultAlpha), (byte) (color.getGreen() * preMultAlpha), (byte) (color.getBlue() * preMultAlpha), (byte) a);
 	}
 
 	/**
@@ -98,10 +116,10 @@ public final class ColorUtil {
 	 * @param color2
 	 */
 	public static void setGLColor(ReadableColor color1, ReadableColor color2, SimpleRenderer renderer) {
-		byte red = (byte) ((color1.getRed() * color2.getRed()) / 255);
-		byte green = (byte) ((color1.getGreen() * color2.getGreen()) / 255);
-		byte blue = (byte) ((color1.getBlue() * color2.getBlue()) / 255);
-		byte alpha = (byte) ((color1.getAlpha() * color2.getAlpha()) / 255);
+		byte red = (byte) (color1.getRed() * color2.getRed() * ALPHA_DIV);
+		byte green = (byte) (color1.getGreen() * color2.getGreen() * ALPHA_DIV);
+		byte blue = (byte) (color1.getBlue() * color2.getBlue() * ALPHA_DIV);
+		byte alpha = (byte) (color1.getAlpha() * color2.getAlpha() * ALPHA_DIV);
 		renderer.glColor4ub(red, green, blue, alpha);
 	}
 
@@ -118,10 +136,10 @@ public final class ColorUtil {
 		}
 		dest.set
 			(
-				(byte) ((color1.getRed() * color2.getRed()) / 255),
-				(byte) ((color1.getGreen() * color2.getGreen()) / 255),
-				(byte) ((color1.getBlue() * color2.getBlue()) / 255),
-				(byte) ((color1.getAlpha() * color2.getAlpha()) / 255)
+				(byte) (color1.getRed() * color2.getRed() * ALPHA_DIV),
+				(byte) (color1.getGreen() * color2.getGreen() * ALPHA_DIV),
+				(byte) (color1.getBlue() * color2.getBlue() * ALPHA_DIV),
+				(byte) (color1.getAlpha() * color2.getAlpha() * ALPHA_DIV)
 			);
 		return dest;
 	}
@@ -130,7 +148,7 @@ public final class ColorUtil {
 		if (dest == null) {
 			dest = new Color();
 		}
-		dest.set(color.getRed(), color.getGreen(), color.getBlue(), (color.getAlpha() * alpha) / 255);
+		dest.set(color.getRed(), color.getGreen(), color.getBlue(), (int) (color.getAlpha() * alpha * ALPHA_DIV));
 		return dest;
 	}
 }

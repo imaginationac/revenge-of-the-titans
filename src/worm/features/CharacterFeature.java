@@ -32,8 +32,11 @@
 package worm.features;
 
 import com.shavenpuppy.jglib.openal.ALBuffer;
-import com.shavenpuppy.jglib.resources.*;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.resources.Background;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.MappedColor;
+import com.shavenpuppy.jglib.resources.ResourceArray;
+import com.shavenpuppy.jglib.sprites.Appearance;
 
 /**
  * Defines a character for the story
@@ -66,7 +69,7 @@ public class CharacterFeature extends Feature {
 	private boolean speech;
 
 	/** Appearances */
-	private AnimatedAppearanceResource defaultAppearance, vowelAppearance, consonantAppearance;
+	private Appearance defaultAppearance, vowelAppearance, consonantAppearance;
 
 	/** Mouth layer */
 	private int mouthLayer;
@@ -139,15 +142,15 @@ public class CharacterFeature extends Feature {
 		return (ALBuffer) sounds.getResource(c);
 	}
 
-	public AnimatedAppearanceResource getVowelAppearance() {
+	public Appearance getVowelAppearance() {
 		return vowelAppearance;
 	}
 
-	public AnimatedAppearanceResource getConsonantAppearance() {
+	public Appearance getConsonantAppearance() {
 		return consonantAppearance;
 	}
 
-	public AnimatedAppearanceResource getDefaultAppearance() {
+	public Appearance getDefaultAppearance() {
 		return defaultAppearance;
 	}
 

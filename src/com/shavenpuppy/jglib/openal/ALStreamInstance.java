@@ -37,18 +37,19 @@ import java.nio.ByteBuffer;
 
 import org.lwjgl.BufferUtils;
 
+import com.shavenpuppy.jglib.Resource;
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.resources.WaveWrapper;
 
 import static org.lwjgl.openal.AL10.*;
 
 /**
- * $Id: ALStreamInstance.java,v 1.27 2011/04/18 23:28:06 cix_foo Exp $
+ * $Id: ALStreamInstance.java,v 1.29 2011/10/03 15:08:19 cix_foo Exp $
  *
  * @author $Author: cix_foo $
- * @version $Revision: 1.27 $
+ * @version $Revision: 1.29 $
  */
-public class ALStreamInstance extends ALResource {
+public class ALStreamInstance extends Resource {
 
 	private static final long serialVersionUID = 1L;
 	private static final int BUFSIZE = 65536;
@@ -155,7 +156,7 @@ public class ALStreamInstance extends ALResource {
 	 * @see com.shavenpuppy.jglib.Resource#doCreate()
 	 */
 	@Override
-	protected void doALCreate() {
+	protected void doCreate() {
 
 		if (!org.lwjgl.openal.AL.isCreated()) {
 			return;
@@ -188,6 +189,7 @@ public class ALStreamInstance extends ALResource {
 				if (waveResource == null) {
 					throw new RuntimeException("Resource "+url+" not found");
 				}
+				inputStream = null;
 				inputStream = waveResource.getStream();
 				type = waveResource.getType();
 				frequency = waveResource.getFrequency();
@@ -219,7 +221,7 @@ public class ALStreamInstance extends ALResource {
 	 * @see com.shavenpuppy.jglib.Resource#doDestroy()
 	 */
 	@Override
-	protected void doALDestroy() {
+	protected void doDestroy() {
 		if (buffers != null) {
 			for (int i = 0; i < buffers.length; i ++) {
 				buffers[i].destroy();

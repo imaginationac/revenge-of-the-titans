@@ -31,9 +31,14 @@
  */
 package worm.buildings;
 
+import net.puppygames.applet.Game;
+
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Entity;
+import worm.GameMap;
+import worm.MapRenderer;
+import worm.Worm;
 import worm.entities.Building;
 import worm.entities.Gidrah;
 import worm.features.LayersFeature;
@@ -250,15 +255,15 @@ public class BarricadeFeature extends BuildingFeature {
 
 	@Override
 	public void getResearchStats(StringBuilder stats_1_text, StringBuilder stats_2_text) {
-		stats_1_text.append("{font:tinyfont.glfont color:text}COST: {font:tinyfont.glfont color:text-bold}$");
+		stats_1_text.append("{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.cost")+": {font:tinyfont.glfont color:text-bold}$");
 		stats_1_text.append(getInitialValue());
 		if (getHitPoints() > 0) {
-			stats_1_text.append("\n{font:tinyfont.glfont color:text}STRENGTH: {font:tinyfont.glfont color:text-bold}");
+			stats_1_text.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.strength")+": {font:tinyfont.glfont color:text-bold}");
 			stats_1_text.append(getHitPoints() / 2);
 		}
-		stats_2_text.append("\n{font:tinyfont.glfont color:text}PRODUCTION: {font:tinyfont.glfont color:text-bold}");
+		stats_2_text.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.production")+": {font:tinyfont.glfont color:text-bold}");
 		stats_2_text.append(getNumAvailable());
-		stats_2_text.append(" PER LEVEL");
+		stats_2_text.append(" "+Game.getMessage("ultraworm.researchstats.per_level"));
 	}
 
 	@Override

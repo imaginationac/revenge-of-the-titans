@@ -31,7 +31,10 @@
  */
 package worm.features;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.StringTokenizer;
 
 import org.w3c.dom.Element;
 
@@ -98,7 +101,7 @@ public class StoryFeature extends Feature {
 		 * @return the character
 		 */
 		public CharacterFeature getCharacter() {
-			return (CharacterFeature) Resources.get(useWorld ? Worm.getGameState().getWorld().getTitle()+"."+id : id);
+			return (CharacterFeature) Resources.get(useWorld ? Worm.getGameState().getWorld().getUntranslated()+"."+id : id);
 		}
 
 	}

@@ -31,15 +31,27 @@
  */
 package worm.entities;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.effects.Emitter;
 import net.puppygames.applet.effects.EmitterFeature;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.ClickAction;
+import worm.Entity;
+import worm.GameStateInterface;
+import worm.Hints;
+import worm.Mode;
+import worm.Res;
+import worm.SFX;
+import worm.Worm;
 import worm.animation.SimpleThingWithLayers;
 import worm.buildings.BuildingFeature;
 import worm.effects.HitPointsEffect;
@@ -483,10 +495,7 @@ public abstract class Building extends Entity {
 
 	protected final void updateDamageIndicators() {
 		// No emitters for barricades
-		if (isBarricade()) {
-			return;
-		}
-		if (isMineField()) {
+		if (isBarricade() || isMineField()) {
 			return;
 		}
 		if (hitPointsEffect != null) {
@@ -498,8 +507,12 @@ public abstract class Building extends Entity {
 		}
 		if (hitPoints <= getMaxHitPoints() * 0.33f) {
 			// Flames!
-			damagedEmitter = Res.getBuildingFlamesEmitter().spawn(GameScreen.getInstance());
-			damagedEmitter.setLocation(getMapX() + getCollisionX(), getMapY() + getCollisionY() * 0.33f);
+			damagedEmitter = feature.getFlamesEmitter().spawn(GameScreen.getInstance());
+			Point offset = feature.getFlamesOffset();
+			if (offset == null) {
+				offset = new Point((int) getCollisionX(), (int) (getCollisionY() * 0.33f));
+			}
+			damagedEmitter.setLocation(getMapX() + offset.getX(), getMapY() + offset.getY());
 			damagedEmitter.setFloor(feature.getFloor() + getMapY());
 			if (hitPoints > 0) {
 				onDestructionImminent();
@@ -743,9 +756,6 @@ public abstract class Building extends Entity {
 		hitPointsEffect.reset();
 	}
 
-	/* (non-Javadoc)
-	 * @see storm.Entity#doTick()
-	 */
 	@Override
 	protected final void doTick() {
 		switch (phase) {
@@ -807,10 +817,14 @@ public abstract class Building extends Entity {
 
 				if (isCloaked()) {
 					cloakTick ++;
+					if (cloakCycle == 0) {
+						cloakCycle = Util.random(CLOAK_MIN_CYCLE, CLOAK_MAX_CYCLE);
+					}
 					if (cloakTick > cloakCycle) {
 						cloakTick = 0;
 					}
-					setAlpha((int) LinearInterpolator.instance.interpolate(0.0f, (float) (Math.PI * 2.0), (float) cloakTick / cloakCycle) * (CLOAK_MAX_ALPHA - CLOAK_MIN_ALPHA) + CLOAK_MIN_ALPHA);
+					double angle = (Math.PI * 2.0 * cloakTick) / cloakCycle;
+					setAlpha((int) ((Math.cos(angle) + 1.0) * 0.5 * (CLOAK_MAX_ALPHA - CLOAK_MIN_ALPHA) + CLOAK_MIN_ALPHA));
 				}
 
 				doBuildingTick();
@@ -826,15 +840,13 @@ public abstract class Building extends Entity {
 	protected void doGhostTick() {}
 
 	/**
-	 * Repair this building with a shield
+	 * Repair this building with a fraction of a shield
 	 */
 	public void repair() {
 		if (phase == PHASE_NORMAL && hitPoints < feature.getHitPoints()) {
-			hitPoints ++;
+			hitPoints = Math.min(getMaxHitPoints(), hitPoints + BuildingFeature.HITPOINTS_DIVISOR);
 			updateAppearance();
-			Emitter e = Res.getRepairEmitter().spawn(GameScreen.getInstance());
-			e.setLocation(getMapX() + getOffsetX(), getMapY());
-			e.setOffset(GameScreen.getSpriteOffset());
+			spawnRepairEmitter();
 			onRepaired();
 		}
 	}
@@ -945,7 +957,7 @@ public abstract class Building extends Entity {
 		}
 	}
 
-	protected int getMaxHitPoints() {
+	public int getMaxHitPoints() {
 		return feature.getHitPoints();
 	}
 
@@ -967,28 +979,22 @@ public abstract class Building extends Entity {
 
 	protected void doBuildingSetLocation() {}
 
-	/* (non-Javadoc)
-	 * @see storm.Entity#doUpdate()
-	 */
 	@Override
 	protected final void doUpdate() {
 		if (shieldedLayers != null) {
 			for (int i = 0; i < shieldedLayers.getSprites().length; i ++) {
-				shieldedLayers.getSprite(i).setLocation(getScreenX(), getScreenY(), 0.0f);
+				shieldedLayers.getSprite(i).setLocation(getScreenX(), getScreenY());
 			}
 		}
 		if (hoveredLayers != null) {
 			for (int i = 0; i < hoveredLayers.getSprites().length; i ++) {
-				hoveredLayers.getSprite(i).setLocation(getScreenX(), getScreenY(), 0.0f);
+				hoveredLayers.getSprite(i).setLocation(getScreenX(), getScreenY());
 			}
 		}
 		doBuildingUpdate();
 	}
 	protected void doBuildingUpdate() {}
 
-	/* (non-Javadoc)
-	 * @see worm.Entity#getCurrentAppearance()
-	 */
 	@Override
 	protected LayersFeature getCurrentAppearance() {
 		switch (phase) {
@@ -1282,8 +1288,6 @@ public abstract class Building extends Entity {
 		assert cloaks >= 0 : this;
 		if (cloaks == 0) {
 			setAlpha(255);
-		} else {
-			cloakCycle = Util.random(CLOAK_MIN_CYCLE, CLOAK_MAX_CYCLE);
 		}
 	}
 
@@ -1373,5 +1377,12 @@ public abstract class Building extends Entity {
 
 	public boolean canSell() {
 		return isActive() && phase == PHASE_NORMAL;
+	}
+
+	/**
+	 * @return the building's agitation factor
+	 */
+	public float getAgitation() {
+		return feature.getAgitation();
 	}
 }

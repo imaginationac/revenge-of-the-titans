@@ -31,6 +31,7 @@
  */
 package worm.features;
 
+import net.puppygames.applet.PrizeFeature;
 import worm.Worm;
 import worm.WormGameState;
 
@@ -38,6 +39,8 @@ import worm.WormGameState;
  * Give the player some money
  */
 public class MoneyPrizeFeature extends PrizeFeature {
+
+	private static final long serialVersionUID = 1L;
 
 	private int amount;
 
@@ -51,7 +54,8 @@ public class MoneyPrizeFeature extends PrizeFeature {
 
 	@Override
 	public boolean isValid() {
-		return Worm.getMaxLevel(WormGameState.GAME_MODE_CAMPAIGN) < WormGameState.MAX_LEVELS;
+		int maxLevel = Worm.getMaxLevel(WormGameState.GAME_MODE_CAMPAIGN);
+		return maxLevel >= 5 && maxLevel < WormGameState.MAX_LEVELS;
 	}
 
 	@Override

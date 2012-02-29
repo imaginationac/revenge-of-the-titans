@@ -43,29 +43,29 @@ public interface Tickable {
 	/**
 	 * Tick this thing.
 	 */
-	public void tick();
+	void tick();
 
 	/**
-	 * Update this thing's appearance
+	 * Update this thing's appearance (stage 2 tick). This is called on all Tickables generally after they have all ticked().
 	 */
-	public void update();
+	void update();
 
 	/**
-	 * Remove this thing. After this call, isActive() should return false.
+	 * Remove this thing. After this call, {@link #isActive()} should return <code>false</code>. If {@link #isActive()} already
+	 * returns <code>false</code> then this method should do nothing.
 	 */
-	public void remove();
+	void remove();
 
 	/**
 	 * Is this thing still active?
 	 * @return boolean
 	 */
-	public boolean isActive();
+	boolean isActive();
 
 	/**
-	 * When this tickable is added to a Screen, this callback is called
-	 * to allow you to call further init code.
+	 * Called when this Tickable is added to the specified {@link Screen}
 	 * @param screen The screen to which the tickable was added
 	 */
-	public void spawn(Screen screen);
+	void spawn(Screen screen);
 
 }

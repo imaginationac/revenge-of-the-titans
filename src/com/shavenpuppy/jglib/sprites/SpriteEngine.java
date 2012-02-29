@@ -31,93 +31,77 @@
  */
 package com.shavenpuppy.jglib.sprites;
 
-import java.io.Serializable;
-
+import com.shavenpuppy.jglib.IResource;
 import com.shavenpuppy.jglib.opengl.GLRenderable;
 
 /**
- * SpriteEngine
- *
- * The interface to sprite engines.
+ * SpriteEngine The interface to sprite engines.
  *
  * @author caspian.prince
- * @version $Revision: 1.32 $
+ * @version $Revision: 1.34 $
  */
-public interface SpriteEngine extends GLRenderable
-{
-
-	/** 'Cos most SpriteEngines are actually derived from Resource we need to be able to do proper
-	 *   creation and destruction.
-	 *
-	 *  Maybe what we actually want is some kind of Resource interface that we can share from here and
-	 *  the existing Resouce base class?
-	 */
-	public void create();
-	public void destroy();
-	public boolean isCreated();
+public interface SpriteEngine extends IResource, GLRenderable, SpriteAllocator {
 
 	/**
 	 * Sets a new sprite processor to use for this sprite engine
+	 *
 	 * @param spriteProcessor
 	 */
-	public void setSpriteProcessor(SpriteProcessor spriteProcessor);
+	void setSpriteProcessor(SpriteProcessor spriteProcessor);
 
 	/**
 	 * Gets the sprite processor being used by this sprite engine
+	 *
 	 * @return a SpriteProcessor
 	 */
-	public SpriteProcessor getSpriteProcessor();
+	SpriteProcessor getSpriteProcessor();
 
 	/**
 	 * Sets the tick rate
+	 *
 	 * @param newTickRate
 	 */
-	public void setTickRate(int newTickRate);
+	void setTickRate(int newTickRate);
 
 	/**
 	 * Gets the tick rate
+	 *
 	 * @return the tick rate
 	 */
-	public int getTickRate();
+	int getTickRate();
 
 	/**
-	 * Allocate and initialize sprite. If there are no sprites available an exception is thrown.
-	 * The sprite returned will be visible and active, with no animation or image.
-	 * @param owner The sprite's new owner, which is used to keep track of debugging
-	 * @return a sprite
-	 */
-	public Sprite allocate(Serializable owner);
-
-	/**
-	 * Deallocate a sprite. The sprite is returned to the sprite pool, and no matter what you do
-	 * with it now, it won't do anything on the screen.
+	 * Deallocate a sprite. The sprite is returned to the sprite pool, and no matter what you do with it now, it won't do anything
+	 * on the screen.
+	 *
 	 * @param sprite The sprite to return to the pool
 	 */
-	public void deallocate(Sprite sprite);
+	void deallocate(Sprite sprite);
 
 	/**
 	 * Remove all sprites
 	 */
-	public void clear();
+	void clear();
 
 	/**
 	 * Tick all sprites.
 	 */
-	public void tick();
+	void tick();
 
 	/**
 	 * @return Returns the alpha applied to all the sprites
 	 */
-	public float getAlpha();
+	float getAlpha();
 
 	/**
 	 * Sets the base alpha for all the sprites.
+	 *
 	 * @param alpha The alpha to set.
 	 */
-	public void setAlpha(float alpha);
+	void setAlpha(float alpha);
 
 	/**
 	 * Get the SpriteRenderer
 	 */
-	public SpriteRenderer getSpriteRenderer();
+	SpriteRenderer getSpriteRenderer();
 }

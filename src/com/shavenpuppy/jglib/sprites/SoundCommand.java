@@ -51,7 +51,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class SoundCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private static SoundPlayer soundPlayer;
 	private static Attenuator defaultAttenuator;
@@ -102,8 +102,8 @@ public class SoundCommand extends Command {
 	}
 
 	@Override
-	public boolean execute(Animated target, int tickRate) {
-		if (((Sprite) target).isVisible() && AL.isCreated()) {
+	public boolean execute(Sprite target) {
+		if (target.isVisible() && AL.isCreated()) {
 			SoundPlayer p = playerFeature == null ? soundPlayer : playerFeature;
 			if (soundResource != null && p != null) {
 				SoundEffect fx = p.allocate(soundResource, target);
@@ -116,7 +116,7 @@ public class SoundCommand extends Command {
 					}
 
 					if (att != null) {
-						Object otarget = ((Sprite) target).getOwner();
+						Object otarget = target.getOwner();
 						if (soundResource.getFormat() == AL10.AL_FORMAT_MONO16 && target instanceof ReadablePosition) {
 							ReadablePosition ptarget = (ReadablePosition) otarget;
 							float gain = att.getVolume(ptarget.getX(), ptarget.getY());

@@ -36,6 +36,7 @@ import java.util.ArrayList;
 
 import org.w3c.dom.Element;
 
+import com.shavenpuppy.jglib.Resource;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
 /**
@@ -43,9 +44,9 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  * buffers to stream; one that's playing, the other that's queued, and a third
  * that we're filling with new data.
  */
-public class ALStream extends ALResource {
+public class ALStream extends Resource {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** Pool of stream instances */
 	private static final ArrayList<ALStreamInstance> POOL = new ArrayList<ALStreamInstance>();
@@ -114,7 +115,7 @@ public class ALStream extends ALResource {
 	 * @see com.shavenpuppy.jglib.Resource#doCreate()
 	 */
 	@Override
-	protected void doALCreate() {
+	protected void doCreate() {
 
 		if (!org.lwjgl.openal.AL.isCreated()) {
 			return;
@@ -130,7 +131,7 @@ public class ALStream extends ALResource {
 	 * @see com.shavenpuppy.jglib.Resource#doDestroy()
 	 */
 	@Override
-	protected void doALDestroy() {
+	protected void doDestroy() {
 	}
 
 	/**

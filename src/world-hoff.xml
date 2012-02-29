@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!-- Hoff levels -->
+<resources>
+
+	<include resource="tags.xml"/>
+	
+	<!-- Colors -->
+
+	<include resource="colours-hoff.xml"/>
+	<include resource="ruins-hoff.xml" />
+	
+	<!-- Scenery -->
+	
+	<scenery
+		name="hoff.scenery"
+		minObstacles="50"
+		maxObstacles="100"
+		
+		absMaxRuins="0"
+		maxRuins="0"
+		maxRuinClusters="0"
+		minRuinClusterSize="0"
+		maxRuinClusterSize="0"
+		
+		roads="mars.roads"
+		randomRockyThreshold="0.125"
+	>
+		
+		<crystals>
+			<array>	
+				<item>crystal.2tone.small.1</item>
+				<item>crystal.2tone.small.2</item>
+				<item>crystal.2tone.small.3</item>
+				<item>crystal.2tone.small.4</item>
+				<item>crystal.2tone.small.5</item>
+				<item>crystal.2tone.small.6</item>	
+				<item>crystal.2tone.small.7</item>
+				<item>crystal.2tone.small.8</item>	
+				<item>crystal.2tone.medium.1</item>
+				<item>crystal.2tone.medium.2</item>
+				<item>crystal.2tone.medium.3</item>
+				<item>crystal.2tone.medium.4</item>
+				<item>crystal.2tone.medium.5</item>
+				<item>crystal.2tone.medium.6</item>
+				<item>crystal.2tone.medium.7</item>
+				<item>crystal.2tone.medium.8</item>
+				<item>crystal.2tone.large.1</item>
+				<item>crystal.2tone.large.2</item>
+				<item>crystal.2tone.large.3</item>
+				<item>crystal.2tone.large.4</item>
+				<item>crystal.2tone.large.5</item>
+				<item>crystal.2tone.large.6</item>
+				<item>crystal.2tone.large.7</item>
+				<item>crystal.2tone.large.8</item>
+			</array>	
+		</crystals>
+		
+		<obstacles>
+			<array>
+				
+				<item>hoff.obstacle.pine.1</item>
+				<item>hoff.obstacle.pine.2</item>
+				<item>hoff.obstacle.pine.3</item>
+				<item>hoff.obstacle.pine.4</item>					
+				<item>hoff.obstacle.pine.5</item>						
+				<item>hoff.obstacle.pine.6</item>
+				<item>hoff.obstacle.pine.7</item>
+				<item>hoff.obstacle.pine.8</item>
+				<item>hoff.obstacle.pine.9</item>					
+				<item>hoff.obstacle.pine.10</item>						
+				<item>hoff.obstacle.pine.11</item>
+				<item>hoff.obstacle.pine.12</item>
+				<item>hoff.obstacle.pine.13</item>
+				<item>hoff.obstacle.pine.14</item>					
+				<item>hoff.obstacle.pine.15</item>		
+						
+				<item>hoff.obstacle.pine.large.1</item>
+				<item>hoff.obstacle.pine.large.2</item>
+				<item>hoff.obstacle.pine.large.3</item>
+				<item>hoff.obstacle.pine.large.4</item>					
+				<item>hoff.obstacle.pine.large.5</item>						
+				<item>hoff.obstacle.pine.large.6</item>
+				<item>hoff.obstacle.pine.large.7</item>
+				<item>hoff.obstacle.pine.large.8</item>	
+				<item>hoff.obstacle.pine.large.9</item>
+				<item>hoff.obstacle.pine.large.10</item>		
+				
+			</array>
+		</obstacles>
+		
+		<roadObstacles>
+			<array>
+				<item>hoff.obstacle.pine.1</item>
+				<item>hoff.obstacle.pine.2</item>
+				<item>hoff.obstacle.pine.3</item>
+				<item>hoff.obstacle.pine.4</item>					
+				<item>hoff.obstacle.pine.5</item>						
+				<item>hoff.obstacle.pine.6</item>
+				<item>hoff.obstacle.pine.7</item>
+				<item>hoff.obstacle.pine.8</item>
+				<item>hoff.obstacle.pine.9</item>					
+				<item>hoff.obstacle.pine.10</item>						
+				<item>hoff.obstacle.pine.11</item>
+				<item>hoff.obstacle.pine.12</item>
+				<item>hoff.obstacle.pine.13</item>
+				<item>hoff.obstacle.pine.14</item>					
+				<item>hoff.obstacle.pine.15</item>							
+			</array>
+		</roadObstacles>
+	</scenery>
+	
+
+
+	<!-- World definition -->
+	<world
+		name="hoff.world"
+		untranslated="XMAS"
+		title="=$world.xmas.title"
+		base="building.earth.base"
+		stream="xmas.stream"
+		xmas="true"		
+	>
+		<story>
+			<char id="earth.char">=world.earth.intro1.text</char>
+			<char id="earth.intro.char">=world.earth.intro2.text</char>
+		</story>
+		
+		<template>
+			<instance
+				class="worm.features.XmasTemplateFeature"
+				name="hoff.template"
+				floor0="earth.floor.0"
+				floor1="earth.floor.1"
+				floor2="earth.floor.2"
+				floor3="earth.floor.3"				
+				floorTransitions="earth.transitions"
+				base="basepoint.1"
+				
+				wall="hoff.walls"
+				internalWall="hoff.internalWalls"
+				bigInternalWalls="false"
+				
+				midSpawn="spawnpoint.mid.earth"
+
+				scale="5"
+				octaves="4"
+				persistence="0.35"
+				threshold="0.15"
+
+				minMainTunnelWidth="3.0"
+				maxMainTunnelWidth="5.0"
+				minSpawnTunnelWidth="2.0"
+				maxSpawnTunnelWidth="3.0"
+			/>
+		</template>
+
+		<!-- Gidrahs -->
+		<gidrahs>
+			<array>
+				<item>gidrah.hoff.01</item>
+				<item>gidrah.hoff.02</item>
+				<item>gidrah.hoff.03</item>
+				<item>gidrah.hoff.04</item>
+			</array>
+		</gidrahs>
+		
+		<!-- Angry gidrahs -->
+		<angryGidrahs>
+			<array>
+				<item>angrygidrah.hoff.01</item>
+				<item>angrygidrah.hoff.02</item>
+				<item>angrygidrah.hoff.03</item>
+				<item>angrygidrah.hoff.04</item>
+			</array>
+		</angryGidrahs>
+	</world>
+
+
+
+
+</resources>

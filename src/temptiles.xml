@@ -1,0 +1,2565 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+	<tileset name="world.walls.0" description="World walls 0" default_="world.wall.0.0">
+		<wall name="world.wall.0.0" i="1" image="temptiles.0.0.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.0.0</item>
+					<item>
+						<wall name="world.wall.0.1" i="2" image="temptiles.1.0.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.1.0" i="3" image="temptiles.0.1.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.1.0</item>
+					<item>
+						<wall name="world.wall.1.1" i="4" image="temptiles.1.1.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.2.0" i="5" image="temptiles.0.2.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.2.0</item>
+					<item>
+						<wall name="world.wall.2.1" i="6" image="temptiles.1.2.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.3.0" i="7" image="temptiles.0.3.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.3.0</item>
+					<item>
+						<wall name="world.wall.3.1" i="8" image="temptiles.1.3.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.4.0" i="9" image="temptiles.0.4.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.4.0</item>
+					<item>
+						<wall name="world.wall.4.1" i="10" image="temptiles.1.4.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.5.0" i="11" image="temptiles.0.5.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.5.0</item>
+					<item>
+						<wall name="world.wall.5.1" i="12" image="temptiles.1.5.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.6.0" i="13" image="temptiles.0.6.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.6.0</item>
+					<item>
+						<wall name="world.wall.6.1" i="14" image="temptiles.1.6.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.7.0" i="15" image="temptiles.0.7.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.7.0</item>
+					<item>
+						<wall name="world.wall.7.1" i="16" image="temptiles.1.7.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.8.0" i="17" image="temptiles.0.8.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.8.0</item>
+					<item>
+						<wall name="world.wall.8.1" i="18" image="temptiles.1.8.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.9.0" i="19" image="temptiles.0.9.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.9.0</item>
+					<item>
+						<wall name="world.wall.9.1" i="20" image="temptiles.1.9.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.10.0" i="21" image="temptiles.0.10.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.10.0</item>
+					<item>
+						<wall name="world.wall.10.1" i="22" image="temptiles.1.10.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.11.0" i="23" image="temptiles.0.11.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.11.0</item>
+					<item>
+						<wall name="world.wall.11.1" i="24" image="temptiles.1.11.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.12.0" i="25" image="temptiles.0.12.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.12.0</item>
+					<item>
+						<wall name="world.wall.12.1" i="26" image="temptiles.1.12.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.13.0" i="27" image="temptiles.0.13.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.13.0</item>
+					<item>
+						<wall name="world.wall.13.1" i="28" image="temptiles.1.13.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.14.0" i="29" image="temptiles.0.14.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.14.0</item>
+					<item>
+						<wall name="world.wall.14.1" i="30" image="temptiles.1.14.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.15.0" i="31" image="temptiles.0.15.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.15.0</item>
+					<item>
+						<wall name="world.wall.15.1" i="32" image="temptiles.1.15.0" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.16.0" i="33" image="temptiles.0.0.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.16.0</item>
+					<item>
+						<wall name="world.wall.16.1" i="34" image="temptiles.1.0.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.17.0" i="35" image="temptiles.0.1.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.17.0</item>
+					<item>
+						<wall name="world.wall.17.1" i="36" image="temptiles.1.1.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.18.0" i="37" image="temptiles.0.2.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.18.0</item>
+					<item>
+						<wall name="world.wall.18.1" i="38" image="temptiles.1.2.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.19.0" i="39" image="temptiles.0.3.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.19.0</item>
+					<item>
+						<wall name="world.wall.19.1" i="40" image="temptiles.1.3.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.20.0" i="41" image="temptiles.0.4.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.20.0</item>
+					<item>
+						<wall name="world.wall.20.1" i="42" image="temptiles.1.4.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.21.0" i="43" image="temptiles.0.5.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.21.0</item>
+					<item>
+						<wall name="world.wall.21.1" i="44" image="temptiles.1.5.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.22.0" i="45" image="temptiles.0.6.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.22.0</item>
+					<item>
+						<wall name="world.wall.22.1" i="46" image="temptiles.1.6.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.23.0" i="47" image="temptiles.0.7.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.23.0</item>
+					<item>
+						<wall name="world.wall.23.1" i="48" image="temptiles.1.7.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.24.0" i="49" image="temptiles.0.8.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.24.0</item>
+					<item>
+						<wall name="world.wall.24.1" i="50" image="temptiles.1.8.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.25.0" i="51" image="temptiles.0.9.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.25.0</item>
+					<item>
+						<wall name="world.wall.25.1" i="52" image="temptiles.1.9.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.26.0" i="53" image="temptiles.0.10.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.26.0</item>
+					<item>
+						<wall name="world.wall.26.1" i="54" image="temptiles.1.10.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.27.0" i="55" image="temptiles.0.11.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.27.0</item>
+					<item>
+						<wall name="world.wall.27.1" i="56" image="temptiles.1.11.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.28.0" i="57" image="temptiles.0.12.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.28.0</item>
+					<item>
+						<wall name="world.wall.28.1" i="58" image="temptiles.1.12.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.29.0" i="59" image="temptiles.0.13.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.29.0</item>
+					<item>
+						<wall name="world.wall.29.1" i="60" image="temptiles.1.13.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.30.0" i="61" image="temptiles.0.14.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.30.0</item>
+					<item>
+						<wall name="world.wall.30.1" i="62" image="temptiles.1.14.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.31.0" i="63" image="temptiles.0.15.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.31.0</item>
+					<item>
+						<wall name="world.wall.31.1" i="64" image="temptiles.1.15.1" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.32.0" i="65" image="temptiles.0.0.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.32.0</item>
+					<item>
+						<wall name="world.wall.32.1" i="66" image="temptiles.1.0.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.33.0" i="67" image="temptiles.0.1.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.33.0</item>
+					<item>
+						<wall name="world.wall.33.1" i="68" image="temptiles.1.1.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.34.0" i="69" image="temptiles.0.2.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.34.0</item>
+					<item>
+						<wall name="world.wall.34.1" i="70" image="temptiles.1.2.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.35.0" i="71" image="temptiles.0.3.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.35.0</item>
+					<item>
+						<wall name="world.wall.35.1" i="72" image="temptiles.1.3.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.36.0" i="73" image="temptiles.0.4.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.36.0</item>
+					<item>
+						<wall name="world.wall.36.1" i="74" image="temptiles.1.4.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.37.0" i="75" image="temptiles.0.5.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.37.0</item>
+					<item>
+						<wall name="world.wall.37.1" i="76" image="temptiles.1.5.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.38.0" i="77" image="temptiles.0.6.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.38.0</item>
+					<item>
+						<wall name="world.wall.38.1" i="78" image="temptiles.1.6.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.39.0" i="79" image="temptiles.0.7.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.39.0</item>
+					<item>
+						<wall name="world.wall.39.1" i="80" image="temptiles.1.7.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.40.0" i="81" image="temptiles.0.8.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.40.0</item>
+					<item>
+						<wall name="world.wall.40.1" i="82" image="temptiles.1.8.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.41.0" i="83" image="temptiles.0.9.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.41.0</item>
+					<item>
+						<wall name="world.wall.41.1" i="84" image="temptiles.1.9.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.42.0" i="85" image="temptiles.0.10.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.42.0</item>
+					<item>
+						<wall name="world.wall.42.1" i="86" image="temptiles.1.10.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.43.0" i="87" image="temptiles.0.11.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.43.0</item>
+					<item>
+						<wall name="world.wall.43.1" i="88" image="temptiles.1.11.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.44.0" i="89" image="temptiles.0.12.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.44.0</item>
+					<item>
+						<wall name="world.wall.44.1" i="90" image="temptiles.1.12.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.45.0" i="91" image="temptiles.0.13.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.45.0</item>
+					<item>
+						<wall name="world.wall.45.1" i="92" image="temptiles.1.13.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.46.0" i="93" image="temptiles.0.14.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.46.0</item>
+					<item>
+						<wall name="world.wall.46.1" i="94" image="temptiles.1.14.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.47.0" i="95" image="temptiles.0.15.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.47.0</item>
+					<item>
+						<wall name="world.wall.47.1" i="96" image="temptiles.1.15.2" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.48.0" i="97" image="temptiles.0.0.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.48.0</item>
+					<item>
+						<wall name="world.wall.48.1" i="98" image="temptiles.1.0.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.49.0" i="99" image="temptiles.0.1.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.49.0</item>
+					<item>
+						<wall name="world.wall.49.1" i="100" image="temptiles.1.1.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.50.0" i="101" image="temptiles.0.2.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.50.0</item>
+					<item>
+						<wall name="world.wall.50.1" i="102" image="temptiles.1.2.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.51.0" i="103" image="temptiles.0.3.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.51.0</item>
+					<item>
+						<wall name="world.wall.51.1" i="104" image="temptiles.1.3.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.52.0" i="105" image="temptiles.0.4.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.52.0</item>
+					<item>
+						<wall name="world.wall.52.1" i="106" image="temptiles.1.4.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.53.0" i="107" image="temptiles.0.5.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.53.0</item>
+					<item>
+						<wall name="world.wall.53.1" i="108" image="temptiles.1.5.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.54.0" i="109" image="temptiles.0.6.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.54.0</item>
+					<item>
+						<wall name="world.wall.54.1" i="110" image="temptiles.1.6.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.55.0" i="111" image="temptiles.0.7.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.55.0</item>
+					<item>
+						<wall name="world.wall.55.1" i="112" image="temptiles.1.7.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.56.0" i="113" image="temptiles.0.8.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.56.0</item>
+					<item>
+						<wall name="world.wall.56.1" i="114" image="temptiles.1.8.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.57.0" i="115" image="temptiles.0.9.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.57.0</item>
+					<item>
+						<wall name="world.wall.57.1" i="116" image="temptiles.1.9.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.58.0" i="117" image="temptiles.0.10.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.58.0</item>
+					<item>
+						<wall name="world.wall.58.1" i="118" image="temptiles.1.10.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.59.0" i="119" image="temptiles.0.11.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.59.0</item>
+					<item>
+						<wall name="world.wall.59.1" i="120" image="temptiles.1.11.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.60.0" i="121" image="temptiles.0.12.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.60.0</item>
+					<item>
+						<wall name="world.wall.60.1" i="122" image="temptiles.1.12.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.61.0" i="123" image="temptiles.0.13.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.61.0</item>
+					<item>
+						<wall name="world.wall.61.1" i="124" image="temptiles.1.13.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.62.0" i="125" image="temptiles.0.14.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.62.0</item>
+					<item>
+						<wall name="world.wall.62.1" i="126" image="temptiles.1.14.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.63.0" i="127" image="temptiles.0.15.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.63.0</item>
+					<item>
+						<wall name="world.wall.63.1" i="128" image="temptiles.1.15.3" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.64.0" i="129" image="temptiles.0.0.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.64.0</item>
+					<item>
+						<wall name="world.wall.64.1" i="130" image="temptiles.1.0.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.65.0" i="131" image="temptiles.0.1.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.65.0</item>
+					<item>
+						<wall name="world.wall.65.1" i="132" image="temptiles.1.1.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.66.0" i="133" image="temptiles.0.2.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.66.0</item>
+					<item>
+						<wall name="world.wall.66.1" i="134" image="temptiles.1.2.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.67.0" i="135" image="temptiles.0.3.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.67.0</item>
+					<item>
+						<wall name="world.wall.67.1" i="136" image="temptiles.1.3.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.68.0" i="137" image="temptiles.0.4.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.68.0</item>
+					<item>
+						<wall name="world.wall.68.1" i="138" image="temptiles.1.4.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.69.0" i="139" image="temptiles.0.5.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.69.0</item>
+					<item>
+						<wall name="world.wall.69.1" i="140" image="temptiles.1.5.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.70.0" i="141" image="temptiles.0.6.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.70.0</item>
+					<item>
+						<wall name="world.wall.70.1" i="142" image="temptiles.1.6.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.71.0" i="143" image="temptiles.0.7.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.71.0</item>
+					<item>
+						<wall name="world.wall.71.1" i="144" image="temptiles.1.7.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.72.0" i="145" image="temptiles.0.8.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.72.0</item>
+					<item>
+						<wall name="world.wall.72.1" i="146" image="temptiles.1.8.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.73.0" i="147" image="temptiles.0.9.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.73.0</item>
+					<item>
+						<wall name="world.wall.73.1" i="148" image="temptiles.1.9.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.74.0" i="149" image="temptiles.0.10.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.74.0</item>
+					<item>
+						<wall name="world.wall.74.1" i="150" image="temptiles.1.10.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.75.0" i="151" image="temptiles.0.11.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.75.0</item>
+					<item>
+						<wall name="world.wall.75.1" i="152" image="temptiles.1.11.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.76.0" i="153" image="temptiles.0.12.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.76.0</item>
+					<item>
+						<wall name="world.wall.76.1" i="154" image="temptiles.1.12.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.77.0" i="155" image="temptiles.0.13.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.77.0</item>
+					<item>
+						<wall name="world.wall.77.1" i="156" image="temptiles.1.13.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.78.0" i="157" image="temptiles.0.14.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.78.0</item>
+					<item>
+						<wall name="world.wall.78.1" i="158" image="temptiles.1.14.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.79.0" i="159" image="temptiles.0.15.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.79.0</item>
+					<item>
+						<wall name="world.wall.79.1" i="160" image="temptiles.1.15.4" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.80.0" i="161" image="temptiles.0.0.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.80.0</item>
+					<item>
+						<wall name="world.wall.80.1" i="162" image="temptiles.1.0.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.81.0" i="163" image="temptiles.0.1.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.81.0</item>
+					<item>
+						<wall name="world.wall.81.1" i="164" image="temptiles.1.1.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.82.0" i="165" image="temptiles.0.2.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.82.0</item>
+					<item>
+						<wall name="world.wall.82.1" i="166" image="temptiles.1.2.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.83.0" i="167" image="temptiles.0.3.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.83.0</item>
+					<item>
+						<wall name="world.wall.83.1" i="168" image="temptiles.1.3.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.84.0" i="169" image="temptiles.0.4.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.84.0</item>
+					<item>
+						<wall name="world.wall.84.1" i="170" image="temptiles.1.4.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.85.0" i="171" image="temptiles.0.5.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.85.0</item>
+					<item>
+						<wall name="world.wall.85.1" i="172" image="temptiles.1.5.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.86.0" i="173" image="temptiles.0.6.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.86.0</item>
+					<item>
+						<wall name="world.wall.86.1" i="174" image="temptiles.1.6.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.87.0" i="175" image="temptiles.0.7.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.87.0</item>
+					<item>
+						<wall name="world.wall.87.1" i="176" image="temptiles.1.7.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.88.0" i="177" image="temptiles.0.8.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.88.0</item>
+					<item>
+						<wall name="world.wall.88.1" i="178" image="temptiles.1.8.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.89.0" i="179" image="temptiles.0.9.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.89.0</item>
+					<item>
+						<wall name="world.wall.89.1" i="180" image="temptiles.1.9.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.90.0" i="181" image="temptiles.0.10.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.90.0</item>
+					<item>
+						<wall name="world.wall.90.1" i="182" image="temptiles.1.10.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.91.0" i="183" image="temptiles.0.11.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.91.0</item>
+					<item>
+						<wall name="world.wall.91.1" i="184" image="temptiles.1.11.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.92.0" i="185" image="temptiles.0.12.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.92.0</item>
+					<item>
+						<wall name="world.wall.92.1" i="186" image="temptiles.1.12.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.93.0" i="187" image="temptiles.0.13.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.93.0</item>
+					<item>
+						<wall name="world.wall.93.1" i="188" image="temptiles.1.13.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.94.0" i="189" image="temptiles.0.14.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.94.0</item>
+					<item>
+						<wall name="world.wall.94.1" i="190" image="temptiles.1.14.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.95.0" i="191" image="temptiles.0.15.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.95.0</item>
+					<item>
+						<wall name="world.wall.95.1" i="192" image="temptiles.1.15.5" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.96.0" i="193" image="temptiles.0.0.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.96.0</item>
+					<item>
+						<wall name="world.wall.96.1" i="194" image="temptiles.1.0.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.97.0" i="195" image="temptiles.0.1.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.97.0</item>
+					<item>
+						<wall name="world.wall.97.1" i="196" image="temptiles.1.1.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.98.0" i="197" image="temptiles.0.2.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.98.0</item>
+					<item>
+						<wall name="world.wall.98.1" i="198" image="temptiles.1.2.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.99.0" i="199" image="temptiles.0.3.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.99.0</item>
+					<item>
+						<wall name="world.wall.99.1" i="200" image="temptiles.1.3.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.100.0" i="201" image="temptiles.0.4.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.100.0</item>
+					<item>
+						<wall name="world.wall.100.1" i="202" image="temptiles.1.4.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.101.0" i="203" image="temptiles.0.5.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.101.0</item>
+					<item>
+						<wall name="world.wall.101.1" i="204" image="temptiles.1.5.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.102.0" i="205" image="temptiles.0.6.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.102.0</item>
+					<item>
+						<wall name="world.wall.102.1" i="206" image="temptiles.1.6.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.103.0" i="207" image="temptiles.0.7.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.103.0</item>
+					<item>
+						<wall name="world.wall.103.1" i="208" image="temptiles.1.7.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.104.0" i="209" image="temptiles.0.8.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.104.0</item>
+					<item>
+						<wall name="world.wall.104.1" i="210" image="temptiles.1.8.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.105.0" i="211" image="temptiles.0.9.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.105.0</item>
+					<item>
+						<wall name="world.wall.105.1" i="212" image="temptiles.1.9.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.106.0" i="213" image="temptiles.0.10.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.106.0</item>
+					<item>
+						<wall name="world.wall.106.1" i="214" image="temptiles.1.10.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.107.0" i="215" image="temptiles.0.11.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.107.0</item>
+					<item>
+						<wall name="world.wall.107.1" i="216" image="temptiles.1.11.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.108.0" i="217" image="temptiles.0.12.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.108.0</item>
+					<item>
+						<wall name="world.wall.108.1" i="218" image="temptiles.1.12.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.109.0" i="219" image="temptiles.0.13.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.109.0</item>
+					<item>
+						<wall name="world.wall.109.1" i="220" image="temptiles.1.13.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.110.0" i="221" image="temptiles.0.14.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.110.0</item>
+					<item>
+						<wall name="world.wall.110.1" i="222" image="temptiles.1.14.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.111.0" i="223" image="temptiles.0.15.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.111.0</item>
+					<item>
+						<wall name="world.wall.111.1" i="224" image="temptiles.1.15.6" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.112.0" i="225" image="temptiles.0.0.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.112.0</item>
+					<item>
+						<wall name="world.wall.112.1" i="226" image="temptiles.1.0.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.113.0" i="227" image="temptiles.0.1.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.113.0</item>
+					<item>
+						<wall name="world.wall.113.1" i="228" image="temptiles.1.1.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.114.0" i="229" image="temptiles.0.2.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.114.0</item>
+					<item>
+						<wall name="world.wall.114.1" i="230" image="temptiles.1.2.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.115.0" i="231" image="temptiles.0.3.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.115.0</item>
+					<item>
+						<wall name="world.wall.115.1" i="232" image="temptiles.1.3.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.116.0" i="233" image="temptiles.0.4.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.116.0</item>
+					<item>
+						<wall name="world.wall.116.1" i="234" image="temptiles.1.4.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.117.0" i="235" image="temptiles.0.5.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.117.0</item>
+					<item>
+						<wall name="world.wall.117.1" i="236" image="temptiles.1.5.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.118.0" i="237" image="temptiles.0.6.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.118.0</item>
+					<item>
+						<wall name="world.wall.118.1" i="238" image="temptiles.1.6.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.119.0" i="239" image="temptiles.0.7.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.119.0</item>
+					<item>
+						<wall name="world.wall.119.1" i="240" image="temptiles.1.7.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.120.0" i="241" image="temptiles.0.8.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.120.0</item>
+					<item>
+						<wall name="world.wall.120.1" i="242" image="temptiles.1.8.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.121.0" i="243" image="temptiles.0.9.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.121.0</item>
+					<item>
+						<wall name="world.wall.121.1" i="244" image="temptiles.1.9.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.122.0" i="245" image="temptiles.0.10.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.122.0</item>
+					<item>
+						<wall name="world.wall.122.1" i="246" image="temptiles.1.10.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.123.0" i="247" image="temptiles.0.11.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.123.0</item>
+					<item>
+						<wall name="world.wall.123.1" i="248" image="temptiles.1.11.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.124.0" i="249" image="temptiles.0.12.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.124.0</item>
+					<item>
+						<wall name="world.wall.124.1" i="250" image="temptiles.1.12.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.125.0" i="251" image="temptiles.0.13.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.125.0</item>
+					<item>
+						<wall name="world.wall.125.1" i="252" image="temptiles.1.13.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.126.0" i="253" image="temptiles.0.14.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.126.0</item>
+					<item>
+						<wall name="world.wall.126.1" i="254" image="temptiles.1.14.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.127.0" i="255" image="temptiles.0.15.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.127.0</item>
+					<item>
+						<wall name="world.wall.127.1" i="256" image="temptiles.1.15.7" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.128.0" i="257" image="temptiles.0.0.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.128.0</item>
+					<item>
+						<wall name="world.wall.128.1" i="258" image="temptiles.1.0.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.129.0" i="259" image="temptiles.0.1.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.129.0</item>
+					<item>
+						<wall name="world.wall.129.1" i="260" image="temptiles.1.1.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.130.0" i="261" image="temptiles.0.2.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.130.0</item>
+					<item>
+						<wall name="world.wall.130.1" i="262" image="temptiles.1.2.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.131.0" i="263" image="temptiles.0.3.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.131.0</item>
+					<item>
+						<wall name="world.wall.131.1" i="264" image="temptiles.1.3.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.132.0" i="265" image="temptiles.0.4.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.132.0</item>
+					<item>
+						<wall name="world.wall.132.1" i="266" image="temptiles.1.4.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.133.0" i="267" image="temptiles.0.5.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.133.0</item>
+					<item>
+						<wall name="world.wall.133.1" i="268" image="temptiles.1.5.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.134.0" i="269" image="temptiles.0.6.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.134.0</item>
+					<item>
+						<wall name="world.wall.134.1" i="270" image="temptiles.1.6.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.135.0" i="271" image="temptiles.0.7.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.135.0</item>
+					<item>
+						<wall name="world.wall.135.1" i="272" image="temptiles.1.7.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.136.0" i="273" image="temptiles.0.8.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.136.0</item>
+					<item>
+						<wall name="world.wall.136.1" i="274" image="temptiles.1.8.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.137.0" i="275" image="temptiles.0.9.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.137.0</item>
+					<item>
+						<wall name="world.wall.137.1" i="276" image="temptiles.1.9.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.138.0" i="277" image="temptiles.0.10.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.138.0</item>
+					<item>
+						<wall name="world.wall.138.1" i="278" image="temptiles.1.10.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.139.0" i="279" image="temptiles.0.11.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.139.0</item>
+					<item>
+						<wall name="world.wall.139.1" i="280" image="temptiles.1.11.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.140.0" i="281" image="temptiles.0.12.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.140.0</item>
+					<item>
+						<wall name="world.wall.140.1" i="282" image="temptiles.1.12.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.141.0" i="283" image="temptiles.0.13.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.141.0</item>
+					<item>
+						<wall name="world.wall.141.1" i="284" image="temptiles.1.13.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.142.0" i="285" image="temptiles.0.14.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.142.0</item>
+					<item>
+						<wall name="world.wall.142.1" i="286" image="temptiles.1.14.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.143.0" i="287" image="temptiles.0.15.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.143.0</item>
+					<item>
+						<wall name="world.wall.143.1" i="288" image="temptiles.1.15.8" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.144.0" i="289" image="temptiles.0.0.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.144.0</item>
+					<item>
+						<wall name="world.wall.144.1" i="290" image="temptiles.1.0.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.145.0" i="291" image="temptiles.0.1.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.145.0</item>
+					<item>
+						<wall name="world.wall.145.1" i="292" image="temptiles.1.1.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.146.0" i="293" image="temptiles.0.2.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.146.0</item>
+					<item>
+						<wall name="world.wall.146.1" i="294" image="temptiles.1.2.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.147.0" i="295" image="temptiles.0.3.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.147.0</item>
+					<item>
+						<wall name="world.wall.147.1" i="296" image="temptiles.1.3.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.148.0" i="297" image="temptiles.0.4.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.148.0</item>
+					<item>
+						<wall name="world.wall.148.1" i="298" image="temptiles.1.4.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.149.0" i="299" image="temptiles.0.5.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.149.0</item>
+					<item>
+						<wall name="world.wall.149.1" i="300" image="temptiles.1.5.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.150.0" i="301" image="temptiles.0.6.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.150.0</item>
+					<item>
+						<wall name="world.wall.150.1" i="302" image="temptiles.1.6.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.151.0" i="303" image="temptiles.0.7.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.151.0</item>
+					<item>
+						<wall name="world.wall.151.1" i="304" image="temptiles.1.7.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.152.0" i="305" image="temptiles.0.8.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.152.0</item>
+					<item>
+						<wall name="world.wall.152.1" i="306" image="temptiles.1.8.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.153.0" i="307" image="temptiles.0.9.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.153.0</item>
+					<item>
+						<wall name="world.wall.153.1" i="308" image="temptiles.1.9.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.154.0" i="309" image="temptiles.0.10.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.154.0</item>
+					<item>
+						<wall name="world.wall.154.1" i="310" image="temptiles.1.10.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.155.0" i="311" image="temptiles.0.11.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.155.0</item>
+					<item>
+						<wall name="world.wall.155.1" i="312" image="temptiles.1.11.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.156.0" i="313" image="temptiles.0.12.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.156.0</item>
+					<item>
+						<wall name="world.wall.156.1" i="314" image="temptiles.1.12.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.157.0" i="315" image="temptiles.0.13.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.157.0</item>
+					<item>
+						<wall name="world.wall.157.1" i="316" image="temptiles.1.13.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.158.0" i="317" image="temptiles.0.14.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.158.0</item>
+					<item>
+						<wall name="world.wall.158.1" i="318" image="temptiles.1.14.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.159.0" i="319" image="temptiles.0.15.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.159.0</item>
+					<item>
+						<wall name="world.wall.159.1" i="320" image="temptiles.1.15.9" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.160.0" i="321" image="temptiles.0.0.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.160.0</item>
+					<item>
+						<wall name="world.wall.160.1" i="322" image="temptiles.1.0.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.161.0" i="323" image="temptiles.0.1.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.161.0</item>
+					<item>
+						<wall name="world.wall.161.1" i="324" image="temptiles.1.1.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.162.0" i="325" image="temptiles.0.2.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.162.0</item>
+					<item>
+						<wall name="world.wall.162.1" i="326" image="temptiles.1.2.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.163.0" i="327" image="temptiles.0.3.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.163.0</item>
+					<item>
+						<wall name="world.wall.163.1" i="328" image="temptiles.1.3.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.164.0" i="329" image="temptiles.0.4.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.164.0</item>
+					<item>
+						<wall name="world.wall.164.1" i="330" image="temptiles.1.4.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.165.0" i="331" image="temptiles.0.5.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.165.0</item>
+					<item>
+						<wall name="world.wall.165.1" i="332" image="temptiles.1.5.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.166.0" i="333" image="temptiles.0.6.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.166.0</item>
+					<item>
+						<wall name="world.wall.166.1" i="334" image="temptiles.1.6.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.167.0" i="335" image="temptiles.0.7.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.167.0</item>
+					<item>
+						<wall name="world.wall.167.1" i="336" image="temptiles.1.7.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.168.0" i="337" image="temptiles.0.8.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.168.0</item>
+					<item>
+						<wall name="world.wall.168.1" i="338" image="temptiles.1.8.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.169.0" i="339" image="temptiles.0.9.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.169.0</item>
+					<item>
+						<wall name="world.wall.169.1" i="340" image="temptiles.1.9.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.170.0" i="341" image="temptiles.0.10.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.170.0</item>
+					<item>
+						<wall name="world.wall.170.1" i="342" image="temptiles.1.10.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.171.0" i="343" image="temptiles.0.11.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.171.0</item>
+					<item>
+						<wall name="world.wall.171.1" i="344" image="temptiles.1.11.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.172.0" i="345" image="temptiles.0.12.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.172.0</item>
+					<item>
+						<wall name="world.wall.172.1" i="346" image="temptiles.1.12.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.173.0" i="347" image="temptiles.0.13.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.173.0</item>
+					<item>
+						<wall name="world.wall.173.1" i="348" image="temptiles.1.13.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.174.0" i="349" image="temptiles.0.14.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.174.0</item>
+					<item>
+						<wall name="world.wall.174.1" i="350" image="temptiles.1.14.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.175.0" i="351" image="temptiles.0.15.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.175.0</item>
+					<item>
+						<wall name="world.wall.175.1" i="352" image="temptiles.1.15.10" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.176.0" i="353" image="temptiles.0.0.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.176.0</item>
+					<item>
+						<wall name="world.wall.176.1" i="354" image="temptiles.1.0.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.177.0" i="355" image="temptiles.0.1.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.177.0</item>
+					<item>
+						<wall name="world.wall.177.1" i="356" image="temptiles.1.1.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.178.0" i="357" image="temptiles.0.2.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.178.0</item>
+					<item>
+						<wall name="world.wall.178.1" i="358" image="temptiles.1.2.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.179.0" i="359" image="temptiles.0.3.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.179.0</item>
+					<item>
+						<wall name="world.wall.179.1" i="360" image="temptiles.1.3.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.180.0" i="361" image="temptiles.0.4.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.180.0</item>
+					<item>
+						<wall name="world.wall.180.1" i="362" image="temptiles.1.4.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.181.0" i="363" image="temptiles.0.5.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.181.0</item>
+					<item>
+						<wall name="world.wall.181.1" i="364" image="temptiles.1.5.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.182.0" i="365" image="temptiles.0.6.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.182.0</item>
+					<item>
+						<wall name="world.wall.182.1" i="366" image="temptiles.1.6.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.183.0" i="367" image="temptiles.0.7.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.183.0</item>
+					<item>
+						<wall name="world.wall.183.1" i="368" image="temptiles.1.7.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.184.0" i="369" image="temptiles.0.8.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.184.0</item>
+					<item>
+						<wall name="world.wall.184.1" i="370" image="temptiles.1.8.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.185.0" i="371" image="temptiles.0.9.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.185.0</item>
+					<item>
+						<wall name="world.wall.185.1" i="372" image="temptiles.1.9.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.186.0" i="373" image="temptiles.0.10.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.186.0</item>
+					<item>
+						<wall name="world.wall.186.1" i="374" image="temptiles.1.10.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.187.0" i="375" image="temptiles.0.11.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.187.0</item>
+					<item>
+						<wall name="world.wall.187.1" i="376" image="temptiles.1.11.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.188.0" i="377" image="temptiles.0.12.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.188.0</item>
+					<item>
+						<wall name="world.wall.188.1" i="378" image="temptiles.1.12.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.189.0" i="379" image="temptiles.0.13.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.189.0</item>
+					<item>
+						<wall name="world.wall.189.1" i="380" image="temptiles.1.13.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.190.0" i="381" image="temptiles.0.14.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.190.0</item>
+					<item>
+						<wall name="world.wall.190.1" i="382" image="temptiles.1.14.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.191.0" i="383" image="temptiles.0.15.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.191.0</item>
+					<item>
+						<wall name="world.wall.191.1" i="384" image="temptiles.1.15.11" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.192.0" i="385" image="temptiles.0.0.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.192.0</item>
+					<item>
+						<wall name="world.wall.192.1" i="386" image="temptiles.1.0.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.193.0" i="387" image="temptiles.0.1.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.193.0</item>
+					<item>
+						<wall name="world.wall.193.1" i="388" image="temptiles.1.1.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.194.0" i="389" image="temptiles.0.2.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.194.0</item>
+					<item>
+						<wall name="world.wall.194.1" i="390" image="temptiles.1.2.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.195.0" i="391" image="temptiles.0.3.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.195.0</item>
+					<item>
+						<wall name="world.wall.195.1" i="392" image="temptiles.1.3.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.196.0" i="393" image="temptiles.0.4.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.196.0</item>
+					<item>
+						<wall name="world.wall.196.1" i="394" image="temptiles.1.4.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.197.0" i="395" image="temptiles.0.5.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.197.0</item>
+					<item>
+						<wall name="world.wall.197.1" i="396" image="temptiles.1.5.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.198.0" i="397" image="temptiles.0.6.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.198.0</item>
+					<item>
+						<wall name="world.wall.198.1" i="398" image="temptiles.1.6.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.199.0" i="399" image="temptiles.0.7.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.199.0</item>
+					<item>
+						<wall name="world.wall.199.1" i="400" image="temptiles.1.7.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.200.0" i="401" image="temptiles.0.8.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.200.0</item>
+					<item>
+						<wall name="world.wall.200.1" i="402" image="temptiles.1.8.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.201.0" i="403" image="temptiles.0.9.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.201.0</item>
+					<item>
+						<wall name="world.wall.201.1" i="404" image="temptiles.1.9.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.202.0" i="405" image="temptiles.0.10.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.202.0</item>
+					<item>
+						<wall name="world.wall.202.1" i="406" image="temptiles.1.10.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.203.0" i="407" image="temptiles.0.11.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.203.0</item>
+					<item>
+						<wall name="world.wall.203.1" i="408" image="temptiles.1.11.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.204.0" i="409" image="temptiles.0.12.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.204.0</item>
+					<item>
+						<wall name="world.wall.204.1" i="410" image="temptiles.1.12.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.205.0" i="411" image="temptiles.0.13.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.205.0</item>
+					<item>
+						<wall name="world.wall.205.1" i="412" image="temptiles.1.13.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.206.0" i="413" image="temptiles.0.14.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.206.0</item>
+					<item>
+						<wall name="world.wall.206.1" i="414" image="temptiles.1.14.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.207.0" i="415" image="temptiles.0.15.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.207.0</item>
+					<item>
+						<wall name="world.wall.207.1" i="416" image="temptiles.1.15.12" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.208.0" i="417" image="temptiles.0.0.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.208.0</item>
+					<item>
+						<wall name="world.wall.208.1" i="418" image="temptiles.1.0.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.209.0" i="419" image="temptiles.0.1.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.209.0</item>
+					<item>
+						<wall name="world.wall.209.1" i="420" image="temptiles.1.1.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.210.0" i="421" image="temptiles.0.2.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.210.0</item>
+					<item>
+						<wall name="world.wall.210.1" i="422" image="temptiles.1.2.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.211.0" i="423" image="temptiles.0.3.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.211.0</item>
+					<item>
+						<wall name="world.wall.211.1" i="424" image="temptiles.1.3.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.212.0" i="425" image="temptiles.0.4.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.212.0</item>
+					<item>
+						<wall name="world.wall.212.1" i="426" image="temptiles.1.4.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.213.0" i="427" image="temptiles.0.5.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.213.0</item>
+					<item>
+						<wall name="world.wall.213.1" i="428" image="temptiles.1.5.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.214.0" i="429" image="temptiles.0.6.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.214.0</item>
+					<item>
+						<wall name="world.wall.214.1" i="430" image="temptiles.1.6.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.215.0" i="431" image="temptiles.0.7.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.215.0</item>
+					<item>
+						<wall name="world.wall.215.1" i="432" image="temptiles.1.7.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.216.0" i="433" image="temptiles.0.8.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.216.0</item>
+					<item>
+						<wall name="world.wall.216.1" i="434" image="temptiles.1.8.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.217.0" i="435" image="temptiles.0.9.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.217.0</item>
+					<item>
+						<wall name="world.wall.217.1" i="436" image="temptiles.1.9.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.218.0" i="437" image="temptiles.0.10.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.218.0</item>
+					<item>
+						<wall name="world.wall.218.1" i="438" image="temptiles.1.10.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.219.0" i="439" image="temptiles.0.11.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.219.0</item>
+					<item>
+						<wall name="world.wall.219.1" i="440" image="temptiles.1.11.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.220.0" i="441" image="temptiles.0.12.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.220.0</item>
+					<item>
+						<wall name="world.wall.220.1" i="442" image="temptiles.1.12.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.221.0" i="443" image="temptiles.0.13.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.221.0</item>
+					<item>
+						<wall name="world.wall.221.1" i="444" image="temptiles.1.13.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.222.0" i="445" image="temptiles.0.14.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.222.0</item>
+					<item>
+						<wall name="world.wall.222.1" i="446" image="temptiles.1.14.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.223.0" i="447" image="temptiles.0.15.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.223.0</item>
+					<item>
+						<wall name="world.wall.223.1" i="448" image="temptiles.1.15.13" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.224.0" i="449" image="temptiles.0.0.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.224.0</item>
+					<item>
+						<wall name="world.wall.224.1" i="450" image="temptiles.1.0.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.225.0" i="451" image="temptiles.0.1.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.225.0</item>
+					<item>
+						<wall name="world.wall.225.1" i="452" image="temptiles.1.1.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.226.0" i="453" image="temptiles.0.2.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.226.0</item>
+					<item>
+						<wall name="world.wall.226.1" i="454" image="temptiles.1.2.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.227.0" i="455" image="temptiles.0.3.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.227.0</item>
+					<item>
+						<wall name="world.wall.227.1" i="456" image="temptiles.1.3.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.228.0" i="457" image="temptiles.0.4.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.228.0</item>
+					<item>
+						<wall name="world.wall.228.1" i="458" image="temptiles.1.4.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.229.0" i="459" image="temptiles.0.5.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.229.0</item>
+					<item>
+						<wall name="world.wall.229.1" i="460" image="temptiles.1.5.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.230.0" i="461" image="temptiles.0.6.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.230.0</item>
+					<item>
+						<wall name="world.wall.230.1" i="462" image="temptiles.1.6.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.231.0" i="463" image="temptiles.0.7.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.231.0</item>
+					<item>
+						<wall name="world.wall.231.1" i="464" image="temptiles.1.7.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.232.0" i="465" image="temptiles.0.8.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.232.0</item>
+					<item>
+						<wall name="world.wall.232.1" i="466" image="temptiles.1.8.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.233.0" i="467" image="temptiles.0.9.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.233.0</item>
+					<item>
+						<wall name="world.wall.233.1" i="468" image="temptiles.1.9.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.234.0" i="469" image="temptiles.0.10.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.234.0</item>
+					<item>
+						<wall name="world.wall.234.1" i="470" image="temptiles.1.10.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.235.0" i="471" image="temptiles.0.11.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.235.0</item>
+					<item>
+						<wall name="world.wall.235.1" i="472" image="temptiles.1.11.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.236.0" i="473" image="temptiles.0.12.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.236.0</item>
+					<item>
+						<wall name="world.wall.236.1" i="474" image="temptiles.1.12.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.237.0" i="475" image="temptiles.0.13.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.237.0</item>
+					<item>
+						<wall name="world.wall.237.1" i="476" image="temptiles.1.13.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.238.0" i="477" image="temptiles.0.14.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.238.0</item>
+					<item>
+						<wall name="world.wall.238.1" i="478" image="temptiles.1.14.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.239.0" i="479" image="temptiles.0.15.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.239.0</item>
+					<item>
+						<wall name="world.wall.239.1" i="480" image="temptiles.1.15.14" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.240.0" i="481" image="temptiles.0.0.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.240.0</item>
+					<item>
+						<wall name="world.wall.240.1" i="482" image="temptiles.1.0.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.241.0" i="483" image="temptiles.0.1.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.241.0</item>
+					<item>
+						<wall name="world.wall.241.1" i="484" image="temptiles.1.1.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.242.0" i="485" image="temptiles.0.2.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.242.0</item>
+					<item>
+						<wall name="world.wall.242.1" i="486" image="temptiles.1.2.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.243.0" i="487" image="temptiles.0.3.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.243.0</item>
+					<item>
+						<wall name="world.wall.243.1" i="488" image="temptiles.1.3.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.244.0" i="489" image="temptiles.0.4.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.244.0</item>
+					<item>
+						<wall name="world.wall.244.1" i="490" image="temptiles.1.4.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.245.0" i="491" image="temptiles.0.5.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.245.0</item>
+					<item>
+						<wall name="world.wall.245.1" i="492" image="temptiles.1.5.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.246.0" i="493" image="temptiles.0.6.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.246.0</item>
+					<item>
+						<wall name="world.wall.246.1" i="494" image="temptiles.1.6.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.247.0" i="495" image="temptiles.0.7.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.247.0</item>
+					<item>
+						<wall name="world.wall.247.1" i="496" image="temptiles.1.7.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.248.0" i="497" image="temptiles.0.8.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.248.0</item>
+					<item>
+						<wall name="world.wall.248.1" i="498" image="temptiles.1.8.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.249.0" i="499" image="temptiles.0.9.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.249.0</item>
+					<item>
+						<wall name="world.wall.249.1" i="500" image="temptiles.1.9.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.250.0" i="501" image="temptiles.0.10.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.250.0</item>
+					<item>
+						<wall name="world.wall.250.1" i="502" image="temptiles.1.10.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.251.0" i="503" image="temptiles.0.11.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.251.0</item>
+					<item>
+						<wall name="world.wall.251.1" i="504" image="temptiles.1.11.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.252.0" i="505" image="temptiles.0.12.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.252.0</item>
+					<item>
+						<wall name="world.wall.252.1" i="506" image="temptiles.1.12.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.253.0" i="507" image="temptiles.0.13.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.253.0</item>
+					<item>
+						<wall name="world.wall.253.1" i="508" image="temptiles.1.13.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.254.0" i="509" image="temptiles.0.14.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.254.0</item>
+					<item>
+						<wall name="world.wall.254.1" i="510" image="temptiles.1.14.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+		<wall name="world.wall.255.0" i="511" image="temptiles.0.15.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall">
+			<random>
+				<array>
+					<item>world.wall.255.0</item>
+					<item>
+						<wall name="world.wall.255.1" i="512" image="temptiles.1.15.15" layer="1" color="0,0,0" basic="true" select="false" tooltip="wall"/>
+					</item>
+				</array>
+			</random>
+		</wall>
+	</tileset>
+</resources>

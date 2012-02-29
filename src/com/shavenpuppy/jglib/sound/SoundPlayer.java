@@ -54,7 +54,7 @@ import static org.lwjgl.openal.AL10.*;
  */
 public class SoundPlayer extends Feature {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private static final boolean DEBUG = false;
 

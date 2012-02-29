@@ -1,6 +1,6 @@
 /*
  *  Primitive Collections for Java.
- *  Copyright (C) 2002, 2003  Søren Bak
+ *  Copyright (C) 2002, 2003  SÃ¸ren Bak
  *
  *  This library is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -33,7 +33,7 @@ public class Display {
     }
 
     private static final String displayChars =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#¤%&/()=?\'@£${[]}+|^~*-_.:,;<>\\";
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#Â¤%&/()=?\'@Â£${[]}+|^~*-_.:,;<>\\";
 
     static String hexChar(char v) {
         String s = Integer.toHexString(v);

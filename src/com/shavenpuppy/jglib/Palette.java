@@ -44,7 +44,7 @@ import org.lwjgl.util.ReadableColor;
  */
 public final class Palette implements Externalizable {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The palette format */
 	private int format;

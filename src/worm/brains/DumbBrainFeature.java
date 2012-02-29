@@ -45,6 +45,8 @@ import com.shavenpuppy.jglib.util.Util;
  */
 public class DumbBrainFeature extends BrainFeature {
 
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * C'tor
 	 */
@@ -75,7 +77,7 @@ public class DumbBrainFeature extends BrainFeature {
 		// Find a random base.
 		for (int i = 0; i < n; i ++) {
 			Building newTarget = buildings.get(i);
-			if (newTarget.isActive() && newTarget.isAttackableByGidrahs() && newTarget.isApparentlyValuable()) {
+			if (newTarget.isActive() && !newTarget.isCloaked() && newTarget.isAttackableByGidrahs() && newTarget.isApparentlyValuable()) {
 				bases.add(newTarget);
 			}
 		}
@@ -89,7 +91,7 @@ public class DumbBrainFeature extends BrainFeature {
 		int idx = Util.random(0, n - 1);
 		for (int i = idx; i < n; i ++) {
 			Building newTarget = buildings.get(i);
-			if (newTarget.isActive() && newTarget.isAttackableByGidrahs() && newTarget.isWorthAttacking()) {
+			if (newTarget.isActive() && !newTarget.isCloaked() && newTarget.isAttackableByGidrahs() && newTarget.isWorthAttacking()) {
 				float dist = newTarget.getDistanceTo(mapX, mapY);
 				if (dist < closestDist) {
 					closestDist = dist;
@@ -99,7 +101,7 @@ public class DumbBrainFeature extends BrainFeature {
 		}
 		for (int i = 0; i < idx; i ++) {
 			Building newTarget = buildings.get(i);
-			if (newTarget.isActive() && newTarget.isAttackableByGidrahs() && newTarget.isWorthAttacking()) {
+			if (newTarget.isActive() && !newTarget.isCloaked() && newTarget.isAttackableByGidrahs() && newTarget.isWorthAttacking()) {
 				float dist = newTarget.getDistanceTo(mapX, mapY);
 				if (dist < closestDist) {
 					closestDist = dist;

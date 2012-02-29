@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
 	<ogg name="complete.ogg" url="classpath:complete.ogg" streamed="true"/>
+	<ogg name="december.ogg" url="classpath:december.ogg" streamed="true"/>
 	<ogg name="earth.ogg" url="classpath:earth.ogg" streamed="true"/>
 	<ogg name="gameover.ogg" url="classpath:gameover.ogg" streamed="true"/>
 	<ogg name="earth01.ogg" url="classpath:earth01.ogg" streamed="true"/>
@@ -58,4 +59,5 @@
 	<ogg name="saturn.ogg" url="classpath:saturn.ogg" streamed="true"/>
 	<ogg name="titan.ogg" url="classpath:titan.ogg" streamed="true"/>
 	<ogg name="title.ogg" url="classpath:title.ogg" streamed="true"/>
+	<ogg name="xmas.ogg" url="classpath:xmas.ogg" streamed="true"/>
 </resources>

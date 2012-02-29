@@ -231,6 +231,7 @@
 			<frame i="spriteimage.gidlet.titan.01.04" d="1" />
 		<goto id="end"/>
 		<label id="frozen3"/>
+			<frame i="spriteimage.gidlet.titan.01.06" d="1" />
 		<label id="end"/>
 	</animation>
 

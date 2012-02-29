@@ -35,18 +35,27 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.rmi.Naming;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringTokenizer;
 import java.util.prefs.Preferences;
 
 import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
 import net.puppygames.applet.Screen;
 import net.puppygames.gamecommerce.shared.GenericServerRemote;
-import worm.*;
+import worm.Res;
+import worm.TimeUtil;
+import worm.Worm;
+import worm.WormGameState;
 
 /**
  * The End Game Screen ends the game when the player is killed
  */
 public class SurvivalEndGameScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static SurvivalEndGameScreen instance;
 
@@ -102,18 +111,18 @@ public class SurvivalEndGameScreen extends Screen {
 		String msg;
 		WormGameState gameState = Worm.getGameState();
 		int currTime = gameState.getLevelTick();
-		String key = "survival.hiscore."+gameState.getWorld().getTitle()+"."+gameState.getSurvivalParams().getTemplate().getClass().getName()+"."+gameState.getSurvivalParams().getSize();
-		Preferences preferences = Game.getPreferences();
+		String key = "survival.hiscore."+gameState.getWorld().getUntranslated()+"."+gameState.getSurvivalParams().getTemplate().getClass().getName()+"."+gameState.getSurvivalParams().getSize();
+		Preferences preferences = Game.getRoamingPreferences();
 		int bestTime = preferences.getInt(key+".time", 0);
 		String name = preferences.get(key+".name", "");
 		if (bestTime == 0) {
-			msg = "{font:tinyfont.glfont color:titles.colormap:button-red}TIME SURVIVED: "+TimeUtil.format(currTime);
+			msg = "{font:tinyfont.glfont color:titles.colormap:button-red}"+Game.getMessage("ultraworm.survivalendgame.time_survived")+": "+TimeUtil.format(currTime);
 			maybeSubmitHiscore(key, Game.getPlayerSlot().getName(), currTime);
 		} else if (bestTime < currTime) {
-			msg = "{font:tinyfont.glfont color:titles.colormap:button-red-text}NEW BEST TIME OF "+TimeUtil.format(currTime)+"\n{color:titles.colormap:button-red}PREVIOUS RECORD: "+TimeUtil.format(bestTime)+" ("+name+")";
+			msg = "{font:tinyfont.glfont color:titles.colormap:button-red-text}"+Game.getMessage("ultraworm.survivalendgame.new_best_time")+" "+TimeUtil.format(currTime)+"\n{color:titles.colormap:button-red}"+Game.getMessage("ultraworm.survivalendgame.previous_record")+": "+TimeUtil.format(bestTime)+" ("+name+")";
 			maybeSubmitHiscore(key, Game.getPlayerSlot().getName(), currTime);
 		} else {
-			msg = "{font:tinyfont.glfont color:titles.colormap:button-red}TIME SURVIVED: "+TimeUtil.format(currTime)+"\nDIDN'T BEAT BEST TIME OF "+TimeUtil.format(bestTime)+" ("+name+")";
+			msg = "{font:tinyfont.glfont color:titles.colormap:button-red}"+Game.getMessage("ultraworm.survivalendgame.time_survived")+": "+TimeUtil.format(currTime)+"\n"+Game.getMessage("ultraworm.survivalendgame.didnt_beat")+" "+TimeUtil.format(bestTime)+" ("+name+")";
 			getArea(ID_SUBMIT_MESSAGE).setVisible(false);
 		}
 
@@ -153,10 +162,10 @@ public class SurvivalEndGameScreen extends Screen {
 	}
 
 	private void maybeSubmitHiscore(String key, final String name, final int time) {
-		Game.getPreferences().putInt(key+".time", time);
-		Game.getPreferences().put(key+".name", name);
+		Game.getRoamingPreferences().putInt(key+".time", time);
+		Game.getRoamingPreferences().put(key+".name", name);
 		Game.flushPrefs();
-		if (Game.getSubmitRemoteHiscores()) {
+		if (MiniGame.getSubmitRemoteHiscores()) {
 			// Submit a remote hiscore!
 			getArea(ID_SUBMIT_MESSAGE).setVisible(true);
 			new Thread() {
@@ -174,11 +183,11 @@ public class SurvivalEndGameScreen extends Screen {
 				public void run() {
 					GenericServerRemote server;
 					try {
-						setMessage("{font:tinyfont.glfont color:titles.colormap:button-red}SUBMITTING ONLINE HISCORE...");
+						setMessage("{font:tinyfont.glfont color:titles.colormap:button-red}"+Game.getMessage("ultraworm.survivalendgame.submitting")+"...");
 						server = (GenericServerRemote) Naming.lookup(GenericServerRemote.RMI_URL);
 					} catch (Exception e) {
 						e.printStackTrace(System.err);
-						setMessage("{font:tinyfont.glfont color:titles.colormap:button-red}FAILED TO SUBMIT HISCORE");
+						setMessage("{font:tinyfont.glfont color:titles.colormap:button-red}"+Game.getMessage("ultraworm.survivalendgame.failed"));
 						return;
 					}
 					String ret;
@@ -202,9 +211,9 @@ public class SurvivalEndGameScreen extends Screen {
 						if ("SUCCESS".equals(result)) {
 							// Hurrah!
 							if ("TRUE".equals(getParam(ret, "beat", "FALSE"))) {
-								setMessage("{font:tinyfont.glfont color:titles.colormap:button-red}YOU NOW HOLD THE {color:titles.colormap:button-red-text}ONLINE HISCORE RECORD!");
+								setMessage(Game.getMessage("ultraworm.survivalendgame.you_are_winner"));
 							} else {
-								setMessage("{font:tinyfont.glfont color:titles.colormap:button-red}DIDN'T BEAT THE ONLINE HISCORE RECORD OF "+TimeUtil.format(Integer.parseInt(getParam(ret, "score", "0")))+" ("+getParam(ret, "name", "[unknown]")+")");
+								setMessage(Game.getMessage("ultraworm.survivalendgame.you_are_loser")+" "+TimeUtil.format(Integer.parseInt(getParam(ret, "score", "0")))+" ("+getParam(ret, "name", "[unknown]")+")");
 							}
 						} else if ("FAILED".equals(result)) {
 							throw new Exception("Server result: "+getParam(result, "reason", "unknown"));
@@ -213,7 +222,7 @@ public class SurvivalEndGameScreen extends Screen {
 						}
 					} catch (Exception e) {
 						e.printStackTrace(System.err);
-						setMessage("{font:tinyfont.glfont color:titles.colormap:button-red}FAILED TO SUBMIT HISCORE");
+						setMessage("{font:tinyfont.glfont color:titles.colormap:button-red}"+Game.getMessage("ultraworm.survivalendgame.failed"));
 						return;
 					}
 				}

@@ -38,7 +38,10 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.util.ReadableColor;
 import org.lwjgl.util.Rectangle;
 
-import com.shavenpuppy.jglib.opengl.*;
+import com.shavenpuppy.jglib.opengl.ColorUtil;
+import com.shavenpuppy.jglib.opengl.GLFont;
+import com.shavenpuppy.jglib.opengl.GLRenderable;
+import com.shavenpuppy.jglib.opengl.GLString;
 import com.shavenpuppy.jglib.sprites.SimpleRenderer;
 
 import static org.lwjgl.opengl.GL11.*;
@@ -363,18 +366,17 @@ public class TextField {
 					glDisable(GL_TEXTURE_2D);
 				}
 			});
-			renderer.glBegin(GL_QUADS);
 			if (display.isColoured()) {
-				ColorUtil.setGLColor(display.getBottomColour(), display.getAlpha(), renderer);
+				ColorUtil.setGLColorPre(display.getBottomColour(), display.getAlpha(), renderer);
 			}
-			renderer.glVertex2f(cursorX, cy);
+			short idx = renderer.glVertex2f(cursorX, cy);
 			renderer.glVertex2f(cursorX + 4, cy);
 			if (display.isColoured()) {
-				ColorUtil.setGLColor(display.getTopColour(), display.getAlpha(), renderer);
+				ColorUtil.setGLColorPre(display.getTopColour(), display.getAlpha(), renderer);
 			}
 			renderer.glVertex2f(cursorX + 4, cy + display.getFont().getHeight());
 			renderer.glVertex2f(cursorX, cy + display.getFont().getHeight());
-			renderer.glEnd();
+			renderer.glRender(GL_TRIANGLE_FAN, new short[] {(short) (idx + 0), (short) (idx + 1), (short) (idx + 2), (short) (idx + 3)});
 			renderer.glRender(new GLRenderable() {
 				@Override
 				public void render() {

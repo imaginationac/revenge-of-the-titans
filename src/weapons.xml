@@ -37,7 +37,6 @@
 	<!-- Load all the tags -->
 	<include resource="tags.xml" />
 
-
 	<property key="red_hue" value="1.0" />
 	<property key="red_hue_end" value="1.0" />	
 	<property key="red_color" value="255,0,0,120" />	
@@ -69,19 +68,24 @@
 
 	<weapon 
 		name="miniblaster.weapon.spec"
-		description="MINI-BLASTER"
 		sound="miniblaster.buffer"
 		firerate="30,240"
 	/>	
-	<bullet name="miniblaster.bullet" speed="5" damage="2" stun="0" blaster="true" mini="true"/>
+	<bullet name="miniblaster.bullet" speed="5" damage="2" stun="0" blaster="true" mini="true" range="32"/>
 		
 	<weapon 
 		name="miniheavyblaster.weapon.spec"
-		description="MICROHOWITZER"
 		sound="miniheavyblaster.buffer"
 		firerate="30,240"
 	/>	
-	<bullet name="miniheavyblaster.bullet" speed="4" damage="8" ap="4" stun="8" blaster="true" mini="true"/>
+	<bullet name="miniheavyblaster.bullet" speed="4" damage="6" ap="3" stun="4" blaster="true" mini="true" range="32"/>
+	
+	<weapon 
+		name="miniblastcannon.weapon.spec"
+		sound="miniblastcannon.buffer"
+		firerate="120,450"
+	/>	
+	<bullet name="miniblastcannon.bullet" speed="4" damage="8" ap="4" stun="8" blaster="true" mini="true" range="32"/>
 	
 	<weapon
 		name="turret.weapon.spec"
@@ -96,7 +100,6 @@
 	<weapon 
 		name="blaster.weapon.spec"
 		inherit="turret.weapon.spec"
-		description="BLASTER"
 		firerate="24"
 		fireRatePerCoolingTower="6"
 		magazine="10"
@@ -120,8 +123,6 @@
 	<weapon 
 		name="heavyblaster.weapon.spec"
 		inherit="turret.weapon.spec"
-		description="HEAVY BLASTER"
-		sound="heavyBlaster.buffer"
 		firerate="24"
 		fireRatePerCoolingTower="6"
 		magazine="8"
@@ -129,13 +130,22 @@
 		reloadSpeed="600"
 		reloadPerReloader="60"
 		danger="1"
-	/>
+	>
+			<sounds>
+			<array>
+				<item>heavyBlaster1.buffer</item>
+				<item>heavyBlaster2.buffer</item>
+				<item>heavyBlaster3.buffer</item>
+				<item>heavyBlaster4.buffer</item>
+				<item>heavyBlaster5.buffer</item>
+			</array>
+		</sounds>
+	</weapon>
 	<bullet name="heavyblaster.bullet" speed="9" damage="6" ap="4" stun="4" blaster="true"/>
 		
 	<weapon 
 		name="blastcannon.weapon.spec"
 		inherit="turret.weapon.spec"
-		description="BLAST CANNON"
 		sound="blastCannon.buffer"
 		firerate="24"
 		fireRatePerCoolingTower="6"
@@ -150,7 +160,6 @@
 	<weapon 
 		name="multiblaster.weapon.spec"
 		inherit="turret.weapon.spec"
-		description="MULTIBLASTER"
 		sound="multiblaster.buffer"
 		firerate="180"
 		fireRatePerCoolingTower="90"
@@ -165,7 +174,6 @@
 	<instance
 		name="shotgun.weapon.spec"
 		class="worm.weapons.ShotgunFeature"
-		description="SPREADER CANNON"
 		sound="shotgun.buffer"
 		numpellets="5"
 		spread="0.35"
@@ -196,7 +204,6 @@
 	<instance
 		name="assault.weapon.spec"
 		class="worm.weapons.ShotgunFeature"
-		description="ASSAULT CANNON"
 		sound="assault.buffer"
 		numpellets="7"
 		spread="0.45"
@@ -220,7 +227,6 @@
 	<weapon
 		name="rocket.weapon.spec"
 		inherit="turret.weapon.spec"
-		description="PHASER BOMB"
 		sound="rocket.buffer"
 		firerate="15"
 		fireRatePerCoolingTower="2"
@@ -246,7 +252,6 @@
 	<!-- Gidrah weapons -->
 	<weapon
 		name="gidrah.weapon.small.spec"
-		description="SMALL GIDRAH WEAPON"
 		sound="gidrah.small.weapon.buffer"
 		firerate="1200,1800"
 	/>		
@@ -259,13 +264,11 @@
 	<weapon
 		name="gidrah.weapon.fast"
 		inherit="gidrah.weapon.small"
-		description="FAST GIDRAH WEAPON"
 		firerate="600,1800"
 	/>		
 
 	<weapon
 		name="gidrah.weapon.large.spec"
-		description="LARGE GIDRAH WEAPON"
 		sound="gidrah.large.weapon.buffer"
 		firerate="600,7200"
 	/>		
@@ -408,6 +411,13 @@
 		<frame i="bulletbackground.animation" d="1"/>						
 	</animation>
 	
+	<animation name="miniblastcannon.background.animation">
+		<alpha alpha="0"/>
+		<frame i="spriteimage.bulletBackground" d="0"/>
+		<scale scale="0.7" d="1"/>
+		<frame i="bulletbackground.animation" d="1"/>						
+	</animation>
+	
 	<animation name="blaster.background.animation">
 		<alpha alpha="0"/>
 		<frame i="spriteimage.bulletBackground" d="0"/>
@@ -494,6 +504,13 @@
 		<frame i="bulletglow.animation" d="1"/>						
 	</animation>					
 
+	<animation name="miniblastcannon.glow.animation">
+		<color c="=$cyan_color" d="0"/>
+		<frame i="spriteimage.particle.light.64px.02" d="0"/>						
+		<scale scale="1.3" d="1"/>				
+		<frame i="bulletglow.animation" d="1"/>						
+	</animation>					
+
 	<animation name="blaster.glow.animation">
 		<color c="=$red_color" d="0"/>
 		<frame i="spriteimage.particle.light.64px.02" d="0"/>						
@@ -577,6 +594,17 @@
 				<sprite layer="7" animation="miniheavyblaster.bullet.animation"/>
 				<sprite layer="5" animation="miniheavyblaster.glow.animation"/>
 				<sprite layer="6" animation="miniheavyblaster.background.animation"/>
+				<!-- <emitter emitter="miniblaster.trail.emitter"/> -->
+			</layers></appearance>
+		</bullet></bullet>
+	</weapon>	
+	
+	<weapon name="miniblastcannon.weapon" inherit="miniblastcannon.weapon.spec">
+		<bullet><bullet	inherit="miniblastcannon.bullet" ricochetemitter="miniblastcannon.ricochet.emitter" flashemitter="weapon.flash.miniblastcannon.emitter">
+			<appearance><layers>
+				<sprite layer="7" animation="miniblastcannon.bullet.animation"/>
+				<sprite layer="5" animation="miniblastcannon.glow.animation"/>
+				<sprite layer="6" animation="miniblastcannon.background.animation"/>
 				<!-- <emitter emitter="miniblaster.trail.emitter"/> -->
 			</layers></appearance>
 		</bullet></bullet>
@@ -707,12 +735,11 @@
 	<instance name="gidrah.weapon.boss" class="worm.weapons.DisruptorFeature" inherit="gidrah.weapon.boss.spec"/>
 
 
-	<!-- SPECIAL WEAPONS - DISRUPTOR AND LASER -->
+	<!-- SPECIAL WEAPONS - CAPACITOR, DISRUPTOR AND LASER -->
 	
 	<instance
 		class="worm.weapons.ElectronZapFeature" 
 		name="capacitor.weapon"
-		description="CAPACITOR"
 		firerate="1"
 		magazine="90"
 		ammoPerBattery="30"
@@ -737,7 +764,6 @@
 
 	<instance
 		class="worm.weapons.DisruptorFeature"
-		description="DISRUPTOR"
 		name="disruptor.weapon"
 		sound="disruptor.buffer"
 		texture="disruptor.texture"
@@ -762,7 +788,6 @@
 	
 	<instance
 		class="worm.weapons.LaserFeature"
-		description="MILITARY LASER"
 		name="laser.weapon"
 		sound="laser.buffer"
 		layer="5"
@@ -771,10 +796,12 @@
 		damage="1,8"
 		duration="20"
 		fadeDuration="12"
-		width="2.0"
+		innerWidth="2.0"
+		width="6.0"
 		length="450"
 		sweep="6"
 		color="!198,255,255"
+		innerColor="!198,0,255"
 		beamEmitterOverlay="spriteimage.particle.light.64px.02"
 		magazine="5"
 		ammoPerBattery="1"
@@ -806,7 +833,6 @@
 
 	<instance
 		class="worm.weapons.LaserFeature"
-		description="BOSS LASER"
 		name="boss.laser.weapon"
 		sound="laser.buffer"
 		layer="7"
@@ -815,10 +841,12 @@
 		damage="6"
 		duration="60"
 		fadeDuration="20"
-		width="2.0"
+		width="7.0"
+		innerWidth="3.0"
 		length="200"
 		sweep="0"
 		color="!124,128,255"
+		innerColor="!124,0,255"
 		beamEmitterOverlay="spriteimage.particle.light.64px.02"
 	>
 		<beamEmitter>
@@ -850,6 +878,38 @@
 		</reflectionEmitter>
 	</instance>
 
+	<instance
+		class="worm.weapons.LaserFeature"
+		name="minilaser.weapon"
+		sound="minilaser.buffer"
+		layer="5"
+		firerate="60,300"
+		damage="1,4"
+		duration="10"
+		fadeDuration="6"
+		width="3.0"
+		innerWidth="1.0"
+		length="128"
+		sweep="0"
+		color="!198,255,255"
+		innerColor="!198,0,255"
+		beamEmitterOverlay="spriteimage.particle.light.64px.02"
+	>
+		<beamEmitter>
+			<!--  dont think need an emitter here  -->
+			<emitter
+				
+			/>
+		</beamEmitter>
+		<reflectionEmitter>
+			<emitter name="minilaser.ricochet.emitter" inherit="weapon.flash.minilaser.emitter">
+			 	<slave><emitter particlesPerTick="-1.0, 2.0" startHue="=$purple_hue" endHue="=$purple_hue_end" inherit="ricochet.sparks.emitter" emitterScale="0.25">
+					<slave><emitter startHue="=$purple_hue" endHue="=$purple_hue_end" endBrightness="0.3" inherit="ricochet.sparks.trail.emitter" emitterScale="0.25"/></slave>
+				</emitter></slave>
+			</emitter>	
+		</reflectionEmitter>
+	</instance>
+
 
 
 
@@ -873,6 +933,15 @@
 		<frame i="spriteimage.bullet.miniblaster.03" d="1"/>
 		<frame i="spriteimage.bullet.miniblaster.04" d="1"/>
 		<frame i="spriteimage.bullet.miniblaster.05" d="1"/>
+	</animation>	
+
+	<animation name="miniblastcannon.bullet.animation">
+		<scale yscale="0.25" xscale="0.25"/>
+		<frame i="spriteimage.bullet.blastcannon.01" d="1"/>			
+		<frame i="spriteimage.bullet.blastcannon.02" d="1"/>
+		<frame i="spriteimage.bullet.blastcannon.03" d="1"/>
+		<frame i="spriteimage.bullet.blastcannon.04" d="1"/>
+		<frame i="spriteimage.bullet.blastcannon.05" d="1"/>
 	</animation>	
 
 	<animation name="blaster.bullet.animation">
@@ -1008,6 +1077,16 @@
 	/>	
 
 	<emitter
+		name="weapon.flash.miniblastcannon.emitter"
+		inherit="weapon.flash.emitter"
+		startHue="=$cyan_hue"
+		startBrightness="1.0"
+		endHue="=$cyan_hue_end"
+		endBrightness="0.8, 1.0"
+		emitterScale="0.5"
+	/>	
+
+	<emitter
 		name="weapon.flash.blaster.emitter"
 		inherit="weapon.flash.emitter"
 		startHue="=$red_hue"
@@ -1084,6 +1163,15 @@
 	/>	
 
 	<emitter
+		name="weapon.flash.minilaser.emitter"
+		inherit="weapon.flash.emitter"
+		startHue="=$purple_hue"
+		endHue="=$purple_hue_end"
+		startBrightness="0.8, 1.0"
+		endBrightness="0.6, 0.8"
+	/>	
+
+	<emitter
 		name="weapon.flash.gidrah.small.emitter"
 		inherit="weapon.flash.emitter"
 		startHue="=$gidrah_hue"
@@ -1110,6 +1198,12 @@
 	<emitter name="miniheavyblaster.ricochet.emitter" inherit="weapon.flash.miniheavyblaster.emitter">
 	 	<slave><emitter startHue="=$orange_hue" endHue="=$orange_hue_end" inherit="ricochet.sparks.emitter" emitterScale="0.45">
 			<slave><emitter startHue="=$orange_hue" endHue="=$orange_hue_end" endBrightness="0.3" inherit="ricochet.sparks.trail.emitter" emitterScale="0.45"/></slave>
+		</emitter></slave>
+	</emitter>	
+
+	<emitter name="miniblastcannon.ricochet.emitter" inherit="weapon.flash.miniblastcannon.emitter">
+	 	<slave><emitter startHue="=$cyan_hue" endHue="=$cyan_hue_end" inherit="ricochet.sparks.emitter" emitterScale="0.5">
+			<slave><emitter startHue="=$cyan_hue" endHue="=$cyan_hue_end" endBrightness="0.3" inherit="ricochet.sparks.trail.emitter" emitterScale="0.5"/></slave>
 		</emitter></slave>
 	</emitter>	
 

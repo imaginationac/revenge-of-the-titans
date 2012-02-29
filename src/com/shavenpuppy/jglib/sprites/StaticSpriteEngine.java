@@ -44,7 +44,7 @@ public class StaticSpriteEngine extends Resource implements SpriteEngine {
 	private static final long serialVersionUID = 1L;
 
 	/** The Renderer instance */
-	private final DefaultSpriteRenderer renderer;
+	private final SpriteRenderer renderer;
 
 	/** The sprites */
 	private Sprite[] sprites;
@@ -110,33 +110,21 @@ public class StaticSpriteEngine extends Resource implements SpriteEngine {
 		};
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.sprites.SpriteEngine#getSpriteProcessor()
-	 */
 	@Override
 	public SpriteProcessor getSpriteProcessor() {
 		return spriteProcessor;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.sprites.SpriteEngine#setSpriteProcessor(com.shavenpuppy.jglib.sprites.SpriteProcessor)
-	 */
 	@Override
 	public void setSpriteProcessor(SpriteProcessor spriteProcessor) {
 		this.spriteProcessor = spriteProcessor;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#doCreate()
-	 */
 	@Override
 	protected void doCreate() {
 		renderer.create();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#doDestroy()
-	 */
 	@Override
 	protected void doDestroy() {
 		renderer.destroy();
@@ -168,7 +156,7 @@ public class StaticSpriteEngine extends Resource implements SpriteEngine {
 	 * @return a sprite
 	 */
 	@Override
-	public Sprite allocate(Serializable owner) {
+	public Sprite allocateSprite(Serializable owner) {
 		if (owner == null) {
 			throw new NullPointerException("No owner specified");
 		}
@@ -191,18 +179,15 @@ public class StaticSpriteEngine extends Resource implements SpriteEngine {
 
 	}
 
-	public int maxSprites()
-	{
+	public int maxSprites() {
 		return sprites.length;
 	}
 
-	public int numAllocated()
-	{
+	public int numAllocated() {
 		return numAllocated;
 	}
 
-	public int numFree()
-	{
+	public int numFree() {
 		return sprites.length - numAllocated;
 	}
 

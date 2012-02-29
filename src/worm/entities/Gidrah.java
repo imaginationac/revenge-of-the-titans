@@ -35,20 +35,43 @@ import java.util.ArrayList;
 
 import net.puppygames.applet.Game;
 import net.puppygames.applet.Screen;
-import net.puppygames.applet.effects.*;
+import net.puppygames.applet.effects.BlastEffect;
+import net.puppygames.applet.effects.Effect;
+import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.LabelEffect;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.AttenuatedColor;
+import worm.CauseOfDeath;
+import worm.ClickAction;
+import worm.Entity;
+import worm.GameMap;
+import worm.GameStateInterface;
+import worm.Hints;
+import worm.Layers;
+import worm.MapRenderer;
+import worm.Medals;
+import worm.Res;
 import worm.SFX;
+import worm.Stats;
+import worm.Worm;
+import worm.WormGameState;
 import worm.brains.SmartBrainFeature;
 import worm.effects.BuildingAttackedEffect;
-import worm.features.*;
+import worm.features.GidrahFeature;
+import worm.features.LayersFeature;
+import worm.features.ResearchFeature;
 import worm.screens.GameScreen;
 import worm.weapons.WeaponFeature.WeaponInstance;
 
 import com.shavenpuppy.jglib.Resources;
-import com.shavenpuppy.jglib.interpolators.*;
+import com.shavenpuppy.jglib.interpolators.CosineInterpolator;
+import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
+import com.shavenpuppy.jglib.interpolators.OpenLinearInterpolator;
 import com.shavenpuppy.jglib.openal.ALBuffer;
 import com.shavenpuppy.jglib.resources.Range;
 import com.shavenpuppy.jglib.sound.SoundEffect;
@@ -86,7 +109,7 @@ public class Gidrah extends Entity {
 	private static final int WRAITHS_VISIBLE_TO_TURRETS_ALPHA = 224;
 	private static final int DANGER_RECALC_THRESHOLD = 20;
 	private static final int DANGER_DIVISOR = 5;
-	private static final int MAX_DANGER = 100;
+	public static final int MAX_DANGER = 100;
 	private static final float MAX_SURVIVAL_DIFFICULTY_HITPOINTS_MULTIPLIER = 2.0f;
 	private static final float MAX_SURVIVAL_DIFFICULTY_BOSS_HITPOINTS_MULTIPLIER = 1.5f;
 	private static final float MAX_DIFFICULTY_HITPOINTS_MULTIPLIER = 3.0f;
@@ -566,12 +589,18 @@ public class Gidrah extends Entity {
 	}
 
 	private void calcHitPoints() {
+		int gameMode = Worm.getGameState().getGameMode();
 		if (feature.isBoss()) {
-			if (Worm.getGameState().getGameMode() == WormGameState.GAME_MODE_SURVIVAL) {
-				hitPoints = (int) OpenLinearInterpolator.instance.interpolate(feature.getHitPoints(), feature.getHitPoints() * MAX_SURVIVAL_DIFFICULTY_BOSS_HITPOINTS_MULTIPLIER, Worm.getGameState().getDifficulty() );
-			} else {
-				hitPoints = (int) OpenLinearInterpolator.instance.interpolate(feature.getHitPoints(), feature.getHitPoints() * MAX_DIFFICULTY_HITPOINTS_MULTIPLIER, Worm.getGameState().getDifficulty());
+			float mult;
+			switch (gameMode) {
+				case WormGameState.GAME_MODE_SURVIVAL:
+				case WormGameState.GAME_MODE_XMAS:
+					mult = MAX_SURVIVAL_DIFFICULTY_BOSS_HITPOINTS_MULTIPLIER;
+					break;
+				default:
+					mult = MAX_DIFFICULTY_HITPOINTS_MULTIPLIER;
 			}
+			hitPoints = (int) OpenLinearInterpolator.instance.interpolate(feature.getHitPoints(), feature.getHitPoints() * mult, Worm.getGameState().getDifficulty() );
 			Building base = Worm.getGameState().getBase();
 			double dx = getTileX() - base.getTileX();
 			double dy = getTileY() - base.getTileY();
@@ -586,7 +615,7 @@ public class Gidrah extends Entity {
 				System.out.println("... and now "+hitPoints);
 			}
 		} else {
-			if (Worm.getGameState().getGameMode() == WormGameState.GAME_MODE_SURVIVAL) {
+			if (gameMode == WormGameState.GAME_MODE_SURVIVAL || gameMode == WormGameState.GAME_MODE_XMAS) {
 				hitPoints = (int) OpenLinearInterpolator.instance.interpolate
 					(
 						feature.getHitPoints() + Worm.getGameState().getLevelTick() * HITPOINTS_PER_SURVIVAL_LEVEL_TICK / (type + 1),
@@ -937,7 +966,7 @@ public class Gidrah extends Entity {
 			appearance.updateEmitters(emitter, getMapX(), getMapY());
 		}
 		if (hitPointsSprite != null) {
-			hitPointsSprite.setLocation(getScreenX()+feature.getHitPointsX(), getScreenY()+feature.getHitPointsY(), 0);
+			hitPointsSprite.setLocation(getScreenX()+feature.getHitPointsX(), getScreenY()+feature.getHitPointsY());
 		}
 	}
 

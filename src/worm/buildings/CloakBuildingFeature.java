@@ -57,6 +57,11 @@ public class CloakBuildingFeature extends BuildingFeature {
 			target.addCloaks(delta);
 		}
 
+		@Override
+		public boolean isCloaked() {
+		    return true;
+		}
+
 	}
 
 	/**
@@ -85,7 +90,6 @@ public class CloakBuildingFeature extends BuildingFeature {
 			||	feature instanceof BarracksBuildingFeature
 			||	feature instanceof CollectorBuildingFeature
 			||	feature instanceof AutoLoaderBuildingFeature
-			||	feature instanceof CloakBuildingFeature
 			||	feature instanceof ShieldGeneratorBuildingFeature
 			||	feature instanceof ScarecrowBuildingFeature
 			;

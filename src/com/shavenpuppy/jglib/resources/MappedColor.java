@@ -69,6 +69,7 @@ public class MappedColor implements ReadableColor, Parseable, Serializable {
 	@Override
 	public void fromString(String src) {
 		// Either mapName:colorName or just a color
+		src = src.toLowerCase();
 		int idx = src.indexOf(':');
 		if (idx != -1) {
 			mapName = src.substring(0, idx);

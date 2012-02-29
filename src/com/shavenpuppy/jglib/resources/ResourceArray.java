@@ -36,7 +36,10 @@ import java.util.List;
 
 import org.w3c.dom.Element;
 
-import com.shavenpuppy.jglib.*;
+import com.shavenpuppy.jglib.IResource;
+import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.Resources;
+import com.shavenpuppy.jglib.XMLResourceWriter;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
 /**
@@ -51,10 +54,10 @@ public class ResourceArray extends Resource {
 	private String[] resource;
 
 	/** Embedded resources */
-	private Resource[] embedded;
+	private IResource[] embedded;
 
 	/** The resources, in an array */
-	private transient Resource[] resourceInstance;
+	private transient IResource[] resourceInstance;
 
 	/**
 	 * C'tor
@@ -77,7 +80,7 @@ public class ResourceArray extends Resource {
 	public void load(Element element, Loader loader) throws Exception {
 		List<Element> children = XMLUtil.getChildren(element, "item");
 		resource = new String[children.size()];
-		embedded = new Resource[children.size()];
+		embedded = new IResource[children.size()];
 		for (int i = 0; i < children.size(); i ++) {
 			Element child = children.get(i);
 			// Look for a child element
@@ -121,7 +124,7 @@ public class ResourceArray extends Resource {
 	 * @param idx
 	 * @return
 	 */
-	public Resource getResource(int idx) {
+	public IResource getResource(int idx) {
 		return resourceInstance[idx];
 	}
 
@@ -148,7 +151,7 @@ public class ResourceArray extends Resource {
 			if (resource[i] != null) {
 				writer.writeText(resource[i]);
 			} else if (embedded[i] != null) {
-				embedded[i].toXML(writer);
+				((Resource) embedded[i]).toXML(writer);
 			}
 			writer.closeTag();
 		}

@@ -35,8 +35,8 @@ import net.puppygames.applet.Game;
 
 import org.w3c.dom.Element;
 
-import com.shavenpuppy.jglib.sprites.Animated;
 import com.shavenpuppy.jglib.sprites.Command;
+import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
 public class PrintCommand extends Command {
@@ -55,7 +55,7 @@ public class PrintCommand extends Command {
 	}
 
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		int currentSequence = target.getSequence();
 		target.setSequence(currentSequence + 1);
 		if (Game.DEBUG) {

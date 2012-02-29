@@ -102,7 +102,7 @@ public class WarehouseBuildingFeature extends BuildingFeature {
 
 	@Override
 	public boolean isAffectedBy(BuildingFeature feature) {
-		return feature instanceof FactoryBuildingFeature || feature instanceof ShieldGeneratorBuildingFeature;
+		return feature instanceof FactoryBuildingFeature || feature instanceof ShieldGeneratorBuildingFeature || feature instanceof CloakBuildingFeature;
 	}
 
 }

@@ -178,20 +178,22 @@
 		title="BASE"
 		hitPointsGraphics="hitpoints.5x5.10.array"
 		repairEmitter="repair.5x5.emitter"
+		cost="500"
 	/>
 
 
 	<!-- REFINING ============================================================================================================================ -->
 
+	
 	<instance
 		class="worm.buildings.FactoryBuildingFeature"
 		name="factory.building.spec"
 		hud="build_factory"
-		tooltipGraphic="quicklaunch.key.R.off.animation"
+		tooltipGraphic="=$key.game.factory.icon"
 		bounds="0,0,40,24"
-		title="REFINERY"
+		title="=$factory.building.title"
 		hitpoints="20"
-		bonusdescription="+$10 / 3 SECONDS"
+		bonusdescription="=$factory.building.bonus"
 		cost="250"
 		hitPointsGraphics="hitpoints.4x4.5.array"
 		forcefieldGraphics="forcefield.4x4.5.array"
@@ -206,40 +208,34 @@
 		amountToExtractPerWarehouse="2"
 		maxCollectors="4"
 		maxWarehouses="4"
-	>
-		<description>
-			<text>PLACE REFINERIES NEXT TO MINERAL DEPOSITS TO GENERATE CASH.</text>
-		</description>	
-	</instance>	
+		description="factory.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.WarehouseBuildingFeature"
 		name="warehouse.building.spec"
 		hud="build_warehouse"
-		tooltipGraphic="quicklaunch.key.T.off.animation"
+		tooltipGraphic="=$key.game.warehouse.icon"
 		hitpoints="12"
 		bounds="0,0,20,16"
-		title="REPROCESSOR"
-		bonusdescription="+20% MONEY FROM REFINERIES"
+		title="=$warehouse.building.title"
+		bonusdescription="=$warehouse.building.bonus"
 		cost="750"
 		repairEmitter="repair.2x2.emitter"
 		hitPointsGraphics="hitpoints.2x2.3.array"
 		forcefieldGraphics="forcefield.2x2.3.array"
 		buildEmitter="build.2x2.emitter"
 		shopIcon="building.silo"		
-	>
-		<description>
-			<text>REDUCES EXTRACTION WASTE FOR REFINERIES.</text>
-		</description>		
-	</instance>	
+		description="warehouse.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.CollectorBuildingFeature"
 		name="collector.building.spec"
 		hud="build_collector"
-		tooltipGraphic="quicklaunch.key.Y.off.animation"
+		tooltipGraphic="=$key.game.collector.icon"
 		bounds="0,0,20,16"
-		title="COLLECTOR"
+		title="=$collector.building.title"
 		hitpoints="12"
 		cost="500"
 		hitPointsGraphics="hitpoints.2x2.3.array"
@@ -247,11 +243,8 @@
 		repairEmitter="repair.2x2.emitter"
 		buildEmitter="build.2x2.emitter"
 		shopIcon="building.collector"
-	>
-		<description>
-			<text>INCREASES REFINERY GENERATION SPEED.</text>
-		</description>	
-	</instance>	
+		description="collector.building.description"
+	/>
 
 
 	<!-- TURRETS ============================================================================================================================ -->
@@ -268,10 +261,10 @@
 		inherit="turret.building.spec"
 		name="blaster.building.spec"
 		hud="build_blaster"
-		tooltipGraphic="quicklaunch.key.1.off.animation"
+		tooltipGraphic="=$key.game.blaster.icon"
 		hitpoints="12"
 		bounds="0,0,32,20"
-		title="BLASTER"
+		title="=$blaster.building.title"
 		weapon="blaster.weapon"
 		beamOffsetX="1"
 		beamOffsetY="7"
@@ -283,11 +276,9 @@
 		shopIcon="building.blaster"
 		baseRange="=$baserange"	
 		rangeIncrement="=$rangeincrement"
+		description="blaster.building.description"
 	>
 		<barrel>10,15</barrel>
-		<description>
-			<text>FIRES BLASTER ROUNDS. INEFFECTIVE AGAINST ARMOURED TARGETS.</text>
-		</description>		
 	</instance>	
 			
 	<instance
@@ -295,10 +286,10 @@
 		inherit="turret.building.spec"
 		name="heavyblaster.building.spec"
 		hud="build_heavyblaster"
-		tooltipGraphic="quicklaunch.key.2.off.animation"
+		tooltipGraphic="=$key.game.heavyblaster.icon"
 		hitpoints="12"
 		bounds="0,0,32,20"
-		title="HEAVY BLASTER"
+		title="=$heavyblaster.building.title"
 		weapon="heavyblaster.weapon"
 		beamOffsetX="1"
 		beamOffsetY="8"
@@ -310,12 +301,10 @@
 		shopIcon="building.heavyblaster"		
 		baseRange="=$baserange"	
 		rangeIncrement="=$rangeincrement"
+		description="heavyblaster.building.description"
 	>
 		<barrel>8,19</barrel>
 		<barrel>8,15</barrel>
-		<description>
-			<text>FIRES HEAVY BLASTER ROUNDS. CAN PIERCE LIGHTLY ARMOURED TARGETS.</text>
-		</description>
 	</instance>	
 
 	<instance
@@ -323,10 +312,10 @@
 		inherit="turret.building.spec"
 		name="multiblaster.building.spec"
 		hud="build_multiblaster"
-		tooltipGraphic="quicklaunch.key.3.off.animation"
+		tooltipGraphic="=$key.game.multiblaster.icon"
 		hitpoints="12"
 		bounds="0,0,32,20"
-		title="MULTI-BLASTER"
+		title="=$multiblaster.building.title"
 		weapon="multiblaster.weapon"
 		beamOffsetX="-3"
 		beamOffsetY="10"
@@ -338,6 +327,7 @@
 		shopIcon="building.multiblaster"		
 		baseRange="=$baserange"	
 		rangeIncrement="=$rangeincrement"
+		description="multiblaster.building.description"
 	>
 		<barrel>7,19</barrel>
 		<barrel>20,19</barrel>
@@ -345,9 +335,6 @@
 		<barrel>20,17</barrel>
 		<barrel>7,15</barrel>
 		<barrel>20,15</barrel>
-		<description>
-			<text>FIRES MULTI-BLASTER ROUNDS. LIKE A BLASTER BUT WITH A LARGE CLIP AND HIGH RATE OF FIRE. INEFFECTIVE AGAINST ARMOURED TARGETS.</text>
-		</description>		
 	</instance>	
 			
 	<instance
@@ -355,10 +342,10 @@
 		inherit="turret.building.spec"
 		name="blastcannon.building.spec"
 		hud="build_blastcannon"
-		tooltipGraphic="quicklaunch.key.4.off.animation"
+		tooltipGraphic="=$key.game.blastcannon.icon"
 		hitpoints="12"
 		bounds="0,0,32,20"
-		title="BLAST CANNON"
+		title="=$blastcannon.building.title"
 		weapon="blastcannon.weapon"
 		beamOffsetX="-3"
 		beamOffsetY="11"
@@ -370,14 +357,12 @@
 		shopIcon="building.blastcannon"		
 		baseRange="=$baserange"	
 		rangeIncrement="=$rangeincrement"
+		description="blastcannon.building.description"
 	>
 		<barrel>8,21</barrel>
 		<barrel>19,21</barrel>
 		<barrel>8,16</barrel>
 		<barrel>19,16</barrel>
-		<description>
-			<text>FIRES BLAST CANNON ROUNDS. PIERCES ALL KNOWN ARMOUR.</text>
-		</description>		
 	</instance>	
 			
 	<instance
@@ -385,10 +370,10 @@
 		inherit="turret.building.spec"
 		name="shotgun.building.spec"
 		hud="build_spreadercannon"
-		tooltipGraphic="quicklaunch.key.5.off.animation"
+		tooltipGraphic="=$key.game.spreadercannon.icon"
 		hitpoints="12"
 		bounds="0,0,32,20"
-		title="SPREADER CANNON"
+		title="=$shotgun.building.title"
 		weapon="shotgun.weapon"
 		ignoreDeflection="true"
 		beamOffsetX="-3"
@@ -401,6 +386,7 @@
 		shopIcon="building.spreader"
 		baseRange="=$baserange"	
 		rangeIncrement="=$rangeincrement"
+		description="shotgun.building.description"
 	>
 		<barrel>7,22</barrel>
 		<barrel>20,22</barrel>
@@ -408,9 +394,6 @@
 		<barrel>21,19</barrel>
 		<barrel>7,16</barrel>
 		<barrel>20,16</barrel>
-		<description>
-			<text>FIRES A SALVO OF SPREADER CANNON ROUNDS. INEFFECTIVE AGAINST ARMOURED TARGETS BUT WILL CAUSE STUN.</text>
-		</description>		
 	</instance>	
 
 	<instance
@@ -418,10 +401,10 @@
 		inherit="turret.building.spec"
 		name="assault.building.spec"
 		hud="build_assaultcannon"
-		tooltipGraphic="quicklaunch.key.6.off.animation"
+		tooltipGraphic="=$key.game.assaultcannon.icon"
 		hitpoints="12"
 		bounds="0,0,40,24"
-		title="ASSAULT CANNON"
+		title="=$assault.building.title"
 		ignoreDeflection="true"
 		weapon="assault.weapon"
 		beamOffsetX="-2"
@@ -435,6 +418,7 @@
 		heavyWeapon="true"		
 		baseRange="=$baserange"	
 		rangeIncrement="=$rangeincrement"
+		description="assault.building.description"
 	>
 		<barrel>13,26</barrel>
 		<barrel>22,26</barrel>
@@ -446,9 +430,6 @@
 		<barrel>26,18</barrel>
 		<barrel>13,16</barrel>
 		<barrel>22,16</barrel>
-		<description>
-			<text>FIRES A SALVO OF ASSAULT CANNON ROUNDS. EFFECTIVE AGAINST LIGHTLY ARMOURED TARGETS. CAUSES STUN.</text>
-		</description>		
 	</instance>	
 
 			
@@ -457,10 +438,10 @@
 		inherit="turret.building.spec"
 		name="rocket.building.spec"
 		hud="build_rocket"
-		tooltipGraphic="quicklaunch.key.7.off.animation"
+		tooltipGraphic="=$key.game.rocket.icon"
 		hitpoints="12"
 		bounds="0,0,40,24"
-		title="ROCKETS"
+		title="=$rocket.building.title"
 		weapon="rocket.weapon"
 		beamOffsetX="6"
 		beamOffsetY="15"
@@ -478,6 +459,7 @@
 		numAvailable="1"	
 		maxAvailable="5"
 		agitation="0.0625"
+		description="rocket.building.description"
 	>
 		<barrel>12,26</barrel>
 		<barrel>17,26</barrel>
@@ -487,9 +469,6 @@
 		<barrel>12,18</barrel>
 		<barrel>17,18</barrel>
 		<barrel>23,18</barrel>		
-		<description>
-			<text>FIRES AN EXPLOSIVE ROCKET WITH WIDE-RANGING AREA EFFECT. DEVASTATINGLY EFFECTIVE AGAINST GROUND TARGETS.</text>
-		</description>		
 	</instance>	
 				
 	<instance
@@ -497,10 +476,10 @@
 		inherit="turret.building.spec"
 		name="laser.building.spec"
 		hud="build_laser"
-		tooltipGraphic="quicklaunch.key.8.off.animation"
+		tooltipGraphic="=$key.game.laser.icon"
 		hitpoints="12"
 		bounds="0,0,40,24"
-		title="LASER"
+		title="=$laser.building.title"
 		weapon="laser.weapon"
 		beamOffsetX="-3"
 		beamOffsetY="12"
@@ -517,11 +496,9 @@
 		numAvailable="1"
 		maxAvailable="5"
 		agitation="0.0625"
+		description="laser.building.description"
 	>
 		<barrel>17,20</barrel>
-		<description>
-			<text>FIRES A DEADLY LASER BEAM, CUTTING STRAIGHT THROUGH ENEMIES IN A SINGLE BLAST. USEFUL AGAINST FLYING TARGETS.</text>
-		</description>	
 	</instance>	
 			
 	<instance
@@ -529,10 +506,10 @@
 		inherit="turret.building.spec"
 		name="disruptor.building.spec"
 		hud="build_disruptor"
-		tooltipGraphic="quicklaunch.key.9.off.animation"
+		tooltipGraphic="=$key.game.disruptor.icon"
 		hitpoints="12"
 		bounds="0,0,40,24"
-		title="DISRUPTOR"
+		title="=$disruptor.building.title"
 		weapon="disruptor.weapon"
 		beamOffsetX="7"
 		beamOffsetY="8"
@@ -548,11 +525,9 @@
 		numAvailable="1"
 		maxAvailable="5"
 		agitation="0.0625"
+		description="disruptor.building.description"
 	>
 		<barrel>17,20</barrel>
-		<description>
-			<text>TOP SECRET DISRUPTOR DEVASTATES ALL LIVING CREATURES WITHIN A SHORT RANGE. DEVASTATINGLY EFFECTIVE AGAINST ALL TARGETS.</text>
-		</description>
 	</instance>		
 
 
@@ -564,10 +539,10 @@
 		class="worm.buildings.MinefieldFeature"
 		name="mine.building.spec"
 		hud="build_mine"
-		tooltipGraphic="quicklaunch.key.0.off.animation"
+		tooltipGraphic="=$key.game.mine.icon"
 		bounds="-4,-4,8,8"
-		title="MINES"
-		numAvailable="40"
+		title="=$mine.building.title"
+		numAvailable="20"
 		maxAvailable="99"
 		cost="25"
 		explosionRadius="16.0"
@@ -576,20 +551,17 @@
 		paintable="true"
 		buildEmitter="build.1x1.emitter"
 		shopIcon="building.mine"		
-	>
-		<description>
-			<text>EXPLOSIVE DEVICE. TRIGGERED ON CONTACT. LIMITED AVAILABILITY. WARNING: DO NOT PLACE CLOSE TO BUILDINGS.</text>
-		</description>			
-	</instance>	
+		description="mine.building.description"
+	/>
 		
 	<instance
 		class="worm.buildings.MinefieldFeature"
 		name="clustermine.building.spec"
 		hud="build_clustermine"
-		tooltipGraphic="quicklaunch.key.MINUS.off.animation"
+		tooltipGraphic="=$key.game.clustermine.icon"
 		bounds="0,0,12,12"
-		title="CLUSTER MINES"
-		numAvailable="20"
+		title="=$clustermine.building.title"
+		numAvailable="10"
 		maxAvailable="50"
 		cost="75"
 		explosionRadius="8.0"
@@ -597,20 +569,17 @@
 		uses="4"
 		paintable="true"
 		shopIcon="building.clustermine"		
-	>
-		<description>
-			<text>SMALLER, LESS POWERFUL MINES IN GREATER NUMBERS. LIMITED AVAILABILITY. WARNING: DO NOT PLACE CLOSE TO BUILDINGS.</text>
-		</description>
-	</instance>	
+		description="clustermine.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.MinefieldFeature"
 		name="blastmine.building.spec"
 		hud="build_blastmine"
-		tooltipGraphic="quicklaunch.key.EQUALS.off.animation"
+		tooltipGraphic="=$key.game.blastmine.icon"
 		bounds="0,0,12,8"
-		title="BLAST MINE"
-		numAvailable="10"
+		title="=$blastmine.building.title"
+		numAvailable="5"
 		maxAvailable="25"
 		cost="100"
 		explosionRadius="80.0"
@@ -620,11 +589,8 @@
 		requiresArming="true"
 		buildEmitter="build.1x1.emitter"
 		shopIcon="building.blastmine"		
-	>
-		<description>
-			<text>LARGE HIGH EXPLOSIVE MINE. TRIGGERED BY REMOTE CONTROL. CLICK TO DETONATE IN 5 SECONDS. WARNING: DO NOT PLACE CLOSE TO BUILDINGS.</text>
-		</description>			
-	</instance>	
+		description="blastmine.building.description"
+	/>
 	
 
 
@@ -634,11 +600,11 @@
 		class="worm.buildings.BarracksBuildingFeature"
 		name="barracks.building.spec"
 		hud="build_barracks"
-		tooltipGraphic="quicklaunch.key.U.off.animation"
+		tooltipGraphic="=$key.game.barracks.icon"
 		bounds="0,0,40,24"
-		title="DROID FACTORY"
+		title="=$barracks.building.title"
 		hitpoints="20"
-		bonusdescription="+1 DROID / 7 SECONDS"
+		bonusdescription="=$barracks.building.bonus"
 		cost="1000"
 		buffedCost="1500"
 		hitPointsGraphics="hitpoints.4x4.5.array"
@@ -646,86 +612,78 @@
 		repairEmitter="repair.4x4.emitter"
 		buildEmitter="build.4x4.emitter"
 		shopIcon="building.barracks"
-		unit="earth.unit.01"
-		buffedUnit="earth.unit.02"
-		sergeant="earth.unit.03"
+		unit="unit.droid"
+		buffedUnit="unit.droid.buffed"
+		sergeant="unit.droid.sergeant"
 		numAvailable="1"
 		maxAvailable="5"
 		agitation="0.0625"
-		baseProductionRate="420"
-		buffedProductionRate="600"
+		baseProductionRate="600"
+		buffedProductionRate="900"
 		maxReactors="4"
-		productionRatePerReactor="60"
+		productionRatePerReactor="75"
 		unitsPerReactor="1"
-		maxUnits="6"
-	>
-		<description>
-			<text>PRODUCES UP TO 6 DROIDS, USED TO ATTACK SMALL ENEMIES. ENHANCE WITH REACTORS.</text>
-		</description>	
-	</instance>	
+		maxUnits="5"
+		description="barracks.building.description"
+	/>
 		
 	<instance
 		class="worm.buildings.BarracksBuildingFeature"
 		name="tankfactory.building.spec"
 		hud="build_tankfactory"
-		tooltipGraphic="quicklaunch.key.I.off.animation"
+		tooltipGraphic="=$key.game.tankfactory.icon"
 		bounds="0,0,40,24"
-		title="TANK FACTORY"
+		title="=$tankfactory.building.title"
 		hitpoints="20"
-		bonusdescription="+1 TANK / 7 SECONDS" 
+		bonusdescription="=$tankfactory.building.bonus" 
 		cost="2500"
+		buffedCost="3500"
 		hitPointsGraphics="hitpoints.4x4.5.array"
 		forcefieldGraphics="forcefield.4x4.5.array"
 		repairEmitter="repair.4x4.emitter"
 		buildEmitter="build.4x4.emitter"
 		shopIcon="building.tankfactory"
-		unit="earth.unit.01"
-		buffedUnit="earth.unit.02"
-		sergeant="earth.unit.03"
+		unit="unit.tank"
+		buffedUnit="unit.tank.buffed"
+		sergeant="unit.tank.sergeant"
 		numAvailable="1"
-		maxAvailable="5"
+		maxAvailable="3"
 		agitation="0.125"
-		baseProductionRate="420"
+		baseProductionRate="750"
+		buffedProductionRate="1000"
 		maxReactors="4"
-		productionRatePerReactor="60"
+		productionRatePerReactor="75"
 		unitsPerReactor="1"
-		maxUnits="6"
-	>
-		<description>
-			<text>PRODUCES UP TO 6 TANKS, USED TO ATTACK LARGER ENEMIES. ENHANCE WITH REACTORS.</text>
-		</description>	
-	</instance>		
+		maxUnits="4"
+		description="tankfactory.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.BarracksBuildingFeature"
 		name="repairdrones.building.spec"
 		hud="build_repairdrones"
-		tooltipGraphic="quicklaunch.key.O.off.animation"
+		tooltipGraphic="=$key.game.repairdrones.icon"
 		bounds="0,0,40,24"
-		title="REPAIR DRONES"
+		title="=$repairdrones.building.title"
 		hitpoints="20"
-		bonusdescription="+1 DRONE / 7 SECONDS" 
-		cost="1500"
+		bonusdescription="=$repairdrones.building.bonus" 
+		cost="2500"
 		hitPointsGraphics="hitpoints.4x4.5.array"
 		forcefieldGraphics="forcefield.4x4.5.array"
 		repairEmitter="repair.4x4.emitter"
 		buildEmitter="build.4x4.emitter"
 		shopIcon="building.repairdrones"
-		unit="earth.unit.01"
-		buffedUnit="earth.unit.02"
-		sergeant="earth.unit.03"
+		unit="unit.drone"
 		numAvailable="1"
-		maxAvailable="5"
-		baseProductionRate="420"
+		maxAvailable="1"
+		baseProductionRate="1200"
+		buffedProductionRate="900"
 		maxReactors="4"
-		productionRatePerReactor="60"
+		productionRatePerReactor="75"
 		unitsPerReactor="1"
-		maxUnits="6"
-	>
-		<description>
-			<text>PRODUCES AUTONOMOUS REPAIR DRONES THAT WILL REPAIR DAMAGE TO BUILDINGS. ENHANCE WITH REACTORS.</text>
-		</description>	
-	</instance>		
+		maxUnits="3"
+		description="repairdrones.building.description"
+	/>
 
 
 
@@ -736,10 +694,10 @@
 		class="worm.buildings.CapacitorBuildingFeature"
 		name="capacitor.building.spec"
 		hud="build_capacitor"
-		tooltipGraphic="quicklaunch.key.F.off.animation"
+		tooltipGraphic="=$key.game.capacitor.icon"
 		hitpoints="12"
 		bounds="0,0,32,20"
-		title="CAPACITOR"
+		title="=$capacitor.building.title"
 		cost="750"
 		weapon="capacitor.weapon"
 		bezerkWeapon="bezerk.weapon"
@@ -751,21 +709,18 @@
 		baseRange="64.0"
 		rangePerReactor="16.0"
 		maxReactors="4"		
-	>
-		<description>
-			<text>CAPACITORS FIRE DEADLY CHARGED PARTICLES AT YOUR SPECIFIED TARGETS. AIM AND FIRE USING THE MOUSE.</text>
-		</description>	
-	</instance>	
+		description="capacitor.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.ShieldGeneratorBuildingFeature"
 		name="shield.building.spec"
 		hud="build_shield"
-		tooltipGraphic="quicklaunch.key.G.off.animation"
+		tooltipGraphic="=$key.game.shield.icon"
 		hitpoints="12"
 		bounds="0,0,20,16"
-		title="SHIELD GENERATOR"
-		bonusdescription="+1 ARMOUR"
+		title="=$shield.building.title"
+		bonusdescription="=$shield.building.bonus"
 		cost="2500"
 		hitPointsGraphics="hitpoints.2x2.3.array"
 		forcefieldGraphics="forcefield.2x2.3.array"
@@ -775,21 +730,18 @@
 		numAvailable="1"		
 		maxAvailable="10"
 		agitation="0.0625"
-	>
-		<description>
-			<text>GENERATES SHIELDS WHICH PROTECT NEARBY BUILDINGS.</text>
-		</description>	
-	</instance>	
+		description="shield.building.description"
+	/>
 
 
 	<instance
 		class="worm.buildings.TurretBuildingFeature"
 		name="decoy.building.spec"
 		hud="build_decoy"
-		tooltipGraphic="quicklaunch.key.H.off.animation"
+		tooltipGraphic="=$key.game.decoy.icon"
 		hitpoints="12"
 		bounds="0,0,20,16"
-		title="DECOY"
+		title="=$decoy.building.title"
 		cost="1500"
 		paintable="true"
 		hitPointsGraphics="hitpoints.2x2.3.array"
@@ -800,43 +752,37 @@
 		numAvailable="1"		
 		maxAvailable="10"
 		agitation="-0.03125"
-	>
-		<description>
-			<text>CALM ENEMIES DOWN AND LURE THEM AWAY FROM YOUR BASE WITH THIS DECOY.</text>
-		</description>			
-	</instance>
+		description="decoy.building.description"
+	/>
 	
 	<instance
-		class="worm.buildings.TurretBuildingFeature"
+		class="worm.buildings.ScarecrowBuildingFeature"
 		name="scarecrow.building.spec"
 		hud="build_scarecrow"
-		tooltipGraphic="quicklaunch.key.J.off.animation"
+		tooltipGraphic="=$key.game.scarecrow.icon"
 		hitpoints="12"
 		bounds="0,0,20,16"
-		title="SCARECROW"
+		title="=$scarecrow.building.title"
 		cost="250"
 		radius="64.0"
-		danger="=#worm.entities.Gidrah.MAX_DANGER"
+		danger="=$#worm.entities.Gidrah.MAX_DANGER"
 		hitPointsGraphics="hitpoints.2x2.3.array"
 		forcefieldGraphics="forcefield.2x2.3.array"
 		repairEmitter="repair.2x2.emitter"
 		buildEmitter="build.2x2.emitter"
 		shopIcon="building.scarecrow"		
-	>
-		<description>
-			<text>SCARE ENEMIES AWAY FROM VALUABLE BUILDINGS WITH THIS SCARECROW.</text>
-		</description>			
-	</instance>
+		description="scarecrow.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.BarricadeFeature"
 		name="tangleweb.building.spec"
 		hud="build_tangleweb"
-		tooltipGraphic="quicklaunch.key.K.off.animation"
+		tooltipGraphic="=$key.game.tangleweb.icon"
 		hitpoints="0"
 		bounds="0,0,12,12"
-		title="TANGLEWEB"
-		shortTitle="TANGLEWEB"
+		title="=$tangleweb.building.title"
+		shortTitle="=$tangleweb.building.title"
 		numAvailable="20"
 		maxAvailable="80"
 		cost="50"
@@ -848,33 +794,27 @@
 		setting="building"
 		slowdown="true"
 		gidletproof="true"
-	>
-		<description>
-			<text>TANGLEWEB FLOOR MATTING WILL IMPEDE ALIEN PROGRESS. PARTICULARLY USEFUL WHEN DEPLOYED ON ROADS.</text>
-		</description>
-	</instance>	
+		description="tangleweb.building.description"
+	/>
 
 	<instance
-		class="worm.buildings.TurretBuildingFeature"
+		class="worm.buildings.CloakBuildingFeature"
 		name="cloakingdevice.building.spec"
 		hud="build_cloakingdevice"
-		tooltipGraphic="quicklaunch.key.L.off.animation"
+		tooltipGraphic="=$key.game.cloakingdevice.icon"
 		hitpoints="12"
-		bounds="0,0,20,16"
-		title="CLOAKING DEVICE"
+		bounds="0,0,32,20"
+		title="=$cloakingdevice.building.title"
 		cost="750"
-		hitPointsGraphics="hitpoints.2x2.3.array"
-		forcefieldGraphics="forcefield.2x2.3.array"
-		repairEmitter="repair.2x2.emitter"
-		buildEmitter="build.2x2.emitter"
+		hitPointsGraphics="hitpoints.3x3.3.array"
+		forcefieldGraphics="forcefield.3x3.3.array"
+		repairEmitter="repair.3x3.emitter"
+		buildEmitter="build.3x3.emitter"
 		shopIcon="building.cloakingdevice"
 		numAvailable="1"
 		maxAvailable="5"		
-	>
-		<description>
-			<text>MAKES NEARBY BUILDINGS INVISIBLE TO OUR ENEMIES.</text>
-		</description>			
-	</instance>
+		description="cloakingdevice.building.description"
+	/>
 
 
 
@@ -885,106 +825,91 @@
 		class="worm.buildings.ScannerBuildingFeature"
 		name="scanner.building.spec"
 		hud="build_scanner"
-		tooltipGraphic="quicklaunch.key.Z.off.animation"
+		tooltipGraphic="=$key.game.scanner.icon"
 		hitpoints="12"
 		bounds="0,0,20,16"
-		title="SCANNER"
-		bonusdescription="+1 TURRET RANGE"
+		title="=$scanner.building.title"
+		bonusdescription="=$scanner.building.bonus"
 		cost="500"
 		repairEmitter="repair.2x2.emitter"
 		hitPointsGraphics="hitpoints.2x2.3.array"
 		forcefieldGraphics="forcefield.2x2.3.array"
 		buildEmitter="build.2x2.emitter"
 		shopIcon="building.scanner"		
-	>
-		<description>
-			<text>EACH RADAR SCANNER INCREASES THE RANGE AT WHICH YOUR TURRETS CAN TARGET ENEMIES.</text>
-		</description>
-	</instance>	
+		description="scanner.building.description"
+	/>
 	
 	<instance
 		class="worm.buildings.BatteryBuildingFeature"
 		name="battery.building.spec"
 		hud="build_battery"
-		tooltipGraphic="quicklaunch.key.X.off.animation"
+		tooltipGraphic="=$key.game.battery.icon"
 		hitpoints="12"
 		bounds="0,0,20,16"
-		title="BATTERY"
-		bonusdescription="+1 TURRET AMMO"
+		title="=$battery.building.title"
+		bonusdescription="=$battery.building.bonus"
 		cost="250"
 		repairEmitter="repair.2x2.emitter"
 		hitPointsGraphics="hitpoints.2x2.3.array"
 		forcefieldGraphics="forcefield.2x2.3.array"
 		buildEmitter="build.2x2.emitter"
 		shopIcon="building.battery"		
-	>
-		<description>
-			<text>EACH BATTERY INCREASES THE AMMUNITION IN ALL NEARBY TURRETS AND CAPACITORS.</text>
-		</description>
-	</instance>	
+		description="battery.building.description"
+	/>
 				
 	<instance
 		class="worm.buildings.CoolingTowerBuildingFeature"
 		name="coolingtower.building.spec"
 		hud="build_coolingtower"
-		tooltipGraphic="quicklaunch.key.C.off.animation"
+		tooltipGraphic="=$key.game.coolingtower.icon"
 		hitpoints="12"
 		bounds="0,0,20,16"
-		title="COOLING TOWER"
-		bonusdescription="+1 FIRE RATE"
+		title="=$coolingtower.building.title"
+		bonusdescription="=$coolingtower.building.bonus"
 		cost="250"
 		repairEmitter="repair.2x2.emitter"
 		hitPointsGraphics="hitpoints.2x2.3.array"
 		forcefieldGraphics="forcefield.2x2.3.array"
 		buildEmitter="build.2x2.emitter"
 		shopIcon="building.cooling"	
-	>
-		<description>
-			<text>COOLING TOWERS ALLOW YOUR TURRETS TO FIRE MORE RAPIDLY.</text>
-		</description>	
-	</instance>	
+		description="coolingtower.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.AutoLoaderBuildingFeature"
 		name="autoloader.building.spec"
 		hud="build_autoloader"
-		tooltipGraphic="quicklaunch.key.V.off.animation"
+		tooltipGraphic="=$key.game.autoloader.icon"
 		hitpoints="12"
 		bounds="0,0,20,16"
-		title="RELOADER"
-		bonusdescription="+1 RELOAD SPEED"
+		title="=$autoloader.building.title"
+		bonusdescription="=$autoloader.building.bonus"
 		cost="250"
 		repairEmitter="repair.2x2.emitter"
 		hitPointsGraphics="hitpoints.2x2.3.array"
 		forcefieldGraphics="forcefield.2x2.3.array"
 		buildEmitter="build.2x2.emitter"
 		shopIcon="building.autoloader"
-	>
-		<description>
-			<text>DECREASES TURRET RELOADING TIME.</text>
-		</description>		
-	</instance>	
+		description="autoloader.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.ReactorBuildingFeature"
 		name="reactor.building.spec"
 		hud="build_reactor"
-		tooltipGraphic="quicklaunch.key.B.off.animation"
+		tooltipGraphic="=$key.game.reactor.icon"
 		hitpoints="12"
 		bounds="0,0,32,20"
-		title="REACTOR"
-		bonusdescription="+1 DAMAGE"
+		title="=$reactor.building.title"
+		bonusdescription="=$reactor.building.bonus"
 		cost="250"
 		hitPointsGraphics="hitpoints.3x3.3.array"
 		forcefieldGraphics="forcefield.3x3.3.array"
 		repairEmitter="repair.3x3.emitter"
 		buildEmitter="build.3x3.emitter"
 		shopIcon="building.reactor"		
-	>
-		<description>
-			<text>REACTORS INCREASE TURRET DAMAGE.</text>
-		</description>		
-	</instance>	
+		description="reactor.building.description"
+	/>
 
 
 
@@ -994,33 +919,30 @@
 		class="worm.buildings.BarricadeFeature"
 		name="concrete.building.spec"
 		hud="build_concrete"
-		tooltipGraphic="quicklaunch.key.N.off.animation"
+		tooltipGraphic="=$key.game.concrete.icon"
 		hitpoints="=$barricade*2"
 		bounds="0,0,12,8"
-		title="CONCRETE BARRICADE"
+		title="=$concrete.building.title"
+		shortTitle="=$concrete.building.shorttitle"
 		numAvailable="40"
 		maxAvailable="80"
-		shortTitle="CONCRETE"
 		cost="10"
 		difficulty="=$cost*2"
 		paintable="true"
 		buildEmitter="build.1x1.emitter"
 		shopIcon="building.concrete"		
-	>
-		<description>
-			<text>LAY CONCRETE BARRICADES TO SLOW MONSTERS DOWN. LIMITED AVAILABILITY.</text>
-		</description>		
-	</instance>	
+		description="concrete.building.description"
+	/>
 
 	<instance
 		class="worm.buildings.BarricadeFeature"
 		name="steel.building.spec"
 		hud="build_steel"
-		tooltipGraphic="quicklaunch.key.M.off.animation"
+		tooltipGraphic="=$key.game.steel.icon"
 		hitpoints="=$barricade*3"
 		bounds="0,0,12,8"
-		title="STEEL BARRICADE"
-		shortTitle="STEEL"
+		title="=$steel.building.title"
+		shortTitle="=$steel.building.shorttitle"
 		cost="20"
 		numAvailable="30"
 		maxAvailable="60"
@@ -1028,21 +950,18 @@
 		paintable="true"
 		buildEmitter="build.1x1.emitter"
 		shopIcon="building.steel"		
-	>
-		<description>
-			<text>50% TOUGHER THAN CONCRETE BARRICADES. LIMITED AVAILABILITY.</text>
-		</description>		
-	</instance>	
+		description="steel.building.description"
+	/>
 				
 	<instance
 		class="worm.buildings.BarricadeFeature"
 		name="titanium.building.spec"
 		hud="build_titanium"
-		tooltipGraphic="quicklaunch.key.COMMA.off.animation"
+		tooltipGraphic="=$key.game.titanium.icon"
 		hitpoints="=$barricade*4"
 		bounds="0,0,12,8"
-		title="TITANIUM BARRICADE"
-		shortTitle="TITANIUM"
+		title="=$titanium.building.title"
+		shortTitle="=$titanium.building.shorttitle"
 		numAvailable="20"
 		maxAvailable="40"
 		cost="30"
@@ -1050,21 +969,18 @@
 		paintable="true"
 		buildEmitter="build.1x1.emitter"
 		shopIcon="building.titanium"		
-	>
-		<description>
-			<text>33% TOUGHER THAN STEEL BARRICADES. LIMITED AVAILABILITY.</text>
-		</description>		
-	</instance>	
+		description="titanium.building.description"
+	/>
 				
 	<instance
 		class="worm.buildings.BarricadeFeature"
 		name="nanomesh.building.spec"
 		hud="build_nanomesh"
-		tooltipGraphic="quicklaunch.key.PERIOD.off.animation"
+		tooltipGraphic="=$key.game.nanomesh.icon"
 		hitpoints="=$barricade*5"
 		bounds="0,0,12,8"
-		title="NANOMESH BARRICADE"
-		shortTitle="NANOMESH"
+		title="=$nanomesh.building.title"
+		shortTitle="=$nanomesh.building.shorttitle"
 		numAvailable="10"
 		maxAvailable="20"
 		cost="40"
@@ -1075,11 +991,8 @@
 		registeredOnly="true"
 		setting="building"
 		gidletProof="true"
-	>
-		<description>
-			<text>25% TOUGHER THAN TITANIUM, THE ULTIMATE IN PROTECTION. VERY LIMITED AVAILABILITY. GIDLET PROOF.</text>
-		</description>
-	</instance>	
+		description="nanomesh.building.description"
+	/>
 
 
 

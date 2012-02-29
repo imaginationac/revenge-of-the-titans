@@ -32,11 +32,15 @@
 package com.shavenpuppy.jglib.opengl;
 
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.*;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.Rectangle;
 
 import com.shavenpuppy.jglib.Glyph;
 import com.shavenpuppy.jglib.sprites.SimpleRenderable;
 import com.shavenpuppy.jglib.sprites.SimpleRenderer;
+
+import static org.lwjgl.opengl.GL11.*;
 
 /**
  * A GLGlyph is a GLSprite which can be used to draw character glyphs for a
@@ -44,7 +48,7 @@ import com.shavenpuppy.jglib.sprites.SimpleRenderer;
  *
  * @author: cas
  */
-public class GLGlyph implements GLRenderable, SimpleRenderable {
+public class GLGlyph implements SimpleRenderable {
 
 	/** Handle to the texture */
 	protected transient GLBaseTexture texture;
@@ -101,11 +105,6 @@ public class GLGlyph implements GLRenderable, SimpleRenderable {
 	}
 
 	@Override
-	public void render() {
-		render(null, null, 255, SimpleRenderer.GL_RENDERER);
-	}
-
-	@Override
 	public void render(SimpleRenderer renderer) {
 		render(null, null, 255, renderer);
 	}
@@ -136,27 +135,29 @@ public class GLGlyph implements GLRenderable, SimpleRenderable {
 
 		renderer.glTexCoord2f(x0, y0);
 		if (coloured) {
-			ColorUtil.setGLColor(bottomCol, alpha, renderer);
+			ColorUtil.setGLColorPre(bottomCol, alpha, renderer);
 		}
-		renderer.glVertex2f(xpos, ypos);
+		short idx = renderer.glVertex2f(xpos, ypos);
 
 		renderer.glTexCoord2f(x1, y0);
 		if (coloured) {
-			ColorUtil.setGLColor(bottomCol, alpha, renderer);
+			ColorUtil.setGLColorPre(bottomCol, alpha, renderer);
 		}
 		renderer.glVertex2f((int)((bounds.getWidth() + offset) * scale) + xpos, ypos);
 
 		renderer.glTexCoord2f(x1, y1);
-		if (coloured && topCol != null) { // Unnecessary null check coz of eclipse being wrong
-			ColorUtil.setGLColor(topCol, alpha, renderer);
+		if (coloured) {
+			ColorUtil.setGLColorPre(topCol, alpha, renderer);
 		}
 		renderer.glVertex2f((int)((bounds.getWidth() + offset) * scale) + xpos, (int)((bounds.getHeight() + offset) * scale) + ypos);
 
 		renderer.glTexCoord2f(x0, y1);
-		if (coloured && topCol != null) { // Unnecessary null check coz of eclipse being wrong
-			ColorUtil.setGLColor(topCol, alpha, renderer);
+		if (coloured) {
+			ColorUtil.setGLColorPre(topCol, alpha, renderer);
 		}
 		renderer.glVertex2f(xpos, (int)((bounds.getHeight() + offset) * scale) + ypos);
+
+		renderer.glRender(GL_TRIANGLES, new short[] {(short) (idx + 0), (short) (idx + 1), (short) (idx + 2), (short) (idx + 0), (short) (idx + 2), (short) (idx + 3)});
 	}
 
 	public void setLocation(int xp, int yp) {

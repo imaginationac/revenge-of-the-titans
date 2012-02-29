@@ -144,6 +144,7 @@
 	
 		<!-- 200 frames walk -->
 	
+		<frame i="spriteimage.boss.earth.head.01" d="0" childYOffset="0" />
 		<offset x="0" y="0" d="1" />
 		<frame i="spriteimage.boss.earth.head.01" d="199" childYOffset="0" />
 		

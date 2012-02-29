@@ -34,21 +34,39 @@ package net.puppygames.applet;
 
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 
-import net.puppygames.applet.effects.*;
+import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.EmitterFeature;
+import net.puppygames.applet.effects.SFX;
 
-import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.Dimension;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadablePoint;
+import org.lwjgl.util.ReadableRectangle;
+import org.lwjgl.util.Rectangle;
 import org.w3c.dom.Element;
 
 import com.shavenpuppy.jglib.XMLResourceWriter;
-import com.shavenpuppy.jglib.opengl.*;
+import com.shavenpuppy.jglib.opengl.ColorUtil;
+import com.shavenpuppy.jglib.opengl.GLFont;
+import com.shavenpuppy.jglib.opengl.GLRenderable;
+import com.shavenpuppy.jglib.opengl.GLStyledText;
 import com.shavenpuppy.jglib.opengl.GLStyledText.HorizontalAlignment;
 import com.shavenpuppy.jglib.opengl.GLStyledText.VerticalAlignment;
-import com.shavenpuppy.jglib.resources.*;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.resources.Background;
+import com.shavenpuppy.jglib.resources.Data;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.MappedColor;
+import com.shavenpuppy.jglib.resources.RectangleParser;
+import com.shavenpuppy.jglib.sprites.Appearance;
+import com.shavenpuppy.jglib.sprites.Sprite;
+import com.shavenpuppy.jglib.sprites.SpriteImage;
 import com.shavenpuppy.jglib.util.FPMath;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -226,11 +244,17 @@ public class Area extends Feature implements Tickable, Bounded {
 	/** Hold click down */
 	private boolean holdClick;
 
+	/** All caps */
+	private boolean allCaps;
+
+	/** Grab on click */
+	private boolean grab;
+
 	/*
 	 * Transient data
 	 */
 
-	private transient AnimatedAppearanceResource mouseOnResource, mouseOffResource, disabledResource;
+	private transient Appearance mouseOnResource, mouseOffResource, disabledResource;
 	private transient int state;
 	private static final int STATE_MOUSEOFF = 0;
 	private static final int STATE_MOUSEON = 1;
@@ -247,9 +271,9 @@ public class Area extends Feature implements Tickable, Bounded {
 	private transient GLFont fontResource;
 	private transient boolean selectDown, armed, initing, waitForMouse;
 	private transient EmitterFeature emitterFeature;
-	private transient AnimatedAppearance currentAppearance;
+	private transient Appearance currentAppearance;
 	private transient Background.Instance backgroundInstance;
-	private transient Emitter emitterInstance;
+	private transient Emitter emitInstance;
 	private transient List<Area> slaves;
 	private transient Area masterArea;
 
@@ -339,6 +363,10 @@ public class Area extends Feature implements Tickable, Bounded {
 				anchors.add(anchor);
 			}
 		}
+
+		if (allCaps && text != null) {
+			text = text.toUpperCase();
+		}
 	}
 
 	/**
@@ -352,7 +380,7 @@ public class Area extends Feature implements Tickable, Bounded {
 			sprite.setAppearance(mouseOffResource);
 			sprite.rewind();
 			if (offset != null) {
-				sprite.setOffset(offset.getX(), offset.getY(), 0);
+				sprite.setOffset(offset.getX(), offset.getY());
 			}
 			updateScale();
 		}
@@ -448,7 +476,7 @@ public class Area extends Feature implements Tickable, Bounded {
 	 * Create an emitter
 	 */
 	private void initEmitter() {
-		emitterInstance = emitterFeature.spawn(getScreen());
+		emitInstance = emitterFeature.spawn(getScreen());
 		int ox, oy;
 		if (emitterOffset != null) {
 			ox = emitterOffset.getX();
@@ -457,7 +485,7 @@ public class Area extends Feature implements Tickable, Bounded {
 			ox = 0;
 			oy = 0;
 		}
-		emitterInstance.setLocation(position.getX() + ox, position.getY() + oy);
+		emitInstance.setLocation(position.getX() + ox, position.getY() + oy);
 	}
 
 	@Override
@@ -507,6 +535,7 @@ public class Area extends Feature implements Tickable, Bounded {
 		}
 
 		enabled = true;
+
 	}
 
 	@Override
@@ -526,12 +555,12 @@ public class Area extends Feature implements Tickable, Bounded {
 			sprite = screen.allocateSprite(this);
 			sprite.setAlpha(alpha);
 			sprite.setLayer(layer);
-			sprite.setLocation(bounds.getX(), bounds.getY(), 0);
+			sprite.setLocation(bounds.getX(), bounds.getY());
 			sprite.setMirrored(mirrored);
 			sprite.setFlipped(flipped);
 			sprite.setVisible(visible);
 			if (getOffset() != null) {
-				sprite.setOffset(getOffset().getX(), getOffset().getY(), 0);
+				sprite.setOffset(getOffset().getX(), getOffset().getY());
 			}
 			updateScale();
 		} else {
@@ -622,9 +651,9 @@ public class Area extends Feature implements Tickable, Bounded {
 			textObject = null;
 		}
 
-		if (emitterInstance != null) {
-			emitterInstance.remove();
-			emitterInstance = null;
+		if (emitInstance != null) {
+			emitInstance.remove();
+			emitInstance = null;
 		}
 
 		currentAppearance = null;
@@ -661,11 +690,21 @@ public class Area extends Feature implements Tickable, Bounded {
 		return false;
 	}
 
-	/**
-	 * Tick the area
-	 */
 	@Override
 	public void tick() {
+		List<MouseEvent> mouseEvents = Game.getMouseEvents();
+		int n = mouseEvents.size();
+		if (n == 0) {
+			doTick(null);
+		} else {
+			for (int i = 0; i < n; i ++) {
+				MouseEvent event = mouseEvents.get(i);
+				doTick(event);
+			}
+		}
+	}
+
+	private void doTick(MouseEvent event) {
 		if (!screen.isOpen()) {
 			return;
 		}
@@ -692,58 +731,56 @@ public class Area extends Feature implements Tickable, Bounded {
 			}
 		}
 
-		boolean clicked = false;
-		selectDown = false;
 		armed = false;
 		if (isVisible()) {
-			if (screen.isKeyboardNavigationEnabled()) {
-				selectDown = Keyboard.isKeyDown(Keyboard.KEY_SPACE) || Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) || Keyboard.isKeyDown(Keyboard.KEY_RETURN)
-								|| Binding.isBindingDown(Binding.SELECT) || Binding.isBindingDown(Binding.SELECT_ALT);
-				armed = isFocused() && isFocusable();
-				if (selectDown && armed) {
-					clicked = true;
-				} else {
-					selectDown = mouseDown;
-					boolean mouseArmed = isInHitZone(screen.getMouseX(), screen.getMouseY());
-					if (selectDown && mouseArmed) {
-						clicked = true;
-						if (enabled && screen.isEnabled()) {
-							requestFocus();
-						}
-					} else {
-						armed |= mouseArmed;
-					}
-				}
+			if (event != null && event.getButton() == 0) {
+				processMouseChange(event.isButtonDown());
 			} else {
-				selectDown = mouseDown;
-				armed = isInHitZone(screen.getMouseX(), screen.getMouseY());
-
-				if (selectDown && armed) {
-					clicked = true;
-				}
+				processMouseChange(selectDown);
 			}
+		}
+	}
 
-			if (!enabled) {
-				setState(STATE_DISABLED);
-			} else if (screen.isEnabled()) {
-				if (armed) {
-					setState(STATE_MOUSEON);
-				} else {
-					setState(STATE_MOUSEOFF);
-				}
+	/**
+	 * Helper function to process mouse events.
+	 * @param mouseDown
+	 * @see #tick()
+	 */
+	private void processMouseChange(boolean mouseDown) {
+		boolean clicked = false;
+
+		armed = isInHitZone(screen.getMouseX(), screen.getMouseY());
+		selectDown = mouseDown && armed;
+
+		if (selectDown && armed) {
+			clicked = true;
+			if (grab) {
+				screen.setGrabbed(this);
+			}
+		} else if (grab && !selectDown) {
+			screen.setGrabbed(null);
+		}
+
+		if (!enabled) {
+			setState(STATE_DISABLED);
+		} else if (screen.isEnabled()) {
+			if (armed) {
+				setState(STATE_MOUSEON);
 			} else {
 				setState(STATE_MOUSEOFF);
 			}
+		} else {
+			setState(STATE_MOUSEOFF);
+		}
 
-			if (selectDown && visible && armed && !noClick && !ignoreMouse && enabled && screen.isEnabled() && clicked) {
-				if (!holdClick) {
-					SFX.buttonClick();
-					ignoreMouse = true;
-				}
-				doClick();
-			} else if (!selectDown) {
-				ignoreMouse = false;
+		if (selectDown && visible && armed && !noClick && !ignoreMouse && enabled && screen.isEnabled() && clicked) {
+			if (!holdClick) {
+				SFX.buttonClick();
+				ignoreMouse = true;
 			}
+			doClick();
+		} else if (!selectDown) {
+			ignoreMouse = false;
 		}
 	}
 
@@ -787,7 +824,7 @@ public class Area extends Feature implements Tickable, Bounded {
 		backgroundObject.setVisible(visible);
 	}
 
-	public void setMouseOnAppearance(AnimatedAppearanceResource newMouseOnResource) {
+	public void setMouseOnAppearance(Appearance newMouseOnResource) {
 		initing = true;
 		mouseOnResource = newMouseOnResource;
 		currentAppearance = null;
@@ -795,7 +832,7 @@ public class Area extends Feature implements Tickable, Bounded {
 		initing = false;
 	}
 
-	public void setMouseOffAppearance(AnimatedAppearanceResource newMouseOffResource) {
+	public void setMouseOffAppearance(Appearance newMouseOffResource) {
 		initing = true;
 		mouseOffResource = newMouseOffResource;
 		currentAppearance = null;
@@ -804,25 +841,25 @@ public class Area extends Feature implements Tickable, Bounded {
 		initing = false;
 	}
 
-	public AnimatedAppearanceResource getMouseOffAppearance() {
+	public Appearance getMouseOffAppearance() {
 		return mouseOffResource;
 	}
 
 	/**
 	 * @return the mouseOnResource
 	 */
-	public AnimatedAppearanceResource getMouseOnAppearance() {
+	public Appearance getMouseOnAppearance() {
 		return mouseOnResource;
 	}
 
 	/**
 	 * @return the disabledResource
 	 */
-	public AnimatedAppearanceResource getDisabledAppearance() {
+	public Appearance getDisabledAppearance() {
 		return disabledResource;
 	}
 
-	public void setDisabledAppearance(AnimatedAppearanceResource newDisabledResource) {
+	public void setDisabledAppearance(Appearance newDisabledResource) {
 		initing = true;
 		disabledResource = newDisabledResource;
 		currentAppearance = null;
@@ -895,7 +932,7 @@ public class Area extends Feature implements Tickable, Bounded {
 		}
 	}
 
-	private void setAppearance(AnimatedAppearance appearance) {
+	private void setAppearance(Appearance appearance) {
 		if (sprite == null || currentAppearance == appearance) {
 			return;
 		}
@@ -904,24 +941,24 @@ public class Area extends Feature implements Tickable, Bounded {
 		currentAppearance = appearance;
 	}
 
-	/**
-	 * Maybe render something
-	 */
-	public void render() {
-		if (position != null && size != null && debug) {
-			glDisable(GL_TEXTURE_2D);
-			glEnable(GL_BLEND);
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-			glColor4f(1.0f, 1.0f, 1.0f, 0.2f);
-			glBegin(GL_QUADS);
-			glVertex2i(position.getX(), position.getY());
-			glVertex2i(position.getX() + size.getWidth(), position.getY());
-			glVertex2i(position.getX() + size.getWidth(), position.getY() + size.getHeight());
-			glVertex2i(position.getX(), position.getY() + size.getHeight());
-			glEnd();
-		}
-	}
+//	/**
+//	 * Maybe render something
+//	 */
+//	public void render() {
+//		if (position != null && size != null && debug) {
+//			glDisable(GL_TEXTURE_2D);
+//			glEnable(GL_BLEND);
+//			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+//			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+//			glColor4f(1.0f, 1.0f, 1.0f, 0.2f);
+//			glBegin(GL_QUADS);
+//			glVertex2i(position.getX(), position.getY());
+//			glVertex2i(position.getX() + size.getWidth(), position.getY());
+//			glVertex2i(position.getX() + size.getWidth(), position.getY() + size.getHeight());
+//			glVertex2i(position.getX(), position.getY() + size.getHeight());
+//			glEnd();
+//		}
+//	}
 
 	/**
 	 * Get the area's ID
@@ -983,10 +1020,10 @@ public class Area extends Feature implements Tickable, Bounded {
 			// Restart any animation
 			if (visible) {
 				if (isEnabled() || disabledResource == null) {
-					mouseOffResource.toAnimated(sprite);
+					mouseOffResource.toSprite(sprite);
 					currentAppearance = mouseOffResource;
 				} else {
-					disabledResource.toAnimated(sprite);
+					disabledResource.toSprite(sprite);
 					currentAppearance = disabledResource;
 				}
 			} else {
@@ -1003,10 +1040,10 @@ public class Area extends Feature implements Tickable, Bounded {
 		if (textObject != null) {
 			textObject.setVisible(visible);
 		}
-		if (emitterInstance != null) {
+		if (emitInstance != null) {
 			if (!visible) {
-				emitterInstance.remove();
-				emitterInstance = null;
+				emitInstance.remove();
+				emitInstance = null;
 			}
 		} else if (emitterFeature != null) {
 			initEmitter();
@@ -1244,7 +1281,7 @@ public class Area extends Feature implements Tickable, Bounded {
 	public void setBounds(int x, int y, int w, int h) {
 		bounds.setBounds(x, y, w, h);
 		if (sprite != null) {
-			sprite.setLocation(x, y, 0);
+			sprite.setLocation(x, y);
 		}
 		if (hasSize) {
 			size.setSize(w, h);
@@ -1257,6 +1294,17 @@ public class Area extends Feature implements Tickable, Bounded {
 		}
 		if (backgroundInstance != null) {
 			backgroundInstance.setBounds(bounds);
+		}
+		if (emitInstance != null) {
+			int ox, oy;
+			if (emitterOffset != null) {
+				ox = emitterOffset.getX();
+				oy = emitterOffset.getY();
+			} else {
+				ox = 0;
+				oy = 0;
+			}
+			emitInstance.setLocation(x + ox, y + oy);
 		}
 	}
 
@@ -1391,7 +1439,7 @@ public class Area extends Feature implements Tickable, Bounded {
 	 * @param text the text to set
 	 */
 	public void setText(String text) {
-		this.text = text;
+		this.text = allCaps ? text.toUpperCase() : text;
 
 		if (textArea == null && text != null) {
 			// Create text area
@@ -1552,7 +1600,7 @@ public class Area extends Feature implements Tickable, Bounded {
 			this.offset = new Point(x, y);
 		}
 		if (sprite != null) {
-			sprite.setOffset(x, y, 0);
+			sprite.setOffset(x, y);
 		}
 	}
 
@@ -1616,4 +1664,12 @@ public class Area extends Feature implements Tickable, Bounded {
 	public int getTextHeight() {
 		return textArea != null ? textArea.getHeight() : 0;
 	}
+
+	public boolean isAllCaps() {
+	    return allCaps;
+    }
+
+	public void setAllCaps(boolean allCaps) {
+	    this.allCaps = allCaps;
+    }
 }

@@ -31,11 +31,20 @@
  */
 package worm.screens;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
-import net.puppygames.applet.*;
-import worm.*;
+import net.puppygames.applet.Area;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.Screen;
 import worm.Res;
+import worm.Stats;
+import worm.Worm;
+import worm.WormGameState;
 import worm.animation.SimpleThingWithLayers;
 import worm.entities.Building;
 import worm.features.MedalFeature;
@@ -43,7 +52,7 @@ import worm.features.RankFeature;
 
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.resources.ColorMapFeature;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.sprites.Appearance;
 import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.FPMath;
 
@@ -51,6 +60,8 @@ import com.shavenpuppy.jglib.util.FPMath;
  * The intermission screen is shown at the end of the level
  */
 public class IntermissionScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static IntermissionScreen instance;
 
@@ -61,6 +72,7 @@ public class IntermissionScreen extends Screen {
 	private static final String ID_MEDALS = "medals";
 	private static final String ID_MEDAL_DESCRIPTION = "medal_description";
 	private static final String ID_RANK = "rank";
+	private static final String ID_RANK_NAME = "rank_name";
 
 	private static final String ID_GOTO_MEDALS = "goto_medals";
 
@@ -95,7 +107,7 @@ public class IntermissionScreen extends Screen {
 			sprite = layers.getSprites();
 			for (Sprite element : sprite) {
 				if (element != null) {
-					element.setLocation(x, y, 0.0f);
+					element.setLocation(x, y);
 					element.setScale(FPMath.fpValue(scale));
 				}
 			}
@@ -120,7 +132,7 @@ public class IntermissionScreen extends Screen {
 			} else {
 				zoomOut();
 				if (hovered == this) {
-					getArea(ID_MEDAL_DESCRIPTION).setText("{font:tinyfont.glfont color:text-dark}HOVER OVER A MEDAL FOR DESCRIPTION");
+					getArea(ID_MEDAL_DESCRIPTION).setText("{font:tinyfont.glfont color:text-dark}"+Game.getMessage("ultraworm.intermission.hover_instruction"));
 					hovered = null;
 				}
 			}
@@ -176,8 +188,8 @@ public class IntermissionScreen extends Screen {
 	protected void onOpen() {
 
 		WormGameState gameState = Worm.getGameState();
-		String world = gameState.getWorld().getTitle();
-		getArea(BACKGROUND).setMouseOffAppearance((AnimatedAppearanceResource) Resources.get(world+".research.background.anim"));
+		String world = gameState.getWorld().getUntranslated();
+		getArea(BACKGROUND).setMouseOffAppearance((Appearance) Resources.get(world+".research.background.anim"));
 		ColorMapFeature.getDefaultColorMap().copy((ColorMapFeature) Resources.get(world+".colormap"));
 		ColorMapFeature.getDefaultColorMap().copy(gameState.getLevelFeature().getColors());
 
@@ -210,23 +222,23 @@ public class IntermissionScreen extends Screen {
 		gameState.addMoney(bonus + valueOfStandingBuildings + remainingCrystal);
 
 		StringBuilder sb = new StringBuilder(256);
-		sb.append("{font:tinyfont.glfont color:text}BASE INTEGRITY BONUS: {color:text-bold}$");
+		sb.append("{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.intermission.base_integrity_bonus")+": {color:text-bold}$");
 		sb.append(bonus);
 
 
 		if (valueOfStandingBuildings > 0) {
-			sb.append("\n{font:tinyfont.glfont color:text}BUILDING RECYCLING: ");
+			sb.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.intermission.building_recycling")+": ");
 			sb.append("{color:text-bold}$"+valueOfStandingBuildings);
 		} else {
-			sb.append("\n{font:tinyfont.glfont color:text-dark}BUILDING RECYCLING: NONE");
+			sb.append("\n{font:tinyfont.glfont color:text-dark}"+Game.getMessage("ultraworm.intermission.building_recycling_none"));
 		}
 
 		if (gameState.getLevel() > 0) {
 			if (remainingCrystal > 0) {
-				sb.append("\n{font:tinyfont.glfont color:text}CRYSTAL SCAVENGING @ "+((int) (gameState.getScavengeRate() * 100.0f))+"%: ");
+				sb.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.intermission.crystal_scavenging")+"+ @ "+((int) (gameState.getScavengeRate() * 100.0f))+"%: ");
 				sb.append("{color:text-bold}$"+remainingCrystal);
 			} else {
-				sb.append("\n{font:tinyfont.glfont color:text-dark}WELL DONE! ALL CRYSTALS REFINED");
+				sb.append("\n{font:tinyfont.glfont color:text-dark}"+Game.getMessage("ultraworm.intermission.well_done"));
 			}
 		}
 
@@ -243,27 +255,37 @@ public class IntermissionScreen extends Screen {
 			valueOfMedalsEarned += mf.getMoney();
 		}
 		if (valueOfMedalsEarned > 0) {
-			sb.append("\n{font:tinyfont.glfont color:text}MEDAL BONUSES: ");
+			sb.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.intermission.medal_bonuses")+": ");
 			sb.append("{color:text-bold}$"+valueOfMedalsEarned);
 		} else {
-			sb.append("\n{font:tinyfont.glfont color:text-dark}MEDAL BONUSES: NONE");
+			sb.append("\n{font:tinyfont.glfont color:text-dark}"+Game.getMessage("ultraworm.intermission.medal_bonuses_none"));
 		}
 
 		// new rank?
 		Area rankArea = getArea(ID_RANK);
+		Area rankNameArea = getArea(ID_RANK_NAME);
 		StringBuilder rankSb = new StringBuilder(256);
+		StringBuilder rankNameSb = new StringBuilder(256);
 
 		RankFeature newRank = gameState.getRank();
 		if (newRank != oldRank) {
-			rankSb.append("{font:tinyfont.glfont color:text}NEW RANK ATTAINED!");
-			rankSb.append(" {font:smallfont.glfont color:text-bold}");
+			rankSb.append("{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.intermission.new_rank"));
+			rankSb.append(" {font:smallfont.glfont color:transparent}");
 			rankSb.append(newRank.getTitle());
 			rankArea.setText(rankSb.toString());
 			rankArea.setVisible(true);
-			sb.append("\n{font:tinyfont.glfont color:text}RANK BONUS: ");
+
+			rankNameSb.append("{font:tinyfont.glfont color:transparent}"+Game.getMessage("ultraworm.intermission.new_rank"));
+			rankNameSb.append(" {font:smallfont.glfont color:text-bold}");
+			rankNameSb.append(newRank.getTitle());
+			rankNameArea.setText(rankNameSb.toString());
+			rankNameArea.setVisible(true);
+
+			sb.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.intermission.rank_bonus")+": ");
 			sb.append("{color:text-bold}$"+newRank.getPoints() / 10);
 		} else {
 			rankArea.setVisible(false);
+			rankNameArea.setVisible(false);
 		}
 
 		sb.append("\n");
@@ -273,10 +295,10 @@ public class IntermissionScreen extends Screen {
 
 
 		if (medals.size() > 0) {
-			getArea(ID_MEDAL_DESCRIPTION).setText("\n{font:tinyfont.glfont color:text}MEDALS EARNED\n");
+			getArea(ID_MEDAL_DESCRIPTION).setText("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.intermission.medals_earned")+"\n");
 		} else {
 			medalWidgets = null;
-			getArea(ID_MEDAL_DESCRIPTION).setText("\n{font:tinyfont.glfont color:text-dark}NO MEDALS EARNED\n");
+			getArea(ID_MEDAL_DESCRIPTION).setText("\n{font:tinyfont.glfont color:text-dark}"+Game.getMessage("ultraworm.intermission.no_medals_earned")+"\n");
 		}
 
 		if (medals.size() > 0) {
@@ -307,7 +329,7 @@ public class IntermissionScreen extends Screen {
 				medalWidgets.add(new MedalWidget(mf, xpos + count * (ICON_SIZE + ICON_GAP), ypos));
 				count ++;
 			}
-			getArea(ID_MEDAL_DESCRIPTION).setText("{font:tinyfont.glfont color:text-dark}HOVER OVER A MEDAL FOR DESCRIPTION");
+			getArea(ID_MEDAL_DESCRIPTION).setText("{font:tinyfont.glfont color:text-dark}"+Game.getMessage("ultraworm.intermission.hover_instruction"));
 		}
 
 		gameState.checkPoint();

@@ -36,15 +36,17 @@ import java.util.ArrayList;
 import org.lwjgl.openal.OpenALException;
 import org.lwjgl.util.vector.Vector3f;
 
+import com.shavenpuppy.jglib.Resource;
+
 import static org.lwjgl.openal.AL10.*;
 
 
 /**
  * A sound source
  */
-public class ALSource extends ALResource {
+public class ALSource extends Resource {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** All the known created sources */
 	private static ArrayList<ALSource> createdSources = new ArrayList<ALSource>(8);
@@ -171,7 +173,7 @@ public class ALSource extends ALResource {
 	 * @see com.shavenpuppy.jglib.Resource#doCreate()
 	 */
 	@Override
-	protected void doALCreate() {
+	protected void doCreate() {
 
 		if (!org.lwjgl.openal.AL.isCreated()) {
 			return;
@@ -186,7 +188,7 @@ public class ALSource extends ALResource {
 	 * @see com.shavenpuppy.jglib.Resource#doDestroy()
 	 */
 	@Override
-	protected void doALDestroy() {
+	protected void doDestroy() {
 		if (source != 0) {
 			unattach();
 			alDeleteSources(source);

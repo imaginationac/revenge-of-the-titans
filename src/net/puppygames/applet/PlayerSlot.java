@@ -91,7 +91,7 @@ public class PlayerSlot implements Serializable {
 	 */
 	public boolean exists() {
 		try {
-			if (!Game.getPreferences().nodeExists("slots_"+Game.getInternalVersion()+"/"+name)) {
+			if (!Game.getRoamingPreferences().nodeExists("slots_"+Game.getInternalVersion()+"/"+name)) {
 				return false;
 			}
 			return getPreferences().getBoolean("active", false);
@@ -152,7 +152,7 @@ public class PlayerSlot implements Serializable {
 	 */
 	public synchronized Preferences getPreferences() {
 		if (preferences == null) {
-			preferences = Game.getPreferences().node("slots_"+Game.getInternalVersion()+"/"+name);
+			preferences = Game.getRoamingPreferences().node("slots_"+Game.getInternalVersion()+"/"+name);
 		}
 		return preferences;
 	}
@@ -173,7 +173,7 @@ public class PlayerSlot implements Serializable {
 	 * @return a List of PlayerSlots.
 	 */
 	public static List<PlayerSlot> getSlots() {
-		Preferences dir = Game.getPreferences().node("slots_"+Game.getInternalVersion());
+		Preferences dir = Game.getRoamingPreferences().node("slots_"+Game.getInternalVersion());
 		try {
 			String[] name = dir.childrenNames();
 			List<PlayerSlot> ret = new ArrayList<PlayerSlot>(name.length);

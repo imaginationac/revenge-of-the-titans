@@ -31,7 +31,9 @@
  */
 package worm.screens;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Area;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.Screen;
 import net.puppygames.applet.screens.TitleScreen;
 import worm.Worm;
 import worm.WormGameState;
@@ -44,6 +46,8 @@ import com.shavenpuppy.jglib.resources.ColorMapFeature;
  * Select which level you want to play in Endless mode
  */
 public class SelectEndlessLevelScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static SelectEndlessLevelScreen instance;
 

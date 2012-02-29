@@ -44,7 +44,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class FlagCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** Flashing state */
 	private boolean flash, setFlash;
@@ -69,23 +69,22 @@ public class FlagCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 
 		target.setSequence(target.getSequence() + 1);
 		target.setTick(0);
 
-		ISprite sprite = (ISprite) target;
 		if (setFlash) {
-			sprite.setFlash(flash);
+			target.setFlash(flash);
 		}
 		if (setFlipped) {
-			sprite.setFlash(flipped);
+			target.setFlash(flipped);
 		}
 		if (setMirrored) {
-			sprite.setMirrored(mirrored);
+			target.setMirrored(mirrored);
 		}
 		if (setVisible) {
-			sprite.setVisible(visible);
+			target.setVisible(visible);
 		}
 
 		return true; // Execute the next command

@@ -31,7 +31,7 @@
  */
 package com.shavenpuppy.jglib.resources;
 
-import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.IResource;
 
 /**
  * Listener that is notified when a resource has been fully loaded.
@@ -39,5 +39,5 @@ import com.shavenpuppy.jglib.Resource;
  * @author John Campbell
  */
 public interface ResourceLoadedListener {
-	void resourceLoaded(Resource loadedResource);
+	void resourceLoaded(IResource loadedResource);
 }

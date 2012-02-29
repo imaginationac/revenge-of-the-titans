@@ -31,14 +31,7 @@
  */
 package worm.generator;
 
-import java.util.ArrayList;
-
-import org.lwjgl.util.Point;
-
-import worm.features.LevelFeature;
 import worm.features.PerlinTemplateFeature;
-
-import com.shavenpuppy.jglib.util.Util;
 
 /**
  * Map generator using perlin noise and arbitrary "water" threshold
@@ -53,8 +46,8 @@ public class PerlinMapGenerator extends BaseMapGenerator {
 	 * @param level
 	 * @param levelFeature TODO
 	 */
-	public PerlinMapGenerator(PerlinTemplateFeature template, int level, int levelInWorld, LevelFeature levelFeature) {
-		super(template, level, levelInWorld, levelFeature);
+	public PerlinMapGenerator(PerlinTemplateFeature template, MapGeneratorParams mapGeneratorParams) {
+		super(template, mapGeneratorParams);
 
 		perlinTemplate = template;
 	}
@@ -84,25 +77,6 @@ public class PerlinMapGenerator extends BaseMapGenerator {
 				}
 			}
 		}
-
-		// Draw random blotch lines between each base first
-		ArrayList<Point> basesCopy = new ArrayList<Point>(getBases());
-		for (int i = 0; i < basesCopy.size(); i ++) {
-			Point p1 = basesCopy.get(i);
-			int j = Util.random(0, basesCopy.size() - 1);
-			Point p2 = basesCopy.get(j);
-			basesCopy.set(i, p2);
-			basesCopy.set(j, p1);
-		}
-
-		Point s = basesCopy.get(0), t;
-		drawArea(s.getX(), s.getY(), (perlinTemplate.getMinMainTunnelWidth() + perlinTemplate.getMaxMainTunnelWidth()) / 2.0f, FLOOR);
-		for (int i = 0; i < basesCopy.size() - 1; i ++) {
-			s = basesCopy.get(i);
-			t = basesCopy.get(i + 1);
-			drawLine(s.getX(), s.getY(), t.getX(), t.getY(), perlinTemplate.getMinMainTunnelWidth(), perlinTemplate.getMaxMainTunnelWidth(), FLOOR);
-		}
-
 	}
 
 //	public static void main(String[] args) {

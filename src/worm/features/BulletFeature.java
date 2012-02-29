@@ -113,6 +113,9 @@ public class BulletFeature extends Feature {
 	/** Mini - dangerous to gidlets */
 	private boolean mini;
 
+	/** Max range, ticks */
+	private int range;
+
 	private transient EmitterFeature ricochetEmitterResource;
 	private transient EmitterFeature flashEmitterResource;
 	private transient GLTexture explosionTextureResource;
@@ -192,6 +195,7 @@ public class BulletFeature extends Feature {
 	public Bullet spawn(Screen screen, Entity source, int sx, int sy, int tx, int ty, int extraDamage) {
 		Bullet b = new Bullet(source, sx, sy, tx, ty, this, extraDamage);
 		b.spawn(screen);
+		b.setRemainingRange(range);
 		return b;
 	}
 

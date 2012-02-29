@@ -876,11 +876,11 @@
 
 
 	
-		<area id="victory-fireworks-right" inherit="victory-right.spec" layer="9" mouseoff="victory.fireworks.right.anim"  />
-		<area id="victory-fireworks-left" inherit="victory-left.spec" layer="9" mouseoff="victory.fireworks.left.anim"  />
+		<area id="victory-fireworks-right" inherit="victory-right.spec" layer="10" mouseoff="victory.fireworks.right.anim"  />
+		<area id="victory-fireworks-left" inherit="victory-left.spec" layer="10" mouseoff="victory.fireworks.left.anim"  />
 
-		<area id="victory-fireworks-finale.right" inherit="victory-right.spec" layer="9" mouseoff="victory.fireworks.finale.right.anim"  />
-		<area id="victory-fireworks-finale.left" inherit="victory-left.spec" layer="9" mouseoff="victory.fireworks.finale.left.anim"  />
+		<area id="victory-fireworks-finale.right" inherit="victory-right.spec" layer="10" mouseoff="victory.fireworks.finale.right.anim"  />
+		<area id="victory-fireworks-finale.left" inherit="victory-left.spec" layer="10" mouseoff="victory.fireworks.finale.left.anim"  />
 
 		<area id="victory-blasters" inherit="victory-left.spec" layer="9" mouseoff="blasters.anim"  />
 		<area id="victory-blasters-distant" inherit="victory-left.spec" lazyer="9" mouseoff="blasters.distant.anim"  />
@@ -908,12 +908,11 @@
 
 		<story>	
 			<story name="victory.story">
-				<char id="victory1.char" >{font:bigfont.glfont}VICTORY!</char>
-				<char id="victory2.char" delay="180" fadeAfter="600">{font:tinyfont.glfont}CONGRATULATIONS COMMANDER! titan prime is ours. earth is saved once again from the titan menace.</char>
-				<char id="victory3.char" delay="780" fadeAfter="300">{font:tinyfont.glfont}coffee supplies are en route, as per your request.</char>
+				<char id="victory1.char" >=victory1.text</char>
+				<char id="victory2.char" delay="180" fadeAfter="600">=victory2.text</char>
+				<char id="victory3.char" delay="780" fadeAfter="300">=victory3.text</char>
 			</story>
 		</story>
 	</instance>
-	
 	
 </resources>

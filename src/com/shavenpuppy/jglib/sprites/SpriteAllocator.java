@@ -35,15 +35,15 @@ import java.io.Serializable;
 
 
 /**
- * Something that can allocate sprites
+ * Something that can allocate sprites. Must be serializable, so we can serialize sprites.
  */
-public interface SpriteAllocator {
+public interface SpriteAllocator extends Serializable {
 
 	/**
 	 * Allocate a sprite
 	 * @param owner The sprite's owner
 	 * @return a Sprite
 	 */
-	public Sprite allocateSprite(Serializable owner);
+	Sprite allocateSprite(Serializable owner);
 
 }

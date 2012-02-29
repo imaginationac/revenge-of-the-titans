@@ -31,7 +31,12 @@
  */
 package com.shavenpuppy.jglib;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InvalidObjectException;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
 import java.util.Map;
 
 import org.w3c.dom.Element;
@@ -41,9 +46,9 @@ import com.shavenpuppy.jglib.resources.ResourceLoadedListener;
 /**
  * An abstract resource, owned by some operating system thing.
  */
-public abstract class Resource implements Serializable, Named, Cloneable {
+public abstract class Resource implements IResource, Cloneable {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Resource data
@@ -51,9 +56,6 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 
 	/** The unique name of the resource */
 	protected String name;
-
-	/** Were we explicitly named or not */
-	final boolean named;
 
 	/** Locked: this resource cannot be reloaded */
 	private boolean locked;
@@ -112,7 +114,7 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 		 * @return a Resource
 		 * @throws Exception if there's anything wrong
 		 */
-		Resource load(Element element) throws Exception;
+		IResource load(Element element) throws Exception;
 
 		/**
 		 * Include further resources from the specified input stream
@@ -124,7 +126,7 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 		 * Temorarily add some mappings to the loader.
 		 * @param map A Map of Strings (XML tag names) to Classes derived from Resource
 		 */
-		void pushMap(Map<String, Class<? extends Resource>> map);
+		void pushMap(Map<String, Class<? extends IResource>> map);
 
 		/**
 		 * Remove the last set of temporary mappings from the loader.
@@ -132,7 +134,7 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 		 * then nothing happens.
 		 * @return the removed mapping, or null if there wasn't one
 		 */
-		Map<String, Class<? extends Resource>> popMap();
+		Map<String, Class<? extends IResource>> popMap();
 
 		/**
 		 * @param loadedListener
@@ -157,7 +159,6 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 	 * A default public constructor, for serialization purposes.
 	 */
 	public Resource() {
-		named = false;
 	}
 
 	/**
@@ -165,13 +166,13 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 	 */
 	public Resource(String name) {
 		this.name = name;
-		named = true;
 	}
 
 	/**
 	 * Create this resource. This method blocks until this resource has been created.
 	 */
-	public final void create() {
+	@Override
+    public final void create() {
 		if (!created && !creating) {
 			creating = true;
 			if (Resources.getCreatingCallback() != null) {
@@ -186,7 +187,8 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 	/**
 	 * Destroys the resource. This method blocks until this resource has been destroyed.
 	 */
-	public final void destroy() {
+	@Override
+    public final void destroy() {
 		if (created && !destroying) {
 			destroying = true;
 			doDestroy();
@@ -208,7 +210,8 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 	/**
 	 * Has this object been created by the allocator?
 	 */
-	public synchronized final boolean isCreated() {
+	@Override
+    public synchronized final boolean isCreated() {
 		return created;
 	}
 
@@ -252,21 +255,13 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 		return r.name.equals(name);
 	}
 
-	/**
-	 * @return the resource's unique name, or null, if it does not have one
-	 */
 	@Override
 	public final String getName() {
 		return name;
 	}
 
-	/**
-	 * Load the resource from an XML element. The element may have attributes which
-	 * are useful to specify things about the resource.
-	 * @param element The element to load the resource from.
-	 * @param loader The loader which is taking care of the loading.
-	 */
-	public void load(Element element, Loader loader) throws Exception {
+	@Override
+    public void load(Element element, Loader loader) throws Exception {
 	}
 
 	/**
@@ -278,27 +273,16 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 		return null;
 	}
 
-	/**
-	 * Once a resource has been loaded it can register itself in some fashion.
-	 * This is where it gets the opportunity to do so. By default nothing need
-	 * happen, so override this method if you need to.
-	 */
-	public void register() {
+	@Override
+    public void register() {
 	}
 
-	/**
-	 * De-register a resource.
-	 */
-	public void deregister() {
+	@Override
+    public void deregister() {
 	}
 
-	/**
-	 * Is the resource locked? A Locked resource cannot have load() called on it.
-	 * @see #isLocked()
-	 * @see #load(Element, Loader)
-	 * @return boolean
-	 */
-	public final boolean isLocked() {
+	@Override
+    public final boolean isLocked() {
 		return locked;
 	}
 
@@ -312,11 +296,8 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 		this.locked = locked;
 	}
 
-	/**
-	 * Is this a sub-resource?
-	 * @return boolean
-	 */
-	public final boolean isSubResource() {
+	@Override
+    public final boolean isSubResource() {
 		return subResource;
 	}
 
@@ -403,15 +384,12 @@ public abstract class Resource implements Serializable, Named, Cloneable {
      * Sets the name of this resource.
      * @param name
      */
-    public void setName(String name) {
-    	Resource oldResource = Resources.forget(this);
+    @Override
+    public final void setName(String name) {
+    	IResource oldResource = Resources.forget(this);
 		this.name = name;
 		if (oldResource != null) {
-			if (name == null) {
-				Resources.add(this);
-			} else {
-				Resources.put(this);
-			}
+			Resources.put(this);
 		}
 	}
 
@@ -420,7 +398,8 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 	 * @param writer The XML resource writer
 	 * @throws IOException
 	 */
-	public final void toXML(XMLResourceWriter writer) throws IOException {
+	@Override
+    public final void toXML(XMLResourceWriter writer) throws IOException {
 		// See if there's a registered tag for this
 		String tag = Resources.getTag(getClass());
 		if (tag == null) {
@@ -432,7 +411,7 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 			writer.writeTag(tag);
 		}
 
-		if (named) {
+		if (name != null) {
 			writer.writeAttribute("name", name);
 		}
 
@@ -455,6 +434,7 @@ public abstract class Resource implements Serializable, Named, Cloneable {
 	/**
 	 * "Archive" the Resource; its definition can be erased, leaving only the "created" part
 	 */
-	public void archive() {
+	@Override
+    public void archive() {
 	}
 }

@@ -37,6 +37,7 @@ import java.net.URL;
 
 import org.w3c.dom.Element;
 
+import com.shavenpuppy.jglib.Resource;
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.Wave;
 import com.shavenpuppy.jglib.resources.WaveWrapper;
@@ -47,9 +48,9 @@ import static org.lwjgl.openal.AL10.*;
 /**
  * A sound wave
  */
-public class ALBuffer extends ALResource implements ALBufferID {
+public class ALBuffer extends Resource implements ALBufferID {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The source wave file URL, which can also be classpath: or resource: */
 	protected String url;
@@ -80,7 +81,7 @@ public class ALBuffer extends ALResource implements ALBufferID {
 	private transient Wave wave;
 
 	/** AL Format */
-	private int format;
+	private transient int format;
 
 	/**
 	 * Constructor for ALWave.
@@ -110,7 +111,7 @@ public class ALBuffer extends ALResource implements ALBufferID {
 	 * @see com.shavenpuppy.jglib.Resource#doCreate()
 	 */
 	@Override
-	protected void doALCreate() {
+	protected void doCreate() {
 
 		if (!org.lwjgl.openal.AL.isCreated()) {
 			return;
@@ -164,7 +165,7 @@ public class ALBuffer extends ALResource implements ALBufferID {
 	 * @see com.shavenpuppy.jglib.Resource#doDestroy()
 	 */
 	@Override
-	protected void doALDestroy() {
+	protected void doDestroy() {
 		if (buffer != 0) {
 			ALSource.unattach(this);
 			alDeleteBuffers(buffer);

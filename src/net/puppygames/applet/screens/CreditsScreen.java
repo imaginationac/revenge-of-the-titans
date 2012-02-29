@@ -42,7 +42,7 @@ import net.puppygames.applet.Screen;
  */
 public class CreditsScreen extends Screen implements GenericButtons {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** End screen instance */
 	private static CreditsScreen instance;

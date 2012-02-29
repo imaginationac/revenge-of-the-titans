@@ -33,7 +33,9 @@ package worm.buildings;
 
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.GameMap;
+import worm.MapRenderer;
+import worm.Worm;
 import worm.entities.Building;
 import worm.entities.Gidrah;
 

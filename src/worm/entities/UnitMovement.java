@@ -35,7 +35,9 @@ import java.util.ArrayList;
 
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Entity;
+import worm.MapRenderer;
+import worm.WormGameState;
 import worm.path.AStar;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;

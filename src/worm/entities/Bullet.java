@@ -34,13 +34,22 @@ package worm.entities;
 import java.util.ArrayList;
 
 import net.puppygames.applet.Screen;
-import net.puppygames.applet.effects.*;
+import net.puppygames.applet.effects.BlastEffect;
+import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.EmitterFeature;
 
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Entity;
+import worm.GameMap;
+import worm.GameStateInterface;
+import worm.MapRenderer;
 import worm.SFX;
-import worm.features.*;
+import worm.Tile;
+import worm.Worm;
+import worm.features.BulletFeature;
+import worm.features.LayersFeature;
+import worm.features.ResearchFeature;
 import worm.screens.GameScreen;
 
 import com.shavenpuppy.jglib.interpolators.SineInterpolator;
@@ -172,6 +181,10 @@ public class Bullet extends Entity {
 			calcAngle();
 		}
 	}
+
+	public void setRemainingRange(int remainingRange) {
+	    this.remainingRange = remainingRange;
+    }
 
 	/**
 	 * @return the armour piercing factor

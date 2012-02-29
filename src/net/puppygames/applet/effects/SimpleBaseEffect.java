@@ -126,12 +126,9 @@ public abstract class SimpleBaseEffect extends Effect {
 		this.height = height;
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Tickable#isActive()
-	 */
 	@Override
-	public final boolean isActive() {
-		return !isStarted() || fadeTick <= fadeDuration;
+    public final boolean isEffectActive() {
+		return !isStarted() || !finished || fadeTick <= fadeDuration;
 	}
 
 	/**
@@ -149,9 +146,6 @@ public abstract class SimpleBaseEffect extends Effect {
 		return coloured;
 	}
 
-	/* (non-Javadoc)
-	 * @see genesis.Effect#tick()
-	 */
 	@Override
 	protected final void doTick() {
 		setLocation(x + vx, y + vy);
@@ -176,17 +170,20 @@ public abstract class SimpleBaseEffect extends Effect {
 			} else if (coloured) {
 				hue += 0.01f;
 			}
-			float ratio = (float) tick / (float) duration;
-			ColorInterpolator.interpolate(startColor, endColor, ratio, LinearInterpolator.instance, cachedColor);
+			if (duration != 0) {
+				float ratio = (float) tick / (float) duration;
+				ColorInterpolator.interpolate(startColor, endColor, ratio, LinearInterpolator.instance, cachedColor);
+			} else {
+				cachedColor.setColor(startColor);
+			}
 		}
 
 		cachedColor.setAlpha((cachedColor.getAlpha() * alpha) / 255);
-	
 	}
 	protected void doSimpleTick() {}
 
 	/**
-	 * Finish the label effect prematurely
+	 * Finish the effect prematurely
 	 */
 	@Override
 	public final void finish() {
@@ -200,15 +197,6 @@ public abstract class SimpleBaseEffect extends Effect {
 	public boolean isFinished() {
 		return finished || !isActive();
 	}
-
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doRender()
-	 */
-	@Override
-	protected final void doRender() {
-		doEffectRender();
-	}
-	protected abstract void doEffectRender();
 
 	/**
 	 * Set the location of the text

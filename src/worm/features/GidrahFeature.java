@@ -34,6 +34,7 @@ package worm.features;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import net.puppygames.applet.Game;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.effects.EmitterFeature;
 
@@ -41,7 +42,9 @@ import org.lwjgl.util.Point;
 import org.lwjgl.util.Rectangle;
 import org.w3c.dom.Element;
 
-import worm.*;
+import worm.Res;
+import worm.Statistics;
+import worm.Worm;
 import worm.brains.BrainFeature;
 import worm.brains.TacticalBrainFeature;
 import worm.entities.Gidrah;
@@ -49,8 +52,11 @@ import worm.entities.Movement;
 import worm.weapons.WeaponFeature;
 
 import com.shavenpuppy.jglib.openal.ALBuffer;
-import com.shavenpuppy.jglib.resources.*;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.resources.Data;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.Range;
+import com.shavenpuppy.jglib.resources.ResourceArray;
+import com.shavenpuppy.jglib.sprites.Appearance;
 import com.shavenpuppy.jglib.util.Util;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -226,7 +232,7 @@ public class GidrahFeature extends Feature implements Statistics {
 	private transient WeaponFeature weaponFeature;
 	private transient BrainFeature brainFeature;
 	private transient GidrahFeature spawnFeature;
-	private transient AnimatedAppearanceResource shieldAnimationResource;
+	private transient Appearance shieldAnimationResource;
 	private transient ALBuffer roarBuffer;
 	private transient ALBuffer ambBuffer;
 	private transient BombFeature bombFeature;
@@ -686,34 +692,33 @@ public class GidrahFeature extends Feature implements Statistics {
 
 	@Override
 	public void appendBasicStats(StringBuilder dest) {
-		dest.append("hitpoints: ");
+		dest.append(Game.getMessage("ultraworm.gidrahstats.hitpoints")+": ");
 		if (wraith) {
-			dest.append("UNKNOWN");
+			dest.append(Game.getMessage("ultraworm.gidrahstats.unknown"));
 		} else {
 			dest.append(hitPoints);
 			dest.append("+");
-//			dest.append((int) (hitPoints * Gidrah.MAX_DIFFICULTY_HITPOINTS_MULTIPLIER));
 		}
 
-		dest.append("\narmour: ");
+		dest.append("\n"+Game.getMessage("ultraworm.gidrahstats.armour")+": ");
 		if (wraith) {
-			dest.append("UNKNOWN");
+			dest.append(Game.getMessage("ultraworm.gidrahstats.unknown"));
 		} else if (armour > 0) {
 			dest.append(armour);
 		} else {
-			dest.append("NONE");
+			dest.append(Game.getMessage("ultraworm.gidrahstats.none"));
 		}
 
-		dest.append("\nstrength: ");
+		dest.append("\n"+Game.getMessage("ultraworm.gidrahstats.strength")+": ");
 		if (wraith) {
-			dest.append("UNKNOWN");
+			dest.append(Game.getMessage("ultraworm.gidrahstats.unknown"));
 		} else {
 			dest.append(strength);
 		}
 
-		dest.append("\nspeed: ");
+		dest.append("\n"+Game.getMessage("ultraworm.gidrahstats.speed")+": ");
 		if (wraith) {
-			dest.append("UNKNOWN");
+			dest.append(Game.getMessage("ultraworm.gidrahstats.unknown"));
 		} else {
 			int minSpeedMph, maxSpeedMph;
 			minSpeedMph = (int) (speed * 2f);
@@ -739,7 +744,7 @@ public class GidrahFeature extends Feature implements Statistics {
 		}
 
 		if (!wraith) {
-			dest.append("\nweight: ");
+			dest.append("\n"+Game.getMessage("ultraworm.gidrahstats.weight")+": ");
 			int weight;
 			if (gidlet) {
 				weight = 1;

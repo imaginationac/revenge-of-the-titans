@@ -31,9 +31,14 @@
  */
 package net.puppygames.applet.screens;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Area;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.PlayerSlot;
+import net.puppygames.applet.Res;
 
 /**
  * A dialog screen that allows users to select, create, or delete player slots. Slots
@@ -49,10 +54,6 @@ public class SlotScreen extends DialogScreen implements SlotEffectListener {
 	private static final String ID_NEW = "new";
 	private static final String ID_DELETE = "delete";
 	private static final String ID_RENAME = "rename";
-
-	private static final String DELETE_TITLE = "DELETE PROFILE";
-	private static final String DELETE_MESSAGE = "THIS ACTION CANNOT BE UNDONE. ARE YOU SURE YOU WANT TO DELETE ";
-
 	private static final String ID_SLOT_ORIGIN = "slot_origin";
 
 	/** Slot class */
@@ -80,18 +81,12 @@ public class SlotScreen extends DialogScreen implements SlotEffectListener {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doRegister()
-	 */
 	@Override
 	protected void doRegister() {
 		assert instance == null;
 		instance = this;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doDeregister()
-	 */
 	@Override
 	protected void doDeregister() {
 		assert instance == this;
@@ -108,10 +103,6 @@ public class SlotScreen extends DialogScreen implements SlotEffectListener {
 		instance.open();
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Screen#doCreateScreen()
-	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	protected void doCreateScreen() {
 		try {
@@ -122,9 +113,6 @@ public class SlotScreen extends DialogScreen implements SlotEffectListener {
 		slotOriginArea = getArea(ID_SLOT_ORIGIN);
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.DialogScreen#doOnOpen()
-	 */
 	@Override
 	protected void doOnOpen() {
 		rebuild();
@@ -173,9 +161,6 @@ public class SlotScreen extends DialogScreen implements SlotEffectListener {
 		setSelectedIndex(idx);
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.DialogScreen#onClicked(java.lang.String)
-	 */
 	@Override
 	protected void onClicked(String id) {
 		if (ID_NEW.equals(id)) {
@@ -208,21 +193,23 @@ public class SlotScreen extends DialogScreen implements SlotEffectListener {
 			return;
 		}
 		final SlotEffect se = slots.get(selectedIndex);
-		Res.getDeleteYesCancelDialog().doModal(DELETE_TITLE, DELETE_MESSAGE +"'"+se.getSlot().getName().toUpperCase()+"'?", new Runnable() {
+		String msg = Game.getMessage("lwjglapplets.slotscreen.delete_message");
+		msg = msg.replace("[slot]", se.getSlot().getName().toUpperCase());
+		Res.getDeleteYesCancelDialog().doModal(Game.getMessage("lwjglapplets.slotscreen.delete_title"), msg, new Runnable() {
 			@Override
 			public void run() {
 				int option = Res.getDeleteYesCancelDialog().getOption();
 				if (option == DialogScreen.OK_OPTION || option == DialogScreen.YES_OPTION) {
 					se.getSlot().delete();
 					if (selectedIndex == slots.size() - 1) {
-						selectedIndex --;
+						selectedIndex--;
 					}
 					if (selectedIndex == -1) {
 						Game.setPlayerSlot(null);
 						assert false; // We shouldn't really ever get here as delete is supposed to have been enabled...
 					} else {
 						PlayerSlot slot = slots.get(selectedIndex).getSlot();
-						System.out.println("Setting player slot to "+slot.getName());
+						System.out.println("Setting player slot to " + slot.getName());
 						Game.setPlayerSlot(slot);
 					}
 					rebuild();
@@ -237,17 +224,11 @@ public class SlotScreen extends DialogScreen implements SlotEffectListener {
 	protected void renameSelected() {
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Screen#doCleanup()
-	 */
 	@Override
 	protected void doCleanup() {
 		slots = null;
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.SlotEffectListener#onSlotEffectChanged(net.puppygames.applet.screens.SlotEffect)
-	 */
 	@Override
 	public void onSlotEffectChanged(SlotEffect effect) {
 		if (effect.isSelected()) {
@@ -261,9 +242,6 @@ public class SlotScreen extends DialogScreen implements SlotEffectListener {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.SlotEffectListener#onSlotEffectEdited(net.puppygames.applet.screens.SlotEffect)
-	 */
 	@Override
 	public void onSlotEffectEdited(SlotEffect effect) {
 		// TODO Not yet implemented

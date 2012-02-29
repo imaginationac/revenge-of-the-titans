@@ -40,7 +40,9 @@ import worm.features.LayersFeature;
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.XMLResourceWriter;
 import com.shavenpuppy.jglib.resources.ResourceArray;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Appearance;
+import com.shavenpuppy.jglib.sprites.Command;
+import com.shavenpuppy.jglib.sprites.Sprite;
 
 /**
  * Notifies the sprite on a named layer in a {@link ThingWithLayers} to switch to a new animation
@@ -59,7 +61,7 @@ public class NotifyCommand extends Command {
 	/** Sequence label to go to (optional) */
 	private String id;
 
-	private transient AnimatedAppearance appearance;
+	private transient Appearance appearance;
 
 	/**
 	 * C'tor
@@ -82,7 +84,7 @@ public class NotifyCommand extends Command {
 	}
 
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		int currentSequence = target.getSequence();
 		target.setSequence(currentSequence + 1);
 		ThingWithLayers thingWithLayers = (ThingWithLayers) ((Sprite) target).getOwner();
@@ -99,16 +101,16 @@ public class NotifyCommand extends Command {
 				return true;
 			}
 			if (appearance != null && sprite.getAnimation() != appearance) {
-				appearance.toAnimated(sprite);
+				appearance.toSprite(sprite);
 			} else if (idx != -1) {
 				ResourceArray frameList = sprite.getFrameList();
 				if (frameList != null) {
 					if (idx >= frameList.getNumResources() || idx < 0) {
 						System.err.println("Warning: index "+idx+" not present in "+frameList+" referenced by "+target+" on "+sprite);
 					} else {
-						AnimatedAppearance newAppearance = (AnimatedAppearance) frameList.getResource(idx);
+						Appearance newAppearance = (Appearance) frameList.getResource(idx);
 						if (newAppearance != null) {
-							newAppearance.toAnimated(sprite);
+							newAppearance.toSprite(sprite);
 						}
 					}
 				}
@@ -138,7 +140,7 @@ public class NotifyCommand extends Command {
 	@Override
 	protected void doCreate() {
 		if (i != null) {
-			appearance = (AnimatedAppearance) Resources.get(i);
+			appearance = (Appearance) Resources.get(i);
 		}
 	}
 

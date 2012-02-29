@@ -31,7 +31,9 @@
  */
 package worm.features;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.shavenpuppy.jglib.resources.Feature;
 import com.shavenpuppy.jglib.resources.ResourceArray;
@@ -40,6 +42,8 @@ import com.shavenpuppy.jglib.resources.ResourceArray;
  * Hints
  */
 public class HintFeature extends Feature {
+
+	private static final long serialVersionUID = 1L;
 
 	/** Hints map */
 	private static final Map<String, HintFeature> ALL_HINTS = new HashMap<String, HintFeature>();

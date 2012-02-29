@@ -35,7 +35,7 @@ import org.lwjgl.util.ReadablePoint;
 
 import worm.features.LayersFeature;
 
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.sprites.Appearance;
 
 /**
  * Things that can appear in the shop
@@ -127,5 +127,5 @@ public interface ShopItem {
 	/**
 	 * @return the graphic to use for the toolip shortcut key
 	 */
-	AnimatedAppearanceResource getTooltipGraphic();
+	Appearance getTooltipGraphic();
 }

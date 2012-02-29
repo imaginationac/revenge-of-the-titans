@@ -34,10 +34,12 @@ package com.shavenpuppy.jglib.sprites;
 /**
  * @author John Campbell
  */
-public interface SpriteManager
-{
-	public int getTickRate();
+public interface SpriteManager {
 
-	public void render();
-	public void deallocate(Sprite sprite);
+	int getTickRate();
+
+	void render();
+
+	void deallocate(Sprite sprite);
+
 }

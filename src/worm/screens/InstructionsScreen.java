@@ -41,6 +41,8 @@ import com.shavenpuppy.jglib.sprites.SpriteImage;
  */
 public class InstructionsScreen extends net.puppygames.applet.screens.InstructionsScreen {
 
+	private static final long serialVersionUID = 1L;
+
 	private static final String ID_NEXT = "next";
 	private static final String ID_PREV = "prev";
 	private static final String ID_HINTS = "hints";

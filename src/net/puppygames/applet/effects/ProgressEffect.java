@@ -34,11 +34,14 @@ package net.puppygames.applet.effects;
 import net.puppygames.applet.Game;
 import net.puppygames.applet.Res;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.Rectangle;
 
 import com.shavenpuppy.jglib.TextLayout;
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
 import com.shavenpuppy.jglib.opengl.ColorUtil;
+import com.shavenpuppy.jglib.opengl.GLRenderable;
 import com.shavenpuppy.jglib.opengl.GLTextArea;
 import com.shavenpuppy.jglib.resources.Background;
 
@@ -98,9 +101,58 @@ public class ProgressEffect extends Effect {
 		fadeBar.setAlpha(0);
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doTick()
-	 */
+	@Override
+	protected void render() {
+		final int x = textArea.getX();
+	 	final int y = textArea.getY();
+
+		glRender(new GLRenderable() {
+			@Override
+			public void render() {
+				glDisable(GL_TEXTURE_2D);
+				glEnable(GL_BLEND);
+				glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+				glEnable(GL_TEXTURE_2D);
+				// Draw background
+				glPushMatrix();
+				glTranslatef(x, y - 12, 0);
+			}
+		});
+
+		background.render(this);
+
+		glRender(new GLRenderable() {
+			@Override
+			public void render() {
+				glPopMatrix();
+			}
+		});
+
+		// Draw message
+		ColorUtil.setGLColorPre(ReadableColor.WHITE, this);
+		textArea.render(this);
+
+		int xpos = (int) LinearInterpolator.instance.interpolate(x + 8, Game.getWidth() - x - 8, (float) progress / (float) MAX);
+		int len = (Game.getWidth() - 2 * x) / MAX;
+
+		glRender(new GLRenderable() {
+			@Override
+			public void render() {
+				glDisable(GL_TEXTURE_2D);
+			}
+		});
+
+		ColorUtil.setGLColorPre(direction == 1 ? fadeBar : bar, this);
+		short idx = glVertex2f(xpos, y - 4);
+		ColorUtil.setGLColorPre(direction == 1 ? bar : fadeBar, this);
+		glVertex2f(xpos + len, y - 4);
+		glVertex2f(xpos + len, y);
+		ColorUtil.setGLColorPre(direction == 1 ? fadeBar : bar, this);
+		glVertex2f(xpos, y);
+		glRender(GL_TRIANGLE_FAN, new short[] {(short) (idx + 0), (short) (idx + 1), (short) (idx + 2), (short) (idx + 3)});
+	}
+
 	@Override
 	protected void doTick() {
 		progress += direction;
@@ -111,50 +163,8 @@ public class ProgressEffect extends Effect {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doRender(java.awt.Graphics2D)
-	 */
 	@Override
-	protected void doRender() {
-
-		glDisable(GL_TEXTURE_2D);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-
-		int x = textArea.getX();
-		int y = textArea.getY();
-		glEnable(GL_TEXTURE_2D);
-		// Draw background
-		glPushMatrix();
-		glTranslatef(x, y - 12, 0);
-		background.render();
-		glPopMatrix();
-		// Draw message
-		ColorUtil.setGLColor(ReadableColor.WHITE);
-		textArea.render();
-
-		int xpos = (int) LinearInterpolator.instance.interpolate(x + 8, Game.getWidth() - x - 8, (float) progress / (float) MAX);
-		int len = (Game.getWidth() - 2 * x) / MAX;
-
-		glDisable(GL_TEXTURE_2D);
-		glBegin(GL_QUADS);
-		ColorUtil.setGLColor(direction == 1 ? fadeBar : bar);
-		glVertex2i(xpos, y - 4);
-		ColorUtil.setGLColor(direction == 1 ? bar : fadeBar);
-		glVertex2i(xpos + len, y - 4);
-		glVertex2i(xpos + len, y);
-		ColorUtil.setGLColor(direction == 1 ? fadeBar : bar);
-		glVertex2i(xpos, y);
-		glEnd();
-
-	}
-
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Thing#isAlive()
-	 */
-	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		return !finished;
 	}
 

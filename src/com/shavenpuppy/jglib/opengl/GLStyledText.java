@@ -33,10 +33,16 @@ package com.shavenpuppy.jglib.opengl;
 
 import java.io.ObjectStreamException;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadableDimension;
+import org.lwjgl.util.ReadablePoint;
+import org.lwjgl.util.ReadableRectangle;
+import org.lwjgl.util.Rectangle;
 
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.resources.MappedColor;
@@ -48,7 +54,7 @@ import static org.lwjgl.opengl.GL11.*;
 /**
  * Displays styled text in a box, automatically wrapping words.
  */
-public class GLStyledText implements SimpleRenderable, GLRenderable {
+public class GLStyledText implements SimpleRenderable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -351,11 +357,9 @@ public class GLStyledText implements SimpleRenderable, GLRenderable {
 				ColorUtil.blendColor(style.getBottomColor(), color, bottomColor);
 			}
 
-			renderer.glBegin(GL11.GL_QUADS);
 			for (int i = 0; i < n; i ++) {
-				(glyphs.get(i)).render(topColor, bottomColor, alpha, renderer);
+				glyphs.get(i).render(topColor, bottomColor, alpha, renderer);
 			}
-			renderer.glEnd();
 		}
 
 		void addGlyph(GLGlyph glyph) {
@@ -506,7 +510,7 @@ public class GLStyledText implements SimpleRenderable, GLRenderable {
 
 	/** Horizontal alignments */
 	public abstract static class HorizontalAlignment implements Serializable, Decodeable {
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 
 		private final String display;
 
@@ -559,7 +563,7 @@ public class GLStyledText implements SimpleRenderable, GLRenderable {
 
 	/** Vertical Alignments */
 	public abstract static class VerticalAlignment implements Serializable, Decodeable {
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 		private final String display;
 		private VerticalAlignment(String display) {
 			this.display = display;
@@ -795,7 +799,7 @@ public class GLStyledText implements SimpleRenderable, GLRenderable {
 			public void render() {
 				glEnable(GL_TEXTURE_2D);
 				glEnable(GL_BLEND);
-				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+				glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 			}
 		});
@@ -806,11 +810,6 @@ public class GLStyledText implements SimpleRenderable, GLRenderable {
 			SimpleRenderable renderable = strings.get(i);
 			renderable.render(renderer);
 		}
-	}
-
-	@Override
-	public void render() {
-		render(SimpleRenderer.GL_RENDERER);
 	}
 
 	/**

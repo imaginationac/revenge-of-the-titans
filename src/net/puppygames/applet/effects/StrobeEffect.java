@@ -4,8 +4,7 @@
  */
 package net.puppygames.applet.effects;
 
-import net.puppygames.applet.Game;
-import net.puppygames.applet.TickableObject;
+import net.puppygames.applet.Screen;
 
 import org.lwjgl.util.Color;
 import org.lwjgl.util.ReadableColor;
@@ -28,6 +27,8 @@ public class StrobeEffect extends Effect {
 	/** Single instance */
 	private static StrobeEffect instance;
 
+	private static final short[] INDICES = {0, 1, 2, 3};
+
 	/** Cached color */
 	private final Color cachedColor = new Color();
 
@@ -42,10 +43,6 @@ public class StrobeEffect extends Effect {
 
 	/** Tick */
 	private int tick;
-
-	/** Tickable object */
-	private TickableObject tickableObject;
-
 
 	/**
 	 * Private c'tor
@@ -77,7 +74,7 @@ public class StrobeEffect extends Effect {
 	}
 
 	@Override
-	public boolean isActive() {
+    public boolean isEffectActive() {
 		if (sequence != null) {
 			return !sequence.isFinished(tick);
 		} else {
@@ -96,51 +93,42 @@ public class StrobeEffect extends Effect {
 	}
 
 	@Override
-	protected void doRender() {
+	protected void render() {
+		if (!isStarted()) {
+			return;
+		}
+		if ((tick & 4) == 0) {
+			glRender(new GLRenderable() {
+				@Override
+				public void render() {
+					glEnable(GL_BLEND);
+					glDisable(GL_TEXTURE_2D);
+					glBlendFunc(GL_ONE, GL_ONE);
+				}
+			});
+			Screen s = getScreen();
+			float preMultAlpha = cachedColor.getAlpha() / 255.0f;
+			glColor4ub((byte) (cachedColor.getRed() * preMultAlpha), (byte) (cachedColor.getGreenByte() * preMultAlpha), (byte) (cachedColor.getBlueByte() * preMultAlpha), cachedColor.getAlphaByte());
+			glVertex2f(0, 0);
+			glVertex2f(s.getWidth(), 0);
+			glVertex2f(s.getWidth(), s.getHeight());
+			glVertex2f(0, s.getHeight());
+			glRender(GL_TRIANGLE_FAN, INDICES);
+		}
 	}
 
 	@Override
-	protected void doSpawn() {
-		tickableObject = new TickableObject() {
-			@Override
-			protected void render() {
-				if (!isStarted()) {
-					return;
-				}
-				if ((tick & 4) == 0) {
-					glRender(new GLRenderable() {
-						@Override
-						public void render() {
-							glEnable(GL_BLEND);
-							glDisable(GL_TEXTURE_2D);
-							glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-						}
-					});
-					glColor4ub(cachedColor.getRedByte(), cachedColor.getGreenByte(), cachedColor.getBlueByte(), cachedColor.getAlphaByte());
-					glBegin(GL_QUADS);
-					glVertex2f(0, 0);
-					glVertex2f(Game.getWidth(), 0);
-					glVertex2f(Game.getWidth(), Game.getHeight());
-					glVertex2f(0, Game.getHeight());
-					glEnd();
-				}
-			}
-		};
-		tickableObject.spawn(getScreen());
-		tickableObject.setLayer(Integer.MAX_VALUE);
+	public int getDefaultLayer() {
+	    return Integer.MAX_VALUE; // On top of EVERYTHING!
 	}
 
 	@Override
 	protected void doRemove() {
-		if (tickableObject != null) {
-			tickableObject.remove();
-			tickableObject = null;
-		}
 		instance = null;
 	}
 
 	@Override
 	public boolean isBackgroundEffect() {
-		return false;
+		return true;
 	}
 }

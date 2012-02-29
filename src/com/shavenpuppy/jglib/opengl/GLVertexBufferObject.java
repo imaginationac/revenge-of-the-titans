@@ -36,12 +36,14 @@ import java.nio.ByteOrder;
 
 import org.lwjgl.opengl.OpenGLException;
 
+import com.shavenpuppy.jglib.Resource;
+
 import static org.lwjgl.opengl.ARBBufferObject.*;
 
 /**
  * Vertex buffer object wrapper
  */
-public class GLVertexBufferObject extends GLResource implements GLRenderableObject {
+public class GLVertexBufferObject extends Resource implements GLRenderableObject {
 
 	private int size;
 	private final int type, usage;
@@ -74,7 +76,7 @@ public class GLVertexBufferObject extends GLResource implements GLRenderableObje
 	 * @see com.shavenpuppy.jglib.opengl.GLResource#doGLCreate()
 	 */
 	@Override
-	protected void doGLCreate() {
+	protected void doCreate() {
 		id = glGenBuffersARB();
 	}
 
@@ -94,7 +96,7 @@ public class GLVertexBufferObject extends GLResource implements GLRenderableObje
 	 * @see com.shavenpuppy.jglib.opengl.GLResource#doGLDestroy()
 	 */
 	@Override
-	protected void doGLDestroy() {
+	protected void doDestroy() {
 		if (id != 0) {
 			unmap();
 			glDeleteBuffersARB(id);

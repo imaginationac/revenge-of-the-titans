@@ -42,7 +42,7 @@ import com.shavenpuppy.jglib.resources.ResourceArray;
  */
 public class FrameListCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private String id;
 
@@ -54,7 +54,7 @@ public class FrameListCommand extends Command {
 	}
 
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		target.setFrameList((ResourceArray) Resources.get(id));
 		target.setSequence(target.getSequence() + 1);
 		return true;

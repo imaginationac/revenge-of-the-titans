@@ -35,6 +35,7 @@ import org.lwjgl.opengl.OpenGLException;
 import org.lwjgl.util.vector.Vector3f;
 
 import com.shavenpuppy.jglib.MultiBuffer;
+import com.shavenpuppy.jglib.Resource;
 
 import static org.lwjgl.opengl.ARBTextureCubeMap.*;
 import static org.lwjgl.opengl.GL11.*;
@@ -44,9 +45,9 @@ import static org.lwjgl.opengl.GL12.*;
  * A cube-map used to normalise light vectors for per-pixel lighting.
  * @author: cas
  */
-public class GLNormalisationCubeMapTexture extends GLResource implements GLRenderableObject {
+public class GLNormalisationCubeMapTexture extends Resource implements GLRenderableObject {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private final int size;
 
@@ -61,7 +62,7 @@ public class GLNormalisationCubeMapTexture extends GLResource implements GLRende
 	}
 
 	@Override
-	protected void doGLCreate() throws OpenGLException {
+    protected void doCreate() {
 
 		GLUtil.scratch.ints.clear().limit(1);
 		glGenTextures(GLUtil.scratch.ints);
@@ -103,7 +104,7 @@ public class GLNormalisationCubeMapTexture extends GLResource implements GLRende
 	}
 
 	@Override
-	protected void doGLDestroy() throws OpenGLException {
+    protected void doDestroy() throws OpenGLException {
 		if (textureId != 0) {
 			glDeleteTextures(textureId);
 			textureId = 0;

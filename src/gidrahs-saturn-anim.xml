@@ -898,6 +898,7 @@
 			<frame i="spriteimage.gidrah.saturn.03.04" d="1" />
 		<goto id="end"/>
 		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.saturn.03.06" d="1" />
 		<label id="end"/>
 	</animation>
 
@@ -1589,6 +1590,7 @@
 			<frame i="spriteimage.gidrah.saturn.03.04" d="1" />
 		<goto id="end"/>
 		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.saturn.03.06" d="1" />
 		<label id="end"/>
 	</animation>
 

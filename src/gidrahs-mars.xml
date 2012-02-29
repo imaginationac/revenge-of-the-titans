@@ -271,7 +271,7 @@
 		points="3000"
 		strength="100"
 		boss="true"
-		hitPoints="250"
+		hitPoints="500"
 		hitPointsX="0"
 		hitPointsY="-9"
 		armour="8"

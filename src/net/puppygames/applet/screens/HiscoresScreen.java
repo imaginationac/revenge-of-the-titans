@@ -31,26 +31,48 @@
  */
 package net.puppygames.applet.screens;
 
-import java.io.*;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.rmi.Naming;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.StringTokenizer;
 
-import net.puppygames.applet.*;
-import net.puppygames.applet.effects.*;
-import net.puppygames.applet.widgets.MessageBox;
+import net.puppygames.applet.AppletHiscoreServerRemote;
+import net.puppygames.applet.Area;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.GameInputStream;
+import net.puppygames.applet.GameOutputStream;
+import net.puppygames.applet.HiscoresReturn;
+import net.puppygames.applet.MiniGame;
+import net.puppygames.applet.Res;
+import net.puppygames.applet.RoamingFile;
+import net.puppygames.applet.Score;
+import net.puppygames.applet.Screen;
+import net.puppygames.applet.TickableObject;
+import net.puppygames.applet.effects.LabelEffect;
+import net.puppygames.applet.effects.ProgressEffect;
+import net.puppygames.applet.effects.SFX;
 import net.puppygames.applet.widgets.TextField;
 
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
 import org.lwjgl.util.Color;
 import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadableRectangle;
 
 import com.shavenpuppy.jglib.TextLayout;
-import com.shavenpuppy.jglib.opengl.*;
+import com.shavenpuppy.jglib.opengl.ColorUtil;
+import com.shavenpuppy.jglib.opengl.GLFont;
+import com.shavenpuppy.jglib.opengl.GLRenderable;
+import com.shavenpuppy.jglib.opengl.GLTextArea;
 import com.shavenpuppy.jglib.resources.ColorSequenceResource;
 import com.shavenpuppy.jglib.resources.MappedColor;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Appearance;
+import com.shavenpuppy.jglib.sprites.SimpleRenderer;
+import com.shavenpuppy.jglib.sprites.Sprite;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -71,7 +93,12 @@ public class HiscoresScreen extends Screen {
 	private static final String REMOTE_ON = "remote_on";
 	private static final String REMOTE_OFF = "remote_off";
 
-	/** Singleton */
+ 	private static final String REGISTERED_COORDS = "registered_coords";
+ 	private static final String RANK_COORDS = "rank_coords";
+ 	private static final String NAME_COORDS = "name_coords";
+ 	private static final String SCORE_COORDS = "score_coords";
+
+ 	/** Singleton */
 	private static HiscoresScreen instance;
 
 	/** 100 Rows */
@@ -83,30 +110,22 @@ public class HiscoresScreen extends Screen {
 	 */
 
 	/** Layout */
-	private int registeredX;
-	private int registeredY;
-	private String registeredAppearance;
-	private int nameX;
-	private int rankX;
-	private int scoreX;
-	private int rankWidth;
-	private int pointsWidth;
-	private int nameWidth;
 	private int yPos;
 	private int yGap;
 	private int scoresPerPage = 10;
 	private MappedColor progressBackgroundColor = new MappedColor(Color.BLUE);
 	private MappedColor progressBarColor = new MappedColor(Color.WHITE);
 	private String rankFont, nameFont, scoreFont;
+	private MappedColor rankColor, nameColor, scoreColor = new MappedColor(Color.WHITE);
 
 	/*
 	 * Transient data
 	 */
-	private transient AnimatedAppearanceResource registeredAppearanceResource;
+	private transient Appearance registeredAppearanceResource;
 	private transient GLFont rankFontResource, nameFontResource, scoreFontResource;
-	private transient MessageBox messageBox;
 	private transient boolean remoteHiscores;
 	private transient TickableObject hiscoresObject;
+	private transient ReadableRectangle registeredCoords, rankCoords, nameCoords, scoreCoords;
 
 	/** Score wrapper */
 	class Row {
@@ -122,14 +141,12 @@ public class HiscoresScreen extends Screen {
 		Row(int pos, Score score) {
 			this.score = score;
 			this.pos = pos;
-			int rowYPos = yPos - pos * yGap;
 			rank = String.valueOf(score.getRank() + 1);
 			points = String.valueOf(score.getPoints());
 			if (registeredAppearanceResource != null) {
 				registeredSprite = allocateSprite(HiscoresScreen.this);
 				if (registeredSprite != null) {
 					registeredSprite.setVisible(score.isRegistered());
-					registeredSprite.setLocation(registeredX, registeredY + rowYPos, 0);
 					registeredSprite.setAppearance(registeredAppearanceResource);
 					registeredSprite.setLayer(4);
 				}
@@ -137,17 +154,17 @@ public class HiscoresScreen extends Screen {
 			rankLabel = new GLTextArea();
 			rankLabel.setHorizontalAlignment(TextLayout.RIGHT);
 			rankLabel.setVerticalAlignment(GLTextArea.TOP);
-			rankLabel.setBounds(rankX, rowYPos - Res.getSmallFont().getDescent(), rankWidth, Res.getSmallFont().getHeight());
 			rankLabel.setFont(rankFontResource);
 			rankLabel.setText(rank);
+			rankLabel.setColour(rankColor);
 			pointsLabel = new GLTextArea();
 			pointsLabel.setHorizontalAlignment(TextLayout.RIGHT);
 			pointsLabel.setVerticalAlignment(GLTextArea.TOP);
-			pointsLabel.setBounds(scoreX, rowYPos - Res.getSmallFont().getDescent(), pointsWidth, Res.getSmallFont().getHeight());
 			pointsLabel.setFont(scoreFontResource);
 			pointsLabel.setText(points);
+			pointsLabel.setColour(scoreColor);
 
-			field = new TextField(24, nameWidth) {
+			field = new TextField(24, nameCoords.getWidth()) {
 				@Override
 				protected void onEdited() {
 					SFX.keyTyped();
@@ -158,14 +175,27 @@ public class HiscoresScreen extends Screen {
 					setKeyboardNavigationEnabled(true);
 					Row.this.score.setName(field.getText().trim());
 					submitLocalScore(Row.this.score);
-					if (Game.getSubmitRemoteHiscores()) {
+					if (MiniGame.getSubmitRemoteHiscores()) {
 						submitRemoteScore(Row.this.score);
 					}
 				}
 			};
-			field.setText(score.getName());
-			field.setLocation(nameX, yPos - pos * yGap);
+			field.setAllCaps(true);
+			field.setText(score.getName().toUpperCase());
 			field.setFont(nameFontResource);
+			field.setColour(nameColor);
+			onResized();
+		}
+
+		void onResized() {
+			int rowYPos = rankCoords.getY() + yPos - pos * yGap;
+			if (registeredSprite != null && registeredCoords != null) {
+				registeredSprite.setLocation(registeredCoords.getX(), registeredCoords.getY() + rowYPos);
+			}
+			rankLabel.setBounds(rankCoords.getX(), rowYPos - Res.getSmallFont().getDescent(), rankCoords.getWidth(), Res.getSmallFont().getHeight());
+			pointsLabel.setBounds(scoreCoords.getX(), rowYPos - Res.getSmallFont().getDescent(), scoreCoords.getWidth(), Res.getSmallFont().getHeight());
+			field.setLocation(nameCoords.getX(), nameCoords.getY() + yPos - pos * yGap);
+			field.setWidth(nameCoords.getWidth());
 		}
 
 		void render(SimpleRenderer renderer) {
@@ -186,10 +216,7 @@ public class HiscoresScreen extends Screen {
 					glPopMatrix();
 				}
 			});
-			ColorUtil.setGLColor(color, renderer);
-			rankLabel.render(renderer);
-			pointsLabel.render(renderer);
-			field.render(renderer);
+			ColorUtil.setGLColorPre(color, renderer);
 		}
 
 		void tick() {
@@ -219,9 +246,7 @@ public class HiscoresScreen extends Screen {
 	private static final int PHASE_NORMAL = 0;
 	private static final int PHASE_EDIT = 1;
 	private static final int PHASE_SUBMIT = 2;
-	private static final int PHASE_ERROR = 3;
-	private static final int PHASE_DOWNLOAD = 4;
-	private static final int PHASE_MESSAGE = 5;
+	private static final int PHASE_DOWNLOAD = 3;
 
 	/** Buttons */
 	private static final String NEXT = "next";
@@ -241,7 +266,7 @@ public class HiscoresScreen extends Screen {
 
 	private static final int DELAY = 60;
 
-	private static final ColorSequenceResource colorSequence = new ColorSequenceResource(
+	private static final ColorSequenceResource COLORSEQUENCE = new ColorSequenceResource(
 			new ColorSequenceResource.SequenceEntry[] {
 					new ColorSequenceResource.SequenceEntry(Color.RED, 4, 4),
 					new ColorSequenceResource.SequenceEntry(Color.ORANGE, 4, 4),
@@ -261,9 +286,6 @@ public class HiscoresScreen extends Screen {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doRegister()
-	 */
 	@Override
 	protected void doRegister() {
 		super.doRegister();
@@ -274,33 +296,6 @@ public class HiscoresScreen extends Screen {
 	protected void doDeregister() {
 		super.doDeregister();
 		instance = null;
-	}
-
-	@Override
-	protected void renderForeground() {
-		switch (phase) {
-			case PHASE_NORMAL:
-			case PHASE_DOWNLOAD:
-			case PHASE_EDIT:
-			case PHASE_SUBMIT:
-			case PHASE_ERROR:
-				break;
-
-			case PHASE_MESSAGE:
-				if (messageBox != null) {
-					messageBox.render(SimpleRenderer.GL_RENDERER);
-				}
-				break;
-		}
-	}
-
-	private void waitForKey() {
-		// Wait for keypress
-		if (++ tick > DELAY && Keyboard.next()) {
-			if (Keyboard.getEventKeyState()) {
-				Game.showTitleScreen();
-			}
-		}
 	}
 
 	/**
@@ -331,14 +326,11 @@ public class HiscoresScreen extends Screen {
 		setEnabled(REMOTE_ON, phase != PHASE_EDIT);
 		setEnabled(REMOTE_OFF, phase != PHASE_EDIT);
 
-		setVisible(REMOTE_ON, Game.getSubmitRemoteHiscores() && remoteHiscores);
-		setVisible(REMOTE_OFF, Game.getSubmitRemoteHiscores() && !remoteHiscores);
+		setVisible(REMOTE_ON, MiniGame.getSubmitRemoteHiscores() && remoteHiscores);
+		setVisible(REMOTE_OFF, MiniGame.getSubmitRemoteHiscores() && !remoteHiscores);
 
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Screen#onClicked(java.lang.String)
-	 */
 	@Override
 	protected void onClicked(String id) {
 		GenericButtonHandler.onClicked(id);
@@ -394,7 +386,7 @@ public class HiscoresScreen extends Screen {
 	private void loadRemoteScores() {
 		// Download more scores
 		phase = PHASE_DOWNLOAD;
-		progress = new ProgressEffect("DOWNLOADING HISCORES...", progressBackgroundColor, progressBarColor);
+		progress = new ProgressEffect(Game.getMessage("lwjglapplets.hiscoresscreen.downloadprogress"), progressBackgroundColor, progressBarColor);
 		progress.spawn(this);
 		new Thread() {
 			@Override
@@ -404,19 +396,10 @@ public class HiscoresScreen extends Screen {
 					List<Score> scores = server.getHiscores(Game.getTitle());
 					Game.onRemoteCallSuccess();
 					setScoreList(scores);
-					phase = PHASE_NORMAL;
 				} catch (Exception e) {
-					e.printStackTrace(System.err);
-					phase = PHASE_ERROR;
-					LabelEffect le = new LabelEffect(Res.getBigFont(), "HISCORES", ReadableColor.WHITE, ReadableColor.RED, 240, 120);
-					le.setLocation(Game.getWidth() / 2, Game.getHeight() / 2 + Res.getBigFont().getHeight() / 2);
-					le.setSound(SFX.getGameOverBuffer());
-					le.spawn(instance);
-					LabelEffect le2 = new LabelEffect(Res.getBigFont(), "UNAVAILABLE", ReadableColor.WHITE, ReadableColor.RED, 240, 120);
-					le2.setLocation(Game.getWidth() / 2, Game.getHeight() / 2 - Res.getBigFont().getHeight() / 2);
-					le2.setSound(SFX.getGameOverBuffer());
-					le2.spawn(instance);
+					Res.getErrorDialog().doModal(Game.getMessage("lwjglapplets.hiscoresscreen.problems"), Game.getMessage("lwjglapplets.hiscoresscreen.unavailable")+" ("+e+")");
 				} finally {
+					phase = PHASE_NORMAL;
 					synchronized (HiscoresScreen.this) {
 						tick = 0;
 						if (progress != null) {
@@ -430,17 +413,14 @@ public class HiscoresScreen extends Screen {
 		}.start();
 	}
 
-	@SuppressWarnings("unchecked")
 	private void loadLocalScores() {
-		FileInputStream fis = null;
-		BufferedInputStream bis = null;
+		GameInputStream gis = null;
 		ObjectInputStream ois = null;
 		try {
-			File hiscoresFile = new File(getHiscoreFileName());
+			RoamingFile hiscoresFile = new RoamingFile(getHiscoreFileName());
 			if (hiscoresFile.exists()) {
-				fis = new FileInputStream(hiscoresFile);
-				bis = new BufferedInputStream(fis);
-				ois = new ObjectInputStream(bis);
+				gis = new GameInputStream(getHiscoreFileName());
+				ois = new ObjectInputStream(gis);
 				setScoreList((ArrayList<Score>) ois.readObject()); // warning suppressed
 			} else {
 				setScoreList(new ArrayList<Score>(0));
@@ -449,7 +429,7 @@ public class HiscoresScreen extends Screen {
 			e.printStackTrace(System.err);
 			setScoreList(new ArrayList<Score>(0));
 		} finally {
-			if (fis != null) { try { fis.close(); } catch (Exception e) {} }
+			if (gis != null) { try { gis.close(); } catch (Exception e) {} }
 		}
 	}
 
@@ -457,7 +437,7 @@ public class HiscoresScreen extends Screen {
 	 * @return the filename to use for local hiscores
 	 */
 	private String getHiscoreFileName() {
-		return Game.getDirectoryPrefix()+"hiscores.dat";
+		return Game.getRoamingDirectoryPrefix()+"hiscores.dat";
 	}
 
 	/**
@@ -476,45 +456,17 @@ public class HiscoresScreen extends Screen {
 		return (rows.size() - 1) / scoresPerPage + 1;
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Screen#doTick()
-	 */
 	@Override
 	protected void doTick() {
 		if (editingRow != null) {
-			colorSequence.getColor(colorTick ++, editingRow.color);
+			COLORSEQUENCE.getColor(colorTick ++, editingRow.color);
 		}
 		for (int i = 0; i < rows.size(); i ++) {
 			Row row = rows.get(i);
 			row.tick();
 		}
-
-		switch (phase) {
-			case PHASE_ERROR:
-				waitForKey();
-				break;
-			case PHASE_NORMAL:
-				break;
-			case PHASE_MESSAGE:
-				if (Game.wasKeyPressed(Keyboard.KEY_ESCAPE) || Mouse.isButtonDown(0)) {
-					messageBox = null;
-					setEnabled(true);
-					phase = PHASE_NORMAL;
-					Game.showTitleScreen();
-				}
-				break;
-			case PHASE_DOWNLOAD:
-			case PHASE_EDIT:
-			case PHASE_SUBMIT:
-				break;
-		}
-
-
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Screen#doCleanup()
-	 */
 	@Override
 	protected void doCleanup() {
 		if (hiscoresObject != null) {
@@ -543,9 +495,6 @@ public class HiscoresScreen extends Screen {
 		instance.open();
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Screen#onClose()
-	 */
 	@Override
 	protected void onClose() {
 		Game.setPauseEnabled(true);
@@ -553,9 +502,6 @@ public class HiscoresScreen extends Screen {
 
 
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Screen#onOpen()
-	 */
 	@Override
 	protected synchronized void onOpen() {
 		// Always put hiscores in local hiscore table
@@ -675,7 +621,7 @@ public class HiscoresScreen extends Screen {
 
 	private void submitRemoteScore(final Score score) {
 		phase = PHASE_SUBMIT;
-		progress = new ProgressEffect("SUBMITTING HISCORE...", progressBackgroundColor, progressBarColor);
+		progress = new ProgressEffect(Game.getMessage("lwjglapplets.hiscoresscreen.submitting"), progressBackgroundColor, progressBarColor);
 		progress.spawn(instance);
 		enableButtons();
 
@@ -709,24 +655,15 @@ public class HiscoresScreen extends Screen {
 						}
 					}
 					Game.onRemoteCallSuccess();
-					phase = PHASE_NORMAL;
 				} catch (SQLException e) {
 					e.printStackTrace(System.err);
-					phase = PHASE_MESSAGE;
-					messageBox = new MessageBox();
-					messageBox.setSize(Game.getWidth() - 20, Game.getHeight() - 20);
-					messageBox.setTitle("PROBLEMS");
-					messageBox.setMessage(e.getMessage());
-					setEnabled(false);
-
+					Game.onRemoteCallSuccess(); // The actual call succeeded
+					Res.getErrorDialog().doModal(Game.getMessage("lwjglapplets.hiscoresscreen.problems"), e.getMessage());
 				} catch (Exception e) {
 					e.printStackTrace(System.err);
-					phase = PHASE_ERROR;
-					LabelEffect le = new LabelEffect(Res.getBigFont(), "COMMUNICATION ERROR", ReadableColor.WHITE, ReadableColor.RED, 240, 120);
-					le.setLocation(Game.getWidth() / 2, Game.getHeight() / 2);
-					le.setSound(SFX.getGameOverBuffer());
-					le.spawn(instance);
+					Res.getErrorDialog().doModal("PROBLEMS", e.getMessage());
 				} finally {
+					phase = PHASE_NORMAL;
 					progress.setFinished(true);
 					progress = null;
 					tick = 0;
@@ -740,30 +677,37 @@ public class HiscoresScreen extends Screen {
 		doSubmit = false;
 		allScores.add(score);
 		Collections.sort(allScores);
-		FileOutputStream fos = null;
-		BufferedOutputStream bos = null;
+		GameOutputStream gos = null;
 		ObjectOutputStream oos = null;
 		try {
-			fos = new FileOutputStream(getHiscoreFileName());
-			bos = new BufferedOutputStream(fos);
-			oos = new ObjectOutputStream(bos);
+			gos = new GameOutputStream(getHiscoreFileName());
+			oos = new ObjectOutputStream(gos);
 			oos.writeObject(allScores);
 			oos.flush();
-			bos.flush();
-			fos.flush();
+			gos.flush();
 			phase = PHASE_NORMAL;
 		} catch (Exception e) {
 			e.printStackTrace(System.err);
-			phase = PHASE_ERROR;
-			LabelEffect le = new LabelEffect(Res.getBigFont(), "PROBLEM SAVING HISCORES", ReadableColor.WHITE, ReadableColor.RED, 240, 120);
-			le.setLocation(Game.getWidth() / 2, Game.getHeight() / 2);
-			le.setSound(SFX.getGameOverBuffer());
-			le.spawn(instance);
+			Res.getErrorDialog().doModal(Game.getMessage("lwjglapplets.hiscoresscreen.problems"), Game.getMessage("lwjglapplets.hiscoresscreen.problemsaving")+" ("+e+")");
 		} finally {
 			if (oos != null) { try { oos.close(); } catch (Exception e) {} }
-			if (bos != null) { try { bos.close(); } catch (Exception e) {} }
-			if (fos != null) { try { fos.close(); } catch (Exception e) {} }
+			if (gos != null) { try { gos.close(); } catch (Exception e) {} }
 			enableButtons();
+		}
+	}
+
+	@Override
+	protected void onResized() {
+		Area registeredArea = getArea(REGISTERED_COORDS);
+		if (registeredArea != null) {
+			registeredCoords = registeredArea.getBounds();
+		}
+		rankCoords = getArea(RANK_COORDS).getBounds();
+		nameCoords = getArea(NAME_COORDS).getBounds();
+		scoreCoords = getArea(SCORE_COORDS).getBounds();
+
+		for (Row row : rows) {
+			row.onResized();
 		}
 	}
 }

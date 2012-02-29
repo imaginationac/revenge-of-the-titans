@@ -39,7 +39,7 @@ import static org.lwjgl.opengl.GL11.*;
  */
 public class OpaqueStyle extends AbstractStyle {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	public static OpaqueStyle instance;
 
@@ -66,6 +66,11 @@ public class OpaqueStyle extends AbstractStyle {
 		glDisableClientState(GL_COLOR_ARRAY);
 		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		glDisableClientState(GL_VERTEX_ARRAY);
+	}
+
+	@Override
+	public AlphaOp getAlphaOp() {
+		return AlphaOp.KEEP;
 	}
 
 	@Override

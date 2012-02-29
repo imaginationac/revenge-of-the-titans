@@ -45,6 +45,8 @@ import com.shavenpuppy.jglib.resources.ColorMapFeature;
  */
 public class NewWorldScreen extends Screen {
 
+	private static final long serialVersionUID = 1L;
+
 	/** The setting effect */
 	private transient Setting settingEffect;
 
@@ -76,7 +78,7 @@ public class NewWorldScreen extends Screen {
 			Game.getPlayerSlot().getPreferences().putBoolean("survivalUnlocked", true);
 			Game.flushPrefs();
 			ColorMapFeature.getDefaultColorMap().copy((ColorMapFeature) Resources.get("moon.colormap"));
-			net.puppygames.applet.Res.getInfoDialog().doModal("NEW GAME MODE", "{color:text-bold}SURVIVAL MODE{color:text} IS NOW UNLOCKED!\n\nPLAY MORE OF THE CAMPAIGN MISSIONS TO UNLOCK MORE BUILDINGS TO USE IN SURVIVAL MODE.", null);
+			net.puppygames.applet.Res.getInfoDialog().doModal(Game.getMessage("ultraworm.newworld.title"), Game.getMessage("ultraworm.newworld.message"), null);
 		}
 	}
 

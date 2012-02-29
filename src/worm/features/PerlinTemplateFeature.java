@@ -32,6 +32,7 @@
 package worm.features;
 
 import worm.generator.MapGenerator;
+import worm.generator.MapGeneratorParams;
 import worm.generator.PerlinMapGenerator;
 
 /**
@@ -113,8 +114,8 @@ public class PerlinTemplateFeature extends BaseTemplateFeature {
 	 * @see worm.generator.MapTemplate#createGenerator(int)
 	 */
 	@Override
-	public MapGenerator createGenerator(int level, int levelInWorld, LevelFeature levelFeature) {
-		return new PerlinMapGenerator(this, level, levelInWorld, levelFeature);
+	public MapGenerator createGenerator(MapGeneratorParams mapGeneratorParams) {
+		return new PerlinMapGenerator(this, mapGeneratorParams);
 	}
 
 }

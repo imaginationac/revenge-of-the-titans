@@ -33,7 +33,8 @@ package worm.animation;
 
 import worm.entities.Gidrah;
 
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Command;
+import com.shavenpuppy.jglib.sprites.Sprite;
 
 public class ShootCommand extends Command {
 
@@ -44,7 +45,7 @@ public class ShootCommand extends Command {
 	}
 
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		int currentSequence = target.getSequence();
 		target.setSequence(currentSequence + 1);
 		Sprite sprite = (Sprite) target;

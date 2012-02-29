@@ -97,6 +97,8 @@
 		inherit="base.building.spec"
 		floor="6.0"
 		offset="=$5x5offsetX,$5x5offsetY"
+		flamesOffset="=$5x5xFire,$5x5yFloor*0.5"
+		flamesEmitter="damaged.building.5x5.fire.emitter"
 	>
 		<appearance>
 			<layers scale="0.5">

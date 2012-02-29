@@ -44,9 +44,9 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  * Because a SpriteImage no public constructor taking a name as an argument it cannot
  * be mapped and created directly in the resources XML file.
  */
-public class SpriteImage extends AnimatedAppearanceResource {
+public class SpriteImage extends Resource implements Appearance {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The imagebank, if any */
 	private transient ImageBank imageBank;
@@ -316,8 +316,8 @@ public class SpriteImage extends AnimatedAppearanceResource {
 	}
 
 	@Override
-	public boolean toAnimated(Animated target) {
-		((Imaged) target).setImage(this);
+	public boolean toSprite(Sprite target) {
+		target.setImage(this);
 		return false;
 	}
 

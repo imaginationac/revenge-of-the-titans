@@ -39,6 +39,7 @@ import com.shavenpuppy.jglib.util.Decodeable;
  * An interpolator can interpolate between two values.
  */
 public interface Interpolator extends Serializable, Decodeable {
+
 	/**
 	 * Interpolate between a and b using the specified ratio
 	 * @param a The value when ratio <= 0.0f
@@ -46,16 +47,6 @@ public interface Interpolator extends Serializable, Decodeable {
 	 * @param ratio The ratio of b:a
 	 * @return the interpolated value, which must be between a and b inclusive
 	 */
-	public float interpolate(float a, float b, float ratio);
-
-	/**
-	 * Interpolate between a and b using the specified ratio using 16:16
-	 * fixed-point math.
-	 * @param a The value when ratio <= 0.0f
-	 * @param b The value when ratio >= 1.0f
-	 * @param ratio The ratio of b:a
-	 * @return the interpolated value, which must be between a and b inclusive
-	 */
-	public int interpolate(int a, int b, int ratio);
+	float interpolate(float a, float b, float ratio);
 
 }

@@ -37,14 +37,14 @@ import com.shavenpuppy.jglib.util.Parseable;
 import com.shavenpuppy.jglib.util.Util;
 
 /**
- * $Id: DieRoll.java,v 1.3 2011/04/18 23:28:06 cix_foo Exp $
+ * $Id: DieRoll.java,v 1.4 2011/10/01 00:33:45 cix_foo Exp $
  * Describes a random range of values in Dungeons and Dragons format (ed 3d6, 1d10+4)
  * @author $Author: cix_foo $
- * @version $Revision: 1.3 $
+ * @version $Revision: 1.4 $
  */
 public class DieRoll implements Serializable, Parseable {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** Number of dice to roll */
 	private int num;

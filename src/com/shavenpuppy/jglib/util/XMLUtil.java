@@ -31,18 +31,41 @@
  */
 package com.shavenpuppy.jglib.util;
 
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 import net.java.dev.eval.Expression;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.Dimension;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.Rectangle;
 import org.lwjgl.util.vector.Vector3f;
-import org.w3c.dom.*;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 
+import com.shavenpuppy.jglib.IResource;
 import com.shavenpuppy.jglib.Point2f;
 import com.shavenpuppy.jglib.Resource;
-import com.shavenpuppy.jglib.resources.*;
+import com.shavenpuppy.jglib.Resources;
+import com.shavenpuppy.jglib.resources.ColorParser;
+import com.shavenpuppy.jglib.resources.DimensionParser;
+import com.shavenpuppy.jglib.resources.Point2fParser;
+import com.shavenpuppy.jglib.resources.PointParser;
+import com.shavenpuppy.jglib.resources.RectangleParser;
+import com.shavenpuppy.jglib.resources.TextWrapper;
+import com.shavenpuppy.jglib.resources.Vector3fParser;
 
 /**
  * Some simple XML utilities
@@ -118,16 +141,35 @@ public final class XMLUtil {
 		int dollarPosition;
 		int minPos = 0;
 		while ((dollarPosition = in.indexOf('$', minPos)) != -1) {
+			if (dollarPosition > 0 && in.charAt(dollarPosition - 1) == '\\') {
+				// It was an escaped dollar
+				break;
+			}
 			// Scan to next operator
 			int endPosition = in.length();
+			boolean escaped = false;
+			StringBuilder tokenBuilder = new StringBuilder(in.length());
+			tokenBuilder.append("$");
 			for (int i = dollarPosition + 1; i < in.length(); i ++) {
 				char c = in.charAt(i);
-				if (c == '+' || c == '-' || c == '/' || c == '*' || c == ',' || c == '$' || c == '(' || c == ')' || Character.isWhitespace(c)) {
+				if (c == '\\') {
+					if (escaped) {
+						tokenBuilder.append(c);
+						continue;
+					} else {
+						escaped = true;
+					}
+				}
+				if (escaped) {
+					continue;
+				} else if (c == '+' || c == '-' || c == '/' || c == '*' || c == ',' || c == '$' || c == '(' || c == ')' || Character.isWhitespace(c)) {
 					endPosition = i;
 					break;
+				} else {
+					tokenBuilder.append(c);
 				}
 			}
-			String token = in.substring(dollarPosition, endPosition);
+			String token = tokenBuilder.toString();//in.substring(dollarPosition, endPosition);
 			try {
 				String decoded = decode(token);
 				if (!decoded.equals(token)) {
@@ -150,6 +192,8 @@ public final class XMLUtil {
 			if (subElement.charAt(0) == '=') {
 				subElement = subElement.substring(1);
 			}
+			// Replace all escaped chars with themselves by simply removing the \
+			subElement = subElement.replace("\\", "");
 			try {
 				// If it's a string, simply use verbatim
 				if (Character.isJavaIdentifierStart(subElement.charAt(0))) {
@@ -158,8 +202,10 @@ public final class XMLUtil {
 					ret.append(String.valueOf(Expression.eval(subElement)));
 				}
 			} catch (Exception e) {
+				// It wasn't an expression after all. Or maybe there was an error
+				ret.append(subElement);
 				System.err.println("Failed to parse "+original+" (sent "+subElement+" to parser)");
-				throw e;
+//				throw e;
 			}
 			if (st.hasMoreTokens()) {
 				ret.append(',');
@@ -448,7 +494,7 @@ public final class XMLUtil {
 
 
 	/**
-	 * Grab the text data inside a node.
+	 * Grab the text data inside a node. You can reference TextResources already loaded by using =<resource>
 	 * @param defaultText The default text to use if none is present
 	 * @return String
 	 */
@@ -462,9 +508,20 @@ public final class XMLUtil {
 				if (ret.equals("")) {
 					continue;
 				}
-				// Replace escape characters
-				ret = ret.replaceAll("\\\\n", "\n");
-				ret = ret.replaceAll("\\\\t", "\t");
+				if (ret.startsWith("=")) {
+					// It's a reference to a TextWrapper
+					TextWrapper wrapper = (TextWrapper) Resources.get(ret.substring(1));
+					if (wrapper == null) {
+						throw new NullPointerException("Failed to find "+ret.substring(1)+" text resource.");
+					}
+					ret = wrapper.getText();
+				} else {
+					// Replace escape characters
+					ret = ret.replace("\\n", "\n");
+					ret = ret.replace("\\t", "\t");
+////					ret = ret.replaceAll("\\\\n", "\n");
+////					ret = ret.replaceAll("\\\\t", "\t");
+				}
 				return ret;
 			}
 		}
@@ -478,7 +535,8 @@ public final class XMLUtil {
 	 * @param element
 	 * @throws Exception
 	 */
-	public static void grabXMLAttributes(Resource.Loader loader, Object destination, Class<?> root, Element element) throws Exception {
+	@SuppressWarnings({"unchecked", "rawtypes"})
+    public static void grabXMLAttributes(Resource.Loader loader, Object destination, Class<?> root, Element element) throws Exception {
 		Class<?> clazz = destination.getClass();
 		while (root.isAssignableFrom(clazz)) {
 			Field[] fields = clazz.getDeclaredFields();
@@ -536,7 +594,7 @@ public final class XMLUtil {
 					// string and a named object elsewhere, we'll manufacture a name and do it all behind the scenes.
 
 					// First: is it a resource?
-					if (!Resource.class.isAssignableFrom(currentField.getType())) {
+					if (!IResource.class.isAssignableFrom(currentField.getType())) {
 						continue;
 					}
 
@@ -566,14 +624,14 @@ public final class XMLUtil {
 						List<Element> childrenOfChild = XMLUtil.getChildren(child);
 						if (childrenOfChild.size() == 1) {
 							// If there's an old resource, destroy it
-							Resource oldResource = (Resource) currentField.get(destination);
+							IResource oldResource = (IResource) currentField.get(destination);
 							if (oldResource != null) {
 								if (oldResource.isCreated()) {
 									oldResource.destroy();
 								}
 								currentField.set(destination, null);
 							}
-							Resource resource = loader.load(childrenOfChild.get(0));
+							IResource resource = loader.load(childrenOfChild.get(0));
 							if (currentField.getType().isAssignableFrom(resource.getClass())) {
 								// OK. We've got a brand new Resource. Unfortunately it's transient so it won't be persisted here. What we'll do then is
 								// stuff its manufactured name in the String field instead.
@@ -596,7 +654,7 @@ public final class XMLUtil {
 
 				if (attribute == null) {
 					// Is it a Resource?
-					if (!Resource.class.isAssignableFrom(currentField.getType())) {
+					if (!IResource.class.isAssignableFrom(currentField.getType())) {
 						continue;
 					}
 					/*
@@ -612,14 +670,14 @@ public final class XMLUtil {
 							// No child present, so assume null
 						} else if (childrenOfChild.size() == 1) {
 							// If there's an old resource, destroy it
-							Resource oldResource = (Resource) currentField.get(destination);
+							IResource oldResource = (IResource) currentField.get(destination);
 							if (oldResource != null) {
 								if (oldResource.isCreated()) {
 									oldResource.destroy();
 								}
 								currentField.set(destination, null);
 							}
-							Resource resource = loader.load(childrenOfChild.get(0));
+							IResource resource = loader.load(childrenOfChild.get(0));
 							if (currentField.getType().isAssignableFrom(resource.getClass())) {
 								currentField.set(destination, resource);
 							} else {
@@ -675,6 +733,8 @@ public final class XMLUtil {
 					currentField.set(destination, DimensionParser.parse(attribute));
 				} else if (currentField.getType() == Color.class) {
 					currentField.set(destination, ColorParser.parse(attribute));
+				} else if (Enum.class.isAssignableFrom(currentField.getType())) {
+					currentField.set(destination, Enum.valueOf((Class) currentField.getType(), attribute));
 				} else if (Decodeable.class.isAssignableFrom(currentField.getType())) {
 					Method decodeMethod = currentField.getType().getDeclaredMethod("decode", new Class[] {String.class});
 					currentField.set(destination, decodeMethod.invoke(currentField.getType(), new Object[] {attribute}));
@@ -700,11 +760,11 @@ public final class XMLUtil {
 	 * @param resourceElement
 	 * @throws Exception
 	 */
-	public static void loadChildResources(Resource resource, Element resourceElement, Resource.Loader loader) throws Exception {
+	public static void loadChildResources(IResource resource, Element resourceElement, Resource.Loader loader) throws Exception {
 		// Get a list of the non-transient non-final non-static null Resource fields in the incoming Resource
 		// and load elements that correspond to them.
 		Class<?> clazz = resource.getClass();
-		while (Resource.class.isAssignableFrom(clazz)) {
+		while (IResource.class.isAssignableFrom(clazz)) {
 			Field[] fields = clazz.getDeclaredFields();
 			for (int i = 0; i < fields.length; i ++) {
 				Field f = fields[i];
@@ -719,7 +779,7 @@ public final class XMLUtil {
 					continue;
 				}
 				// If it's not a Resource, ignore it
-				if (!Resource.class.isAssignableFrom(f.getType())) {
+				if (!IResource.class.isAssignableFrom(f.getType())) {
 					continue;
 				}
 				// Look for a child element with the same name
@@ -748,15 +808,4 @@ public final class XMLUtil {
 		val = val > 1f ? 1f : val;
 		return val;
 	}
-
-	public static void main(String[] args) throws Exception {
-
-		class A {
-			int[] a;
-		}
-
-		Field f = A.class.getDeclaredField("a");
-		System.out.println(f.getType()+" "+f.getType().isArray());
-    }
-
 }

@@ -1,0 +1,639 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Completed the whole game screen (pile of dead gidrahs with humans atop) -->
+
+<resources>	
+
+
+	<include resource="victory-xmas-anim.xml" />
+
+
+	<!--  eyes -->
+
+	<animation name="xmas.victory.custerd.eye.anim">
+		
+		<animcolor a="255" d="0" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0" />
+		<sub id="xmas.victory.eye.scroll.anim"/>		
+	
+		<frame i="spriteimage.xmas.victory.eye.05" d="8"/>
+		
+		<label id="start"/>
+		<frame i="spriteimage.xmas.victory.eye.04" d="8" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="8" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="8" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="8" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="8" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="8" />		
+		<random>
+			<dest id="start" n="7"/>
+			<dest id="blink"/>
+		</random>
+		<label id="blink"/>
+		<frame i="spriteimage.xmas.victory.eye.03" d="50" />
+		<frame i="spriteimage.xmas.victory.eye.02" d="6" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="6" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="xmas.victory.tech.eyes.anim">
+			
+		<animcolor a="255" d="0" />
+		<frame i="spriteimage.xmas.victory.tech.eyes.01" d="0" />
+		<sub id="victory.eyes.scroll.anim"/>		
+	</animation>
+
+	<!--  fireworks -->
+
+
+
+    <emitter name="xmas.victory.firework.0.emitter" inherit="firework.emitter" startHue="0.0" endHue="0.0">
+        <slave><emitter inherit="firework.flash.emitter" startHue="0.0" endHue="0.0">
+            <chain><emitter inherit="titan.nodule.trail.emitter" duration="100" fadeDuration="30" interpolation="1" startHue="0.0" endHue="0.0"/></chain>
+            <slave><emitter inherit="firework.bang.emitter" startHue="0.0" endHue="0.0">
+		           <slave><emitter inherit="titan.nodule.trail.emitter" duration="32" particleDuration="4.0, 6.0" fadeDuration="8,16" startHue="0.0" endHue="0.0">
+				   		<chain><emitter inherit="firework.bang.smoke.ring.emitter" startHue="0.0" endHue="0.0"/></chain>
+					</emitter></slave>
+					<chain><emitter inherit="firework.bang.smoke.emitter" startHue="0.0" endHue="0.0"/></chain>
+			</emitter></slave>
+        </emitter></slave>
+        <chain><emitter inherit="titan.nodule.flash.emitter" emitterScale="2.5" startHue="0.0" endHue="0.0"/></chain>
+    </emitter>
+
+  	<emitter name="xmas.victory.firework.right.emitter" inherit="xmas.victory.firework.0.emitter" angle="75,95" startHue="0.0" endHue="0.0"/>
+  	<emitter name="xmas.victory.firework.left.emitter" inherit="xmas.victory.firework.0.emitter" angle="95,115" startHue="0.0" endHue="0.0"/>
+
+
+
+
+
+
+
+	<animation name="xmas.victory.top.left.mask.anim">
+		<animcolor r="0" g="0" b="0" a="255" d="0" />
+		<frame i="spriteimage.xmas.victory.top.01" d="0"/>
+		<sub id="victory.top.mask.anim"/>
+	</animation>
+	<animation name="xmas.victory.top.right.mask.anim">
+		<animcolor r="0" g="0" b="0" a="255" d="0" />
+		<frame i="spriteimage.xmas.victory.top.02" d="0"/>
+		<sub id="victory.top.mask.anim"/>
+	</animation>
+
+	<animation name="xmas.victory.mid.left.mask.anim">
+		<animcolor r="0" g="0" b="0" a="255" d="0" />
+		<frame i="spriteimage.xmas.victory.01" d="0"/>
+		<sub id="victory.mid.mask.anim"/>
+	</animation>
+	<animation name="xmas.victory.mid.right.mask.anim">
+		<animcolor r="0" g="0" b="0" a="255" d="0" />
+		<frame i="spriteimage.xmas.victory.02" d="0"/>
+		<sub id="victory.mid.mask.anim"/>
+	</animation>
+
+
+
+	<animation name="xmas.victory.top.left.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.top.01" d="0"/>
+		<sub id="victory.top.anim"/>
+	</animation>
+	<animation name="xmas.victory.top.right.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.top.02" d="0"/>
+		<sub id="victory.top.anim"/>
+	</animation>
+
+	<animation name="xmas.victory.mid.left.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.01" d="0"/>
+		<sub id="victory.mid.anim"/>
+	</animation>
+	<animation name="xmas.victory.mid.right.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.02" d="0"/>
+		<sub id="victory.mid.anim"/>
+	</animation>
+
+	<animation name="xmas.victory.front.anim">
+		<animcolor a="255" d="0" />
+		<frame i="spriteimage.xmas.victory.front.01" d="0"/>
+		<sub id="victory.front.fade.anim"/>
+	</animation>	
+
+
+
+
+	<animation name="xmas.victory.flag.anim">
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<sub id="xmas.victory.flag.scroll.anim"/>
+       
+        
+        <label id="loop-4-1"/>
+		<frame i="spriteimage.xmas.victory.flag.01" d="4"/>	
+        <frame i="spriteimage.xmas.victory.flag.02" d="4"/>
+		<frame i="spriteimage.xmas.victory.flag.03" d="4"/>	
+		<frame i="spriteimage.xmas.victory.flag.04" d="4"/>	
+		<frame i="spriteimage.xmas.victory.flag.05" d="4"/>	
+        <random>
+			<dest id="loop-4-2" 	n="1"/>
+			<dest id="loop-5-2" 	n="1"/>
+			<dest id="loop-6-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-4-2"/>
+        <frame i="spriteimage.xmas.victory.flag.06" d="4"/>
+		<frame i="spriteimage.xmas.victory.flag.07" d="4"/>
+		<frame i="spriteimage.xmas.victory.flag.08" d="4"/>
+		<frame i="spriteimage.xmas.victory.flag.09" d="4"/>
+		<frame i="spriteimage.xmas.victory.flag.10" d="4"/>
+        <random>
+			<dest id="loop-4-1" 	n="1"/>
+			<dest id="loop-5-1" 	n="1"/>
+			<dest id="loop-6-1" 	n="1"/>
+		</random>	
+
+
+        <label id="loop-5-1"/>
+		<frame i="spriteimage.xmas.victory.flag.01" d="5"/>	
+        <frame i="spriteimage.xmas.victory.flag.02" d="5"/>
+		<frame i="spriteimage.xmas.victory.flag.03" d="5"/>	
+		<frame i="spriteimage.xmas.victory.flag.04" d="5"/>	
+		<frame i="spriteimage.xmas.victory.flag.05" d="5"/>	
+        <random>
+			<dest id="loop-4-2" 	n="1"/>
+			<dest id="loop-5-2" 	n="1"/>
+            <dest id="loop-6-2" 	n="1"/>
+            <dest id="loop-7-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-5-2"/>
+        <frame i="spriteimage.xmas.victory.flag.06" d="5"/>
+		<frame i="spriteimage.xmas.victory.flag.07" d="5"/>
+		<frame i="spriteimage.xmas.victory.flag.08" d="5"/>
+		<frame i="spriteimage.xmas.victory.flag.09" d="5"/>
+		<frame i="spriteimage.xmas.victory.flag.10" d="5"/>
+        <random>
+			<dest id="loop-4-1" 	n="1"/>
+			<dest id="loop-5-1" 	n="1"/>
+            <dest id="loop-6-1" 	n="1"/>
+            <dest id="loop-7-1" 	n="1"/>
+		</random>	
+
+
+        <label id="loop-6-1"/>
+		<frame i="spriteimage.xmas.victory.flag.01" d="6"/>	
+        <frame i="spriteimage.xmas.victory.flag.02" d="6"/>
+		<frame i="spriteimage.xmas.victory.flag.03" d="6"/>	
+		<frame i="spriteimage.xmas.victory.flag.04" d="6"/>	
+		<frame i="spriteimage.xmas.victory.flag.05" d="6"/>	
+        <random>
+			<dest id="loop-4-2" 	n="1"/>
+			<dest id="loop-5-2" 	n="1"/>
+			<dest id="loop-6-2" 	n="1"/>
+            <dest id="loop-7-2" 	n="1"/>
+            <dest id="loop-8-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-6-2"/>
+        <frame i="spriteimage.xmas.victory.flag.06" d="6"/>
+		<frame i="spriteimage.xmas.victory.flag.07" d="6"/>
+		<frame i="spriteimage.xmas.victory.flag.08" d="6"/>
+		<frame i="spriteimage.xmas.victory.flag.09" d="6"/>
+		<frame i="spriteimage.xmas.victory.flag.10" d="6"/>
+        <random>
+			<dest id="loop-4-1" 	n="1"/>
+			<dest id="loop-5-1" 	n="1"/>
+			<dest id="loop-6-1" 	n="1"/>
+            <dest id="loop-7-1" 	n="1"/>
+            <dest id="loop-8-1" 	n="1"/>
+		</random>	
+
+
+        <label id="loop-7-1"/>
+		<frame i="spriteimage.xmas.victory.flag.01" d="7"/>	
+        <frame i="spriteimage.xmas.victory.flag.02" d="7"/>
+		<frame i="spriteimage.xmas.victory.flag.03" d="7"/>	
+		<frame i="spriteimage.xmas.victory.flag.04" d="7"/>	
+		<frame i="spriteimage.xmas.victory.flag.05" d="7"/>	
+        <random>
+			<dest id="loop-5-2" 	n="1"/>
+			<dest id="loop-6-2" 	n="1"/>
+			<dest id="loop-7-2" 	n="1"/>
+            <dest id="loop-8-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-7-2"/>
+        <frame i="spriteimage.xmas.victory.flag.06" d="7"/>
+		<frame i="spriteimage.xmas.victory.flag.07" d="7"/>
+		<frame i="spriteimage.xmas.victory.flag.08" d="7"/>
+		<frame i="spriteimage.xmas.victory.flag.09" d="7"/>
+		<frame i="spriteimage.xmas.victory.flag.10" d="7"/>
+        <random>
+			<dest id="loop-5-1" 	n="1"/>
+			<dest id="loop-6-1" 	n="1"/>
+			<dest id="loop-7-1" 	n="1"/>
+            <dest id="loop-8-1" 	n="1"/>
+		</random>	
+
+
+        <label id="loop-8-1"/>
+		<frame i="spriteimage.xmas.victory.flag.01" d="8"/>	
+        <frame i="spriteimage.xmas.victory.flag.02" d="8"/>
+		<frame i="spriteimage.xmas.victory.flag.03" d="8"/>	
+		<frame i="spriteimage.xmas.victory.flag.04" d="8"/>	
+		<frame i="spriteimage.xmas.victory.flag.05" d="8"/>	
+        <random>
+			<dest id="loop-6-2" 	n="1"/>
+			<dest id="loop-7-2" 	n="1"/>
+            <dest id="loop-8-2" 	n="1"/>
+		</random>	
+        
+        <label id="loop-8-2"/>
+        <frame i="spriteimage.xmas.victory.flag.06" d="8"/>
+		<frame i="spriteimage.xmas.victory.flag.07" d="8"/>
+		<frame i="spriteimage.xmas.victory.flag.08" d="8"/>
+		<frame i="spriteimage.xmas.victory.flag.09" d="8"/>
+		<frame i="spriteimage.xmas.victory.flag.10" d="8"/>
+        <random>
+			<dest id="loop-6-1" 	n="1"/>
+			<dest id="loop-7-1" 	n="1"/>
+            <dest id="loop-8-1" 	n="1"/>
+		</random>	
+
+    </animation>	
+
+
+
+
+	<animation name="xmas.victory.fireworks.crackle.sound">
+        <random>
+			<dest id="sound-1" 	n="1"/>
+			<dest id="sound-2" 	n="1"/>
+            <dest id="sound-3" 	n="1"/>
+		</random>	
+		
+		<label id="sound-1"/>
+		<sound attenuator="none.attenuator" sound="crackle1.buffer"/>
+		<goto id="return"/>
+
+		<label id="sound-2"/>
+		<sound attenuator="none.attenuator" sound="crackle2.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-3"/>
+		<sound attenuator="none.attenuator" sound="crackle3.buffer"/>
+
+		<label id="return"/>
+		<return/>
+	</animation>	
+
+	<animation name="xmas.victory.fireworks.whistle.sound">
+        <random>
+			<dest id="sound-1" 	n="1"/>
+			<dest id="sound-2" 	n="1"/>
+            <dest id="sound-3" 	n="1"/>
+ 			<dest id="sound-4" 	n="1"/>
+		</random>	
+		
+		<label id="sound-1"/>
+		<sound attenuator="none.attenuator" sound="whistle1.buffer"/>
+		<goto id="return"/>
+
+		<label id="sound-2"/>
+		<sound attenuator="none.attenuator" sound="whistle2.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-3"/>
+		<sound attenuator="none.attenuator" sound="whistle3.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-4"/>
+		<sound attenuator="none.attenuator" sound="whistle4.buffer"/>
+
+		<label id="return"/>
+		<return/>
+	</animation>	
+
+	<animation name="xmas.victory.fireworks.pop.sound">
+        <random>
+			<dest id="sound-1" 	n="1"/>
+			<dest id="sound-2" 	n="1"/>
+            <dest id="sound-3" 	n="1"/>
+ 			<dest id="sound-4" 	n="1"/>
+            <dest id="sound-5" 	n="1"/>           
+		</random>	
+		
+		<label id="sound-1"/>
+		<sound attenuator="none.attenuator" sound="pop1.buffer"/>
+		<goto id="return"/>
+
+		<label id="sound-2"/>
+		<sound attenuator="none.attenuator" sound="pop2.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-3"/>
+		<sound attenuator="none.attenuator" sound="pop3.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-4"/>
+		<sound attenuator="none.attenuator" sound="pop4.buffer"/>
+		<goto id="return"/>
+		
+		<label id="sound-5"/>
+		<sound attenuator="none.attenuator" sound="pop5.buffer"/>
+
+		<label id="return"/>
+		<return/>
+	</animation>	
+
+
+
+	<animation name="xmas.victory.fireworks.right.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.right.glow.01" d="600"/>
+		
+		<label id="start"/>
+		<random>
+			<dest id="emit1" 	n="1"/>
+			<dest id="emit2" 	n="1"/>
+			<dest id="emit3" 	n="1"/>		
+		</random>
+		
+		<label id="emit1"/>
+		<sub id="victory.fireworks.whistle.sound"/>
+		<emit id="xmas.victory.firework.right.emitter" ox="50" oy="60"/>
+		<goto id="fade"/>
+
+		<label id="emit2"/>
+		<emit id="xmas.victory.firework.right.emitter" ox="100" oy="80"/>
+		<goto id="fade"/>
+
+		<label id="emit3"/>
+		<emit id="xmas.victory.firework.right.emitter" ox="150" oy="100"/>
+		<goto id="fade"/>
+		
+		<label id="fade"/>
+		<sub id="firework.glow.fade.anim"/>
+		<animcolor a="0" d="50" />>
+		
+		<label id="pause"/>
+		<animcolor a="0" d="7" />
+        <random>
+			<dest id="pause" 	n="5"/>
+			<dest id="start" 	n="1"/>
+		</random>			
+		
+	</animation>
+
+	<animation name="xmas.victory.fireworks.left.anim">
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.left.glow.01" d="630"/>
+		
+		<label id="start"/>
+		<random>
+			<dest id="emit1" 	n="1"/>
+			<dest id="emit2" 	n="1"/>
+			<dest id="emit3" 	n="1"/>		
+		</random>
+		
+		<label id="emit1"/>
+		<emit id="xmas.victory.firework.left.emitter" ox="110" oy="60"/>
+		<goto id="fade"/>
+
+		<label id="emit2"/>
+		<emit id="xmas.victory.firework.left.emitter" ox="160" oy="80"/>
+		<goto id="fade"/>
+
+		<label id="emit3"/>
+		<emit id="xmas.victory.firework.left.emitter" ox="210" oy="100"/>
+		<goto id="fade"/>
+		
+		<label id="fade"/>
+		<sub id="firework.glow.fade.anim"/>
+		<animcolor a="0" d="50" />
+		
+		<label id="pause"/>
+		<animcolor a="0" d="5" />
+        <random>
+			<dest id="pause" 	n="7"/>
+			<dest id="start" 	n="1"/>
+		</random>			
+		
+	</animation>	
+
+
+	<animation name="xmas.victory.fireworks.intro.1.anim">
+
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.left.glow.02" d="0"/>
+		<offset x="0" y="81.82" d="0" />
+		<emit id="xmas.victory.firework.left.emitter" ox="230" oy="200"/>
+		
+		<animcolor a="0" d="88" />
+		<sub id="intro.firework.glow.fade.1.anim"/>
+		<animcolor a="0" d="0" />
+	
+	</animation>	
+	
+	<animation name="xmas.victory.fireworks.intro.2.anim">
+
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.right.glow.02" d="220"/>
+		<offset x="0" y="36.36" d="0" />
+		<emit id="xmas.victory.firework.right.emitter" ox="50" oy="150"/>
+		
+		<animcolor a="0" d="88" />
+		<sub id="intro.firework.glow.fade.2.anim"/>
+		<animcolor a="0" d="0" />
+	
+	</animation>	
+
+	<animation name="xmas.victory.fireworks.intro.3.anim">
+
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.left.glow.02" d="380"/>
+		<offset x="0" y="16.16" d="0" />
+		<emit id="xmas.victory.firework.left.emitter" ox="180" oy="80"/>
+		
+		<animcolor a="0" d="88" />
+		<sub id="intro.firework.glow.fade.3.anim"/>
+		<animcolor a="0" d="0" />
+	
+	</animation>	
+
+
+	<animation name="xmas.victory.fireworks.finale.left.anim">
+
+		<label id="start"/>
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.left.glow.01" d="1900"/>
+
+		<animcolor a="0" d="0" />
+		<emit id="xmas.victory.firework.left.emitter" ox="180" oy="50"/>
+		<animcolor a="0" d="60" />	
+		<emit id="xmas.victory.firework.left.emitter" ox="220" oy="70"/>
+		<sub id="firework.glow.fade.anim"/> <!-- 120 -->
+		
+		<animcolor a="0" d="1100" />
+		<goto id="start"/>	
+		
+	</animation>	
+
+
+	<animation name="xmas.victory.fireworks.finale.right.anim">
+
+		<label id="start"/>
+		<animcolor a="0" d="0" />
+		<frame i="spriteimage.xmas.victory.right.glow.01" d="1900"/>
+		<animcolor a="0" d="30" />	
+		<emit id="xmas.victory.firework.right.emitter" ox="80" oy="50"/>
+		<animcolor a="0" d="90" />	
+		<emit id="xmas.victory.firework.right.emitter" ox="40" oy="70"/>
+		<sub id="firework.glow.fade.anim"/> <!-- 120 -->
+		
+		<animcolor a="0" d="1100" />
+		<goto id="start"/>	
+		
+	</animation>	
+
+
+	<character
+		name="xmas.victory.char.spec"
+		animated="true"
+		color="xmas.colormap:text"
+		boldColor="xmas.colormap:text-bold"
+		left="true"
+		textSpeed="6"
+		bubbleLayer="20"
+		mouthLayer="20"
+	>
+		<sounds>
+			<array>
+				<item>textBeep.buffer</item>
+			</array>
+		</sounds>
+	</character>
+
+	<character
+		name="xmas.victory1.char"
+		inherit="xmas.victory.char.spec"
+	/>
+	<character
+		name="xmas.victory2.char"
+		inherit="xmas.victory.char.spec"
+	/>
+	<character
+		name="xmas.victory3.char"
+		inherit="xmas.victory.char.spec"
+	/>
+	
+	
+	<instance class="worm.screens.CompleteXmasScreen"
+		name="xmascomplete.screen"
+		keyboardnavigation="false"
+		stream="xmas.stream"
+		transition="instant.transition"
+		centre="both"
+	>	
+
+		<hotkey key="ESCAPE" area="ok"/>
+		<hotkey key="RETURN" area="ok"/>
+
+<!-- 		
+		<area id="message" valign="top" halign="centered" font="bigfont.glfont" color="button-red" text="VICTORY!" layer="12" position="0,0" size="320,320"/>
+ -->
+ 		<area id="ok" inherit="button.continue.spec"/>
+	
+		<area id="victory-mid-right-mask" inherit="victory-right.spec" layer="6" mouseoff="xmas.victory.mid.right.mask.anim"  />
+		<area id="victory-mid-left-mask"  inherit="victory-left.spec"  layer="6" mouseoff="xmas.victory.mid.left.mask.anim"  />
+		<area id="victory-top-right-mask" inherit="victory-right.spec" layer="8" mouseoff="xmas.victory.top.right.mask.anim"  />
+		<area id="victory-top-left-mask"  inherit="victory-left.spec"  layer="8" mouseoff="xmas.victory.top.left.mask.anim"  />		
+	
+		<area id="victory-mid-right" inherit="victory-right.spec" layer="7" mouseoff="xmas.victory.mid.right.anim"  />
+		<area id="victory-mid-left"  inherit="victory-left.spec"  layer="7" mouseoff="xmas.victory.mid.left.anim"  />
+		<area id="victory-top-right" inherit="victory-right.spec" layer="9" mouseoff="xmas.victory.top.right.anim"  />
+		<area id="victory-top-left"  inherit="victory-left.spec"  layer="9" mouseoff="xmas.victory.top.left.anim"  />		
+	
+		<area id="victory-flag" position="166,211" size="32,32" layer="10" scale="0.5" mouseoff="xmas.victory.flag.anim"  />
+
+		<!-- <area id="victory-fireworks-intro-1" inherit="victory-left.spec" layer="10" mouseoff="xmas.victory.fireworks.intro.1.anim"  />-->
+		 <area id="victory-fireworks-intro-2" inherit="victory-right.spec" layer="10" mouseoff="xmas.victory.fireworks.intro.2.anim"  /> 	
+		<area id="victory-fireworks-intro-3" inherit="victory-left.spec" layer="10" mouseoff="xmas.victory.fireworks.intro.3.anim"  />	
+
+
+	
+		<area id="victory-fireworks-right" inherit="victory-right.spec" layer="10" mouseoff="xmas.victory.fireworks.right.anim"  />
+		<area id="victory-fireworks-left" inherit="victory-left.spec" layer="10" mouseoff="xmas.victory.fireworks.left.anim"  />
+
+		<area id="victory-fireworks-finale.right" inherit="victory-right.spec" layer="10" mouseoff="xmas.victory.fireworks.finale.right.anim"  />
+		<area id="victory-fireworks-finale.left" inherit="victory-left.spec" layer="10" mouseoff="xmas.victory.fireworks.finale.left.anim"  />
+
+		<area id="victory-blasters" inherit="victory-left.spec" layer="9" mouseoff="blasters.anim" >
+			<anchor x="mid" d="-256" /><anchor y="mid" d="-170" />
+		</area>
+		<area id="victory-blasters-distant" inherit="victory-left.spec" lazyer="9" mouseoff="blasters.distant.anim" >
+
+			<anchor x="mid" d="-256" /><anchor y="mid" d="-170" />
+		</area>
+		
+		<area id="victory-front" inherit="victory-left.spec" layer="12" scale="1.0" mouseoff="xmas.victory.front.anim" ><anchor x="mid" d="-256" /><anchor y="mid" d="-150" /></area>
+
+		<area id="victory-custerd-eye" inherit="victory-right.spec" layer="12" mouseoff="xmas.victory.custerd.eye.anim"  />
+		<area id="victory-tech-eyes" inherit="victory-right.spec" layer="12" mouseoff="xmas.victory.tech.eyes.anim"  />
+	
+		<!--  Story stuff -->
+		
+		<setting>
+			<setting
+				name="completexmas.setting"
+				position="0,0"
+				size="320,320"
+			>	
+				<actor character="xmas.victory1.char"  position="0,0" bounds="20,284,300,30"  expand="down" />
+				<actor character="xmas.victory2.char"  position="0,0" bounds="20,262,300,30" expand="down" leading="-1" />
+				<actor character="xmas.victory3.char"  position="0,0" bounds="20,262,300,30" expand="down" />
+			</setting>	
+		</setting>
+
+		<story>	
+			<story name="victory-xmas.story">
+				<char id="xmas.victory1.char" >=xmas.victory1.text</char>
+				<char id="xmas.victory2.char" delay="180" fadeAfter="600">=xmas.victory2.text</char>
+				<char id="xmas.victory3.char" delay="780" fadeAfter="300">=xmas.victory3.text</char>
+			</story>
+		</story>
+	</instance>
+	
+</resources>

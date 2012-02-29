@@ -44,7 +44,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class LabelCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The ID of the label */
 	private String id;
@@ -60,7 +60,7 @@ public class LabelCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		assert false; // We should never execute labels
 		return true;
 	}

@@ -46,7 +46,7 @@ import com.shavenpuppy.jglib.*;
  */
 public class ImageResource extends Resource implements ImageWrapper {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Resource data

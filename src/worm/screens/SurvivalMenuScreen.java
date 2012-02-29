@@ -31,6 +31,7 @@
  */
 package worm.screens;
 
+import net.puppygames.applet.Game;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.screens.DialogScreen;
 import worm.Res;
@@ -38,12 +39,14 @@ import worm.Worm;
 
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.resources.ColorMapFeature;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.sprites.Appearance;
 
 /**
  * The ingame menu - survival mode version
  */
 public class SurvivalMenuScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static SurvivalMenuScreen instance;
 
@@ -104,9 +107,9 @@ public class SurvivalMenuScreen extends Screen {
 
 		setGroupVisible(GROUP_LABELS, false);
 
-		String world = Worm.getGameState().getWorld().getTitle();
+		String world = Worm.getGameState().getWorld().getUntranslated();
 		ColorMapFeature.getDefaultColorMap().copy((ColorMapFeature) Resources.get(world+".colormap"));
-		getArea(BACKGROUND).setMouseOffAppearance((AnimatedAppearanceResource) Resources.get(world+".research.background.anim"));
+		getArea(BACKGROUND).setMouseOffAppearance((Appearance) Resources.get(world+".research.background.anim"));
 
 		Worm.setMouseAppearance(Res.getMousePointer());
 
@@ -133,7 +136,7 @@ public class SurvivalMenuScreen extends Screen {
 			MedalsScreen.show();
 
 		} else if (ID_RESTART.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("RESTART GAME", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.survivalmenu.restart_game"), Game.getMessage("ultraworm.survivalmenu.confirm"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();
@@ -143,7 +146,7 @@ public class SurvivalMenuScreen extends Screen {
 				}
 			});
 		} else if (ID_NEWMAP.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("GENERATE NEW MAP", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.survivalmenu.generate_new_map"), Game.getMessage("ultraworm.survivalmenu.confirm"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();
@@ -156,7 +159,7 @@ public class SurvivalMenuScreen extends Screen {
 			Worm.getGameState().save();
 			close();
 		} else if (ID_QUIT.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("QUIT GAME", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.survivalmenu.quit_game"), Game.getMessage("ultraworm.survivalmenu.confirm"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();
@@ -166,7 +169,7 @@ public class SurvivalMenuScreen extends Screen {
 				}
 			});
 		} else if (ID_ABANDON.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("QUIT TO PARAMETERS SCREEN", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.survivalmenu.quit_to_parameters_screen"), Game.getMessage("ultraworm.survivalmenu.confirm"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();

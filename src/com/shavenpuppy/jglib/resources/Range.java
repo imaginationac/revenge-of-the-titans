@@ -36,14 +36,14 @@ import java.io.Serializable;
 import com.shavenpuppy.jglib.util.Parseable;
 
 /**
- * $Id: Range.java,v 1.5 2011/04/18 23:28:06 cix_foo Exp $
+ * $Id: Range.java,v 1.6 2011/10/01 00:33:45 cix_foo Exp $
  * A linear range of floating point values.
  * @author $Author: cix_foo $
- * @version $Revision: 1.5 $
+ * @version $Revision: 1.6 $
  */
 public class Range implements Parseable, Serializable {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** Minimum value */
 	private float min;

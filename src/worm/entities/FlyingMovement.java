@@ -31,11 +31,17 @@
  */
 package worm.entities;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Entity;
+import worm.MapRenderer;
+import worm.Worm;
+import worm.WormGameState;
 import worm.features.GidrahFeature;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;

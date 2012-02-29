@@ -36,8 +36,8 @@
 
 	<medal
 		name="medal.gold"
-		title="GOLD"
-		description="COMPLETED LEVEL AT MAXIMUM DIFFICULTY"
+		title="=$medal.gold.title"
+		description="=$medal.gold.description"
 		repeatable="true"
 		points="100"
 	>
@@ -50,8 +50,8 @@
 	
 	<medal
 		name="medal.silver"
-		title="SILVER"
-		description="COMPLETED LEVEL AT HIGH DIFFICULTY"
+		title="=$medal.silver.title"
+		description="=$medal.silver.description"
 		repeatable="true"
 		points="50"
 	>
@@ -64,8 +64,8 @@
 	
 	<medal
 		name="medal.bronze"
-		title="BRONZE"
-		description="COMPLETED LEVEL AT MEDIUM DIFFICULTY"
+		title="=$medal.bronze.title"
+		description="=$medal.bronze.description"
 		repeatable="true"
 		points="25"
 	>
@@ -78,10 +78,11 @@
 	
 	<medal
 		name="medal.earth_boss"
-		title="GUARDIAN"
-		description="DESTROYED A MEGATITAN"
+		title="=$medal.earth_boss.title"
+		description="=$medal.earth_boss.description"
 		repeatable="true"
 		points="100"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.01" />
@@ -92,10 +93,11 @@
 	
 	<medal
 		name="medal.moon_boss"
-		title="PROTECTOR"
-		description="DESTROYED A LEVIATHAN-CLASS TITAN"
+		title="=$medal.moon_boss.title"
+		description="=$medal.moon_boss.description"
 		repeatable="true"
 		points="150"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.02" />
@@ -106,10 +108,11 @@
 	
 	<medal
 		name="medal.mars_boss"
-		title="DEFENDER"
-		description="DESTROYED A GARGANTUAN-CLASS TITAN"
+		title="=$medal.mars_boss.title"
+		description="=$medal.mars_boss.description"
 		repeatable="true"
 		points="200"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.03" />
@@ -120,10 +123,11 @@
 	
 	<medal
 		name="medal.saturn_boss"
-		title="STALWART"
-		description="DESTROYED A BEHEMOTH-CLASS TITAN"
+		title="=$medal.saturn_boss.title"
+		description="=$medal.saturn_boss.description"
 		repeatable="true"
 		points="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.04" />
@@ -134,10 +138,11 @@
 	
 	<medal
 		name="medal.titan_boss"
-		title="SLAYER"
-		description="DESTROYED THE ULTRATITAN!"
+		title="=$medal.titan_boss.title"
+		description="=$medal.titan_boss.description"
 		repeatable="true"
 		points="300"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.boss.05" />
@@ -149,10 +154,11 @@
 	
 	<medal
 		name="medal.earth_complete"
-		title="EARTH COMPLETE"
-		description="COMPLETED THE EARTH MISSIONS"
+		title="=$medal.earth_complete.title"
+		description="=$medal.earth_complete.description"
 		repeatable="true"
 		points="100"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
@@ -164,10 +170,11 @@
 	
 	<medal
 		name="medal.moon_complete"
-		title="MOON COMPLETE"
-		description="COMPLETED THE MOON MISSIONS"
+		title="=$medal.moon_complete.title"
+		description="=$medal.moon_complete.description"
 		repeatable="true"
 		points="200"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
@@ -179,10 +186,11 @@
 	
 	<medal
 		name="medal.mars_complete"
-		title="MARS COMPLETE"
-		description="COMPLETED THE MARS MISSIONS"
+		title="=$medal.mars_complete.title"
+		description="=$medal.mars_complete.description"
 		repeatable="true"
 		points="300"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
@@ -194,10 +202,11 @@
 	
 	<medal
 		name="medal.saturn_complete"
-		title="SATURN COMPLETE"
-		description="COMPLETED THE SATURN MISSIONS"
+		title="=$medal.saturn_complete.title"
+		description="=$medal.saturn_complete.description"
 		repeatable="true"
 		points="400"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
@@ -209,10 +218,11 @@
 	
 	<medal
 		name="medal.titan_complete"
-		title="TITAN COMPLETE"
-		description="COMPLETED THE TITAN MISSIONS"
+		title="=$medal.titan_complete.title"
+		description="=$medal.titan_complete.description"
 		repeatable="true"
 		points="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.victory.01" />
@@ -224,10 +234,11 @@
 	
 	<medal
 		name="medal.perfect_game"
-		title="PERFECT GAME"
-		description="COMPLETED ALL LEVELS AT MAXIMUM DIFFICULTY"
+		title="=$medal.perfect_game.title"
+		description="=$medal.perfect_game.description"
 		repeatable="true"
 		points="10000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.perfect.game.01" />
@@ -238,10 +249,11 @@
 	
 	<medal
 		name="medal.perfect_world"
-		title="PERFECT WORLD"
-		description="COMPLETED WHOLE WORLD AT MAXIMUM DIFFICULTY"
+		title="=$medal.perfect_world.title"
+		description="=$medal.perfect_world.description"
 		repeatable="true"
 		points="1000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.perfect.world.01" />
@@ -252,8 +264,8 @@
 	
 	<medal
 		name="medal.pristine"
-		title="PRISTINE"
-		description="TITANS DIDN'T EVEN SCRATCH THE PAINT"
+		title="=$medal.pristine.title"
+		description="=$medal.pristine.description"
 		repeatable="true"
 		points="100"
 		money="500"
@@ -267,8 +279,8 @@
 	
 	<medal
 		name="medal.careful"
-		title="CAREFUL"
-		description="DIDN'T LOSE A SINGLE BUILDING"
+		title="=$medal.careful.title"
+		description="=$medal.careful.description"
 		repeatable="true"
 		points="50"
 		money="250"
@@ -282,8 +294,9 @@
 	
 	<medal
 		name="medal.careless"
-		title="CARELESS"
-		description="LOST 10 BUILDINGS TO THE ENEMY"
+		title="=$medal.careless.title"
+		description="=$medal.careless.description"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careless.01" />
@@ -295,8 +308,9 @@
 	
 	<medal
 		name="medal.rash"
-		title="RASH"
-		description="LOST 25 BUILDINGS TO THE ENEMY"
+		title="=$medal.rash.title"
+		description="=$medal.rash.description"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careless.01" />
@@ -308,8 +322,9 @@
 	
 	<medal
 		name="medal.reckless"
-		title="RECKLESS"
-		description="LOST 50 BUILDINGS TO THE ENEMY"
+		title="=$medal.reckless.title"
+		description="=$medal.reckless.description"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careless.01" />
@@ -321,8 +336,9 @@
 	
 	<medal
 		name="medal.negligent"
-		title="NEGLIGENT"
-		description="LOST 100 BUILDINGS TO THE ENEMY"
+		title="=$medal.negligent.title"
+		description="=$medal.negligent.description"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.careless.01" />
@@ -334,10 +350,11 @@
 	
 	<medal
 		name="medal.vanquished_100"
-		title="VANQUISHED 100"
-		description="VANQUISHED 100 TITANS"
+		title="=$medal.vanquished_100.title"
+		description="=$medal.vanquished_100.description"
 		points="25"
 		money="100"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
@@ -349,10 +366,11 @@
 		
 	<medal
 		name="medal.vanquished_250"
-		title="VANQUISHED 250"
-		description="VANQUISHED 250 TITANS"
+		title="=$medal.vanquished_250.title"
+		description="=$medal.vanquished_250.description"
 		points="50"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
@@ -364,10 +382,11 @@
 		
 	<medal
 		name="medal.vanquished_500"
-		title="VANQUISHED 500"
-		description="VANQUISHED 500 TITANS"
+		title="=$medal.vanquished_500.title"
+		description="=$medal.vanquished_500.description"
 		points="100"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
@@ -379,10 +398,11 @@
 		
 	<medal
 		name="medal.vanquished_1000"
-		title="VANQUISHED 1000"
-		description="VANQUISHED 1000 TITANS"
+		title="=$medal.vanquished_1000.title"
+		description="=$medal.vanquished_1000.description"
 		points="250"
 		money="1000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
@@ -394,10 +414,11 @@
 		
 	<medal
 		name="medal.vanquished_2500"
-		title="VANQUISHED 2500"
-		description="VANQUISHED 2500 TITANS"
+		title="=$medal.vanquished_2500.title"
+		description="=$medal.vanquished_2500.description"
 		points="500"
 		money="2500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
@@ -409,10 +430,11 @@
 		
 	<medal
 		name="medal.vanquished_5000"
-		title="VANQUISHED 5000"
-		description="VANQUISHED 5000 TITANS"
+		title="=$medal.vanquished_5000.title"
+		description="=$medal.vanquished_5000.description"
 		points="1000"
 		money="5000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
@@ -424,10 +446,11 @@
 		
 	<medal
 		name="medal.vanquished_10000"
-		title="VANQUISHED 10000"
-		description="VANQUISHED 10000 TITANS"
+		title="=$medal.vanquished_10000.title"
+		description="=$medal.vanquished_10000.description"
 		points="2500"
 		money="10000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.vanquished.01" />
@@ -439,10 +462,11 @@
 
 	<medal
 		name="medal.crushed_25"
-		title="CRUSHER"
-		description="CRUSHED 25 TITANS UNDER NEW BUILDINGS"
+		title="=$medal.crushed_25.title"
+		description="=$medal.crushed_25.description"
 		points="250"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.crushed.01" />
@@ -454,10 +478,11 @@
 		
 	<medal
 		name="medal.crushed_50"
-		title="SQUISHER"
-		description="SQUISHED 50 TITANS UNDER NEW BUILDINGS"
+		title="=$medal.crushed_50.title"
+		description="=$medal.crushed_50.description"
 		points="1000"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.crushed.01" />
@@ -469,10 +494,11 @@
 		
 	<medal
 		name="medal.crushed_100"
-		title="DIMENSIONAL TRANSGIDRIFIER"
-		description="TURNED 100 3-D TITANS INTO 2-D TITANS"
+		title="=$medal.crushed_100.title"
+		description="=$medal.crushed_100.description"
 		points="2500"
 		money="2500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.crushed.01" />
@@ -484,10 +510,11 @@
 		
 	<medal
 		name="medal.fried_100"
-		title="SIZZLE SIZZLE"
-		description="FRIED 100 TITANS WITH THE CAPACITOR"
+		title="=$medal.fried_100.title"
+		description="=$medal.fried_100.description"
 		points="250"
 		money="100"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.fried.01" />
@@ -499,10 +526,11 @@
 		
 	<medal
 		name="medal.fried_250"
-		title="SAUSAGES AND BACON"
-		description="FRIED 250 TITANS WITH THE CAPACITOR"
+		title="=$medal.fried_250.title"
+		description="=$medal.fried_250.description"
 		points="500"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.fried.01" />
@@ -514,10 +542,11 @@
 		
 	<medal
 		name="medal.fried_500"
-		title="KRISPY KREME"
-		description="FRIED 500 TITANS WITH THE CAPACITOR"
+		title="=$medal.fried_500.title"
+		description="=$medal.fried_500.description"
 		points="1000"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.fried.01" />
@@ -529,10 +558,11 @@
 
 	<medal
 		name="medal.nuked_50"
-		title="DEATH FROM THE SKIES"
-		description="NUKED 50 TITANS FROM ORBIT"
+		title="=$medal.nuked_50.title"
+		description="=$medal.nuked_50.description"
 		points="500"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.nuked.01" />
@@ -544,10 +574,11 @@
 		
 	<medal
 		name="medal.nuked_100"
-		title="BRINGER OF THE APOCALYSPE"
-		description="NUKED 100 TITANS FROM ORBIT"
+		title="=$medal.nuked_100.title"
+		description="=$medal.nuked_100.description"
 		points="1000"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.nuked.01" />
@@ -559,10 +590,11 @@
 		
 	<medal
 		name="medal.nuked_250"
-		title="AUTHOR OF ARMAGEDDON"
-		description="NUKED 250 TITANS FROM ORBIT"
+		title="=$medal.nuked_250.title"
+		description="=$medal.nuked_250.description"
 		points="2500"
 		money="1000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.nuked.01" />
@@ -574,10 +606,11 @@
 	
 	<medal
 		name="medal.exploded_100"
-		title="BOOM!"
-		description="BLEW UP 100 TITANS USING EXPLOSIVES"
+		title="=$medal.exploded_100.title"
+		description="=$medal.exploded_100.description"
 		points="100"
 		money="100"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.exploded.01" />
@@ -589,10 +622,11 @@
 		
 	<medal
 		name="medal.exploded_250"
-		title="KABOOM!"
-		description="BLEW UP 250 TITANS USING EXPLOSIVES"
+		title="=$medal.exploded_250.title"
+		description="=$medal.exploded_250.description"
 		points="250"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.exploded.01" />
@@ -604,10 +638,11 @@
 		
 	<medal
 		name="medal.exploded_500"
-		title="BLAM!"
-		description="BLEW UP 500 TITANS USING EXPLOSIVES"
+		title="=$medal.exploded_500.title"
+		description="=$medal.exploded_500.description"
 		points="500"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.exploded.01" />
@@ -619,10 +654,11 @@
 	
 	<medal
 		name="medal.offensive_capability"
-		title="OFFENSIVE CAPABILITY"
-		description="RESEARCHED ALL WEAPONS"
+		title="=$medal.offensive_capability.title"
+		description="=$medal.offensive_capability.description"
 		points="5000"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.offensive.01" />
@@ -634,10 +670,11 @@
 	
 	<medal
 		name="medal.defensive_capability"
-		title="DEFENSIVE CAPABILITY"
-		description="RESEARCHED ALL DEFENCES"
+		title="=$medal.defensive_capability.title"
+		description="=$medal.defensive_capability.description"
 		points="5000"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.defensive.01" />
@@ -648,10 +685,11 @@
 	
 	<medal
 		name="medal.spear_and_magic_helmet"
-		title="SPEAR AND MAGIC HELMET"
-		description="RESEARCHED ALL TURRET UPGRADES"
+		title="=$medal.spear_and_magic_helmet.title"
+		description="=$medal.spear_and_magic_helmet.description"
 		points="1000"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.upgrades.01" />
@@ -662,10 +700,11 @@
 	
 	<medal
 		name="medal.dangerous_nutter"
-		title="DANGEROUS NUTTER"
-		description="RESEARCHED ALL EXPLOSIVE TECH"
+		title="=$medal.dangerous_nutter.title"
+		description="=$medal.dangerous_nutter.description"
 		points="1000"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.explosives.01" />
@@ -676,10 +715,11 @@
 	
 	<medal
 		name="medal.robot_wants_kitty"
-		title="ROBOT WANTS KITTY"
-		description="RESEARCHED THE DROID FACTORY"
+		title="=$medal.robot_wants_kitty.title"
+		description="=$medal.robot_wants_kitty.description"
 		points="1000"
 		money="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.automation.01" />
@@ -690,10 +730,11 @@
 	
 	<medal
 		name="medal.propellerhead"
-		title="PROPELLERHEAD"
-		description="RESEARCHED ALL SCIENCE AND TECHNOLOGY"
+		title="=$medal.propellerhead.title"
+		description="=$medal.propellerhead.description"
 		points="5000"
 		money="1000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.tech.01" />
@@ -704,9 +745,10 @@
 	
 	<medal
 		name="medal.problem_for_grandchildren"
-		title="A PROBLEM FOR OUR GRANDCHILDREN"
-		description="RESEARCHED NUCLEAR REACTORS"
+		title="=$medal.problem_for_grandchildren.title"
+		description="=$medal.problem_for_grandchildren.description"
 		points="100"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.nuclear.01" />
@@ -717,9 +759,10 @@
 	
 	<medal
 		name="medal.devious"
-		title="DEVIOUS"
-		description="RESEARCHED THE DECOY TOWER"
+		title="=$medal.devious.title"
+		description="=$medal.devious.description"
 		points="100"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.decoy.01" />
@@ -730,10 +773,11 @@
 	
 	<medal
 		name="medal.encyclopaedic"
-		title="ENCYCLOPAEDIC"
-		description="RESEARCHED EVERYTHING"
+		title="=$medal.encyclopaedic.title"
+		description="=$medal.encyclopaedic.description"
 		points="5000"
 		money="2500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.r+d.all.01" />
@@ -744,10 +788,11 @@
 	
 	<medal
 		name="medal.tape_and_string"
-		title="TAPE AND STRING"
-		description="BASE HELD TOGETHER WITH TAPE AND STRING AT END OF MISSION"
+		title="=$medal.tape_and_string.title"
+		description="=$medal.tape_and_string.description"
 		repeatable="true"
 		points="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.tapeandstring.01" />
@@ -757,10 +802,11 @@
 	
 	<medal
 		name="medal.phew_that_was_close"
-		title="PHEW THAT WAS CLOSE"
-		description="GIANT TITAN KILLED WITHIN A FEW METRES OF THE BASE"
+		title="=$medal.phew_that_was_close.title"
+		description="=$medal.phew_that_was_close.description"
 		repeatable="true"
 		points="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.phew.01" />
@@ -770,10 +816,11 @@
 	
 	<medal
 		name="medal.skin_of_your_teeth"
-		title="SKIN OF YOUR TEETH"
-		description="LOST 90% OF YOUR BUILDINGS TO THE ENEMY"
+		title="=$medal.skin_of_your_teeth.title"
+		description="=$medal.skin_of_your_teeth.description"
 		repeatable="true"
 		points="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.skinofyoutteeth.01" />
@@ -783,10 +830,11 @@
 	
 	<medal
 		name="medal.awesome"
-		title="AWESOME"
-		description="FULLY UPGRADED A TURRET"
+		title="=$medal.awesome.title"
+		description="=$medal.awesome.description"
 		repeatable="true"
 		points="1000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.awesome.01" />
@@ -796,8 +844,8 @@
 	
 	<medal
 		name="medal.registered"
-		title="REGISTERED"
-		description="REGISTERED THE GAME :)"
+		title="=$medal.registered.title"
+		description="=$medal.registered.description"
 		points="500"
 		suppressHint="true"
 	>
@@ -809,10 +857,11 @@
 
 	<medal
 		name="medal.short_tempered"
-		title="SHORT TEMPERED"
-		description="USED BEZERK POWERUP 5 TIMES"
+		title="=$medal.short_tempered.title"
+		description="=$medal.short_tempered.description"
 		points="250"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.bezerk.01" />
@@ -824,10 +873,11 @@
 	
 	<medal
 		name="medal.only_way_to_be_sure"
-		title="THE ONLY WAY TO BE SURE"
-		description="NUKED THE SITE FROM ORBIT 5 TIMES"
+		title="=$medal.only_way_to_be_sure.title"
+		description="=$medal.only_way_to_be_sure.description"
 		points="250"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.smartbomb.01" />
@@ -839,10 +889,11 @@
 	
 	<medal
 		name="medal.toilet_break"
-		title="TOILET BREAK"
-		description="USED THE FREEZE POWERUP 5 TIMES"
+		title="=$medal.toilet_break.title"
+		description="=$medal.toilet_break.description"
 		points="250"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.freeze.01" />
@@ -854,10 +905,11 @@
 	
 	<medal
 		name="medal.jimll_fix_it"
-		title="JIM'LL FIX IT"
-		description="REPAIRED YOUR BUILDINGS 5 TIMES"
+		title="=$medal.jimll_fix_it.title"
+		description="=$medal.jimll_fix_it.description"
 		points="250"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.repair.01" />
@@ -869,10 +921,11 @@
 	
 	<medal
 		name="medal.batfink"
-		title="BATFINK"
-		description="USED THE SHIELD POWERUP 5 TIMES"
+		title="=$medal.batfink.title"
+		description="=$medal.batfink.description"
 		points="250"
 		money="250"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.powerup.shield.01" />
@@ -884,8 +937,8 @@
 
 	<medal
 		name="medal.efficient"
-		title="EFFICIENT"
-		description="MINED ALL CRYSTALS IN TIME"
+		title="=$medal.efficient.title"
+		description="=$medal.efficient.description"
 		repeatable="true"
 		points="50"
 		money="500"
@@ -898,10 +951,11 @@
 	
 	<medal
 		name="medal.thrifty"
-		title="THRIFTY"
-		description="MADE $5000 PROFIT FROM ONE LEVEL"
+		title="=$medal.thrifty.title"
+		description="=$medal.thrifty.description"
 		repeatable="true"
 		points="100"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.profit.01" />
@@ -913,10 +967,11 @@
 	
 	<medal
 		name="medal.tight_fisted"
-		title="TIGHT FISTED"
-		description="MADE $10000 PROFIT FROM ONE LEVEL"
+		title="=$medal.tight_fisted.title"
+		description="=$medal.tight_fisted.description"
 		repeatable="true"
 		points="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.profit.01" />
@@ -928,10 +983,11 @@
 	
 	<medal
 		name="medal.short_arms_deep_pockets"
-		title="SHORT ARMS DEEP POCKETS"
-		description="MADE $15000 PROFIT FROM ONE LEVEL"
+		title="=$medal.short_arms_deep_pockets.title"
+		description="=$medal.short_arms_deep_pockets.description"
 		repeatable="true"
 		points="2500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.profit.01" />
@@ -943,9 +999,10 @@
 	
 	<medal
 		name="medal.hoarded_$5000"
-		title="HOARDED $5000"
-		description="GOT $5000 IN THE BANK"
+		title="=$medal.hoarded_5000.title"
+		description="=$medal.hoarded_5000.description"
 		points="500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.hoarded.01" />
@@ -957,9 +1014,10 @@
 	
 	<medal
 		name="medal.hoarded_$10000"
-		title="HOARDED $10000"
-		description="GOT $10000 IN THE BANK"
+		title="=$medal.hoarded_10000.title"
+		description="=$medal.hoarded_10000.description"
 		points="2500"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.hoarded.01" />
@@ -971,9 +1029,10 @@
 	
 	<medal
 		name="medal.hoarded_$25000"
-		title="HOARDED $25000"
-		description="GOT $25000 IN THE BANK"
+		title="=$medal.hoarded_25000.title"
+		description="=$medal.hoarded_25000.description"
 		points="5000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.hoarded.01" />
@@ -985,9 +1044,10 @@
 	
 	<medal
 		name="medal.hoarded_$50000"
-		title="HOARDED $50000"
-		description="GOT $50000 IN THE BANK"
+		title="=$medal.hoarded_50000.title"
+		description="=$medal.hoarded_50000.description"
 		points="5000"
+		steam="true"
 	>
 		<appearance><layers scale="0.4">
 			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.hoarded.01" />
@@ -996,40 +1056,73 @@
 		</layers></appearance>
 	</medal>
 	
-		
-	<!--  Medals screen -->	
-	
-	
-	<property key="medals_w" value="300" />
-	<property key="medals_h" value="308" />	
-	<property key="medals_x" value="=$medals_w/-2+$SCREEN_X" />
-	<property key="medals_y" value="=$medals_h/-2+$SCREEN_Y" />
-	<property key="medals_padding" value="16" />
-	
-	<property key="medal_slot_h" value="35" />
-	
-	<property key="medal_slot_pic_w" value="38" />
-	<property key="medal_slot_pic_w_margin" value="8" />
-	<property key="medal_slot_img_anc_x" value="=-$SCREEN_X+$medals_x+$medals_padding" />
-	<property key="medal_slot_img_offset" value="3" />
-	
-	<property key="medal_slot_x" value="=$medals_x+$medals_padding+$medal_slot_pic_w+$medal_slot_pic_w_margin" />
-	<property key="medal_slot_w" value="=$medals_w-($medals_padding*2)-$medal_slot_pic_w-$medal_slot_pic_w_margin" />
-	<property key="medal_slot_desc_padding" value="35"/>
+	<!-- Xmas medals -->
+	<medal
+		name="medal.xmas.1"
+		title="=$medal.xmas.1.title"
+		description="=$medal.xmas.1.description"
+		points="1000"
+		steam="true"
+		xmas="true"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.xmas.01" />
+			<sprite layer="10" colored="text-bold" image="spriteimage.medal.xmas.glow.01" />
+		</layers></appearance>
+	</medal>
+	<medal
+		name="medal.xmas.2"
+		title="=$medal.xmas.2.title"
+		description="=$medal.xmas.2.description"
+		points="1000"
+		steam="true"
+		xmas="true"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.xmas.02" />
+			<sprite layer="10" colored="text-bold" image="spriteimage.medal.xmas.glow.02" />
+		</layers></appearance>
+	</medal>
+	<medal
+		name="medal.xmas.3"
+		title="=$medal.xmas.3.title"
+		description="=$medal.xmas.3.description"
+		points="1000"
+		steam="true"
+		xmas="true"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.xmas.03" />
+			<sprite layer="10" colored="text-bold" image="spriteimage.medal.xmas.glow.03" />
+		</layers></appearance>
+	</medal>
+	<medal
+		name="medal.xmas.4"
+		title="=$medal.xmas.4.title"
+		description="=$medal.xmas.4.description"
+		points="1000"
+		steam="true"
+		xmas="true"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.xmas.04" />
+			<sprite layer="10" colored="text-bold" image="spriteimage.medal.xmas.glow.04" />
+ 		</layers></appearance>
+	</medal>
+	<medal
+		name="medal.xmas.victory"
+		title="=$medal.xmas.victory.title"
+		description="=$medal.xmas.victory.description"
+		points="1000"
+		steam="true"
+		xmas="true"
+	>
+		<appearance><layers scale="0.4">
+			<sprite layer="9" bottomColored="info-floor" topColored="info-building" image="spriteimage.medal.xmas.05" />
+			<sprite layer="10" colored="text-bold" image="spriteimage.medal.xmas.glow.05" />
+		</layers></appearance>
+	</medal>
 
-
-
-	<property key="medals_slots_top" value="=$medals_y+$medals_h-68" />
-
-
-	<property key="medal_slot_1_y" value="=$medals_slots_top-($medal_slot_h*1)" />
-	<property key="medal_slot_2_y" value="=$medals_slots_top-($medal_slot_h*2)" />	
-	<property key="medal_slot_3_y" value="=$medals_slots_top-($medal_slot_h*3)" />	
-	<property key="medal_slot_4_y" value="=$medals_slots_top-($medal_slot_h*4)" />	
-	<property key="medal_slot_5_y" value="=$medals_slots_top-($medal_slot_h*5)" />
-	<property key="medal_slot_6_y" value="=$medals_slots_top-($medal_slot_h*6)" />
-	
-	<property key="medals_stats_y" value="=$medals_y+$medals_h-54" />
 	
 	<area name="medal.slot.title.spec"
 		inherit="dialog.message.spec"
@@ -1087,11 +1180,9 @@
 		<hotkey key="UP" area="prev"/>	
 		<hotkey key="DOWN" area="next"/>	
 	
-		<area id="medals_background" text="PERSONAL ACHIEVEMENTS" inherit="dialog.closeable.spec" position="=$medals_x,$medals_y" size="=$medals_w,$medals_h" />
+		<area id="medals_background" text="=$medals.medals_background.text" inherit="dialog.closeable.spec" position="=$medals_x,$medals_y" size="=$medals_w,$medals_h" />
 		<area id="medals_background_glow" inherit="dialog.glow.spec" position="=$medals_x,$medals_y" size="=$medals_w,$medals_h" />
 
-		<!-- <area id="background" inherit="titlescreen.spec" mouseoff="earth.research.background.anim" size="1,1"/>   -->
-		
 		<area id="background" inherit="dialog.ingame.background.spec"/>
 		<area id="background_glow" inherit="dialog.ingame.background.glow.spec"/>
 
@@ -1138,8 +1229,8 @@
 	
 		<!--  page nav -->
 
-		<area id="prev" text="PREV" inherit="button.spec" position="=$medals_x+$dialog_padding,$medals_y+$dialog_padding" />
-		<area id="next" text="NEXT" inherit="button.spec" position="=$medals_x+$medals_w-$button_w-$dialog_padding,$medals_y+$dialog_padding" />
+		<area id="prev" text="=$medals.prev.text" inherit="button.spec" position="=$medals_x+$dialog_padding,$medals_y+$dialog_padding" />
+		<area id="next" text="=$medals.next.text" inherit="button.spec" position="=$medals_x+$medals_w-$button_w-$dialog_padding,$medals_y+$dialog_padding" />
 		
 		<area id="page" text="1/1" inherit="dialog.message.spec" halign="right" color="text-dark"
 			size="42,20" position="=$medals_w/2+$medals_x-22,$medals_y+$dialog_padding" />
@@ -1153,10 +1244,6 @@
 		<!--  temp rank images thang -->
 		<area id="rank-img" position="263,255" size="32,32" offset="16,16" scale="0.4" noClick="true"/>
 		
-		
-	
-		<!-- <area id="close" inherit="button.abort.spec" text="CLOSE"/>  -->
-	
 	</instance>		
 
 

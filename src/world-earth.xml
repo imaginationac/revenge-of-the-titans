@@ -1,0 +1,518 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!-- Earth levels -->
+<resources>
+
+	<include resource="tags.xml"/>
+	
+	<!-- Colors -->
+
+	<include resource="colours-earth.xml"/>
+
+
+	<!-- Roads -->
+	<array name="earth.roads">
+		<item>earth.road.0</item>
+		<item>earth.road.1</item>
+		<item>earth.road.2</item>
+		<item>earth.road.3</item>
+		<item>earth.road.4</item>
+		<item>earth.road.5</item>
+		<item>earth.road.6</item>
+		<item>earth.road.7</item>
+		<item>earth.road.8</item>
+		<item>earth.road.9</item>
+		<item>earth.road.10</item>
+		<item>earth.road.11</item>
+		<item>earth.road.12</item>
+		<item>earth.road.13</item>
+		<item>earth.road.14</item>
+		<item>earth.road.15</item>
+	</array>
+	
+	<!-- Basic values for scenery -->
+	<scenery
+		name="earth.scenery.base"
+		minObstacles="10"
+		maxObstacles="30"
+		absMaxRuins="15"
+		maxRuins="5"
+		maxRuinClusters="5"
+		minRuinClusterSize="7.0"
+		maxRuinClusterSize="20.0"
+		roads="earth.roads"
+		randomRockyThreshold="0.125"
+	>
+		<ruins>
+			<array>	
+				<item>earth.ruin.1x1.01</item>
+				<item>earth.ruin.1x1.02</item>
+				<item>earth.ruin.1x1.03</item>
+				<item>earth.ruin.1x1.04</item>
+				<item>earth.ruin.1x1.tank.01</item>
+				<item>earth.ruin.1x1.tank.02</item>
+				<item>earth.ruin.1x1.tank.03</item>
+				<item>earth.ruin.1x1.tank.04</item>
+				<item>earth.ruin.1x1.05</item>
+				<item>earth.ruin.1x1.06</item>
+				<item>earth.ruin.1x1.07</item>
+				<item>earth.ruin.2x1.01</item>
+				<item>earth.ruin.2x1.02</item>
+				<item>earth.ruin.2x1.03</item>
+				<item>earth.ruin.2x1.04</item>
+				<item>earth.ruin.2x1.05</item>
+				<item>earth.ruin.2x1.06</item>
+				<item>earth.ruin.2x1.07</item>
+				<item>earth.ruin.3x1.01</item>
+				<item>earth.ruin.3x1.02</item>
+				<item>earth.ruin.3x1.03</item>
+				<item>earth.ruin.3x1.04</item>
+				<item>earth.ruin.3x1.05</item>
+				<item>earth.ruin.4x1.01</item>
+				<item>earth.ruin.4x1.02</item>
+				<item>earth.ruin.4x1.03</item>
+			</array>	
+		</ruins>
+		
+		<crystals>
+			<array>	
+				<item>crystal.small.1</item>
+				<item>crystal.small.2</item>
+				<item>crystal.small.3</item>
+				<item>crystal.small.4</item>
+				<item>crystal.small.5</item>
+				<item>crystal.small.6</item>	
+				<item>crystal.small.7</item>
+				<item>crystal.small.8</item>	
+				<item>crystal.medium.1</item>
+				<item>crystal.medium.2</item>
+				<item>crystal.medium.3</item>
+				<item>crystal.medium.4</item>
+				<item>crystal.medium.5</item>
+				<item>crystal.medium.6</item>
+				<item>crystal.medium.7</item>
+				<item>crystal.medium.8</item>
+				<item>crystal.large.1</item>
+				<item>crystal.large.2</item>
+				<item>crystal.large.3</item>
+				<item>crystal.large.4</item>
+				<item>crystal.large.5</item>
+				<item>crystal.large.6</item>
+				<item>crystal.large.7</item>
+				<item>crystal.large.8</item>
+			</array>	
+		</crystals>
+		
+		<obstacles>
+			<array>
+
+				<!-- only upside down vehicles -->
+
+				<item>earth.obstacle.vehicle.4</item>					
+				<item>earth.obstacle.vehicle.5</item>						
+				
+				<item>earth.obstacle.vehicle.burning.4</item>					
+				<item>earth.obstacle.vehicle.burning.5</item>							
+
+				<!--  Cactii more likely to appear as cars in the middle of desert -->						
+
+				<item>earth.obstacle.tree.1</item>
+				<item>earth.obstacle.tree.2</item>
+				<item>earth.obstacle.tree.3</item>
+				<item>earth.obstacle.tree.4</item>					
+				<item>earth.obstacle.tree.5</item>						
+				<item>earth.obstacle.tree.1</item>
+				<item>earth.obstacle.tree.2</item>
+				<item>earth.obstacle.tree.3</item>
+				<item>earth.obstacle.tree.4</item>					
+				<item>earth.obstacle.tree.5</item>						
+				<item>earth.obstacle.tree.1</item>
+				<item>earth.obstacle.tree.2</item>
+				<item>earth.obstacle.tree.3</item>
+				<item>earth.obstacle.tree.4</item>					
+				<item>earth.obstacle.tree.5</item>						
+			
+			</array>
+		</obstacles>
+		
+		<roadObstacles>
+			<array>
+				<!--  Only cars appear on roads as obstacles -->
+				<item>earth.obstacle.vehicle.1</item>
+				<item>earth.obstacle.vehicle.2</item>
+				<item>earth.obstacle.vehicle.3</item>
+				<item>earth.obstacle.vehicle.4</item>					
+				<item>earth.obstacle.vehicle.5</item>						
+				
+				<item>earth.obstacle.vehicle.burning.1</item>
+				<item>earth.obstacle.vehicle.burning.2</item>
+				<item>earth.obstacle.vehicle.burning.3</item>
+				<item>earth.obstacle.vehicle.burning.4</item>					
+				<item>earth.obstacle.vehicle.burning.5</item>							
+			</array>
+		</roadObstacles>
+	</scenery>
+	
+	<scenery
+		name="earth.scenery.desert"
+		inherit="earth.scenery.base"
+	>
+
+		<obstacles>
+			<array>
+
+				<!-- only upside down vehicles -->
+
+				<item>earth.obstacle.vehicle.4</item>					
+				<item>earth.obstacle.vehicle.5</item>						
+				
+				<item>earth.obstacle.vehicle.burning.4</item>					
+				<item>earth.obstacle.vehicle.burning.5</item>							
+
+				<!--  Cactii more likely to appear as cars in the middle of desert -->						
+				<item>earth.obstacle.cactus.1</item>
+				<item>earth.obstacle.cactus.2</item>
+				<item>earth.obstacle.cactus.3</item>
+				<item>earth.obstacle.cactus.4</item>					
+				<item>earth.obstacle.cactus.5</item>						
+				<item>earth.obstacle.cactus.1</item>
+				<item>earth.obstacle.cactus.2</item>
+				<item>earth.obstacle.cactus.3</item>
+				<item>earth.obstacle.cactus.4</item>					
+				<item>earth.obstacle.cactus.5</item>						
+				<item>earth.obstacle.cactus.1</item>
+				<item>earth.obstacle.cactus.2</item>
+				<item>earth.obstacle.cactus.3</item>
+				<item>earth.obstacle.cactus.4</item>					
+				<item>earth.obstacle.cactus.5</item>						
+			
+			</array>
+		</obstacles>
+		
+		<roadObstacles>
+			<array>
+				<!--  Only cars appear on roads as obstacles -->
+				<item>earth.obstacle.vehicle.1</item>
+				<item>earth.obstacle.vehicle.2</item>
+				<item>earth.obstacle.vehicle.3</item>
+				<item>earth.obstacle.vehicle.4</item>					
+				<item>earth.obstacle.vehicle.5</item>						
+				
+				<item>earth.obstacle.vehicle.burning.1</item>
+				<item>earth.obstacle.vehicle.burning.2</item>
+				<item>earth.obstacle.vehicle.burning.3</item>
+				<item>earth.obstacle.vehicle.burning.4</item>					
+				<item>earth.obstacle.vehicle.burning.5</item>							
+			</array>
+		</roadObstacles>
+	</scenery>
+
+
+	<scenery
+		name="earth.scenery.alpine"
+		inherit="earth.scenery.base"
+	>
+
+		<obstacles>
+			<array>
+
+				<!-- only upside down vehicles -->
+
+				<item>earth.obstacle.vehicle.4</item>					
+				<item>earth.obstacle.vehicle.5</item>						
+				
+				<item>earth.obstacle.vehicle.burning.4</item>					
+				<item>earth.obstacle.vehicle.burning.5</item>							
+
+				<!--  Cactii more likely to appear as cars in the middle of desert -->						
+				<item>earth.obstacle.pine.1</item>
+				<item>earth.obstacle.pine.2</item>
+				<item>earth.obstacle.pine.3</item>
+				<item>earth.obstacle.pine.4</item>					
+				<item>earth.obstacle.pine.5</item>						
+				<item>earth.obstacle.pine.1</item>
+				<item>earth.obstacle.pine.2</item>
+				<item>earth.obstacle.pine.3</item>
+				<item>earth.obstacle.pine.4</item>					
+				<item>earth.obstacle.pine.5</item>						
+				<item>earth.obstacle.pine.1</item>
+				<item>earth.obstacle.pine.2</item>
+				<item>earth.obstacle.pine.3</item>
+				<item>earth.obstacle.pine.4</item>					
+				<item>earth.obstacle.pine.5</item>						
+			
+			</array>
+		</obstacles>
+		
+		<roadObstacles>
+			<array>
+				<!--  Only cars appear on roads as obstacles -->
+				<item>earth.obstacle.vehicle.1</item>
+				<item>earth.obstacle.vehicle.2</item>
+				<item>earth.obstacle.vehicle.3</item>
+				<item>earth.obstacle.vehicle.4</item>					
+				<item>earth.obstacle.vehicle.5</item>						
+				
+				<item>earth.obstacle.vehicle.burning.1</item>
+				<item>earth.obstacle.vehicle.burning.2</item>
+				<item>earth.obstacle.vehicle.burning.3</item>
+				<item>earth.obstacle.vehicle.burning.4</item>					
+				<item>earth.obstacle.vehicle.burning.5</item>							
+			</array>
+		</roadObstacles>
+	</scenery>
+
+
+
+	<character
+		name="earth.char"
+		animated="true"
+		color="earth.colormap:text"
+		boldColor="earth.colormap:text-bold"
+		left="true"
+		textSpeed="3"
+	>
+		<sounds>
+			<array>
+				<item>textBeep.buffer</item>
+			</array>
+		</sounds>
+	</character>
+	
+	<character
+		name="earth.intro.char"
+		inherit="earth.char"
+		textSpeed="2"
+	/>
+
+	<setting
+		name="earth.intro.setting"
+		worldIntro="true"
+		position="0,0"
+		size="320,320"
+	>
+		<background>
+			<layers scale="0.6175">
+				<sprite layer="-1"><animation><animation>
+					<offset x="2" y="2" d="0"/>
+					<frame i="spriteimage.map.earth.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>	
+		</background>
+		
+		<actor character="earth.char" 		 position="0,0" bounds="15,290,200,20" expand="down" />
+		<actor character="earth.intro.char"   position="0,0" bounds="110,60,200,60" expand="down" leading="1" />
+	
+	</setting>
+
+		
+	<!-- World definition -->
+	<world
+		name="earth.world"
+		untranslated="EARTH"
+		title="=$world.earth.title"
+		base="building.earth.base"
+		stream="earth.stream"
+		setting="earth.intro.setting"
+		weaponSetting="earth.weapon.setting"
+		buildingSetting="earth.building.setting"
+		techSetting="earth.tech.setting"
+		survivalMaxType0="0"
+		survivalMaxType1="0"
+		survivalMaxType2="-1"
+		survivalMaxType3="-1"
+		survivalMaxBoss="0"
+	>
+		
+		<story>
+			<char id="earth.char">=world.earth.intro1.text</char>
+			<char id="earth.intro.char">=world.earth.intro2.text</char>
+		</story>
+		
+		<template>
+			<cavetemplate name="earth.template"
+				floor0="earth.floor.0"
+				floor1="earth.floor.1"
+				floor2="earth.floor.2"
+				floor3="earth.floor.3"				
+				floorTransitions="earth.transitions"
+				base="basepoint.1"
+				
+				wall="earth.walls"
+				internalWall="earth.internalWalls"
+				bigInternalWalls="false"
+				
+				midSpawn="spawnpoint.mid.earth"
+
+				minMainTunnelWidth="3.0"
+				maxMainTunnelWidth="8.0"
+				minSpawnTunnelWidth="3.0"
+				maxSpawnTunnelWidth="8.0"
+			/>
+		</template>
+
+		<!-- Gidrahs -->
+		<gidrahs>
+			<array>
+				<item>gidrah.earth.01</item>
+				<item>gidrah.earth.02</item>
+			</array>
+		</gidrahs>
+		
+		<!-- Angry gidrahs -->
+		<angryGidrahs>
+			<array>
+				<item>angrygidrah.earth.01</item>
+				<item>angrygidrah.earth.02</item>
+			</array>
+		</angryGidrahs>
+	</world>
+	
+
+	
+	<!-- Story settings -->
+	
+	<setting
+		name="earth.setting.spec"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+140"/>
+					<scale xscale="1.1" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.earth.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+
+	<setting name="earth.general.setting" inherit="earth.setting.spec" position="0,30" >
+		<actor character="earth.custerd.char"	position="140,80" bounds="95,168,130,10" expand="up" />
+	</setting>
+
+	<setting name="earth.info.setting" inherit="earth.setting.spec">
+		<actor character="earth.custerd.info.char"		position="110,68" bounds="150,155,135,100" expand="up" />
+		<actor character="earth.info.crystals.char"		position="88,225" bounds="=150,155,135,$earth.info.crystals.char_h" expand="up" fade="true"/>
+	</setting>
+
+	<setting name="earth.tech.setting" inherit="earth.setting.spec">
+		<actor character="earth.tech-left.char" 		position="55,79" 	bounds="115,130,150,25" expand="down" />
+		
+		<actor character="earth.tech.physics.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.biology.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.chemistry.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.efficiency.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.psychology.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.nuclear.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.explosives.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.textiles.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.automation.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.barometrics.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.optics.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.ballistics.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.robotics.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.forcefields.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.anatomy.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="earth.tech.extraction.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		
+		<actor character="earth.tech.ionisation.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.lithium.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.sodium.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.precision.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.advancedexplosives.char"	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.plastic.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.nanohardening.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.finetuning.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.droidbuff.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.nanotechnology.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.splitter.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.multibarrel.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.amplifiers.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.lasertech.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.shells.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.shielding.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.xrays.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		
+		<actor character="earth.tech.coffee.char" 				position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.grant.char" 				position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.reinforcements.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.strongercoffee.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.extrabarricades.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.extramines.char" 			position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="earth.tech.powerups.char" 			position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		
+		
+	</setting>
+
+	<setting name="earth.gidrah.setting" inherit="earth.setting.spec">
+		<actor character="earth.tech-gidrah.char" 	position="260,70" bounds="55,120,144,25" expand="down" mirrored="true" />
+
+		<actor character="earth.gidrah.01.char" 	position="108,195" bounds="185,165,111,110" expand="down" fade="true" />
+		<actor character="earth.gidrah.02.char" 	position="108,195" bounds="185,165,111,110" expand="down" fade="true" />
+		<actor character="earth.angry.01.char" 		position="108,185" bounds="185,165,111,110" expand="down" fade="true" />
+		<actor character="earth.angry.02.char" 		position="108,185" bounds="185,165,111,118" expand="down" fade="true" />
+	</setting>
+
+	<setting name="earth.building.setting" inherit="earth.setting.spec" >
+		<actor character="earth.custerd.char"	position="=225,$res.b.gen.pic.y" bounds="=160,$res.b.gen.y,135,10" expand="up" mirrored="true" />
+		<actor character="earth.tech.char" 		position="=215,$res.b.boff.pic.y" bounds="=$res.b.boff.x,$res.b.boff.y,$res.b.boff.w,10" expand="up" mirrored="true" />
+		
+		<actor character="earth.scanner.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="earth.reactor.char" 			position="=$res.b.pic.x,$res.b.pic.y+5" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="earth.battery.char" 			position="=$res.b.pic.x,$res.b.pic.y+20" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="earth.cooling.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="earth.warehouse.char" 		position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="earth.collector.char" 		position="=$res.b.pic.x,$res.b.pic.y+5" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="earth.barracks.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="earth.shieldgenerator.char" 	position="=$res.b.pic.x,$res.b.pic.y+$res.b.pic.shieldgen.o" 		bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="earth.autoloader.char" 		position="=$res.b.pic.x,$res.b.pic.y" 		bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+			
+		<actor character="earth.concrete.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="earth.steel.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="earth.earthium.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="earth.nanomesh.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+
+		<actor character="earth.mine.char" 				position="=$res.b.mine.pic.x,235" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="earth.clustermines.char" 		position="=$res.b.mine.pic.x,230" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="earth.blastmine.char" 		position="=$res.b.mine.pic.x,225" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="earth.decoy.char" 			position="=$res.b.mine.pic.x,215" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		
+		<actor character="earth.tangleweb.char" 		position="=$res.b.pic.x,$res.b.pic.y+15" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" 		expand="down" fade="true"/>
+		<actor character="earth.tankfactory.char" 		position="=$res.b.pic.x,$res.b.pic.y-20" 	bounds="=$res.b.x,$res.b.y-20,$res.b.w,$res.b.h" 	expand="down" fade="true"/>
+		<actor character="earth.repairdrones.char" 		position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h"		expand="down" fade="true"/>
+		<actor character="earth.scarecrow.char" 		position="=$res.b.pic.x,$res.b.pic.y" 		bounds="=$res.b.x,$res.b.y-10,$res.b.w,$res.b.h" 	expand="down" fade="true"/>
+		<actor character="earth.cloakingdevice.char" 	position="=$res.b.pic.x,$res.b.pic.y+$res.b.pic.cloak.o" 	bounds="=$res.b.x,$res.b.y-10,$res.b.w,$res.b.h"	expand="down" fade="true"/>
+	
+	</setting>
+
+	<setting name="earth.weapon.setting" inherit="earth.setting.spec" >
+		<actor character="earth.custerd-left.char" 		position="58,80" 	bounds="128,83,150,60" expand="down" />
+		<actor character="earth.tech-left.char" 		position="60,70" 	bounds="128,83,150,60" expand="down" />
+		
+		<actor character="earth.blaster.char" 			position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="earth.factory.char" 			position="225,210" 	bounds="35,163,250,90"  expand="down" fade="true"/>
+		<actor character="earth.capacitor.char" 		position="225,210" 	bounds="35,163,250,90" expand="down" fade="true"/>
+		<actor character="earth.heavyblaster.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="earth.shotgun.char" 			position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="earth.multiblaster.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="earth.blastcannon.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="earth.assault.char" 			position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="earth.rocket.char" 			position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="earth.laser.char" 			position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="earth.disruptor.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>		
+	</setting>
+
+	<setting name="earth.boss.setting" inherit="alert.setting.spec" >
+		<actor character="earth.boss.char" position="95,148" bounds="30,100,145,190" expand="down" fade="true" />
+		<actor character="earth.custerd.alert.char" position="260,60" bounds="188,150,110,20" expand="up" mirrored="true" />
+	</setting>
+
+	<include resource="levels-earth.xml"/>
+
+</resources>

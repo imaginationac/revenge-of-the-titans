@@ -1,0 +1,650 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Earth tiles -->
+<resources>
+	<tileset name="hoff.tileset" description="Hoff Tiles" default_="">
+
+		<!-- <include resource="ruins-hoff.xml" /> -->
+
+
+		<!--  OBSTACLES ========================================================================================================================== -->
+
+		<obstacle name="hoff.obstacle.pine.1" i="31420" layer="2" obstacle="hoff.pine.1"/>
+		<obstacle name="hoff.obstacle.pine.2" i="31421" layer="2" obstacle="hoff.pine.2"/>
+		<obstacle name="hoff.obstacle.pine.3" i="31422" layer="2" obstacle="hoff.pine.3"/>
+		<obstacle name="hoff.obstacle.pine.4" i="31423" layer="2" obstacle="hoff.pine.4"/>
+		<obstacle name="hoff.obstacle.pine.5" i="31424" layer="2" obstacle="hoff.pine.5"/>
+		<obstacle name="hoff.obstacle.pine.6" i="31425" layer="2" obstacle="hoff.pine.6"/>
+		<obstacle name="hoff.obstacle.pine.7" i="31426" layer="2" obstacle="hoff.pine.7"/>
+		<obstacle name="hoff.obstacle.pine.8" i="31427" layer="2" obstacle="hoff.pine.8"/>
+		<obstacle name="hoff.obstacle.pine.9" i="31428" layer="2" obstacle="hoff.pine.9"/>
+		<obstacle name="hoff.obstacle.pine.10" i="31429" layer="2" obstacle="hoff.pine.10"/>	
+		<obstacle name="hoff.obstacle.pine.11" i="31430" layer="2" obstacle="hoff.pine.11"/>
+		<obstacle name="hoff.obstacle.pine.12" i="31431" layer="2" obstacle="hoff.pine.12"/>
+		<obstacle name="hoff.obstacle.pine.13" i="31432" layer="2" obstacle="hoff.pine.13"/>	
+		<obstacle name="hoff.obstacle.pine.14" i="31433" layer="2" obstacle="hoff.pine.14"/>
+		<obstacle name="hoff.obstacle.pine.15" i="31434" layer="2" obstacle="hoff.pine.15"/>
+		
+		<obstacle name="hoff.obstacle.pine.large.1" i="31435" layer="2" obstacle="hoff.pine.large.1"/>
+		<obstacle name="hoff.obstacle.pine.large.2" i="31436" layer="2" obstacle="hoff.pine.large.2"/>
+		<obstacle name="hoff.obstacle.pine.large.3" i="31437" layer="2" obstacle="hoff.pine.large.3"/>
+		<obstacle name="hoff.obstacle.pine.large.4" i="31438" layer="2" obstacle="hoff.pine.large.4"/>
+		<obstacle name="hoff.obstacle.pine.large.5" i="31439" layer="2" obstacle="hoff.pine.large.5"/>
+		<obstacle name="hoff.obstacle.pine.large.6" i="31440" layer="2" obstacle="hoff.pine.large.6"/>
+		<obstacle name="hoff.obstacle.pine.large.7" i="31441" layer="2" obstacle="hoff.pine.large.7"/>
+		<obstacle name="hoff.obstacle.pine.large.8" i="31442" layer="2" obstacle="hoff.pine.large.8"/>
+		<obstacle name="hoff.obstacle.pine.large.9" i="31443" layer="2" obstacle="hoff.pine.large.9"/>
+		<obstacle name="hoff.obstacle.pine.large.10" i="31444" layer="2" obstacle="hoff.pine.large.10"/>
+	</tileset>
+
+
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.tree.master"
+		hitpoints="1"
+		bounds="0,0,8,8"
+		floor="-4"
+	>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" animation="obstacle.dead.animation"/>
+				<emitter offset="8,0" ySortOffset="8" emitter="obstacle.explosion.emitter"/>
+				<emitter offset="2,0" ySortOffset="2" emitter="obstacle.explosion.fire.emitter"/> 
+			</layers>
+		</deathAppearance>	
+	</instance>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.tree.large.master"
+		inherit="hoff.tree.master"
+		bounds="0,0,12,12"
+	/>
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.1"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.01" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.2"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.02" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.3"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.03" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.4"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.04" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.5"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.05" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.6"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.06" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.7"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.07" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.8"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.08" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.9"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.09" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.10"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.10" />
+			</layers>
+		</appearance>
+	</instance>	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.11"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.11" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.12"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.12" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.13"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.13" />
+			</layers>
+		</appearance>
+	</instance>	
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.14"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.14" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.15"
+		inherit="hoff.tree.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.1.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.1.15" />
+			</layers>
+		</appearance>
+	</instance>
+
+
+
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.1"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.01" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.2"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.02" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.3"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.03" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.4"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.04" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.5"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.05" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.6"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.06" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.7"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.07" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.8"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.08" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.9"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.09" />
+			</layers>
+		</appearance>
+	</instance>
+	<instance
+		class="worm.buildings.ObstacleFeature"
+		name="hoff.pine.large.10"
+		inherit="hoff.tree.large.master"
+	>
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="4" sublayer="2" colored="shadow" attenuated="true" image="spriteimage.hoff.obstacle.2.ground.01" />
+				<sprite layer="5" sublayer="2" attenuated="true" image="spriteimage.hoff.obstacle.2.10" />
+			</layers>
+		</appearance>
+	</instance>	
+
+	<!--  WALLS ========================================================================================================================== -->
+
+
+		<wall name="hoff.wall.master.1" i="30081" layer="2">
+			<random>
+				<array>
+					<item>hoff.wall.small.1.01</item>
+					<item>hoff.wall.small.1.02</item>
+					<item>hoff.wall.small.1.03</item>	
+					<item>hoff.wall.small.1.04</item>
+					<item>hoff.wall.small.1.05</item>
+					<item>hoff.wall.small.1.06</item>
+					<item>hoff.wall.small.1.07</item>	
+					<item>hoff.wall.small.1.08</item>
+					<item>hoff.wall.small.2.01</item>
+					<item>hoff.wall.small.2.02</item>
+					<item>hoff.wall.small.2.03</item>	
+					<item>hoff.wall.small.2.04</item>
+					<item>hoff.wall.small.2.05</item>
+					<item>hoff.wall.small.2.06</item>
+					<item>hoff.wall.small.2.07</item>	
+					<item>hoff.wall.small.2.08</item>
+					<item>hoff.wall.small.3.01</item>
+					<item>hoff.wall.small.3.02</item>
+					<item>hoff.wall.small.3.03</item>	
+					<item>hoff.wall.small.3.04</item>
+					<item>hoff.wall.small.3.05</item>
+					<item>hoff.wall.small.3.06</item>
+					<item>hoff.wall.small.3.07</item>	
+					<item>hoff.wall.small.3.08</item>																				
+				</array>
+			</random>
+		</wall>
+
+		<wall name="hoff.wall.master.2" i="30082" layer="2">
+			<random>
+				<array>
+					<item>hoff.wall.small.1.01</item>
+					<item>hoff.wall.small.1.02</item>
+					<item>hoff.wall.small.1.03</item>	
+					<item>hoff.wall.small.1.04</item>
+					<item>hoff.wall.small.1.05</item>
+					<item>hoff.wall.small.1.06</item>
+					<item>hoff.wall.small.1.07</item>	
+					<item>hoff.wall.small.1.08</item>
+					<item>hoff.wall.small.2.01</item>
+					<item>hoff.wall.small.2.02</item>
+					<item>hoff.wall.small.2.03</item>	
+					<item>hoff.wall.small.2.04</item>
+					<item>hoff.wall.small.2.05</item>
+					<item>hoff.wall.small.2.06</item>
+					<item>hoff.wall.small.2.07</item>	
+					<item>hoff.wall.small.2.08</item>
+					<item>hoff.wall.small.3.01</item>
+					<item>hoff.wall.small.3.02</item>
+					<item>hoff.wall.small.3.03</item>	
+					<item>hoff.wall.small.3.04</item>
+					<item>hoff.wall.small.3.05</item>
+					<item>hoff.wall.small.3.06</item>
+					<item>hoff.wall.small.3.07</item>	
+					<item>hoff.wall.small.3.08</item>	
+					
+					<item>hoff.wall.medium.1.01</item>																									
+					<item>hoff.wall.medium.1.02</item>					
+					<item>hoff.wall.medium.1.03</item>					
+					<item>hoff.wall.medium.1.04</item>					
+					<item>hoff.wall.medium.1.05</item>					
+					<item>hoff.wall.medium.1.06</item>					
+					<item>hoff.wall.medium.1.07</item>					
+					<item>hoff.wall.medium.1.08</item>	
+					<item>hoff.wall.medium.2.01</item>																									
+					<item>hoff.wall.medium.2.02</item>					
+					<item>hoff.wall.medium.2.03</item>					
+					<item>hoff.wall.medium.2.04</item>					
+					<item>hoff.wall.medium.2.05</item>					
+					<item>hoff.wall.medium.2.06</item>					
+					<item>hoff.wall.medium.2.07</item>					
+					<item>hoff.wall.medium.2.08</item>	
+
+					<item>hoff.wall.medium.1.01</item>																									
+					<item>hoff.wall.medium.1.02</item>					
+					<item>hoff.wall.medium.1.03</item>					
+					<item>hoff.wall.medium.1.04</item>					
+					<item>hoff.wall.medium.1.05</item>					
+					<item>hoff.wall.medium.1.06</item>					
+					<item>hoff.wall.medium.1.07</item>					
+					<item>hoff.wall.medium.1.08</item>	
+					<item>hoff.wall.medium.2.01</item>																									
+					<item>hoff.wall.medium.2.02</item>					
+					<item>hoff.wall.medium.2.03</item>					
+					<item>hoff.wall.medium.2.04</item>					
+					<item>hoff.wall.medium.2.05</item>					
+					<item>hoff.wall.medium.2.06</item>					
+					<item>hoff.wall.medium.2.07</item>					
+					<item>hoff.wall.medium.2.08</item>	
+					
+					<item>hoff.wall.medium.1.01</item>																									
+					<item>hoff.wall.medium.1.02</item>					
+					<item>hoff.wall.medium.1.03</item>					
+					<item>hoff.wall.medium.1.04</item>					
+					<item>hoff.wall.medium.1.05</item>					
+					<item>hoff.wall.medium.1.06</item>					
+					<item>hoff.wall.medium.1.07</item>					
+					<item>hoff.wall.medium.1.08</item>	
+					<item>hoff.wall.medium.2.01</item>																									
+					<item>hoff.wall.medium.2.02</item>					
+					<item>hoff.wall.medium.2.03</item>					
+					<item>hoff.wall.medium.2.04</item>					
+					<item>hoff.wall.medium.2.05</item>					
+					<item>hoff.wall.medium.2.06</item>					
+					<item>hoff.wall.medium.2.07</item>					
+					<item>hoff.wall.medium.2.08</item>											
+				</array>
+			</random>
+		</wall>
+
+		<wall name="hoff.wall.master.3" i="30083" layer="2">
+			<random>
+				<array>
+					<item>hoff.wall.medium.1.01</item>																									
+					<item>hoff.wall.medium.1.02</item>					
+					<item>hoff.wall.medium.1.03</item>					
+					<item>hoff.wall.medium.1.04</item>					
+					<item>hoff.wall.medium.1.05</item>					
+					<item>hoff.wall.medium.1.06</item>					
+					<item>hoff.wall.medium.1.07</item>					
+					<item>hoff.wall.medium.1.08</item>	
+					<item>hoff.wall.medium.2.01</item>																									
+					<item>hoff.wall.medium.2.02</item>					
+					<item>hoff.wall.medium.2.03</item>					
+					<item>hoff.wall.medium.2.04</item>					
+					<item>hoff.wall.medium.2.05</item>					
+					<item>hoff.wall.medium.2.06</item>					
+					<item>hoff.wall.medium.2.07</item>					
+					<item>hoff.wall.medium.2.08</item>	
+					
+					<item>hoff.wall.cliff.01</item> 
+					<item>hoff.wall.cliff.02</item>
+					<item>hoff.wall.cliff.03</item>
+					<item>hoff.wall.cliff.04</item>
+					<item>hoff.wall.cliff.05</item>
+					<item>hoff.wall.cliff.06</item>
+					<item>hoff.wall.cliff.07</item>					
+					<item>hoff.wall.cliff.08</item> 
+					<item>hoff.wall.cliff.09</item>
+					<item>hoff.wall.cliff.10</item>
+					<item>hoff.wall.cliff.11</item>
+					<item>hoff.wall.cliff.12</item>
+					<item>hoff.wall.cliff.13</item>
+					<item>hoff.wall.cliff.14</item>																			
+				</array>
+			</random>
+		</wall>
+
+		<wall name="hoff.wall.master.4" i="30084" layer="2">
+			<random>
+				<array>
+			
+					<item>hoff.wall.cliff.01</item> 
+					<item>hoff.wall.cliff.02</item>
+					<item>hoff.wall.cliff.03</item>
+					<item>hoff.wall.cliff.04</item>
+					<item>hoff.wall.cliff.05</item>
+					<item>hoff.wall.cliff.06</item>
+					<item>hoff.wall.cliff.07</item>					
+					<item>hoff.wall.cliff.08</item> 
+					<item>hoff.wall.cliff.09</item>
+					<item>hoff.wall.cliff.10</item>
+					<item>hoff.wall.cliff.11</item>
+					<item>hoff.wall.cliff.12</item>
+					<item>hoff.wall.cliff.13</item>
+					<item>hoff.wall.cliff.14</item>																			
+				
+					<item>hoff.wall.internal.01</item>
+					<item>hoff.wall.internal.02</item>
+					<item>hoff.wall.internal.03</item>
+					<item>hoff.wall.internal.04</item>		
+					<item>hoff.wall.internal.05</item>
+					
+					<item>hoff.wall.internal.01</item>
+					<item>hoff.wall.internal.02</item>
+					<item>hoff.wall.internal.03</item>
+					<item>hoff.wall.internal.04</item>		
+					<item>hoff.wall.internal.05</item>					
+					
+					<item>hoff.wall.internal.01</item>
+					<item>hoff.wall.internal.02</item>
+					<item>hoff.wall.internal.03</item>
+					<item>hoff.wall.internal.04</item>		
+					<item>hoff.wall.internal.05</item>					
+								
+				</array>
+			</random>
+		</wall>
+
+		<wall name="hoff.cave.master.1" i="30085" layer="2">
+			<random>
+				<array>
+
+					<item>hoff.cave.internal.test</item> 
+
+				</array>
+			</random>
+		</wall>
+
+
+	<tileset name="hoff.walls" description="Earth Walls" default_="">
+		<wall name="hoff.wall.1" inherit="hoff.wall.master.1" i="30101" layer="2" />
+		<wall name="hoff.wall.2" inherit="hoff.wall.master.1" i="30102" layer="2" />
+		<wall name="hoff.wall.3" inherit="hoff.wall.master.1" i="30103" layer="2" />
+		<wall name="hoff.wall.4" inherit="hoff.wall.master.1" i="30104" layer="2" />
+		<wall name="hoff.wall.5" inherit="hoff.wall.master.1" i="30105" layer="2" />		
+		<wall name="hoff.wall.6" inherit="hoff.wall.master.1" i="30106" layer="2" />	
+		<wall name="hoff.wall.7" inherit="hoff.wall.master.1" i="30107" layer="2" />
+		<wall name="hoff.wall.8" inherit="hoff.wall.master.1" i="30108" layer="2" />		
+		<wall name="hoff.wall.9" inherit="hoff.wall.master.2" i="30109" layer="2" />	
+	</tileset>	
+	
+	<tileset name="hoff.internalWalls" description="Earth Internal Walls" default_="">
+		<wall name="hoff.internalWall.1" inherit="hoff.wall.master.3" i="30181" layer="2" />
+		<wall name="hoff.internalWall.2" inherit="hoff.wall.master.3" i="30182" layer="2" />
+		<wall name="hoff.internalWall.3" inherit="hoff.wall.master.3" i="30183" layer="2" />	
+		<wall name="hoff.internalWall.4" inherit="hoff.wall.master.3" i="30184" layer="2" />
+		<wall name="hoff.internalWall.5" inherit="hoff.wall.master.3" i="30185" layer="2" />
+		<wall name="hoff.internalWall.6" inherit="hoff.wall.master.3" i="30186" layer="2" />
+		<wall name="hoff.internalWall.7" inherit="hoff.wall.master.3" i="30187" layer="2" />		
+		<wall name="hoff.internalWall.8" inherit="hoff.cave.master.1" i="30188" layer="2" />
+		<wall name="hoff.internalWall.9" inherit="hoff.cave.master.1" i="30189" layer="2" />
+	</tileset>
+
+
+ 
+	<wall name="hoff.wall.spec" image="tiles.floor.1.0" colored="floor" i="30110"/>
+	<wall name="hoff.wall.cliff.spec" image="tiles.floor.1.0" colored="floor" i="30111"/>
+	<wall name="hoff.wall.internal.spec" image="tiles.floor.1.0" colored="floor" i="30112"/>
+	<wall name="hoff.cave.internal.spec" image="tiles.floor.1.0" colored="shadow" i="30113"/>
+
+	<include resource="rocks-hoff.xml"/>
+
+
+	<wall name="hoff.cave.internal.test" inherit="hoff.cave.internal.spec" i="30180"><layers><layers scale="0.5"></layers></layers></wall>
+
+  
+  
+  	<!-- TRANSITION BETWEEN FLOOR AND ALT FLOOR ========================================================================================================================== -->
+  	
+  
+
+</resources>
+
+

@@ -36,85 +36,95 @@ package worm;
  */
 public interface Medals {
 
-	static final String GOLD					  = "medal.gold";
-	static final String SILVER					  = "medal.silver";
-	static final String BRONZE					  = "medal.bronze";
+	String GOLD					  = "medal.gold";
+	String SILVER					  = "medal.silver";
+	String BRONZE					  = "medal.bronze";
 
-	static final String EARTH_BOSS				  = "medal.earth_boss";
-	static final String MOON_BOSS				  = "medal.moon_boss";
-	static final String MARS_BOSS				  = "medal.mars_boss";
-	static final String SATURN_BOSS				  = "medal.saturn_boss";
-	static final String TITAN_BOSS				  = "medal.titan_boss";
-	static final String EARTH_COMPLETE			  = "medal.earth_complete";
-	static final String MOON_COMPLETE			  = "medal.moon_complete";
-	static final String MARS_COMPLETE			  = "medal.mars_complete";
-	static final String SATURN_COMPLETE			  = "medal.saturn_complete";
-	static final String TITAN_COMPLETE			  = "medal.titan_complete";
+	String EARTH_BOSS				  = "medal.earth_boss";
+	String MOON_BOSS				  = "medal.moon_boss";
+	String MARS_BOSS				  = "medal.mars_boss";
+	String SATURN_BOSS				  = "medal.saturn_boss";
+	String TITAN_BOSS				  = "medal.titan_boss";
+	String EARTH_COMPLETE			  = "medal.earth_complete";
+	String MOON_COMPLETE			  = "medal.moon_complete";
+	String MARS_COMPLETE			  = "medal.mars_complete";
+	String SATURN_COMPLETE			  = "medal.saturn_complete";
+	String TITAN_COMPLETE			  = "medal.titan_complete";
 
-	static final String PERFECT_GAME			  = "medal.perfect_game";
-	static final String PERFECT_WORLD			  = "medal.perfect_world";
+	String PERFECT_GAME			  = "medal.perfect_game";
+	String PERFECT_WORLD			  = "medal.perfect_world";
 
-	static final String PRISTINE				  = "medal.pristine";
-	static final String CAREFUL					  = "medal.careful";
+	String PRISTINE				  = "medal.pristine";
+	String CAREFUL					  = "medal.careful";
 
-	static final String CARELESS				  = "medal.careless";
-	static final String RASH					  = "medal.rash";
-	static final String RECKLESS				  = "medal.reckless";
-	static final String NEGLIGENT				  = "medal.negligent";
+	String CARELESS				  = "medal.careless";
+	String RASH					  = "medal.rash";
+	String RECKLESS				  = "medal.reckless";
+	String NEGLIGENT				  = "medal.negligent";
 
-	static final String CRUSHED_25				  = "medal.crushed_25";
-	static final String CRUSHED_50				  = "medal.crushed_50";
-	static final String CRUSHED_100				  = "medal.crushed_100";
+	String CRUSHED_25				  = "medal.crushed_25";
+	String CRUSHED_50				  = "medal.crushed_50";
+	String CRUSHED_100				  = "medal.crushed_100";
 
-	static final String VANQUISHED_100			  = "medal.vanquished_100";
-	static final String VANQUISHED_250			  = "medal.vanquished_250";
-	static final String VANQUISHED_500			  = "medal.vanquished_500";
-	static final String VANQUISHED_1000			  = "medal.vanquished_1000";
-	static final String VANQUISHED_2500			  = "medal.vanquished_2500";
-	static final String VANQUISHED_5000			  = "medal.vanquished_5000";
-	static final String VANQUISHED_10000		  = "medal.vanquished_10000";
+	String VANQUISHED_100			  = "medal.vanquished_100";
+	String VANQUISHED_250			  = "medal.vanquished_250";
+	String VANQUISHED_500			  = "medal.vanquished_500";
+	String VANQUISHED_1000			  = "medal.vanquished_1000";
+	String VANQUISHED_2500			  = "medal.vanquished_2500";
+	String VANQUISHED_5000			  = "medal.vanquished_5000";
+	String VANQUISHED_10000		  = "medal.vanquished_10000";
 
-	static final String FRIED_100				  = "medal.fried_100";
-	static final String FRIED_250				  = "medal.fried_250";
-	static final String FRIED_500				  = "medal.fried_500";
+	String FRIED_100				  = "medal.fried_100";
+	String FRIED_250				  = "medal.fried_250";
+	String FRIED_500				  = "medal.fried_500";
 
-	static final String NUKED_50				  = "medal.nuked_50";
-	static final String NUKED_100				  = "medal.nuked_100";
-	static final String NUKED_250				  = "medal.nuked_250";
+	String NUKED_50				  = "medal.nuked_50";
+	String NUKED_100				  = "medal.nuked_100";
+	String NUKED_250				  = "medal.nuked_250";
 
-	static final String EXPLODED_100			  = "medal.exploded_100";
-	static final String EXPLODED_250			  = "medal.exploded_250";
-	static final String EXPLODED_500			  = "medal.exploded_500";
+	String EXPLODED_100			  = "medal.exploded_100";
+	String EXPLODED_250			  = "medal.exploded_250";
+	String EXPLODED_500			  = "medal.exploded_500";
 
-	static final String OFFENSIVE_CAPABILITY	  = "medal.offensive_capability";
-	static final String DEFENSIVE_CAPABILITY	  = "medal.defensive_capability";
-	static final String SPEAR_AND_MAGIC_HELMET	  = "medal.spear_and_magic_helmet";
-	static final String DANGEROUS_NUTTER		  = "medal.dangerous_nutter";
-	static final String ROBOT_WANTS_KITTY		  = "medal.robot_wants_kitty";
-	static final String PROPELLERHEAD			  = "medal.propellerhead";
-	static final String PROBLEM_FOR_GRANDCHILDREN = "medal.problem_for_grandchildren";
-	static final String DEVIOUS					  = "medal.devious";
-	static final String ENCYCLOPAEDIC			  = "medal.encyclopaedic";
+	String OFFENSIVE_CAPABILITY	  = "medal.offensive_capability";
+	String DEFENSIVE_CAPABILITY	  = "medal.defensive_capability";
+	String SPEAR_AND_MAGIC_HELMET	  = "medal.spear_and_magic_helmet";
+	String DANGEROUS_NUTTER		  = "medal.dangerous_nutter";
+	String ROBOT_WANTS_KITTY		  = "medal.robot_wants_kitty";
+	String PROPELLERHEAD			  = "medal.propellerhead";
+	String PROBLEM_FOR_GRANDCHILDREN = "medal.problem_for_grandchildren";
+	String DEVIOUS					  = "medal.devious";
+	String ENCYCLOPAEDIC			  = "medal.encyclopaedic";
 
-	static final String TAPE_AND_STRING			  = "medal.tape_and_string";
-	static final String SKIN_OF_YOUR_TEETH		  = "medal.skin_of_your_teeth";
-	static final String PHEW_THAT_WAS_CLOSE		  = "medal.phew_that_was_close";
-	static final String AWESOME					  = "medal.awesome";
-	static final String REGISTERED				  = "medal.registered";
+	String TAPE_AND_STRING			  = "medal.tape_and_string";
+	String SKIN_OF_YOUR_TEETH		  = "medal.skin_of_your_teeth";
+	String PHEW_THAT_WAS_CLOSE		  = "medal.phew_that_was_close";
+	String AWESOME					  = "medal.awesome";
+	String REGISTERED				  = "medal.registered";
 
-	static final String SHORT_TEMPERED			  = "medal.short_tempered";
-	static final String THE_ONLY_WAY_TO_BE_SURE   = "medal.only_way_to_be_sure";
-	static final String TOILET_BREAK		      = "medal.toilet_break";
-	static final String JIMLL_FIX_IT		      = "medal.jimll_fix_it";
-	static final String BATFINK    			      = "medal.batfink";
+	String SHORT_TEMPERED			  = "medal.short_tempered";
+	String THE_ONLY_WAY_TO_BE_SURE   = "medal.only_way_to_be_sure";
+	String TOILET_BREAK		      = "medal.toilet_break";
+	String JIMLL_FIX_IT		      = "medal.jimll_fix_it";
+	String BATFINK    			      = "medal.batfink";
 
-	static final String HOARDED_$5000			  = "medal.hoarded_$5000";
-	static final String HOARDED_$10000			  = "medal.hoarded_$10000";
-	static final String HOARDED_$25000			  = "medal.hoarded_$25000";
-	static final String HOARDED_$50000			  = "medal.hoarded_$50000";
+	String HOARDED_$5000			  = "medal.hoarded_$5000";
+	String HOARDED_$10000			  = "medal.hoarded_$10000";
+	String HOARDED_$25000			  = "medal.hoarded_$25000";
+	String HOARDED_$50000			  = "medal.hoarded_$50000";
 
-	static final String EFFICIENT				  = "medal.efficient";
-	static final String TIGHT_FISTED			  = "medal.tight_fisted";
-	static final String THRIFTY					  = "medal.thrifty";
-	static final String SHORT_ARMS_DEEP_POCKETS	  = "medal.short_arms_deep_pockets";
+	String EFFICIENT				  = "medal.efficient";
+	String TIGHT_FISTED			  = "medal.tight_fisted";
+	String THRIFTY					  = "medal.thrifty";
+	String SHORT_ARMS_DEEP_POCKETS	  = "medal.short_arms_deep_pockets";
+
+	/*
+	 * Xmas!
+	 */
+
+	String XMAS_1			= "medal.xmas.1";
+	String XMAS_2			= "medal.xmas.2";
+	String XMAS_3			= "medal.xmas.3";
+	String XMAS_4			= "medal.xmas.4";
+	String XMAS_VICTORY		= "medal.xmas.victory";
 }

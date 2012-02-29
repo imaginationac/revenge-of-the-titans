@@ -38,8 +38,8 @@ import org.w3c.dom.Element;
 import worm.Worm;
 
 import com.shavenpuppy.jglib.XMLResourceWriter;
-import com.shavenpuppy.jglib.sprites.Animated;
 import com.shavenpuppy.jglib.sprites.Command;
+import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
 /**
@@ -61,7 +61,7 @@ public class SyncCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated, int)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		if (Worm.getGameState() == null) {
 			return false;
 		}

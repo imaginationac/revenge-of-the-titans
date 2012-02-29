@@ -37,7 +37,7 @@ package com.shavenpuppy.jglib.sprites;
  */
 public class ReturnCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for GotoCommand.
@@ -50,7 +50,7 @@ public class ReturnCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		target.popSequence();
 		target.tick(); // Hackery again :)
 		return false;

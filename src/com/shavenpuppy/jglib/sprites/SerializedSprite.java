@@ -31,24 +31,26 @@
  */
 package com.shavenpuppy.jglib.sprites;
 
-import java.io.*;
+import java.io.InvalidObjectException;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
 import java.util.Stack;
 
 import org.lwjgl.util.ReadableColor;
-import org.lwjgl.util.vector.Vector3f;
+import org.lwjgl.util.vector.Vector2f;
 
 /**
- * $Id: SerializedSprite.java,v 1.18 2011/04/18 23:28:06 cix_foo Exp $
+ * $Id: SerializedSprite.java,v 1.21 2011/10/04 00:05:22 cix_foo Exp $
  * For persisting sprites
  * @author $Author: cix_foo $
- * @version $Revision: 1.18 $
+ * @version $Revision: 1.21 $
  */
 public class SerializedSprite implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	/** Current allocator */
-	private static SpriteEngine spriteEngine;
+	/** Sprite engine we should be allocated to */
+	private SpriteAllocator spriteAllocator;
 
 	/** The animation, if any */
 	private Animation animation;
@@ -68,11 +70,14 @@ public class SerializedSprite implements Serializable {
 	/** Layer */
 	private int layer;
 
+	/** Sublayer */
+	private int subLayer;
+
 	/** World coordinates */
-	private Vector3f location = new Vector3f();
+	private Vector2f location = new Vector2f();
 
 	/** Offset coordinates */
-	private Vector3f offset = new Vector3f();
+	private Vector2f offset = new Vector2f();
 
 	/** Flash mode: renders an additive mode version on top */
 	private boolean flash;
@@ -133,12 +138,14 @@ public class SerializedSprite implements Serializable {
 	 * @param source The sprite we want to serialize
 	 */
 	public void fromSprite(Sprite source) {
+		spriteAllocator = source.getAllocator();
 		animation = source.getAnimation();
 		image = source.getImage();
 		loop = source.getLoop();
 		tick = source.getTick();
 		sequence = source.getSequence();
 		layer = source.getLayer();
+		subLayer = source.getSubLayer();
 		source.getLocation(location);
 		source.getOffset(offset);
 		flash = source.isFlashing();
@@ -179,7 +186,8 @@ public class SerializedSprite implements Serializable {
 		dest.setTick(tick);
 		dest.setSequence(sequence);
 		dest.setLayer(layer);
-		dest.setLocation(location.getX(), location.getY(), location.getZ());
+		dest.setSubLayer(subLayer);
+		dest.setLocation(location.getX(), location.getY());
 		dest.setOffset(offset);
 		dest.setFlash(flash);
 		dest.setColor(0, color[0]);
@@ -203,26 +211,13 @@ public class SerializedSprite implements Serializable {
 	}
 
 	/**
-	 * @param spriteEngine The spriteEngine to set.
-	 */
-	public static void setSpriteEngine(SpriteEngine spriteEngine) {
-		SerializedSprite.spriteEngine = spriteEngine;
-	}
-
-	/**
-	 * @return Returns the spriteEngine.
-	 */
-	public static SpriteEngine getSpriteEngine() {
-		return spriteEngine;
-	}
-
-	/**
 	 * When deserializing, we allocate a Sprite from the currently specified
 	 * sprite engine and return that, instead. Remember to set a sprite engine!!
 	 * @returns a Sprite
 	 */
 	private Object readResolve() throws ObjectStreamException {
-		Sprite sprite = spriteEngine.allocate(owner);
+		Sprite sprite = spriteAllocator.allocateSprite(owner);
+		sprite.setAllocator(spriteAllocator);
 		try {
 			toSprite(sprite);
 		} catch (Exception e) {

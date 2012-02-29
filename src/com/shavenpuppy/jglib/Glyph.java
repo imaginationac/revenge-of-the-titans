@@ -31,17 +31,28 @@
  */
 package com.shavenpuppy.jglib;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.ReadableRectangle;
+import org.lwjgl.util.WritableDimension;
+import org.lwjgl.util.WritablePoint;
+import org.lwjgl.util.WritableRectangle;
 /**
  * A single glyph in a Font.
  */
 public final class Glyph implements Serializable, ReadableRectangle {
 
-	static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
+
+	private static final int MAGIC = 0x3456;
+
+	/** Glyph character */
+	private char character;
 
 	/** Glyph advance */
 	private int advance;
@@ -62,7 +73,7 @@ public final class Glyph implements Serializable, ReadableRectangle {
 	private int bearingY;
 
 	/** Kerning: sorted in ascending order so binary search will work */
-	private ArrayList<Glyph> kernsWith;
+	private char[] kernsWith;
 	private int[] kerning;
 
 	/**
@@ -73,9 +84,80 @@ public final class Glyph implements Serializable, ReadableRectangle {
 	}
 
 	/**
+	 * High-speed serialisation
+	 * @param os
+	 * @throws IOException
+	 */
+	public void writeExternal(OutputStream os) throws IOException {
+		DataOutputStream dos = new DataOutputStream(os);
+		dos.writeInt(MAGIC);
+		dos.writeChar(character);
+		dos.writeInt(advance);
+		dos.writeInt(width);
+		dos.writeInt(height);
+		dos.writeInt(x);
+		dos.writeInt(y);
+		dos.writeInt(bearingX);
+		dos.writeInt(bearingY);
+		if (kernsWith == null) {
+			dos.writeInt(0);
+		} else {
+			dos.writeInt(kernsWith.length);
+			for (char c : kernsWith) {
+				dos.writeChar(c);
+			}
+		}
+		if (kerning == null) {
+			dos.writeInt(0);
+		} else {
+			dos.writeInt(kerning.length);
+			for (int i : kerning) {
+				dos.writeInt(i);
+			}
+		}
+	}
+
+	/**
+	 * High-speed deserialisation
+	 * @param is
+	 * @return a new Glyph
+	 * @throws IOException
+	 */
+	public void readExternal(InputStream is) throws IOException {
+		DataInputStream dis = new DataInputStream(is);
+		int magic = dis.readInt();
+		if (magic != MAGIC) {
+			throw new IOException("Expected "+MAGIC+" but got "+magic);
+		}
+		character = dis.readChar();
+		advance = dis.readInt();
+		width = dis.readInt();
+		height = dis.readInt();
+		x = dis.readInt();
+		y = dis.readInt();
+		bearingX = dis.readInt();
+		bearingY = dis.readInt();
+		int numKerns = dis.readInt();
+		if (numKerns > 0) {
+			kernsWith = new char[numKerns];
+			for (int i = 0; i < kernsWith.length; i ++) {
+				kernsWith[i] = dis.readChar();
+			}
+		}
+		int numKerning = dis.readInt();
+		if (numKerning > 0) {
+			kerning = new int[numKerning];
+			for (int i = 0; i < kerning.length; i ++) {
+				kerning[i] = dis.readInt();
+			}
+		}
+	}
+
+	/**
 	 * Initialize
 	 */
 	public void init(
+		char character,
 		int x,
 		int y,
 		int width,
@@ -86,6 +168,7 @@ public final class Glyph implements Serializable, ReadableRectangle {
 		Glyph[] kernsWith,
 		int[] kerning
 	) {
+		this.character = character;
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -94,7 +177,10 @@ public final class Glyph implements Serializable, ReadableRectangle {
 		this.bearingY = bearingY;
 		this.advance = advance;
 		if (kernsWith != null) {
-			this.kernsWith = new ArrayList<Glyph>(Arrays.asList(kernsWith));
+			this.kernsWith = new char[kernsWith.length];
+			for (int i = 0; i < kernsWith.length; i ++) {
+				this.kernsWith[i] = kernsWith[i].character;
+			}
 		} else {
 			this.kernsWith = null;
 		}
@@ -115,9 +201,8 @@ public final class Glyph implements Serializable, ReadableRectangle {
 			return 0;
 		}
 
-		for (int i = 0; i < kernsWith.size(); i ++) {
-			Glyph g2 = kernsWith.get(i);
-			if (g2 == g) {
+		for (int i = 0; i < kernsWith.length; i ++) {
+			if (kernsWith[i] == g.character) {
 //				System.err.println("Kerning after "+g.index+" for "+index+" is "+kerning[i]);
 				return kerning[i];
 			}
@@ -201,33 +286,21 @@ public final class Glyph implements Serializable, ReadableRectangle {
 		return bearingY;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.ReadableDimension#getSize(com.shavenpuppy.jglib.Dimension)
-	 */
 	@Override
 	public void getSize(WritableDimension dest) {
 		dest.setSize(width, height);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.ReadablePoint#getX()
-	 */
 	@Override
 	public int getX() {
 		return x;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.ReadablePoint#getY()
-	 */
 	@Override
 	public int getY() {
 		return y;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.ReadablePoint#getLocation(com.shavenpuppy.jglib.Point)
-	 */
 	@Override
 	public void getLocation(WritablePoint dest) {
 		dest.setLocation(x, y);

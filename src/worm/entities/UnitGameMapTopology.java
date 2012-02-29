@@ -33,7 +33,10 @@ package worm.entities;
 
 import java.io.Serializable;
 
-import worm.*;
+import worm.GameMap;
+import worm.Tile;
+import worm.Worm;
+import worm.WormGameState;
 import worm.path.Topology;
 
 import com.shavenpuppy.jglib.util.FPMath;

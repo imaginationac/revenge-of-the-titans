@@ -36,7 +36,9 @@ import net.puppygames.applet.effects.Effect;
 
 import org.lwjgl.util.ReadablePoint;
 
-import worm.*;
+import worm.MapRenderer;
+import worm.Res;
+import worm.Worm;
 import worm.animation.SimpleThingWithLayers;
 import worm.features.LayersFeature;
 import worm.screens.GameScreen;
@@ -68,7 +70,7 @@ public class ArrowEffect extends Effect {
 	}
 
 	@Override
-	protected void doRender() {
+	public void render() {
 	}
 
 	@Override
@@ -104,10 +106,6 @@ public class ArrowEffect extends Effect {
 			layers.remove();
 			layers = null;
 		}
-	}
-
-	@Override
-	protected void doSpawn() {
 	}
 
 	@Override
@@ -168,12 +166,12 @@ public class ArrowEffect extends Effect {
 		}
 
 		for (int i = 0; i < layers.getSprites().length; i ++) {
-			layers.getSprite(i).setLocation(screenX, screenY, 0);
+			layers.getSprite(i).setLocation(screenX, screenY);
 		}
 	}
 
 	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		return !done;
 	}
 

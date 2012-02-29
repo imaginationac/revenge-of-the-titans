@@ -36,7 +36,9 @@ import net.puppygames.applet.effects.StrobeEffect;
 import org.lwjgl.util.ReadableColor;
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Entity;
+import worm.GameStateInterface;
+import worm.SFX;
 import worm.effects.SmartbombEffect;
 import worm.screens.GameScreen;
 

@@ -35,7 +35,6 @@ import java.util.ArrayList;
 
 import org.lwjgl.util.Point;
 
-import worm.features.LevelFeature;
 import worm.features.PlainsTemplateFeature;
 
 import com.shavenpuppy.jglib.util.Util;
@@ -53,8 +52,8 @@ public class PlainsMapGenerator extends BaseMapGenerator {
 	 * @param level
 	 * @param levelFeature TODO
 	 */
-	public PlainsMapGenerator(PlainsTemplateFeature template, int level, int levelInWorld, LevelFeature levelFeature) {
-		super(template, level, levelInWorld, levelFeature);
+	public PlainsMapGenerator(PlainsTemplateFeature template, MapGeneratorParams mapGeneratorParams) {
+		super(template, mapGeneratorParams);
 
 		plainsTemplate = template;
 	}

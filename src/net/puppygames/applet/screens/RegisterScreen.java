@@ -33,11 +33,18 @@ package net.puppygames.applet.screens;
 
 import java.rmi.Naming;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Area;
 import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
+import net.puppygames.applet.Res;
+import net.puppygames.applet.Screen;
+import net.puppygames.applet.TickableObject;
 import net.puppygames.applet.effects.SFX;
 import net.puppygames.applet.widgets.TextField;
-import net.puppygames.gamecommerce.shared.*;
+import net.puppygames.gamecommerce.shared.RegisterException;
+import net.puppygames.gamecommerce.shared.RegistrationDetails;
+import net.puppygames.gamecommerce.shared.RegistrationServerRemote;
+import net.puppygames.gamecommerce.shared.ValidateUtil;
 
 import org.lwjgl.input.Mouse;
 import org.lwjgl.util.Rectangle;
@@ -58,12 +65,12 @@ import static org.lwjgl.opengl.GL11.*;
  */
 public class RegisterScreen extends Screen {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	/** End screen instance */
+	/** Default instance */
 	private static RegisterScreen instance;
 
-	private static final Object cancelLock = new Object();
+	private static final Object CANCEL_LOCK = new Object();
 
 	/*
 	 * Button IDs
@@ -80,9 +87,14 @@ public class RegisterScreen extends Screen {
 	private Rectangle emailInsets;
 	private String font;
 
+	/** Internal name of product we're registering. Defaults to {@link Game#getTitle()} */
+	private String product;
+
+	/** Display name of product we're registering. Defaults to {@link Game#getDisplayTitle()} */
+	private String displayProduct;
+
 	private transient TextField emailField;
 	private transient boolean valid;
-	private transient RegistrationDetails regDetails;
 	private transient GLFont fontResource;
 	private transient DialogScreen waitDialog;
 	private transient Thread registerThread;
@@ -97,6 +109,14 @@ public class RegisterScreen extends Screen {
 	public RegisterScreen(String name) {
 		super(name);
 	}
+
+	/**
+	 * Sets the "wait for mouse" flag, which causes the UI to wait until the mouse is released before responding
+	 * @param waitForMouse
+	 */
+	public void setWaitForMouse(boolean waitForMouse) {
+	    this.waitForMouse = waitForMouse;
+    }
 
 	@Override
 	protected void doCreateScreen() {
@@ -137,16 +157,22 @@ public class RegisterScreen extends Screen {
 
 	@Override
 	protected void doRegister() {
-		instance = this;
+		if (product == null) {
+			assert instance == null;
+			instance = this;
+		}
 	}
 
 	@Override
 	protected void doDeregister() {
-		instance = null;
+		if (product == null) {
+			assert instance != null;
+			instance = null;
+		}
 	}
 
 	/**
-	 * Show the registration screen
+	 * Show the default registration screen
 	 */
 	public static void show() {
 		if (!instance.isCreated()) {
@@ -162,7 +188,7 @@ public class RegisterScreen extends Screen {
 	@Override
 	protected void onOpen() {
 		Game.setPauseEnabled(false);
-		Game.buy(false);
+		MiniGame.buy(false);
 		emailField.setEditing(true);
 		waitForMouse = true;
 		checkValid();
@@ -175,6 +201,19 @@ public class RegisterScreen extends Screen {
 		};
 		emailObject.setLayer(100);
 		emailObject.spawn(this);
+
+		if (Game.isRegistered()) {
+			emailField.setText(Game.getRegistrationDetails().getEmail());
+		}
+
+		if (product == null) {
+			product = Game.getTitle();
+		}
+
+		if (displayProduct == null) {
+			displayProduct = Game.getDisplayTitle();
+		}
+
 	}
 
 	@Override
@@ -200,7 +239,7 @@ public class RegisterScreen extends Screen {
 		} else if (id.equals(LATER)) {
 			NagScreen.show("You know you want to!", false);
 		} else if (id.equals(ORDER)) {
-			Game.buy(true);
+			MiniGame.buy(true);
 		}
 	}
 
@@ -210,10 +249,14 @@ public class RegisterScreen extends Screen {
 		}
 
 		if (!CheckOnline.isOnline()) {
-			registrationFailed("It appears that you are not connected to the internet! Please exit "+Game.getTitle()+" and connect to the internet, and try again.", true);
+			String failure = Game.getMessage("lwjglapplets.registerscreen.notconnected");
+			failure = failure.replace("[title]", displayProduct);
+			setThingToDo(registrationFailed(failure, true));
 		} else {
 			waitDialog = Res.getCancelDialog();
-			waitDialog.doModal("REGISTERING", "Please wait whilst "+Game.getTitle()+" contacts the Puppy Games registration server to unlock your game.",
+			String msg = Game.getMessage("lwjglapplets.registerscreen.registering_message");
+			msg = msg.replace("[title]", product);
+			waitDialog.doModal(Game.getMessage("lwjglapplets.registerscreen.registering"), msg,
 					new Runnable() {
 				@Override
 				public void run() {
@@ -221,7 +264,7 @@ public class RegisterScreen extends Screen {
 					// Cancel registration
 					if (option != DialogScreen.NONE) {
 						waitForMouse = true;
-						synchronized (cancelLock) {
+						synchronized (CANCEL_LOCK) {
 							cancelRegistration = true;
 							if (registerThread != null) {
 								registerThread.interrupt();
@@ -241,11 +284,12 @@ public class RegisterScreen extends Screen {
 							server = (RegistrationServerRemote) Naming.lookup(RegistrationServerRemote.RMI_URL);
 						} catch (Exception e) {
 							e.printStackTrace(System.err);
-							synchronized (cancelLock) {
+							synchronized (CANCEL_LOCK) {
 								if (!cancelRegistration) {
 									Game.onRegistrationDisaster();
-									registrationFailed("There has been a problem connecting to the Puppy Games registration server. Please ensure you are online and try again, or alternatively contact us on "+
-											Game.getSupportEmail()+" for assistance.", false);
+									String msg = Game.getMessage("lwjglapplets.registerscreen.problem_connecting");
+									msg = msg.replace("[email]", Game.getSupportEmail());
+									setThingToDo(registrationFailed(msg, false));
 								}
 								cancelRegistration = false;
 							}
@@ -253,28 +297,29 @@ public class RegisterScreen extends Screen {
 						}
 						RegistrationDetails regDetails;
 						try {
-							regDetails = server.register(emailField.getText(), Game.getTitle(), Game.getVersion(), Game.getInstallation(), System
+							regDetails = server.register(emailField.getText(), product, Game.getVersion(), Game.getInstallation(), System
 									.getProperty("os.name"), Game.getConfiguration());
 							Game.onRegistrationRecovery();
-							registrationSuccess(regDetails);
+							setThingToDo(registrationSuccess(regDetails));
 						} catch (RegisterException e) {
 							Game.onRegistrationRecovery();
-							registrationFailed(e.getMessage(), true);
+							setThingToDo(registrationFailed(e.getMessage(), true));
 							return;
 						} catch (Throwable e) {
 							e.printStackTrace(System.err);
-							synchronized (cancelLock) {
+							synchronized (CANCEL_LOCK) {
 								if (!cancelRegistration) {
 									Game.onRegistrationDisaster();
-									registrationFailed("There has been a problem registering your game with Puppy Games registration server. Please contact us on "+
-											Game.getSupportEmail()+" for assistance.", true);
+									String msg = Game.getMessage("lwjglapplets.registerscreen.problem_registering");
+									msg = msg.replace("[email]", Game.getSupportEmail());
+									setThingToDo(registrationFailed(msg, true));
 									cancelRegistration = false;
 								}
 							}
 							return;
 						}
 					} finally {
-						synchronized (cancelLock) {
+						synchronized (CANCEL_LOCK) {
 							registerThread = null;
 						}
 					}
@@ -288,17 +333,17 @@ public class RegisterScreen extends Screen {
 	/**
 	 * Called when registration fails
 	 * @param message The failure message
-	 * @param nextPhase The phase to go to next
+	 * @param fatal Whether the error was fatal, which should dump us back to the title screen
 	 */
-	private void registrationFailed(final String message, final boolean fatal) {
-		thingToDo = new Runnable() {
+	protected Runnable registrationFailed(final String message, final boolean fatal) {
+		return new Runnable() {
 			@Override
 			public void run() {
 				if (waitDialog != null && waitDialog.isOpen()) {
 					waitDialog.close();
 					waitDialog = null;
 				}
-				Res.getInfoDialog().doModal("FAILED", message, new Runnable() {
+				Res.getInfoDialog().doModal(Game.getMessage("lwjglapplets.registerscreen.failed"), message, new Runnable() {
 					@Override
 					public void run() {
 						Res.getInfoDialog().getOption();
@@ -308,39 +353,52 @@ public class RegisterScreen extends Screen {
 						waitForMouse = true;
 					}
 				});
-				Game.buy(false);
+				MiniGame.buy(false);
 			}
 		};
 	}
 
 	/**
+	 * Clears away the "wait..." dialog, if it's open
+	 */
+	protected final void maybeClearWaitDialog() {
+		if (waitDialog != null && waitDialog.isOpen()) {
+			waitDialog.close();
+			waitDialog = null;
+		}
+	}
+
+	/**
 	 * Called when registration succeeds
 	 * @param regDetails The registration details
+	 * @return a Runnable which will be executed in the main thread immediately
 	 */
-	private void registrationSuccess(final RegistrationDetails regDetails) {
-		thingToDo = new Runnable() {
+	protected Runnable registrationSuccess(final RegistrationDetails regDetails) {
+		return new Runnable() {
 			@Override
 			public void run() {
-				Game.clearBuy();
+				MiniGame.clearBuy();
 				Game.onRemoteCallSuccess();
 				TitleScreen.instantiate();
 				Game.setRegistrationDetails(regDetails);
-				if (waitDialog != null && waitDialog.isOpen()) {
-					waitDialog.close();
-					waitDialog = null;
-				}
+				maybeClearWaitDialog();
 
-				Res.getInfoDialog().doModal("SUCCESS", "Congratulations! Your copy of "+Game.getTitle()+" has been unlocked and registered to you.", new Runnable() {
+				String msg = Game.getMessage("lwjglapplets.registerscreen.success_message");
+				msg = msg.replace("[title]", displayProduct);
+				Res.getInfoDialog().doModal(Game.getMessage("lwjglapplets.registerscreen.success"), msg, new Runnable() {
 					@Override
 					public void run() {
 						Res.getInfoDialog().getOption();
 						TitleScreen.show();
 					}
 				});
-				RegisterScreen.this.regDetails = regDetails;
 			}
 		};
 	}
+
+	private synchronized void setThingToDo(Runnable thingToDo) {
+	    this.thingToDo = thingToDo;
+    }
 
 	@Override
 	protected void doTick() {
@@ -354,9 +412,12 @@ public class RegisterScreen extends Screen {
 				setEnabled(REGISTER, valid);
 			}
 		}
-		if (thingToDo != null) {
-			thingToDo.run();
-			thingToDo = null;
+
+		synchronized (this) {
+			if (thingToDo != null) {
+				thingToDo.run();
+				thingToDo = null;
+			}
 		}
 	}
 

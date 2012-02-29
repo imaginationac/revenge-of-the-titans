@@ -35,15 +35,17 @@ import java.io.InputStream;
 
 import org.w3c.dom.Element;
 
-import com.shavenpuppy.jglib.*;
+import com.shavenpuppy.jglib.Memory;
+import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.Wave;
 import com.shavenpuppy.jglib.resources.WaveWrapper;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
 /**
- * $Id: SoundClip.java,v 1.8 2011/04/18 23:28:06 cix_foo Exp $
+ * $Id: SoundClip.java,v 1.9 2011/07/20 15:12:46 cix_foo Exp $
  * A clip of sound
  * @author $Author: cix_foo $
- * @version $Revision: 1.8 $
+ * @version $Revision: 1.9 $
  */
 public class SoundClip extends Resource implements WaveWrapper {
 
@@ -74,18 +76,12 @@ public class SoundClip extends Resource implements WaveWrapper {
 		this.clipBank = clipBank;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#load(org.w3c.dom.Element, com.shavenpuppy.jglib.Resource.Loader)
-	 */
 	@Override
 	public void load(Element element, Loader loader) throws Exception {
 		offset = XMLUtil.getInt(element, "offset");
 		length = XMLUtil.getInt(element, "length");
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#doCreate()
-	 */
 	@Override
 	protected void doCreate() {
 		try {
@@ -103,17 +99,11 @@ public class SoundClip extends Resource implements WaveWrapper {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#doDestroy()
-	 */
 	@Override
 	protected void doDestroy() {
 		wave = null;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.WaveWrapper#getWave()
-	 */
 	@Override
 	public Wave getWave() throws Exception {
 		assert isCreated();
@@ -124,25 +114,16 @@ public class SoundClip extends Resource implements WaveWrapper {
 		return wave;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.WaveWrapper#getFrequency()
-	 */
 	@Override
 	public int getFrequency() {
 		return wave.getFrequency();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.WaveWrapper#getType()
-	 */
 	@Override
 	public int getType() {
 		return wave.getType();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.WaveWrapper#getStream()
-	 */
 	@Override
 	public InputStream getStream() throws Exception {
 		return null;

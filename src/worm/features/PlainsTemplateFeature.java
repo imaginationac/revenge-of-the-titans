@@ -32,6 +32,7 @@
 package worm.features;
 
 import worm.generator.MapGenerator;
+import worm.generator.MapGeneratorParams;
 import worm.generator.PlainsMapGenerator;
 
 /**
@@ -127,8 +128,8 @@ public class PlainsTemplateFeature extends BaseTemplateFeature {
 	 * @see worm.generator.MapTemplate#createGenerator(int)
 	 */
 	@Override
-	public MapGenerator createGenerator(int level, int levelInWorld, LevelFeature levelFeature) {
-		return new PlainsMapGenerator(this, level, levelInWorld, levelFeature);
+	public MapGenerator createGenerator(MapGeneratorParams mapGeneratorParams) {
+		return new PlainsMapGenerator(this, mapGeneratorParams);
 	}
 
 }

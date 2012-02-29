@@ -31,13 +31,14 @@
  */
 package worm.effects;
 
-import net.puppygames.applet.TickableObject;
 import net.puppygames.applet.screens.AbstractSlotEffect;
 
 import org.lwjgl.input.Mouse;
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Res;
+import worm.Worm;
+import worm.WormGameState;
 import worm.features.LevelFeature;
 import worm.features.WorldFeature;
 
@@ -62,8 +63,6 @@ public class WormSlotEffect extends AbstractSlotEffect {
 	private static int SLOT_WIDTH = 218;
 	private static int SLOT_HEIGHT = 33;
 
-	private TickableObject tickableObject;
-
 	/**
 	 * C'tor
 	 */
@@ -72,8 +71,7 @@ public class WormSlotEffect extends AbstractSlotEffect {
 
 
 	@Override
-	protected void doSpawn() {
-
+	protected void doSpawnEffect() {
 		unselectedSlotTextColor = new MappedColor("titles.colormap:button-text");
 		hoveredSlotTextColor = new MappedColor("titles.colormap:button-text");
 		selectedSlotTextColor = new MappedColor("titles.colormap:button-text-on");
@@ -96,39 +94,40 @@ public class WormSlotEffect extends AbstractSlotEffect {
 		info.setText(worldName+" : "+levelName + (maxMoney > 0 ? " : $"+maxMoney : ""));
 
 		setBackground();
+	}
 
-		tickableObject = new TickableObject() {
+	@Override
+	protected void render() {
+		glRender(new GLRenderable() {
 			@Override
-			protected void render() {
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glPushMatrix();
-						glTranslatef(getX(), getY(), 0.0f);
-					}
-				});
-				background.render(this);
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glEnable(GL_TEXTURE_2D);
-						glEnable(GL_BLEND);
-						glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-						glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-					}
-				});
-				WormSlotEffect.this.name.render(this);
-				info.render(this);
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glPopMatrix();
-					}
-				});
+			public void render() {
+				glPushMatrix();
+				glTranslatef(getX(), getY(), 0.0f);
 			}
-		};
-		tickableObject.setLayer(5);
-		tickableObject.spawn(getScreen());
+		});
+		background.render(this);
+		glRender(new GLRenderable() {
+			@Override
+			public void render() {
+				glEnable(GL_TEXTURE_2D);
+				glEnable(GL_BLEND);
+				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+			}
+		});
+		WormSlotEffect.this.name.render(this);
+		info.render(this);
+		glRender(new GLRenderable() {
+			@Override
+			public void render() {
+				glPopMatrix();
+			}
+		});
+	}
+
+	@Override
+	public int getDefaultLayer() {
+	    return 5;
 	}
 
 	private void setBackground() {
@@ -153,21 +152,11 @@ public class WormSlotEffect extends AbstractSlotEffect {
 	}
 
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.SlotEffect#setEditing(boolean)
-	 */
 	@Override
 	public void setEditing(boolean editing) {
 		// Ignore for now
 	}
 
-	@Override
-	protected void doRender() {
-	}
-
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doTick()
-	 */
 	@Override
 	protected void doTick() {
 		if (getScreen().isBlocked()) {
@@ -185,42 +174,23 @@ public class WormSlotEffect extends AbstractSlotEffect {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.AbstractSlotEffect#onSetSelected()
-	 */
 	@Override
 	protected void onSetSelected() {
 		setBackground();
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.AbstractSlotEffect#onSetHovered()
-	 */
 	@Override
 	protected void onSetHovered() {
 		setBackground();
 	}
 
-
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doRemove()
-	 */
 	@Override
 	protected void doRemove() {
-		if (!done) {
-			done = true;
-			if (tickableObject != null) {
-				tickableObject.remove();
-				tickableObject = null;
-			}
-		}
+		done = true;
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Tickable#isActive()
-	 */
 	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		return !done;
 	}
 

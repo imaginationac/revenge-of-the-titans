@@ -35,19 +35,30 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.Screen;
+import net.puppygames.applet.Tickable;
 
 import org.lwjgl.util.ReadableRectangle;
 import org.lwjgl.util.Rectangle;
 import org.lwjgl.util.vector.Vector2f;
 
 import worm.animation.ThingWithLayers;
-import worm.entities.*;
+import worm.entities.Bomb;
+import worm.entities.Building;
+import worm.entities.Bullet;
+import worm.entities.Gidrah;
+import worm.entities.Saucer;
+import worm.entities.Smartbomb;
+import worm.entities.Unit;
 import worm.features.LayersFeature;
 import worm.screens.GameScreen;
 
 import com.shavenpuppy.jglib.algorithms.Bresenham;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Animation;
+import com.shavenpuppy.jglib.sprites.ReadablePosition;
+import com.shavenpuppy.jglib.sprites.Sprite;
+import com.shavenpuppy.jglib.sprites.SpriteAllocator;
 import com.shavenpuppy.jglib.util.FPMath;
 import com.shavenpuppy.jglib.util.Util;
 
@@ -654,7 +665,7 @@ public abstract class Entity implements Tickable, Serializable, ReadablePosition
 
 			for (Sprite element : sprite) {
 
-				element.setLocation(screenX, screenY, 0);
+				element.setLocation(screenX, screenY);
 				if (element.getLayer() > Layers.SHADOW) {
 					element.setFlash(flash);
 				}
@@ -707,7 +718,7 @@ public abstract class Entity implements Tickable, Serializable, ReadablePosition
 					if (doOffset) {
 						for (int j = i+1; j < sprite.length; j ++) {
 							if (sprite[j].isDoChildOffset()) {
-								sprite[j].setLocation(screenX + xOffsetTotal, screenY + yOffsetTotal, 0);
+								sprite[j].setLocation(screenX + xOffsetTotal, screenY + yOffsetTotal);
 								sprite[j].setYSortOffset(-yOffsetTotal-j); // the '-j' is chaz hack! budge layers YSortOffset a tad to force render ok
 							}
 						}

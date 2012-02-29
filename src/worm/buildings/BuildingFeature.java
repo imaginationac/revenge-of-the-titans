@@ -31,26 +31,37 @@
  */
 package worm.buildings;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 
+import net.puppygames.applet.Game;
 import net.puppygames.applet.effects.Emitter;
 import net.puppygames.applet.effects.EmitterFeature;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadablePoint;
+import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.ShopItem;
+import worm.Statistics;
+import worm.Worm;
 import worm.entities.Building;
 import worm.features.LayersFeature;
 import worm.screens.GameScreen;
 
-import com.shavenpuppy.jglib.resources.*;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.ResourceArray;
+import com.shavenpuppy.jglib.resources.TextResource;
+import com.shavenpuppy.jglib.sprites.Appearance;
 
 /**
  * Describes a building
  * @author Cas
  */
 public abstract class BuildingFeature extends Feature implements ShopItem, Statistics {
+
+	private static final long serialVersionUID = 1L;
 
 	private static final HashMap<String, BuildingFeature> BUILDINGS = new HashMap<String, BuildingFeature>();
 	private static final HashMap<String, BuildingFeature> BUILDINGS_BY_RESEARCH_ID = new HashMap<String, BuildingFeature>();
@@ -85,8 +96,8 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 	/** Short bonus description - one liner eg. +1 RELOAD RATE */
 	private String bonusDescription;
 
-	/** Descriptive blurb */
-	private TextResource description;
+	/** Full description */
+	private String description;
 
 	/** Bounding box relative to map location */
 	private Rectangle bounds;
@@ -139,6 +150,12 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 	/** Agitation factor */
 	private float agitation;
 
+	/** Flames offset */
+	private Point flamesOffset;
+
+	/** Flames emitter */
+	private String flamesEmitter;
+
 	/*
 	 * Transient data
 	 */
@@ -147,8 +164,11 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 
 	private transient EmitterFeature repairEmitterResource;
 	private transient EmitterFeature buildEmitterResource;
+	private transient EmitterFeature flamesEmitterResource;
 
-	private transient AnimatedAppearanceResource tooltipGraphicResource;
+	private transient Appearance tooltipGraphicResource;
+	private transient TextResource descriptionResource;
+
 
 	/**
 	 * C'tor
@@ -221,7 +241,7 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 	 */
 	@Override
 	public String getDescription() {
-		return description.getText();
+		return descriptionResource.getText();
 	}
 
 	/**
@@ -460,7 +480,7 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 	}
 
 	@Override
-	public AnimatedAppearanceResource getTooltipGraphic() {
+	public Appearance getTooltipGraphic() {
 		return tooltipGraphicResource;
 	}
 
@@ -474,10 +494,10 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 	 * @param stats_2_text
 	 */
 	public void getResearchStats(StringBuilder stats_1_text, StringBuilder stats_2_text) {
-		stats_1_text.append("{font:tinyfont.glfont color:text}COST: {font:tinyfont.glfont color:text-bold}$" + getInitialValue());
+		stats_1_text.append("{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.cost")+": {font:tinyfont.glfont color:text-bold}$" + getInitialValue());
 
 		if (getHitPoints() > 0) {
-			stats_1_text.append("\n{font:tinyfont.glfont color:text}SHIELDS: {font:tinyfont.glfont color:text-bold}" + getHitPoints() / HITPOINTS_DIVISOR);
+			stats_1_text.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.shields")+": {font:tinyfont.glfont color:text-bold}" + getHitPoints() / HITPOINTS_DIVISOR);
 		}
 		if (getBonusDescription() != null) {
 			stats_1_text.append("\n");
@@ -486,7 +506,7 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 	}
 
 	protected String getBuildingType() {
-		return "building";
+		return Game.getMessage("ultraworm.researchstats.building_type_normal");
 	}
 
 	@Override
@@ -498,7 +518,7 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 
 	@Override
 	public void appendTitle(StringBuilder dest) {
-		dest.append("new ");
+		dest.append(Game.getMessage("ultraworm.researchstats.new")+" ");
 		dest.append(getBuildingType());
 		dest.append("\n{font:smallfont.glfont}");
 		dest.append(shortTitle != null ? shortTitle : title);
@@ -507,12 +527,12 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 
 	@Override
 	public void appendBasicStats(StringBuilder dest) {
-		dest.append("cost: $");
+		dest.append(Game.getMessage("ultraworm.researchstats.cost_lowercase")+": $");
 		dest.append(getInitialValue());
-		dest.append("\nhitpoints: ");
+		dest.append("\n"+Game.getMessage("ultraworm.researchstats.hitpoints")+": ");
 		dest.append(getHitPoints() / HITPOINTS_DIVISOR);
 		if (getNumAvailable() > 0) {
-			dest.append("\nproduction: ");
+			dest.append("\n"+Game.getMessage("ultraworm.researchstats.production_lowercase")+": ");
 			dest.append(getNumAvailable());
 		}
 	}
@@ -523,5 +543,13 @@ public abstract class BuildingFeature extends Feature implements ShopItem, Stati
 	 */
 	public float getAgitation() {
 	    return agitation;
+    }
+
+	public Point getFlamesOffset() {
+	    return flamesOffset;
+    }
+
+	public EmitterFeature getFlamesEmitter() {
+	    return flamesEmitterResource;
     }
 }

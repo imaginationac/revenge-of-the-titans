@@ -35,7 +35,10 @@ import org.lwjgl.openal.AL10;
 import org.lwjgl.openal.OpenALException;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
-import com.shavenpuppy.jglib.openal.*;
+import com.shavenpuppy.jglib.openal.ALBuffer;
+import com.shavenpuppy.jglib.openal.ALSource;
+import com.shavenpuppy.jglib.openal.ALStream;
+import com.shavenpuppy.jglib.openal.ALStreamInstance;
 import com.shavenpuppy.jglib.util.PriorityPooled;
 
 import static org.lwjgl.openal.AL10.*;

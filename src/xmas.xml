@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Xmas mode -->
+<resources>
+
+	<include resource="tags.xml"/>
+
+	<include resource="characters-xmas.xml"/>
+	<include resource="world-hoff.xml"/>
+	<include resource="tiles-hoff.xml"/>	
+	<include resource="gidrahs-hoff.xml" />	
+	<include resource="victory-xmas.xml" />	
+	
+	<!-- Gidrahs -->
+	<array
+		name="xmas.gidrahs.array"
+	>
+		<item>gidrah.hoff.01</item>
+		<item>gidrah.hoff.01</item>
+		<item>gidrah.hoff.01</item>
+		<item>gidrah.hoff.01</item>
+		<item>gidrah.hoff.02</item>
+		<item>gidrah.hoff.02</item>
+		<item>gidrah.hoff.02</item>
+		<item>gidrah.hoff.03</item>
+		<item>gidrah.hoff.03</item>
+		<item>gidrah.hoff.04</item>
+	</array>	
+
+	<!-- Angry gidrahs -->	
+	<array
+		name="xmas.angrygidrahs.array"
+	>
+		<item>angrygidrah.hoff.01</item>
+		<item>angrygidrah.hoff.01</item>
+		<item>angrygidrah.hoff.01</item>
+		<item>angrygidrah.hoff.01</item>
+		<item>angrygidrah.hoff.02</item>
+		<item>angrygidrah.hoff.02</item>
+		<item>angrygidrah.hoff.02</item>
+		<item>angrygidrah.hoff.03</item>
+		<item>angrygidrah.hoff.03</item>
+		<item>angrygidrah.hoff.04</item>
+	</array>	
+	
+	<!-- Bosses -->
+	<array name="xmas.bosses.array">
+		<item>gidrah.hoff.boss.1</item>
+		<item>gidrah.hoff.boss.2</item>
+		<item>gidrah.hoff.boss.3</item>
+		<item>gidrah.hoff.boss.4</item>
+		<item>gidrah.hoff.boss.5</item>
+	</array>
+	
+	
+	<setting name="xmas.setting"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>
+		<background>
+			<layers scale="0.625">
+				<sprite layer="12" offset="118,410" animation="story.alert.anim"/>
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+140"/>
+					<scale xscale="1.1" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.mars.01" d="0"/>
+					<frame i="alert.setting.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+		<actor character="xmas.statbot.char" position="140,60" bounds="40,158,250,20" expand="up" mirrored="false" />
+	</setting>
+	
+	<weather
+		name="snow.weather"
+		layer="5"
+		subLayer="10"
+		angle="0.0, 360.0"
+		height="64.0"
+		gravity="0.5, 1.75"
+		minGravity="0.1"
+		acceleration="-0.005,-0.001"
+		startHue="0.5,0.52"
+		startSaturation="0.0, 0.5"
+		startBrightness="1.0"
+		endHue="0.5"
+		endSaturation="0.5, 1.0"
+		endBrightness="0.5,1.0"
+		startScale="0.15, 0.3"
+		endScale="0.1, 0.15"
+		xmod="-8.0, 8.0"
+		wind="0.0, 0.25"
+		density="0.00125"
+		border="32"
+		modRate="4.0"
+	>
+		<animation>
+			<animation name="snow.weather.anim">
+				<alpha alpha="0" d="0"/>
+				<frame i="spriteimage.snow.01" d="0"/>
+				<loop count="64"/>
+				<label id="loop"/>
+				<angle angle="+256" d="0"/>
+				<alpha alpha="+4" d="1"/>
+				<repeat id="loop"/>
+				
+				<label id="forever"/>
+				<angle angle="+256" d="1"/>
+				<goto id="forever"/>
+			</animation>
+		</animation>
+		<groundAnimation>
+			<animation name="snow-finish.weather.anim">
+				<loop count="32"/>
+				<label id="loop"/>
+				<alpha alpha="+-8" d="1"/>
+				<repeat id="loop"/>
+				<event id="1"/>
+			</animation>
+		</groundAnimation>
+	</weather>
+
+	<level name="xmas.level" title="HOFF" colors="hoff.01.colors" world="hoff.world" scenery="hoff.scenery" xmas="true" weather="snow.weather">
+		<story name="xmas.intro" setting="xmas.setting">
+			<char id="xmas.statbot.char">[stats]</char>
+		</story>
+		<!--  Various amusing Titan Christmas Greetings go here: -->
+		<event name="hint.xmas_1" seconds="30" icon="hint.info.layers">
+			<hints><array><item><text>{color:gui-bright}HOLIDAY GREETINGS FROM TITAN!{color:gui-mid} PLEASE ARRANGE YOURSELVES IN CONVENIENT PACKAGING FOR RETURN TO TITAN AS SNACKS.</text></item></array></hints>
+		</event>
+		<event name="hint.xmas_2" seconds="60" icon="hint.info.layers">
+			<hints><array><item><text>AT THIS TIME OF YEAR THE FEAST OF {color:gui-bright}ROASTED HUMANS WITH STUFFING{color:gui-mid} AND {color:gui-bright}MARTIAN SPROUTS{color:gui-mid} IS TRADITIONALLY SERVED.</text></item></array></hints>
+		</event>
+		<event name="hint.xmas_3" seconds="120" icon="hint.info.layers">
+			<hints><array><item><text>HUMANS ARE {color:gui-bright}SLOWLY ROASTED{color:gui-mid} - ALIVE - OVER THE FIRES OF VENUSIAN VOLCANOS FOR APPROXIMATELY THREE DAYS.</text></item></array></hints>
+		</event>
+		<event name="hint.xmas_4" seconds="240" icon="hint.info.layers">
+			<hints><array><item><text>AFTER THE FEAST, {color:gui-bright}WE THROW YOUR BONES{color:gui-mid} TO THE SPAWNLINGS UNDER THE TABLE TO FIGHT OVER.</text></item></array></hints>
+		</event>
+		<event name="hint.xmas_5" seconds="480" icon="hint.info.layers">
+			<hints><array><item><text>HOLIDAY ENTERTAINMENTS ON TITAN CONSIST OF THE {color:gui-bright}TRADITIONAL BOARDGAMES{color:gui-mid} OF GALACTIC CONQUEST AND MONOPOLY.</text></item></array></hints>
+		</event>
+		<event name="hint.xmas_6" seconds="1000" icon="hint.info.layers">
+			<hints><array><item><text>ANOTHER HOLIDAY TRADITION ON TITAN IS THAT THE LOSER OF A GAME OF MONOPOLY IS {color:gui-bright}EATEN FOR DESSERT{color:gui-mid}.</text></item></array></hints>
+		</event>
+		<event name="hint.xmas_7" seconds="2000" icon="hint.info.layers">
+			<hints><array><item><text>AFTER HOLIDAY GIFTS HAVE BEEN EXCHANGED, WE HAVE {color:gui-bright}A CAREFULLY CHOREOGRAPHED SEQUENCE OF RITUAL INSULTS{color:gui-mid}.</text></item></array></hints>
+		</event>
+		<event name="hint.xmas_8" seconds="3500" icon="hint.info.layers">
+			<hints><array><item><text>THE POST-HOLIDAY PERIOD IS MARKED USUALLY WITH {color:gui-bright}AN INVASION OF A NEARBY PLANET{color:gui-mid}...</text></item></array></hints>
+		</event>
+		<event name="hint.xmas_8" seconds="3510" icon="hint.info.layers">
+			<hints><array><item><text>...SUCH AS YOUR FEEBLE EXCUSE FOR A WORLD. {color:gui-bright}PREPARE TO BE EATEN!{color:gui-mid}</text></item></array></hints>
+		</event>
+	</level>
+	
+
+	
+
+</resources>

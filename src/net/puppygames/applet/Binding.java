@@ -32,10 +32,22 @@
 
 package net.puppygames.applet;
 
-import java.io.*;
-import java.util.*;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
-import org.lwjgl.input.*;
+import org.lwjgl.input.Controller;
+import org.lwjgl.input.Controllers;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 
 import com.shavenpuppy.jglib.resources.Feature;
 
@@ -249,7 +261,6 @@ public class Binding extends Feature {
 	 */
 	public static void load(InputStream stream) throws Exception {
 		ObjectInputStream ois = new ObjectInputStream(stream);
-		@SuppressWarnings("unchecked")
         List<SavedBinding> newBindings = (List<SavedBinding>) ois.readObject();
 		for (SavedBinding b : newBindings) {
 			setBinding(b.name, b.type, b.index);

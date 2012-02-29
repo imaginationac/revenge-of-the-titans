@@ -48,7 +48,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class RandomGotoCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The sequence numbers or labels we go to */
 	private Object[] destinations;
@@ -64,7 +64,7 @@ public class RandomGotoCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		Object s = destinations[Util.random(0, destinations.length - 1)];
 		if (s instanceof String) {
 			int d = target.getAnimation().getLabel((String) s);

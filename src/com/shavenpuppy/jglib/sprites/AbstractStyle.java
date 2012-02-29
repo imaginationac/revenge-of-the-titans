@@ -32,12 +32,13 @@
 package com.shavenpuppy.jglib.sprites;
 
 import com.shavenpuppy.jglib.Resource;
-import com.shavenpuppy.jglib.util.FloatList;
 
 /**
  * Convenient base class implementation of {@link Style}
  */
 public abstract class AbstractStyle extends Resource implements Style {
+
+	private static final long serialVersionUID = 1L;
 
 	public AbstractStyle() {
 	}
@@ -49,6 +50,11 @@ public abstract class AbstractStyle extends Resource implements Style {
 	@Override
 	public boolean getRenderSprite() {
 		return false;
+	}
+
+	@Override
+	public AlphaOp getAlphaOp() {
+	    return null;
 	}
 
 	@Override
@@ -65,12 +71,12 @@ public abstract class AbstractStyle extends Resource implements Style {
 	}
 
 	@Override
-	public FloatList build() {
+	public GeometryData build() {
 		return null;
 	}
 
 	@Override
-	public void render(int vertexOffset) {
+	public void render(int vertexOffset, int indexOffset) {
 	}
 
 }

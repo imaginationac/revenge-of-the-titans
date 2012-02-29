@@ -45,7 +45,7 @@
 	<widgetbackground name="moon.human-speech-right.background" inherit="human-speech-right.background" color="moon.colormap:bubble" insets="40,24,24,24" />		
 	<widgetbackground name="moon.human-speech-left.background" inherit="human-speech-left.background" color="moon.colormap:bubble" insets="28,24,40,24" />		
 	<widgetbackground name="moon.info.background" inherit="info.background" color="moon.colormap:bubble" insets="24,28,24,24" />	
-	<widgetbackground name="moon.tech.background" inherit="info.background" color="moon.colormap:bubble" insets="135,28,24,24" />	
+	<widgetbackground name="moon.tech.background" inherit="info.background" color="moon.colormap:bubble" insets="=$research.tech.inset.l,28,24,24" />	
 	<widgetbackground name="moon.delivery.background" inherit="info.background" color="moon.colormap:bubble" insets="145,28,24,24" />	
 
 
@@ -849,6 +849,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tankfactory.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.tankfactory.01"/>
+				<sprite layer="12" image="spriteimage.info.tankfactory.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.tankfactory.top.01" colored="moon.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -859,6 +864,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.repairdrones.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.repairdrones.01"/>
+				<sprite layer="12" image="spriteimage.info.repairdrones.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.repairdrones.top.01" colored="moon.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -869,6 +879,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.scarecrow.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.scarecrow.01"/>
+				<sprite layer="12" image="spriteimage.info.scarecrow.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.scarecrow.top.01" colored="moon.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -879,9 +894,14 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="moon.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.cloakingdevice.ground.01"/>				
+				<sprite layer="11" bottomColored="moon.colormap:info-floor" topColored="moon.colormap:info-building" image="spriteimage.info.cloakingdevice.01"/>
+				<sprite layer="12" image="spriteimage.info.cloakingdevice.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.cloakingdevice.top.01" colored="moon.colormap:info-alt" />
 			</layers>
 		</idleLayers>
-	</character>	
+	</character>
 	
 	
 	<!-- MINES ============================================================================================================================ -->

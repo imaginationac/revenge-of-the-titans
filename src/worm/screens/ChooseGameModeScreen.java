@@ -32,21 +32,26 @@
 package worm.screens;
 
 import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
 import net.puppygames.applet.Screen;
-import worm.*;
+import worm.Res;
+import worm.Worm;
+import worm.WormGameState;
 
 /**
  * Choose a game to play
  */
 public class ChooseGameModeScreen extends Screen {
 
-	private static ChooseGameModeScreen instance;
+	private static final long serialVersionUID = 1L;
 
 	private static final String ID_CANCEL = "cancel";
 	private static final String ID_RESTORE = "mode_restore";
 	private static final String ID_CAMPAIGN = "mode_campaign";
 	private static final String ID_ENDLESS = "mode_endless";
 	private static final String ID_SURVIVAL = "mode_survival";
+	private static final String ID_SANDBOX = "mode_sandbox";
+	private static final String ID_XMAS = "mode_xmas";
 
 	private static final String ID_BUTTON = "mode_";
 	private static final String ID_TITLE = "_title";
@@ -64,25 +69,11 @@ public class ChooseGameModeScreen extends Screen {
 		setAutoCreated();
 	}
 
-	public static void show() {
-		instance.open();
-	}
-
-	@Override
-	protected void doRegister() {
-		instance = this;
-	}
-
-	@Override
-	protected void doDeregister() {
-		instance = null;
-	}
-
 	@Override
 	protected void onOpen() {
 		setGroupVisible(GROUP_LABELS, false);
 		Worm.setMouseAppearance(Res.getMousePointer());
-		setEnabled(ID_RESTORE, Game.isRestoreAvailable());
+		setEnabled(ID_RESTORE, MiniGame.isRestoreAvailable());
 	}
 
 	@Override
@@ -91,7 +82,7 @@ public class ChooseGameModeScreen extends Screen {
 			close();
 		} else if (ID_RESTORE.equals(id)) {
 			close();
-			Game.restoreGame();
+			MiniGame.restoreGame();
 		} else if (ID_CAMPAIGN.equals(id)) {
 			close();
 			Worm.newGame(WormGameState.GAME_MODE_CAMPAIGN);
@@ -101,10 +92,25 @@ public class ChooseGameModeScreen extends Screen {
 		} else if (ID_SURVIVAL.equals(id)) {
 			close();
 			if (Worm.getMaxLevel(WormGameState.GAME_MODE_CAMPAIGN) < 10) {
-				net.puppygames.applet.Res.getCancelDialog().doModal("SURVIVAL MODE", "SURVIVAL MODE IS UNLOCKED BY COMPLETING THE {color:text-bold}EARTH CAMPAIGN LEVELS!{color:text}\n\nTHE BUILDINGS AVAILABLE TO YOU ARE DETERMINED BY YOUR PROGRESS IN CAMPAIGN MODE.", null);
+				Res.getModeLockedDialog().doModal
+					(
+						Game.getMessage("ultraworm.choosegamemode.title"),
+						Game.getMessage("ultraworm.choosegamemode.message"),
+						null
+					);
 			} else {
 				Worm.newGame(WormGameState.GAME_MODE_SURVIVAL);
 			}
+		} else if (ID_SANDBOX.equals(id)) {
+			if (Worm.isSandboxRegistered()) {
+				close();
+				SelectSandboxLevelScreen.show();
+			} else {
+				SandboxRegisterScreen.show();
+			}
+		} else if (ID_XMAS.equals(id)) {
+			close();
+			Worm.newGame(WormGameState.GAME_MODE_XMAS);
 		}
 	}
 

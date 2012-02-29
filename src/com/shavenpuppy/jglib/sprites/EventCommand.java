@@ -42,7 +42,7 @@ import com.shavenpuppy.jglib.XMLResourceWriter;
  */
 public class EventCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The event to set */
 	private int event;
@@ -58,7 +58,7 @@ public class EventCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		target.setEvent(event);
 		target.setSequence(target.getSequence() + 1);
 		return true;

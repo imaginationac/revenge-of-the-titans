@@ -105,6 +105,7 @@ public class ShieldGeneratorBuildingFeature extends BuildingFeature {
 			||	feature instanceof BarracksBuildingFeature
 			||	feature instanceof CollectorBuildingFeature
 			||	feature instanceof AutoLoaderBuildingFeature
+			|| 	feature instanceof CloakBuildingFeature
 			;
 	}
 

@@ -33,7 +33,12 @@ package com.shavenpuppy.jglib.resources;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import org.lwjgl.util.Color;
 import org.lwjgl.util.ReadableColor;
@@ -63,7 +68,7 @@ public class ColorMapFeature extends Feature implements ReadableColorMap {
 		public final int order;
 
 		public ColorName(String name, int order) {
-			this.name = name;
+			this.name = name.toLowerCase();
 			this.order = order;
 		}
 
@@ -221,6 +226,7 @@ public class ColorMapFeature extends Feature implements ReadableColorMap {
 	 * @param newColor
 	 */
 	public void setColor(String name, ReadableColor newColor) {
+		name = name.toLowerCase();
 		Color oldColor = colorMap.get(name);
 		if (oldColor == null) {
 			oldColor = new Color();

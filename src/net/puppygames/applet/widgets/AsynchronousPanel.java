@@ -31,13 +31,12 @@
  */
 package net.puppygames.applet.widgets;
 
+import net.puppygames.applet.Game;
 import net.puppygames.applet.effects.Effect;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.util.ReadableDimension;
-
-import com.shavenpuppy.jglib.sprites.SimpleRenderer;
 
 /**
  * Displays aysnchronous operations progress and error messages
@@ -100,11 +99,8 @@ public class AsynchronousPanel extends Effect {
 		this.modal = modal;
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doSpawn()
-	 */
 	@Override
-	protected void doSpawn() {
+	protected void doSpawnEffect() {
 		if (modal) {
 			wasEnabled = getScreen().isEnabled();
 			getScreen().setEnabled(false);
@@ -112,17 +108,11 @@ public class AsynchronousPanel extends Effect {
 		worker.start();
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doRender()
-	 */
 	@Override
-	protected void doRender() {
-		messageBox.render(SimpleRenderer.GL_RENDERER);
+	protected void render() {
+		messageBox.render(this);
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doTick()
-	 */
 	@Override
 	protected void doTick() {
 		if (getScreen().isClosed() || getScreen().isClosing()) {
@@ -132,17 +122,11 @@ public class AsynchronousPanel extends Effect {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Tickable#isActive()
-	 */
 	@Override
-	public synchronized boolean isActive() {
+	public synchronized boolean isEffectActive() {
 		return !finished;
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doRemove()
-	 */
 	@Override
 	protected synchronized void doRemove() {
 		finished = true;
@@ -153,8 +137,8 @@ public class AsynchronousPanel extends Effect {
 				boolean done;
 
 				@Override
-				protected void doRender() {
-					errorMessageBox.render(SimpleRenderer.GL_RENDERER);
+				protected void render() {
+					errorMessageBox.render(this);
 				}
 
 				@Override
@@ -174,7 +158,7 @@ public class AsynchronousPanel extends Effect {
 				}
 
 				@Override
-				public boolean isActive() {
+				public boolean isEffectActive() {
 					return !done;
 				}
 
@@ -194,7 +178,7 @@ public class AsynchronousPanel extends Effect {
 	 */
 	private synchronized void onException(Exception e) {
 		errorMessageBox = new MessageBox();
-		errorMessageBox.setTitle("Problems");
+		errorMessageBox.setTitle(Game.getMessage("lwjglapplets.async.title"));
 		errorMessageBox.setMessage(op.getErrorMessage());
 		errorMessageBox.setSize(size.getWidth(), size.getHeight());
 		e.printStackTrace(System.err);

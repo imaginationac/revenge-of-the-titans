@@ -32,6 +32,7 @@
 package net.puppygames.applet.screens;
 
 import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
 import net.puppygames.applet.Screen;
 
 
@@ -43,7 +44,7 @@ import net.puppygames.applet.Screen;
  */
 public class NagScreen extends Screen {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private static final int NAG_DURATION = 300;
 
@@ -83,7 +84,6 @@ public class NagScreen extends Screen {
 	 * @param exitOnClose Exit the game when the screen is dismissed
 	 */
 	public static void show(String reason, boolean exitOnClose) {
-		System.out.println("Nag: "+reason+", "+exitOnClose);
 		NagScreen.exitOnClose = exitOnClose;
 		if (!instance.isCreated()) {
 			try {
@@ -112,10 +112,10 @@ public class NagScreen extends Screen {
 	@Override
 	protected void onClicked(String id) {
 		if (BUY.equals(id)) {
-			Game.buy(true);
+			MiniGame.buy(true);
 		} else if (LATER.equals(id)) {
 			if (exitOnClose) {
-				Game.clearBuy();
+				MiniGame.clearBuy();
 				Game.exit();
 			} else {
 				TitleScreen.show();

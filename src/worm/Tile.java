@@ -31,18 +31,26 @@
  */
 package worm;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import net.puppygames.applet.effects.EmitterFeature;
 
 import org.lwjgl.util.Point;
 import org.w3c.dom.Element;
 
-import worm.features.*;
+import worm.features.DecalFeature;
+import worm.features.LayersFeature;
+import worm.features.TileSetFeature;
 
 import com.shavenpuppy.jglib.Resources;
-import com.shavenpuppy.jglib.resources.*;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.MappedColor;
+import com.shavenpuppy.jglib.resources.ResourceArray;
+import com.shavenpuppy.jglib.sprites.Animation;
+import com.shavenpuppy.jglib.sprites.Sprite;
+import com.shavenpuppy.jglib.sprites.SpriteImage;
 import com.shavenpuppy.jglib.util.Util;
 import com.shavenpuppy.jglib.util.XMLUtil;
 

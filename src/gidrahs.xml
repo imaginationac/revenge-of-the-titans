@@ -1384,6 +1384,127 @@
 	</emitter>
 
 
+	<!-- HOFF gidrah stuff... -->
+	
+	<emitter name="gidrah.hoff.death.emitter" inherit="gidrah.death.emitter" appearance="sparkle.glitter.animation" rotate="false"
+			startHue="0,1" endHue="0" startSaturation="0.5,1" velocity="4.0, 8.0" particleDuration="30,50" fadeDuration="40,60" startScale="1.0,1.5" scale="0.7,0.8" endScale="0.5,0.6">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0,1" endHue="0" startBrightness="1" endBrightness="0.5" emitterScale="0.8" /></slave>
+	</emitter>
+	<emitter name="gidrah.hoff.death.flash.emitter" inherit="gidrah.death.flash.emitter" startHue="0,1" endHue="0,1" >
+		<slave><emitter inherit="gidrah.death.light.emitter"  startHue="0,1" endHue="0,1" >
+			<slave><emitter inherit="gidrah.death.background.emitter"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.hoff.death.large.emitter" inherit="gidrah.death.emitter" appearance="sparkle.glitter.animation" rotate="false"
+		startHue="0,1" endHue="0" startSaturation="0.5,1" velocity="5.0, 9.0" particleDuration="30,50" fadeDuration="40,60" startScale="1.0,1.5" scale="0.7,0.8" endScale="0.5,0.6" particlesPerTick="10,15" emitterScale="0.85">
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0,1" endHue="0" startBrightness="1" endBrightness="0.5" emitterScale="1.0" /></slave>
+	</emitter>
+	<emitter name="gidrah.hoff.death.flash.large.emitter" inherit="gidrah.death.flash.emitter" emitterScale="2" startHue="0,1" endHue="0,1" >
+		<slave><emitter inherit="gidrah.death.light.emitter" emitterScale="2" startHue="1" endHue="0.5,1" >
+			<slave><emitter inherit="gidrah.death.background.emitter"/></slave></emitter></slave>
+	</emitter>
+
+	<emitter name="gidrah.hoff.deflect.emitter" inherit="deflect.emitter" startHue="1" endHue="0.5,1"/>
+	<emitter name="gidrah.hoff.deflect.large.emitter" inherit="gidrah.hoff.deflect.emitter" emitterScale="0.9"/>
+	<emitter name="gidrah.hoff.deflect.boss.emitter" inherit="gidrah.hoff.deflect.emitter" emitterScale="0.85" appearance="spriteimage.particle.deflect.boss.01"/>
+
+	<emitter name="gidrah.hoff.stun.emitter" inherit="gidrah.hoff.death.flash.emitter" startHue="1" endHue="1" emitterScale="0.5">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="1" endHue="0.5,1" emitterScale="0.5">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.5"/></slave></emitter></slave>
+	</emitter>
+	<emitter name="gidrah.hoff.stun.large.emitter" inherit="gidrah.hoff.death.flash.large.emitter" startHue="1" endHue="0.5,1" emitterScale="0.8">
+		<slave><emitter inherit="gidrah.death.light.emitter" startHue="1" endHue="0.5,1" emitterScale="0.8">
+			<slave><emitter inherit="gidrah.death.background.emitter" emitterScale="0.8"/></slave></emitter></slave>
+	</emitter>
+
+
+	<!-- HOFF boss stuff... -->
+
+	<emitter name="gidrah.hoff.death.boss.start.emitter" sound="mine.buffer" inherit="gidrah.death.emitter" appearance="sparkle.glitter.animation" rotate="false" angle="0, 360.0" 
+			emitterScale="0.75" velocity="6.0, 10.0" particlesPerTick="40" delay="115" startHue="1" endHue="0.5,1" fadeDuration="20.0, 80.0" >
+		<slave><emitter inherit="explosion.shrapnel.trail.emitter" startHue="0.5,1" endHue="1" endBrightness="0.1,0.5" emitterScale="0.65" /></slave>
+	</emitter>
+	<emitter name="gidrah.hoff.death.flash.boss.start.emitter" inherit="gidrah.death.flash.emitter" emitterScale="3.0" delay="115" >
+		<slave><emitter inherit="gidrah.death.light.emitter" emitterScale="3.0" startHue="1" endHue="1" /></slave>
+	</emitter>
+
+ 
+	<emitter name="gidrah.hoff.death.boss.fall.emitter"
+		inherit="fire.smoke.emitter"
+		sound="bossFall.buffer"
+		delay="197"
+	
+		tag="smoke"
+		duration="3.0"
+		particlesPerTick="12.0, 20.0"
+		appearance="smoke.animation"
+		layer="5"
+		subLayer="6"
+		velocity="0.0, 70.0"
+		acceleration="-70.0"
+		radius="0.0"
+		startScale="0.1, 0.2"
+		scale="0.4, 0.5"
+		endScale="0.8, 1.2"
+		gravityX="-0.015, 0.015"
+		gravityY="0.005, 0.02"
+		particleDuration="10.0, 20.0"
+		fadeDuration="20.0, 60.0"
+		startHue="0.52"
+		startSaturation="0.0, 0.3"
+		startBrightness="1.0"
+		endHue="0.52"
+		endSaturation="0.65, 1.0"
+		endBrightness="0.5, 1.0"
+		angle="0.0"
+		relativeRotate="true"
+		emitterScale="0.75"
+		doYOffset="true"
+	>
+	<slave>
+		<emitter
+			duration="1.0"
+			particlesPerTick="1.0"
+			appearance="snow.anim"
+			layer="5"
+			subLayer="6"
+			velocity="1.0, 3.0"
+			acceleration="-0.1, -0.2"
+			startScale="0.1, 0.15"
+			scale="0.15, 0.25"
+			endScale="0.1"
+			gravityY="-0.01, -0.005"
+			particleDuration="8.0, 24.0"
+			fadeDuration="8.0, 24.0"
+			startHue="0.52"
+			startSaturation="0.0, 0.5"
+			startBrightness="1.0"
+			endHue="0.52"
+			endSaturation="0.5, 1.0"
+			endBrightness="0.1, 0.8"
+			angle="30.0, 150.0"
+			doYOffset="true"
+		/>
+	</slave>
+</emitter>
+	
+	
+		
+	<emitter name="gidrah.hoff.death.boss.end.sparks.emitter" inherit="gidrah.death.emitter" appearance="sparkle.glitter.animation" rotate="false" startHue="0,1" endHue="0,1" 
+		fadeDuration="40.0, 128.0" emitterScale="0.7" velocity="8.0, 20.0" duration="5" particlesPerTick="10,15" angle="10,170" delay="385" > <!-- infinite="true" delayAfter="49"> -->
+			<slave><emitter inherit="explosion.shrapnel.trail.emitter" appearance="glitter.animation" startHue="0,1" endHue="1" startBrightness="1" endBrightness="0.5" emitterScale="0.6" /></slave>
+	</emitter>
+	<emitter name="gidrah.hoff.death.flash.boss.end.emitter" emitterScale="2.0" inherit="building.explosion.flash.light.emitter" delay="385" startHue="1" endHue="1" endBrightness="1">
+		<slave><emitter inherit="building.explosion.flash.strobe.emitter" emitterScale="2.0" />
+	</slave></emitter>	
+
+	<emitter name="gidrah.hoff.death.boss.end.emitter" sound="buildingExplosion.buffer" inherit="building.explosion.fire.emitter" appearance="explosion-01.animation" emitterScale="1.0" duration="10" delay="390">
+		<chain><emitter inherit="explosion.smoke.emitter" emitterScale="1.5" fadeDuration="128,256" startHue="0,1" endHue="0,1" delay="390"/></chain>
+	</emitter>	 
+	
+	
+	
+	
 	<include resource="gidrahs-earth.xml" />
 	<include resource="gidrahs-moon.xml" />
 	<include resource="gidrahs-mars.xml" />

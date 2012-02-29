@@ -36,7 +36,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import net.puppygames.applet.effects.EmitterFeature;
-import worm.*;
+import worm.CrystalResource;
+import worm.Hints;
+import worm.Res;
+import worm.SFX;
+import worm.Worm;
+import worm.WormGameState;
 import worm.effects.ElectronZapEffect;
 import worm.entities.Building;
 import worm.entities.Factory;
@@ -252,8 +257,8 @@ public class FactoryBuildingFeature extends BuildingFeature {
 									128,
 									beamStartEmitter,
 									beamEndEmitter,
-									getMapX() + getCollisionX() + BEAM_X_OFFSET,
-									getMapY() + getCollisionY() + BEAM_Y_OFFSET,
+									getX() + BEAM_X_OFFSET,
+									getY() + BEAM_Y_OFFSET,
 									MAX_WIDTH,
 									MAX_WOBBLE,
 									WOBBLE_FACTOR,
@@ -315,6 +320,7 @@ public class FactoryBuildingFeature extends BuildingFeature {
 				feature instanceof WarehouseBuildingFeature
 			|| 	feature instanceof CollectorBuildingFeature
 			|| 	feature instanceof ShieldGeneratorBuildingFeature
+			|| 	feature instanceof CloakBuildingFeature
 			||	feature instanceof CrystalFeature;
 	}
 

@@ -39,7 +39,7 @@
 
 	<!-- insets are nor inherited here - odd ? -->
 
-	<widgetbackground name="survival.background" inherit="human-speech-top-left.background" color="!0,255,255,100" insets="24,40,24,45" />	
+	<widgetbackground name="survival.background" inherit="human-speech-top-left.background" color="!0,255,255,100" insets="24,40,24,55" />	
 
 	<!-- STAT BOT ============================================================================================================================ -->
 

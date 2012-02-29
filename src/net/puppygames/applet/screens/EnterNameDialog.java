@@ -33,7 +33,11 @@ package net.puppygames.applet.screens;
 
 import java.util.prefs.BackingStoreException;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Area;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.PlayerSlot;
+import net.puppygames.applet.Res;
+import net.puppygames.applet.TickableObject;
 import net.puppygames.applet.effects.SFX;
 import net.puppygames.applet.widgets.TextField;
 
@@ -44,7 +48,7 @@ import com.shavenpuppy.jglib.resources.MappedColor;
  */
 public class EnterNameDialog extends DialogScreen {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** End screen instance */
 	private static EnterNameDialog instance;
@@ -84,9 +88,6 @@ public class EnterNameDialog extends DialogScreen {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see genesis.Screen#doCreateScreen()
-	 */
 	@Override
 	protected void doCreateScreen() {
 		nameField = new TextField(14, getArea(NAME).getBounds().getWidth()) {
@@ -127,17 +128,11 @@ public class EnterNameDialog extends DialogScreen {
 		nameField.setLocation(name_x + field.getBounds().getX(), name_y + field.getBounds().getY());
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doRegister()
-	 */
 	@Override
 	protected void doRegister() {
 		instance = this;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doDeregister()
-	 */
 	@Override
 	protected void doDeregister() {
 		instance = null;
@@ -156,13 +151,10 @@ public class EnterNameDialog extends DialogScreen {
 			}
 		}
 		instance.setAllowCancel(allowCancel);
-		instance.doModal("PROFILE NAME", "", callback);
+		instance.doModal(Game.getMessage("lwjglapplets.enternamedialog.profile_name"), "", callback);
 		instance.open();
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.DialogScreen#doOnOpen()
-	 */
 	@Override
 	protected void doOnOpen() {
 		Game.setPauseEnabled(false);
@@ -186,10 +178,6 @@ public class EnterNameDialog extends DialogScreen {
 		nameObject.spawn(this);
 	}
 
-
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.screens.DialogScreen#doOnClose()
-	 */
 	@Override
 	protected void doOnClose() {
 		Game.setPauseEnabled(true);
@@ -199,9 +187,6 @@ public class EnterNameDialog extends DialogScreen {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see genesis.Screen#onClicked(java.lang.String)
-	 */
 	@Override
 	protected void onClicked(String id) {
 		if (id.equals(NAME)) {
@@ -209,7 +194,7 @@ public class EnterNameDialog extends DialogScreen {
 		} else if (id.equals(OK)) {
 			PlayerSlot newSlot = new PlayerSlot(nameField.getText().trim().toLowerCase());
 			if (newSlot.exists()) {
-				Res.getErrorDialog().doModal("ERROR!", "THAT PROFILE NAME ALREADY EXISTS. PLEASE TRY ANOTHER NAME, OR CANCEL AND SELECT THAT PROFILE.", null);
+				Res.getErrorDialog().doModal(Game.getMessage("lwjglapplets.enternamedialog.error"), Game.getMessage("lwjglapplets.enternamedialog.exists"), null);
 				return;
 			}
 			try {
@@ -219,7 +204,7 @@ public class EnterNameDialog extends DialogScreen {
 				close();
 			} catch (BackingStoreException e) {
 				e.printStackTrace(System.err);
-				Res.getErrorDialog().doModal("ERROR!", "SORRY, CAN'T USE THAT PROFILE NAME. PLEASE TRY ANOTHER.", null);
+				Res.getErrorDialog().doModal(Game.getMessage("lwjglapplets.enternamedialog.error"), Game.getMessage("lwjglapplets.enternamedialog.generalerror"), null);
 				return;
 			}
 		} else if (id.equals(CANCEL) && allowCancel) {
@@ -228,9 +213,6 @@ public class EnterNameDialog extends DialogScreen {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see genesis.Screen#doTick()
-	 */
 	@Override
 	protected void doTick() {
 		if (!isBlocked()) {

@@ -34,7 +34,9 @@ package worm.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.puppygames.applet.effects.*;
+import net.puppygames.applet.effects.BlastEffect;
+import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.EmitterFeature;
 
 import org.lwjgl.util.Rectangle;
 
@@ -96,7 +98,7 @@ public class Bomb extends Entity {
 		feature.getAppearance().createSprites(GameScreen.getInstance(), x, y, this);
 
 		float z = carrier.getFinalYOffset();
-		getSprite(0).setOffset(0.0f, z, 0);
+		getSprite(0).setOffset(0.0f, z);
 		getSprite(0).setChildYOffset(z*1.0f/FPMath.floatValue(getSprite(0).getYScale()));
 
 		emitter = feature.getAppearance().createEmitters(GameScreen.getInstance(), x, y);
@@ -148,7 +150,7 @@ public class Bomb extends Entity {
 		setLocation(x, y);
 
 		float z = carrier.getFinalYOffset();
-		getSprite(0).setOffset(0.0f, z, 0);
+		getSprite(0).setOffset(0.0f, z);
 		getSprite(0).setChildYOffset(z*1.0f/FPMath.floatValue(getSprite(0).getYScale()));
 
 		if (emitter != null) {
@@ -177,7 +179,7 @@ public class Bomb extends Entity {
 			return;
 		}
 
-		getSprite(0).setOffset(0.0f, z, 0);
+		getSprite(0).setOffset(0.0f, z);
 		getSprite(0).setChildYOffset(z*1.0f/FPMath.floatValue(getSprite(0).getYScale()));
 
 		if (emitter != null) {

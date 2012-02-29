@@ -33,12 +33,21 @@ package worm.buildings;
 
 import java.util.ArrayList;
 
-import net.puppygames.applet.effects.*;
-import worm.*;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.effects.BlastEffect;
+import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.EmitterFeature;
+import worm.ClickAction;
+import worm.Entity;
+import worm.Mode;
+import worm.Res;
 import worm.SFX;
+import worm.Worm;
 import worm.entities.Building;
 import worm.entities.Gidrah;
-import worm.features.*;
+import worm.features.GidrahFeature;
+import worm.features.LayersFeature;
+import worm.features.ResearchFeature;
 import worm.screens.GameScreen;
 
 import com.shavenpuppy.jglib.resources.ResourceArray;
@@ -351,35 +360,35 @@ public class MinefieldFeature extends BuildingFeature {
 	public void getResearchStats(StringBuilder stats_1_text, StringBuilder stats_2_text) {
 		super.getResearchStats(stats_1_text, stats_2_text);
 
-		stats_1_text.append("\n{font:tinyfont.glfont color:text}USES: {font:tinyfont.glfont color:text-bold}");
+		stats_1_text.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.uses")+": {font:tinyfont.glfont color:text-bold}");
 		stats_1_text.append(uses);
 
-		stats_2_text.append("\n{font:tinyfont.glfont color:text}BLAST RADIUS: {font:tinyfont.glfont color:text-bold}");
+		stats_2_text.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.blast_radius")+": {font:tinyfont.glfont color:text-bold}");
 		stats_2_text.append((int) explosionRadius);
 		stats_2_text.append("m");
 
-		stats_2_text.append("\n{font:tinyfont.glfont color:text}DAMAGE: {font:tinyfont.glfont color:text-bold}");
+		stats_2_text.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.damage")+": {font:tinyfont.glfont color:text-bold}");
 		stats_2_text.append(damage);
-		stats_2_text.append("\n{font:tinyfont.glfont color:text}PRODUCTION: {font:tinyfont.glfont color:text-bold}");
+		stats_2_text.append("\n{font:tinyfont.glfont color:text}"+Game.getMessage("ultraworm.researchstats.production")+": {font:tinyfont.glfont color:text-bold}");
 		stats_2_text.append(getNumAvailable());
-		stats_2_text.append("/LEVEL");
+		stats_2_text.append("/"+Game.getMessage("ultraworm.researchstats.level"));
 	}
 
 	@Override
 	protected String getBuildingType() {
-		return "explosive";
+		return Game.getMessage("ultraworm.researchstats.building_type_explosive");
 	}
 
 	@Override
 	public void appendBasicStats(StringBuilder dest) {
-		dest.append("damage: ");
+		dest.append(Game.getMessage("ultraworm.researchstats.damage_lowercase")+": ");
 		dest.append(damage);
-		dest.append("\n blast radius: ");
+		dest.append("\n "+Game.getMessage("ultraworm.researchstats.blast_radius_lowercase")+": ");
 		dest.append((int) (explosionRadius * 6.25f));
-		dest.append(" M \n uses: ");
+		dest.append(" M \n "+Game.getMessage("ultraworm.researchstats.uses_lowercase")+": ");
 		dest.append(uses);
-		dest.append("\n production: ");
+		dest.append("\n "+Game.getMessage("ultraworm.researchstats.production_lowercase")+": ");
 		dest.append(getNumAvailable());
-		dest.append("/LEVEL");
+		dest.append("/"+Game.getMessage("ultraworm.researchstats.level"));
 	}
 }

@@ -33,30 +33,70 @@ package com.shavenpuppy.jglib.resources;
 
 import java.io.Serializable;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadableRectangle;
+import org.lwjgl.util.Rectangle;
+import org.lwjgl.util.WritableDimension;
 import org.w3c.dom.Element;
 
+import com.shavenpuppy.jglib.opengl.ColorUtil;
 import com.shavenpuppy.jglib.opengl.GLBaseTexture;
 import com.shavenpuppy.jglib.opengl.GLRenderable;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.AlphaOp;
+import com.shavenpuppy.jglib.sprites.SimpleRenderable;
+import com.shavenpuppy.jglib.sprites.SimpleRenderer;
+import com.shavenpuppy.jglib.sprites.SpriteImage;
 
 import static org.lwjgl.opengl.GL11.*;
 
 /**
- * $Id: Background.java,v 1.31 2011/04/18 23:28:06 cix_foo Exp $
+ * $Id: Background.java,v 1.32 2011/08/02 16:10:36 cix_foo Exp $
  * <p>
  * A Background is a texture split up into 9 areas. The corner areas
  * are absolute in size; the edges and middle are tiled to fit the background.
  * @author $Author: cix_foo $
- * @version $Revision: 1.31 $
+ * @version $Revision: 1.32 $
  */
 public class Background extends Feature {
 
 	private static final long serialVersionUID = 1L;
 
+	private static final GLRenderable SETUP_BLEND = new GLRenderable() {
+		@Override
+		public void render() {
+			glEnable(GL_TEXTURE_2D);
+			glEnable(GL_BLEND);
+			glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+		}
+	};
 
-	/** Temp stuff */
-	private static GLBaseTexture current;
+	private static final GLRenderable SETUP_OPAQUE = new GLRenderable() {
+		@Override
+		public void render() {
+			glEnable(GL_TEXTURE_2D);
+			glEnable(GL_BLEND);
+			glBlendFunc(GL_ONE, GL_ZERO);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+		}
+	};
+
+	public static enum Blend {
+		TRANSPARENT(SETUP_BLEND, AlphaOp.PREMULTIPLY),
+		GLOWING(SETUP_BLEND, AlphaOp.ZERO),
+		OPAQUE(SETUP_OPAQUE, AlphaOp.KEEP);
+
+		final GLRenderable op;
+		final AlphaOp alphaOp;
+
+		Blend(GLRenderable op, AlphaOp alphaOp) {
+			this.op = op;
+			this.alphaOp = alphaOp;
+		}
+	}
+
+	private static final Color TEMP = new Color();
 
 	/*
 	 * Resource data
@@ -77,6 +117,9 @@ public class Background extends Feature {
 	/** Insets */
 	private Rectangle insets;
 
+	/** Default blending */
+	private Blend blend = Blend.TRANSPARENT;
+
 	/*
 	 * Transient data
 	 */
@@ -87,39 +130,34 @@ public class Background extends Feature {
 	/**
 	 * Instances of the Background
 	 */
-	public class Instance implements SimpleRenderable, Renderable, Serializable {
+	public class Instance implements SimpleRenderable, Serializable {
 
 		private static final long serialVersionUID = 1L;
+
+		/** Temp stuff */
+		private transient GLBaseTexture current;
 
 		private ReadableRectangle bounds;
 		private ReadableColor instanceColor = Color.WHITE;
 		private final Color blendColor = new Color();
 		private SimpleRenderer renderer;
 		private int alpha = 255;
+		private Blend blend = Background.this.blend;
 
 		private Instance() {
 		}
 
-		@Override
-		public void render() {
-			glEnable(GL_TEXTURE_2D);
-			glEnable(GL_BLEND);
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-			renderBackground();
-		}
+		/**
+		 * Sets the blend mode. Defaults to TRANSPARENT.
+		 * @param blend
+		 */
+		public void setBlend(Blend blend) {
+	        this.blend = blend;
+        }
 
 		@Override
 		public void render(SimpleRenderer renderer) {
-			renderer.glRender(new GLRenderable() {
-				@Override
-				public void render() {
-					glEnable(GL_TEXTURE_2D);
-					glEnable(GL_BLEND);
-					glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-					glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-				}
-			});
+			renderer.glRender(blend.op);
 			renderBackground(renderer);
 		}
 
@@ -135,15 +173,8 @@ public class Background extends Feature {
 			drawTop();
 			drawRight();
 			drawTopRight();
-			if (current != null) {
-				renderer.glEnd();
-				current = null;
-			}
+			current = null;
 			renderer = null;
-		}
-
-		public void renderBackground() {
-			renderBackground(SimpleRenderer.GL_RENDERER);
 		}
 
 		private int getW() {
@@ -233,28 +264,31 @@ public class Background extends Feature {
 					(int) (bottomLeftColor.getBlue() * topRightRatio + topLeftColor.getBlue() * bottomRightRatio + bottomRightColor.getBlue() * topLeftRatio + topRightColor.getBlue() * bottomLeftRatio),
 					(int) (bottomLeftColor.getAlpha() * topRightRatio + topLeftColor.getAlpha() * bottomRightRatio + bottomRightColor.getAlpha() * topLeftRatio + topRightColor.getAlpha() * bottomLeftRatio)
 				);
-			renderer.glColor4ub
-				(
-					(byte) (blendColor.getRed() * instanceColor.getRed() / 255),
-					(byte) (blendColor.getGreen() * instanceColor.getGreen() / 255),
-					(byte) (blendColor.getBlue() * instanceColor.getBlue() / 255),
-					(byte) (blendColor.getAlpha() * instanceColor.getAlpha() * alpha / 65025)
-				);
+
+			ColorUtil.blendColor(blendColor, instanceColor, TEMP);
+			blend.alphaOp.op(TEMP, alpha, renderer);
+
+//			float alpha00 = (blendColor.getAlpha() * instanceColor.getAlpha() * alpha) / 65025;
+//			float preMultAlpha = preMult ? alpha00 / 255.0f : 1.0f;
+//			float actualAlpha = preMult ? 0.0f : alpha00;
+//			renderer.glColor4ub
+//				(
+//					(byte) (preMultAlpha * blendColor.getRed() * instanceColor.getRed() / 255),
+//					(byte) (preMultAlpha * blendColor.getGreen() * instanceColor.getGreen() / 255),
+//					(byte) (preMultAlpha * blendColor.getBlue() * instanceColor.getBlue() / 255),
+//					(byte) (actualAlpha)
+//				);
 
 		}
 		private void blit(final SpriteImage image, int x, int y, int w, int h) {
 			if (current != image.getTexture()) {
-				if (current != null) {
-					renderer.glEnd();
-				}
 				current = image.getTexture();
 				renderer.glRender(current);
-				renderer.glBegin(GL_QUADS);
 			}
 
 			calcColorAtPoint(x, y);
 			renderer.glTexCoord2f(image.getTx0(), image.getTy0());
-			renderer.glVertex2f(x - insets.getX() + bounds.getX(), y - insets.getY() + bounds.getY());
+			short idx = renderer.glVertex2f(x - insets.getX() + bounds.getX(), y - insets.getY() + bounds.getY());
 
 			float tx1 = image.getTx1();
 			calcColorAtPoint(x + w, y);
@@ -269,6 +303,8 @@ public class Background extends Feature {
 			calcColorAtPoint(x, y + h);
 			renderer.glTexCoord2f(image.getTx0(), ty1);
 			renderer.glVertex2f(x - insets.getX() + bounds.getX(), y + h - insets.getY() + bounds.getY());
+
+			renderer.glRender(GL_TRIANGLE_FAN, new short[] {idx, (short) (idx + 1), (short) (idx + 2), (short) (idx + 3)});
 
 		}
 

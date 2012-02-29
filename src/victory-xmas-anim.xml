@@ -1,0 +1,839 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- parallax scroll and fade in -->
+
+<resources>	
+
+
+	<!-- scroll / fade into view -->
+
+    <animation name="xmas.victory.eye.scroll.anim">
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<animcolor a="0" d="0" />
+		<offset x="0" y="100.0" d="4" />
+		<offset x="0" y="99.0" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<animcolor a="3" d="0" />
+		<offset x="0" y="98.0" d="4" />
+		<animcolor a="7" d="0" />
+		<offset x="0" y="97.01" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<animcolor a="12" d="0" />
+		<offset x="0" y="96.02" d="4" />
+		<animcolor a="18" d="0" />
+		<offset x="0" y="95.04" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<animcolor a="26" d="0" />
+		<offset x="0" y="94.06" d="4" />
+		<animcolor a="35" d="0" />
+		<offset x="0" y="93.09" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<animcolor a="44" d="0" />
+		<offset x="0" y="92.12" d="4" />
+		<animcolor a="55" d="0" />
+		<offset x="0" y="91.16" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<animcolor a="66" d="0" />
+		<offset x="0" y="90.2" d="4" />
+		<animcolor a="77" d="0" />
+		<offset x="0" y="89.25" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<animcolor a="89" d="0" />
+		<offset x="0" y="88.3" d="4" />
+		<animcolor a="102" d="0" />
+		<offset x="0" y="87.36" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<animcolor a="114" d="0" />
+		<offset x="0" y="86.42" d="4" />
+		<animcolor a="127" d="0" />
+		<offset x="0" y="85.49" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<animcolor a="140" d="0" />
+		<offset x="0" y="84.57" d="4" />
+		<animcolor a="152" d="0" />
+		<offset x="0" y="83.64" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<animcolor a="165" d="0" />
+		<offset x="0" y="82.73" d="4" />
+		<animcolor a="177" d="0" />
+		<offset x="0" y="81.82" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<animcolor a="188" d="0" />
+		<offset x="0" y="80.91" d="4" />
+		<animcolor a="199" d="0" />
+		<offset x="0" y="80.01" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<animcolor a="210" d="0" />
+		<offset x="0" y="79.11" d="4" />
+		<animcolor a="219" d="0" />
+		<offset x="0" y="78.22" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<animcolor a="228" d="0" />
+		<offset x="0" y="77.33" d="4" />
+		<animcolor a="236" d="0" />
+		<offset x="0" y="76.45" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<animcolor a="242" d="0" />
+		<offset x="0" y="75.58" d="4" />
+		<animcolor a="247" d="0" />
+		<offset x="0" y="74.71" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<animcolor a="251" d="0" />
+		<offset x="0" y="73.84" d="4" />
+		<animcolor a="254" d="0" />
+		<offset x="0" y="72.98" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<animcolor a="255" d="0" />
+		<offset x="0" y="72.12" d="4" />
+		<offset x="0" y="71.27" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="70.42" d="4" />
+		<offset x="0" y="69.58" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="68.75" d="4" />
+		<offset x="0" y="67.92" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="67.09" d="4" />
+		<offset x="0" y="66.27" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="65.46" d="4" />
+		<offset x="0" y="64.64" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="63.84" d="4" />
+		<offset x="0" y="63.04" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="62.24" d="4" />
+		<offset x="0" y="61.45" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="60.67" d="4" />
+		<offset x="0" y="59.89" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="59.11" d="4" />
+		<offset x="0" y="58.34" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="57.58" d="4" />
+		<offset x="0" y="56.82" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="56.06" d="4" />
+		<offset x="0" y="55.31" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="54.57" d="4" />
+		<offset x="0" y="53.83" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="53.09" d="4" />
+		<offset x="0" y="52.36" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="51.64" d="4" />
+		<offset x="0" y="50.92" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="50.2" d="4" />
+		<offset x="0" y="49.49" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="48.79" d="4" />
+		<offset x="0" y="48.09" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="47.4" d="4" />
+		<offset x="0" y="46.71" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="46.02" d="4" />
+		<offset x="0" y="45.34" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="44.67" d="4" />
+		<offset x="0" y="44.0" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="43.33" d="4" />
+		<offset x="0" y="42.68" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="42.02" d="4" />
+		<offset x="0" y="41.37" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="40.73" d="4" />
+		<offset x="0" y="40.09" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="39.46" d="4" />
+		<offset x="0" y="38.83" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="38.2" d="4" />
+		<offset x="0" y="37.58" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="36.97" d="4" />
+		<offset x="0" y="36.36" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="35.76" d="4" />
+		<offset x="0" y="35.16" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="34.57" d="4" />
+		<offset x="0" y="33.98" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="33.4" d="4" />
+		<offset x="0" y="32.82" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="32.24" d="4" />
+		<offset x="0" y="31.68" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="31.11" d="4" />
+		<offset x="0" y="30.55" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="30.0" d="4" />
+		<offset x="0" y="29.45" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="28.91" d="4" />
+		<offset x="0" y="28.37" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="27.84" d="4" />
+		<offset x="0" y="27.31" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="26.79" d="4" />
+		<offset x="0" y="26.27" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="25.76" d="4" />
+		<offset x="0" y="25.25" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="24.75" d="4" />
+		<offset x="0" y="24.25" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="23.76" d="4" />
+		<offset x="0" y="23.27" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="22.79" d="4" />
+		<offset x="0" y="22.31" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="21.84" d="4" />
+		<offset x="0" y="21.37" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="20.91" d="4" />
+		<offset x="0" y="20.45" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="20.0" d="4" />
+		<offset x="0" y="19.56" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="19.11" d="4" />
+		<offset x="0" y="18.68" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="18.24" d="4" />
+		<offset x="0" y="17.82" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="17.4" d="4" />
+		<offset x="0" y="16.98" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="16.57" d="4" />
+		<offset x="0" y="16.16" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="15.76" d="4" />
+		<offset x="0" y="15.36" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="14.97" d="4" />
+		<offset x="0" y="14.59" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="14.2" d="4" />
+		<offset x="0" y="13.83" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="13.46" d="4" />
+		<offset x="0" y="13.09" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="12.73" d="4" />
+		<offset x="0" y="12.37" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="12.02" d="4" />
+		<offset x="0" y="11.68" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="11.34" d="4" />
+		<offset x="0" y="11.0" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="10.67" d="4" />
+		<offset x="0" y="10.34" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="10.02" d="4" />
+		<offset x="0" y="9.71" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="9.4" d="4" />
+		<offset x="0" y="9.09" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="8.79" d="4" />
+		<offset x="0" y="8.49" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="8.2" d="4" />
+		<offset x="0" y="7.92" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="7.64" d="4" />
+		<offset x="0" y="7.36" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="7.09" d="4" />
+		<offset x="0" y="6.83" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="6.57" d="4" />
+		<offset x="0" y="6.31" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="6.06" d="4" />
+		<offset x="0" y="5.82" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="5.58" d="4" />
+		<offset x="0" y="5.34" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="5.11" d="4" />
+		<offset x="0" y="4.89" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="4.67" d="4" />
+		<offset x="0" y="4.45" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="4.24" d="4" />
+		<offset x="0" y="4.04" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="3.84" d="4" />
+		<offset x="0" y="3.65" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="3.46" d="4" />
+		<offset x="0" y="3.27" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="3.09" d="4" />
+		<offset x="0" y="2.92" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="2.75" d="4" />
+		<offset x="0" y="2.59" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="2.43" d="4" />
+		<offset x="0" y="2.27" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="2.12" d="4" />
+		<offset x="0" y="1.98" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="1.84" d="4" />
+		<offset x="0" y="1.71" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="1.58" d="4" />
+		<offset x="0" y="1.45" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="1.34" d="4" />
+		<offset x="0" y="1.22" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="1.11" d="4" />
+		<offset x="0" y="1.01" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="0.91" d="4" />
+		<offset x="0" y="0.82" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="0.73" d="4" />
+		<offset x="0" y="0.65" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="0.57" d="4" />
+		<offset x="0" y="0.49" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="0.43" d="4" />
+		<offset x="0" y="0.36" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="0.31" d="4" />
+		<offset x="0" y="0.25" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="0.2" d="4" />
+		<offset x="0" y="0.16" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.01" d="0"/>
+		<offset x="0" y="0.12" d="4" />
+		<offset x="0" y="0.09" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.04" d="0"/>
+		<offset x="0" y="0.06" d="4" />
+		<offset x="0" y="0.04" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.05" d="0"/>
+		<offset x="0" y="0.02" d="4" />
+		<offset x="0" y="0.01" d="4" />
+		<frame i="spriteimage.xmas.victory.eye.06" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+		<offset x="0" y="0.0" d="4" />
+	    <return/>
+	</animation>
+
+
+
+    <animation name="xmas.victory.flag.scroll.anim">
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<animcolor a="0" d="0" />
+		<offset x="0" y="100.0" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="99.0" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<animcolor a="1" d="0" />
+		<offset x="0" y="98.0" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<animcolor a="2" d="0" />
+		<offset x="0" y="97.01" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<animcolor a="4" d="0" />
+		<offset x="0" y="96.02" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<animcolor a="7" d="0" />
+		<offset x="0" y="95.04" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<animcolor a="10" d="0" />
+		<offset x="0" y="94.06" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<animcolor a="13" d="0" />
+		<offset x="0" y="93.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<animcolor a="17" d="0" />
+		<offset x="0" y="92.12" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<animcolor a="21" d="0" />
+		<offset x="0" y="91.16" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<animcolor a="26" d="0" />
+		<offset x="0" y="90.2" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<animcolor a="31" d="0" />
+		<offset x="0" y="89.25" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<animcolor a="37" d="0" />
+		<offset x="0" y="88.3" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<animcolor a="42" d="0" />
+		<offset x="0" y="87.36" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<animcolor a="48" d="0" />
+		<offset x="0" y="86.42" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<animcolor a="55" d="0" />
+		<offset x="0" y="85.49" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<animcolor a="61" d="0" />
+		<offset x="0" y="84.57" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<animcolor a="68" d="0" />
+		<offset x="0" y="83.64" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<animcolor a="75" d="0" />
+		<offset x="0" y="82.73" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<animcolor a="82" d="0" />
+		<offset x="0" y="81.82" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<animcolor a="89" d="0" />
+		<offset x="0" y="80.91" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<animcolor a="97" d="0" />
+		<offset x="0" y="80.01" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<animcolor a="104" d="0" />
+		<offset x="0" y="79.11" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<animcolor a="112" d="0" />
+		<offset x="0" y="78.22" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<animcolor a="119" d="0" />
+		<offset x="0" y="77.33" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<animcolor a="127" d="0" />
+		<offset x="0" y="76.45" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<animcolor a="135" d="0" />
+		<offset x="0" y="75.58" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<animcolor a="142" d="0" />
+		<offset x="0" y="74.71" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<animcolor a="150" d="0" />
+		<offset x="0" y="73.84" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<animcolor a="157" d="0" />
+		<offset x="0" y="72.98" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<animcolor a="165" d="0" />
+		<offset x="0" y="72.12" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<animcolor a="172" d="0" />
+		<offset x="0" y="71.27" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<animcolor a="179" d="0" />
+		<offset x="0" y="70.42" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<animcolor a="186" d="0" />
+		<offset x="0" y="69.58" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<animcolor a="193" d="0" />
+		<offset x="0" y="68.75" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<animcolor a="199" d="0" />
+		<offset x="0" y="67.92" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<animcolor a="206" d="0" />
+		<offset x="0" y="67.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<animcolor a="212" d="0" />
+		<offset x="0" y="66.27" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<animcolor a="217" d="0" />
+		<offset x="0" y="65.46" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<animcolor a="223" d="0" />
+		<offset x="0" y="64.64" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<animcolor a="228" d="0" />
+		<offset x="0" y="63.84" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<animcolor a="233" d="0" />
+		<offset x="0" y="63.04" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<animcolor a="237" d="0" />
+		<offset x="0" y="62.24" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<animcolor a="241" d="0" />
+		<offset x="0" y="61.45" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<animcolor a="244" d="0" />
+		<offset x="0" y="60.67" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<animcolor a="247" d="0" />
+		<offset x="0" y="59.89" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<animcolor a="250" d="0" />
+		<offset x="0" y="59.11" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<animcolor a="252" d="0" />
+		<offset x="0" y="58.34" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<animcolor a="253" d="0" />
+		<offset x="0" y="57.58" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<animcolor a="254" d="0" />
+		<offset x="0" y="56.82" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<animcolor a="255" d="0" />
+		<offset x="0" y="56.06" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="55.31" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="54.57" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="53.83" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="53.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="52.36" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="51.64" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="50.92" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="50.2" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="49.49" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="48.79" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="48.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="47.4" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="46.71" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="46.02" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="45.34" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="44.67" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="44.0" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="43.33" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="42.68" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="42.02" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="41.37" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="40.73" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="40.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="39.46" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="38.83" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="38.2" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="37.58" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="36.97" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="36.36" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="35.76" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="35.16" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="34.57" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="33.98" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="33.4" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="32.82" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="32.24" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="31.68" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="31.11" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="30.55" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="30.0" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="29.45" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="28.91" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="28.37" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="27.84" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="27.31" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="26.79" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="26.27" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="25.76" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="25.25" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="24.75" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="24.25" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="23.76" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="23.27" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="22.79" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="22.31" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="21.84" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="21.37" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="20.91" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="20.45" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="20.0" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="19.56" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="19.11" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="18.68" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="18.24" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="17.82" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="17.4" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="16.98" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="16.57" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="16.16" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="15.76" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="15.36" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="14.97" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="14.59" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="14.2" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="13.83" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="13.46" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="13.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="12.73" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="12.37" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="12.02" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="11.68" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="11.34" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="11.0" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="10.67" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="10.34" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="10.02" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="9.71" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="9.4" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="9.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="8.79" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="8.49" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="8.2" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="7.92" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="7.64" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="7.36" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="7.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="6.83" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="6.57" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="6.31" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="6.06" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="5.82" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="5.58" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="5.34" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="5.11" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="4.89" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="4.67" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="4.45" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="4.24" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="4.04" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="3.84" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="3.65" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="3.46" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="3.27" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="3.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="2.92" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="2.75" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="2.59" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="2.43" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="2.27" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="2.12" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="1.98" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="1.84" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="1.71" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="1.58" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="1.45" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="1.34" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="1.22" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="1.11" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="1.01" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="0.91" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="0.82" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="0.73" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="0.65" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="0.57" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="0.49" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="0.43" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="0.36" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="0.31" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="0.25" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.01" d="0"/>
+		<offset x="0" y="0.2" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.02" d="0"/>
+		<offset x="0" y="0.16" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.03" d="0"/>
+		<offset x="0" y="0.12" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.04" d="0"/>
+		<offset x="0" y="0.09" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.05" d="0"/>
+		<offset x="0" y="0.06" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.06" d="0"/>
+		<offset x="0" y="0.04" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.07" d="0"/>
+		<offset x="0" y="0.02" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.08" d="0"/>
+		<offset x="0" y="0.01" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.09" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+		<frame i="spriteimage.xmas.victory.flag.10" d="0"/>
+		<offset x="0" y="0.0" d="4" />
+	    <return/>
+	</animation>
+
+
+
+
+
+
+
+
+
+</resources>

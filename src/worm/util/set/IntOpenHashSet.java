@@ -1,6 +1,6 @@
 /*
  *  Primitive Collections for Java.
- *  Copyright (C) 2002  Søren Bak
+ *  Copyright (C) 2002  SÃ¸ren Bak
  *
  *  This library is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,7 +18,10 @@
  */
 package worm.util.set;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 import worm.util.IntCollection;
 import worm.util.IntIterator;

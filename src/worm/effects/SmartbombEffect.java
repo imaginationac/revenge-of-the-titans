@@ -31,13 +31,13 @@
  */
 package worm.effects;
 
-import net.puppygames.applet.TickableObject;
 import net.puppygames.applet.effects.Effect;
 import worm.Layers;
 import worm.Res;
 
 import com.shavenpuppy.jglib.interpolators.SineInterpolator;
 import com.shavenpuppy.jglib.opengl.GLRenderable;
+import com.shavenpuppy.jglib.util.ShortList;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -58,6 +58,9 @@ public class SmartbombEffect extends Effect {
 	/** Width */
 	private static final float WIDTH = 30.0f;
 
+	/** Steps */
+	private static final int STEP = 8;
+
 	/** Radius */
 	private float radius;
 
@@ -67,8 +70,8 @@ public class SmartbombEffect extends Effect {
 	/** Position */
 	private float x, y;
 
-	private TickableObject tickableObject;
-
+	/** Indices */
+	private final ShortList indices = new ShortList(360 / STEP + 2);
 
 	/**
 	 * C'tor
@@ -87,61 +90,58 @@ public class SmartbombEffect extends Effect {
 	}
 
 	@Override
-	protected void doRender() {
-	}
+	protected void render() {
+		float xx = x;
+		float yy = y;
 
-	@Override
-	protected void doSpawn() {
-		tickableObject = new TickableObject() {
+		glRender(new GLRenderable() {
 			@Override
-			protected void render() {
-				float xx = x;
-				float yy = y;
-
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glEnable(GL_TEXTURE_2D);
-						glEnable(GL_BLEND);
-						glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-						glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-						Res.getSmartBombTexture().render();
-					}
-				});
-
-				float innerRadius = SineInterpolator.instance.interpolate(0.0f, Math.max(0.0f, RADIUS - WIDTH), (float) tick / (float) DURATION);
-
-				// Draw rings
-				float ox = getOffset().getX();
-				float oy = getOffset().getY();
-				glBegin(GL_TRIANGLE_STRIP);
-				for (int i = 0; i <= 360; i += 8) {
-					// Inner vertex
-					glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
-					glTexCoord2f(i, 1.0f);
-					glVertex2f(ox + xx + (float)Math.cos(Math.toRadians(i)) * innerRadius, oy + yy + (float)Math.sin(Math.toRadians(i)) * innerRadius);
-					// Outer vertex
-					glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-					glTexCoord2f(i, 0.0f);
-					glVertex2f(ox + xx + (float)Math.cos(Math.toRadians(i)) * radius, oy + yy + (float)Math.sin(Math.toRadians(i)) * radius);
-				}
-				glEnd();
+			public void render() {
+				glEnable(GL_TEXTURE_2D);
+				glEnable(GL_BLEND);
+				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+				glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+				Res.getSmartBombTexture().render();
 			}
-		};
-		tickableObject.setLayer(Layers.SMARTBOMB_EFFECT);
-		tickableObject.spawn(getScreen());
-	}
+		});
 
-	@Override
-	protected void doRemove() {
-		if (tickableObject != null) {
-			tickableObject.remove();
-			tickableObject = null;
+		float innerRadius = SineInterpolator.instance.interpolate(0.0f, Math.max(0.0f, RADIUS - WIDTH), (float) tick / (float) DURATION);
+
+		// Draw rings
+		float ox = getOffset().getX();
+		float oy = getOffset().getY();
+		short count = 0;
+		boolean writeIndices = indices.size() == 0;
+		for (int i = 0; i <= 360; i += STEP) {
+			// Inner vertex
+			glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
+			glTexCoord2f(i, 1.0f);
+			glVertex2f(ox + xx + (float)Math.cos(Math.toRadians(i)) * innerRadius, oy + yy + (float)Math.sin(Math.toRadians(i)) * innerRadius);
+			// Outer vertex
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+			glTexCoord2f(i, 0.0f);
+			glVertex2f(ox + xx + (float)Math.cos(Math.toRadians(i)) * radius, oy + yy + (float)Math.sin(Math.toRadians(i)) * radius);
+
+			if (writeIndices) {
+				indices.add(count ++);
+				indices.add(count ++);
+			}
 		}
+		if (writeIndices) {
+			indices.add((short) 0);
+			indices.add((short) 1);
+			indices.trimToSize();
+		}
+		glRender(GL_TRIANGLE_STRIP, indices.array());
 	}
 
 	@Override
-	public boolean isActive() {
+	public int getDefaultLayer() {
+		return Layers.SMARTBOMB_EFFECT;
+	}
+
+	@Override
+	public boolean isEffectActive() {
 		return tick < DURATION;
 	}
 

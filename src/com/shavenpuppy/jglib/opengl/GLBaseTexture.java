@@ -43,9 +43,9 @@ import static org.lwjgl.opengl.GL11.*;
 /**
  * The base class for GL textures.
  */
-public abstract class GLBaseTexture extends GLResource implements GLNamedRenderable, GLRenderableObject {
+public abstract class GLBaseTexture extends Resource implements GLRenderableObject {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Resource data
@@ -107,7 +107,7 @@ public abstract class GLBaseTexture extends GLResource implements GLNamedRendera
 	 * Create a GLTexture.
 	 */
 	@Override
-	protected final void doGLCreate() {
+	protected final void doCreate() {
 
 		GLUtil.scratch.ints.clear().limit(1);
 		glGenTextures(GLUtil.scratch.ints);
@@ -126,7 +126,7 @@ public abstract class GLBaseTexture extends GLResource implements GLNamedRendera
 	 * Destroy the texture.
 	 */
 	@Override
-	protected void doGLDestroy() throws OpenGLException {
+	protected void doDestroy() throws OpenGLException {
 		if (texture != 0) {
 			GLUtil.scratch.ints.clear();
 			GLUtil.scratch.ints.put(0, texture);

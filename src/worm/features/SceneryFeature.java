@@ -31,12 +31,17 @@
  */
 package worm.features;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.lwjgl.util.Dimension;
 
 import worm.generator.Scenery;
-import worm.tiles.*;
+import worm.tiles.Crystal;
+import worm.tiles.Detail;
+import worm.tiles.Obstacle;
+import worm.tiles.Ruin;
 
 import com.shavenpuppy.jglib.resources.Feature;
 import com.shavenpuppy.jglib.resources.ResourceArray;

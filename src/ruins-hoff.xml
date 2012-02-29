@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<resources>
+
+		<ruin name="hoff.snowmen.3x2.01" i="31801" layer="2" ruin="true" width="3" height="2" bThruMap="101010"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="58,36" ySortOffset="36" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="20,11" ySortOffset="11" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="69,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="58,36" ySortOffset="36" attenuated="true" image="spriteimage.hoff.snowman.small.08" />
+				<sprite layer="5" sublayer="2" offset="20,11" ySortOffset="11" attenuated="true" image="spriteimage.hoff.snowman.small.01" />
+				<sprite layer="5" sublayer="2" offset="69,5" ySortOffset="5" attenuated="true" image="spriteimage.hoff.snowman.small.06" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.1x1.01" i="31802" layer="2" ruin="true" width="1" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="16,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.hoff.snowman.small.01" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.3x2.02" i="31803" layer="2" ruin="true" width="3" height="2" bThruMap="101010"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="74,34" ySortOffset="34" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="31,11" ySortOffset="11" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.medium.ground.01" />
+				<sprite layer="5" sublayer="2" offset="74,34" ySortOffset="34" attenuated="true" image="spriteimage.hoff.snowman.small.07" />
+				<sprite layer="5" sublayer="2" offset="31,11" ySortOffset="11" attenuated="true" image="spriteimage.hoff.snowman.medium.01" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.3x2.03" i="31804" layer="2" ruin="true" width="3" height="2" bThruMap="101010"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="9,25" ySortOffset="25" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="62,8" ySortOffset="8" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.large.ground.01" />
+				<sprite layer="5" sublayer="2" offset="9,25" ySortOffset="25" attenuated="true" image="spriteimage.hoff.snowman.small.04" />
+				<sprite layer="5" sublayer="2" offset="62,8" ySortOffset="8" attenuated="true" image="spriteimage.hoff.snowman.large.01" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.1x1.02" i="31805" layer="2" ruin="true" width="1" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="13,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="13,5" ySortOffset="5" attenuated="true" image="spriteimage.hoff.snowman.small.02" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.1x1.03" i="31806" layer="2" ruin="true" width="1" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="16,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.hoff.snowman.small.03" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.1x1.04" i="31807" layer="2" ruin="true" width="1" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="14,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="14,5" ySortOffset="5" attenuated="true" image="spriteimage.hoff.snowman.small.04" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.3x2.04" i="31808" layer="2" ruin="true" width="3" height="2" bThruMap="101010"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="15,51" ySortOffset="51" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="56,8" ySortOffset="8" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.large.ground.01" />
+				<sprite layer="5" sublayer="2" offset="15,51" ySortOffset="51" attenuated="true" image="spriteimage.hoff.snowman.small.04" />
+				<sprite layer="5" sublayer="2" offset="56,8" ySortOffset="8" attenuated="true" image="spriteimage.hoff.snowman.large.02" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.3x1.04" i="31809" layer="2" ruin="true" width="3" height="1" bThruMap="111"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="78,23" ySortOffset="23" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="15,16" ySortOffset="16" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="48,7" ySortOffset="7" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.medium.ground.01" />
+				<sprite layer="5" sublayer="2" offset="78,23" ySortOffset="23" attenuated="true" image="spriteimage.hoff.snowman.small.02" />
+				<sprite layer="5" sublayer="2" offset="15,16" ySortOffset="16" attenuated="true" image="spriteimage.hoff.snowman.small.01" />
+				<sprite layer="5" sublayer="2" offset="48,7" ySortOffset="7" attenuated="true" image="spriteimage.hoff.snowman.medium.01" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.2x1.01" i="31810" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="43,18" ySortOffset="18" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="15,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="43,18" ySortOffset="18" attenuated="true" image="spriteimage.hoff.snowman.small.02" />
+				<sprite layer="5" sublayer="2" offset="15,6" ySortOffset="6" attenuated="true" image="spriteimage.hoff.snowman.small.01" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.3x1.01" i="31811" layer="2" ruin="true" width="3" height="1" bThruMap="111"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="31,14" ySortOffset="14" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.medium.ground.01" />
+				<sprite layer="3" sublayer="1" offset="76,6" ySortOffset="6" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="31,14" ySortOffset="14" attenuated="true" image="spriteimage.hoff.snowman.medium.04" />
+				<sprite layer="5" sublayer="2" offset="76,6" ySortOffset="6" attenuated="true" image="spriteimage.hoff.snowman.small.04" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.2x1.02" i="31812" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="41,19" ySortOffset="19" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="16,8" ySortOffset="8" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="41,19" ySortOffset="19" attenuated="true" image="spriteimage.hoff.snowman.small.08" />
+				<sprite layer="5" sublayer="2" offset="16,8" ySortOffset="8" attenuated="true" image="spriteimage.hoff.snowman.small.02" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.2x1.03" i="31813" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="52,19" ySortOffset="19" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="21,7" ySortOffset="7" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="52,19" ySortOffset="19" attenuated="true" image="spriteimage.hoff.snowman.small.01" />
+				<sprite layer="5" sublayer="2" offset="21,7" ySortOffset="7" attenuated="true" image="spriteimage.hoff.snowman.small.05" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.2x1.04" i="31814" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="45,9" ySortOffset="9" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="12,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="45,9" ySortOffset="9" attenuated="true" image="spriteimage.hoff.snowman.small.06" />
+				<sprite layer="5" sublayer="2" offset="12,5" ySortOffset="5" attenuated="true" image="spriteimage.hoff.snowman.small.02" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.2x1.05" i="31815" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="48,16" ySortOffset="16" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="19,5" ySortOffset="5" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="48,16" ySortOffset="16" attenuated="true" image="spriteimage.hoff.snowman.small.02" />
+				<sprite layer="5" sublayer="2" offset="19,5" ySortOffset="5" attenuated="true" image="spriteimage.hoff.snowman.small.07" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.2x1.06" i="31816" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="15,21" ySortOffset="21" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="46,4" ySortOffset="4" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="15,21" ySortOffset="21" attenuated="true" image="spriteimage.hoff.snowman.small.03" />
+				<sprite layer="5" sublayer="2" offset="46,4" ySortOffset="4" attenuated="true" image="spriteimage.hoff.snowman.small.05" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.2x1.07" i="31817" layer="2" ruin="true" width="2" height="1" bulletThrough="false"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="20,18" ySortOffset="18" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="42,7" ySortOffset="7" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="5" sublayer="2" offset="20,18" ySortOffset="18" attenuated="true" image="spriteimage.hoff.snowman.small.08" />
+				<sprite layer="5" sublayer="2" offset="42,7" ySortOffset="7" attenuated="true" image="spriteimage.hoff.snowman.small.02" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.3x1.02" i="31818" layer="2" ruin="true" width="3" height="1" bThruMap="101"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="18,19" ySortOffset="19" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="70,11" ySortOffset="11" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.medium.ground.01" />
+				<sprite layer="5" sublayer="2" offset="18,19" ySortOffset="19" attenuated="true" image="spriteimage.hoff.snowman.small.03" />
+				<sprite layer="5" sublayer="2" offset="70,11" ySortOffset="11" attenuated="true" image="spriteimage.hoff.snowman.medium.02" />
+		</layers></layers></ruin>
+
+		<ruin name="hoff.snowmen.3x1.03" i="31819" layer="2" ruin="true" width="3" height="1" bThruMap="101"><layers><layers scale="0.5">
+ 				<sprite layer="3" sublayer="1" offset="76,17" ySortOffset="17" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.small.ground.01" />
+				<sprite layer="3" sublayer="1" offset="27,9" ySortOffset="9" colored="shadow" attenuated="true" image="spriteimage.hoff.snowman.medium.ground.01" />
+				<sprite layer="5" sublayer="2" offset="76,17" ySortOffset="17" attenuated="true" image="spriteimage.hoff.snowman.small.02" />
+				<sprite layer="5" sublayer="2" offset="27,9" ySortOffset="9" attenuated="true" image="spriteimage.hoff.snowman.medium.03" />
+		</layers></layers></ruin>
+
+</resources>

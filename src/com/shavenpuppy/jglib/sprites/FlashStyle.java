@@ -43,7 +43,7 @@ import static org.lwjgl.opengl.GL11.*;
  */
 final class FlashStyle extends AbstractStyle {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** A handy singleton instance */
 	static FlashStyle instance;
@@ -84,6 +84,11 @@ final class FlashStyle extends AbstractStyle {
 	@Override
 	public int getStyleID() {
 		return 4;
+	}
+
+	@Override
+	public AlphaOp getAlphaOp() {
+	    return AlphaOp.PREMULTIPLY;
 	}
 
 	@Override

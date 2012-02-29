@@ -56,7 +56,7 @@
 		</icon>
 		<hints>
 			<array>
-				<item><text>BE CAREFUL WHERE YOU USE {color:gui-bright}EXPLOSIVES{color:gui-mid} - THEY CAN ALSO {color:gui-bright}DAMAGE YOUR BUILDINGS!</text></item>
+				<item><text>=hint.explosives.text</text></item>
 			</array>
 		</hints>
 	</hint>
@@ -72,7 +72,7 @@
 	<hint name="hint.fastforward" icon="hint.info.layers" minLevel="2" maxLevel="10">
 		<hints>
 			<array>
-				<item><text>PRESSING THE {color:gui-bright}FAST FORWARD BUTTON{color:gui-mid} OR HOLDING DOWN THE {color:gui-bright}TAB KEY{color:gui-mid} SPEEDS UP TIME.</text></item>
+				<item><text>=hint.fastforward.text</text></item>
 			</array>
 		</hints>
 	</hint>
@@ -80,7 +80,7 @@
 	<hint name="hint.timerstarts" icon="hint.info.layers" minLevel="1" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>THE ALIENS ARRIVE AFTER YOU BUILD YOUR FIRST {color:gui-bright}REFINERY.{color:gui-mid} SCOUT AROUND AND BUILD YOUR DEFENCES FIRST!</text></item>
+				<item><text>=hint.timerstarts.text</text></item>
 			</array>
 		</hints>
 	</hint>
@@ -88,9 +88,9 @@
 	<hint name="hint.unmined" icon="hint.info.layers" minLevel="4" maxLevel="9">
 		<hints>
 			<array>
-				<item><text>ONE OR MORE {color:gui-bright}CRYSTALS{color:gui-mid} IS NOT BEING REFINED! USE THE {color:gui-bright}E{color:gui-mid} SHORTCUT KEY TO FIND THEM</text></item>
-				<item><text>DON'T FORGET TO FIND ALL THE {color:gui-bright}CRYSTALS{color:gui-mid} USING THE {color:gui-bright}E{color:gui-mid} SHORTCUT KEY!</text></item>
-				<item><text>THERE ARE STILL {color:gui-bright}CRYSTALS{color:gui-mid} WHICH ARE NOT BEING MINED! USE THE {color:gui-bright}E{color:gui-mid} SHORTCUT KEY!</text></item>
+				<item><text>=hint.unmined.text.1</text></item>
+				<item><text>=hint.unmined.text.2</text></item>
+				<item><text>=hint.unmined.text.3</text></item>
 			</array>
 		</hints>
 	</hint>
@@ -98,7 +98,7 @@
 	<hint name="hint.scroll" icon="hint.info.layers" minLevel="0" maxLevel="3">
 		<hints>
 			<array>
-				<item><text>USE {color:gui-bright}W,A,S,D{color:gui-mid} OR {color:gui-bright}CURSOR KEYS{color:gui-mid} OR MOVE THE MOUSE TO SCROLL AROUND.</text></item>
+				<item><text>=hint.scroll.text</text></item>
 			</array>
 		</hints>
 	</hint>
@@ -106,28 +106,28 @@
 	<hint name="hint.dragbuild" icon="hint.info.layers" minLevel="2" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>YOU CAN HOLD DOWN THE MOUSE BUTTON AND DRAG TO PAINT MULTIPLE BUILDINGS.</text></item>
+				<item><text>=hint.dragbuild.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.dragsell" icon="hint.info.layers" minLevel="0" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>YOU CAN HOLD DOWN THE MIDDLE MOUSE BUTTON AND DRAG TO SELL MULTIPLE BUILDINGS.</text></item>
+				<item><text>=hint.dragsell.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.stack" icon="hint.info.layers" minLevel="0" maxLevel="9">
 		<hints>
 			<array>
-				<item><text>PLACE UP TO FOUR UPGRADES OF THE SAME TYPE NEXT TO STACK BONUSES!</text></item>
+				<item><text>=hint.stack.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.turrets_in_path" icon="hint.info.layers" minLevel="0" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>TRY NOT TO BUILD YOUR BUILDINGS DIRECTLY IN THE PATH OF THE ADVANCING TITANS!</text></item>
+				<item><text>=hint.turrets_in_path.text</text></item>
 			</array>
 		</hints>
 	</hint>
@@ -135,7 +135,7 @@
 	<hint name="hint.disruptor" icon="hint.info.layers" random="true">
 		<hints>
 			<array>
-				<item><text>BE CAREFUL WHERE YOU PLACE {color:gui-bright}DISRUPTORS{color:gui-mid} - THEY WILL {color:gui-bright}DAMAGE YOUR OTHER BUILDINGS!</text></item>
+				<item><text>=hint.disruptor.text</text></item>
 			</array>
 		</hints>
 	</hint>
@@ -143,56 +143,56 @@
 	<hint name="hint.shield" icon="hint.info.layers" random="true">
 		<hints>
 			<array>
-				<item><text>NOW WOULD BE A GOOD TIME TO USE YOUR {color:gui-bright}SHIELD POWERUP{color:gui-mid} - THE BASE IS {color:gui-bright}NEARLY DESTROYED!{color:gui-mid}</text></item>
+				<item><text>=hint.shield.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.repair" icon="hint.info.layers" random="true">
 		<hints>
 			<array>
-				<item><text>NOW WOULD BE A GOOD TIME TO USE YOUR {color:gui-bright}REPAIR POWERUP{color:gui-mid} - THE BASE IS {color:gui-bright}NEARLY DESTROYED!{color:gui-mid}</text></item>
+				<item><text>=hint.repair.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.armoured" icon="hint.info.layers">
 		<hints>
 			<array>
-				<item><text>IT SEEMS THAT THESE TITANS ARE {color:gui-bright}HEAVILY ARMOURED!{color:gui-mid} - YOU'RE GOING TO NEED {color:gui-bright}BIGGER GUNS!{color:gui-mid}</text></item>
+				<item><text>=hint.armoured.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.capacitors" icon="hint.info.layers">
 		<hints>
 			<array>
-				<item><text>TO FIRE CAPACITORS AT THE ENEMY YOUR MOUSE CURSOR MUST BE IN RANGE OF THE CAPACITOR, THEN HOLD DOWN THE MOUSE BUTTON TO SHOOT.</text></item>
+				<item><text>=hint.capacitors.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.sell_turrets" icon="hint.info.layers" minLevel="0" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>SELL TURRETS WHICH ARE OUT OF RANGE TO RECLAIM CASH AND REDEPLOY NEW TURRETS ELSEWHERE.</text></item>
+				<item><text>=hint.sell_turrets.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.sell_addons" icon="hint.info.layers" minLevel="0" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>SOME OF YOUR TURRET UPGRADES ARE NOT ATTACHED TO ANY TURRETS. YOU SHOULD SELL THEM.</text></item>
+				<item><text>=hint.sell_addons.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.sell_misc" icon="hint.info.layers" minLevel="0" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>SOME OF YOUR BUILDINGS ARE PERFORMING NO USEFUL FUNCTION. YOU SHOULD SELL THEM.</text></item>
+				<item><text>=hint.sell_misc.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.dontsell" icon="hint.info.layers">
 		<hints>
 			<array>
-				<item><text>THERE'S {color:gui-bright}NO NEED{color:gui-mid} TO SELL BUILDINGS BEFORE THE END OF THE LEVEL! THIS IS DONE {color:gui-bright}AUTOMATICALLY{color:gui-mid} FOR YOU.</text></item>
+				<item><text>=hint.dontsell.text</text></item>
 			</array>
 		</hints>
 	</hint>
@@ -201,35 +201,35 @@
 	<hint name="hint.powerup" icon="hint.info.layers" minLevel="0" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>CLICK ON POWERUPS TO COLLECT THEM BEFORE THEY DISAPPEAR!</text></item>
+				<item><text>=hint.powerup.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.cool_powerup" icon="hint.info.layers">
 		<hints>
 			<array>
-				<item><text>COLLECT SPECIAL POWERUPS AND SAVE THEM FOR WHEN YOU NEED THEM. CLICK THE BOTTOM RIGHT ICONS TO USE THEM.</text></item>
+				<item><text>=hint.cool_powerup.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.exotic_powerup" icon="hint.info.layers">
 		<hints>
 			<array>
-				<item><text>EXOTIC POWERUPS LAST FOR THE DURATION OF THE LEVEL. CLICK THE BOTTOM RIGHT ICONS TO USE THEM.</text></item>
+				<item><text>=hint.exotic_powerup.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.barricade_pickup" icon="hint.info.layers" minLevel="0" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>WE'VE RECEIVED A CONSIGNMENT OF EXTRA BARRICADES! MAKE GOOD USE OF THEM!</text></item>
+				<item><text>=hint.barricade_pickup.text</text></item>
 			</array>
 		</hints>
 	</hint>
 	<hint name="hint.mines_pickup" icon="hint.info.layers" minLevel="0" maxLevel="5">
 		<hints>
 			<array>
-				<item><text>DOCTOR ZAP HAS SENT US A DELIVERY OF HIGH EXPLOSIVES! MAKE SURE YOU COLLECT THEM!</text></item>
+				<item><text>=hint.mines_pickup.text</text></item>
 			</array>
 		</hints>
 	</hint>

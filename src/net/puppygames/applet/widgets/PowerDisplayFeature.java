@@ -31,15 +31,24 @@
  */
 package net.puppygames.applet.widgets;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Anchor;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.Screen;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadablePoint;
+import org.lwjgl.util.ReadableRectangle;
+import org.lwjgl.util.Rectangle;
 import org.w3c.dom.Element;
 
 import com.shavenpuppy.jglib.resources.Feature;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Appearance;
+import com.shavenpuppy.jglib.sprites.Sprite;
+import com.shavenpuppy.jglib.sprites.SpriteAllocator;
 import com.shavenpuppy.jglib.util.FPMath;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -90,7 +99,7 @@ public class PowerDisplayFeature extends Feature {
 
 		private String on, off;
 
-		private transient AnimatedAppearanceResource onResource, offResource;
+		private transient Appearance onResource, offResource;
 
 		private Screen screen;
 
@@ -134,7 +143,7 @@ public class PowerDisplayFeature extends Feature {
 			}
 
 			void setLocation(float x, float y) {
-				sprite.setLocation(x, y, 0);
+				sprite.setLocation(x, y);
 			}
 		}
 
@@ -172,9 +181,6 @@ public class PowerDisplayFeature extends Feature {
 		setAutoCreated();
 	}
 
-	/* (non-Javadoc)
-	 * @see invaders.Feature#load(org.w3c.dom.Element, com.shavenpuppy.jglib.Resource.Loader)
-	 */
 	@Override
 	public void load(Element element, Loader loader) throws Exception {
 		super.load(element, loader);
@@ -199,9 +205,6 @@ public class PowerDisplayFeature extends Feature {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see invaders.Feature#doCreate()
-	 */
 	@Override
 	protected void doCreate() {
 		super.doCreate();

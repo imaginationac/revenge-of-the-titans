@@ -32,15 +32,14 @@
 package net.puppygames.applet.effects;
 
 
-import net.puppygames.applet.TickableObject;
-
-import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.ReadablePoint;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
 import com.shavenpuppy.jglib.interpolators.SineInterpolator;
 import com.shavenpuppy.jglib.opengl.GLBaseTexture;
 import com.shavenpuppy.jglib.opengl.GLRenderable;
+
+import static org.lwjgl.opengl.GL11.*;
 
 /**
  * $Id: BlastEffect.java,v 1.2 2010/02/08 22:20:43 foo Exp $
@@ -53,7 +52,18 @@ public class BlastEffect extends Effect {
 	private static final long serialVersionUID = 1L;
 
 	private static final int DEFAULT_LAYER = 99;
-	
+
+	private static final int STEP = 8;
+	private static final short[] STRIP_INDICES;
+	static {
+		STRIP_INDICES = new short[720 / STEP + 2];
+		for (int i = 0; i < STRIP_INDICES.length; i ++) {
+			STRIP_INDICES[i] = (short) i;
+		}
+		STRIP_INDICES[STRIP_INDICES.length - 2] = 0;
+		STRIP_INDICES[STRIP_INDICES.length - 1] = 1;
+	}
+
 	/** Duration */
 	private int duration;
 
@@ -68,9 +78,6 @@ public class BlastEffect extends Effect {
 
 	/** Tick */
 	private int tick;
-	
-	/** Layer */
-	private int layer = DEFAULT_LAYER;
 
 	/** Position */
 	private float x, y;
@@ -86,8 +93,6 @@ public class BlastEffect extends Effect {
 
 	/** Fade during expansion */
 	private boolean fadeWhenExpanding;
-	
-	private TickableObject tickableObject;
 
 	/**
 	 * C'tor
@@ -102,10 +107,11 @@ public class BlastEffect extends Effect {
 		this.texture = texture;
 	}
 
+	@Override
+	public int getDefaultLayer() {
+	    return DEFAULT_LAYER;
+	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doTick()
-	 */
 	@Override
 	protected void doTick() {
 		tick ++;
@@ -117,104 +123,60 @@ public class BlastEffect extends Effect {
 			}
 		}
 	}
-	
+
 	@Override
-	protected void doSpawn() {
-		tickableObject = new TickableObject() {
+	protected void render() {
+		glRender(new GLRenderable() {
 			@Override
-			protected void render() {
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						GL11.glEnable(GL11.GL_TEXTURE_2D);
-						GL11.glEnable(GL11.GL_BLEND);
-						GL11.glTexEnvi(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, GL11.GL_MODULATE);
-						GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
-						texture.render();
-					}
-				});
-
-				float xx = x;
-				float yy = y;
-
-				ReadablePoint offset = getOffset();
-				if (offset != null) {
-					xx += offset.getX();
-					yy += offset.getY();
-				}
-
-				float innerRadius;
-
-				// Draw rings
-				glBegin(GL11.GL_TRIANGLE_STRIP);
-				float alpha;
-				if (fading) {
-					alpha = LinearInterpolator.instance.interpolate(1.0f, 0.0f, (float) tick / (float) fadeDuration);
-					innerRadius = SineInterpolator.instance.interpolate(Math.max(0.0f, finalRadius - width), finalRadius, (float) tick / (float) fadeDuration);
-				} else {
-					if (fadeWhenExpanding) {
-						alpha = LinearInterpolator.instance.interpolate(1.0f, 0.0f, (float) tick / (float) fadeDuration);
-					} else {
-						alpha = 1.0f;
-					}
-					innerRadius = SineInterpolator.instance.interpolate(0.0f, Math.max(0.0f, finalRadius - width), (float) tick / (float) duration);
-				}
-				for (int i = 0; i <= 360; i += 8) {
-					// Inner vertex
-					glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
-					glTexCoord2f(i, 1.0f);
-					glVertex2f(xx + ((float)Math.cos(Math.toRadians(i))) * innerRadius, yy + ((float)Math.sin(Math.toRadians(i))) * innerRadius);
-					// Outer vertex
-					glColor4f(1.0f, 1.0f, 1.0f, alpha);
-					glTexCoord2f(i, 0.0f);
-					glVertex2f(xx + ((float)Math.cos(Math.toRadians(i))) * radius, yy + ((float)Math.sin(Math.toRadians(i))) * radius);
-				}
-				glEnd();
+			public void render() {
+				glEnable(GL_TEXTURE_2D);
+				glEnable(GL_BLEND);
+				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+				glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+				texture.render();
 			}
-		};
-		tickableObject.setVisible(isVisible());
-		tickableObject.setLayer(layer);
-		tickableObject.spawn(getScreen());
-	}
-	
-	public void setLayer(int layer) {
-		this.layer = layer;
-		if (tickableObject != null) {
-			tickableObject.setLayer(layer);
+		});
+
+		float xx = x;
+		float yy = y;
+
+		ReadablePoint offset = getOffset();
+		if (offset != null) {
+			xx += offset.getX();
+			yy += offset.getY();
 		}
-	}
-	
-	public int getLayer() {
-		return layer;
-	}
-	
-	@Override
-	protected void onSetVisible() {
-		if (tickableObject != null) {
-			tickableObject.setVisible(isVisible());
+
+		float innerRadius;
+
+		// Draw rings
+		float alpha;
+		if (fading) {
+			alpha = LinearInterpolator.instance.interpolate(1.0f, 0.0f, (float) tick / (float) fadeDuration);
+			innerRadius = SineInterpolator.instance.interpolate(Math.max(0.0f, finalRadius - width), finalRadius, (float) tick / (float) fadeDuration);
+		} else {
+			if (fadeWhenExpanding) {
+				alpha = LinearInterpolator.instance.interpolate(1.0f, 0.0f, (float) tick / (float) fadeDuration);
+			} else {
+				alpha = 1.0f;
+			}
+			innerRadius = SineInterpolator.instance.interpolate(0.0f, Math.max(0.0f, finalRadius - width), (float) tick / (float) duration);
 		}
-	}
-	
-	@Override
-	protected void doRemove() {
-		if (tickableObject != null) {
-			tickableObject.remove();
-			tickableObject = null;
+		for (int i = 0; i <= 360; i += STEP) {
+			// Inner vertex
+			glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
+			glTexCoord2f(i, 1.0f);
+			glVertex2f(xx + ((float)Math.cos(Math.toRadians(i))) * innerRadius, yy + ((float)Math.sin(Math.toRadians(i))) * innerRadius);
+			// Outer vertex
+			glColor4f(1.0f, 1.0f, 1.0f, alpha);
+			glTexCoord2f(i, 0.0f);
+			glVertex2f(xx + ((float)Math.cos(Math.toRadians(i))) * radius, yy + ((float)Math.sin(Math.toRadians(i))) * radius);
 		}
+
+		glRender(GL_TRIANGLE_STRIP, STRIP_INDICES);
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doRender()
-	 */
 	@Override
-	protected void doRender() {
-	}
-
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Tickable#isActive()
-	 */
-	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		return 	fadeWhenExpanding ? tick < duration : (!fading || tick < fadeDuration);
 	}
 

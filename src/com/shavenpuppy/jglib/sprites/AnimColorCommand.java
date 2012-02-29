@@ -46,7 +46,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class AnimColorCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private int red, green, blue, alpha;
 	private boolean deltaRed, deltaGreen, deltaBlue, deltaAlpha;
@@ -63,28 +63,27 @@ public class AnimColorCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		int currentSequence = target.getSequence();
-		int currentTick = target.getTick();
+		int currentTick = target.getTick() + 1;
 
-		if (currentTick == 0) {
-			Colored sprite = (Colored) target;
-			adjust(sprite, 0);
-			adjust(sprite, 1);
-			adjust(sprite, 2);
-			adjust(sprite, 3);
+		if (currentTick == 1) {
+			adjust(target, 0);
+			adjust(target, 1);
+			adjust(target, 2);
+			adjust(target, 3);
 		}
-		if (currentTick >= duration) {
+		if (currentTick > duration) {
 			target.setSequence(++currentSequence);
 			target.setTick(0);
 			return true; // Execute the next command
 		}
 
-		target.setTick(currentTick + tickRate);
+		target.setTick(currentTick);
 		return false; // Don't execute the next command
 	}
 
-	private void adjust(Colored colored, int index) {
+	private void adjust(Sprite colored, int index) {
 		ReadableColor c = colored.getColor(index);
 		Color newC = new Color
 			(

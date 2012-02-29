@@ -36,8 +36,15 @@ import java.io.Serializable;
 
 import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.*;
+import org.lwjgl.util.Dimension;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadableDimension;
+import org.lwjgl.util.ReadablePoint;
+import org.lwjgl.util.ReadableRectangle;
+import org.lwjgl.util.Rectangle;
+import org.lwjgl.util.WritableDimension;
+import org.lwjgl.util.WritablePoint;
 
 import com.shavenpuppy.jglib.Glyph;
 import com.shavenpuppy.jglib.TextLayout;
@@ -50,7 +57,7 @@ import static org.lwjgl.opengl.GL11.*;
  * Displays text in a box, automatically wrapping words.
  * @author: cas
  */
-public class GLTextArea implements GLRenderable, SimpleRenderable, WritablePoint, WritableDimension {
+public class GLTextArea implements SimpleRenderable, WritablePoint, WritableDimension {
 
 	private static final long serialVersionUID = 1L;
 
@@ -98,7 +105,7 @@ public class GLTextArea implements GLRenderable, SimpleRenderable, WritablePoint
 
 	/** Vertical Alignments */
 	public abstract static class VerticalAlignment implements Serializable, Decodeable{
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 		private final String display;
 		private VerticalAlignment(String display) {
 			this.display = display;
@@ -325,14 +332,14 @@ public class GLTextArea implements GLRenderable, SimpleRenderable, WritablePoint
 				font.getTexture().render();
 				glEnable(GL_TEXTURE_2D);
 				glEnable(GL_BLEND);
-				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+				glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 			}
 		});
 
-		renderer.glBegin(GL_QUADS);
+		//renderer.glBegin(GL_QUADS);
 		renderGlyphs(renderer);
-		renderer.glEnd();
+		//renderer.glEnd();
 
 		// Maybe draw cursor?
 		if (cursorVisible && editing) {
@@ -357,25 +364,15 @@ public class GLTextArea implements GLRenderable, SimpleRenderable, WritablePoint
 				cursorX = glyph[cursorPos - 1].getXpos() + glyph[cursorPos - 1].getWidth();
 				cursorY = glyph[cursorPos - 1].getYpos();
 			}
-			renderer.glBegin(GL11.GL_QUADS);
-			{
-				renderer.glColor(bottomColour);
-				renderer.glVertex2f(cursorX, cursorY - font.getDescent());
-				renderer.glVertex2f(cursorX + 4, cursorY - font.getDescent());
-				renderer.glColor(topColour);
-				renderer.glVertex2f(cursorX + 4, cursorY + font.getHeight() - font.getDescent());
-				renderer.glVertex2f(cursorX, cursorY + font.getHeight() - font.getDescent());
-			}
-			renderer.glEnd();
+			renderer.glColor(bottomColour);
+			short idx = renderer.glVertex2f(cursorX, cursorY - font.getDescent());
+			renderer.glVertex2f(cursorX + 4, cursorY - font.getDescent());
+			renderer.glColor(topColour);
+			renderer.glVertex2f(cursorX + 4, cursorY + font.getHeight() - font.getDescent());
+			renderer.glVertex2f(cursorX, cursorY + font.getHeight() - font.getDescent());
+			renderer.glRender(GL_TRIANGLE_FAN, new short[] {(short) (idx + 0), (short) (idx + 1), (short) (idx + 2), (short) (idx + 3)});
 		}
 	}
-
-	@Override
-	public void render() {
-		render(SimpleRenderer.GL_RENDERER);
-	}
-
-
 
 	protected void renderGlyphs(SimpleRenderer renderer) {
 		for (int i = 0; i < numGlyphs; i++) {

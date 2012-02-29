@@ -31,7 +31,10 @@
  */
 package worm.generator;
 
-import worm.tiles.*;
+import worm.tiles.Crystal;
+import worm.tiles.Detail;
+import worm.tiles.Obstacle;
+import worm.tiles.Ruin;
 
 /**
  * Describes scenery

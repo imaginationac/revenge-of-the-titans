@@ -45,7 +45,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class ScaleCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** The adjustment */
 	private float xdelta, ydelta;
@@ -63,42 +63,35 @@ public class ScaleCommand extends Command {
 		super();
 	}
 
-	/**
-	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
-	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		int currentSequence = target.getSequence();
-		int currentTick = target.getTick();
+		int currentTick = target.getTick() + 1;
 
-		if (currentTick == 0) {
-			Scaled scaledTarget = (Scaled) target;
+		if (currentTick == 1) {
 			int newScaleX, newScaleY;
 			if (relativex) {
-				newScaleX = scaledTarget.getXScale() + FPMath.fpValue(xdelta);
+				newScaleX = target.getXScale() + FPMath.fpValue(xdelta);
 			} else {
 				newScaleX = FPMath.fpValue(xdelta);
 			}
 			if (relativey) {
-				newScaleY = scaledTarget.getYScale() + FPMath.fpValue(ydelta);
+				newScaleY = target.getYScale() + FPMath.fpValue(ydelta);
 			} else {
 				newScaleY = FPMath.fpValue(ydelta);
 			}
-			scaledTarget.setScale(newScaleX, newScaleY);
+			target.setScale(newScaleX, newScaleY);
 		}
-		if (currentTick >= duration) {
+		if (currentTick > duration) {
 			target.setSequence(++currentSequence);
 			target.setTick(0);
 			return true; // Execute the next command
 		}
 
-		target.setTick(currentTick + tickRate);
+		target.setTick(currentTick);
 		return false; // Don't execute the next command
 	}
 
-	/**
-	 * @see com.shavenpuppy.jglib.Resource#load(org.w3c.dom.Element, Loader)
-	 */
 	@Override
 	public void load(Element element, Resource.Loader loader) throws Exception {
 		String sdelta = XMLUtil.getString(element, "scale", "!");

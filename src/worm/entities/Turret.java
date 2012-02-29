@@ -38,7 +38,7 @@ import worm.weapons.WeaponFeature;
  * Specialised extension to buildings for turrets
  * @author Cas
  */
-public abstract class Turret extends Building {
+public abstract class Turret extends Building implements PlayerWeaponInstallation {
 
 	private static final long serialVersionUID = 1L;
 
@@ -74,8 +74,4 @@ public abstract class Turret extends Building {
 	@Override
 	public abstract void onReloaded();
 
-	/**
-	 * @return true if this turret is currently aiming at aerial targets (only really applies to the Laser Turret)
-	 */
-	public abstract boolean isFiringAtAerialTargets();
 }

@@ -34,7 +34,9 @@ package worm.buildings;
 import org.lwjgl.util.Color;
 import org.lwjgl.util.ReadableColor;
 
-import worm.*;
+import worm.Layers;
+import worm.Res;
+import worm.Worm;
 import worm.effects.RangeEffect;
 import worm.entities.Building;
 import worm.entities.Capacitor;
@@ -42,7 +44,7 @@ import worm.screens.GameScreen;
 import worm.weapons.WeaponFeature;
 import worm.weapons.WeaponFeature.WeaponInstance;
 
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.sprites.Appearance;
 import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.FPMath;
 
@@ -88,7 +90,7 @@ public class CapacitorBuildingFeature extends BuildingFeature {
 	private float lightSpeed;
 
 	private transient WeaponFeature weaponFeature;
-	private transient AnimatedAppearanceResource lightResource, beamResource;
+	private transient Appearance lightResource, beamResource;
 
 	/**
 	 * Building instances
@@ -170,10 +172,10 @@ public class CapacitorBuildingFeature extends BuildingFeature {
 			if (lightSprite != null) {
 				float lx = GameScreen.getSpriteOffset().getX() + lightX;
 				float ly = GameScreen.getSpriteOffset().getY() + lightY;
-				lightSprite.setLocation(lx, ly, 0.0f);
+				lightSprite.setLocation(lx, ly);
 			}
 			if (beamSprite != null) {
-				beamSprite.setLocation(getScreenX() + getBeamOffsetX(), getScreenY() + getBeamOffsetY(), 0.0f);
+				beamSprite.setLocation(getScreenX() + getBeamOffsetX(), getScreenY() + getBeamOffsetY());
 			}
 		}
 
@@ -213,7 +215,7 @@ public class CapacitorBuildingFeature extends BuildingFeature {
 		@Override
 		protected void doBuildingUpdate() {
 			if (weaponInstance != null && reloadSprite != null) {
-				reloadSprite.setLocation(getScreenX(), getScreenY(), 0);
+				reloadSprite.setLocation(getScreenX(), getScreenY());
 			}
 
 			updateLight();
@@ -373,6 +375,7 @@ public class CapacitorBuildingFeature extends BuildingFeature {
 				feature instanceof ReactorBuildingFeature
 			|| 	feature instanceof ShieldGeneratorBuildingFeature
 			||	feature instanceof BatteryBuildingFeature
+			|| 	feature instanceof CloakBuildingFeature
 			;
 	}
 

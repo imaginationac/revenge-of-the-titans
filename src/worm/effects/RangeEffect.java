@@ -31,15 +31,14 @@
  */
 package worm.effects;
 
-import net.puppygames.applet.TickableObject;
 import net.puppygames.applet.effects.Effect;
+import net.puppygames.applet.widgets.Ring;
 
 import org.lwjgl.util.ReadableColor;
 
 import worm.Layers;
 import worm.Res;
 
-import com.shavenpuppy.jglib.opengl.ColorUtil;
 import com.shavenpuppy.jglib.opengl.GLRenderable;
 
 import static org.lwjgl.opengl.GL11.*;
@@ -52,7 +51,7 @@ public class RangeEffect extends Effect {
 	private static final int ALPHA_DELTA = 8;
 	private static final float THICKNESS = 2.0f;
 
-	private final ReadableColor color;
+	private final Ring ring;
 
 	private float radius;
 	private float mapX, mapY;
@@ -62,13 +61,13 @@ public class RangeEffect extends Effect {
 	private boolean finished;
 	private boolean done;
 
-	private TickableObject tickableObject;
-
 	/**
 	 * C'tor
 	 */
 	public RangeEffect(ReadableColor color) {
-		this.color = color;
+		ring = new Ring();
+		ring.setColor(color);
+		ring.setThickness(THICKNESS);
 	}
 
 	/**
@@ -98,10 +97,6 @@ public class RangeEffect extends Effect {
 	}
 
 	@Override
-	protected void doRender() {
-	}
-
-	@Override
 	protected void doTick() {
 		if (!show) {
 			alpha = Math.max(0, alpha - ALPHA_DELTA);
@@ -115,60 +110,49 @@ public class RangeEffect extends Effect {
 	}
 
 	@Override
-	protected void doSpawn() {
-		tickableObject = new TickableObject() {
+	protected void render() {
+		if (!isVisible()) {
+			return;
+		}
+		glRender(new GLRenderable() {
 			@Override
-			protected void render() {
-				if (!RangeEffect.this.isVisible()) {
-					return;
-				}
-				float x = getOffset().getX() + mapX;
-				float y = getOffset().getY() + mapY;
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glEnable(GL_BLEND);
-						glDisable(GL_TEXTURE_2D);
-						glEnable(GL_TEXTURE_1D);
-						glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-						Res.getRangeTexture().bind();
-						glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-					}
-				});
-				glBegin(GL_TRIANGLE_STRIP);
-				ColorUtil.setGLColor(color, alpha, this);
-				glTexCoord2f(0.0f, 0.0f);
-				for (int i = 0; i <= 64; i ++) {
-					double angle = i * Math.PI * 2.0 / 64.0;
-					glTexCoord2f(0.0f, 0.0f);
-					glVertex2f(x + (float) Math.cos(angle) * radius, y + (float) Math.sin(angle) * radius);
-					glTexCoord2f(1.0f, 0.0f);
-					glVertex2f(x + (float) Math.cos(angle) * (radius - THICKNESS), y + (float) Math.sin(angle) * (radius - THICKNESS));
-				}
-				glEnd();
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glDisable(GL_TEXTURE_1D);
-					}
-				});
+			public void render() {
+				glEnable(GL_BLEND);
+				glEnable(GL_TEXTURE_2D);
+				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+				glBlendFunc(GL_ONE, GL_ONE);
+				Res.getSolidTexture().bind();
 			}
-		};
-		tickableObject.setLayer(Layers.BUILDING_INFO);
-		tickableObject.spawn(getScreen());
+		});
+
+		float x = getOffset().getX() + mapX;
+		float y = getOffset().getY() + mapY;
+
+		ring.setAlpha(alpha);
+		ring.setLocation(x, y);
+		ring.setRadius(radius);
+		ring.render(this);
+
+		glRender(new GLRenderable() {
+			@Override
+			public void render() {
+				glDisable(GL_TEXTURE_2D);
+			}
+		});
+	}
+
+	@Override
+	public int getDefaultLayer() {
+		return Layers.BUILDING_INFO;
 	}
 
 	@Override
 	protected void doRemove() {
 		done = true;
-		if (tickableObject != null) {
-			tickableObject.remove();
-			tickableObject = null;
-		}
 	}
 
 	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		return !done;
 	}
 

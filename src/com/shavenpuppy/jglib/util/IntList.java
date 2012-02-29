@@ -175,8 +175,12 @@ public class IntList implements java.io.Serializable {
 	/**
 	 * Stash everything in an array.
 	 */
-	public void toArray(Object[] dest) {
+	public int[] toArray(int[] dest) {
+		if (dest == null) {
+			dest = new int[count];
+		}
 		System.arraycopy(value, 0, dest, 0, count);
+		return dest;
 	}
 
 	/**

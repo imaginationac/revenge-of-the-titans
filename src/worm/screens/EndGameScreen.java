@@ -31,6 +31,7 @@
  */
 package worm.screens;
 
+import net.puppygames.applet.Game;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.screens.DialogScreen;
 import worm.Res;
@@ -40,6 +41,8 @@ import worm.Worm;
  * The End Game Screen ends the game when the player is killed
  */
 public class EndGameScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static EndGameScreen instance;
 
@@ -94,7 +97,7 @@ public class EndGameScreen extends Screen {
 	@Override
 	protected void onClicked(String id) {
 		if (ID_RESTART.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("RESTART LEVEL", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.endgame.title_restart"), Game.getMessage("ultraworm.endgame.message"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();
@@ -104,7 +107,7 @@ public class EndGameScreen extends Screen {
 				}
 			});
 		} else if (ID_EASIER.equals(id)) {
-			net.puppygames.applet.Res.getYesCancelDialog().doModal("NEW EASIER LEVEL", "ARE YOU SURE?", new Runnable() {
+			net.puppygames.applet.Res.getYesCancelDialog().doModal(Game.getMessage("ultraworm.endgame.title_easier"), Game.getMessage("ultraworm.endgame.message"), new Runnable() {
 				@Override
 				public void run() {
 					int option = net.puppygames.applet.Res.getYesCancelDialog().getOption();

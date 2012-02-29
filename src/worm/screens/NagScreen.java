@@ -35,6 +35,7 @@ import java.util.Calendar;
 
 import net.puppygames.applet.Game;
 
+import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.interpolators.CosineInterpolator;
 import com.shavenpuppy.jglib.resources.ResourceArray;
 import com.shavenpuppy.jglib.resources.TextResource;
@@ -44,9 +45,9 @@ import com.shavenpuppy.jglib.resources.TextResource;
  */
 public class NagScreen extends net.puppygames.applet.screens.NagScreen {
 
-	private static final String ID_NAG_TEXT = "nag-text";
+	private static final long serialVersionUID = 1L;
 
-	private ResourceArray nagText;
+	private static final String ID_NAG_TEXT = "nag-text";
 
 	/**
 	 * C'tor
@@ -62,6 +63,7 @@ public class NagScreen extends net.puppygames.applet.screens.NagScreen {
 
 	    // Change the discount offered a maximum of once a day
 	    float dayOfMonth = (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) - 1 + (int) Game.getInstallation()) % 28;
+	    ResourceArray nagText = Resources.get("nags.array");
 	    int cosined = (int) CosineInterpolator.instance.interpolate(0.0f, nagText.getNumResources() - 1.0f, dayOfMonth / 27.0f);
 	    String text = ((TextResource) nagText.getResource(cosined)).getText();
 	    text = text.replaceAll("\\\\n", "\n");

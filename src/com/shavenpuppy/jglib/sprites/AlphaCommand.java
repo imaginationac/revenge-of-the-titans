@@ -44,7 +44,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class AlphaCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private int alpha, duration;
 	private boolean delta;
@@ -56,35 +56,28 @@ public class AlphaCommand extends Command {
 		super();
 	}
 
-	/**
-	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
-	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		int currentSequence = target.getSequence();
-		int currentTick = target.getTick();
+		int currentTick = target.getTick() + 1;
 
-		if (currentTick == 0) {
-			Transparent sprite = (Transparent) target;
+		if (currentTick == 1) {
 			if (delta) {
-				sprite.adjustAlpha(alpha);
+				target.adjustAlpha(alpha);
 			} else {
-				sprite.setAlpha(alpha);
+				target.setAlpha(alpha);
 			}
 		}
-		if (currentTick >= duration) {
+		if (currentTick > duration) {
 			target.setSequence(++currentSequence);
 			target.setTick(0);
 			return true; // Execute the next command
 		}
 
-		target.setTick(currentTick + tickRate);
+		target.setTick(currentTick);
 		return false; // Don't execute the next command
 	}
 
-	/**
-	 * @see com.shavenpuppy.jglib.Resource#load(org.w3c.dom.Element, Loader)
-	 */
 	@Override
 	public void load(Element element, Resource.Loader loader) throws Exception {
 		String s = XMLUtil.getString(element, "alpha");
@@ -98,9 +91,6 @@ public class AlphaCommand extends Command {
 		duration = XMLUtil.getInt(element, "d", 0);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#doToXML(com.shavenpuppy.jglib.XMLResourceWriter)
-	 */
 	@Override
 	protected void doToXML(XMLResourceWriter writer) throws IOException {
 		if (delta) {

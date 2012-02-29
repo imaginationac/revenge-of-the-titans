@@ -79,7 +79,8 @@ public class SFX extends net.puppygames.applet.effects.SFX {
 		newRank = "newRank.buffer",
 		blastMinePip = "blastMinePip.buffer",
 		blastMineReady = "blastMineReady.buffer",
-		smartbomb = "smartbomb.buffer"
+		smartbomb = "smartbomb.buffer",
+		repair = "repair.buffer"
 		;
 
 
@@ -106,7 +107,8 @@ public class SFX extends net.puppygames.applet.effects.SFX {
 		newRankBuffer,
 		blastMinePipBuffer,
 		blastMineReadyBuffer,
-		smartbombBuffer
+		smartbombBuffer,
+		repairBuffer
 		;
 
 	private transient ALBuffer[]
@@ -173,6 +175,9 @@ public class SFX extends net.puppygames.applet.effects.SFX {
 	}
 	public static void pickup() {
 		Game.allocateSound(instance.pickupBuffer);
+	}
+	public static void repair(float x, float y) {
+		Game.allocateSound(instance.repairBuffer, Worm.calcGain(x, y), 1.0f, Game.class);
 	}
 	public static void cantBuild() {
 		Game.allocateSound(instance.cantBuildBuffer);

@@ -34,6 +34,8 @@ package net.puppygames.applet.widgets;
 import net.puppygames.applet.Game;
 import net.puppygames.applet.Res;
 
+import org.lwjgl.util.Color;
+import org.lwjgl.util.ReadableColor;
 import org.lwjgl.util.Rectangle;
 
 import com.shavenpuppy.jglib.TextLayout;
@@ -147,10 +149,11 @@ public class MessageBox {
 				glPopMatrix();
 				glPushMatrix();
 				glTranslatef(2, -2, 0.0f);
-				glColor4f(0.0f, 0.0f, 0.0f, 0.5f);
 			}
 		});
+		title.setColour(new Color(0, 0, 0, 128));
 		title.render(renderer);
+		message.setColour(new Color(0, 0, 0, 128));
 		message.render(renderer);
 		renderer.glRender(new GLRenderable() {
 			@Override
@@ -159,6 +162,8 @@ public class MessageBox {
 				glColor3f(1.0f, 1.0f, 1.0f);
 			}
 		});
+		title.setColour(ReadableColor.WHITE);
+		message.setColour(ReadableColor.WHITE);
 		title.render(renderer);
 		message.render(renderer);
 		renderer.glRender(new GLRenderable() {

@@ -439,10 +439,11 @@ public class JPEGDecoder {
 			if (cinfo.comps_in_scan > 1) {
 				coef.MCU_rows_per_iMCU_row = 1;
 			} else {
-				if (cinfo.input_iMCU_row < (cinfo.total_iMCU_rows - 1))
-					coef.MCU_rows_per_iMCU_row = cinfo.cur_comp_info[0].v_samp_factor;
-				else
-					coef.MCU_rows_per_iMCU_row = cinfo.cur_comp_info[0].last_row_height;
+				if (cinfo.input_iMCU_row < (cinfo.total_iMCU_rows - 1)) {
+	                coef.MCU_rows_per_iMCU_row = cinfo.cur_comp_info[0].v_samp_factor;
+                } else {
+	                coef.MCU_rows_per_iMCU_row = cinfo.cur_comp_info[0].last_row_height;
+                }
 			}
 
 			coef.MCU_ctr = 0;
@@ -510,9 +511,11 @@ public class JPEGDecoder {
 
 			/* Process restart marker if needed; may have to suspend */
 			if (cinfo.restart_interval != 0) {
-				if (entropy.restarts_to_go == 0)
-					if (!process_restart(cinfo))
-						return false;
+				if (entropy.restarts_to_go == 0) {
+	                if (!process_restart(cinfo)) {
+	                    return false;
+                    }
+                }
 			}
 
 			/*
@@ -703,8 +706,9 @@ public class JPEGDecoder {
 								 */
 								block[jpeg_natural_order[k]] = (short) s;
 							} else {
-								if (r != 15)
-									break;
+								if (r != 15) {
+	                                break;
+                                }
 								k += 15;
 							}
 						}
@@ -776,8 +780,9 @@ public class JPEGDecoder {
 								// DROP_BITS(s);
 								bits_left -= s;
 							} else {
-								if (r != 15)
-									break;
+								if (r != 15) {
+	                                break;
+                                }
 								k += 15;
 							}
 						}
@@ -877,12 +882,14 @@ public class JPEGDecoder {
 			entropy.bitstate.bits_left = 0;
 
 			/* Advance past the RSTn marker */
-			if (!read_restart_marker(cinfo))
-				return false;
+			if (!read_restart_marker(cinfo)) {
+	            return false;
+            }
 
 			/* Re-initialize DC predictions to 0 */
-			for (ci = 0; ci < cinfo.comps_in_scan; ci++)
-				entropy.saved.last_dc_val[ci] = 0;
+			for (ci = 0; ci < cinfo.comps_in_scan; ci++) {
+	            entropy.saved.last_dc_val[ci] = 0;
+            }
 
 			/* Reset restart counter */
 			entropy.restarts_to_go = cinfo.restart_interval;
@@ -893,8 +900,9 @@ public class JPEGDecoder {
 			 * next data segment as empty, and we can avoid producing bogus
 			 * output pixels by leaving the flag set.
 			 */
-			if (cinfo.unread_marker == 0)
-				entropy.insufficient_data = false;
+			if (cinfo.unread_marker == 0) {
+	            entropy.insufficient_data = false;
+            }
 
 			return true;
 		}
@@ -934,15 +942,17 @@ public class JPEGDecoder {
 		boolean decode_mcu(jpeg_decompress_struct cinfo, short[][] MCU_data) {
 			boolean is_DC_band = (cinfo.Ss == 0);
 			if (cinfo.Ah == 0) {
-				if (is_DC_band)
-					return decode_mcu_DC_first(cinfo, MCU_data);
-				else
-					return decode_mcu_AC_first(cinfo, MCU_data);
+				if (is_DC_band) {
+	                return decode_mcu_DC_first(cinfo, MCU_data);
+                } else {
+	                return decode_mcu_AC_first(cinfo, MCU_data);
+                }
 			} else {
-				if (is_DC_band)
-					return decode_mcu_DC_refine(cinfo, MCU_data);
-				else
-					return decode_mcu_AC_refine(cinfo, MCU_data);
+				if (is_DC_band) {
+	                return decode_mcu_DC_refine(cinfo, MCU_data);
+                } else {
+	                return decode_mcu_AC_refine(cinfo, MCU_data);
+                }
 			}
 		}
 
@@ -960,9 +970,11 @@ public class JPEGDecoder {
 
 			/* Process restart marker if needed; may have to suspend */
 			if (cinfo.restart_interval != 0) {
-				if (entropy.restarts_to_go == 0)
-					if (!process_restart(cinfo))
-						return false;
+				if (entropy.restarts_to_go == 0) {
+	                if (!process_restart(cinfo)) {
+	                    return false;
+                    }
+                }
 			}
 
 			/*
@@ -1000,9 +1012,10 @@ public class JPEGDecoder {
 					}
 				}
 				// if (GET_BITS(1))
-				if ((((get_buffer >> (bits_left -= (1)))) & ((1 << (1)) - 1)) != 0)
-					block[0] |= p1;
+				if ((((get_buffer >> (bits_left -= (1)))) & ((1 << (1)) - 1)) != 0) {
+	                block[0] |= p1;
 				/* Note: since we use |=, repeating the assignment later is safe */
+                }
 			}
 
 			/* Completed MCU, so update state */
@@ -1042,9 +1055,11 @@ public class JPEGDecoder {
 
 			/* Process restart marker if needed; may have to suspend */
 			if (cinfo.restart_interval != 0) {
-				if (entropy.restarts_to_go == 0)
-					if (!process_restart(cinfo))
-						return false;
+				if (entropy.restarts_to_go == 0) {
+	                if (!process_restart(cinfo)) {
+	                    return false;
+                    }
+                }
 			}
 
 			/*
@@ -1092,8 +1107,9 @@ public class JPEGDecoder {
 								if (!jpeg_fill_bit_buffer(br_state, get_buffer,
 										bits_left, 0)) {
 									// failaction;
-									while (num_newnz > 0)
-										block[newnz_pos[--num_newnz]] = 0;
+									while (num_newnz > 0) {
+	                                    block[newnz_pos[--num_newnz]] = 0;
+                                    }
 
 									return false;
 								}
@@ -1105,8 +1121,9 @@ public class JPEGDecoder {
 									if ((s = jpeg_huff_decode(br_state,
 											get_buffer, bits_left, tbl, nb)) < 0) {
 										// failaction;
-										while (num_newnz > 0)
-											block[newnz_pos[--num_newnz]] = 0;
+										while (num_newnz > 0) {
+	                                        block[newnz_pos[--num_newnz]] = 0;
+                                        }
 
 										return false;
 									}
@@ -1127,8 +1144,9 @@ public class JPEGDecoder {
 									if ((s = jpeg_huff_decode(br_state,
 											get_buffer, bits_left, tbl, nb)) < 0) {
 										// failaction;
-										while (num_newnz > 0)
-											block[newnz_pos[--num_newnz]] = 0;
+										while (num_newnz > 0) {
+	                                        block[newnz_pos[--num_newnz]] = 0;
+                                        }
 
 										return false;
 									}
@@ -1152,8 +1170,9 @@ public class JPEGDecoder {
 									if (!jpeg_fill_bit_buffer(br_state,
 											get_buffer, bits_left, 1)) {
 										// failaction;
-										while (num_newnz > 0)
-											block[newnz_pos[--num_newnz]] = 0;
+										while (num_newnz > 0) {
+	                                        block[newnz_pos[--num_newnz]] = 0;
+                                        }
 
 										return false;
 									}
@@ -1162,10 +1181,11 @@ public class JPEGDecoder {
 								}
 							}
 							// if (GET_BITS(1))
-							if ((((get_buffer >> (bits_left -= (1)))) & ((1 << (1)) - 1)) != 0)
-								s = p1; /* newly nonzero coef is positive */
-							else
-								s = m1; /* newly nonzero coef is negative */
+							if ((((get_buffer >> (bits_left -= (1)))) & ((1 << (1)) - 1)) != 0) {
+	                            s = p1; /* newly nonzero coef is positive */
+                            } else {
+	                            s = m1; /* newly nonzero coef is negative */
+                            }
 						} else {
 							if (r != 15) {
 								EOBRUN = 1 << r; /*
@@ -1180,8 +1200,9 @@ public class JPEGDecoder {
 											if (!jpeg_fill_bit_buffer(br_state,
 													get_buffer, bits_left, r)) {
 												// failaction;
-												while (num_newnz > 0)
-													block[newnz_pos[--num_newnz]] = 0;
+												while (num_newnz > 0) {
+	                                                block[newnz_pos[--num_newnz]] = 0;
+                                                }
 
 												return false;
 											}
@@ -1213,8 +1234,9 @@ public class JPEGDecoder {
 										if (!jpeg_fill_bit_buffer(br_state,
 												get_buffer, bits_left, 1)) {
 											// failaction;
-											while (num_newnz > 0)
-												block[newnz_pos[--num_newnz]] = 0;
+											while (num_newnz > 0) {
+	                                            block[newnz_pos[--num_newnz]] = 0;
+                                            }
 
 											return false;
 										}
@@ -1232,15 +1254,17 @@ public class JPEGDecoder {
 																					 * set
 																					 * it
 																					 */
-										if (thiscoef[thiscoef_offset] >= 0)
-											thiscoef[thiscoef_offset] += p1;
-										else
-											thiscoef[thiscoef_offset] += m1;
+										if (thiscoef[thiscoef_offset] >= 0) {
+	                                        thiscoef[thiscoef_offset] += p1;
+                                        } else {
+	                                        thiscoef[thiscoef_offset] += m1;
+                                        }
 									}
 								}
 							} else {
-								if (--r < 0)
-									break; /* reached target zero coefficient */
+								if (--r < 0) {
+	                                break; /* reached target zero coefficient */
+                                }
 							}
 							k++;
 						} while (k <= Se);
@@ -1272,8 +1296,9 @@ public class JPEGDecoder {
 									if (!jpeg_fill_bit_buffer(br_state,
 											get_buffer, bits_left, 1)) {
 										// failaction;
-										while (num_newnz > 0)
-											block[newnz_pos[--num_newnz]] = 0;
+										while (num_newnz > 0) {
+	                                        block[newnz_pos[--num_newnz]] = 0;
+                                        }
 
 										return false;
 									}
@@ -1291,10 +1316,11 @@ public class JPEGDecoder {
 																				 * changed
 																				 * it
 																				 */
-									if (thiscoef[thiscoef_offset] >= 0)
-										thiscoef[thiscoef_offset] += p1;
-									else
-										thiscoef[thiscoef_offset] += m1;
+									if (thiscoef[thiscoef_offset] >= 0) {
+	                                    thiscoef[thiscoef_offset] += p1;
+                                    } else {
+	                                    thiscoef[thiscoef_offset] += m1;
+                                    }
 								}
 							}
 						}
@@ -1349,9 +1375,11 @@ public class JPEGDecoder {
 
 			/* Process restart marker if needed; may have to suspend */
 			if (cinfo.restart_interval != 0) {
-				if (entropy.restarts_to_go == 0)
-					if (!process_restart(cinfo))
-						return false;
+				if (entropy.restarts_to_go == 0) {
+	                if (!process_restart(cinfo)) {
+	                    return false;
+                    }
+                }
 			}
 
 			/*
@@ -1371,9 +1399,9 @@ public class JPEGDecoder {
 
 				/* There is always only one block per MCU */
 
-				if (EOBRUN > 0) /* if it's a band of zeroes... */
-					EOBRUN--; /* ...process it now (we do nothing) */
-				else {
+				if (EOBRUN > 0) {
+	                EOBRUN--; /* ...process it now (we do nothing) */
+                } else {
 					// BITREAD_LOAD_STATE(cinfo,entropy.bitstate);
 					br_state.cinfo = cinfo;
 					br_state.buffer = cinfo.buffer;
@@ -1527,9 +1555,11 @@ public class JPEGDecoder {
 
 			/* Process restart marker if needed; may have to suspend */
 			if (cinfo.restart_interval != 0) {
-				if (entropy.restarts_to_go == 0)
-					if (!process_restart(cinfo))
-						return false;
+				if (entropy.restarts_to_go == 0) {
+	                if (!process_restart(cinfo)) {
+	                    return false;
+                    }
+                }
 			}
 
 			/*
@@ -1666,12 +1696,14 @@ public class JPEGDecoder {
 			entropy.bitstate.bits_left = 0;
 
 			/* Advance past the RSTn marker */
-			if (!read_restart_marker(cinfo))
-				return false;
+			if (!read_restart_marker(cinfo)) {
+	            return false;
+            }
 
 			/* Re-initialize DC predictions to 0 */
-			for (ci = 0; ci < cinfo.comps_in_scan; ci++)
-				entropy.saved.last_dc_val[ci] = 0;
+			for (ci = 0; ci < cinfo.comps_in_scan; ci++) {
+	            entropy.saved.last_dc_val[ci] = 0;
+            }
 			/* Re-init EOB run count, too */
 			entropy.saved.EOBRUN = 0;
 
@@ -1684,8 +1716,9 @@ public class JPEGDecoder {
 			 * next data segment as empty, and we can avoid producing bogus
 			 * output pixels by leaving the flag set.
 			 */
-			if (cinfo.unread_marker == 0)
-				entropy.insufficient_data = false;
+			if (cinfo.unread_marker == 0) {
+	            entropy.insufficient_data = false;
+            }
 
 			return true;
 		}
@@ -1702,26 +1735,31 @@ public class JPEGDecoder {
 			/* Validate scan parameters */
 			bad = false;
 			if (is_DC_band) {
-				if (cinfo.Se != 0)
-					bad = true;
+				if (cinfo.Se != 0) {
+	                bad = true;
+                }
 			} else {
 				/* need not check Ss/Se < 0 since they came from unsigned bytes */
-				if (cinfo.Ss > cinfo.Se || cinfo.Se >= DCTSIZE2)
-					bad = true;
+				if (cinfo.Ss > cinfo.Se || cinfo.Se >= DCTSIZE2) {
+	                bad = true;
+                }
 				/* AC scans may have only one component */
-				if (cinfo.comps_in_scan != 1)
-					bad = true;
+				if (cinfo.comps_in_scan != 1) {
+	                bad = true;
+                }
 			}
 			if (cinfo.Ah != 0) {
 				/*
 				 * Successive approximation refinement scan: must have Al =
 				 * Ah-1.
 				 */
-				if (cinfo.Al != cinfo.Ah - 1)
-					bad = true;
+				if (cinfo.Al != cinfo.Ah - 1) {
+	                bad = true;
+                }
 			}
-			if (cinfo.Al > 13) /* need not check for < 0 */
-				bad = true;
+			if (cinfo.Al > 13) {
+	            bad = true;
+            }
 			/*
 			 * Arguably the maximum Al value should be less than 13 for 8-bit
 			 * precision, but the spec doesn't say so, and we try to be liberal
@@ -1730,8 +1768,9 @@ public class JPEGDecoder {
 			 * bizarre displays due to overflows in the IDCT math. But we won't
 			 * crash.
 			 */
-			if (bad)
-				error();
+			if (bad) {
+	            error();
+            }
 			// ERREXIT4(cinfo, JERR_BAD_PROGRESSION, cinfo.Ss, cinfo.Se,
 			// cinfo.Ah, cinfo.Al);
 			/*
@@ -2173,11 +2212,13 @@ public class JPEGDecoder {
 				 * we'll be reading zeroes from the coefficient controller's
 				 * buffer anyway.
 				 */
-				if (!compptr.component_needed || idct.cur_method[ci] == method)
-					continue;
+				if (!compptr.component_needed || idct.cur_method[ci] == method) {
+	                continue;
+                }
 				qtbl = compptr.quant_table;
-				if (qtbl == null) /* happens if no data yet for component */
-					continue;
+				if (qtbl == null) {
+	                continue;
+                }
 				idct.cur_method[ci] = method;
 				switch (method) {
 					// #ifdef PROVIDE_ISLOW_TABLES
@@ -2220,7 +2261,7 @@ public class JPEGDecoder {
 					// 4520, 6270, 5906, 5315, 4520, 3552, 2446, 1247
 					// };
 					// SHIFT_TEMPS
-					//							
+					//
 					// for (i = 0; i < DCTSIZE2; i++) {
 					// ifmtbl[i] = DESCALE(MULTIPLY16V16( qtbl.quantval[i],
 					// aanscales[i]), CONST_BITS-IFAST_SCALE_BITS);
@@ -2685,17 +2726,11 @@ public class JPEGDecoder {
 			/* Allocate a full-image virtual array for each component, */
 			/* padded to a multiple of samp_factor DCT blocks in each direction. */
 			/* Note we ask for a pre-zeroed array. */
-			int ci, access_rows;
+			int ci;
 			jpeg_component_info compptr;
 
 			for (ci = 0; ci < cinfo.num_components; ci++) {
 				compptr = cinfo.comp_info[ci];
-				access_rows = compptr.v_samp_factor;
-				// #ifdef BLOCK_SMOOTHING_SUPPORTED
-				/* If block smoothing could be used, need a bigger window */
-				if (cinfo.progressive_mode)
-					access_rows *= 3;
-				// #endif
 				coef.whole_image[ci] = new short[(int) jround_up(
 						compptr.height_in_blocks, compptr.v_samp_factor)][(int) jround_up(
 						compptr.width_in_blocks, compptr.h_samp_factor)][DCTSIZE2];
@@ -2724,10 +2759,11 @@ public class JPEGDecoder {
 		 * pass
 		 */
 		if (coef.coef_arrays != null) {
-			if (cinfo.do_block_smoothing && smoothing_ok(cinfo))
-				coef.decompress_data = DECOMPRESS_SMOOTH_DATA;
-			else
-				coef.decompress_data = DECOMPRESS_DATA;
+			if (cinfo.do_block_smoothing && smoothing_ok(cinfo)) {
+	            coef.decompress_data = DECOMPRESS_SMOOTH_DATA;
+            } else {
+	            coef.decompress_data = DECOMPRESS_DATA;
+            }
 		}
 		// #endif
 		cinfo.output_iMCU_row = 0;
@@ -2760,8 +2796,10 @@ public class JPEGDecoder {
 
 		/* Prevent application from calling me at wrong times */
 		if (cinfo.global_state != DSTATE_READY)
-			error();
+		 {
+	        error();
 		// ERREXIT1(cinfo, JERR_BAD_STATE, cinfo.global_state);
+        }
 
 		// #ifdef IDCT_SCALING_SUPPORTED
 		//
@@ -2848,11 +2886,6 @@ public class JPEGDecoder {
 				cinfo.out_color_components = 1;
 				break;
 			case JCS_RGB:
-				if (RGB_PIXELSIZE != 3) {
-					cinfo.out_color_components = RGB_PIXELSIZE;
-					break;
-				}
-				// FALLTHROUGH
 			case JCS_YCbCr:
 				cinfo.out_color_components = 3;
 				break;
@@ -2868,35 +2901,40 @@ public class JPEGDecoder {
 				: cinfo.out_color_components);
 
 		/* See if upsampler will want to emit more than one row at a time */
-		if (use_merged_upsample(cinfo))
-			cinfo.rec_outbuf_height = cinfo.max_v_samp_factor;
-		else
-			cinfo.rec_outbuf_height = 1;
+		if (use_merged_upsample(cinfo)) {
+	        cinfo.rec_outbuf_height = cinfo.max_v_samp_factor;
+        } else {
+	        cinfo.rec_outbuf_height = 1;
+        }
 	}
 
 	static boolean use_merged_upsample(jpeg_decompress_struct cinfo) {
 		// #ifdef UPSAMPLE_MERGING_SUPPORTED
 		/* Merging is the equivalent of plain box-filter upsampling */
-		if (cinfo.do_fancy_upsampling || cinfo.CCIR601_sampling)
-			return false;
+		if (cinfo.do_fancy_upsampling || cinfo.CCIR601_sampling) {
+	        return false;
+        }
 		/* jdmerge.c only supports YCC=>RGB color conversion */
 		if (cinfo.jpeg_color_space != JCS_YCbCr || cinfo.num_components != 3
 				|| cinfo.out_color_space != JCS_RGB
-				|| cinfo.out_color_components != RGB_PIXELSIZE)
-			return false;
+				|| cinfo.out_color_components != RGB_PIXELSIZE) {
+	        return false;
+        }
 		/* and it only handles 2h1v or 2h2v sampling ratios */
 		if (cinfo.comp_info[0].h_samp_factor != 2
 				|| cinfo.comp_info[1].h_samp_factor != 1
 				|| cinfo.comp_info[2].h_samp_factor != 1
 				|| cinfo.comp_info[0].v_samp_factor > 2
 				|| cinfo.comp_info[1].v_samp_factor != 1
-				|| cinfo.comp_info[2].v_samp_factor != 1)
-			return false;
+				|| cinfo.comp_info[2].v_samp_factor != 1) {
+	        return false;
+        }
 		/* furthermore, it doesn't work if we've scaled the IDCTs differently */
 		if (cinfo.comp_info[0].DCT_scaled_size != cinfo.min_DCT_scaled_size
 				|| cinfo.comp_info[1].DCT_scaled_size != cinfo.min_DCT_scaled_size
-				|| cinfo.comp_info[2].DCT_scaled_size != cinfo.min_DCT_scaled_size)
-			return false;
+				|| cinfo.comp_info[2].DCT_scaled_size != cinfo.min_DCT_scaled_size) {
+	        return false;
+        }
 		/*
 		 * ??? also need to test for upsample-time rescaling, when & if
 		 * supported
@@ -2922,12 +2960,14 @@ public class JPEGDecoder {
 		cinfo.sample_range_limit = table;
 		/* First segment of "simple" table: limit[x] = 0 for x < 0 */
 		/* Main part of "simple" table: limit[x] = x */
-		for (i = 0; i <= MAXJSAMPLE; i++)
-			table[i + offset] = (byte) i;
+		for (i = 0; i <= MAXJSAMPLE; i++) {
+	        table[i + offset] = (byte) i;
+        }
 		offset += CENTERJSAMPLE; /* Point to where post-IDCT table starts */
 		/* End of simple table, rest of first half of post-IDCT table */
-		for (i = CENTERJSAMPLE; i < 2 * (MAXJSAMPLE + 1); i++)
-			table[i + offset] = (byte) MAXJSAMPLE;
+		for (i = CENTERJSAMPLE; i < 2 * (MAXJSAMPLE + 1); i++) {
+	        table[i + offset] = (byte) MAXJSAMPLE;
+        }
 		/* Second half of post-IDCT table */
 		System
 				.arraycopy(cinfo.sample_range_limit,
@@ -2972,28 +3012,32 @@ public class JPEGDecoder {
 		/* Make sure num_components agrees with jpeg_color_space */
 		switch (cinfo.jpeg_color_space) {
 			case JCS_GRAYSCALE:
-				if (cinfo.num_components != 1)
-					error();
+				if (cinfo.num_components != 1) {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_BAD_J_COLORSPACE);
 				break;
 
 			case JCS_RGB:
 			case JCS_YCbCr:
-				if (cinfo.num_components != 3)
-					error();
+				if (cinfo.num_components != 3) {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_BAD_J_COLORSPACE);
 				break;
 
 			case JCS_CMYK:
 			case JCS_YCCK:
-				if (cinfo.num_components != 4)
-					error();
+				if (cinfo.num_components != 4) {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_BAD_J_COLORSPACE);
 				break;
 
 			default: /* JCS_UNKNOWN can be anything */
-				if (cinfo.num_components < 1)
-					error();
+				if (cinfo.num_components < 1) {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_BAD_J_COLORSPACE);
 				break;
 		}
@@ -3016,10 +3060,12 @@ public class JPEGDecoder {
 					 * For color.grayscale conversion, only the Y (0) component
 					 * is needed
 					 */
-					for (ci = 1; ci < cinfo.num_components; ci++)
-						cinfo.comp_info[ci].component_needed = false;
-				} else
-					error();
+					for (ci = 1; ci < cinfo.num_components; ci++) {
+	                    cinfo.comp_info[ci].component_needed = false;
+                    }
+				} else {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_CONVERSION_NOTIMPL);
 				break;
 
@@ -3030,11 +3076,11 @@ public class JPEGDecoder {
 					build_ycc_rgb_table(cinfo);
 				} else if (cinfo.jpeg_color_space == JCS_GRAYSCALE) {
 					cconvert.color_convert = GRAY_RGB_CONVERT;
-				} else if (cinfo.jpeg_color_space == JCS_RGB
-						&& RGB_PIXELSIZE == 3) {
+				} else if (cinfo.jpeg_color_space == JCS_RGB) {
 					cconvert.color_convert = NULL_CONVERT;
-				} else
-					error();
+				} else {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_CONVERSION_NOTIMPL);
 				break;
 
@@ -3045,8 +3091,9 @@ public class JPEGDecoder {
 					build_ycc_rgb_table(cinfo);
 				} else if (cinfo.jpeg_color_space == JCS_CMYK) {
 					cconvert.color_convert = NULL_CONVERT;
-				} else
-					error();
+				} else {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_CONVERSION_NOTIMPL);
 				break;
 
@@ -3055,20 +3102,22 @@ public class JPEGDecoder {
 				if (cinfo.out_color_space == cinfo.jpeg_color_space) {
 					cinfo.out_color_components = cinfo.num_components;
 					cconvert.color_convert = NULL_CONVERT;
-				} else
-					/* unsupported non-null conversion */
+				} else {
+	                /* unsupported non-null conversion */
 					error();
+                }
 				// ERREXIT(cinfo, JERR_CONVERSION_NOTIMPL);
 				break;
 		}
 
-		if (cinfo.quantize_colors)
-			cinfo.output_components = 1; /*
+		if (cinfo.quantize_colors) {
+	        cinfo.output_components = 1; /*
 											 * single colormapped output
 											 * component
 											 */
-		else
-			cinfo.output_components = cinfo.out_color_components;
+        } else {
+	        cinfo.output_components = cinfo.out_color_components;
+        }
 	}
 
 	static void jinit_d_post_controller(jpeg_decompress_struct cinfo,
@@ -3210,19 +3259,19 @@ public class JPEGDecoder {
 		jpeg_d_main_controller main = cinfo.main = new jpeg_d_main_controller();
 		// main.pub.start_pass = start_pass_main;
 
-		if (need_full_buffer) /* shouldn't happen */
-			error();
+		if (need_full_buffer)
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_BAD_BUFFER_MODE);
+        }
 
 		/*
 		 * Allocate the workspace. ngroups is the number of row groups we need.
 		 */
 		if (cinfo.upsample.need_context_rows) {
-			if (cinfo.min_DCT_scaled_size < 2) /*
-												 * unsupported, see comments
-												 * above
-												 */
-				error();
+			if (cinfo.min_DCT_scaled_size < 2) {
+	            error();
+            }
 			// ERREXIT(cinfo, JERR_NOTIMPL);
 			alloc_funny_pointers(cinfo); /* Alloc space for xbuffer[] lists */
 			ngroups = cinfo.min_DCT_scaled_size + 2;
@@ -3262,9 +3311,11 @@ public class JPEGDecoder {
 		// upsample.upsample = sep_upsample;
 		upsample.need_context_rows = false; /* until we find out differently */
 
-		if (cinfo.CCIR601_sampling) /* this isn't supported */
-			error();
+		if (cinfo.CCIR601_sampling)
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_CCIR601_NOTIMPL);
+        }
 
 		/*
 		 * jdmainct.c doesn't support context rows when min_DCT_scaled_size = 1,
@@ -3302,26 +3353,29 @@ public class JPEGDecoder {
 			} else if (h_in_group * 2 == h_out_group
 					&& v_in_group == v_out_group) {
 				/* Special cases for 2h1v upsampling */
-				if (do_fancy && compptr.downsampled_width > 2)
-					upsample.methods[ci] = H2V1_FANCY_UPSAMPLE;
-				else
-					upsample.methods[ci] = H2V1_UPSAMPLE;
+				if (do_fancy && compptr.downsampled_width > 2) {
+	                upsample.methods[ci] = H2V1_FANCY_UPSAMPLE;
+                } else {
+	                upsample.methods[ci] = H2V1_UPSAMPLE;
+                }
 			} else if (h_in_group * 2 == h_out_group
 					&& v_in_group * 2 == v_out_group) {
 				/* Special cases for 2h2v upsampling */
 				if (do_fancy && compptr.downsampled_width > 2) {
 					upsample.methods[ci] = H2V2_FANCY_UPSAMPLE;
 					upsample.need_context_rows = true;
-				} else
-					upsample.methods[ci] = H2V2_UPSAMPLE;
+				} else {
+	                upsample.methods[ci] = H2V2_UPSAMPLE;
+                }
 			} else if ((h_out_group % h_in_group) == 0
 					&& (v_out_group % v_in_group) == 0) {
 				/* Generic integral-factors upsampling method */
 				upsample.methods[ci] = INT_UPSAMPLE;
 				upsample.h_expand[ci] = (byte) (h_out_group / h_in_group);
 				upsample.v_expand[ci] = (byte) (v_out_group / v_in_group);
-			} else
-				error();
+			} else {
+	            error();
+            }
 			// ERREXIT(cinfo, JERR_FRACT_SAMPLE_NOTIMPL);
 			if (need_buffer) {
 				upsample.color_buf[ci] = new byte[cinfo.max_v_samp_factor][(int) jround_up(
@@ -3340,9 +3394,11 @@ public class JPEGDecoder {
 		/* Create progression status table */
 		cinfo.coef_bits = new int[cinfo.num_components][DCTSIZE2];
 		coef_bit_ptr = cinfo.coef_bits;
-		for (ci = 0; ci < cinfo.num_components; ci++)
-			for (i = 0; i < DCTSIZE2; i++)
-				coef_bit_ptr[ci][i] = -1;
+		for (ci = 0; ci < cinfo.num_components; ci++) {
+	        for (i = 0; i < DCTSIZE2; i++) {
+	            coef_bit_ptr[ci][i] = -1;
+            }
+        }
 	}
 
 	static void jinit_huff_decoder(jpeg_decompress_struct cinfo) {
@@ -3683,20 +3739,23 @@ public class JPEGDecoder {
 		int[] coef_bits;
 		int[] coef_bits_latch;
 
-		if (!cinfo.progressive_mode || cinfo.coef_bits == null)
-			return false;
+		if (!cinfo.progressive_mode || cinfo.coef_bits == null) {
+	        return false;
+        }
 
 		/* Allocate latch area if not already done */
-		if (coef.coef_bits_latch == null)
-			coef.coef_bits_latch = new int[cinfo.num_components * SAVED_COEFS];
+		if (coef.coef_bits_latch == null) {
+	        coef.coef_bits_latch = new int[cinfo.num_components * SAVED_COEFS];
+        }
 		coef_bits_latch = coef.coef_bits_latch;
 		int coef_bits_latch_offset = 0;
 
 		for (ci = 0; ci < cinfo.num_components; ci++) {
 			compptr = cinfo.comp_info[ci];
 			/* All components' quantization values must already be latched. */
-			if ((qtable = compptr.quant_table) == null)
-				return false;
+			if ((qtable = compptr.quant_table) == null) {
+	            return false;
+            }
 			/*
 			 * Verify DC & first 5 AC quantizers are nonzero to avoid
 			 * zero-divide.
@@ -3705,20 +3764,23 @@ public class JPEGDecoder {
 					|| qtable.quantval[Q10_POS] == 0
 					|| qtable.quantval[Q20_POS] == 0
 					|| qtable.quantval[Q11_POS] == 0
-					|| qtable.quantval[Q02_POS] == 0)
-				return false;
+					|| qtable.quantval[Q02_POS] == 0) {
+	            return false;
+            }
 			/* DC values must be at least partly known for all components. */
 			coef_bits = cinfo.coef_bits[ci];
-			if (coef_bits[0] < 0)
-				return false;
+			if (coef_bits[0] < 0) {
+	            return false;
+            }
 			/*
 			 * Block smoothing is helpful if some AC coefficients remain
 			 * inaccurate.
 			 */
 			for (coefi = 1; coefi <= 5; coefi++) {
 				coef_bits_latch[coefi + coef_bits_latch_offset] = coef_bits[coefi];
-				if (coef_bits[coefi] != 0)
-					smoothing_useful = true;
+				if (coef_bits[coefi] != 0) {
+	                smoothing_useful = true;
+                }
 			}
 			coef_bits_latch_offset += SAVED_COEFS;
 		}
@@ -3741,8 +3803,10 @@ public class JPEGDecoder {
 				* (long) cinfo.out_color_components;
 		jd_samplesperrow = (int) samplesperrow;
 		if (jd_samplesperrow != samplesperrow)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_WIDTH_OVERFLOW);
+        }
 
 		/* Initialize my private state */
 		master.pass_number = 0;
@@ -3829,8 +3893,9 @@ public class JPEGDecoder {
 				// #else
 				// ERREXIT(cinfo, JERR_NOT_COMPILED);
 				// #endif
-			} else
-				jinit_huff_decoder(cinfo);
+			} else {
+	            jinit_huff_decoder(cinfo);
+            }
 		}
 
 		/* Initialize principal buffer controllers. */
@@ -3838,11 +3903,12 @@ public class JPEGDecoder {
 				|| cinfo.buffered_image;
 		jinit_d_coef_controller(cinfo, use_c_buffer);
 
-		if (!cinfo.raw_data_out)
-			jinit_d_main_controller(cinfo, false /*
+		if (!cinfo.raw_data_out) {
+	        jinit_d_main_controller(cinfo, false /*
 													 * never need full buffer
 													 * here
 													 */);
+        }
 
 		/* Initialize input side of decompressor to consume first scan. */
 		start_input_pass(cinfo);
@@ -3933,10 +3999,11 @@ public class JPEGDecoder {
 					// cinfo);
 					/* Absorb some more input */
 					retcode = consume_input(cinfo);
-					if (retcode == JPEG_SUSPENDED)
-						return false;
-					if (retcode == JPEG_REACHED_EOI)
-						break;
+					if (retcode == JPEG_SUSPENDED) {
+	                    return false;
+                    }
+					if (retcode == JPEG_REACHED_EOI) {
+	                    break;
 					/* Advance progress counter if appropriate */
 					// if (cinfo.progress != null && (retcode ==
 					// JPEG_ROW_COMPLETED || retcode == JPEG_REACHED_SOS)) {
@@ -3948,14 +4015,16 @@ public class JPEGDecoder {
 					// cinfo.total_iMCU_rows;
 					// }
 					// }
+                    }
 				}
 				// #else
 				// ERREXIT(cinfo, JERR_NOT_COMPILED);
 				// #endif /* D_MULTISCAN_FILES_SUPPORTED */
 			}
 			cinfo.output_scan_number = cinfo.input_scan_number;
-		} else if (cinfo.global_state != DSTATE_PRESCAN)
-			error();
+		} else if (cinfo.global_state != DSTATE_PRESCAN) {
+	        error();
+        }
 		// ERREXIT1(cinfo, JERR_BAD_STATE, cinfo.global_state);
 		/* Perform any dummy output passes, and set up for the final pass */
 		return output_pass_setup(cinfo);
@@ -3991,11 +4060,13 @@ public class JPEGDecoder {
 			cinfo.idct.start_pass(cinfo);
 			start_output_pass(cinfo);
 			if (!cinfo.raw_data_out) {
-				if (!master.using_merged_upsample)
-					cinfo.cconvert.start_pass(cinfo);
+				if (!master.using_merged_upsample) {
+	                cinfo.cconvert.start_pass(cinfo);
+                }
 				cinfo.upsample.start_pass(cinfo);
-				if (cinfo.quantize_colors)
-					cinfo.cquantize.start_pass(cinfo, master.is_dummy_pass);
+				if (cinfo.quantize_colors) {
+	                cinfo.cquantize.start_pass(cinfo, master.is_dummy_pass);
+                }
 				cinfo.post.start_pass(cinfo,
 						(master.is_dummy_pass ? JBUF_SAVE_AND_PASS
 								: JBUF_PASS_THRU));
@@ -4026,19 +4097,20 @@ public class JPEGDecoder {
 		// WARNMS2(cinfo, JWRN_MUST_RESYNC, marker, desired);
 		/* Outer loop handles repeated decision after scanning forward. */
 		for (;;) {
-			if (marker < M_SOF0)
-				action = 2; /* invalid marker */
-			else if (marker < M_RST0 || marker > M_RST7)
-				action = 3; /* valid non-restart marker */
-			else {
+			if (marker < M_SOF0) {
+	            action = 2; /* invalid marker */
+            } else if (marker < M_RST0 || marker > M_RST7) {
+	            action = 3; /* valid non-restart marker */
+            } else {
 				if (marker == (M_RST0 + ((desired + 1) & 7))
-						|| marker == (M_RST0 + ((desired + 2) & 7)))
-					action = 3; /* one of the next two expected restarts */
-				else if (marker == (M_RST0 + ((desired - 1) & 7))
-						|| marker == (M_RST0 + ((desired - 2) & 7)))
-					action = 2; /* a prior restart, so advance */
-				else
-					action = 1; /* desired restart or too far away */
+						|| marker == (M_RST0 + ((desired + 2) & 7))) {
+	                action = 3; /* one of the next two expected restarts */
+                } else if (marker == (M_RST0 + ((desired - 1) & 7))
+						|| marker == (M_RST0 + ((desired - 2) & 7))) {
+	                action = 2; /* a prior restart, so advance */
+                } else {
+	                action = 1; /* desired restart or too far away */
+                }
 			}
 			// TRACEMS2(cinfo, 4, JTRC_RECOVERY_ACTION, marker, action);
 			switch (action) {
@@ -4048,8 +4120,9 @@ public class JPEGDecoder {
 					return true;
 				case 2:
 					/* Scan to the next marker, and repeat the decision loop. */
-					if (!next_marker(cinfo))
-						return false;
+					if (!next_marker(cinfo)) {
+	                    return false;
+                    }
 					marker = cinfo.unread_marker;
 					break;
 				case 3:
@@ -4067,8 +4140,9 @@ public class JPEGDecoder {
 		/* Obtain a marker unless we already did. */
 		/* Note that next_marker will complain if it skips any data. */
 		if (cinfo.unread_marker == 0) {
-			if (!next_marker(cinfo))
-				return false;
+			if (!next_marker(cinfo)) {
+	            return false;
+            }
 		}
 
 		if (cinfo.unread_marker == (M_RST0 + cinfo.marker.next_restart_num)) {
@@ -4081,8 +4155,9 @@ public class JPEGDecoder {
 		} else {
 			/* Uh-oh, the restart markers have been messed up. */
 			/* Let the data source manager determine how to resync. */
-			if (!jpeg_resync_to_restart(cinfo, cinfo.marker.next_restart_num))
-				return false;
+			if (!jpeg_resync_to_restart(cinfo, cinfo.marker.next_restart_num)) {
+	            return false;
+            }
 		}
 
 		/* Update next-restart state */
@@ -4111,8 +4186,9 @@ public class JPEGDecoder {
 
 				/* Attempt to read a byte */
 				if (bytes_offset == bytes_in_buffer) {
-					if (!fill_input_buffer(cinfo))
-						return false;
+					if (!fill_input_buffer(cinfo)) {
+	                    return false;
+                    }
 					buffer = cinfo.buffer;
 					bytes_in_buffer = cinfo.bytes_in_buffer;
 					bytes_offset = cinfo.bytes_offset;
@@ -4130,8 +4206,9 @@ public class JPEGDecoder {
 					 */
 					do {
 						if (bytes_offset == bytes_in_buffer) {
-							if (!fill_input_buffer(cinfo))
-								return false;
+							if (!fill_input_buffer(cinfo)) {
+	                            return false;
+                            }
 							buffer = cinfo.buffer;
 							bytes_in_buffer = cinfo.bytes_in_buffer;
 							bytes_offset = cinfo.bytes_offset;
@@ -4369,7 +4446,7 @@ public class JPEGDecoder {
 		jpeg_d_coef_controller coef = cinfo.coef;
 		int last_iMCU_row = cinfo.total_iMCU_rows - 1;
 		int block_num, last_block_column;
-		int ci, block_row, block_rows, access_rows;
+		int ci, block_row, block_rows;
 		short[][][] buffer;
 		short[][] buffer_ptr, prev_block_row, next_block_row;
 		byte[][] output_ptr;
@@ -4378,8 +4455,9 @@ public class JPEGDecoder {
 		// inverse_DCT_method_ptr inverse_DCT;
 		boolean first_row, last_row;
 		short[] workspace = coef.workspace;
-		if (workspace == null)
-			workspace = coef.workspace = new short[DCTSIZE2];
+		if (workspace == null) {
+	        workspace = coef.workspace = new short[DCTSIZE2];
+        }
 		int[] coef_bits;
 		JQUANT_TBL quanttbl;
 		int Q00, Q01, Q02, Q10, Q11, Q20, num;
@@ -4397,23 +4475,25 @@ public class JPEGDecoder {
 				 * values are up to date.
 				 */
 				int delta = (cinfo.Ss == 0) ? 1 : 0;
-				if (cinfo.input_iMCU_row > cinfo.output_iMCU_row + delta)
-					break;
+				if (cinfo.input_iMCU_row > cinfo.output_iMCU_row + delta) {
+	                break;
+                }
 			}
-			if (consume_input(cinfo) == JPEG_SUSPENDED)
-				return JPEG_SUSPENDED;
+			if (consume_input(cinfo) == JPEG_SUSPENDED) {
+	            return JPEG_SUSPENDED;
+            }
 		}
 
 		/* OK, output from the virtual arrays. */
 		for (ci = 0; ci < cinfo.num_components; ci++) {
 			compptr = cinfo.comp_info[ci];
 			/* Don't bother to IDCT an uninteresting component. */
-			if (!compptr.component_needed)
-				continue;
+			if (!compptr.component_needed) {
+	            continue;
+            }
 			/* Count non-dummy DCT block rows in this iMCU row. */
 			if (cinfo.output_iMCU_row < last_iMCU_row) {
 				block_rows = compptr.v_samp_factor;
-				access_rows = block_rows * 2; /* this and next iMCU row */
 				last_row = false;
 			} else {
 				/*
@@ -4421,15 +4501,14 @@ public class JPEGDecoder {
 				 * input-side-dependent!
 				 */
 				block_rows = (compptr.height_in_blocks % compptr.v_samp_factor);
-				if (block_rows == 0)
-					block_rows = compptr.v_samp_factor;
-				access_rows = block_rows; /* this iMCU row only */
+				if (block_rows == 0) {
+	                block_rows = compptr.v_samp_factor;
+                }
 				last_row = true;
 			}
 			/* Align the virtual buffer for this component. */
 			int buffer_offset;
 			if (cinfo.output_iMCU_row > 0) {
-				access_rows += compptr.v_samp_factor; /* prior iMCU row too */
 				buffer = coef.whole_image[ci];
 				buffer_offset = (cinfo.output_iMCU_row - 1)
 						* compptr.v_samp_factor;
@@ -4509,12 +4588,14 @@ public class JPEGDecoder {
 						num = 36 * Q00 * (DC4 - DC6);
 						if (num >= 0) {
 							pred = (((Q01 << 7) + num) / (Q01 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 						} else {
 							pred = (((Q01 << 7) - num) / (Q01 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 							pred = -pred;
 						}
 						workspace[1] = (short) pred;
@@ -4525,12 +4606,14 @@ public class JPEGDecoder {
 						num = 36 * Q00 * (DC2 - DC8);
 						if (num >= 0) {
 							pred = (((Q10 << 7) + num) / (Q10 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 						} else {
 							pred = (((Q10 << 7) - num) / (Q10 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 							pred = -pred;
 						}
 						workspace[8] = (short) pred;
@@ -4541,12 +4624,14 @@ public class JPEGDecoder {
 						num = 9 * Q00 * (DC2 + DC8 - 2 * DC5);
 						if (num >= 0) {
 							pred = (((Q20 << 7) + num) / (Q20 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 						} else {
 							pred = (((Q20 << 7) - num) / (Q20 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 							pred = -pred;
 						}
 						workspace[16] = (short) pred;
@@ -4557,12 +4642,14 @@ public class JPEGDecoder {
 						num = 5 * Q00 * (DC1 - DC3 - DC7 + DC9);
 						if (num >= 0) {
 							pred = (((Q11 << 7) + num) / (Q11 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 						} else {
 							pred = (((Q11 << 7) - num) / (Q11 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 							pred = -pred;
 						}
 						workspace[9] = (short) pred;
@@ -4573,12 +4660,14 @@ public class JPEGDecoder {
 						num = 9 * Q00 * (DC4 + DC6 - 2 * DC5);
 						if (num >= 0) {
 							pred = (((Q02 << 7) + num) / (Q02 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 						} else {
 							pred = (((Q02 << 7) - num) / (Q02 << 8));
-							if (Al > 0 && pred >= (1 << Al))
-								pred = (1 << Al) - 1;
+							if (Al > 0 && pred >= (1 << Al)) {
+	                            pred = (1 << Al) - 1;
+                            }
 							pred = -pred;
 						}
 						workspace[2] = (short) pred;
@@ -4602,8 +4691,9 @@ public class JPEGDecoder {
 			}
 		}
 
-		if (++(cinfo.output_iMCU_row) < cinfo.total_iMCU_rows)
-			return JPEG_ROW_COMPLETED;
+		if (++(cinfo.output_iMCU_row) < cinfo.total_iMCU_rows) {
+	        return JPEG_ROW_COMPLETED;
+        }
 		return JPEG_SCAN_COMPLETED;
 	}
 
@@ -4623,30 +4713,33 @@ public class JPEGDecoder {
 		/* Force some input to be done if we are getting ahead of the input. */
 		while (cinfo.input_scan_number < cinfo.output_scan_number
 				|| (cinfo.input_scan_number == cinfo.output_scan_number && cinfo.input_iMCU_row <= cinfo.output_iMCU_row)) {
-			if (consume_input(cinfo) == JPEG_SUSPENDED)
-				return JPEG_SUSPENDED;
+			if (consume_input(cinfo) == JPEG_SUSPENDED) {
+	            return JPEG_SUSPENDED;
+            }
 		}
 
 		/* OK, output from the virtual arrays. */
 		for (ci = 0; ci < cinfo.num_components; ci++) {
 			compptr = cinfo.comp_info[ci];
 			/* Don't bother to IDCT an uninteresting component. */
-			if (!compptr.component_needed)
-				continue;
+			if (!compptr.component_needed) {
+	            continue;
+            }
 			/* Align the virtual buffer for this component. */
 			buffer = coef.whole_image[ci];
 			int buffer_offset = cinfo.output_iMCU_row * compptr.v_samp_factor;
 			/* Count non-dummy DCT block rows in this iMCU row. */
-			if (cinfo.output_iMCU_row < last_iMCU_row)
-				block_rows = compptr.v_samp_factor;
-			else {
+			if (cinfo.output_iMCU_row < last_iMCU_row) {
+	            block_rows = compptr.v_samp_factor;
+            } else {
 				/*
 				 * NB: can't use last_row_height here; it is
 				 * input-side-dependent!
 				 */
 				block_rows = (compptr.height_in_blocks % compptr.v_samp_factor);
-				if (block_rows == 0)
-					block_rows = compptr.v_samp_factor;
+				if (block_rows == 0) {
+	                block_rows = compptr.v_samp_factor;
+                }
 			}
 			// inverse_DCT = cinfo.idct.inverse_DCT[ci];
 			output_ptr = output_buf[ci];
@@ -4668,8 +4761,9 @@ public class JPEGDecoder {
 			}
 		}
 
-		if (++(cinfo.output_iMCU_row) < cinfo.total_iMCU_rows)
-			return JPEG_ROW_COMPLETED;
+		if (++(cinfo.output_iMCU_row) < cinfo.total_iMCU_rows) {
+	        return JPEG_ROW_COMPLETED;
+        }
 		return JPEG_SCAN_COMPLETED;
 	}
 
@@ -4701,8 +4795,9 @@ public class JPEGDecoder {
 			rgroup = iMCUheight / cinfo.min_DCT_scaled_size;
 			/* Count nondummy sample rows remaining for this component */
 			rows_left = (compptr.downsampled_height % iMCUheight);
-			if (rows_left == 0)
-				rows_left = iMCUheight;
+			if (rows_left == 0) {
+	            rows_left = iMCUheight;
+            }
 			/*
 			 * Count nondummy row groups. Should get same answer for each
 			 * component, so we need only do it once.
@@ -4792,8 +4887,9 @@ public class JPEGDecoder {
 				default:
 					result = 0;
 			}
-			if (result == 0)
-				return; /* suspension forced, can do nothing more */
+			if (result == 0) {
+	            return; /* suspension forced, can do nothing more */
+            }
 			main.buffer_full = true; /* OK, we have an iMCU row to work with */
 			main.iMCU_row_ctr++; /* count rows received */
 		}
@@ -4815,11 +4911,13 @@ public class JPEGDecoder {
 						main.xbuffer_offset[main.whichptr], main.rowgroup_ctr,
 						main.rowgroups_avail, output_buf, out_row_ctr,
 						out_rows_avail);
-				if (main.rowgroup_ctr[0] < main.rowgroups_avail)
-					return; /* Need to suspend */
+				if (main.rowgroup_ctr[0] < main.rowgroups_avail) {
+	                return; /* Need to suspend */
+                }
 				main.context_state = CTX_PREPARE_FOR_IMCU;
-				if (out_row_ctr[0] >= out_rows_avail)
-					return; /* Postprocessor exactly filled output buf */
+				if (out_row_ctr[0] >= out_rows_avail) {
+	                return; /* Postprocessor exactly filled output buf */
+                }
 				/* FALLTHROUGH */
 			case CTX_PREPARE_FOR_IMCU:
 				/* Prepare to process first M-1 row groups of this iMCU row */
@@ -4830,8 +4928,9 @@ public class JPEGDecoder {
 				 * "duplicate" the last sample row, and adjust rowgroups_avail
 				 * to ignore padding rows.
 				 */
-				if (main.iMCU_row_ctr == cinfo.total_iMCU_rows)
-					set_bottom_pointers(cinfo);
+				if (main.iMCU_row_ctr == cinfo.total_iMCU_rows) {
+	                set_bottom_pointers(cinfo);
+                }
 				main.context_state = CTX_PROCESS_IMCU;
 				/* FALLTHROUGH */
 			case CTX_PROCESS_IMCU:
@@ -4840,14 +4939,16 @@ public class JPEGDecoder {
 						main.xbuffer_offset[main.whichptr], main.rowgroup_ctr,
 						main.rowgroups_avail, output_buf, out_row_ctr,
 						out_rows_avail);
-				if (main.rowgroup_ctr[0] < main.rowgroups_avail)
-					return; /* Need to suspend */
+				if (main.rowgroup_ctr[0] < main.rowgroups_avail) {
+	                return; /* Need to suspend */
+                }
 				/*
 				 * After the first iMCU, change wraparound pointers to normal
 				 * state
 				 */
-				if (main.iMCU_row_ctr == 1)
-					set_wraparound_pointers(cinfo);
+				if (main.iMCU_row_ctr == 1) {
+	                set_wraparound_pointers(cinfo);
+                }
 				/* Prepare to load new iMCU row using other xbuffer list */
 				main.whichptr ^= 1; /* 0=>1 or 1=>0 */
 				main.buffer_full = false;
@@ -4883,8 +4984,9 @@ public class JPEGDecoder {
 				default:
 					result = 0;
 			}
-			if (result == 0)
-				return; /* suspension forced, can do nothing more */
+			if (result == 0) {
+	            return; /* suspension forced, can do nothing more */
+            }
 			main.buffer_full = true; /* OK, we have an iMCU row to work with */
 		}
 
@@ -4912,8 +5014,9 @@ public class JPEGDecoder {
 	static int jpeg_read_scanlines(jpeg_decompress_struct cinfo,
 			byte[][] scanlines, int max_lines) {
 
-		if (cinfo.global_state != DSTATE_SCANNING)
-			error();
+		if (cinfo.global_state != DSTATE_SCANNING) {
+	        error();
+        }
 		// ERREXIT1(cinfo, JERR_BAD_STATE, cinfo.global_state);
 		if (cinfo.output_scanline >= cinfo.output_height) {
 			// WARNMS(cinfo, JWRN_TOO_MUCH_DATA);
@@ -5001,17 +5104,20 @@ public class JPEGDecoder {
 		int i, index, count;
 		JHUFF_TBL htblptr;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 		length -= 2;
 
 		while (length > 16) {
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			index = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 			// TRACEMS1(cinfo, 1, JTRC_DHT, index);
@@ -5019,8 +5125,9 @@ public class JPEGDecoder {
 			bits[0] = 0;
 			count = 0;
 			for (i = 1; i <= 16; i++) {
-				if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-					fill_input_buffer(cinfo);
+				if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	                fill_input_buffer(cinfo);
+                }
 				bits[i] = cinfo.buffer[cinfo.bytes_offset++];
 				count += bits[i] & 0xFF;
 			}
@@ -5040,12 +5147,15 @@ public class JPEGDecoder {
 			 * carefully.
 			 */
 			if (count > 256 || (count) > length)
-				error();
+			 {
+	            error();
 			// ERREXIT(cinfo, JERR_BAD_HUFF_TABLE);
+            }
 
 			for (i = 0; i < count; i++) {
-				if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-					fill_input_buffer(cinfo);
+				if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	                fill_input_buffer(cinfo);
+                }
 				huffval[i] = cinfo.buffer[cinfo.bytes_offset++];
 			}
 
@@ -5059,16 +5169,20 @@ public class JPEGDecoder {
 			}
 
 			if (index < 0 || index >= NUM_HUFF_TBLS)
-				error();
+			 {
+	            error();
 			// ERREXIT1(cinfo, JERR_DHT_INDEX, index);
+            }
 
 			System.arraycopy(bits, 0, htblptr.bits, 0, bits.length);
 			System.arraycopy(huffval, 0, htblptr.huffval, 0, huffval.length);
 		}
 
 		if (length != 0)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_BAD_LENGTH);
+        }
 
 		return true;
 	}
@@ -5081,17 +5195,20 @@ public class JPEGDecoder {
 		int tmp;
 		JQUANT_TBL quant_ptr;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 		length -= 2;
 
 		while (length > 0) {
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			n = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 			prec = n >> 4;
 			n &= 0x0F;
@@ -5099,24 +5216,30 @@ public class JPEGDecoder {
 			// TRACEMS2(cinfo, 1, JTRC_DQT, n, prec);
 
 			if (n >= NUM_QUANT_TBLS)
-				error();
+			 {
+	            error();
 			// ERREXIT1(cinfo, JERR_DQT_INDEX, n);
+            }
 
-			if (cinfo.quant_tbl_ptrs[n] == null)
-				cinfo.quant_tbl_ptrs[n] = new JQUANT_TBL();
+			if (cinfo.quant_tbl_ptrs[n] == null) {
+	            cinfo.quant_tbl_ptrs[n] = new JQUANT_TBL();
+            }
 			quant_ptr = cinfo.quant_tbl_ptrs[n];
 
 			for (i = 0; i < DCTSIZE2; i++) {
 				if (prec != 0) {
-					if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-						fill_input_buffer(cinfo);
+					if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	                    fill_input_buffer(cinfo);
+                    }
 					tmp = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-					if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-						fill_input_buffer(cinfo);
+					if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	                    fill_input_buffer(cinfo);
+                    }
 					tmp |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 				} else {
-					if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-						fill_input_buffer(cinfo);
+					if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	                    fill_input_buffer(cinfo);
+                    }
 					tmp = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 				}
 				/* We convert the zigzag-order table to natural array order. */
@@ -5134,13 +5257,16 @@ public class JPEGDecoder {
 			// }
 
 			length -= (DCTSIZE2 + 1);
-			if (prec != 0)
-				length -= DCTSIZE2;
+			if (prec != 0) {
+	            length -= DCTSIZE2;
+            }
 		}
 
 		if (length != 0)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_BAD_LENGTH);
+        }
 
 		return true;
 	}
@@ -5151,22 +5277,28 @@ public class JPEGDecoder {
 		int length;
 		int tmp;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 		if (length != 4)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_BAD_LENGTH);
+        }
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		tmp = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		tmp |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 		// TRACEMS1(cinfo, 1, JTRC_DRI, tmp);
@@ -5181,20 +5313,24 @@ public class JPEGDecoder {
 	{
 		int length;
 		int index, val;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 		length -= 2;
 
 		while (length > 0) {
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			index = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			val = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 			length -= 2;
@@ -5202,8 +5338,10 @@ public class JPEGDecoder {
 			// TRACEMS2(cinfo, 1, JTRC_DAC, index, val);
 
 			if (index < 0 || index >= (2 * NUM_ARITH_TBLS))
-				error();
+			 {
+	            error();
 			// ERREXIT1(cinfo, JERR_DAC_INDEX, index);
+            }
 
 			if (index >= NUM_ARITH_TBLS) { /* define AC table */
 				cinfo.arith_ac_K[index - NUM_ARITH_TBLS] = (byte) val;
@@ -5211,14 +5349,18 @@ public class JPEGDecoder {
 				cinfo.arith_dc_L[index] = (byte) (val & 0x0F);
 				cinfo.arith_dc_U[index] = (byte) (val >> 4);
 				if (cinfo.arith_dc_L[index] > cinfo.arith_dc_U[index])
-					error();
+				 {
+	                error();
 				// ERREXIT1(cinfo, JERR_DAC_VALUE, val);
+                }
 			}
 		}
 
 		if (length != 0)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_BAD_LENGTH);
+        }
 
 		return true;
 	}
@@ -5231,47 +5373,59 @@ public class JPEGDecoder {
 		jpeg_component_info compptr = null;
 
 		if (!cinfo.marker.saw_SOF)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_SOS_NO_SOF);
+        }
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		n = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 		// TRACEMS1(cinfo, 1, JTRC_SOS, n);
 
 		if (length != (n * 2 + 6) || n < 1 || n > MAX_COMPS_IN_SCAN)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_BAD_LENGTH);
+        }
 
 		cinfo.comps_in_scan = n;
 
 		/* Collect the component-spec parameters */
 
 		for (i = 0; i < n; i++) {
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			cc = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 			for (ci = 0; ci < cinfo.num_components; ci++) {
 				compptr = cinfo.comp_info[ci];
-				if (cc == compptr.component_id)
-					break;
+				if (cc == compptr.component_id) {
+	                break;
+                }
 			}
 
 			if (ci == cinfo.num_components)
-				error();
+			 {
+	            error();
 			// ERREXIT1(cinfo, JERR_BAD_COMPONENT_ID, cc);
+            }
 
 			cinfo.cur_comp_info[i] = compptr;
 			compptr.dc_tbl_no = (c >> 4) & 15;
@@ -5282,16 +5436,19 @@ public class JPEGDecoder {
 		}
 
 		/* Collect the additional scan parameters Ss, Se, Ah/Al. */
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 		cinfo.Ss = c;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 		cinfo.Se = c;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 		cinfo.Ah = (c >> 4) & 15;
 		cinfo.Al = (c) & 15;
@@ -5316,33 +5473,41 @@ public class JPEGDecoder {
 		cinfo.progressive_mode = is_prog;
 		cinfo.arith_code = is_arith;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		cinfo.data_precision = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		cinfo.image_height = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		cinfo.image_height |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		cinfo.image_width = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		cinfo.image_width |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		cinfo.num_components = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 		length -= 8;
@@ -5352,8 +5517,10 @@ public class JPEGDecoder {
 		// cinfo.num_components);
 
 		if (cinfo.marker.saw_SOF)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_SOF_DUPLICATE);
+        }
 
 		/*
 		 * We don't support files in which the image height is initially
@@ -5363,29 +5530,37 @@ public class JPEGDecoder {
 		/* might as well have a general sanity check. */
 		if (cinfo.image_height <= 0 || cinfo.image_width <= 0
 				|| cinfo.num_components <= 0)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_EMPTY_IMAGE);
+        }
 
 		if (length != (cinfo.num_components * 3))
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_BAD_LENGTH);
+        }
 
-		if (cinfo.comp_info == null) /* do only once, even if suspend */
-			cinfo.comp_info = new jpeg_component_info[cinfo.num_components];
+		if (cinfo.comp_info == null) {
+	        cinfo.comp_info = new jpeg_component_info[cinfo.num_components];
+        }
 
 		for (ci = 0; ci < cinfo.num_components; ci++) {
 			jpeg_component_info compptr = cinfo.comp_info[ci] = new jpeg_component_info();
 			compptr.component_index = ci;
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			compptr.component_id = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 			compptr.h_samp_factor = (c >> 4) & 15;
 			compptr.v_samp_factor = (c) & 15;
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			compptr.quant_tbl_no = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 			// TRACEMS4(cinfo, 1, JTRC_SOF_COMPONENT,
@@ -5467,12 +5642,14 @@ public class JPEGDecoder {
 		 * Not more than the distance to the end of the image. Need this test in
 		 * case the image height is not a multiple of max_v_samp_factor:
 		 */
-		if (num_rows > upsample.rows_to_go)
-			num_rows = upsample.rows_to_go;
+		if (num_rows > upsample.rows_to_go) {
+	        num_rows = upsample.rows_to_go;
+        }
 		/* And not more than what the client can accept: */
 		out_rows_avail -= out_row_ctr[0];
-		if (num_rows > out_rows_avail)
-			num_rows = out_rows_avail;
+		if (num_rows > out_rows_avail) {
+	        num_rows = out_rows_avail;
+        }
 
 		switch (cinfo.cconvert.color_convert) {
 			case NULL_CONVERT:
@@ -5641,11 +5818,12 @@ public class JPEGDecoder {
 				 * nearest
 				 */
 				inptr0 = input_data[inrow + input_data_offset];
-				if (v == 0) /* next nearest is row above */
-					inptr1 = input_data[inrow - 1 + input_data_offset];
-				else
-					/* next nearest is row below */
+				if (v == 0) {
+	                inptr1 = input_data[inrow - 1 + input_data_offset];
+                } else {
+	                /* next nearest is row below */
 					inptr1 = input_data[inrow + 1 + input_data_offset];
+                }
 				outptr = output_data[outrow++];
 
 				int inptr0_offset = 0, inptr1_offset = 0, outptr_offset = 0;
@@ -5858,12 +6036,13 @@ public class JPEGDecoder {
 		if (num_bytes > 0) {
 			while (num_bytes > cinfo.bytes_in_buffer - cinfo.bytes_offset) {
 				num_bytes -= cinfo.bytes_in_buffer - cinfo.bytes_offset;
-				if (!fill_input_buffer(cinfo))
-					error();
+				if (!fill_input_buffer(cinfo)) {
+	                error();
 				/*
 				 * note we assume that fill_input_buffer will never return
 				 * FALSE, so suspension need not be handled.
 				 */
+                }
 			}
 			cinfo.bytes_offset += num_bytes;
 		}
@@ -5874,11 +6053,13 @@ public class JPEGDecoder {
 	{
 		int length;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 
 		length -= 2;
@@ -5900,24 +6081,28 @@ public class JPEGDecoder {
 		byte[] b = new byte[APPN_DATA_LEN];
 		int i, numtoread;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length = (cinfo.buffer[cinfo.bytes_offset++] & 0xFF) << 8;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		length |= cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 		length -= 2;
 
 		/* get the interesting part of the marker data */
-		if (length >= APPN_DATA_LEN)
-			numtoread = APPN_DATA_LEN;
-		else if (length > 0)
-			numtoread = length;
-		else
-			numtoread = 0;
+		if (length >= APPN_DATA_LEN) {
+	        numtoread = APPN_DATA_LEN;
+        } else if (length > 0) {
+	        numtoread = length;
+        } else {
+	        numtoread = 0;
+        }
 		for (i = 0; i < numtoread; i++) {
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			b[i] = cinfo.buffer[cinfo.bytes_offset++];
 		}
 		length -= numtoread;
@@ -5941,8 +6126,9 @@ public class JPEGDecoder {
 		}
 
 		/* skip any remaining data -- could be lots */
-		if (length > 0)
-			skip_input_data(cinfo, length);
+		if (length > 0) {
+	        skip_input_data(cinfo, length);
+        }
 
 		return true;
 	}
@@ -6058,8 +6244,10 @@ public class JPEGDecoder {
 		// TRACEMS(cinfo, 1, JTRC_SOI);
 
 		if (cinfo.marker.saw_SOI)
-			error();
+		 {
+	        error();
 		// ERREXIT(cinfo, JERR_SOI_DUPLICATE);
+        }
 
 		/* Reset all parameters that are defined to be reset by SOI */
 
@@ -6153,8 +6341,9 @@ public class JPEGDecoder {
 	static boolean jpeg_input_complete(jpeg_decompress_struct cinfo) {
 		/* Check for valid jpeg object */
 		if (cinfo.global_state < DSTATE_START
-				|| cinfo.global_state > DSTATE_STOPPING)
-			error();
+				|| cinfo.global_state > DSTATE_STOPPING) {
+	        error();
+        }
 		// ERREXIT1(cinfo, JERR_BAD_STATE, cinfo.global_state);
 		return cinfo.inputctl.eoi_reached;
 	}
@@ -6162,14 +6351,17 @@ public class JPEGDecoder {
 	static boolean jpeg_start_output(jpeg_decompress_struct cinfo,
 			int scan_number) {
 		if (cinfo.global_state != DSTATE_BUFIMAGE
-				&& cinfo.global_state != DSTATE_PRESCAN)
-			error();
+				&& cinfo.global_state != DSTATE_PRESCAN) {
+	        error();
+        }
 		// ERREXIT1(cinfo, JERR_BAD_STATE, cinfo.global_state);
 		/* Limit scan number to valid range */
-		if (scan_number <= 0)
-			scan_number = 1;
-		if (cinfo.inputctl.eoi_reached && scan_number > cinfo.input_scan_number)
-			scan_number = cinfo.input_scan_number;
+		if (scan_number <= 0) {
+	        scan_number = 1;
+        }
+		if (cinfo.inputctl.eoi_reached && scan_number > cinfo.input_scan_number) {
+	        scan_number = cinfo.input_scan_number;
+        }
 		cinfo.output_scan_number = scan_number;
 		/* Perform any dummy output passes, and set up for the real pass */
 		return output_pass_setup(cinfo);
@@ -6190,8 +6382,9 @@ public class JPEGDecoder {
 		/* Read markers looking for SOS or EOI */
 		while (cinfo.input_scan_number <= cinfo.output_scan_number
 				&& !cinfo.inputctl.eoi_reached) {
-			if (consume_input(cinfo) == JPEG_SUSPENDED)
-				return false; /* Suspend, come back later */
+			if (consume_input(cinfo) == JPEG_SUSPENDED) {
+	            return false; /* Suspend, come back later */
+            }
 		}
 		cinfo.global_state = DSTATE_BUFIMAGE;
 		return true;
@@ -6201,8 +6394,9 @@ public class JPEGDecoder {
 		if ((cinfo.global_state == DSTATE_SCANNING || cinfo.global_state == DSTATE_RAW_OK)
 				&& !cinfo.buffered_image) {
 			/* Terminate final pass of non-buffered mode */
-			if (cinfo.output_scanline < cinfo.output_height)
-				error();
+			if (cinfo.output_scanline < cinfo.output_height) {
+	            error();
+            }
 			// ERREXIT(cinfo, JERR_TOO_LITTLE_DATA);
 			finish_output_pass(cinfo);
 			cinfo.global_state = DSTATE_STOPPING;
@@ -6216,8 +6410,9 @@ public class JPEGDecoder {
 		}
 		/* Read until EOI */
 		while (!cinfo.inputctl.eoi_reached) {
-			if (consume_input(cinfo) == JPEG_SUSPENDED)
-				return false; /* Suspend, come back later */
+			if (consume_input(cinfo) == JPEG_SUSPENDED) {
+	            return false; /* Suspend, come back later */
+            }
 		}
 		/* Do final cleanup */
 		// (*cinfo.src.term_source) (cinfo);
@@ -6232,8 +6427,10 @@ public class JPEGDecoder {
 
 		if (cinfo.global_state != DSTATE_START
 				&& cinfo.global_state != DSTATE_INHEADER)
-			error();
+		 {
+	        error();
 		// ERREXIT1(cinfo, JERR_BAD_STATE, cinfo.global_state);
+        }
 
 		retcode = jpeg_consume_input(cinfo);
 
@@ -6242,8 +6439,9 @@ public class JPEGDecoder {
 				retcode = JPEG_HEADER_OK;
 				break;
 			case JPEG_REACHED_EOI:
-				if (require_image) /* Complain if application wanted an image */
-					error();
+				if (require_image) {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_NO_IMAGE);
 				/*
 				 * Reset to start state; it would be safer to require the
@@ -6354,11 +6552,9 @@ public class JPEGDecoder {
 			InputStream inputStream = cinfo.inputStream;
 			int nbytes = inputStream.read(cinfo.buffer);
 			if (nbytes <= 0) {
-				if (cinfo.start_of_file) /*
-											 * Treat empty input file as fatal
-											 * error
-											 */
-					error();
+				if (cinfo.start_of_file) {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_INPUT_EMPTY);
 				// WARNMS(cinfo, JWRN_JPEG_EOF);
 				/* Insert a fake EOI marker */
@@ -6386,15 +6582,19 @@ public class JPEGDecoder {
 		 */
 		int c, c2;
 
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
-		if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-			fill_input_buffer(cinfo);
+		if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	        fill_input_buffer(cinfo);
+        }
 		c2 = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 		if (c != 0xFF || c2 != M_SOI)
-			error();
+		 {
+	        error();
 		// ERREXIT2(cinfo, JERR_NO_SOI, c, c2);
+        }
 
 		cinfo.unread_marker = c2;
 
@@ -6405,8 +6605,9 @@ public class JPEGDecoder {
 		int c;
 
 		for (;;) {
-			if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-				fill_input_buffer(cinfo);
+			if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	            fill_input_buffer(cinfo);
+            }
 			c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 			/*
 			 * Skip any non-FF bytes. This may look a bit inefficient, but it
@@ -6416,8 +6617,9 @@ public class JPEGDecoder {
 			 */
 			while (c != 0xFF) {
 				cinfo.marker.discarded_bytes++;
-				if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-					fill_input_buffer(cinfo);
+				if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	                fill_input_buffer(cinfo);
+                }
 				c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 			}
 			/*
@@ -6427,12 +6629,14 @@ public class JPEGDecoder {
 			 * suspending data source's input buffer.
 			 */
 			do {
-				if (cinfo.bytes_offset == cinfo.bytes_in_buffer)
-					fill_input_buffer(cinfo);
+				if (cinfo.bytes_offset == cinfo.bytes_in_buffer) {
+	                fill_input_buffer(cinfo);
+                }
 				c = cinfo.buffer[cinfo.bytes_offset++] & 0xFF;
 			} while (c == 0xFF);
-			if (c != 0)
-				break; /* found a valid marker, exit loop */
+			if (c != 0) {
+	            break; /* found a valid marker, exit loop */
+            }
 			/*
 			 * Reach here if we found a stuffed-zero data sequence (FF/00).
 			 * Discard it and loop back to try again.
@@ -6461,11 +6665,13 @@ public class JPEGDecoder {
 			 */
 			if (cinfo.unread_marker == 0) {
 				if (!cinfo.marker.saw_SOI) {
-					if (!first_marker(cinfo))
-						return JPEG_SUSPENDED;
+					if (!first_marker(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 				} else {
-					if (!next_marker(cinfo))
-						return JPEG_SUSPENDED;
+					if (!next_marker(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 				}
 			}
 			/*
@@ -6476,29 +6682,34 @@ public class JPEGDecoder {
 			 */
 			switch (cinfo.unread_marker) {
 				case M_SOI:
-					if (!get_soi(cinfo))
-						return JPEG_SUSPENDED;
+					if (!get_soi(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_SOF0: /* Baseline */
 				case M_SOF1: /* Extended sequential, Huffman */
-					if (!get_sof(cinfo, false, false))
-						return JPEG_SUSPENDED;
+					if (!get_sof(cinfo, false, false)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_SOF2: /* Progressive, Huffman */
-					if (!get_sof(cinfo, true, false))
-						return JPEG_SUSPENDED;
+					if (!get_sof(cinfo, true, false)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_SOF9: /* Extended sequential, arithmetic */
-					if (!get_sof(cinfo, false, true))
-						return JPEG_SUSPENDED;
+					if (!get_sof(cinfo, false, true)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_SOF10: /* Progressive, arithmetic */
-					if (!get_sof(cinfo, true, true))
-						return JPEG_SUSPENDED;
+					if (!get_sof(cinfo, true, true)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				/* Currently unsupported SOFn types */
@@ -6517,8 +6728,9 @@ public class JPEGDecoder {
 					break;
 
 				case M_SOS:
-					if (!get_sos(cinfo))
-						return JPEG_SUSPENDED;
+					if (!get_sos(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					cinfo.unread_marker = 0; /* processed the marker */
 					return JPEG_REACHED_SOS;
 
@@ -6528,23 +6740,27 @@ public class JPEGDecoder {
 					return JPEG_REACHED_EOI;
 
 				case M_DAC:
-					if (!get_dac(cinfo))
-						return JPEG_SUSPENDED;
+					if (!get_dac(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_DHT:
-					if (!get_dht(cinfo))
-						return JPEG_SUSPENDED;
+					if (!get_dht(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_DQT:
-					if (!get_dqt(cinfo))
-						return JPEG_SUSPENDED;
+					if (!get_dqt(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_DRI:
-					if (!get_dri(cinfo))
-						return JPEG_SUSPENDED;
+					if (!get_dri(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_APP0:
@@ -6563,13 +6779,15 @@ public class JPEGDecoder {
 				case M_APP13:
 				case M_APP14:
 				case M_APP15:
-					if (!process_APPn(cinfo.unread_marker - M_APP0, cinfo))
-						return JPEG_SUSPENDED;
+					if (!process_APPn(cinfo.unread_marker - M_APP0, cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_COM:
-					if (!process_COM(cinfo))
-						return JPEG_SUSPENDED;
+					if (!process_COM(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				case M_RST0: /* these are all parameterless */
@@ -6586,8 +6804,9 @@ public class JPEGDecoder {
 					break;
 
 				case M_DNL: /* Ignore DNL ... perhaps the wrong thing */
-					if (!skip_variable(cinfo))
-						return JPEG_SUSPENDED;
+					if (!skip_variable(cinfo)) {
+	                    return JPEG_SUSPENDED;
+                    }
 					break;
 
 				default: /* must be DHP, EXP, JPGn, or RESn */
@@ -6623,20 +6842,26 @@ public class JPEGDecoder {
 		/* Make sure image isn't bigger than I can handle */
 		if (cinfo.image_height > JPEG_MAX_DIMENSION
 				|| cinfo.image_width > JPEG_MAX_DIMENSION)
-			error();
+		 {
+	        error();
 		// ERREXIT1(cinfo, JERR_IMAGE_TOO_BIG, (unsigned int)
 		// JPEG_MAX_DIMENSION);
+        }
 
 		/* For now, precision must match compiled-in value... */
 		if (cinfo.data_precision != BITS_IN_JSAMPLE)
-			error(" [data precision=" + cinfo.data_precision + "]");
+		 {
+	        error(" [data precision=" + cinfo.data_precision + "]");
 		// ERREXIT1(cinfo, JERR_BAD_PRECISION, cinfo.data_precision);
+        }
 
 		/* Check that number of components won't exceed internal array sizes */
 		if (cinfo.num_components > MAX_COMPONENTS)
-			error();
+		 {
+	        error();
 		// ERREXIT2(cinfo, JERR_COMPONENT_COUNT, cinfo.num_components,
 		// MAX_COMPONENTS);
+        }
 
 		/* Compute maximum sampling factors; check factor validity */
 		cinfo.max_h_samp_factor = 1;
@@ -6646,8 +6871,9 @@ public class JPEGDecoder {
 			if (compptr.h_samp_factor <= 0
 					|| compptr.h_samp_factor > MAX_SAMP_FACTOR
 					|| compptr.v_samp_factor <= 0
-					|| compptr.v_samp_factor > MAX_SAMP_FACTOR)
-				error();
+					|| compptr.v_samp_factor > MAX_SAMP_FACTOR) {
+	            error();
+            }
 			// ERREXIT(cinfo, JERR_BAD_SAMPLING);
 			cinfo.max_h_samp_factor = Math.max(cinfo.max_h_samp_factor,
 					compptr.h_samp_factor);
@@ -6698,10 +6924,11 @@ public class JPEGDecoder {
 
 		/* Decide whether file contains multiple scans */
 		if (cinfo.comps_in_scan < cinfo.num_components
-				|| cinfo.progressive_mode)
-			cinfo.inputctl.has_multiple_scans = true;
-		else
-			cinfo.inputctl.has_multiple_scans = false;
+				|| cinfo.progressive_mode) {
+	        cinfo.inputctl.has_multiple_scans = true;
+        } else {
+	        cinfo.inputctl.has_multiple_scans = false;
+        }
 	}
 
 	static void per_scan_setup(jpeg_decompress_struct cinfo)
@@ -6732,8 +6959,9 @@ public class JPEGDecoder {
 			 * iMCU row.
 			 */
 			tmp = (compptr.height_in_blocks % compptr.v_samp_factor);
-			if (tmp == 0)
-				tmp = compptr.v_samp_factor;
+			if (tmp == 0) {
+	            tmp = compptr.v_samp_factor;
+            }
 			compptr.last_row_height = tmp;
 
 			/* Prepare array describing MCU composition */
@@ -6745,9 +6973,11 @@ public class JPEGDecoder {
 			/* Interleaved (multi-component) scan */
 			if (cinfo.comps_in_scan <= 0
 					|| cinfo.comps_in_scan > MAX_COMPS_IN_SCAN)
-				error();
+			 {
+	            error();
 			// ERREXIT2(cinfo, JERR_COMPONENT_COUNT, cinfo.comps_in_scan,
 			// MAX_COMPS_IN_SCAN);
+            }
 
 			/* Overall image size in MCUs */
 			cinfo.MCUs_per_row = (int) jdiv_round_up(cinfo.image_width,
@@ -6767,17 +6997,20 @@ public class JPEGDecoder {
 						* compptr.DCT_scaled_size;
 				/* Figure number of non-dummy blocks in last MCU column & row */
 				tmp = (compptr.width_in_blocks % compptr.MCU_width);
-				if (tmp == 0)
-					tmp = compptr.MCU_width;
+				if (tmp == 0) {
+	                tmp = compptr.MCU_width;
+                }
 				compptr.last_col_width = tmp;
 				tmp = (compptr.height_in_blocks % compptr.MCU_height);
-				if (tmp == 0)
-					tmp = compptr.MCU_height;
+				if (tmp == 0) {
+	                tmp = compptr.MCU_height;
+                }
 				compptr.last_row_height = tmp;
 				/* Prepare array describing MCU composition */
 				mcublks = compptr.MCU_blocks;
-				if (cinfo.blocks_in_MCU + mcublks > D_MAX_BLOCKS_IN_MCU)
-					error();
+				if (cinfo.blocks_in_MCU + mcublks > D_MAX_BLOCKS_IN_MCU) {
+	                error();
+                }
 				// ERREXIT(cinfo, JERR_BAD_MCU_SIZE);
 				while (mcublks-- > 0) {
 					cinfo.MCU_membership[cinfo.blocks_in_MCU++] = ci;
@@ -6795,13 +7028,15 @@ public class JPEGDecoder {
 		for (ci = 0; ci < cinfo.comps_in_scan; ci++) {
 			compptr = cinfo.cur_comp_info[ci];
 			/* No work if we already saved Q-table for this component */
-			if (compptr.quant_table != null)
-				continue;
+			if (compptr.quant_table != null) {
+	            continue;
+            }
 			/* Make sure specified quantization table is present */
 			qtblno = compptr.quant_tbl_no;
 			if (qtblno < 0 || qtblno >= NUM_QUANT_TBLS
-					|| cinfo.quant_tbl_ptrs[qtblno] == null)
-				error();
+					|| cinfo.quant_tbl_ptrs[qtblno] == null) {
+	            error();
+            }
 			// ERREXIT1(cinfo, JERR_NO_QUANT_TABLE, qtblno);
 			/* OK, save away the quantization table */
 			qtbl = new JQUANT_TBL();
@@ -6827,14 +7062,17 @@ public class JPEGDecoder {
 		 */
 
 		/* Find the input Huffman table */
-		if (tblno < 0 || tblno >= NUM_HUFF_TBLS)
-			error();
+		if (tblno < 0 || tblno >= NUM_HUFF_TBLS) {
+	        error();
+        }
 		// ERREXIT1(cinfo, JERR_NO_HUFF_TABLE, tblno);
 		htbl = isDC ? cinfo.dc_huff_tbl_ptrs[tblno]
 				: cinfo.ac_huff_tbl_ptrs[tblno];
 		if (htbl == null)
-			error();
+		 {
+	        error();
 		// ERREXIT1(cinfo, JERR_NO_HUFF_TABLE, tblno);
+        }
 
 		/* Allocate a workspace if we haven't already done so. */
 		dtbl.pub = htbl; /* fill in back link */
@@ -6844,11 +7082,13 @@ public class JPEGDecoder {
 		p = 0;
 		for (l = 1; l <= 16; l++) {
 			i = htbl.bits[l] & 0xFF;
-			if (i < 0 || p + i > 256) /* protect against table overrun */
-				error();
+			if (i < 0 || p + i > 256) {
+	            error();
+            }
 			// ERREXIT(cinfo, JERR_BAD_HUFF_TABLE);
-			while (i-- != 0)
-				huffsize[p++] = (byte) l;
+			while (i-- != 0) {
+	            huffsize[p++] = (byte) l;
+            }
 		}
 		huffsize[p] = 0;
 		numsymbols = p;
@@ -6869,8 +7109,9 @@ public class JPEGDecoder {
 			 * it must still fit in si bits, since no code is allowed to be all
 			 * ones.
 			 */
-			if ((code) >= ((1) << si))
-				error();
+			if ((code) >= ((1) << si)) {
+	            error();
+            }
 			// ERREXIT(cinfo, JERR_BAD_HUFF_TABLE);
 			code <<= 1;
 			si++;
@@ -6936,8 +7177,10 @@ public class JPEGDecoder {
 			for (i = 0; i < numsymbols; i++) {
 				int sym = htbl.huffval[i] & 0xFF;
 				if (sym < 0 || sym > 15)
-					error();
+				 {
+	                error();
 				// ERREXIT(cinfo, JERR_BAD_HUFF_TABLE);
+                }
 			}
 		}
 	}
@@ -6958,8 +7201,9 @@ public class JPEGDecoder {
 		jpeg_input_controller inputctl = cinfo.inputctl;
 		int val;
 
-		if (inputctl.eoi_reached) /* After hitting EOI, read no further */
-			return JPEG_REACHED_EOI;
+		if (inputctl.eoi_reached) {
+	        return JPEG_REACHED_EOI;
+        }
 
 		val = read_markers(cinfo);
 
@@ -6974,8 +7218,9 @@ public class JPEGDecoder {
 					 * responsible for enforcing this sequencing.
 					 */
 				} else { /* 2nd or later SOS marker */
-					if (!inputctl.has_multiple_scans)
-						error();
+					if (!inputctl.has_multiple_scans) {
+	                    error();
+                    }
 					// ERREXIT(cinfo, JERR_EOI_EXPECTED); /* Oops, I wasn't
 					// expecting this! */
 					start_input_pass(cinfo);
@@ -6988,16 +7233,19 @@ public class JPEGDecoder {
 											 * apparently
 											 */
 					if (cinfo.marker.saw_SOF)
-						error();
+					 {
+	                    error();
 					// ERREXIT(cinfo, JERR_SOF_NO_SOS);
+                    }
 				} else {
 					/*
 					 * Prevent infinite loop in coef ctlr's decompress_data
 					 * routine if user set output_scan_number larger than number
 					 * of scans.
 					 */
-					if (cinfo.output_scan_number > cinfo.input_scan_number)
-						cinfo.output_scan_number = cinfo.input_scan_number;
+					if (cinfo.output_scan_number > cinfo.input_scan_number) {
+	                    cinfo.output_scan_number = cinfo.input_scan_number;
+                    }
 				}
 				break;
 			case JPEG_SUSPENDED:
@@ -7046,17 +7294,17 @@ public class JPEGDecoder {
 					int cid1 = cinfo.comp_info[1].component_id;
 					int cid2 = cinfo.comp_info[2].component_id;
 
-					if (cid0 == 1 && cid1 == 2 && cid2 == 3)
-						cinfo.jpeg_color_space = JCS_YCbCr; /*
+					if (cid0 == 1 && cid1 == 2 && cid2 == 3) {
+	                    cinfo.jpeg_color_space = JCS_YCbCr; /*
 															 * assume JFIF w/out
 															 * marker
 															 */
-					else if (cid0 == 82 && cid1 == 71 && cid2 == 66)
-						cinfo.jpeg_color_space = JCS_RGB; /*
+                    } else if (cid0 == 82 && cid1 == 71 && cid2 == 66) {
+	                    cinfo.jpeg_color_space = JCS_RGB; /*
 															 * ASCII 'R', 'G',
 															 * 'B'
 															 */
-					else {
+                    } else {
 						// TRACEMS3(cinfo, 1, JTRC_UNKNOWN_IDS, cid0, cid1,
 						// cid2);
 						cinfo.jpeg_color_space = JCS_YCbCr; /* assume it's YCbCr */
@@ -7214,7 +7462,7 @@ public class JPEGDecoder {
 				/ scanlinePad * scanlinePad;
 		byte[][] buffer = new byte[1][row_stride];
 		byte[] data = new byte[row_stride * cinfo.output_height];
-		
+
 		while (cinfo.output_scanline < cinfo.output_height) {
 			int offset = row_stride * cinfo.output_scanline;
 			jpeg_read_scanlines(cinfo, buffer, 1);
@@ -7222,7 +7470,7 @@ public class JPEGDecoder {
 		}
 		jpeg_finish_decompress(cinfo);
 		jpeg_destroy_decompress(cinfo);
-		
+
 		// Fix big endian
 		if (ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN && cinfo.out_color_space == JCS_RGB) {
 			for (int i = 0; i < data.length; i += 3) {
@@ -7231,11 +7479,11 @@ public class JPEGDecoder {
 				data[i + 2] = temp;
 			}
 		}
-		
+
 		return new Image
 			(
 				cinfo.output_width,
-				cinfo.output_height, 
+				cinfo.output_height,
 				cinfo.out_color_space == JCS_RGB ? Image.RGB : Image.LUMINANCE,
 				data
 			);

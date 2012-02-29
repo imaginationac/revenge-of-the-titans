@@ -1,6 +1,6 @@
 /*
  *  Primitive Collections for Java.
- *  Copyright (C) 2002, 2003  Søren Bak
+ *  Copyright (C) 2002, 2003  SÃ¸ren Bak
  *
  *  This library is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,7 +18,9 @@
  */
 package worm.util.list;
 
-import worm.util.*;
+import worm.util.AbstractIntCollection;
+import worm.util.IntCollection;
+import worm.util.IntIterator;
 import worm.util.hash.DefaultIntHashFunction;
 import worm.util.util.Exceptions;
 

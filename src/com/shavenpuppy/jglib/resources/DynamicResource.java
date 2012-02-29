@@ -36,12 +36,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.shavenpuppy.jglib.Resources;
+
 
 /**
- * $Id: DynamicResource.java,v 1.6 2011/04/18 23:28:06 cix_foo Exp $
+ * $Id: DynamicResource.java,v 1.7 2011/06/22 12:02:45 cix_foo Exp $
  * This is a resource that dynamically loads further resources in XML for you.
  * @author $Author: cix_foo $
- * @version $Revision: 1.6 $
+ * @version $Revision: 1.7 $
  */
 public class DynamicResource extends Feature {
 
@@ -98,7 +100,9 @@ public class DynamicResource extends Feature {
 
 	@Override
 	protected void doRegister() {
-		System.out.println("Registering dynamic XML "+this);
+		if (Resources.DEBUG) {
+			System.out.println("Registering dynamic XML "+this);
+		}
 		DYNAMIC_RESOURCES.remove(this);
 		DYNAMIC_RESOURCES.add(this);
 	}
@@ -130,7 +134,9 @@ public class DynamicResource extends Feature {
 
 			ResourceConverter loader = new ResourceConverter(listener, getClassLoader());
 			loader.setOverwrite(true);
-			System.out.println("Including dynamic resource from "+url);
+			if (Resources.DEBUG) {
+				System.out.println("Including dynamic resource from "+url);
+			}
 			loader.include(bis);
 		} catch (Exception e) {
 			throw new RuntimeException(e);

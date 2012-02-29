@@ -218,6 +218,7 @@
 			<frame i="spriteimage.gidrah.earth.01.04" d="1" />
 		<goto id="end"/>
 		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.earth.01.06" d="1" />
 		<label id="end"/>
 	</animation>
 
@@ -423,6 +424,7 @@
 			<frame i="spriteimage.gidrah.earth.02.04" d="1" />
 		<goto id="end"/>
 		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.earth.02.06" d="1" />
 		<label id="end"/>
 	</animation>
 

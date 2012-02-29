@@ -35,7 +35,7 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.util.Color;
 import org.lwjgl.util.Rectangle;
 
-import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.IResource;
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.opengl.GLTexture;
 import com.shavenpuppy.jglib.resources.Feature;
@@ -52,12 +52,6 @@ public class Splash extends Feature implements Resources.CreatingCallback {
 	private static final long serialVersionUID = 1L;
 
 	private static final boolean DEBUG = false;
-
-	/*
-	 * Singleton
-	 */
-
-	private static Splash instance;
 
 	/*
 	 * Feature data
@@ -85,21 +79,17 @@ public class Splash extends Feature implements Resources.CreatingCallback {
 	/**
 	 * C'tor
 	 */
-	public Splash() {
-		super("splash");
-		setAutoCreated();
+	public Splash(String name) {
+		super(name);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
 	 * @see genesis.Feature#doCreate()
 	 */
 	@Override
 	protected void doCreate() {
 		super.doCreate();
-
-		Resources.setCreatingCallback(this);
 
 		glMatrixMode(GL_PROJECTION);
 		glPushMatrix();
@@ -112,13 +102,11 @@ public class Splash extends Feature implements Resources.CreatingCallback {
 
 	/*
 	 * (non-Javadoc)
-	 *
 	 * @see com.shavenpuppy.jglib.Resource#doDestroy()
 	 */
 	@SuppressWarnings("unused")
-    @Override
+	@Override
 	protected void doDestroy() {
-		Resources.setCreatingCallback(null);
 		if (Game.DEBUG && DEBUG) {
 			System.out.println("Total resources created during splash screen: " + Resources.getNumCreated());
 		}
@@ -142,12 +130,12 @@ public class Splash extends Feature implements Resources.CreatingCallback {
 		if (DEBUG) {
 			System.out.println("Create total of " + lastCount);
 		}
-		glClearColor(clearColor.getRed() / 255.0f, clearColor.getGreen() / 255.0f, clearColor.getBlue() / 255.0f, clearColor
-				.getAlpha() / 255.0f);
+		glClearColor(clearColor.getRed() / 255.0f, clearColor.getGreen() / 255.0f, clearColor.getBlue() / 255.0f,
+		        clearColor.getAlpha() / 255.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		glPushMatrix();
 		glTranslatef((Game.getWidth() - (splashScreenImageTexture.getWidth() * scale)) / 2.0f,
-				(Game.getHeight() - (splashScreenImageTexture.getHeight() * scale)) / 2.0f, 0);
+		        (Game.getHeight() - (splashScreenImageTexture.getHeight() * scale)) / 2.0f, 0);
 		glEnable(GL_TEXTURE_2D);
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -170,8 +158,8 @@ public class Splash extends Feature implements Resources.CreatingCallback {
 		glDisable(GL_TEXTURE_2D);
 
 		if (barColor != null) {
-			glColor4f(barColor.getRed() / 255.0f, barColor.getGreen() / 255.0f, barColor.getBlue() / 255.0f, barColor
-					.getAlpha() / 255.0f);
+			glColor4f(barColor.getRed() / 255.0f, barColor.getGreen() / 255.0f, barColor.getBlue() / 255.0f,
+			        barColor.getAlpha() / 255.0f);
 		} else {
 			glColor3f(1.0f, 1.0f, 1.0f);
 		}
@@ -182,8 +170,8 @@ public class Splash extends Feature implements Resources.CreatingCallback {
 			glPolygonMode(GL_FRONT, GL_LINE);
 		}
 
-		int ox = Game.getUseWindowSizing() ? (Game.getWidth() - Game.getScale()) / 2 : 0;
-		int oy = Game.getUseWindowSizing() ? (Game.getHeight() - Game.getScale()) / 2 : 0;
+		int ox = (Game.getWidth() - Game.getScale()) / 2;
+		int oy = (Game.getHeight() - Game.getScale()) / 2;
 		glBegin(GL_QUADS);
 		{
 			glVertex2i(ox + loaderBounds.getX(), oy + loaderBounds.getY());
@@ -196,33 +184,34 @@ public class Splash extends Feature implements Resources.CreatingCallback {
 		glPolygonMode(GL_FRONT, GL_FILL);
 		if (loadingColor != null) {
 			glColor4f(loadingColor.getRed() / 255.0f, loadingColor.getGreen() / 255.0f, loadingColor.getBlue() / 255.0f,
-					loadingColor.getAlpha() / 1024.0f);
+			        loadingColor.getAlpha() / 1024.0f);
 		} else {
 			glColor3f(1.0f, 1.0f, 0.25f);
 		}
 
-		glRecti(ox + loaderBounds.getX() - 1, oy + loaderBounds.getY() - 1, ox + newBounds + 1, oy + loaderBounds.getY() + loaderBounds.getHeight() + 1);
+		glRecti(ox + loaderBounds.getX() - 1, oy + loaderBounds.getY() - 1, ox + newBounds + 1, oy + loaderBounds.getY()
+		        + loaderBounds.getHeight() + 1);
 		if (loadingColor != null) {
 			glColor4f(loadingColor.getRed() / 255.0f, loadingColor.getGreen() / 255.0f, loadingColor.getBlue() / 255.0f,
-					loadingColor.getAlpha() / 255.0f);
+			        loadingColor.getAlpha() / 255.0f);
 		} else {
 			glColor3f(1.0f, 1.0f, 1.0f);
 		}
 
-		glRecti(ox + loaderBounds.getX(), oy + loaderBounds.getY(), ox + newBounds, oy + loaderBounds.getY() + loaderBounds.getHeight());
+		glRecti(ox + loaderBounds.getX(), oy + loaderBounds.getY(), ox + newBounds,
+		        oy + loaderBounds.getY() + loaderBounds.getHeight());
 
 		Display.update();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
 	 * @see com.shavenpuppy.jglib.Resources.CreatingCallback#onCreating(com.shavenpuppy.jglib.Resource)
 	 */
 	@Override
-	public void onCreating(Resource resource) {
+	public void onCreating(IResource resource) {
 		if (DEBUG) {
-			System.out.println("Creating "+resource);
+			System.out.println("Creating " + resource);
 		}
 		if (!Display.isCreated() || Display.isCloseRequested()) {
 			Game.exit();
@@ -231,30 +220,4 @@ public class Splash extends Feature implements Resources.CreatingCallback {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.shavenpuppy.jglib.resources.Feature#doRegister()
-	 */
-	@Override
-	protected void doRegister() {
-		instance = this;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.shavenpuppy.jglib.resources.Feature#doDeregister()
-	 */
-	@Override
-	protected void doDeregister() {
-		instance = null;
-	}
-
-	/**
-	 * @return Returns the instance.
-	 */
-	public static Splash getInstance() {
-		return instance;
-	}
 }

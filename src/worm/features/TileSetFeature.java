@@ -38,7 +38,7 @@ import org.w3c.dom.Element;
 
 import worm.Tile;
 
-import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.IResource;
 import com.shavenpuppy.jglib.resources.Feature;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -47,6 +47,8 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  * @author Cas
  */
 public class TileSetFeature extends Feature {
+
+	private static final long serialVersionUID = 1L;
 
 	/** All the tilesets */
 	private static final ArrayList<TileSetFeature> TILESETS = new ArrayList<TileSetFeature>();
@@ -104,7 +106,7 @@ public class TileSetFeature extends Feature {
 		// Now load all the tiles contained within (and any other resources)
 		List<Element> children = XMLUtil.getChildren(element);
 		for (Element child : children) {
-			Resource childResource = loader.load(child);
+			IResource childResource = loader.load(child);
 			if (childResource instanceof Tile) {
 				Tile t = (Tile) childResource;
 				t.setTileSet(this);

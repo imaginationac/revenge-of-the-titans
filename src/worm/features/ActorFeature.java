@@ -31,15 +31,23 @@
  */
 package worm.features;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Anchor;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.Screen;
 import net.puppygames.applet.effects.Effect;
 import net.puppygames.applet.effects.FadeEffect;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadableRectangle;
+import org.lwjgl.util.Rectangle;
 import org.w3c.dom.Element;
 
 import worm.animation.SimpleThingWithLayers;
@@ -47,11 +55,15 @@ import worm.animation.SimpleThingWithLayers;
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
 import com.shavenpuppy.jglib.openal.ALBuffer;
-import com.shavenpuppy.jglib.opengl.*;
+import com.shavenpuppy.jglib.opengl.GLFont;
+import com.shavenpuppy.jglib.opengl.GLStyledText;
 import com.shavenpuppy.jglib.opengl.GLStyledText.DefaultStyledText;
 import com.shavenpuppy.jglib.opengl.GLStyledText.StyledText;
 import com.shavenpuppy.jglib.opengl.GLStyledText.StyledTextFactory;
-import com.shavenpuppy.jglib.resources.*;
+import com.shavenpuppy.jglib.resources.Background;
+import com.shavenpuppy.jglib.resources.Data;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.MappedColor;
 import com.shavenpuppy.jglib.sound.SoundEffect;
 import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.FPMath;
@@ -117,7 +129,6 @@ public class ActorFeature extends Feature {
 		private boolean done;
 		private SimpleThingWithLayers layersSprite;
 		private Sprite foreground;
-		private TickableObject tickableObject;
 		private AnimatedTextFactory factory;
 		private final Setting setting;
 		private Rectangle instanceBounds;
@@ -320,11 +331,11 @@ public class ActorFeature extends Feature {
 
 			if (layersSprite != null) {
 				for (int i = 0; i < layersSprite.getSprites().length; i ++) {
-					layersSprite.getSprite(i).setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY(), 0.0f);
+					layersSprite.getSprite(i).setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY());
 				}
 			}
 			if (foreground != null) {
-				foreground.setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY(), 0);
+				foreground.setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY());
 			}
 
 			int textHeight = textArea.getTextHeight();
@@ -359,26 +370,26 @@ public class ActorFeature extends Feature {
 		}
 
 		@Override
-		protected void doSpawn() {
+		protected void render() {
+			if (delayTick > 0 || isPaused()) {
+				return;
+			}
+			int alpha = (int) LinearInterpolator.instance.interpolate(0.0f, 255.0f, (float) fadeInTick / FADE_IN_DURATION);
+			if (bg != null) {
+				bg.setAlpha(alpha);
+				bg.render(this);
+			}
+			textArea.render(this);
+		}
+
+		@Override
+		public int getDefaultLayer() {
+			return characterFeature.getBubbleLayer();
+		}
+
+		@Override
+		protected void doSpawnEffect() {
 			last = 0;
-
-			tickableObject = new TickableObject() {
-				@Override
-				protected void render() {
-					if (delayTick > 0 || isPaused()) {
-						return;
-					}
-					int alpha = (int) LinearInterpolator.instance.interpolate(0.0f, 255.0f, (float) fadeInTick / FADE_IN_DURATION);
-					if (bg!=null) {
-						bg.setAlpha(alpha);
-						bg.render(this);
-					}
-					textArea.render(this);
-				}
-			};
-			tickableObject.setLayer(characterFeature.getBubbleLayer());
-			tickableObject.spawn(getScreen());
-
 			if (!fade) {
 				initCharacter();
 			}
@@ -478,16 +489,12 @@ public class ActorFeature extends Feature {
 				if (fadeAfter != 0) {
 					new FadeEffect(fadeAfter, FADE_IN_DURATION) {
 						@Override
-						protected void doRender() {
+                        protected void onTicked() {
 							textArea.setAlpha(getAlpha());
 						}
 					}.spawn(getScreen());
 				}
 			}
-		}
-
-		@Override
-		protected void doRender() {
 		}
 
 		private void initCharacter() {
@@ -502,14 +509,14 @@ public class ActorFeature extends Feature {
 			}
 			if (layersSprite != null) {
 				for (int i = 0; i < layersSprite.getSprites().length; i ++) {
-					layersSprite.getSprite(i).setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY(), 0);
+					layersSprite.getSprite(i).setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY());
 					if (fade) {
 						layersSprite.getSprite(i).setAlpha(0);
 					}
 				}
 			}
 			if (foreground != null) {
-				foreground.setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY(), 0);
+				foreground.setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY());
 				if (fade) {
 					foreground.setAlpha(0);
 				}
@@ -595,7 +602,7 @@ public class ActorFeature extends Feature {
 		}
 
 		@Override
-		public boolean isActive() {
+		public boolean isEffectActive() {
 			return !done;
 		}
 
@@ -610,10 +617,6 @@ public class ActorFeature extends Feature {
 				foreground.deallocate();
 				foreground = null;
 			}
-			if (tickableObject != null) {
-				tickableObject.remove();
-				tickableObject = null;
-			}
 		}
 
 		@Override
@@ -622,14 +625,14 @@ public class ActorFeature extends Feature {
 			int alpha = (int) LinearInterpolator.instance.interpolate(0.0f, 255.0f, (float) fadeInTick / FADE_IN_DURATION);
 			if (layersSprite != null) {
 				for (int i = 0; i < layersSprite.getSprites().length; i ++) {
-					layersSprite.getSprite(i).setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY(), 0);
+					layersSprite.getSprite(i).setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY());
 					if (fade) {
 						layersSprite.getSprite(i).setAlpha(alpha);
 					}
 				}
 			}
 			if (foreground != null) {
-				foreground.setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY(), 0);
+				foreground.setLocation(instanceBounds.getX() - bounds.getX() + position.getX(), instanceBounds.getY() - bounds.getY() + position.getY());
 				if (fade) {
 					foreground.setAlpha(alpha);
 				}
@@ -695,7 +698,7 @@ public class ActorFeature extends Feature {
 
 							for (int j = i+1; j < layersSprite.getSprites().length; j ++) {
 								if (layersSprite.getSprite(j).isDoChildOffset()) {
-									layersSprite.getSprite(j).setLocation(instanceBounds.getX() - bounds.getX() + position.getX() + xOffsetTotal, instanceBounds.getY() - bounds.getY() + position.getY() + yOffsetTotal, 0);
+									layersSprite.getSprite(j).setLocation(instanceBounds.getX() - bounds.getX() + position.getX() + xOffsetTotal, instanceBounds.getY() - bounds.getY() + position.getY() + yOffsetTotal);
 								}
 							}
 						}
@@ -724,7 +727,7 @@ public class ActorFeature extends Feature {
 					if (mirrored) {
 						xOffset = -xOffset;
 					}
-					foreground.setLocation(instanceBounds.getX() - bounds.getX() + position.getX() + xOffset, instanceBounds.getY() - bounds.getY() + position.getY() + yOffset, 0);
+					foreground.setLocation(instanceBounds.getX() - bounds.getX() + position.getX() + xOffset, instanceBounds.getY() - bounds.getY() + position.getY() + yOffset);
 				}
 			}
 

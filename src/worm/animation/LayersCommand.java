@@ -36,7 +36,8 @@ import org.w3c.dom.Element;
 import worm.features.LayersFeature;
 
 import com.shavenpuppy.jglib.Resources;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Command;
+import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
 /**
@@ -57,7 +58,7 @@ public class LayersCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated, int)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		LayersFeature layersFeature = (LayersFeature) Resources.get(layers);
 		if (layersFeature != null) {
 			((ThingWithLayers) ((Sprite) target).getOwner()).requestSetAppearance(layersFeature);

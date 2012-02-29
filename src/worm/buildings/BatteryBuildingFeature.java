@@ -72,22 +72,17 @@ public class BatteryBuildingFeature extends BuildingFeature {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see storm.BuildingFeature#doSpawn()
-	 */
 	@Override
 	public Building doSpawn(boolean ghost) {
 		return new BatteryBuildingInstance(ghost);
 	}
 
-	/* (non-Javadoc)
-	 * @see worm.buildings.BuildingFeature#isAffectedBy(worm.buildings.BuildingFeature)
-	 */
 	@Override
 	public boolean isAffectedBy(BuildingFeature feature) {
 		if 	(
 				feature instanceof ShieldGeneratorBuildingFeature
 			||	feature instanceof CapacitorBuildingFeature
+			|| 	feature instanceof CloakBuildingFeature
 			)
 		{
 			return true;

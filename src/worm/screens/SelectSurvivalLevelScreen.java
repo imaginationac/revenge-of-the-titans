@@ -35,13 +35,22 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.rmi.Naming;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.screens.TitleScreen;
 import net.puppygames.gamecommerce.shared.GenericServerRemote;
-import worm.*;
+import worm.Res;
+import worm.SurvivalParams;
+import worm.TimeUtil;
+import worm.Worm;
 import worm.features.WorldFeature;
 
 import com.shavenpuppy.jglib.Resources;
@@ -51,6 +60,8 @@ import com.shavenpuppy.jglib.resources.ColorMapFeature;
  * Select which level you want to play in Survival mode
  */
 public class SelectSurvivalLevelScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static SelectSurvivalLevelScreen instance;
 	private static final Object LOCK = new Object();
@@ -201,7 +212,7 @@ public class SelectSurvivalLevelScreen extends Screen {
 				    			setVisible(ID_ONLINE_BEST_TIME, true);
 				    			setVisible(ID_ONLINE_BEST_TIME_LABEL, true);
 				    			getArea(ID_ONLINE_BEST_TIME).setText("");
-				    			getArea(ID_ONLINE_BEST_TIME_LABEL).setText("FETCHING ONLINE HISCORE...");
+				    			getArea(ID_ONLINE_BEST_TIME_LABEL).setText(Game.getMessage("ultraworm.selectsurvival.fetching_online_hiscore")+"...");
 		            		}
 		            	}
 		            });
@@ -217,7 +228,7 @@ public class SelectSurvivalLevelScreen extends Screen {
 	            		if (params.world == world && params.template == template && params.mapsize == SIZE[mapsize]) {
 			    			setVisible(ID_ONLINE_BEST_TIME, true);
 			    			setVisible(ID_ONLINE_BEST_TIME_LABEL, true);
-		            		getArea(ID_ONLINE_BEST_TIME_LABEL).setText("ONLINE HISCORE RECORD:");
+		            		getArea(ID_ONLINE_BEST_TIME_LABEL).setText(Game.getMessage("ultraworm.selectsurvival.online_hiscore_record")+":");
 		            		doUpdateBestTime(ID_ONLINE_BEST_TIME, params.world, params.template, params.mapsize, hiscore.name, hiscore.score);
 	            		}
 	            	}
@@ -230,7 +241,7 @@ public class SelectSurvivalLevelScreen extends Screen {
 	            	@Override
 	            	public void run() {
 	            		if (params.world == world && params.template == template && params.mapsize == SIZE[mapsize]) {
-	                		getArea(ID_ONLINE_BEST_TIME_LABEL).setText("FAILED TO RETRIEVE ONLINE HISCORE");
+	                		getArea(ID_ONLINE_BEST_TIME_LABEL).setText(Game.getMessage("ultraworm.selectsurvival.failed_to_retrieve"));
 	            		}
 	            	}
 	            });
@@ -422,7 +433,7 @@ public class SelectSurvivalLevelScreen extends Screen {
 	private void doUpdateBestTime(String area, int w, int t, int ms, String name, int bestTime) {
 		String msg = "{font:bigfont.glfont}";
 		if (bestTime == 0) {
-			msg += "NOT YET PLAYED";
+			msg += Game.getMessage("ultraworm.selectsurvival.not_yet_played");
 		} else {
 			msg += TimeUtil.format(bestTime);
 		}
@@ -434,10 +445,10 @@ public class SelectSurvivalLevelScreen extends Screen {
 	}
 
 	private void updateBestTime() {
-		int bestTime = Game.getPreferences().getInt("survival.hiscore."+WorldFeature.getWorld(world).getTitle()+"."+Res.getSurvivalMapTemplate(world, template).getClass().getName()+"."+SIZE[mapsize]+".time", 0);
-		String name = Game.getPreferences().get("survival.hiscore."+WorldFeature.getWorld(world).getTitle()+"."+Res.getSurvivalMapTemplate(world, template).getClass().getName()+"."+SIZE[mapsize]+".name", "");
+		int bestTime = Game.getRoamingPreferences().getInt("survival.hiscore."+WorldFeature.getWorld(world).getUntranslated()+"."+Res.getSurvivalMapTemplate(world, template).getClass().getName()+"."+SIZE[mapsize]+".time", 0);
+		String name = Game.getRoamingPreferences().get("survival.hiscore."+WorldFeature.getWorld(world).getUntranslated()+"."+Res.getSurvivalMapTemplate(world, template).getClass().getName()+"."+SIZE[mapsize]+".name", "");
 		doUpdateBestTime(ID_BEST_TIME, world, template, mapsize, name, bestTime);
-		if (Game.getSubmitRemoteHiscores()) {
+		if (MiniGame.getSubmitRemoteHiscores()) {
 			synchronized (LOCK) {
 				if (current != null) {
 					current.interrupt();

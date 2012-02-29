@@ -31,7 +31,11 @@
  */
 package com.shavenpuppy.jglib;
 
-import java.nio.*;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
+import java.nio.ShortBuffer;
 
 /**
  * A MultiBuffer adds ints and floats on top of the bytes in a MemoryBuffer.
@@ -48,6 +52,9 @@ public class MultiBuffer {
 	/** The data, as ints */
 	public final IntBuffer ints;
 
+	/** The data, as shorts */
+	public final ShortBuffer shorts;
+
 	/** The data, as floats */
 	public final FloatBuffer floats;
 
@@ -58,6 +65,7 @@ public class MultiBuffer {
 	public MultiBuffer(int size) {
 		bytes = ByteBuffer.allocateDirect(size).order(ByteOrder.nativeOrder());
 		ints = bytes.asIntBuffer();
+		shorts = bytes.asShortBuffer();
 		floats = bytes.asFloatBuffer();
 	}
 
@@ -78,6 +86,7 @@ public class MultiBuffer {
 	public MultiBuffer(ByteBuffer buf) {
 		bytes = buf;
 		ints = bytes.asIntBuffer();
+		shorts = bytes.asShortBuffer();
 		floats = bytes.asFloatBuffer();
 	}
 

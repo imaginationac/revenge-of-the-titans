@@ -57,7 +57,7 @@ public class InstantTransition extends Transition {
 	 */
 	@Override
 	public int getClosingDuration() {
-		return 1;
+		return 0;
 	}
 
 	/* (non-Javadoc)
@@ -65,7 +65,7 @@ public class InstantTransition extends Transition {
 	 */
 	@Override
 	public int getOpeningDuration() {
-		return 1;
+		return 0;
 	}
 
 	/* (non-Javadoc)

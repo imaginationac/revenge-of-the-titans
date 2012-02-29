@@ -34,8 +34,6 @@ package com.shavenpuppy.jglib.interpolators;
 import java.io.ObjectInput;
 import java.io.ObjectStreamException;
 
-import com.shavenpuppy.jglib.util.FPMath;
-
 /**
  * A linear interpolator. Access using instance member variable.
  * Creation date: (30/03/2001 01:19:35)
@@ -67,22 +65,6 @@ public final class LinearInterpolator extends InterpolatorBase {
 			ratio = 1.0f;
 		}
 		return a * (1f - ratio) + b * ratio;
-	}
-
-	/**
-	 * Linear interpolation.
-	 */
-	@Override
-	public int interpolate(int a, int b, int ratio) {
-		if (a == b) {
-			return a;
-		}
-		if (ratio < 0) {
-			ratio = 0;
-		} else if (ratio > FPMath.ONE) {
-			ratio = FPMath.ONE;
-		}
-		return FPMath.mul(a, FPMath.ONE - ratio) + FPMath.mul(b, ratio);
 	}
 
 	private Object readResolve(ObjectInput oi) throws ObjectStreamException {

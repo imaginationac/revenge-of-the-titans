@@ -44,6 +44,7 @@ public abstract class TickableObject extends GeometryStyle implements Tickable {
 	private boolean done, visible = true;
 	private int layer;
 	private Sprite sprite;
+	private Screen screen;
 
 	public TickableObject() {
 		super();
@@ -70,6 +71,7 @@ public abstract class TickableObject extends GeometryStyle implements Tickable {
 				sprite = null;
 			}
 			doRemove();
+			screen = null;
 		}
 	}
 	protected void doRemove() {
@@ -78,6 +80,7 @@ public abstract class TickableObject extends GeometryStyle implements Tickable {
 	@Override
 	public final void spawn(Screen screen) {
 		assert !done;
+		this.screen = screen;
 		screen.addTickable(this);
 		sprite = screen.allocateSprite(this);
 		sprite.setStyle(this);
@@ -87,6 +90,14 @@ public abstract class TickableObject extends GeometryStyle implements Tickable {
 	}
 	protected void doSpawn() {
 	}
+
+	/**
+	 * @return the screen upon which we were spawned, or null, if we have been removed.
+	 * @see #spawn(Screen)
+	 */
+	public final Screen getScreen() {
+	    return screen;
+    }
 
 	public final void setLayer(int layer) {
 		this.layer = layer;
@@ -111,9 +122,13 @@ public abstract class TickableObject extends GeometryStyle implements Tickable {
 		if (sprite != null) {
 			sprite.setVisible(visible);
 		}
+		onSetVisible();
 	}
 
-	public boolean isVisible() {
+	protected void onSetVisible() {
+	}
+
+	public final boolean isVisible() {
 		return visible;
 	}
 

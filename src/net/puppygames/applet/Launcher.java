@@ -59,6 +59,10 @@ public class Launcher {
 	 */
 	public static void main(String[] args) {
 		try {
+			System.setProperty("sun.java2d.opengl", "false");
+			System.setProperty("sun.java2d.noddraw", "true");
+			System.setProperty("org.lwjgl.input.Mouse.allowNegativeMouseCoords", "true");
+
 			String resources;
 			try {
 				resources = System.getProperty("net.puppygames.applet.Launcher.resources", DEFAULT_RESOURCES);

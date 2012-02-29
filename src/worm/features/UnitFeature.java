@@ -32,6 +32,7 @@
 package worm.features;
 
 import net.puppygames.applet.Screen;
+import net.puppygames.applet.effects.EmitterFeature;
 
 import org.lwjgl.util.Point;
 import org.lwjgl.util.Rectangle;
@@ -84,6 +85,24 @@ public class UnitFeature extends Feature {
 	/** Range to shoot */
 	private float range;
 
+	/** Aerial targets */
+	private boolean aerialTargets;
+
+	/** Repair drone flag */
+	private boolean repair;
+
+	/** Repair beam emitter start */
+	private EmitterFeature beamStartEmitter;
+
+	/** Repair beam emitter start */
+	private EmitterFeature beamEndEmitter;
+
+	/** Repair interval */
+	private int repairInterval;
+
+	/** Buffed repair interval */
+	private int buffedRepairInterval;
+
 	/*
 	 * Transient data
 	 */
@@ -119,8 +138,8 @@ public class UnitFeature extends Feature {
 	 * @param screen
 	 * @return the new Unit
 	 */
-	public final Unit spawn(Barracks barracks, Screen screen, int tileX, int tileY) {
-		Unit ret = new Unit(barracks, this, tileX, tileY);
+	public final Unit spawn(Barracks barracks, Screen screen, float mapX, float mapY) {
+		Unit ret = new Unit(barracks, this, mapX, mapY);
 		ret.spawn(screen);
 		return ret;
 	}
@@ -172,4 +191,29 @@ public class UnitFeature extends Feature {
 	public float getRange() {
 		return range;
 	}
+
+	public boolean isAerialTargets() {
+	    return aerialTargets;
+    }
+
+	public boolean isRepairDrone() {
+	    return repair;
+    }
+
+	public EmitterFeature getBeamEndEmitter() {
+	    return beamEndEmitter;
+    }
+
+	public EmitterFeature getBeamStartEmitter() {
+	    return beamStartEmitter;
+    }
+
+	public int getRepairInterval() {
+	    return repairInterval;
+    }
+
+	public int getBuffedRepairInterval() {
+	    return buffedRepairInterval;
+    }
+
 }

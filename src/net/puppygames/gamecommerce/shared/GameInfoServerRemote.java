@@ -49,6 +49,6 @@ public interface GameInfoServerRemote extends Remote {
 	 * @param gameInfos a List of GameInfos
 	 * @throws RemoteException
 	 */
-	public void submit(List gameInfos) throws RemoteException;
+	void submit(List<GameInfo> gameInfos) throws RemoteException;
 
 }

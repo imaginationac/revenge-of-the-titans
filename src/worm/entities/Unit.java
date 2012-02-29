@@ -33,19 +33,31 @@ package worm.entities;
 
 import java.util.ArrayList;
 
+import net.puppygames.applet.Game;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.LabelEffect;
 
 import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadableColor;
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
-import worm.features.*;
+import worm.Barracks;
+import worm.Entity;
+import worm.GameConfiguration;
+import worm.GameStateInterface;
+import worm.Layers;
+import worm.Res;
+import worm.Worm;
+import worm.effects.ElectronZapEffect;
+import worm.features.LayersFeature;
+import worm.features.ResearchFeature;
+import worm.features.UnitFeature;
 import worm.screens.GameScreen;
 import worm.weapons.WeaponFeature.WeaponInstance;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
-import com.shavenpuppy.jglib.util.Util;
+import com.shavenpuppy.jglib.resources.MappedColor;
 
 
 /**
@@ -54,15 +66,21 @@ import com.shavenpuppy.jglib.util.Util;
  * @author $Author: foo $
  * @version $Revision: 1.18 $
  */
-public class Unit extends Entity {
+public class Unit extends Entity implements PlayerWeaponInstallation {
 
 	private static final long serialVersionUID = 1L;
 
 	private static final ArrayList<Entity> COLLISIONS = new ArrayList<Entity>();
 
 	private static final int SPAWN_DURATION = 20;
-	private static final int RETARGET_TIME = 180;
-	private static final int SHOOT_INTERVAL = 60;
+	private static final int RETARGET_TIME = 300;
+	private static final int SHOOT_INTERVAL = 180;
+	private static final float MAX_WIDTH = 0.25f;
+	private static final float MAX_WOBBLE = 8.0f;
+	private static final float WOBBLE_FACTOR = 0.25f;
+	private static final float WIDTH_FACTOR = 0.025f;
+	private static final int BEAM_X_OFFSET = 0;
+	private static final int BEAM_Y_OFFSET = 4;
 
 	private static final Rectangle TEMP_BOUNDS = new Rectangle();
 
@@ -105,6 +123,9 @@ public class Unit extends Entity {
 	/** Shooting */
 	private int shootTick;
 
+	/** Repair interval */
+	private final int repairInterval;
+
 	/** Ignore list */
 	private final ArrayList<Entity> ignore = new ArrayList<Entity>();
 
@@ -115,16 +136,20 @@ public class Unit extends Entity {
 	private static final int PHASE_ALIVE = 1;
 	private static final int PHASE_DYING = 2;
 
+	/** Zap effect for repair drones */
+	private transient ElectronZapEffect zapEffect;
+
 	/**
 	 * C'tor
 	 */
-	public Unit(Barracks barracks, UnitFeature feature, int tileX, int tileY) {
+	public Unit(Barracks barracks, UnitFeature feature, float mapX, float mapY) {
 		this.barracks = barracks;
 		this.feature = feature;
 
-		setLocation(tileX * MapRenderer.TILE_SIZE + Util.random(0, MapRenderer.TILE_SIZE -1), tileY * MapRenderer.TILE_SIZE + Util.random(0, MapRenderer.TILE_SIZE -1));
+		setLocation(mapX, mapY);
 		movement = new UnitMovement(this);
 		hitPoints = feature.getHitPoints();
+		repairInterval = Worm.getGameState().isResearched(ResearchFeature.DROIDBUFF) ? feature.getBuffedRepairInterval() : feature.getRepairInterval();
 	}
 
 	public int getWidth() {
@@ -231,9 +256,6 @@ public class Unit extends Entity {
 		damage(damageAmount);
 	}
 
-	/* (non-Javadoc)
-	 * @see worm.Entity#crush()
-	 */
 	@Override
 	public int crush() {
 		kill();
@@ -290,7 +312,9 @@ public class Unit extends Entity {
 	@Override
 	protected final void doSpawn() {
 		emitter = feature.getAppearance().createEmitters(GameScreen.getInstance(), getMapX(), getMapY());
-		weaponInstance = feature.getWeapon().spawn(this);
+		if (feature.getWeapon() != null) {
+			weaponInstance = feature.getWeapon().spawn(this);
+		}
 		tick();
 		update();
 	}
@@ -309,6 +333,11 @@ public class Unit extends Entity {
 
 		// Inform barracks
 		barracks.onUnitRemoved(this);
+
+		if (zapEffect != null) {
+			zapEffect.finish();
+			zapEffect = null;
+		}
 	}
 
 	private void setEmitters(Emitter[] newEmitter) {
@@ -414,6 +443,7 @@ public class Unit extends Entity {
 		}
 
 		// Retarget every couple of seconds
+		Entity oldTarget = target;
 		if (targetTick > 0) {
 			targetTick --;
 			if (targetTick == 0) {
@@ -421,8 +451,19 @@ public class Unit extends Entity {
 			}
 		}
 		// If we've got no target, find one:
-		if (target == null || !target.isAttackableByUnits() || !target.isActive()) {
+		if (target == null || !target.isActive()) {
 			findTarget();
+		} else if (feature.isRepairDrone() && !((Building) target).isDamaged()) {
+			findTarget();
+		} else if (!feature.isRepairDrone() && !target.isAttackableByUnits()) {
+			findTarget();
+		}
+
+		if (oldTarget != target && zapEffect != null) {
+			if (zapEffect != null) {
+				zapEffect.finish();
+				zapEffect = null;
+			}
 		}
 
 		if (target == null) {
@@ -431,18 +472,20 @@ public class Unit extends Entity {
 		}
 
 		// Shoot weapon if it's in range of the target AND we're allowed to
-		weaponInstance.tick();
-		if (shootTick > 0) {
-			shootTick --;
+		if (weaponInstance != null) {
+			weaponInstance.tick();
+			if (shootTick > 0) {
+				shootTick --;
+			}
 		}
 
 		float range = getDistanceTo(target);
-		if (weaponInstance.isReady() && range < feature.getRange()) {
+		if (weaponInstance != null && weaponInstance.isReady() && range < feature.getRange()) {
 			weaponInstance.fire((int) (target.getX()), (int) (target.getY()));
 		} else if (range >= feature.getRange()) {
 			// Move. Maybe find a new target.
 			movement.tick();
-			if (shootTick == 0 && weaponInstance.isReady()) {
+			if (shootTick == 0 && weaponInstance != null && weaponInstance.isReady()) {
 				// Take a potshot at anything in range. Only check every few frames
 				TEMP_BOUNDS.setBounds((int) (getX() - feature.getRange()), (int) (getY() - feature.getRange()), (int) (feature.getRange() * 2.0f), (int) (feature.getRange() * 2.0f));
 				Entity.getCollisions(TEMP_BOUNDS, COLLISIONS);
@@ -467,7 +510,69 @@ public class Unit extends Entity {
 					shootTick = SHOOT_INTERVAL;
 				}
 			}
+		} else if (range < feature.getRange() && feature.isRepairDrone()) {
+			// In range of the building we are supposed to be repairing
+			Building building = (Building) target;
+			int repairCost = (int) (GameConfiguration.getInstance().getRepairCost() * building.getFeature().getInitialValue());
+			if (building.isAlive() && building.isDamaged() && Worm.getGameState().getMoney() >= repairCost) {
+				if (zapEffect == null) {
+					zapEffect = new ElectronZapEffect
+						(
+							false,
+							Res.getRepairZapSound(),
+							new MappedColor("repairzap.background"),
+							new MappedColor("repairzap.foreground"),
+							128,
+							feature.getBeamStartEmitter(),
+							feature.getBeamEndEmitter(),
+							getX() + BEAM_X_OFFSET,
+							getY() + BEAM_Y_OFFSET,
+							MAX_WIDTH,
+							MAX_WOBBLE,
+							WOBBLE_FACTOR,
+							WIDTH_FACTOR
+						);
+					zapEffect.setTarget(building.getX(), building.getY());
+					zapEffect.spawn(GameScreen.getInstance());
+					Game.allocateSound(Res.getCapacitorStartBuffer(), Worm.calcGain(getX(), getY()) * 0.25f, 1.0f);
+				}
+				shootTick ++;
+				if (shootTick > getRepairInterval()) {
+					building.repair();
+					shootTick = 0;
+					LabelEffect effect = new LabelEffect
+						(
+							net.puppygames.applet.Res.getTinyFont(),
+							"-$"+String.valueOf(repairCost),
+							ReadableColor.WHITE,
+							new MappedColor("repairzap.background"),
+							50,
+							20
+						);
+					effect.spawn(GameScreen.getInstance());
+					effect.setLayer(Layers.HUD);
+					effect.setLocation(building.getX(), building.getY());
+					effect.setVelocity(0.0f, 0.5f);
+					effect.setAcceleration(0.0f, -0.01f);
+					effect.setDelay(0);
+					Worm.getGameState().addMoney(-repairCost);
+				}
+			} else {
+				if (zapEffect != null) {
+					zapEffect.finish();
+					zapEffect = null;
+				}
+			}
+		} else {
+			if (zapEffect != null) {
+				zapEffect.finish();
+				zapEffect = null;
+			}
 		}
+	}
+
+	private int getRepairInterval() {
+		return repairInterval;
 	}
 
 	/**
@@ -524,6 +629,11 @@ public class Unit extends Entity {
 	 */
 	public UnitFeature getFeature() {
 		return feature;
+	}
+
+	@Override
+	public boolean isFiringAtAerialTargets() {
+	    return feature.isAerialTargets() && target.isFlying();
 	}
 
 	@Override

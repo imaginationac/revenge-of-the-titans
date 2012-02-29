@@ -56,17 +56,23 @@
 	<buffer name="capacitorStart.buffer" url="resource:capacitorStart.soundclip" gain="1.0" priority="51"/>
 	<buffer name="miniblaster.buffer" url="resource:miniblaster.soundclip" gain="0.25" priority="50"/>
 	<buffer name="miniheavyblaster.buffer" url="resource:miniblaster.soundclip" gain="0.25" pitch="0.75" priority="50"/>
+	<buffer name="miniblastcannon.buffer" url="resource:blastCannon.soundclip" gain="0.25" pitch="1.0" priority="50"/>
 	<buffer name="blaster1.buffer" url="resource:blaster1.soundclip" gain="0.75" priority="50"/>
 	<buffer name="blaster2.buffer" url="resource:blaster2.soundclip" gain="0.75" priority="50"/>
 	<buffer name="blaster3.buffer" url="resource:blaster3.soundclip" gain="0.75" priority="50"/>
 	<buffer name="blaster4.buffer" url="resource:blaster4.soundclip" gain="0.75" priority="50"/>
 	<buffer name="blaster5.buffer" url="resource:blaster5.soundclip" gain="0.75" priority="50"/>
-	<buffer name="heavyBlaster.buffer" url="resource:heavyBlaster.soundclip" gain="1.0" priority="10"/>
+	<buffer name="heavyBlaster1.buffer" url="resource:heavyBlaster1.soundclip" gain="0.75" priority="50"/>
+	<buffer name="heavyBlaster2.buffer" url="resource:heavyBlaster2.soundclip" gain="0.75" priority="50"/>
+	<buffer name="heavyBlaster3.buffer" url="resource:heavyBlaster3.soundclip" gain="0.75" priority="50"/>
+	<buffer name="heavyBlaster4.buffer" url="resource:heavyBlaster4.soundclip" gain="0.75" priority="50"/>
+	<buffer name="heavyBlaster5.buffer" url="resource:heavyBlaster5.soundclip" gain="0.75" priority="50"/>
 	<buffer name="blastCannon.buffer" url="resource:blastCannon.soundclip" gain="1.0" priority="50"/>
 	<buffer name="multiBlaster.buffer" url="resource:multiBlaster.soundclip" gain="1.0" priority="50"/>
 	<buffer name="shotgun.buffer" url="resource:shotgun.soundclip" gain="1.0" priority="50"/>
 	<buffer name="assault.buffer" url="resource:shotgun.soundclip" gain="1.0" pitch="0.8" priority="50"/>
 	<buffer name="laser.buffer" url="resource:laser.soundclip" gain="1.0" pitch="1.0" priority="50"/>
+	<buffer name="minilaser.buffer" url="resource:laser.soundclip" gain="0.5" pitch="1.0" priority="50"/>
 	<buffer name="rocket.buffer" url="resource:rocket.soundclip" gain="1.0" pitch="1.0" priority="50"/>
 	<buffer name="bombDetonated.buffer" url="resource:bombDetonated.soundclip" gain="1.0" pitch="0.8" priority="60"/>
 	<buffer name="disruptor.buffer" url="resource:disruptor.soundclip" gain="1.0" pitch="1.0" priority="50"/>
@@ -133,9 +139,12 @@
 	<buffer name="baseAttacked.buffer" url="resource:baseAttacked.soundclip" gain="0.5" priority="31"/>
 	<buffer name="baseDestructionImminent.buffer" url="resource:baseDestructionImminent.soundclip" gain="1.0" looped="true" priority="32"/>
 	<buffer name="factoryMining.buffer" url="resource:factoryMining.soundclip" gain="0.2" looped="true" priority="1"/>
+	<buffer name="repairZap.buffer" url="resource:repairZap.soundclip" gain="0.25" pitch="1.0" priority="1" looped="true"/>
 
 	<buffer name="saucer.buffer" url="resource:saucer.soundclip" gain="0.5" priority="1" looped="true"/>
 	<buffer name="saucerDeath.buffer" url="resource:saucerDeath.soundclip" gain="1.0" priority="1"/>
+
+	<buffer name="repair.buffer" url="resource:powerupSpecial.soundclip" gain="0.25" pitch="0.9" priority="60"/>
 
 	<buffer name="cantBuild.buffer" url="resource:cantBuild.soundclip" gain="1.0" pitch="1.0" priority="20"/>
 	<buffer name="insufficientFunds.buffer" url="resource:insufficientFunds.soundclip" gain="1.0" pitch="1.0" priority="20"/>
@@ -299,8 +308,10 @@
 	<stream name="mars.stream" url="resource:mars.ogg" gain="1.0" priority="1000" looped="true"/>
 	<stream name="saturn.stream" url="resource:saturn.ogg" gain="1.0" priority="1000" looped="true"/>
 	<stream name="titan.stream" url="resource:titan.ogg" gain="1.0" priority="1000" looped="true"/>
+	<stream name="xmas.stream" url="resource:xmas.ogg" gain="1.0" priority="1000" looped="true"/>
 
 	<!-- Level ambience -->
+	<stream name="december.stream" url="resource:december.ogg" gain="0.5" priority="1000" looped="true"/>
 	<stream name="level00.stream" url="resource:earth01.ogg" gain="0.5" priority="1000" looped="true"/>
 	<stream name="level01.stream" url="resource:earth02.ogg" gain="0.5" priority="1000" looped="true"/>
 	<stream name="level02.stream" url="resource:earth03.ogg" gain="0.5" priority="1000" looped="true"/>

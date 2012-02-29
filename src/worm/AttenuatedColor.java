@@ -37,6 +37,8 @@ import java.nio.ByteBuffer;
 import org.lwjgl.util.Color;
 import org.lwjgl.util.ReadableColor;
 
+import worm.features.LevelColorsFeature;
+import worm.features.LevelFeature;
 import worm.screens.GameScreen;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
@@ -66,11 +68,11 @@ public class AttenuatedColor implements ReadableColor, Serializable {
 	private boolean isShadow;
 
 	public AttenuatedColor(ReadableColor color) {
-		this(color, 0, 1, 0.0f, 512, false); // Update attenuation only every 128 RGBA reads or so
+		this(color, 0, 1, 0.0f, 128, false); // Update attenuation only every 128 RGBA reads or so
 	}
 
 	public AttenuatedColor(ReadableColor color, boolean isShadow) {
-		this(color, 0, 1, 0.0f, 512, true); // Update attenuation only every 128 RGBA reads or so
+		this(color, 0, 1, 0.0f, 128, true); // Update attenuation only every 128 RGBA reads or so
 	}
 
 	public AttenuatedColor(ReadableColor color, int fadeLevel, int maxFadeLevel, float ratio, int updateFrequency, boolean isShadow) {
@@ -94,7 +96,14 @@ public class AttenuatedColor implements ReadableColor, Serializable {
 	}
 
 	public void setRatio(float ratio) {
-		this.ratio = (float) (ratio * Worm.getGameState().getLevelFeature().getColors().getColor(MAX_ATTENUATION).getAlpha()/255.0);
+		LevelFeature levelFeature = Worm.getGameState().getLevelFeature();
+		if (levelFeature == null) {
+			// Not ready yet - probably a result of resizing the game window during a Create Easier Level maneouvre...
+			return;
+		}
+		LevelColorsFeature colors = levelFeature.getColors();
+		ReadableColor color = colors.getColor(MAX_ATTENUATION);
+		this.ratio = (float) (ratio * color.getAlpha()/255.0);
 		if (ratio < 0.0f) {
 			ratio = 0.0f;
 		} else if (ratio > 1.0f) {
@@ -134,77 +143,47 @@ public class AttenuatedColor implements ReadableColor, Serializable {
 		alpha = (int) (color.getAlpha() * mf + attenuation.getAlpha() * f);
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#getAlpha()
-	 */
 	@Override
 	public int getAlpha() {
-		maybeCalc();
 		return alpha;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#getAlphaByte()
-	 */
 	@Override
 	public byte getAlphaByte() {
 		return (byte) getAlpha();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#getBlue()
-	 */
 	@Override
 	public int getBlue() {
-		maybeCalc();
 		return blue;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#getBlueByte()
-	 */
 	@Override
 	public byte getBlueByte() {
 		return (byte) getBlue();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#getGreen()
-	 */
 	@Override
 	public int getGreen() {
-		maybeCalc();
 		return green;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#getGreenByte()
-	 */
 	@Override
 	public byte getGreenByte() {
 		return (byte) getGreen();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#getRed()
-	 */
 	@Override
 	public int getRed() {
 		maybeCalc();
 		return red;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#getRedByte()
-	 */
 	@Override
 	public byte getRedByte() {
 		return (byte) getRed();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#writeABGR(java.nio.ByteBuffer)
-	 */
 	@Override
 	public void writeABGR(ByteBuffer dest) {
 		dest.put(getAlphaByte());
@@ -213,9 +192,6 @@ public class AttenuatedColor implements ReadableColor, Serializable {
 		dest.put(getRedByte());
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#writeARGB(java.nio.ByteBuffer)
-	 */
 	@Override
 	public void writeARGB(ByteBuffer dest) {
 		dest.put(getAlphaByte());
@@ -224,9 +200,6 @@ public class AttenuatedColor implements ReadableColor, Serializable {
 		dest.put(getBlueByte());
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#writeBGR(java.nio.ByteBuffer)
-	 */
 	@Override
 	public void writeBGR(ByteBuffer dest) {
 		dest.put(getBlueByte());
@@ -234,9 +207,6 @@ public class AttenuatedColor implements ReadableColor, Serializable {
 		dest.put(getRedByte());
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#writeBGRA(java.nio.ByteBuffer)
-	 */
 	@Override
 	public void writeBGRA(ByteBuffer dest) {
 		dest.put(getBlueByte());
@@ -245,9 +215,6 @@ public class AttenuatedColor implements ReadableColor, Serializable {
 		dest.put(getAlphaByte());
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#writeRGB(java.nio.ByteBuffer)
-	 */
 	@Override
 	public void writeRGB(ByteBuffer dest) {
 		dest.put(getRedByte());
@@ -255,9 +222,6 @@ public class AttenuatedColor implements ReadableColor, Serializable {
 		dest.put(getBlueByte());
 	}
 
-	/* (non-Javadoc)
-	 * @see org.lwjgl.util.ReadableColor#writeRGBA(java.nio.ByteBuffer)
-	 */
 	@Override
 	public void writeRGBA(ByteBuffer dest) {
 		dest.put(getRedByte());

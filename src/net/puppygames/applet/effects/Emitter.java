@@ -99,4 +99,9 @@ public abstract class Emitter extends Effect {
 	 * @param gain
 	 */
 	public abstract void setGain(float gain);
+
+	@Override
+	protected final void render() {
+		// Don't actually need to do any rendering!
+	}
 }

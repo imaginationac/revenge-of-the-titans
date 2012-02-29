@@ -31,7 +31,6 @@
  */
 package worm.effects;
 
-import net.puppygames.applet.TickableObject;
 import net.puppygames.applet.effects.Effect;
 
 import org.lwjgl.util.ReadableColor;
@@ -70,8 +69,6 @@ public class ProximityEffect extends Effect {
 
 	/** Alpha */
 	private float alpha = ALPHA, currentAlpha;
-
-	private TickableObject tickableObject;
 
 	/** A background */
 	private Background.Instance background;
@@ -113,73 +110,53 @@ public class ProximityEffect extends Effect {
 	}
 
 	@Override
-	protected void doSpawn() {
-
+	protected void doSpawnEffect() {
 		background = Res.getBeamBackground().spawn();
 		background.setColor(color);
-
-		tickableObject = new TickableObject() {
-			@Override
-			protected void render() {
-				if (currentAlpha == 0.0f) {
-					return;
-				}
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						int xo = getOffset().getX();
-						int yo = getOffset().getY();
-						glPushMatrix();
-						glTranslatef(xo + x1, yo + y1, 0.0f);
-						double angle = Math.toDegrees(Math.atan2(y0 - y1, x0 - x1));
-						glRotatef((float) angle, 0.0f, 0.0f, 1.0f);
-						glTranslatef(START_RADIUS, - WIDTH / 2.0f, 0.0f);
-						glEnable(GL_TEXTURE_2D);
-						glEnable(GL_BLEND);
-						glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-						glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-					}
-				});
-
-				background.setAlpha((int) currentAlpha);
-				background.renderBackground(this);
-
-				// Now reset state
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glPopMatrix();
-						glDisable(GL_TEXTURE_2D);
-					}
-				});
-			}
-		};
-		tickableObject.setLayer(Layers.HITPOINTS);
-		tickableObject.spawn(getScreen());
 	}
 
 	@Override
-	protected void doRemove() {
-		if (tickableObject != null) {
-			tickableObject.remove();
-			tickableObject = null;
+    protected void render() {
+		if (currentAlpha == 0.0f) {
+			return;
 		}
+		glRender(new GLRenderable() {
+			@Override
+			public void render() {
+				int xo = getOffset().getX();
+				int yo = getOffset().getY();
+				glPushMatrix();
+				glTranslatef(xo + x1, yo + y1, 0.0f);
+				double angle = Math.toDegrees(Math.atan2(y0 - y1, x0 - x1));
+				glRotatef((float) angle, 0.0f, 0.0f, 1.0f);
+				glTranslatef(START_RADIUS, - WIDTH / 2.0f, 0.0f);
+//				glEnable(GL_TEXTURE_2D);
+//				glEnable(GL_BLEND);
+//				glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+//				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+			}
+		});
+
+		background.setAlpha((int) currentAlpha);
+//		background.renderBackground(this);
+		background.render(this);
+
+		// Now reset state
+		glRender(new GLRenderable() {
+			@Override
+			public void render() {
+				glPopMatrix();
+				glDisable(GL_TEXTURE_2D);
+			}
+		});
+
 	}
 
-	private void specialRender() {
-	}
-
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doRender()
-	 */
 	@Override
-	protected void doRender() {
-		// Don't do anything in here...
+    public int getDefaultLayer() {
+		return Layers.HITPOINTS;
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doTick()
-	 */
 	@Override
 	protected void doTick() {
 		switch (phase) {
@@ -206,9 +183,6 @@ public class ProximityEffect extends Effect {
 	protected void doUpdate() {
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#finish()
-	 */
 	@Override
 	public void finish() {
 		if (phase == PHASE_NORMAL) {
@@ -217,11 +191,8 @@ public class ProximityEffect extends Effect {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Tickable#isActive()
-	 */
 	@Override
-	public boolean isActive() {
+	public boolean isEffectActive() {
 		switch (phase) {
 			case PHASE_NORMAL:
 				return true;
@@ -232,12 +203,4 @@ public class ProximityEffect extends Effect {
 				return false;
 		}
 	}
-
-	@Override
-	protected void onSetVisible() {
-		if (tickableObject != null) {
-			tickableObject.setVisible(isVisible());
-		}
-	}
-
 }

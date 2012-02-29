@@ -142,8 +142,8 @@ public class BindingsScreen extends Screen {
 		void init(BindingsScreen screen) {
 			this.screen = screen;
 			glyphSprite = screen.allocateSprite(this);
-			glyphSprite.setLocation(location.getX(), location.getY(), 0);
-			glyphSprite.setOffset(screen.offset.getX(), screen.offset.getY(), 0);
+			glyphSprite.setLocation(location.getX(), location.getY());
+			glyphSprite.setOffset(screen.offset.getX(), screen.offset.getY());
 			glyphSprite.setLayer(1);
 			update();
 		}

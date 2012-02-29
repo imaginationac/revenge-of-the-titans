@@ -54,7 +54,7 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class OggVorbis extends Resource implements WaveWrapper {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Static data

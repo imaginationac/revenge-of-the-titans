@@ -158,7 +158,7 @@
 	</setting>
 
 	<setting name="endless.intro.setting" inherit="endless.intro.setting.spec" >
-		<actor character="endless.stats.char" position="140,60" bounds="60,150,200,20" expand="up" mirrored="false" />
+		<actor character="endless.stats.char" position="140,60" bounds="=$endless.intro.x,150,$endless.intro.w,20" expand="up" mirrored="false" />
 	</setting>
 
 	<!-- General setting - ordinary levels where aliens come from 1, 2 or 3 directions-->

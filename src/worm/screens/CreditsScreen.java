@@ -31,10 +31,14 @@
  */
 package worm.screens;
 
+import worm.Worm;
+
 /**
  * Credits
  */
 public class CreditsScreen extends net.puppygames.applet.screens.CreditsScreen {
+
+	private static final long serialVersionUID = 1L;
 
 	public CreditsScreen(String name) {
 		super(name);
@@ -44,5 +48,8 @@ public class CreditsScreen extends net.puppygames.applet.screens.CreditsScreen {
 	protected void onOpen() {
 		super.onOpen();
 		setEnabled("exit", false);
+		
+		setGroupVisible("not-xmas", !Worm.isXmas());
+		setGroupVisible("xmas", Worm.isXmas());
 	}
 }

@@ -43,7 +43,7 @@ import java.util.Map;
  */
 public class Memory extends Resource {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private static final boolean DEBUG = false;
 

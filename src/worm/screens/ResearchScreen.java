@@ -31,25 +31,40 @@
  */
 package worm.screens;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Area;
+import net.puppygames.applet.Game;
+import net.puppygames.applet.MiniGame;
+import net.puppygames.applet.Screen;
 import net.puppygames.applet.screens.DialogScreen;
-import worm.*;
 import worm.Res;
+import worm.Worm;
+import worm.WormGameState;
 import worm.animation.SimpleThingWithLayers;
 import worm.buildings.BuildingFeature;
-import worm.features.*;
+import worm.features.LayersFeature;
+import worm.features.ResearchFeature;
+import worm.features.SettingFeature;
 
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.resources.ColorMapFeature;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.sprites.Appearance;
 import com.shavenpuppy.jglib.sprites.Sprite;
 
 /**
  * Choose from one of several items to research.
  */
 public class ResearchScreen extends Screen {
+
+	private static final long serialVersionUID = 1L;
 
 	private static ResearchScreen instance;
 
@@ -73,6 +88,7 @@ public class ResearchScreen extends Screen {
 	private static final String GROUP_INFO = "info";
 	private static final String GROUP_ALL_RESEARCHED = "all_researched";
 	private static final String GROUP_REQUIRES = "requires";
+	private static final String REQUIRES_LABEL ="requires_label";
 
 //	private static final String GROUP_TABLE = "table";
 //	private static final String GROUP_TREE = "tree";
@@ -149,14 +165,14 @@ public class ResearchScreen extends Screen {
 
 			final ResearchFeature rf = ResearchFeature.getResearch().get(researchID);
 
-			if (rf!=null && getItemState(rf)==ITEM_AVAILABLE) {
+			if (rf!=null && ( getItemState(rf)==ITEM_AVAILABLE || Game.DEBUG)) {
 				if (rf.isRegisteredOnly() && !Game.isRegistered()) {
 					// Show the BUY dialog
-					Res.getResearchNagDialog().doModal("CONTRIBUTE TO THE WAR FUND!", "If only we had a DONATION for the WAR FUND we could buy this technology! Register now and carry on where you left off!", new Runnable() {
+					Res.getResearchNagDialog().doModal(Game.getMessage("ultraworm.researchscreen.nag_title"), Game.getMessage("ultraworm.researchscreen.nag_message"), new Runnable() {
 						@Override
 						public void run() {
 							if (Res.getResearchNagDialog().getOption() == DialogScreen.OK_OPTION) {
-								Game.buy(true);
+								MiniGame.buy(true);
 							}
 						}
 					});
@@ -177,7 +193,7 @@ public class ResearchScreen extends Screen {
 			public void run() {
 				SettingFeature setting = Worm.getGameState().getWorld().getSetting(rf.getSetting());
 				rf.getStory().setSetting(setting);
-				StoryScreen.show("story.screen."+Worm.getGameState().getWorld().getTitle(), false, rf.getStory(), new Runnable() {
+				StoryScreen.show("story.screen."+Worm.getGameState().getWorld().getUntranslated(), false, rf.getStory(), new Runnable() {
 					@Override
 					public void run() {
 						// Unresearch!
@@ -251,7 +267,7 @@ public class ResearchScreen extends Screen {
 
 					if (thisItemState==ITEM_UNAVAILABLE) {
 
-						getArea(DESCRIPTION).setText("{font:tinyfont.glfont color:text-dark}REQUIRES:");
+						setVisible(REQUIRES_LABEL, true);
 
 						Set<ResearchFeature> required = new HashSet<ResearchFeature>();
 						if (hovered.getDepends() != null) {
@@ -288,7 +304,7 @@ public class ResearchScreen extends Screen {
 									boxArea.setEnabled(true);
 									switch (getItemState(rf)) {
 										case ITEM_RESEARCHED:
-											boxArea.setMouseOffAppearance((AnimatedAppearanceResource) Resources.get("research.button.researched.off.animation"));
+											boxArea.setMouseOffAppearance((Appearance) Resources.get("research.button.researched.off.animation"));
 											setVisible(areaID + ALREADY_HAVE, true);
 											setVisible(areaID, false);
 											setVisible(areaID + CANT_AFFORD, false);
@@ -296,7 +312,7 @@ public class ResearchScreen extends Screen {
 											break;
 
 										case ITEM_AVAILABLE:
-											boxArea.setMouseOffAppearance((AnimatedAppearanceResource) Resources.get("research.button.on.off.animation"));
+											boxArea.setMouseOffAppearance((Appearance) Resources.get("research.button.on.off.animation"));
 											setVisible(areaID + ALREADY_HAVE, false);
 											setVisible(areaID, true);
 											setVisible(areaID + CANT_AFFORD, false);
@@ -304,7 +320,7 @@ public class ResearchScreen extends Screen {
 											break;
 
 										default:
-											boxArea.setMouseOffAppearance((AnimatedAppearanceResource) Resources.get("research.button.off.off.animation"));
+											boxArea.setMouseOffAppearance((Appearance) Resources.get("research.button.off.off.animation"));
 											setVisible(areaID + ALREADY_HAVE, false);
 											setVisible(areaID, false);
 											setVisible(areaID + CANT_AFFORD, true);
@@ -337,7 +353,7 @@ public class ResearchScreen extends Screen {
 				}
 
 				if (thisItemState==ITEM_RESEARCHED) {
-					getArea(COST).setText("{font:tinyfont.glfont color:text-bold}ALREADY RESEARCHED");
+					getArea(COST).setText("{font:tinyfont.glfont color:text-bold}"+Game.getMessage("ultraworm.researchscreen.already_researched"));
 				} else {
 					getArea(COST).setText("");
 				}
@@ -353,7 +369,7 @@ public class ResearchScreen extends Screen {
 					l.createSprites(this, layers);
 					Sprite[] sprite = layers.getSprites();
 					for (Sprite element : sprite) {
-						element.setLocation(spriteX, spriteY, 0);
+						element.setLocation(spriteX, spriteY);
 					}
 				}
 //				if (researched) {
@@ -379,8 +395,8 @@ public class ResearchScreen extends Screen {
 		removeSprites();
 
 		WormGameState gameState = Worm.getGameState();
-		String world = gameState.getWorld().getTitle();
-		getArea(BACKGROUND).setMouseOffAppearance((AnimatedAppearanceResource) Resources.get(world+".research.background.anim"));
+		String world = gameState.getWorld().getUntranslated();
+		getArea(BACKGROUND).setMouseOffAppearance((Appearance) Resources.get(world+".research.background.anim"));
 
 
 		current = null;
@@ -389,7 +405,7 @@ public class ResearchScreen extends Screen {
 		ColorMapFeature.getDefaultColorMap().copy((ColorMapFeature) Resources.get(world+".colormap"));
 
 		if (gameState.getLevel() == 1) {
-			net.puppygames.applet.Res.getInfoDialog().doModal("RESEARCH", "{color:text-bold}WELCOME TO THE RESEARCH LAB.\n{color:text}CHOOSE A TECHNOLOGY TO RESEARCH THAT WILL AID YOU IN THE NEXT LEVEL. R&D SUGGEST YOU CHOOSE {color:text-bold}REFINERIES{color:text} FIRST.", null);
+			Res.getIngameInfoDialog().doModal(Game.getMessage("ultraworm.researchscreen.hint_title"), Game.getMessage("ultraworm.researchscreen.hint_message"), null);
 		}
 
 
@@ -434,8 +450,8 @@ public class ResearchScreen extends Screen {
 			// set appearances
 			switch (thisItemState) {
 				case ITEM_RESEARCHED:
-					boxArea.setMouseOffAppearance((AnimatedAppearanceResource) Resources.get("research.button.researched.off.animation"));
-					boxArea.setMouseOnAppearance((AnimatedAppearanceResource) Resources.get("research.button.researched.on.animation"));
+					boxArea.setMouseOffAppearance((Appearance) Resources.get("research.button.researched.off.animation"));
+					boxArea.setMouseOnAppearance((Appearance) Resources.get("research.button.researched.on.animation"));
 					setVisible(areaID + ALREADY_HAVE, true);
 					setVisible(areaID, false);
 					setVisible(areaID + CANT_AFFORD, false);
@@ -444,8 +460,8 @@ public class ResearchScreen extends Screen {
 
 				case ITEM_AVAILABLE:
 					atLeastOneAvailable = true;
-					boxArea.setMouseOffAppearance((AnimatedAppearanceResource) Resources.get("research.button.on.off.animation"));
-					boxArea.setMouseOnAppearance((AnimatedAppearanceResource) Resources.get("research.button.on.on.animation"));
+					boxArea.setMouseOffAppearance((Appearance) Resources.get("research.button.on.off.animation"));
+					boxArea.setMouseOnAppearance((Appearance) Resources.get("research.button.on.on.animation"));
 					setVisible(areaID + ALREADY_HAVE, false);
 					setVisible(areaID, true);
 					setVisible(areaID + CANT_AFFORD, false);
@@ -453,8 +469,8 @@ public class ResearchScreen extends Screen {
 					break;
 
 				default:
-					boxArea.setMouseOffAppearance((AnimatedAppearanceResource) Resources.get("research.button.off.off.animation"));
-					boxArea.setMouseOnAppearance((AnimatedAppearanceResource) Resources.get("research.button.off.on.animation"));
+					boxArea.setMouseOffAppearance((Appearance) Resources.get("research.button.off.off.animation"));
+					boxArea.setMouseOnAppearance((Appearance) Resources.get("research.button.off.on.animation"));
 					setVisible(areaID + ALREADY_HAVE, false);
 					setVisible(areaID, false);
 					setVisible(areaID + CANT_AFFORD, true);
@@ -464,8 +480,6 @@ public class ResearchScreen extends Screen {
 			}
 
 			boxArea.update();
-			boxArea.render();
-
 		}
 	}
 

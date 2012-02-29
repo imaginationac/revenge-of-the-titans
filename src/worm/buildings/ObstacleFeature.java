@@ -31,7 +31,9 @@
  */
 package worm.buildings;
 
-import worm.*;
+import worm.Entity;
+import worm.EntitySpawningFeature;
+import worm.MapRenderer;
 import worm.entities.Building;
 
 import com.shavenpuppy.jglib.util.Util;

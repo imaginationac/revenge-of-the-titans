@@ -31,11 +31,13 @@
  */
 package net.puppygames.applet.effects;
 
-import net.puppygames.applet.TickableObject;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadablePoint;
+import org.lwjgl.util.ReadableRectangle;
 
-import org.lwjgl.util.*;
-
-import com.shavenpuppy.jglib.opengl.*;
+import com.shavenpuppy.jglib.opengl.GLFont;
+import com.shavenpuppy.jglib.opengl.GLRenderable;
+import com.shavenpuppy.jglib.opengl.GLString;
 
 import static org.lwjgl.opengl.GL11.*;
 
@@ -47,16 +49,18 @@ import static org.lwjgl.opengl.GL11.*;
  */
 public class LabelEffect extends SimpleBaseEffect {
 
-	private static final int DEFAULT_LAYER = 100;
+	private static final GLRenderable SETUP_RENDERING = new GLRenderable() {
+		@Override
+		public void render() {
+			glEnable(GL_TEXTURE_2D);
+			glEnable(GL_BLEND);
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+		}
+	};
 
 	/** Text to render */
 	private GLString label;
-
-	/** Layer */
-	private int layer = DEFAULT_LAYER;
-
-	/** Rendery thing */
-	private TickableObject tickableObject;
 
 	/**
 	 * @param font
@@ -74,56 +78,14 @@ public class LabelEffect extends SimpleBaseEffect {
 	}
 
 	@Override
-	protected void doSpawn() {
-		tickableObject = new TickableObject() {
-			@Override
-			protected void render() {
-				if (!isStarted() || !isVisible()) {
-					return;
-				}
-				glRender(new GLRenderable() {
-					@Override
-					public void render() {
-						glEnable(GL_TEXTURE_2D);
-						glEnable(GL_BLEND);
-						glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-						glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-					}
-				});
-
-				label.setColour(getCachedColor());
-				label.render(this);
-			}
-		};
-		tickableObject.setLayer(layer);
-		tickableObject.setVisible(isVisible());
-		tickableObject.spawn(getScreen());
-	}
-
-	public int getLayer() {
-		return layer;
-	}
-
-	public void setLayer(int layer) {
-		this.layer = layer;
-		if (tickableObject != null) {
-			tickableObject.setLayer(layer);
+	protected void render() {
+		if (!isStarted() || !isVisible()) {
+			return;
 		}
-	}
+		glRender(SETUP_RENDERING);
 
-	@Override
-	protected void onSetVisible() {
-		if (tickableObject != null) {
-			tickableObject.setVisible(isVisible());
-		}
-	}
-
-	@Override
-	protected void doRemove() {
-		if (tickableObject != null) {
-			tickableObject.remove();
-			tickableObject = null;
-		}
+		label.setColour(getCachedColor());
+		label.render(this);
 	}
 
 	public void setText(String newText) {
@@ -136,17 +98,11 @@ public class LabelEffect extends SimpleBaseEffect {
 		setSize(bounds.getWidth(), bounds.getHeight());
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.SimpleBaseEffect#doSetLocation()
-	 */
 	@Override
 	protected void doSetLocation() {
 		// No need to do anything
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.Effect#doUpdate()
-	 */
 	@Override
 	protected void doUpdate() {
 		int x = (int) getX() - (getWidth() / 2);
@@ -159,10 +115,8 @@ public class LabelEffect extends SimpleBaseEffect {
 		label.setLocation(x, y);
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.effects.SimpleBaseEffect#doEffectRender()
-	 */
 	@Override
-	protected void doEffectRender() {
+	public String toString() {
+	    return "LabelEffect["+label.getText()+"]";
 	}
 }

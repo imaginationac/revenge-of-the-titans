@@ -60,9 +60,6 @@ public class AutoLoaderBuildingFeature extends BuildingFeature {
 			super(AutoLoaderBuildingFeature.this, ghost);
 		}
 
-		/* (non-Javadoc)
-		 * @see worm.entities.Building#adjustProximity(worm.entities.Building, int)
-		 */
 		@Override
 		protected void adjustProximity(Building target, int delta) {
 			target.addAutoLoaders(delta);
@@ -86,17 +83,11 @@ public class AutoLoaderBuildingFeature extends BuildingFeature {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see storm.BuildingFeature#doSpawn()
-	 */
 	@Override
 	public Building doSpawn(boolean ghost) {
 		return new AutoLoaderBuildingInstance(ghost);
 	}
 
-	/* (non-Javadoc)
-	 * @see worm.buildings.BuildingFeature#isAffectedBy(worm.buildings.BuildingFeature)
-	 */
 	@Override
 	public boolean isAffectedBy(BuildingFeature feature) {
 		if (feature instanceof TurretBuildingFeature) {
@@ -104,7 +95,7 @@ public class AutoLoaderBuildingFeature extends BuildingFeature {
 			return !t.isDecoy();
 		}
 
-		return feature instanceof ShieldGeneratorBuildingFeature;
+		return feature instanceof ShieldGeneratorBuildingFeature || feature instanceof CloakBuildingFeature;
 	}
 
 	@Override

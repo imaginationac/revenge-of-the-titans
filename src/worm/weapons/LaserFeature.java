@@ -33,17 +33,24 @@ package worm.weapons;
 
 import java.util.ArrayList;
 
-import net.puppygames.applet.Game;
-import net.puppygames.applet.TickableObject;
-import net.puppygames.applet.effects.*;
+import net.puppygames.applet.effects.Effect;
+import net.puppygames.applet.effects.Emitter;
+import net.puppygames.applet.effects.EmitterFeature;
+import net.puppygames.applet.widgets.Beam;
 
-import org.lwjgl.opengl.Display;
 import org.lwjgl.util.Color;
+import org.lwjgl.util.ReadablePoint;
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Entity;
+import worm.GameMap;
+import worm.MapRenderer;
+import worm.Res;
+import worm.Tile;
+import worm.Worm;
+import worm.WormGameState;
 import worm.entities.Gidrah;
-import worm.entities.Turret;
+import worm.entities.PlayerWeaponInstallation;
 import worm.screens.GameScreen;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
@@ -53,6 +60,7 @@ import com.shavenpuppy.jglib.resources.Range;
 import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.sprites.SpriteImage;
 import com.shavenpuppy.jglib.util.FPMath;
+import com.shavenpuppy.jglib.util.ShortList;
 import com.shavenpuppy.jglib.util.Util;
 
 import static org.lwjgl.opengl.GL11.*;
@@ -65,7 +73,20 @@ import static org.lwjgl.opengl.GL11.*;
  */
 public class LaserFeature extends WeaponFeature {
 
+	private static final long serialVersionUID = 1L;
+
 	private static final Rectangle TEMP = new Rectangle();
+
+	private static final GLRenderable SETUP = new GLRenderable() {
+		@Override
+		public void render() {
+			glEnable(GL_TEXTURE_2D);
+			glEnable(GL_BLEND);
+			glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+		}
+	};
+
 
 	private static final ArrayList<Entity> ENTITIES = new ArrayList<Entity>();
 
@@ -79,7 +100,7 @@ public class LaserFeature extends WeaponFeature {
 	private int fadeDuration;
 
 	/** Beam width */
-	private float width;
+	private float width, innerWidth;
 
 	/** Layer */
 	private int layer;
@@ -100,7 +121,7 @@ public class LaserFeature extends WeaponFeature {
 	private EmitterFeature beamEmitter;
 
 	/** Color */
-	private Color color;
+	private Color color, innerColor;
 
 	/** Beam emitter sprite overlay */
 	private String beamEmitterOverlay;
@@ -195,12 +216,13 @@ public class LaserFeature extends WeaponFeature {
 
 	private class LaserBeam extends Effect {
 
+		final ShortList indices = new ShortList();
+
 		final LaserInstance weapon;
 		final int mapWidth;
 		final int mapHeight;
 
 		Sprite beamEmitterOverlaySprite;
-		TickableObject tickableObject;
 		boolean fading;
 		int tick;
 		double sx, sy, tx, ty;
@@ -208,10 +230,12 @@ public class LaserFeature extends WeaponFeature {
 		boolean aerialTargets;
 		boolean harmless;
 
+		transient Beam innerBeam, outerBeam;
 		transient Emitter beamStartEmitter;
 
 		class Segment {
 			double x0, y0, x1, y1;
+			float startRatio, endRatio;
 		}
 
 		ArrayList<Segment> segments = new ArrayList<Segment>();
@@ -220,7 +244,7 @@ public class LaserFeature extends WeaponFeature {
 			this.weapon = weapon;
 			enemyFire = weapon.entity instanceof Gidrah;
 			if (!enemyFire) {
-				aerialTargets = ((Turret) weapon.entity).isFiringAtAerialTargets();
+				aerialTargets = ((PlayerWeaponInstallation) weapon.entity).isFiringAtAerialTargets();
 			}
 			beamStartEmitter = beamEmitter.spawn(GameScreen.getInstance());
 			beamStartEmitter.setOffset(GameScreen.getSpriteOffset());
@@ -229,59 +253,54 @@ public class LaserFeature extends WeaponFeature {
 		}
 
 		@Override
-		protected void doSpawn() {
-			beamEmitterOverlaySprite = getScreen().allocateSprite(getScreen());
-			beamEmitterOverlaySprite.setImage(beamEmitterOverlayResource);
-			beamEmitterOverlaySprite.setLayer(layer + 1);
-			beamEmitterOverlaySprite.setColors(color);
-			tickableObject = new TickableObject() {
-				@Override
-				protected void render() {
+		protected void render() {
+			ReadablePoint offset = getOffset();
+			int ox, oy;
+			if (offset == null) {
+				ox = 0;
+				oy = 0;
+			} else {
+				ox = offset.getX();
+				oy = offset.getY();
+			}
 
-					glRender(new GLRenderable() {
-						@Override
-						public void render() {
-							glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-							glEnable(GL_BLEND);
-							glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
-							glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-							glLineWidth(width * Display.getDisplayMode().getHeight() / Game.getHeight());
-							glDisable(GL_TEXTURE_2D);
-						}
-					});
+			float alpha;
+			if (fading) {
+				alpha = LinearInterpolator.instance.interpolate(1.0f, 0.0f, (float) tick / (float) fadeDuration);
+			} else {
+				alpha = 1.0f;
+			}
 
-					float alpha;
-					if (fading) {
-						alpha = LinearInterpolator.instance.interpolate(1.0f, 0.0f, (float) tick / (float) fadeDuration);
-					} else {
-						alpha = 1.0f;
-					}
-					alpha *= 1.0f - Util.random() / 5.0f;
-					ColorUtil.setGLColor(color, (int) (alpha * 255), this);
-					glBegin(GL_LINES);
-					int ox = getOffset().getX();
-					int oy = getOffset().getY();
-					for (int i = 0; i < segments.size(); i ++) {
-						Segment segment = segments.get(i);
-						glVertex2f((float) segment.x0 + ox, (float) segment.y0 + oy);
-						glVertex2f((float) segment.x1 + ox, (float) segment.y1 + oy);
-					}
-					glEnd();
-					glRender(new GLRenderable() {
-						@Override
-						public void render() {
-							glLineWidth(1.0f);
-						}
-					});
-				}
-			};
-			tickableObject.setLayer(layer);
-			tickableObject.spawn(GameScreen.getInstance());
+			float innerAlpha = Math.max(0.0f, alpha - (Util.random() * 0.25f));
+			float outerAlpha = Math.max(0.0f, alpha - (Util.random() * 0.25f));
+			glRender(SETUP);
+			glRender(Res.getLaserTexture());
+			for (int i = 0; i < segments.size(); i ++) {
+				Segment segment = segments.get(i);
+				outerBeam.setLocation((float) segment.x0 + ox, (float) segment.y0 + oy, (float) segment.x1 + ox, (float) segment.y1 + oy);
+				innerBeam.setLocation((float) segment.x0 + ox, (float) segment.y0 + oy, (float) segment.x1 + ox, (float) segment.y1 + oy);
+				innerBeam.setStartColor(ColorUtil.setAlpha(ColorUtil.premultiply(innerColor, (int) (innerAlpha * segment.startRatio), null), 0, null));
+				innerBeam.setEndColor(ColorUtil.setAlpha(ColorUtil.premultiply(innerColor, (int) (innerAlpha * segment.endRatio), null), 0, null));
+				outerBeam.setStartColor(ColorUtil.setAlpha(ColorUtil.premultiply(color, (int) (outerAlpha * segment.startRatio), null), 0, null));
+				outerBeam.setEndColor(ColorUtil.setAlpha(ColorUtil.premultiply(color, (int) (outerAlpha * segment.endRatio), null), 0, null));
+				outerBeam.render(this);
+				innerBeam.render(this);
+			}
 		}
 
 		@Override
-		protected void doRender() {
+		protected void doSpawnEffect() {
+			outerBeam = new Beam();
+			outerBeam.setWidth(width);
+			innerBeam = new Beam();
+			innerBeam.setWidth(innerWidth);
 		}
+
+		@Override
+		public int getDefaultLayer() {
+		    return layer;
+		}
+
 
 		@Override
 		protected void doTick() {
@@ -297,6 +316,7 @@ public class LaserFeature extends WeaponFeature {
 			Segment currentSegment = new Segment();
 			currentSegment.x0 = sx;
 			currentSegment.y0 = sy;
+			currentSegment.startRatio = 255.0f;
 			int totalLength = 0;
 			Entity lastBounce = null;
 
@@ -304,6 +324,7 @@ public class LaserFeature extends WeaponFeature {
 				// This is the Saturn boss laser
 				currentSegment.x1 = tx;
 				currentSegment.y1 = ty;
+				currentSegment.endRatio = 255.0f;
 				totalLength = 1;
 				TEMP.setBounds((int) tx, (int) ty, 1, 1);
 				ENTITIES.clear();
@@ -417,7 +438,9 @@ public class LaserFeature extends WeaponFeature {
 								lastBounce = entity;
 								// First record current segment
 								segments.add(currentSegment);
+								currentSegment.endRatio = LinearInterpolator.instance.interpolate(255.0f, 0.0f, totalLength / length);
 								currentSegment = new Segment();
+								currentSegment.startRatio = LinearInterpolator.instance.interpolate(255.0f, 0.0f, totalLength / length);
 								currentSegment.x0 = lastSegment.x1;
 								currentSegment.y0 = lastSegment.y1;
 								// Spawn sparks and ting
@@ -461,6 +484,7 @@ public class LaserFeature extends WeaponFeature {
 			}
 			if (totalLength > 0) {
 				segments.add(currentSegment);
+				currentSegment.endRatio = LinearInterpolator.instance.interpolate(255.0f, 0.0f, totalLength / length);
 
 				if (tick > duration && !fading) {
 					fading = true;
@@ -483,12 +507,18 @@ public class LaserFeature extends WeaponFeature {
 			int ox = getOffset().getX();
 			int oy = getOffset().getY();
 			beamStartEmitter.setLocation((float) sx + ox, (float) sy + oy);
-			beamEmitterOverlaySprite.setLocation((int) sx + ox, (int) sy + oy, 0);
+			if (beamEmitterOverlaySprite == null) {
+				beamEmitterOverlaySprite = getScreen().allocateSprite(getScreen());
+				beamEmitterOverlaySprite.setImage(beamEmitterOverlayResource);
+				beamEmitterOverlaySprite.setLayer(layer + 1);
+				beamEmitterOverlaySprite.setColors(color);
+			}
+			beamEmitterOverlaySprite.setLocation((int) sx + ox, (int) sy + oy);
 			beamEmitterOverlaySprite.setScale(Util.random(FPMath.HALF + FPMath.EIGHTH, FPMath.HALF - FPMath.EIGHTH));
 		}
 
 		@Override
-		public boolean isActive() {
+		public boolean isEffectActive() {
 			return !fading || tick < fadeDuration;
 		}
 
@@ -513,10 +543,6 @@ public class LaserFeature extends WeaponFeature {
 			if (beamEmitterOverlaySprite != null) {
 				beamEmitterOverlaySprite.deallocate();
 				beamEmitterOverlaySprite = null;
-			}
-			if (tickableObject != null) {
-				tickableObject.remove();
-				tickableObject = null;
 			}
 		}
 	}

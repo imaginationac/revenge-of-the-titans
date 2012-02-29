@@ -32,7 +32,9 @@
 package worm.tiles;
 
 
-import worm.*;
+import worm.EntitySpawningFeature;
+import worm.MapProcessor;
+import worm.Tile;
 import worm.buildings.CrystalFeature;
 
 /**

@@ -32,16 +32,25 @@
 package worm.entities;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.lwjgl.util.Point;
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.Entity;
+import worm.GameMap;
+import worm.MapRenderer;
+import worm.Worm;
+import worm.WormGameState;
 import worm.features.GidrahFeature;
 import worm.path.AStar;
 
-import com.shavenpuppy.jglib.interpolators.*;
+import com.shavenpuppy.jglib.interpolators.CosineInterpolator;
+import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
+import com.shavenpuppy.jglib.interpolators.OpenLinearInterpolator;
 import com.shavenpuppy.jglib.util.IntList;
 import com.shavenpuppy.jglib.util.Util;
 

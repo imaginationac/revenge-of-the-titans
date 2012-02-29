@@ -43,10 +43,12 @@ import worm.features.GidrahFeature;
  */
 public class UnitBrainFeature extends BrainFeature {
 
-	private static final float GIDLET_WEIGHT = 1.0f;
-	private static final float GIDRAH_WEIGHT = 4.0f;
-	private static final float ANGRY_GIDRAH_WEIGHT = 6.0f;
-	private static final float BOSS_WEIGHT = 8.0f;
+	private static final long serialVersionUID = 1L;
+
+	private float gidletWeight;
+	private float gidrahWeight;
+	private float angryGidrahWeight;
+	private float bossWeight;
 
 	/**
 	 * C'tor
@@ -82,13 +84,13 @@ public class UnitBrainFeature extends BrainFeature {
 				float dist = newTarget.getDistanceTo(mapX, mapY);
 				GidrahFeature feature = newTarget.getFeature();
 				if (feature.isGidlet()) {
-					dist *= GIDLET_WEIGHT;
+					dist *= gidletWeight;
 				} else if (feature.isAngry()) {
-					dist *= ANGRY_GIDRAH_WEIGHT;
+					dist *= angryGidrahWeight;
 				} else if (feature.isBoss()) {
-					dist *= BOSS_WEIGHT;
+					dist *= bossWeight;
 				} else {
-					dist *= GIDRAH_WEIGHT;
+					dist *= gidrahWeight;
 				}
 				if (dist < closestDist) {
 					if (entity.getIgnore() != null && entity.getIgnore().contains(newTarget)) {

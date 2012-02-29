@@ -39,7 +39,10 @@ import worm.buildings.BaseBuildingFeature;
 import worm.generator.MapTemplate;
 
 import com.shavenpuppy.jglib.openal.ALStream;
-import com.shavenpuppy.jglib.resources.*;
+import com.shavenpuppy.jglib.resources.Data;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.ResourceArray;
+import com.shavenpuppy.jglib.resources.TextResource;
 import com.shavenpuppy.jglib.util.Util;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -48,11 +51,17 @@ import com.shavenpuppy.jglib.util.XMLUtil;
  */
 public class WorldFeature extends Feature {
 
+	private static final long serialVersionUID = 1L;
+
 	private static final ArrayList<WorldFeature> WORLDS = new ArrayList<WorldFeature>(5);
 
 	/** Title */
 	@Data
 	private String title;
+
+	/** Untranslated title */
+	@Data
+	private String untranslated;
 
 	/** Index */
 	private int index;
@@ -77,6 +86,9 @@ public class WorldFeature extends Feature {
 
 	/** Stream */
 	private String stream;
+
+	/** Don't register - used for the spurious Xmas world */
+	private boolean xmas;
 
 
 	// chaz hack for world intro
@@ -122,31 +134,29 @@ public class WorldFeature extends Feature {
 		return index;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doRegister()
-	 */
 	@Override
 	protected void doRegister() {
-		index = WORLDS.size();
-		WORLDS.add(this);
+		if (!xmas) {
+			index = WORLDS.size();
+			WORLDS.add(this);
+		}
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doDeregister()
-	 */
 	@Override
 	protected void doDeregister() {
-		WORLDS.remove(this);
+		if (!xmas) {
+			WORLDS.remove(this);
+		}
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#load(org.w3c.dom.Element, com.shavenpuppy.jglib.Resource.Loader)
-	 */
 	@Override
 	public void load(Element element, Loader loader) throws Exception {
 		super.load(element, loader);
-		storyFeature = new StoryFeature();
-		storyFeature.load(XMLUtil.getChild(element, "story"), loader);
+
+		if (XMLUtil.hasChild(element, "story")) {
+			storyFeature = new StoryFeature();
+			storyFeature.load(XMLUtil.getChild(element, "story"), loader);
+		}
 	}
 
 	/**
@@ -203,6 +213,10 @@ public class WorldFeature extends Feature {
 		return title;
 	}
 
+	public String getUntranslated() {
+	    return untranslated;
+    }
+
 	/**
 	 * @return the number of worlds
 	 */
@@ -225,10 +239,6 @@ public class WorldFeature extends Feature {
 	public static WorldFeature getWorld(int idx) {
 		return WORLDS.get(idx);
 	}
-
-
-
-	// chaz hack for world intro
 
 	/**
 	 * @return the story

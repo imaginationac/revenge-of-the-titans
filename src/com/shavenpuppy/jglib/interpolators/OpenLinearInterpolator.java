@@ -34,8 +34,6 @@ package com.shavenpuppy.jglib.interpolators;
 import java.io.ObjectInput;
 import java.io.ObjectStreamException;
 
-import com.shavenpuppy.jglib.util.FPMath;
-
 /**
  * Open linear interpolator, which allows the ratio to extend beyond 0.0 and 1.0
  */
@@ -60,17 +58,6 @@ public final class OpenLinearInterpolator extends InterpolatorBase {
 			return a;
 		}
 		return a * (1f - ratio) + b * ratio;
-	}
-
-	/**
-	 * Linear interpolation.
-	 */
-	@Override
-	public int interpolate(int a, int b, int ratio) {
-		if (a == b) {
-			return a;
-		}
-		return FPMath.mul(a, FPMath.ONE - ratio) + FPMath.mul(b, ratio);
 	}
 
 	private Object readResolve(ObjectInput oi) throws ObjectStreamException {

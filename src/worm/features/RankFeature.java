@@ -31,7 +31,12 @@
  */
 package worm.features;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import net.puppygames.applet.Game;
 
 import com.shavenpuppy.jglib.resources.Feature;
 
@@ -39,6 +44,8 @@ import com.shavenpuppy.jglib.resources.Feature;
  * Ranks
  */
 public class RankFeature extends Feature {
+
+	private static final long serialVersionUID = 1L;
 
 	private static final SortedSet<RankFeature> RANKS = new TreeSet<RankFeature>(new Comparator<RankFeature>() {
 		@Override
@@ -48,7 +55,6 @@ public class RankFeature extends Feature {
 			} else if (r0.getPoints() > r1.getPoints()) {
 				return 1;
 			} else {
-				assert false;
 				return 0;
 			}
 		}
@@ -63,7 +69,8 @@ public class RankFeature extends Feature {
 	/**
 	 * C'tor
 	 */
-	public RankFeature() {
+	public RankFeature(String name) {
+		super(name);
 		setAutoCreated();
 	}
 
@@ -96,7 +103,7 @@ public class RankFeature extends Feature {
 		super.doCreate();
 
 		hint = new HintFeature();
-		hint.setDetails(appearance, "{color:gui-mid font:tinyfont.glfont}NEW RANK ATTAINED! BONUS:$"+points/10+"\n{color:gui-bright font:smallfont.glfont}"+title);
+		hint.setDetails(appearance, "{color:gui-mid font:tinyfont.glfont}" + Game.getMessage("ultraworm.intermission.new_rank") + " BONUS:$"+points/10+"\n{color:gui-bright font:smallfont.glfont}"+title);
 		hint.create();
 	}
 

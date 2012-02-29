@@ -31,6 +31,7 @@
  */
 package worm.screens;
 
+import net.puppygames.applet.Game;
 import net.puppygames.applet.Screen;
 import net.puppygames.applet.screens.TitleScreen;
 import worm.Worm;
@@ -45,6 +46,8 @@ import com.shavenpuppy.jglib.Resources;
  */
 public class SelectWorldScreen extends Screen {
 
+	private static final long serialVersionUID = 1L;
+
 	private static SelectWorldScreen instance;
 
 	private static final String ID_CANCEL = "cancel";
@@ -57,17 +60,11 @@ public class SelectWorldScreen extends Screen {
 		setAutoCreated();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doRegister()
-	 */
 	@Override
 	protected void doRegister() {
 		instance = this;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.resources.Feature#doDeregister()
-	 */
 	@Override
 	protected void doDeregister() {
 		instance = null;
@@ -89,7 +86,7 @@ public class SelectWorldScreen extends Screen {
 
 			String maxLevel;
 			if (i < maxWorld) {
-				maxLevel = "AREA SECURE !";
+				maxLevel = Game.getMessage("world.secure.text");
 			} else {
 				maxLevel = "> " +LevelFeature.getLevel(Worm.getMaxLevelUnlockedInWorld(i)+i*10).getTitle();
 			}

@@ -63,7 +63,7 @@ public class TextLayout {
 
 	/** Horizontal alignments */
 	public abstract static class HorizontalAlignment implements Serializable, Decodeable {
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 		private final String display;
 		private HorizontalAlignment(String display) {
 			this.display = display;
@@ -195,7 +195,7 @@ public class TextLayout {
 
 	/** No wrap - the maximum width is ignored */
 	private static final class NoWrap extends Format {
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 		NoWrap() {
 			super("None");
 		}
@@ -241,7 +241,7 @@ public class TextLayout {
 
 	/** Wrapped - the characters are wrapped at the specified width */
 	private static final class Wrapped extends Format {
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 		Wrapped() {
 			super("Character Wrap");
 		}
@@ -306,7 +306,7 @@ public class TextLayout {
 
 	/** Word wrapped - words are wrapped at the specified width */
 	private static final class WordWrapped extends Format {
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 		WordWrapped() {
 			super("Word Wrap");
 		}
@@ -416,7 +416,7 @@ public class TextLayout {
 
 	/** Justified - words are wrapped at the specified width and then whitespace is expanded to fill the line */
 	private static final class Justified extends Format {
-		public static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 		Justified() {
 			super("Justified");
 		}

@@ -818,6 +818,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.tankfactory.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.tankfactory.01"/>
+				<sprite layer="12" image="spriteimage.info.tankfactory.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.tankfactory.top.01" colored="earth.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -828,6 +833,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.repairdrones.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.repairdrones.01"/>
+				<sprite layer="12" image="spriteimage.info.repairdrones.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.repairdrones.top.01" colored="earth.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -838,6 +848,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.scarecrow.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.scarecrow.01"/>
+				<sprite layer="12" image="spriteimage.info.scarecrow.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.scarecrow.top.01" colored="earth.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>
@@ -848,6 +863,11 @@
 	>
 		<idleLayers>
 			<layers scale="0.8">
+				<sprite layer="2" animation="earth.info.background.anim"/>
+				<sprite layer="10" image="spriteimage.info.cloakingdevice.ground.01"/>				
+				<sprite layer="11" bottomColored="earth.colormap:info-floor" topColored="earth.colormap:info-building" image="spriteimage.info.cloakingdevice.01"/>
+				<sprite layer="12" image="spriteimage.info.cloakingdevice.glow.01"/>
+				<sprite layer="12" image="spriteimage.info.cloakingdevice.top.01" colored="earth.colormap:info-alt" />
 			</layers>
 		</idleLayers>
 	</character>

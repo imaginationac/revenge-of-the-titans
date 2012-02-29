@@ -31,6 +31,7 @@
  */
 package worm.features;
 
+import net.puppygames.applet.PrizeFeature;
 import worm.Worm;
 import worm.WormGameState;
 import worm.powerups.PowerupFeature;
@@ -39,6 +40,8 @@ import worm.powerups.PowerupFeature;
  * Give the player some powerups
  */
 public class PowerupPrizeFeature extends PrizeFeature {
+
+	private static final long serialVersionUID = 1L;
 
 	private String powerup;
 	private int amount;
@@ -55,7 +58,8 @@ public class PowerupPrizeFeature extends PrizeFeature {
 
 	@Override
 	public boolean isValid() {
-		return Worm.getMaxLevel(WormGameState.GAME_MODE_CAMPAIGN) < WormGameState.MAX_LEVELS;
+		int maxLevel = Worm.getMaxLevel(WormGameState.GAME_MODE_CAMPAIGN);
+		return maxLevel >= 5 && maxLevel < WormGameState.MAX_LEVELS;
 	}
 
 	@Override

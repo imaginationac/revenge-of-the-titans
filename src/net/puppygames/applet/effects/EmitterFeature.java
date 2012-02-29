@@ -34,14 +34,17 @@ package net.puppygames.applet.effects;
 import net.puppygames.applet.Game;
 import net.puppygames.applet.Screen;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadablePoint;
 
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
 import com.shavenpuppy.jglib.openal.ALBuffer;
-import com.shavenpuppy.jglib.resources.*;
+import com.shavenpuppy.jglib.resources.Data;
+import com.shavenpuppy.jglib.resources.Feature;
+import com.shavenpuppy.jglib.resources.Range;
 import com.shavenpuppy.jglib.sound.SoundEffect;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
-import com.shavenpuppy.jglib.util.FPMath;
+import com.shavenpuppy.jglib.sprites.Appearance;
 
 /**
  * $Id: EmitterFeature.java,v 1.11 2010/08/03 20:44:07 foo Exp $
@@ -53,6 +56,8 @@ import com.shavenpuppy.jglib.util.FPMath;
 public class EmitterFeature extends Feature {
 
 	private static final long serialVersionUID = 1L;
+
+	private static final int MARGIN = 48;
 
 	/*
 	 * Resource data
@@ -176,12 +181,15 @@ public class EmitterFeature extends Feature {
 	/** Don't move Y coordinate; just use sprite offset instead */
 	private boolean doYOffset;
 
+	/** Force emission even if offscreen */
+	private boolean forceEmit;
+
 	/*
 	 * Transient data
 	 */
 
 	private transient EmitterFeature nextFeature;
-	private transient AnimatedAppearanceResource appearanceResource;
+	private transient Appearance appearanceResource;
 	private transient ALBuffer soundResource;
 
 	/**
@@ -223,7 +231,7 @@ public class EmitterFeature extends Feature {
 		}
 
 		@Override
-		protected void doSpawn() {
+		protected void doSpawnEffect() {
 			initEmitter();
 		}
 
@@ -231,9 +239,6 @@ public class EmitterFeature extends Feature {
 			return EmitterFeature.this;
 		}
 
-		/* (non-Javadoc)
-		 * @see net.puppygames.applet.effects.Emitter#setYOffset(float)
-		 */
 		@Override
 		public void setYOffset(float yOffset) {
 			this.iyo = yOffset;
@@ -242,17 +247,11 @@ public class EmitterFeature extends Feature {
 			}
 		}
 
-		/* (non-Javadoc)
-		 * @see net.puppygames.applet.effects.Effect#playSound(com.shavenpuppy.jglib.openal.ALBuffer)
-		 */
 		@Override
 		protected void playSound(ALBuffer sound) {
 			// Override to stop sounds playing here.
 		}
 
-		/* (non-Javadoc)
-		 * @see net.puppygames.applet.effects.Emitter#getTag()
-		 */
 		@Override
 		public String getTag() {
 			return tag;
@@ -419,8 +418,7 @@ public class EmitterFeature extends Feature {
 					offsetXpos = xx;
 					offsetYpos = yy + oyy;
 				}
-				if (offsetXpos < -48 || offsetYpos < -48 || offsetXpos > Game.getWidth() + 48 || offsetYpos > Game.getHeight() + 48) {
-					//System.out.println(EmitterFeature.this+" is offscreen");
+				if (!forceEmit && (offsetXpos < -MARGIN || offsetYpos < -MARGIN || offsetXpos > screen.getWidth() + MARGIN || offsetYpos > screen.getHeight() + MARGIN)) {
 					numParticles += n;
 				} else {
 					for (int i = 0; i < n && (maxParticles == 0 || numParticles < maxParticles); i ++) {
@@ -475,12 +473,12 @@ public class EmitterFeature extends Feature {
 						p.setLayer(layer);
 						p.setSubLayer(subLayer);
 						p.setDoYOffset(doYOffset);
-						p.setStartScale(startScale == null ? FPMath.fpValue(instanceScale) : FPMath.fpValue(startScale.getValue() * instanceScale));
-						p.setEndScale(endScale == null ? FPMath.fpValue(instanceScale) : FPMath.fpValue(endScale.getValue() * instanceScale));
+						p.setStartScale(startScale == null ? instanceScale : startScale.getValue() * instanceScale);
+						p.setEndScale(endScale == null ? instanceScale : endScale.getValue() * instanceScale);
 						if (EmitterFeature.this.scale != null) {
-							p.setScale(FPMath.fpValue(EmitterFeature.this.scale.getValue() * instanceScale));
+							p.setScale(EmitterFeature.this.scale.getValue() * instanceScale);
 						} else {
-							p.setScale(FPMath.fpValue(instanceScale));
+							p.setScale(instanceScale);
 						}
 						if (ceilingSet) {
 							p.setCeiling(ceiling);
@@ -549,11 +547,6 @@ public class EmitterFeature extends Feature {
 		}
 
 		@Override
-		protected void doRender() {
-			// No need to do anything
-		}
-
-		@Override
 		protected void doRemove() {
 			done = true;
 			if (soundEffect != null) {
@@ -568,9 +561,6 @@ public class EmitterFeature extends Feature {
 			}
 		}
 
-		/* (non-Javadoc)
-		 * @see net.puppygames.applet.effects.Effect#finish()
-		 */
 		@Override
 		public void finish() {
 			// Stop emission and wait for sound effect to finish. If there's no sound effect, we're done
@@ -587,7 +577,7 @@ public class EmitterFeature extends Feature {
 		}
 
 		@Override
-		public boolean isActive() {
+		public boolean isEffectActive() {
 			return !done;
 		}
 

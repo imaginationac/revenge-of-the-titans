@@ -45,7 +45,7 @@ import com.shavenpuppy.jglib.*;
  */
 public class FontResource extends Resource {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Resource data

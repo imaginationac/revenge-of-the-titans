@@ -41,6 +41,8 @@ import com.shavenpuppy.jglib.resources.Feature;
  */
 public abstract class BrainFeature extends Feature {
 
+	private static final long serialVersionUID = 1L;
+
 	private float avoidanceFactor;
 
 	/**

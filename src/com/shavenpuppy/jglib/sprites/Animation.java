@@ -32,11 +32,14 @@
 package com.shavenpuppy.jglib.sprites;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import com.shavenpuppy.jglib.IResource;
 import com.shavenpuppy.jglib.Resource;
 import com.shavenpuppy.jglib.XMLResourceWriter;
 
@@ -44,35 +47,35 @@ import com.shavenpuppy.jglib.XMLResourceWriter;
  * An Animation specifies a sequence of Commands which control the image displayed
  * by an Animated thing.
  */
-public class Animation extends AnimatedAppearanceResource {
+public class Animation extends Resource implements Appearance {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 
 	/** Known commands */
-	private static final Map<String, Class<? extends Resource>> commandTagMap = new HashMap<String, Class<? extends Resource>>();
+	private static final Map<String, Class<? extends IResource>> COMMAND_TAG_MAP = new HashMap<String, Class<? extends IResource>>();
 	static {
-		commandTagMap.put("angle", AngleCommand.class);
-		commandTagMap.put("offset", OffsetCommand.class);
-		commandTagMap.put("move", MoveCommand.class);
-		commandTagMap.put("scale", ScaleCommand.class);
-		commandTagMap.put("frame", FrameCommand.class);
-		commandTagMap.put("flag", FlagCommand.class);
-		commandTagMap.put("alpha", AlphaCommand.class);
-		commandTagMap.put("color", ColorCommand.class);
-		commandTagMap.put("animcolor", AnimColorCommand.class);
-		commandTagMap.put("goto", GotoCommand.class);
-		commandTagMap.put("next", NextCommand.class);
-		commandTagMap.put("delay", RandomDelayCommand.class);
-		commandTagMap.put("random", RandomGotoCommand.class);
-		commandTagMap.put("event", EventCommand.class);
-		commandTagMap.put("loop", LoopCommand.class);
-		commandTagMap.put("repeat", RepeatCommand.class);
-		commandTagMap.put("sound", SoundCommand.class);
-		commandTagMap.put("label", LabelCommand.class);
-		commandTagMap.put("sub", SubCommand.class);
-		commandTagMap.put("return", ReturnCommand.class);
-		commandTagMap.put("frameset", FrameListCommand.class);
+		COMMAND_TAG_MAP.put("angle", AngleCommand.class);
+		COMMAND_TAG_MAP.put("offset", OffsetCommand.class);
+		COMMAND_TAG_MAP.put("move", MoveCommand.class);
+		COMMAND_TAG_MAP.put("scale", ScaleCommand.class);
+		COMMAND_TAG_MAP.put("frame", FrameCommand.class);
+		COMMAND_TAG_MAP.put("flag", FlagCommand.class);
+		COMMAND_TAG_MAP.put("alpha", AlphaCommand.class);
+		COMMAND_TAG_MAP.put("color", ColorCommand.class);
+		COMMAND_TAG_MAP.put("animcolor", AnimColorCommand.class);
+		COMMAND_TAG_MAP.put("goto", GotoCommand.class);
+		COMMAND_TAG_MAP.put("next", NextCommand.class);
+		COMMAND_TAG_MAP.put("delay", RandomDelayCommand.class);
+		COMMAND_TAG_MAP.put("random", RandomGotoCommand.class);
+		COMMAND_TAG_MAP.put("event", EventCommand.class);
+		COMMAND_TAG_MAP.put("loop", LoopCommand.class);
+		COMMAND_TAG_MAP.put("repeat", RepeatCommand.class);
+		COMMAND_TAG_MAP.put("sound", SoundCommand.class);
+		COMMAND_TAG_MAP.put("label", LabelCommand.class);
+		COMMAND_TAG_MAP.put("sub", SubCommand.class);
+		COMMAND_TAG_MAP.put("return", ReturnCommand.class);
+		COMMAND_TAG_MAP.put("frameset", FrameListCommand.class);
 	}
 
 	/** Commands */
@@ -95,9 +98,6 @@ public class Animation extends AnimatedAppearanceResource {
 		super(name);
 	}
 
-	/* (non-Javadoc)
-	 * @see GLXMLResource#load(Element)
-	 */
 	@Override
 	public void load(Element element, Resource.Loader loader) throws Exception {
 
@@ -105,16 +105,16 @@ public class Animation extends AnimatedAppearanceResource {
 		try {
 			// Add the known commands - you have to specify other commands yourself
 			// in the XML
-			loader.pushMap(commandTagMap);
+			loader.pushMap(COMMAND_TAG_MAP);
 
 			// The child tags of the element should all be descended from Commands.
 			NodeList childTagList = element.getChildNodes();
 
-			ArrayList<Resource> commandList = new ArrayList<Resource>(childTagList.getLength());
+			ArrayList<IResource> commandList = new ArrayList<IResource>(childTagList.getLength());
 			for (int i = 0; i < childTagList.getLength(); i ++) {
 				if (childTagList.item(i) instanceof Element) {
 					Element childElement = (Element) childTagList.item(i);
-					Resource childResource = loader.load(childElement);
+					IResource childResource = loader.load(childElement);
 					if (!(childResource instanceof Command)) {
 						throw new Exception("Only Command resources are allowed inside an Animation; got a "+childResource);
 					}
@@ -140,9 +140,6 @@ public class Animation extends AnimatedAppearanceResource {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see com.shavenpuppy.jglib.Resource#doToXML(com.shavenpuppy.jglib.XMLResourceWriter)
-	 */
 	@Override
 	protected void doToXML(XMLResourceWriter writer) throws IOException {
 		boolean wasCompact = writer.isCompact();
@@ -153,9 +150,6 @@ public class Animation extends AnimatedAppearanceResource {
 		writer.setCompact(wasCompact);
 	}
 
-	/* (non-Javadoc)
-	 * @see ALResource#doCreate()
-	 */
 	@Override
 	protected void doCreate() {
 		// Create all the commands
@@ -165,9 +159,6 @@ public class Animation extends AnimatedAppearanceResource {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see ALResource#doDestroy()
-	 */
 	@Override
 	protected void doDestroy() {
 		// Destroy all the commands
@@ -191,9 +182,8 @@ public class Animation extends AnimatedAppearanceResource {
 	 * When a command is executed, it is applied to the Animated thing.
 	 *
 	 * @param animated The thing that wants to be animated
-	 * @param tickRate The number of ticks that pass this time
 	 */
-	public void animate(Animated animated, int tickRate) {
+	public void animate(Sprite animated) {
 
 		int currentSequence;
 
@@ -205,7 +195,7 @@ public class Animation extends AnimatedAppearanceResource {
 				return;
 			}
 
-		} while (command[currentSequence].execute(animated, tickRate));
+		} while (command[currentSequence].execute(animated));
 
 	}
 
@@ -227,7 +217,7 @@ public class Animation extends AnimatedAppearanceResource {
 	}
 
 	@Override
-	public boolean toAnimated(Animated target) {
+	public boolean toSprite(Sprite target) {
 		target.setAnimation(this);
 		return true;
 	}

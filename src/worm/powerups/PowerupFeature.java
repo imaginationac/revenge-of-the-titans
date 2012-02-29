@@ -31,16 +31,22 @@
  */
 package worm.powerups;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.Point;
+import org.lwjgl.util.ReadablePoint;
 
-import worm.*;
+import worm.GameStateInterface;
+import worm.ShopItem;
+import worm.Worm;
 import worm.features.LayersFeature;
 
 import com.shavenpuppy.jglib.openal.ALBuffer;
 import com.shavenpuppy.jglib.resources.Feature;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearanceResource;
+import com.shavenpuppy.jglib.sprites.Appearance;
 
 /**
  * $Id: PowerupFeature.java,v 1.25 2010/10/16 02:17:16 foo Exp $
@@ -83,7 +89,7 @@ public abstract class PowerupFeature extends Feature implements ShopItem {
 	private float difficulty;
 
 	private transient ALBuffer collectResource;
-	private transient AnimatedAppearanceResource tooltipGraphicResource;
+	private transient Appearance tooltipGraphicResource;
 
 
 	/**
@@ -282,7 +288,7 @@ public abstract class PowerupFeature extends Feature implements ShopItem {
 	}
 
 	@Override
-	public AnimatedAppearanceResource getTooltipGraphic() {
+	public Appearance getTooltipGraphic() {
 		return tooltipGraphicResource;
 	}
 

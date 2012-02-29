@@ -31,8 +31,20 @@
  */
 package com.shavenpuppy.jglib;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Holds Resources. Essentially, a Resource is a handle to a native peer
@@ -59,22 +71,16 @@ public final class Resources {
 	private static boolean runMode;
 
 	/** A map of resource names to resources */
-	private static final HashMap<String, Resource> resourceMap = new HashMap<String, Resource>(256, 0.25f);
+	private static final Map<String, IResource> RESOURCES = new LinkedHashMap<String, IResource>(256, 0.25f);
 
 	/** A map of resource classes to xml tags */
-	private static final HashMap<Class<? extends Resource>, String> classToTagMap = new HashMap<Class<? extends Resource>, String>();
+	private static final HashMap<Class<? extends IResource>, String> CLASS_TO_TAG_MAP = new HashMap<Class<? extends IResource>, String>();
 
 	/** A map of xml tags to resource classes */
-	private static final HashMap<String, Class<? extends Resource>> tagToClassMap = new HashMap<String, Class<? extends Resource>>();
-
-	/** Resources in the order that they are loaded */
-	private static final List<Resource> all = new LinkedList<Resource>();
-
-	/** A set of unnamed resources */
-	private static final Set<Resource> unnamedSet = new HashSet<Resource>();
+	private static final HashMap<String, Class<? extends IResource>> TAG_TO_CLASS_MAP = new HashMap<String, Class<? extends IResource>>();
 
 	/** A queue of resources that need to be created */
-	private static final List<Resource> queue = new LinkedList<Resource>();
+	private static final List<IResource> QUEUE = new LinkedList<IResource>();
 
 	/** Number of resources created */
 	private static int numCreated;
@@ -86,7 +92,7 @@ public final class Resources {
 		 * Fired when a resource is about to be created
 		 * @param resource
 		 */
-		void onCreating(Resource resource);
+		void onCreating(IResource resource);
 
 	}
 
@@ -106,9 +112,8 @@ public final class Resources {
 	 * @param name The name of the resource
 	 * @return the Resource or null if the resource doesn't exist
 	 */
-	@SuppressWarnings("unchecked")
-	public static <T extends Resource> T peek(String name) {
-		return (T) resourceMap.get(name.toLowerCase());
+	public static <T extends IResource> T peek(String name) {
+		return (T) RESOURCES.get(name.toLowerCase());
 	}
 
 	/**
@@ -120,12 +125,12 @@ public final class Resources {
 	 * @return the created resource, ready to use, or null if it can't be returned
 	 */
 	@SuppressWarnings("unchecked")
-	public static <T extends Resource> T get(String name) {
+	public static <T extends IResource> T get(String name) {
 		if (DEBUG) {
 			System.err.println("Get resource " + name);
 		}
 
-		Resource ret = resourceMap.get(name.toLowerCase());
+		IResource ret = RESOURCES.get(name.toLowerCase());
 
 		if (ret == null) {
 			System.err.println("WARNING: Resource '" + name + "' not found");
@@ -147,7 +152,7 @@ public final class Resources {
 	 * @return true if the specified resource exists in the Resources
 	 */
 	public static boolean exists(String name) {
-		return resourceMap.containsKey(name.toLowerCase());
+		return RESOURCES.containsKey(name.toLowerCase());
 	}
 
 	/**
@@ -156,11 +161,11 @@ public final class Resources {
 	 *
 	 * @param resource The resource to store
 	 */
-	public static void put(Resource resource) {
+	public static void put(IResource resource) {
 		if (resource.getName() == null) {
 			throw new RuntimeException("Unnamed resource " + resource + " cannot be put in the named set");
 		}
-		Resource old = resourceMap.put(resource.getName().toLowerCase(), resource);
+		IResource old = RESOURCES.put(resource.getName().toLowerCase(), resource);
 		if (old != null) {
 			old.deregister();
 			// Note that we don't destroy it - it has to be garbage
@@ -170,38 +175,6 @@ public final class Resources {
 			System.err.println("Put " + resource.getName());
 		}
 		resource.register();
-		all.add(resource);
-	}
-
-	/**
-	 * Add an unnamed resource to the set of unnamed resources. It will be saved
-	 * with all the other resources, and loaded back again when loaded - and
-	 * registered. Named resources cannot be added to the unnamed set.
-	 *
-	 * @param res The resource to add
-	 */
-	public static void add(Resource resource) {
-		if (resource.getName() != null) {
-			throw new RuntimeException("Named resource " + resource + " cannot be added to the unnamed set.");
-		}
-		if (DEBUG) {
-			System.err.println("Put unnnamed: " + resource);
-		}
-		unnamedSet.add(resource);
-		resource.register();
-		all.add(resource);
-	}
-
-	/**
-	 * Remove an unnamed resource from the set of unnamed resources.
-	 *
-	 * @param res The resource to remove
-	 */
-	public static void remove(Resource resource) {
-		if (unnamedSet.remove(resource)) {
-			resource.deregister();
-		}
-		all.remove(resource);
 	}
 
 	/**
@@ -211,11 +184,10 @@ public final class Resources {
 	 * @param name The name of the resource
 	 * @return the resource that was removed, if any
 	 */
-	public static Resource remove(String name) {
-		Resource ret;
+	public static IResource remove(String name) {
+		IResource ret;
 
-		ret = resourceMap.remove(name.toLowerCase());
-		all.remove(ret);
+		ret = RESOURCES.remove(name.toLowerCase());
 
 		if (ret != null) {
 			ret.destroy();
@@ -230,18 +202,8 @@ public final class Resources {
 	 *
 	 * @param resource
 	 */
-	static Resource forget(Resource resource) {
-		all.remove(resource);
-		if (resource.getName() != null) {
-			return resourceMap.remove(resource.getName());
-		} else {
-			if (unnamedSet.contains(resource)) {
-				unnamedSet.remove(resource);
-				return resource;
-			} else {
-				return null;
-			}
-		}
+	static IResource forget(IResource resource) {
+		return RESOURCES.remove(resource.getName());
 	}
 
 	/**
@@ -258,11 +220,9 @@ public final class Resources {
 		try {
 			bos = new BufferedOutputStream(os);
 			oos = new ObjectOutputStream(bos);
-
-			oos.writeObject(all);
+			oos.writeObject(RESOURCES);
 			oos.flush();
 			bos.flush();
-
 		} finally {
 			try {
 				if (oos != null) {
@@ -290,14 +250,9 @@ public final class Resources {
 		BufferedInputStream bis = new BufferedInputStream(is);
 		ObjectInputStream ois = new ObjectInputStream(bis);
 
-		@SuppressWarnings("unchecked")
-		List<Resource> newAll = (List<Resource>) ois.readObject(); // Warning suppressed
-		for (Resource res : newAll) {
-			if (res.getName() != null) {
-				put(res);
-			} else {
-				add(res);
-			}
+		Map<String, IResource> newAll = (Map<String, IResource>) ois.readObject(); // Warning suppressed
+		for (Map.Entry<String, IResource> entry : newAll.entrySet()) {
+			put(entry.getValue());
 		}
 	}
 
@@ -308,7 +263,7 @@ public final class Resources {
 		if (DEBUG) {
 			System.err.println("------RESOURCES CLEARING------");
 		}
-		for (Resource res : resourceMap.values()) {
+		for (IResource res : RESOURCES.values()) {
 			if (res != null) {
 				if (res.isCreated()) {
 					res.destroy();
@@ -316,13 +271,7 @@ public final class Resources {
 				res.deregister();
 			}
 		}
-		resourceMap.clear();
-
-		for (Resource res: unnamedSet) {
-			res.destroy();
-		}
-		unnamedSet.clear();
-		all.clear();
+		RESOURCES.clear();
 		System.gc();
 		if (DEBUG) {
 			System.err.println("------RESOURCES CLEARED------");
@@ -336,16 +285,12 @@ public final class Resources {
 		if (DEBUG) {
 			System.err.println("------RESOURCES RESETTING ------");
 		}
-		for (Resource res : resourceMap.values()) {
+		for (IResource res : RESOURCES.values()) {
 			if (res != null) {
 				if (res.isCreated()) {
 					res.destroy();
 				}
 			}
-		}
-
-		for (Resource res : unnamedSet) {
-			res.destroy();
 		}
 
 		System.gc();
@@ -384,10 +329,10 @@ public final class Resources {
 	 * @param clazz The class of Resource
 	 * @return an ArrayList of Resources
 	 */
-	public static <T extends Resource> ArrayList<T> list(Class<T> clazz) {
+	public static <T extends IResource> ArrayList<T> list(Class<T> clazz) {
 		LinkedList<T> ret = new LinkedList<T>();
-		for (Map.Entry<String, Resource> entry : resourceMap.entrySet()) {
-			if (!entry.getValue().named) {
+		for (Map.Entry<String, IResource> entry : RESOURCES.entrySet()) {
+			if (entry.getValue().getName() == null) {
 				continue;
 			}
 			if (clazz.isAssignableFrom(entry.getValue().getClass())) {
@@ -402,9 +347,8 @@ public final class Resources {
 	/**
 	 * @return an unmodifiable List of all the Resources
 	 */
-	public static List<Resource> list() {
-		ArrayList<Resource> ret = new ArrayList<Resource>(resourceMap.values());
-		ret.addAll(unnamedSet);
+	public static List<IResource> list() {
+		ArrayList<IResource> ret = new ArrayList<IResource>(RESOURCES.values());
 		return Collections.unmodifiableList(ret);
 	}
 
@@ -431,39 +375,36 @@ public final class Resources {
 		return runMode;
 	}
 
-	public static void registerTag(Class<? extends Resource> clazz, String tag) {
-		classToTagMap.put(clazz, tag);
-		tagToClassMap.put(tag, clazz);
+	public static void registerTag(Class<? extends IResource> clazz, String tag) {
+		CLASS_TO_TAG_MAP.put(clazz, tag);
+		TAG_TO_CLASS_MAP.put(tag, clazz);
 	}
 
-	public static String getTag(Class<? extends Resource> clazz) {
-		return classToTagMap.get(clazz);
+	public static String getTag(Class<? extends IResource> clazz) {
+		return CLASS_TO_TAG_MAP.get(clazz);
 	}
 
-	public static Class<? extends Resource> getMapping(String tag) {
-		return tagToClassMap.get(tag);
+	public static Class<? extends IResource> getMapping(String tag) {
+		return TAG_TO_CLASS_MAP.get(tag);
 	}
 
 	/**
 	 * Create all uncreated resources
 	 */
 	public static void create() {
-		for (Resource res : resourceMap.values()) {
-			res.create();
-		}
-		for (Resource res : unnamedSet) {
+		for (IResource res : RESOURCES.values()) {
 			res.create();
 		}
 	}
 
-	static void queue(Resource res) {
-		queue.add(res);
+	static void queue(IResource res) {
+		QUEUE.add(res);
 	}
 
 	public static void dequeue() {
-		for (Resource r : queue) {
+		for (IResource r : QUEUE) {
 			r.create();
 		}
-		queue.clear();
+		QUEUE.clear();
 	}
 }

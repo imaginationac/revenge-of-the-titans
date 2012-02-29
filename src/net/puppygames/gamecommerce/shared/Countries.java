@@ -40,7 +40,7 @@ import java.util.List;
 public final class Countries {
 
 	/** All the countries supported and their currency */
-	private static final String[] country = {
+	private static final String[] COUNTRY = {
 		"United States", "USD",
 		"United Kingdom", "GBP",
 		"Canada", "USD",
@@ -116,22 +116,22 @@ public final class Countries {
 	/**
 	 * @return a List of Countries
 	 */
-	public static List getCountries() {
-		ArrayList ret = new ArrayList(country.length / 2);
-		for (int i = 0; i < country.length; i += 2) {
-			ret.add(country[i]);
+	public static List<String> getCountries() {
+		List<String> ret = new ArrayList<String>(COUNTRY.length / 2);
+		for (int i = 0; i < COUNTRY.length; i += 2) {
+			ret.add(COUNTRY[i]);
 		}
 		return ret;
 	}
 
 	/**
-	 * @param c The country
+	 * @param country The country
 	 * @return the currency to use for a particular country, or null, for no valid currency
 	 */
-	public static String getCurrency(String c) {
-		for (int i = 0; i < country.length; i ++) {
-			if (country[i * 2].equals(c)) {
-				return country[i * 2 + 1];
+	public static String getCurrency(String country) {
+		for (int i = 0; i < COUNTRY.length; i ++) {
+			if (COUNTRY[i * 2].equals(country)) {
+				return COUNTRY[i * 2 + 1];
 			}
 		}
 		return null;

@@ -41,7 +41,16 @@ import net.puppygames.applet.effects.LabelEffect;
 import org.lwjgl.util.Color;
 import org.lwjgl.util.Rectangle;
 
-import worm.*;
+import worm.ClickAction;
+import worm.Entity;
+import worm.GameMap;
+import worm.GameStateInterface;
+import worm.Layers;
+import worm.MapRenderer;
+import worm.Res;
+import worm.Tile;
+import worm.Worm;
+import worm.WormGameState;
 import worm.effects.SaucerEffect;
 import worm.features.LayersFeature;
 import worm.powerups.PowerupFeature;

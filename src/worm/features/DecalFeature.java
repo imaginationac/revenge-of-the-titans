@@ -37,7 +37,9 @@ import org.w3c.dom.Element;
 
 import com.shavenpuppy.jglib.resources.Feature;
 import com.shavenpuppy.jglib.resources.MappedColor;
-import com.shavenpuppy.jglib.sprites.*;
+import com.shavenpuppy.jglib.sprites.Animation;
+import com.shavenpuppy.jglib.sprites.Appearance;
+import com.shavenpuppy.jglib.sprites.SpriteImage;
 
 /**
  * Decals are drawn on top of tiles.
@@ -97,8 +99,8 @@ public class DecalFeature extends Feature {
 	/**
 	 * @return Returns the animationResource.
 	 */
-	public AnimatedAppearance getAppearance() {
-		return animationResource == null ? (AnimatedAppearance) imageResource : animationResource;
+	public Appearance getAppearance() {
+		return animationResource == null ? (Appearance) imageResource : animationResource;
 	}
 
 	/**

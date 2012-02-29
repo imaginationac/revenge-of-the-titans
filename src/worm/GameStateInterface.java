@@ -34,7 +34,10 @@ package worm;
 import java.io.Serializable;
 
 import worm.buildings.BuildingFeature;
-import worm.entities.*;
+import worm.entities.Building;
+import worm.entities.Gidrah;
+import worm.entities.Saucer;
+import worm.entities.Unit;
 
 /**
  * Interface to game state.

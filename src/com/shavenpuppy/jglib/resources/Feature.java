@@ -34,22 +34,30 @@ package com.shavenpuppy.jglib.resources;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.w3c.dom.Element;
 
-import com.shavenpuppy.jglib.*;
+import com.shavenpuppy.jglib.IResource;
+import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.Resources;
+import com.shavenpuppy.jglib.XMLResourceWriter;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
 /**
- * $Id: Feature.java,v 1.22 2011/04/18 23:28:06 cix_foo Exp $
+ * $Id: Feature.java,v 1.24 2011/10/14 15:16:41 cix_foo Exp $
  * Base class for game resources
  * @author $Author: cix_foo $
- * @version $Revision: 1.22 $
+ * @version $Revision: 1.24 $
  */
 public abstract class Feature extends Resource {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** All game features */
 	private static final List<Feature> FEATURES = new ArrayList<Feature>();
@@ -95,7 +103,7 @@ public abstract class Feature extends Resource {
 			}
 		}
 
-		for (Resource resource : Resources.list()) {
+		for (IResource resource : Resources.list()) {
 			if (resource.isCreated()) {
 				resource.archive();
 			}
@@ -148,7 +156,7 @@ public abstract class Feature extends Resource {
 					continue;
 				} else if (!Modifier.isTransient(modifiers) && f.getType() == String.class) {
 					sortedStringFields.add(f);
-				} else if (Modifier.isTransient(modifiers) && Resource.class.isAssignableFrom(f.getType())) {
+				} else if (Modifier.isTransient(modifiers) && IResource.class.isAssignableFrom(f.getType())) {
 					sortedResourceFields.add(f);
 				}
 			}
@@ -183,7 +191,7 @@ public abstract class Feature extends Resource {
 						try {
 							resourceName = (String) stringField.get(this);
 							if (resourceName != null && Resources.exists(resourceName)) {
-								Resource r = Resources.peek(resourceName);
+								IResource r = Resources.peek(resourceName);
 								if (resourceField.getType().isAssignableFrom(r.getClass())) {
 									stringField.set(this, null);
 									//System.out.println("Zapped "+this.getName()+"."+stringField);
@@ -283,7 +291,7 @@ public abstract class Feature extends Resource {
 
 				if (!Modifier.isTransient(modifiers) && f.getType() == String.class) {
 					sortedStringFields.add(f);
-				} else if (Modifier.isTransient(modifiers) && Resource.class.isAssignableFrom(f.getType())) {
+				} else if (Modifier.isTransient(modifiers) && IResource.class.isAssignableFrom(f.getType())) {
 					sortedResourceFields.add(f);
 				}
 			}
@@ -320,7 +328,7 @@ public abstract class Feature extends Resource {
 						resourceField.setAccessible(true);
 						String resourceName = (String) stringField.get(this);
 						if (resourceName != null && Resources.exists(resourceName)) {
-							Resource r = Resources.get(resourceName);
+							IResource r = Resources.get(resourceName);
 							if (resourceField.getType().isAssignableFrom(r.getClass())) {
 								resourceField.set(this, r);
 							} else {
@@ -353,8 +361,8 @@ public abstract class Feature extends Resource {
 				f.setAccessible(true);
 
 				Object resource = f.get(this);
-				if (resource != null && Resource.class.isAssignableFrom(resource.getClass())) {
-					((Resource)resource).create();
+				if (resource != null && IResource.class.isAssignableFrom(resource.getClass())) {
+					((IResource)resource).create();
 				}
 			}
 
@@ -402,9 +410,9 @@ public abstract class Feature extends Resource {
 				if (!Modifier.isTransient(modifiers) || Modifier.isFinal(modifiers) || Modifier.isStatic(modifiers)) {
 					continue;
 				}
-				if (Resource.class.isAssignableFrom(f.getType())) {
+				if (IResource.class.isAssignableFrom(f.getType())) {
 					try {
-						Resource r = (Resource) f.get(this);
+						IResource r = (IResource) f.get(this);
 						// If the resource is locked, don't null it either
 						if (r != null && !r.isLocked()) {
 							f.set(this, null);
@@ -429,7 +437,7 @@ public abstract class Feature extends Resource {
 				if (Modifier.isTransient(rfmodifiers) || Modifier.isStatic(rfmodifiers)) {
 					continue;
 				}
-				if (!Resource.class.isAssignableFrom(f.getType())) {
+				if (!IResource.class.isAssignableFrom(f.getType())) {
 					continue;
 				}
 				f.setAccessible(true);
@@ -437,7 +445,7 @@ public abstract class Feature extends Resource {
 					if (f.get(this) == null) {
 						continue;
 					}
-					Resource resource = (Resource) f.get(this);
+					IResource resource = (IResource) f.get(this);
 					if (resource != null) {
 						resource.destroy();
 					}

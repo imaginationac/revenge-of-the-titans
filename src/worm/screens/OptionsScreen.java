@@ -31,12 +31,6 @@
  */
 package worm.screens;
 
-import net.puppygames.applet.Game;
-import net.puppygames.applet.widgets.PowerDisplay;
-import net.puppygames.applet.widgets.PowerDisplayFeature;
-
-import org.lwjgl.opengl.Display;
-
 import worm.Worm;
 
 /**
@@ -44,14 +38,7 @@ import worm.Worm;
  */
 public class OptionsScreen extends net.puppygames.applet.screens.OptionsScreen {
 
-	private static final String MOUSESPEED = "mousespeed";
-
-	private static final String SMALLSCREEN_ON = "smallscreen_on";
-	private static final String SMALLSCREEN_OFF = "smallscreen_off";
-	private static final String MEDIUMSCREEN_ON = "mediumscreen_on";
-	private static final String MEDIUMSCREEN_OFF = "mediumscreen_off";
-	private static final String LARGESCREEN_ON = "largescreen_on";
-	private static final String LARGESCREEN_OFF = "largescreen_off";
+	private static final long serialVersionUID = 1L;
 
 	private static final String SHOW_TOOLTIPS_ON = "show_tooltips_on";
 	private static final String SHOW_TOOLTIPS_OFF = "show_tooltips_off";
@@ -62,19 +49,6 @@ public class OptionsScreen extends net.puppygames.applet.screens.OptionsScreen {
 	private static final String AUTO_DIFFICULTY_ON = "auto_difficulty_on";
 	private static final String AUTO_DIFFICULTY_OFF = "auto_difficulty_off";
 
-
-	/*
-	 * Resource data
-	 */
-
-	private PowerDisplayFeature mouseSpeedPowerDisplay;
-
-
-	/*
-	 * Transient data
-	 */
-
-	private transient PowerDisplay mouseSpeedPowerDisplayInstance;
 
 	/**
 	 * C'tor
@@ -87,22 +61,7 @@ public class OptionsScreen extends net.puppygames.applet.screens.OptionsScreen {
 	@Override
 	protected void onClicked(String id) {
 		super.onClicked(id);
-		if (MOUSESPEED.equals(id)) {
-			int speed = mouseSpeedPowerDisplayInstance.getBarAt(getMouseX(), getMouseY());
-			if (speed >= 0) {
-				mouseSpeedPowerDisplayInstance.setUsed(speed + 1);
-				Worm.setMouseSpeed(speed + 1);
-			}
-		} else if (SMALLSCREEN_OFF.equals(id)) {
-			Game.setWindowSize(1.0f);
-			enableButtons();
-		} else if (MEDIUMSCREEN_OFF.equals(id)) {
-			Game.setWindowSize(1.5f);
-			enableButtons();
-		} else if (LARGESCREEN_OFF.equals(id)) {
-			Game.setWindowSize(2.0f);
-			enableButtons();
-		} else if (SHOW_TOOLTIPS_ON.equals(id)) {
+		if (SHOW_TOOLTIPS_ON.equals(id)) {
 			Worm.setShowTooltips(false);
 			enableButtons();
 		} else if (SHOW_TOOLTIPS_OFF.equals(id)) {
@@ -134,20 +93,6 @@ public class OptionsScreen extends net.puppygames.applet.screens.OptionsScreen {
 	protected void enableButtons() {
 		super.enableButtons();
 
-		setVisible(SMALLSCREEN_ON, Game.getWindowSize() == 1.0f && !Display.isFullscreen() && !Game.isCustomDisplayMode());
-		setVisible(SMALLSCREEN_OFF, (Game.getWindowSize() != 1.0f || Display.isFullscreen()) && !Game.isCustomDisplayMode());
-		setVisible(MEDIUMSCREEN_ON, Game.getWindowSize() == 1.5f && !Display.isFullscreen() && !Game.isCustomDisplayMode());
-		setVisible(MEDIUMSCREEN_OFF, (Game.getWindowSize() != 1.5f || Display.isFullscreen()) && !Game.isCustomDisplayMode());
-		setVisible(LARGESCREEN_ON, Game.getWindowSize() == 2.0f && !Display.isFullscreen() && !Game.isCustomDisplayMode());
-		setVisible(LARGESCREEN_OFF, (Game.getWindowSize() != 2.0f || Display.isFullscreen()) && !Game.isCustomDisplayMode());
-
-		getArea(SMALLSCREEN_ON).init();
-		getArea(SMALLSCREEN_OFF).init();
-		getArea(MEDIUMSCREEN_ON).init();
-		getArea(MEDIUMSCREEN_OFF).init();
-		getArea(LARGESCREEN_ON).init();
-		getArea(LARGESCREEN_OFF).init();
-
 		setVisible(SHOW_TOOLTIPS_ON, 	 Worm.getShowTooltips());
 		setVisible(SHOW_TOOLTIPS_OFF, 	!Worm.getShowTooltips());
 		setVisible(SHOW_INFO_ON, 		 Worm.getShowInfo());
@@ -171,25 +116,16 @@ public class OptionsScreen extends net.puppygames.applet.screens.OptionsScreen {
 	@Override
 	protected void onOpen() {
 		super.onOpen();
-		mouseSpeedPowerDisplayInstance = mouseSpeedPowerDisplay.spawn(this);
-		mouseSpeedPowerDisplayInstance.setUsed(Worm.getMouseSpeed());
 		onResized();
 		setEnabled("exit", false);
-	}
-
-	@Override
-	protected void doCleanup() {
-		super.doCleanup();
-		mouseSpeedPowerDisplayInstance.cleanup();
-		mouseSpeedPowerDisplayInstance = null;
+		
+		setGroupVisible("not-xmas", !Worm.isXmas());
+		setGroupVisible("xmas", Worm.isXmas());
 	}
 
 	@Override
 	protected void onResized() {
 		super.onResized();
-		if (mouseSpeedPowerDisplayInstance != null) {
-			mouseSpeedPowerDisplayInstance.onResized();
-		}
 		enableButtons();
 	}
 

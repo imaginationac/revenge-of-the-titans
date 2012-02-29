@@ -1,0 +1,1743 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+	<animation name="gidrah.hoff.dead.anim">
+		<animcolor a="255" d="5"/>	
+		<animcolor a="200" d="4"/>
+		<animcolor a="150" d="3"/>	
+		<animcolor a="100" d="2"/>
+		<animcolor a="50" d="2"/>	
+		<animcolor a="25" d="2"/>
+		<animcolor a="10" d="2"/>		
+		<animcolor a="0" d="17"/>
+		<event id="1"/>	
+	</animation>	
+
+
+
+	<!-- GIDRAH.HOFF.01 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.HOFF.01 definition -->
+
+	<gidrah
+		 name="gidrah.hoff.01"
+		 inherit="gidrah.hoff.01.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.01.walk.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.01.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.01.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.01.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.01.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" animation="gidrah.hoff.01.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.01.dead.eyes.anim" />
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.hoff.01.dead.anim" />
+				<emitter emitter="gidrah.hoff.death.emitter" offset="15,15"  />
+				<emitter emitter="gidrah.hoff.death.flash.emitter" offset="15,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.01.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.01.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" animation="gidrah.hoff.01.blink.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.01.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.01.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.01.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.01.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.01.frozen.2.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.01.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.01.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+		<stunAppearance><layers scale="0.5">
+			<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.01.01" />
+			<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.01.stun.anim" />
+			<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.hoff.01.stun.glow.anim" />
+			<emitter emitter="gidrah.hoff.stun.emitter" offset="16,24"  />
+			<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.01.ground.01" />
+			<sprite id="face" layer="5" sublayer="1" offset="0,0" ySortOffset="0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.01.stun.face.anim" />
+		</layers></stunAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.HOFF.01 -->
+
+	<array name="gidrah.hoff.01.face.array">
+		<item>spriteimage.gidrah.hoff.01.glow.01</item>
+		<item>spriteimage.gidrah.hoff.01.glow.02</item>
+		<item>spriteimage.gidrah.hoff.01.glow.03</item>
+		<item>spriteimage.gidrah.hoff.01.attack.glow.01</item>
+		<item>spriteimage.gidrah.hoff.01.attack.glow.02</item>
+		<item>spriteimage.gidrah.hoff.01.attack.glow.03</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.HOFF.01 -->
+
+	<animation name="gidrah.hoff.01.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.01.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.01.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.01.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.01.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.01.03" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.01.03" d="1" />
+			<frame i="spriteimage.gidrah.hoff.01.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.01.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.01.06" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.01.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.01.07" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.01.07" d="1" />
+			<frame i="spriteimage.gidrah.hoff.01.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.01.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.01.04" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.01.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.01.05" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.01.05" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.01.blink.anim">
+		<frameset id="gidrah.hoff.01.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+		<label id="blink"/>
+			<frame idx="0" d="9" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="19" />
+			<frame idx="1" d="3" />
+			<frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<frame idx="0" d="7" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="14" />
+			<frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.01.attack.anim">
+		<loop count="3"/>
+		<label id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.01.01" d="2" />
+			<notify layer="face" idx="3"/><frame i="spriteimage.gidrah.hoff.01.08" d="2" />
+			<notify layer="face" idx="4"/><frame i="spriteimage.gidrah.hoff.01.09" d="2" />
+			<notify layer="face" idx="5"/><frame i="spriteimage.gidrah.hoff.01.10" d="6" />
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.01.01" d="3" />
+		<repeat id="bite"/>
+		<event id="1"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.01.01" d="1" />
+		<event id="2"/>
+	</animation>
+
+
+	<animation name="gidrah.hoff.01.attack.face.anim">
+		<frameset id="gidrah.hoff.01.face.array" />
+	</animation>
+
+	<animation name="gidrah.hoff.01.dead.anim">
+		<frame i="spriteimage.gidrah.hoff.01.ghost.01" d="2" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.01.dead.eyes.anim">
+		<frame i="spriteimage.gidrah.hoff.01.ghost.eyes.glow.01" d="2" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.01.frozen.1.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.hoff.01.02" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.hoff.01.04" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.hoff.01.06" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.hoff.01.frozen.2.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.hoff.01.03" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.hoff.01.05" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.hoff.01.07" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.hoff.01.stun.glow.anim">
+			<frame i="spriteimage.gidrah.hoff.01.ghost.eyes.glow.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.01.stun.anim">
+			<frame i="spriteimage.gidrah.hoff.01.ghost.01" d="1" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.01.stun.face.anim">
+		<frameset id="gidrah.hoff.01.face.array" />
+			<frame idx="2" d="45" />
+			<frame idx="1" d="5" />
+			<frame idx="0" d="449" />
+	</animation>
+
+
+	<!-- GIDRAH.HOFF.02 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.HOFF.02 definition -->
+
+	<gidrah
+		 name="gidrah.hoff.02"
+		 inherit="gidrah.hoff.02.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.02.walk.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.hoff.02.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.02.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.02.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.02.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.02.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.02.dead.eyes.anim" />
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.hoff.02.dead.anim" />
+				<emitter emitter="gidrah.hoff.death.emitter" offset="15,15"  />
+				<emitter emitter="gidrah.hoff.death.flash.emitter" offset="15,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.02.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.02.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.02.blink.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.02.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.02.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.02.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.02.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.02.frozen.2.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.02.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.02.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+		<stunAppearance><layers scale="0.5">
+			<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.02.01" />
+			<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.02.stun.anim" />
+			<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.hoff.02.stun.glow.anim" />
+			<emitter emitter="gidrah.hoff.stun.emitter" offset="16,24"  />
+			<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.02.ground.01" />
+			<sprite id="face" layer="5" sublayer="1" offset="0,0" ySortOffset="0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.02.stun.face.anim" />
+		</layers></stunAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.HOFF.02 -->
+
+	<array name="gidrah.hoff.02.face.array">
+		<item>spriteimage.gidrah.hoff.02.glow.01</item>
+		<item>spriteimage.gidrah.hoff.02.glow.02</item>
+		<item>spriteimage.gidrah.hoff.02.glow.03</item>
+		<item>spriteimage.gidrah.hoff.02.attack.glow.01</item>
+		<item>spriteimage.gidrah.hoff.02.attack.glow.02</item>
+		<item>spriteimage.gidrah.hoff.02.attack.glow.03</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.HOFF.02 -->
+
+	<animation name="gidrah.hoff.02.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.02.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.02.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.02.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.02.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.02.03" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.02.03" d="1" />
+			<frame i="spriteimage.gidrah.hoff.02.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.02.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.02.06" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.02.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.02.07" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.02.07" d="1" />
+			<frame i="spriteimage.gidrah.hoff.02.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.02.01" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.02.04" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.02.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.02.05" d="4" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.02.05" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.02.blink.anim">
+		<frameset id="gidrah.hoff.02.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+		<label id="blink"/>
+			<frame idx="0" d="9" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="19" />
+			<frame idx="1" d="3" />
+			<frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<frame idx="0" d="7" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="14" />
+			<frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.02.attack.anim">
+		<loop count="2"/>
+		<label id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.02.01" d="2" />
+			<notify layer="face" idx="3"/><frame i="spriteimage.gidrah.hoff.02.08" d="2" />
+			<notify layer="face" idx="4"/><frame i="spriteimage.gidrah.hoff.02.09" d="2" />
+			<notify layer="face" idx="5"/><frame i="spriteimage.gidrah.hoff.02.10" d="8" />
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.02.01" d="4" />
+		<repeat id="bite"/>
+		<event id="1"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.02.01" d="1" />
+		<event id="2"/>
+	</animation>
+
+
+	<animation name="gidrah.hoff.02.attack.face.anim">
+		<frameset id="gidrah.hoff.02.face.array" />
+	</animation>
+
+	<animation name="gidrah.hoff.02.dead.anim">
+		<frame i="spriteimage.gidrah.hoff.02.ghost.01" d="2" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.02.dead.eyes.anim">
+		<frame i="spriteimage.gidrah.hoff.02.ghost.eyes.glow.01" d="2" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.02.frozen.1.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.hoff.02.02" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.hoff.02.04" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.hoff.02.06" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.hoff.02.frozen.2.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.hoff.02.03" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.hoff.02.05" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.hoff.02.07" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.hoff.02.stun.glow.anim">
+			<frame i="spriteimage.gidrah.hoff.02.ghost.eyes.glow.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.02.stun.anim">
+			<frame i="spriteimage.gidrah.hoff.02.ghost.01" d="1" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.02.stun.face.anim">
+		<frameset id="gidrah.hoff.02.face.array" />
+			<frame idx="2" d="45" />
+			<frame idx="1" d="5" />
+			<frame idx="0" d="449" />
+	</animation>
+
+	<!-- GIDRAH.HOFF.03 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.MOON.03 definition -->
+
+	<gidrah
+		 name="gidrah.hoff.03"
+		 inherit="gidrah.hoff.03.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.03.walk.body.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.03.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.03.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.03.attack.body.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.03.attack.face.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.03.ground.01" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.03.dead.eyes.anim" />
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.hoff.03.dead.anim" />
+				<emitter emitter="gidrah.hoff.death.emitter" offset="16,15"  />
+				<emitter emitter="gidrah.hoff.death.flash.emitter" offset="16,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.03.idle.body.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.03.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.03.ground.01" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.03.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.03.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.03.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.03.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.03.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.03.ice.glow.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.03.04" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.03.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="16"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.03.ice.glow.04" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.03.02" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.03.stun.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.hoff.03.stun.glow.anim" />
+				<emitter emitter="gidrah.hoff.stun.emitter" offset="16,30"  />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.03.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,5" ySortOffset="0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.03.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>
+
+
+	<!-- FRAMESETS for gidrah.hoff.03 -->
+
+	<array name="gidrah.hoff.03.face.array">
+		<item>spriteimage.gidrah.hoff.03.glow.01</item>
+		<item>spriteimage.gidrah.hoff.03.glow.02</item>
+		<item>spriteimage.gidrah.hoff.03.glow.03</item>
+		<item>spriteimage.gidrah.hoff.03.attack.glow.01</item>
+		<item>spriteimage.gidrah.hoff.03.attack.glow.02</item>
+		<item>spriteimage.gidrah.hoff.03.attack.glow.03</item>
+	</array>
+
+
+	<!-- ANIMATION for gidrah.hoff.03 -->
+
+	<animation name="gidrah.hoff.03.walk.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.03.04" d="1" childYOffset="0.0" />
+			<frame i="spriteimage.gidrah.hoff.03.04" d="1" childYOffset="2.0" />
+		<lock />
+			<frame i="spriteimage.gidrah.hoff.03.03" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.03.02" d="1" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.03.01" d="1" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.03.01" d="3" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.03.01" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.03.02" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.03.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.03.03" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.03.03" d="1" childYOffset="0.0" />
+		<unlock />
+			<frame i="spriteimage.gidrah.hoff.03.04" d="2" childYOffset="0.0" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.03.blink.anim">
+		<frameset id="gidrah.hoff.03.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="blink"/>
+			<frame idx="0" d="9" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="19" />
+			<frame idx="1" d="3" />
+			<frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<frame idx="0" d="7" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="14" />
+			<frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.03.attack.body.anim">
+		<loop count="1"/>
+		<label id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.03.04" d="2" childYOffset="0.0" />
+			<notify layer="face" idx="3"/><frame i="spriteimage.gidrah.hoff.03.attack.01" d="2" />
+			<notify layer="face" idx="4"/><frame i="spriteimage.gidrah.hoff.03.attack.02" d="2" />
+			<notify layer="face" idx="5"/><frame i="spriteimage.gidrah.hoff.03.attack.03" d="8" />
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.03.04" d="3" />
+		<repeat id="bite"/>
+			<frame i="spriteimage.gidrah.hoff.03.04" d="1" />
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.hoff.03.04" d="1" />
+		<event id="2"/>
+	</animation>
+
+
+	<animation name="gidrah.hoff.03.attack.face.anim">
+		<frameset id="gidrah.hoff.03.face.array" />
+	</animation>
+
+	<animation name="gidrah.hoff.03.dead.anim">
+		<frame i="spriteimage.gidrah.hoff.03.ghost.01" d="2" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.03.dead.eyes.anim">
+		<frame i="spriteimage.gidrah.hoff.03.ghost.eyes.glow.01" d="2" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.03.idle.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.03.04" d="5" />
+			<frame i="spriteimage.gidrah.hoff.03.04" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.03.03" d="4" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.03.03" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.03.02" d="6" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.03.02" d="8" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.03.02" d="1" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.03.03" d="4" childYOffset="2.0" />
+			<frame i="spriteimage.gidrah.hoff.03.03" d="1" />
+			<frame i="spriteimage.gidrah.hoff.03.04" d="7" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.03.stun.glow.anim">
+			<frame i="spriteimage.gidrah.hoff.03.ghost.eyes.glow.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.03.stun.anim">
+			<frame i="spriteimage.gidrah.hoff.03.ghost.01" d="1" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.03.stun.face.anim">
+		<frameset id="gidrah.hoff.03.face.array" />
+			<frame idx="2" d="45" />
+			<frame idx="1" d="5" />
+			<frame idx="0" d="449" />
+	</animation>
+
+
+
+	<!-- GIDRAH.HOFF.04 ==================================================================================================  -->
+
+
+	<!-- GIDRAH.HOFF.04 definition -->
+
+	<gidrah
+		 name="gidrah.hoff.04"
+		 inherit="gidrah.hoff.04.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.04.walk.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.04.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" animation="gidrah.hoff.04.walk.face.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.04.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.04.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" animation="gidrah.hoff.04.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.04.dead.eyes.anim" />
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.hoff.04.dead.anim" />
+				<emitter emitter="gidrah.hoff.death.emitter" offset="16,16"  />
+				<emitter emitter="gidrah.hoff.death.flash.emitter" offset="16,25"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.04.idle.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.04.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" animation="gidrah.hoff.04.idle.face.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.04.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.04.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.04.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.04.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.04.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.04.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.04.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.04.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.04.ice.glow.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.04.04" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.04.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.04.ice.glow.04" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.04.02" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.04.stun.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.hoff.04.stun.glow.anim" />
+				<emitter emitter="gidrah.hoff.stun.emitter" offset="16,30"  />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.04.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" ySortOffset="0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.04.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>
+
+
+	<!-- FRAMESETS for GIDRAH.hoff.04 -->
+
+	<array name="gidrah.hoff.04.face.array">
+		<item>spriteimage.gidrah.hoff.04.glow.01</item>
+		<item>spriteimage.gidrah.hoff.04.glow.02</item>
+		<item>spriteimage.gidrah.hoff.04.glow.03</item>
+		<item>spriteimage.gidrah.hoff.04.glow.04</item>
+		<item>spriteimage.gidrah.hoff.04.glow.05</item>
+		<item>spriteimage.gidrah.hoff.04.glow.06</item>
+		<item>spriteimage.gidrah.hoff.04.glow.07</item>
+		<item>spriteimage.gidrah.hoff.04.glow.08</item>
+		<item>spriteimage.gidrah.hoff.04.glow.09</item>
+		<item>spriteimage.gidrah.hoff.04.glow.10</item>
+		<item>spriteimage.gidrah.hoff.04.glow.11</item>
+		<item>spriteimage.gidrah.hoff.04.glow.12</item>
+		<item>spriteimage.gidrah.hoff.04.attack.glow.01</item>
+		<item>spriteimage.gidrah.hoff.04.attack.glow.02</item>
+		<item>spriteimage.gidrah.hoff.04.attack.glow.03</item>
+	</array>
+
+
+	<!-- ANIMATION for GIDRAH.hoff.04 -->
+
+	<animation name="gidrah.hoff.04.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.04.01" d="3" />
+		<lock />
+			<frame i="spriteimage.gidrah.hoff.04.02" d="1" />
+			<frame i="spriteimage.gidrah.hoff.04.03" d="1" />
+			<frame i="spriteimage.gidrah.hoff.04.04" d="2" />
+			<frame i="spriteimage.gidrah.hoff.04.04" d="5" />
+			<frame i="spriteimage.gidrah.hoff.04.03" d="2" />
+			<frame i="spriteimage.gidrah.hoff.04.02" d="2" />
+		<unlock />
+			<frame i="spriteimage.gidrah.hoff.04.01" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.04.walk.face.anim">
+		<frameset id="gidrah.hoff.04.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="3" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="1" />
+			<frame idx="3" d="2" />
+			<frame idx="3" d="5" />
+			<frame idx="2" d="2" />
+			<frame idx="1" d="2" />
+			<frame idx="0" d="4" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+			<frame idx="0" d="20" />
+		<label id="blink"/>
+			<frame idx="4" d="3" />
+			<frame idx="5" d="1" />
+			<frame idx="6" d="1" />
+			<frame idx="11" d="7" />
+			<frame idx="10" d="2" />
+			<frame idx="9" d="2" />
+			<frame idx="8" d="7" />
+			<frame idx="9" d="1" />
+			<frame idx="10" d="1" />
+			<frame idx="11" d="5" />
+			<frame idx="7" d="2" />
+			<frame idx="6" d="2" />
+			<frame idx="5" d="2" />
+			<frame idx="4" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.04.attack.anim">
+		<loop count="2"/>
+		<label id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.04.01" d="2" />
+			<notify layer="face" idx="12"/><frame i="spriteimage.gidrah.hoff.04.attack.01" d="2" />
+			<notify layer="face" idx="13"/><frame i="spriteimage.gidrah.hoff.04.attack.02" d="2" />
+			<notify layer="face" idx="14"/><frame i="spriteimage.gidrah.hoff.04.attack.03" d="5" />
+			<notify layer="face" idx="1"/><frame i="spriteimage.gidrah.hoff.04.02" d="1" />
+			<notify layer="face" idx="2"/><frame i="spriteimage.gidrah.hoff.04.03" d="1" />
+			<notify layer="face" idx="3"/><frame i="spriteimage.gidrah.hoff.04.04" d="3" />
+			<notify layer="face" idx="2"/><frame i="spriteimage.gidrah.hoff.04.03" d="2" />
+			<notify layer="face" idx="1"/><frame i="spriteimage.gidrah.hoff.04.02" d="2" />
+		<repeat id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.04.01" d="1" />
+		<event id="1"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.04.01" d="1" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.hoff.04.attack.face.anim">
+		<frameset id="gidrah.hoff.04.face.array" />
+	</animation>
+
+	<animation name="gidrah.hoff.04.dead.anim">
+		<frame i="spriteimage.gidrah.hoff.04.ghost.01" d="2" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.04.dead.eyes.anim">
+		<frame i="spriteimage.gidrah.hoff.04.ghost.eyes.glow.01" d="2" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.04.idle.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.04.01" d="6" />
+		<lock />
+			<frame i="spriteimage.gidrah.hoff.04.02" d="4" />
+			<frame i="spriteimage.gidrah.hoff.04.03" d="10" />
+			<frame i="spriteimage.gidrah.hoff.04.02" d="4" />
+		<unlock />
+			<frame i="spriteimage.gidrah.hoff.04.01" d="6" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.04.idle.face.anim">
+		<frameset id="gidrah.hoff.04.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="6" />
+			<frame idx="1" d="4" />
+			<frame idx="2" d="10" />
+			<frame idx="1" d="4" />
+			<frame idx="0" d="6" />
+		<random>
+			<dest id="blink-short" n="3"/>
+			<dest id="blink-long" n="1"/>
+			<dest id="start" n="9"/>
+		</random>
+
+		<label id="blink-long"/>
+			<frame idx="0" d="3" />
+			<frame idx="4" d="3" />
+			<frame idx="9" d="4" />
+			<frame idx="10" d="10" />
+			<frame idx="9" d="4" />
+			<frame idx="8" d="6" />
+			
+			<frame idx="8" d="6" />
+			<frame idx="9" d="4" />
+			<frame idx="10" d="10" />
+			<frame idx="5" d="2" />
+			<frame idx="1" d="2" />
+			<frame idx="0" d="6" />
+		<goto id="start"/>
+		
+		<label id="blink-short"/>
+			<frame idx="0" d="3" />
+			<frame idx="4" d="3" />
+			<frame idx="9" d="4" />
+			<frame idx="10" d="10" />
+			<frame idx="9" d="4" />
+			<frame idx="8" d="3" />
+			<frame idx="0" d="3" />
+		<goto id="start"/>
+		
+	</animation>
+
+	<animation name="gidrah.hoff.04.stun.glow.anim">
+			<frame i="spriteimage.gidrah.hoff.04.ghost.eyes.glow.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.04.stun.anim">
+			<frame i="spriteimage.gidrah.hoff.04.ghost.01" d="1" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.04.stun.face.anim">
+		<frameset id="gidrah.hoff.04.face.array" />
+			<frame idx="9" d="45" />
+			<frame idx="5" d="5" />
+			<frame idx="1" d="449" />
+	</animation>
+
+
+
+	<!-- ANGRYGIDRAH.HOFF.01 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.HOFF.01 definition -->
+
+	<gidrah
+		 name="angrygidrah.hoff.01"
+		 inherit="angrygidrah.hoff.01.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.01.walk.anim" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.angry.01.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.01.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.ground.01" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.01.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.01.dead.eyes.anim" />
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.01.dead.anim" />
+				<emitter emitter="gidrah.hoff.death.large.emitter" offset="16,15"  />
+				<emitter emitter="gidrah.hoff.death.flash.large.emitter" offset="16,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" battenuated="true" image="spriteimage.gidrah.hoff.angry.01.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.ground.01" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.01.blink.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.01.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.01.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.01.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.01.frozen.2.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.01.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+		<stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.01" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.01.stun.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.01.stun.glow.anim" />
+				<emitter emitter="gidrah.hoff.stun.large.emitter" offset="16,30"  />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.01.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" ySortOffset="0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.angry.01.stun.face.anim" />
+		</layers></stunAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for ANGRYGIDRAH.HOFF.01 -->
+
+
+	<array name="gidrah.hoff.angry.01.face.array">
+		<item>spriteimage.gidrah.hoff.angry.01.glow.01</item>
+		<item>spriteimage.gidrah.hoff.angry.01.glow.02</item>
+		<item>spriteimage.gidrah.hoff.angry.01.glow.03</item>
+		<item>spriteimage.gidrah.hoff.angry.01.attack.glow.01</item>
+		<item>spriteimage.gidrah.hoff.angry.01.attack.glow.02</item>
+		<item>spriteimage.gidrah.hoff.angry.01.attack.glow.03</item>
+	</array>
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.HOFF.01 -->
+
+	<animation name="gidrah.hoff.angry.01.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.angry.01.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.01" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.02" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.03" d="4" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.03" d="1" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.01" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.06" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.07" d="4" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.07" d="1" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.01" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.04" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.05" d="4" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.01.05" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.blink.anim">
+		<frameset id="gidrah.hoff.angry.01.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+		<label id="blink"/>
+			<frame idx="0" d="9" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="19" />
+			<frame idx="1" d="3" />
+			<frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<frame idx="0" d="7" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="14" />
+			<frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.attack.anim">
+		<loop count="2"/>
+		<label id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.01.01" d="2" />
+			<notify layer="face" idx="3"/><frame i="spriteimage.gidrah.hoff.angry.01.08" d="3" />
+			<notify layer="face" idx="4"/><frame i="spriteimage.gidrah.hoff.angry.01.09" d="3" />
+			<notify layer="face" idx="5"/><frame i="spriteimage.gidrah.hoff.angry.01.10" d="12" />
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.01.01" d="6" />
+		<repeat id="bite"/>
+		<event id="1"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.01.01" d="1" />
+		<event id="2"/>
+	</animation>
+
+
+	<animation name="gidrah.hoff.angry.01.attack.face.anim">
+		<frameset id="gidrah.hoff.angry.01.face.array" />
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.dead.anim">
+		<frame i="spriteimage.gidrah.hoff.angry.01.ghost.01" d="2" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.dead.eyes.anim">
+		<frame i="spriteimage.gidrah.hoff.angry.01.ghost.eyes.glow.01" d="2" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.frozen.1.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.hoff.angry.01.02" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.hoff.angry.01.04" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.hoff.angry.01.06" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.frozen.2.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.hoff.angry.01.03" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.hoff.angry.01.05" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.hoff.angry.01.07" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.stun.glow.anim">
+			<frame i="spriteimage.gidrah.hoff.angry.01.ghost.eyes.glow.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.stun.anim">
+			<frame i="spriteimage.gidrah.hoff.angry.01.ghost.01" d="1" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.01.stun.face.anim">
+		<frameset id="gidrah.hoff.angry.01.face.array" />
+			<frame idx="2" d="45" />
+			<frame idx="1" d="5" />
+			<frame idx="0" d="449" />
+	</animation>
+
+	<!-- ANGRYGIDRAH.HOFF.02 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.HOFF.02 definition -->
+
+	<gidrah
+		 name="angrygidrah.hoff.02"
+		 inherit="angrygidrah.hoff.02.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.02.walk.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="false" doChildOffset="true" animation="gidrah.hoff.angry.02.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.02.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.02.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.02.dead.eyes.anim" />
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.02.dead.anim" />
+				<emitter emitter="gidrah.hoff.death.large.emitter" offset="16,15"  />
+				<emitter emitter="gidrah.hoff.death.flash.large.emitter" offset="16,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.01" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.02.blink.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.02.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.02.frozen.1.anim" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.02.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.02.frozen.2.anim" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.02.ice.glow.03" />
+				</layers></item>
+		</array></frozenAppearance>
+		 <stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.01" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.02.stun.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.02.stun.glow.anim" />
+				<emitter emitter="gidrah.hoff.stun.large.emitter" offset="16,30"  />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.02.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" ySortOffset="0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.angry.02.stun.face.anim" />
+		</layers></stunAppearance>
+ 	</gidrah>
+
+
+	<!-- FRAMESETS for ANGRYGIDRAH.HOFF.02 -->
+
+	<array name="gidrah.hoff.angry.02.face.array">
+		<item>spriteimage.gidrah.hoff.angry.02.glow.01</item>
+		<item>spriteimage.gidrah.hoff.angry.02.glow.02</item>
+		<item>spriteimage.gidrah.hoff.angry.02.glow.03</item>
+		<item>spriteimage.gidrah.hoff.angry.02.attack.glow.01</item>
+		<item>spriteimage.gidrah.hoff.angry.02.attack.glow.02</item>
+		<item>spriteimage.gidrah.hoff.angry.02.attack.glow.03</item>
+	</array>
+
+
+	<!-- ANIMATION for ANGRYGIDRAH.HOFF.02 -->
+
+	<animation name="gidrah.hoff.angry.02.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.angry.02.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.01" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.02" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.03" d="4" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.03" d="1" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.01" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.06" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.06" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.07" d="4" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.07" d="1" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.01" d="4" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.01" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.04" d="1" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.05" d="4" childYOffset="5.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.02.05" d="1" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.blink.anim">
+		<frameset id="gidrah.hoff.angry.02.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+		<label id="blink"/>
+			<frame idx="0" d="9" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="19" />
+			<frame idx="1" d="3" />
+			<frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<frame idx="0" d="7" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="14" />
+			<frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.attack.anim">
+		<loop count="1"/>
+		<label id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.02.01" d="2" />
+			<notify layer="face" idx="3"/><frame i="spriteimage.gidrah.hoff.angry.02.08" d="3" />
+			<notify layer="face" idx="4"/><frame i="spriteimage.gidrah.hoff.angry.02.09" d="4" />
+			<notify layer="face" idx="5"/><frame i="spriteimage.gidrah.hoff.angry.02.10" d="10" />
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.02.01" d="3" />
+		<repeat id="bite"/>
+		<event id="1"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.02.01" d="1" />
+		<event id="2"/>
+	</animation>
+
+
+	<animation name="gidrah.hoff.angry.02.attack.face.anim">
+		<frameset id="gidrah.hoff.angry.02.face.array" />
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.dead.anim">
+		<frame i="spriteimage.gidrah.hoff.angry.02.ghost.01" d="2" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.dead.eyes.anim">
+		<frame i="spriteimage.gidrah.hoff.angry.02.ghost.eyes.glow.01" d="2" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.frozen.1.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.hoff.angry.02.02" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.hoff.angry.02.04" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.hoff.angry.02.06" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.frozen.2.anim">
+		<random>
+			<dest id="frozen3" n="1"/>
+			<dest id="frozen2" n="1"/>
+			<dest id="frozen1" n="1"/>
+		</random>
+		<label id="frozen1"/>
+			<frame i="spriteimage.gidrah.hoff.angry.02.03" d="1" />
+		<goto id="end"/>
+		<label id="frozen2"/>
+			<frame i="spriteimage.gidrah.hoff.angry.02.05" d="1" />
+		<goto id="end"/>
+		<label id="frozen3"/>
+			<frame i="spriteimage.gidrah.hoff.angry.02.07" d="1" />
+		<label id="end"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.stun.glow.anim">
+			<frame i="spriteimage.gidrah.hoff.angry.02.ghost.eyes.glow.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.stun.anim">
+			<frame i="spriteimage.gidrah.hoff.angry.02.ghost.01" d="1" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.02.stun.face.anim">
+		<frameset id="gidrah.hoff.angry.02.face.array" />
+			<frame idx="2" d="45" />
+			<frame idx="1" d="5" />
+			<frame idx="0" d="449" />
+	</animation>	
+	
+	
+	
+	<!-- ANGRYGIDRAH.HOFF.03 ==================================================================================================  -->
+
+
+	<!-- ANGRYgidrah.hoff.angry.03 definition -->
+
+	<gidrah
+		 name="angrygidrah.hoff.03"
+		 inherit="angrygidrah.hoff.03.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.03.walk.body.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.angry.03.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.ground.01" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.03.attack.body.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.angry.03.attack.face.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.ground.01" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.03.dead.eyes.anim" />
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.03.dead.anim" />
+				<emitter emitter="gidrah.hoff.death.large.emitter" offset="16,15"  />
+				<emitter emitter="gidrah.hoff.death.flash.large.emitter" offset="16,24"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.03.idle.body.anim" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.angry.03.blink.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.ground.01" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.03.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.03.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.03.ice.glow.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="16"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.04" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.ground.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="16"  />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.03.ice.glow.04" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		 <stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.02" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.03.stun.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.03.stun.glow.anim" />
+				<emitter emitter="gidrah.hoff.stun.large.emitter" offset="16,50"  />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.03.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,8" ySortOffset="0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.angry.03.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>
+	
+	
+	<!-- FRAMESETS for gidrah.hoff.angry.03 -->
+
+	<array name="gidrah.hoff.angry.03.face.array">
+		<item>spriteimage.gidrah.hoff.angry.03.glow.01</item>
+		<item>spriteimage.gidrah.hoff.angry.03.glow.02</item>
+		<item>spriteimage.gidrah.hoff.angry.03.glow.03</item>
+		<item>spriteimage.gidrah.hoff.angry.03.attack.glow.01</item>
+		<item>spriteimage.gidrah.hoff.angry.03.attack.glow.02</item>
+		<item>spriteimage.gidrah.hoff.angry.03.attack.glow.03</item>
+	</array>
+
+
+	<!-- ANIMATION for gidrah.hoff.angry.03 -->
+
+	<animation name="gidrah.hoff.angry.03.walk.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.angry.03.04" d="1" childYOffset="0.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.04" d="1" childYOffset="3.0" />
+		<lock />
+			<frame i="spriteimage.gidrah.hoff.angry.03.03" d="2" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.02" d="1" childYOffset="13.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.01" d="5" childYOffset="13.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.01" d="1" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.02" d="2" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.03" d="2" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.03" d="1" childYOffset="0.0" />
+		<unlock />
+			<frame i="spriteimage.gidrah.hoff.angry.03.04" d="2" childYOffset="0.0" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.03.blink.anim">
+		<frameset id="gidrah.hoff.angry.03.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="blink"/>
+			<frame idx="0" d="9" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="19" />
+			<frame idx="1" d="3" />
+			<frame idx="0" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="3"/>
+		</random>
+		<label id="continue"/>
+			<frame idx="0" d="7" />
+			<frame idx="1" d="1" />
+			<frame idx="2" d="14" />
+			<frame idx="1" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.03.attack.body.anim">
+		<loop count="1"/>
+		<label id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.03.04" d="2" childYOffset="0.0" />
+			<notify layer="face" idx="3"/><frame i="spriteimage.gidrah.hoff.angry.03.attack.01" d="2" />
+			<notify layer="face" idx="4"/><frame i="spriteimage.gidrah.hoff.angry.03.attack.02" d="3" />
+			<notify layer="face" idx="5"/><frame i="spriteimage.gidrah.hoff.angry.03.attack.03" d="6" />
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.03.04" d="3" />
+		<repeat id="bite"/>
+			<frame i="spriteimage.gidrah.hoff.angry.03.04" d="1" />
+		<event id="1"/>
+			<frame i="spriteimage.gidrah.hoff.angry.03.04" d="1" />
+		<event id="2"/>
+	</animation>
+
+
+	<animation name="gidrah.hoff.angry.03.attack.face.anim">
+		<frameset id="gidrah.hoff.angry.03.face.array" />
+	</animation>
+
+	<animation name="gidrah.hoff.angry.03.dead.anim">
+		<frame i="spriteimage.gidrah.hoff.angry.03.ghost.01" d="2" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.03.dead.eyes.anim">
+		<frame i="spriteimage.gidrah.hoff.angry.03.ghost.eyes.glow.01" d="2" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.03.idle.body.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.angry.03.04" d="6" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.04" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.03" d="5" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.03" d="1" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.02" d="7" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.02" d="9" childYOffset="8.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.02" d="1" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.03" d="5" childYOffset="3.0" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.03" d="1" />
+			<frame i="spriteimage.gidrah.hoff.angry.03.04" d="8" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.03.stun.glow.anim">
+			<frame i="spriteimage.gidrah.hoff.angry.03.ghost.eyes.glow.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.03.stun.anim">
+			<frame i="spriteimage.gidrah.hoff.angry.03.ghost.01" d="1" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.03.stun.face.anim">
+		<frameset id="gidrah.hoff.angry.03.face.array" />
+			<frame idx="2" d="45" />
+			<frame idx="1" d="5" />
+			<frame idx="0" d="449" />
+	</animation>
+
+	
+	
+	<!-- ANGRYGIDRAH.HOFF.04 ==================================================================================================  -->
+
+
+	<!-- ANGRYGIDRAH.HOFF.04 definition -->
+
+	<gidrah
+		 name="angrygidrah.hoff.04"
+		 inherit="angrygidrah.hoff.04.spec"
+		 floor="-4"
+	>
+		<appearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.04.walk.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.ground.01" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.04.walk.face.anim" />
+		</layers></appearance>
+		<attackAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.04.attack.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.ground.01" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.04.attack.face.anim" />
+		</layers></attackAppearance>
+		<deathAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.04.dead.eyes.anim" />
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.04.dead.anim" />
+				<emitter emitter="gidrah.hoff.death.large.emitter" offset="16,16"  />
+				<emitter emitter="gidrah.hoff.death.flash.large.emitter" offset="16,25"  />
+		</layers></deathAppearance>
+		<idleAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.04.idle.anim" />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.ground.01" />
+				<sprite id="face" layer="5" sublayer="2" offset="0,0" attenuated="true" animation="gidrah.hoff.angry.04.idle.face.anim" />
+		</layers></idleAppearance>
+		<frozenAppearance><array>
+ 				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.01" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.04.ice.glow.01" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.02" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.04.ice.glow.02" />
+								<emitter emitter="frozen.sparkle.emitter" offset="16,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.03" />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.04.ice.glow.03" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+				</layers></item>
+				<item><layers scale="0.5">
+ 								<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.04" />
+								<emitter emitter="frozen.sparkle.emitter" offset="15,0" ySortOffset="17"  />
+								<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.ground.01" />
+								<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" image="spriteimage.gidrah.hoff.angry.04.ice.glow.04" />
+				</layers></item>
+		</array></frozenAppearance>
+ 		<stunAppearance><layers scale="0.5">
+ 				<sprite layer="5" sublayer="0" offset="0,0" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.02" />
+				<sprite layer="5" sublayer="1" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.04.stun.anim" />
+				<sprite layer="5" sublayer="2" offset="0,0" attenuated="false" animation="gidrah.hoff.angry.04.stun.glow.anim" />
+				<emitter emitter="gidrah.hoff.stun.large.emitter" offset="16,50"  />
+				<sprite layer="4" sublayer="2" offset="0,0" colored="shadow" attenuated="true" image="spriteimage.gidrah.hoff.angry.04.ground.01" />
+				<sprite id="face" layer="5" sublayer="1" offset="0,0" ySortOffset="0" attenuated="true" doChildOffset="true" animation="gidrah.hoff.angry.04.stun.face.anim" />
+		</layers></stunAppearance>
+	</gidrah>	
+	
+	<!-- FRAMESETS for gidrah.hoff.angry.04 -->
+
+	<array name="gidrah.hoff.angry.04.face.array">
+		<item>spriteimage.gidrah.hoff.angry.04.glow.01</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.02</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.03</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.04</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.05</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.06</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.07</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.08</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.09</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.10</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.11</item>
+		<item>spriteimage.gidrah.hoff.angry.04.glow.12</item>
+		<item>spriteimage.gidrah.hoff.angry.04.attack.glow.01</item>
+		<item>spriteimage.gidrah.hoff.angry.04.attack.glow.02</item>
+		<item>spriteimage.gidrah.hoff.angry.04.attack.glow.03</item>
+	</array>
+
+
+	<!-- ANIMATION for gidrah.hoff.angry.04 -->
+
+	<animation name="gidrah.hoff.angry.04.walk.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.angry.04.01" d="3" />
+		<lock />
+			<frame i="spriteimage.gidrah.hoff.angry.04.02" d="2" />
+			<frame i="spriteimage.gidrah.hoff.angry.04.03" d="2" />
+			<frame i="spriteimage.gidrah.hoff.angry.04.04" d="2" />
+			<frame i="spriteimage.gidrah.hoff.angry.04.04" d="5" />
+			<frame i="spriteimage.gidrah.hoff.angry.04.03" d="2" />
+			<frame i="spriteimage.gidrah.hoff.angry.04.02" d="2" />
+		<unlock />
+			<frame i="spriteimage.gidrah.hoff.angry.04.01" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.walk.face.anim">
+		<frameset id="gidrah.hoff.angry.04.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="3" />
+			<frame idx="1" d="2" />
+			<frame idx="2" d="2" />
+			<frame idx="3" d="2" />
+			<frame idx="3" d="5" />
+			<frame idx="2" d="2" />
+			<frame idx="1" d="2" />
+			<frame idx="0" d="4" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="6"/>
+		</random>
+			<frame idx="0" d="20" />
+		<label id="blink"/>
+			<frame idx="4" d="3" />
+			<frame idx="5" d="2" />
+			<frame idx="6" d="2" />
+			<frame idx="11" d="7" />
+			<frame idx="10" d="2" />
+			<frame idx="9" d="2" />
+			<frame idx="8" d="7" />
+			<frame idx="9" d="2" />
+			<frame idx="10" d="2" />
+			<frame idx="11" d="5" />
+			<frame idx="7" d="2" />
+			<frame idx="6" d="2" />
+			<frame idx="5" d="2" />
+			<frame idx="4" d="4" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.attack.anim">
+		<loop count="1"/>
+		<label id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.04.01" d="2" />
+			<notify layer="face" idx="12"/><frame i="spriteimage.gidrah.hoff.angry.04.attack.01" d="2" />
+			<notify layer="face" idx="13"/><frame i="spriteimage.gidrah.hoff.angry.04.attack.02" d="3" />
+			<notify layer="face" idx="14"/><frame i="spriteimage.gidrah.hoff.angry.04.attack.03" d="8" />
+			<notify layer="face" idx="1"/><frame i="spriteimage.gidrah.hoff.angry.04.02" d="1" />
+			<notify layer="face" idx="2"/><frame i="spriteimage.gidrah.hoff.angry.04.03" d="1" />
+			<notify layer="face" idx="3"/><frame i="spriteimage.gidrah.hoff.angry.04.04" d="3" />
+			<notify layer="face" idx="2"/><frame i="spriteimage.gidrah.hoff.angry.04.03" d="2" />
+			<notify layer="face" idx="1"/><frame i="spriteimage.gidrah.hoff.angry.04.02" d="2" />
+		<repeat id="bite"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.04.01" d="1" />
+		<event id="1"/>
+			<notify layer="face" idx="0"/><frame i="spriteimage.gidrah.hoff.angry.04.01" d="1" />
+		<event id="2"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.attack.face.anim">
+		<frameset id="gidrah.hoff.angry.04.face.array" />
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.dead.anim">
+		<frame i="spriteimage.gidrah.hoff.angry.04.ghost.01" d="2" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.dead.eyes.anim">
+		<frame i="spriteimage.gidrah.hoff.angry.04.ghost.eyes.glow.01" d="2" />
+		<frame i="gidrah.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.idle.anim">
+		<label id="start"/>
+			<frame i="spriteimage.gidrah.hoff.angry.04.01" d="6" />
+		<lock />
+			<frame i="spriteimage.gidrah.hoff.angry.04.02" d="4" />
+			<frame i="spriteimage.gidrah.hoff.angry.04.03" d="10" />
+			<frame i="spriteimage.gidrah.hoff.angry.04.02" d="4" />
+		<unlock />
+			<frame i="spriteimage.gidrah.hoff.angry.04.01" d="6" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.idle.face.anim">
+		<frameset id="gidrah.hoff.angry.04.face.array" />
+		<label id="start"/>
+			<frame idx="0" d="6" />
+			<frame idx="1" d="4" />
+			<frame idx="2" d="10" />
+			<frame idx="1" d="4" />
+			<frame idx="0" d="6" />
+		<random>
+			<dest id="blink-short" n="3"/>
+			<dest id="blink-long" n="1"/>
+			<dest id="start" n="9"/>
+		</random>
+
+		<label id="blink-long"/>
+			<frame idx="0" d="3" />
+			<frame idx="4" d="3" />
+			<frame idx="9" d="4" />
+			<frame idx="10" d="10" />
+			<frame idx="9" d="4" />
+			<frame idx="8" d="6" />
+			
+			<frame idx="8" d="6" />
+			<frame idx="9" d="4" />
+			<frame idx="10" d="10" />
+			<frame idx="5" d="2" />
+			<frame idx="1" d="2" />
+			<frame idx="0" d="6" />
+		<goto id="start"/>
+		
+		<label id="blink-short"/>
+			<frame idx="0" d="3" />
+			<frame idx="4" d="3" />
+			<frame idx="9" d="4" />
+			<frame idx="10" d="10" />
+			<frame idx="9" d="4" />
+			<frame idx="8" d="3" />
+			<frame idx="0" d="3" />
+		<goto id="start"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.stun.glow.anim">
+			<frame i="spriteimage.gidrah.hoff.angry.04.ghost.eyes.glow.01" d="1" />
+		<frame i="gidrah.stun.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.stun.anim">
+			<frame i="spriteimage.gidrah.hoff.angry.04.ghost.01" d="1" />
+		<frame i="gidrah.hoff.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="gidrah.hoff.angry.04.stun.face.anim">
+		<frameset id="gidrah.hoff.angry.04.face.array" />
+			<frame idx="9" d="45" />
+			<frame idx="5" d="5" />
+			<frame idx="1" d="449" />
+	</animation>
+		
+</resources>

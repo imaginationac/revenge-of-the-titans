@@ -44,6 +44,8 @@ import worm.features.WorldFeature;
  */
 public class SelectLevelScreen extends Screen {
 
+	private static final long serialVersionUID = 1L;
+
 	private static final String ID_BACK = "back";
 
 	/** World, 0..4 */
@@ -74,27 +76,6 @@ public class SelectLevelScreen extends Screen {
 			}
 
 			getArea("level.num." + i).setText(levStr);
-
-			//int attempts = Worm.getExtraLevelData(l, "attempts", 0);
-
-			/*
-			Area levelAttemptsArea = getArea("level.attempts." + i);
-
-			if (levelAttemptsArea != null) {
-				if (attempts == 0) {
-					levelAttemptsArea.setText("");
-				} else if (attempts == 1) {
-					levelAttemptsArea.setText("1 ATTEMPT");
-				} else {
-					levelAttemptsArea.setText(attempts + " ATTEMPTS");
-				}
-			}
-			*/
-
-//			String levelAttemptsText = "";
-//			if (attempts >0) {
-//				levelAttemptsText=(">"+attempts+" ");
-//			}
 
 			setEnabled("level." + i, true);
 			if (l == 0) {

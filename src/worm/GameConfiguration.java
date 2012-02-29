@@ -31,6 +31,7 @@
  */
 package worm;
 
+import com.shavenpuppy.jglib.resources.Data;
 import com.shavenpuppy.jglib.resources.Feature;
 
 /**
@@ -38,10 +39,13 @@ import com.shavenpuppy.jglib.resources.Feature;
  */
 public class GameConfiguration extends Feature {
 
+	private static final long serialVersionUID = 1L;
+
 	/** Singleton */
 	private static GameConfiguration instance;
 
 	/** Title */
+	@Data
 	private String title;
 
 	/** Initial interval at which a saucer spawns, ticks */
@@ -71,6 +75,9 @@ public class GameConfiguration extends Feature {
 	/** Base difficulty factor in $ */
 	private float difficultyFactor;
 
+	/** Crystal agitation factor, for Survival, Sandbox, and Endless modes */
+	private float crystalAgitationFactor;
+
 	/** Adds to the base difficulty factor each level */
 	private float difficultyFactorPerLevel;
 
@@ -92,6 +99,9 @@ public class GameConfiguration extends Feature {
 	/** Survival mode difficulty factors (1 for each world) */
 	private float[] survivalModeDifficultyFactors;
 
+	/** Repair cost % */
+	private float repairCost;
+
 	private int survivalWaveLengthTimeAdjust; // Every minute, survival wave lengths increase
 	private int survivalWaveLengthTimeOffset; // .. only after 3 minutes have elapsed though
 	private int survivalWaveLength; // The basic size of a survival gidrah spawn wave
@@ -108,6 +118,10 @@ public class GameConfiguration extends Feature {
 	private float survivalDifficultyAdjuster; // adds to difficulty factor every time we can't unlock a gidrah
 	private float[] difficultyAttempts; // Reduce difficulty after repeated attempts
 	private int[] survivalInitialMoney;
+	private int xmasCrystalInterval; // Every 60 seconds, spawn a crystal
+	private int xmasCrystalIntervalAdjust; // ...plus 2 seconds each time
+	private int xmasInitialMoney;
+	private float xmasDifficultyFactor;
 
 	/**
 	 * C'tor
@@ -238,6 +252,14 @@ public class GameConfiguration extends Feature {
     	return survivalCrystalIntervalAdjust;
     }
 
+	public int getXmasCrystalInterval() {
+    	return xmasCrystalInterval;
+    }
+
+	public int getXmasCrystalIntervalAdjust() {
+    	return xmasCrystalIntervalAdjust;
+    }
+
 	public int getSurvivalBossInterval() {
     	return survivalBossInterval;
     }
@@ -258,11 +280,27 @@ public class GameConfiguration extends Feature {
     	return survivalInitialMoney;
     }
 
+	public int getXmasInitialMoney() {
+    	return xmasInitialMoney;
+    }
+
+	public float getXmasDifficultyFactor() {
+    	return xmasDifficultyFactor;
+    }
+
 	public float getCentralDifficultyAdjustPerLevel() {
 	    return centralDifficultyAdjustPerLevel;
     }
 
 	public float[] getScavengeRate() {
 	    return scavengeRate;
+    }
+
+	public float getRepairCost() {
+	    return repairCost;
+    }
+
+	public float getCrystalAgitationFactor() {
+	    return crystalAgitationFactor;
     }
 }

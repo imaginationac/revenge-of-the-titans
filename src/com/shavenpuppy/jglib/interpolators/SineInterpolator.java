@@ -34,8 +34,6 @@ package com.shavenpuppy.jglib.interpolators;
 import java.io.ObjectInput;
 import java.io.ObjectStreamException;
 
-import com.shavenpuppy.jglib.util.FPMath;
-
 /**
  * A cosine interpolator. Access using instance member variable.
  * Creation date: (30/03/2001 01:19:35)
@@ -65,25 +63,9 @@ public final class SineInterpolator extends InterpolatorBase {
 		} else if (ratio > 1.0f) {
 			ratio = 1.0f;
 		}
-		double ft = ratio * Math.PI / 2.0;
-		double f = Math.sin(ft);
-		return (float) (a * (1.0f - f) + b * f);
-	}
-	/**
-	 * Sine interpolation.
-	 */
-	@Override
-	public int interpolate(int a, int b, int ratio) {
-		if (a == b) {
-			return a;
-		}
-		if (ratio < 0) {
-			ratio = 0;
-		} else if (ratio > FPMath.ONE) {
-			ratio = FPMath.ONE;
-		}
-		int f = FPMath.sin(ratio >> 2);
-		return LinearInterpolator.instance.interpolate(a, b, f);
+		ratio = 1.0f - ratio;
+		double f = Math.sqrt(1.0 - ratio * ratio);
+		return (float) (a * (1.0 - f) + b * f);
 	}
 
 	private Object readResolve(ObjectInput oi) throws ObjectStreamException {

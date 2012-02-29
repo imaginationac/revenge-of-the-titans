@@ -1,0 +1,468 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Titan levels -->
+<resources>
+
+	<include resource="tags.xml"/>
+
+	<!-- Colors -->
+	
+	<include resource="colours-titan.xml"/>
+
+
+	<!-- World definition -->
+	
+	<!-- Roads -->
+	<array name="titan.roads">
+		<item>titan.road.0</item>
+		<item>titan.road.1</item>
+		<item>titan.road.2</item>
+		<item>titan.road.3</item>
+		<item>titan.road.4</item>
+		<item>titan.road.5</item>
+		<item>titan.road.6</item>
+		<item>titan.road.7</item>
+		<item>titan.road.8</item>
+		<item>titan.road.9</item>
+		<item>titan.road.10</item>
+		<item>titan.road.11</item>
+		<item>titan.road.12</item>
+		<item>titan.road.13</item>
+		<item>titan.road.14</item>
+		<item>titan.road.15</item>
+	</array>
+
+	<!-- Basic values for scenery -->
+	<scenery
+		name="titan.scenery.base"
+		minObstacles="30"
+		maxObstacles="50"
+		
+		absMaxRuins="15"
+		maxRuins="5"
+		maxRuinClusters="5"
+		minRuinClusterSize="7.0"
+		maxRuinClusterSize="20.0"
+		
+		roads="titan.roads"
+		randomRockyThreshold="0.1"
+	>
+		<ruins>
+			<array>	
+				<item>titan.ruin.3x2.01</item>
+				<item>titan.ruin.3x2.02</item>
+				<item>titan.ruin.2x1.01</item>
+				<item>titan.ruin.2x1.02</item>
+				<item>titan.ruin.2x1.03</item>
+				<item>titan.ruin.2x1.04</item>
+				<item>titan.ruin.2x1.05</item>
+				<item>titan.ruin.2x1.06</item>
+				<item>titan.ruin.2x1.07</item>
+				<item>titan.ruin.2x1.08</item>
+				<item>titan.ruin.2x1.09</item>
+				<item>titan.ruin.2x1.10</item>
+				<item>titan.ruin.2x1.11</item>
+				<item>titan.ruin.2x1.12</item>
+				<item>titan.ruin.2x1.13</item>
+				<item>titan.ruin.2x1.14</item>
+				<item>titan.ruin.2x1.15</item>
+				<item>titan.ruin.2x1.16</item>
+				<item>titan.ruin.3x1.01</item>
+				<item>titan.ruin.3x1.02</item>
+				<item>titan.ruin.3x1.03</item>
+				<item>titan.ruin.3x1.04</item>
+				<item>titan.ruin.2x2.01</item>
+				<item>titan.ruin.2x2.02</item>
+				<item>titan.ruin.2x2.03</item>
+				<item>titan.ruin.2x2.04</item>
+				<item>titan.ruin.3x2.03</item>
+				<item>titan.ruin.3x2.04</item>
+			</array>	
+		</ruins>
+
+		<crystals>
+			<array>	
+				<item>crystal.2tone.small.1</item>
+				<item>crystal.2tone.small.2</item>
+				<item>crystal.2tone.small.3</item>
+				<item>crystal.2tone.small.4</item>
+				<item>crystal.2tone.small.5</item>
+				<item>crystal.2tone.small.6</item>	
+				<item>crystal.2tone.small.7</item>
+				<item>crystal.2tone.small.8</item>	
+				<item>crystal.2tone.medium.1</item>
+				<item>crystal.2tone.medium.2</item>
+				<item>crystal.2tone.medium.3</item>
+				<item>crystal.2tone.medium.4</item>
+				<item>crystal.2tone.medium.5</item>
+				<item>crystal.2tone.medium.6</item>
+				<item>crystal.2tone.medium.7</item>
+				<item>crystal.2tone.medium.8</item>
+				<item>crystal.2tone.large.1</item>
+				<item>crystal.2tone.large.2</item>
+				<item>crystal.2tone.large.3</item>
+				<item>crystal.2tone.large.4</item>
+				<item>crystal.2tone.large.5</item>
+				<item>crystal.2tone.large.6</item>
+				<item>crystal.2tone.large.7</item>
+				<item>crystal.2tone.large.8</item>
+			</array>	
+		</crystals>
+		
+		<obstacles>
+			<array>
+				<item>titan.shroom.1.01</item>
+				<item>titan.shroom.1.02</item>
+				<item>titan.shroom.1.03</item>
+				<item>titan.shroom.1.04</item>
+				<item>titan.shroom.1.05</item>
+				<item>titan.shroom.1.06</item>
+				<item>titan.shroom.1.07</item>
+				<item>titan.shroom.1.08</item>
+				<item>titan.shroom.1.09</item>
+				<item>titan.shroom.1.10</item>
+			</array>
+		</obstacles>
+		
+		<roadObstacles>
+			<array>
+				<item>titan.shroom.1.01</item>
+				<item>titan.shroom.1.02</item>
+				<item>titan.shroom.1.03</item>
+				<item>titan.shroom.1.04</item>
+				<item>titan.shroom.1.05</item>
+				<item>titan.shroom.1.06</item>
+				<item>titan.shroom.1.07</item>
+				<item>titan.shroom.1.08</item>
+				<item>titan.shroom.1.09</item>
+				<item>titan.shroom.1.10</item>
+			</array>
+		</roadObstacles>
+	</scenery>
+
+
+	<character
+		name="titan.char"
+		animated="true"
+		color="titan.colormap:text"
+		boldColor="titan.colormap:text-bold"
+		left="true"
+		textSpeed="3"
+	>
+		<sounds>
+			<array>
+				<item>textBeep.buffer</item>
+			</array>
+		</sounds>
+	</character>
+	
+	<character
+		name="titan.intro.char"
+		inherit="titan.char"
+		textSpeed="2"
+	/>
+
+	<setting
+		name="titan.intro.setting"
+		worldIntro="true"
+		position="0,0"
+		size="320,320"
+	>
+		<background>
+			<layers scale="0.5">
+				<sprite layer="-1"><animation><animation>
+					<offset x="-96" y="35" d="0"/>
+					<frame i="spriteimage.map.titan.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+				<sprite layer="-1"><animation><animation>
+					<offset x="160" y="35" d="0"/>
+					<frame i="spriteimage.map.titan.02" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>	
+		</background>
+		
+		<actor character="titan.char" 		 position="0,0" bounds="25,275,300,20" expand="down" />
+		<actor character="titan.intro.char"   position="0,0" bounds="25,33,280,60" expand="up" leading="1" />
+	
+	</setting>
+	
+	<!-- World definition -->
+	
+	<world
+		name="titan.world"
+		untranslated="TITAN"
+		title="=$world.titan.title"
+		base="building.earth.base"
+		setting="titan.intro.setting"
+		weaponSetting="titan.weapon.setting"
+		buildingSetting="titan.building.setting"
+		techSetting="titan.tech.setting"
+		stream="titan.stream"
+		survivalMaxType0="4"
+		survivalMaxType1="2"
+		survivalMaxType2="3"
+		survivalMaxType3="5"
+		survivalMaxBoss="4"
+	>
+		<story>
+			<char id="titan.char">=world.titan.intro1.text</char>
+			<char id="titan.intro.char">=world.titan.intro2.text</char>
+		</story>
+	
+		<!-- Gidrahs -->
+		<gidrahs>
+			<array>
+				<item>gidrah.titan.01</item>
+				<item>gidrah.titan.02</item> <!-- shooty -->
+				<item>gidrah.titan.03</item> <!-- tank -->
+				<item>gidrah.titan.04</item> <!-- flying -->
+				<item>gidrah.titan.05</item> <!-- wraith -->
+			</array>
+		</gidrahs>
+		
+		<!-- Angry gidrahs -->
+		<angryGidrahs>
+			<array>
+				<item>angrygidrah.titan.01</item> <!--  gidlet spawner -->
+				<item>angrygidrah.titan.02</item>
+				<item>angrygidrah.titan.03</item>
+				<item>angrygidrah.titan.04</item>
+				<item>angrygidrah.titan.05</item>
+			</array>
+		</angryGidrahs>	
+
+		<template>
+			<perlintemplate name="titan.template"
+				floor0="earth.floor.0"
+				floor1="earth.floor.1"
+				floor2="titan.floor.2"
+				floor3="earth.floor.3"				
+				floorTransitions="earth.transitions"
+				base="basepoint.1"
+				
+				wall="titan.walls"
+				internalWall="titan.internalWalls"
+				
+				midSpawn="spawnpoint.mid.titan"
+
+				scale="5"
+				octaves="5"
+				persistence="0.5"
+				threshold="0.25"
+
+				minMainTunnelWidth="1.5"
+				maxMainTunnelWidth="4.0"
+				minSpawnTunnelWidth="1.5"
+				maxSpawnTunnelWidth="4.0"
+			/>
+		</template>
+	</world>
+
+	
+	<!-- Story settings -->
+
+	<setting
+		name="titan.setting.spec"
+		position="0,0"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+140"/>
+					<scale xscale="1.1" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.titan.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+	<setting
+		name="titan.gidlet.setting.spec"
+		position="0,30"
+		size="320,320"
+		bgLayer="-100"
+	>	
+		<background>
+			<layers scale="0.625">
+				<sprite layer="-2"><animation><animation>
+					<offset x="+160" y="+135"/>
+					<scale xscale="1.5" yscale="0.625" d="0"/>
+					<frame i="spriteimage.story.background.titan.01" d="0"/>
+					<frame i="hud.phase.20%.animation" d="1"/>
+				</animation></animation></sprite>
+			</layers>
+		</background>
+	</setting>
+
+
+	<setting name="titan.general.setting" inherit="titan.setting.spec" position="0,30" >
+		<actor character="titan.custerd.char"	position="140,100" bounds="80,188,160,10" expand="up" />
+		<actor character="titan.tech.char" 		position="172,100" bounds="80,196,160,10" expand="up" />
+	</setting>
+
+	<setting name="titan.info.setting" inherit="titan.setting.spec">
+		<actor character="titan.custerd.info.char"	position="110,68" bounds="150,155,135,100" expand="up" />
+	</setting>
+
+	<setting name="titan.captured.setting" inherit="titan.gidlet.setting.spec" >
+		<actor character="captured.gidlet.char"	position="100,95" bounds="70,200,180,20" expand="up" />
+	</setting>
+
+	<setting name="titan.tech.setting" inherit="titan.setting.spec">
+		<actor character="titan.tech-left.char" 		position="55,79" 	bounds="115,130,150,25" expand="down" />
+		
+		<actor character="titan.tech.physics.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.biology.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.chemistry.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.efficiency.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.psychology.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.nuclear.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.explosives.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.textiles.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.automation.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.barometrics.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.optics.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.ballistics.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.robotics.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.forcefields.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.anatomy.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+		<actor character="titan.tech.extraction.char" 	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85" expand="down" fade="true"/>
+	
+		<actor character="titan.tech.ionisation.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.lithium.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.sodium.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.precision.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.advancedexplosives.char"	position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.plastic.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.nanohardening.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.finetuning.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.droidbuff.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.nanotechnology.char" 		position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.splitter.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.multibarrel.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.amplifiers.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.lasertech.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.shells.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.shielding.char" 			position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.xrays.char" 				position="=$research.tech.pic.x,183" 	bounds="=$research.tech.x,175,=$research.tech.w,85"	expand="down" fade="true"/>
+		
+		<actor character="titan.tech.coffee.char" 				position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.grant.char" 				position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.reinforcements.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.strongercoffee.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.extrabarricades.char" 		position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.extramines.char" 			position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+		<actor character="titan.tech.powerups.char" 			position="80,183" 	bounds="155,175,130,85"	expand="down" fade="true"/>
+	</setting>
+
+	<setting name="titan.gidrah.setting" inherit="titan.setting.spec">
+		<actor character="titan.tech-gidrah.char" 	position="260,70" bounds="55,120,144,25" expand="down" mirrored="true" />
+		<actor character="titan.custerd-gidrah.char" position="260,74" bounds="55,120,136,25" expand="down" mirrored="true" />
+		<actor character="titan.custerd-gidlet.char" position="260,74" bounds="75,120,114,20" expand="down" mirrored="true" />
+
+		<actor character="titan.gidrah.01.char" 	position="108,185" bounds="185,165,111,118" expand="down" fade="true" />
+		<actor character="titan.gidrah.02.char" 	position="108,185" bounds="185,165,111,118" expand="down" fade="true" />
+		<actor character="titan.gidrah.03.char" 	position="105,185" bounds="193,165,111,118" expand="down" fade="true" />
+		<actor character="titan.gidrah.04.char" 	position="108,185" bounds="185,165,111,118" expand="down" fade="true" />
+		
+		<actor character="titan.gidlet.01.char" 	position="108,185" bounds="185,165,111,118" expand="down" fade="true" />
+		
+		<actor character="titan.angry.01.char" 		position="108,185" bounds="185,165,111,118" expand="down" fade="true" />
+		<actor character="titan.angry.02.char" 		position="105,185" bounds="193,165,111,118" expand="down" fade="true" />
+		<actor character="titan.angry.03.char" 		position="105,185" bounds="193,165,111,118" expand="down" fade="true" />
+		<actor character="titan.angry.04.char" 		position="105,185" bounds="193,165,111,118" expand="down" fade="true" />
+	</setting>
+
+	<setting name="titan.building.setting" inherit="titan.setting.spec" >
+		<actor character="titan.custerd.char"	position="=225,$res.b.gen.pic.y" bounds="=160,$res.b.gen.y,135,10" expand="up" mirrored="true" />
+		<actor character="titan.tech.char" 		position="=215,$res.b.boff.pic.y" bounds="=$res.b.boff.x,$res.b.boff.y,$res.b.boff.w,10" expand="up" mirrored="true" />
+		
+		<actor character="titan.scanner.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="titan.reactor.char" 			position="=$res.b.pic.x,$res.b.pic.y+5" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="titan.battery.char" 			position="=$res.b.pic.x,$res.b.pic.y+20" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="titan.cooling.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="titan.warehouse.char" 		position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="titan.collector.char" 		position="=$res.b.pic.x,$res.b.pic.y+5" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="titan.barracks.char" 			position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="titan.shieldgenerator.char" 	position="=$res.b.pic.x,$res.b.pic.y+$res.b.pic.shieldgen.o" 		bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+		<actor character="titan.autoloader.char" 		position="=$res.b.pic.x,$res.b.pic.y" 		bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" expand="down" fade="true"/>
+			
+		<actor character="titan.concrete.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="titan.steel.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="titan.titanium.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+		<actor character="titan.nanomesh.char" 			position="83,220" 	bounds="30,180,115,100" expand="down" fade="true"/>
+
+		<actor character="titan.mine.char" 				position="=$res.b.mine.pic.x,235" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="titan.clustermines.char" 		position="=$res.b.mine.pic.x,230" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="titan.blastmine.char" 		position="=$res.b.mine.pic.x,225" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		<actor character="titan.decoy.char" 			position="=$res.b.mine.pic.x,215" 	bounds="=$res.b.mine.x,190,120,100" expand="down" fade="true"/>
+		
+		<actor character="titan.tangleweb.char" 		position="=$res.b.pic.x,$res.b.pic.y+15" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h" 		expand="down" fade="true"/>
+		<actor character="titan.tankfactory.char" 		position="=$res.b.pic.x,$res.b.pic.y-20" 	bounds="=$res.b.x,$res.b.y-20,$res.b.w,$res.b.h" 	expand="down" fade="true"/>
+		<actor character="titan.repairdrones.char" 		position="=$res.b.pic.x,$res.b.pic.y+10" 	bounds="=$res.b.x,$res.b.y,$res.b.w,$res.b.h"		expand="down" fade="true"/>
+		<actor character="titan.scarecrow.char" 		position="=$res.b.pic.x,$res.b.pic.y" 		bounds="=$res.b.x,$res.b.y-10,$res.b.w,$res.b.h" 	expand="down" fade="true"/>
+		<actor character="titan.cloakingdevice.char" 	position="=$res.b.pic.x,$res.b.pic.y+$res.b.pic.cloak.o" 	bounds="=$res.b.x,$res.b.y-10,$res.b.w,$res.b.h"	expand="down" fade="true"/>
+	
+	</setting>
+
+	<setting name="titan.weapon.setting" inherit="titan.setting.spec" >
+		<actor character="titan.custerd-left.char" 	position="58,80" 	bounds="128,83,150,60" expand="down" />
+		<actor character="titan.tech-left.char" 	position="60,70" 	bounds="128,83,150,60" expand="down" />
+		
+		<actor character="titan.blaster.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="titan.factory.char" 		position="225,210" 	bounds="35,163,250,90"  expand="down" fade="true"/>
+		<actor character="titan.capacitor.char" 	position="225,210" 	bounds="35,163,250,90"  expand="down" fade="true"/>
+		<actor character="titan.heavyblaster.char" 	position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="titan.shotgun.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="titan.multiblaster.char" 	position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="titan.blastcannon.char" 	position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="titan.assault.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="titan.rocket.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="titan.laser.char" 		position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>
+		<actor character="titan.disruptor.char" 	position="230,235" 	bounds="35,168,250,125" expand="down" fade="true"/>		
+	</setting>
+
+	<setting name="titan.level.10.setting" inherit="titan.alert.setting.spec" >
+		<actor character="titan.boss.char" 			position="30,60" bounds="100,80,196,213" expand="down" fade="true" leading="-2"/>
+		<actor character="titan.tech.alert.char" 	position="45,30" bounds="100,45,180,20" expand="up" mirrored="true" />
+	</setting>
+
+	<include resource="levels-titan.xml"/>
+
+</resources>

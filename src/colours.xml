@@ -90,6 +90,8 @@
 		<color id="factoryzap.foreground" order="49" c="255,255,255"/>
 		<color id="capacitorzap.background" order="50" c="0,240,255,128"/>
 		<color id="capacitorzap.foreground" order="51" c="255,255,255"/>
+		<color id="repairzap.background" order="52" c="0,240,0,128"/>
+		<color id="repairzap.foreground" order="53" c="224,255,224"/>
 		<sync id="global" d="100"/>
 
 		<color id="button" c="!114,255,150,200"/>
@@ -103,8 +105,9 @@
 		<color id="button-red-text" c="!0,255,255"/>
 		<color id="button-red-on" c="!0,255,255"/>
 	
+		<color id="transparent" order="98" c="0,0,0,0"/>
 		<color id="black" order="99" c="0,0,0"/>
-
+		
 
 		
 	</colormap>	
@@ -368,11 +371,59 @@
 	<color id="info-building" order="40" c="!69,120,119,255"/>
 	<color id="info-alt" order="41" c="!192,255,255,255"/>
 	<color id="info-floor" order="42" c="!55,86,68,255"/>
-	<color id="info-metal" order="43" c="!125,255,255,255"/>
+	<color id="info-metal" order="43" c="!66,255,255,255"/>
 	<color id="tech" order="45" c="!192,255,255,255"/>
 	<color id="tech-top" order="46" c="!29,135,143,125"/>
 	<color id="gidrah-glow" order="50" c="!70,255,255,255"/>
 </colormap>
+
+
+	<!-- HOFF -->
+
+	<colormap name="xmas.colormap" >
+		
+		<color id="button" order="1" c="!136,255,150,200"/>
+		<color id="button-text" order="2" c="!136,255,255,200"/>
+		<color id="button-on" order="3" c="!136,255,255"/>
+		<color id="button-text-on" order="4" c="0,0,0,128"/>
+		<color id="button-disabled" order="5" c="!136,255,125,75"/>
+		<color id="button-text-disabled" order="6" c="!136,255,255,20"/>
+	
+		<color id="dialog-top" order="7" c="!136,255,60"/>
+		<color id="dialog-title" order="8" c="!136,255,255"/>
+		<color id="dialog-glow" order="9" c="!136,255,255,150"/>
+		
+		<!-- level select -->
+		
+		<color id="level" order="10" c="!136,255,255,130"/>
+		<color id="level-on" order="11" c="!136,255,255"/>
+		<color id="level-cash" order="12" c="!136,255,255,50"/>
+		<color id="level-cash-on" order="13" c="!136,255,255,200"/>
+		<color id="level-line" order="14" c="!136,255,255,20"/>
+		
+		<!-- story / research -->
+		
+		<color id="bubble" order="20" c="!136,255,255,255"/>
+		<color id="text" order="21" c="!136,255,200,150"/>
+		<color id="text-bold" order="22" c="!136,255,255,255"/>
+		<color id="text-dark" order="23" c="!136,255,150,100"/>
+		<color id="text-darkest" order="24" c="!136,255,125,75"/>
+		
+		<color id="alert-bubble" order="31" c="!0,255,255,255"/>
+		<color id="alert-text" order="32" c="!0,255,255,128"/>
+		<color id="alert-text-bold" order="33" c="!0,255,255,255"/>
+		
+		<color id="info-building" order="41" c="!29,135,143,255"/>
+		<color id="info-alt" order="42" c="!136,255,255,255"/>
+		<color id="info-floor" order="43" c="!136,255,130,255"/>
+		<color id="info-metal" order="44" c="!136,255,255,255"/>
+		<color id="tech" order="45" c="!55,255,255,255"/>
+		<color id="tech-top" order="46" c="!29,135,143,125"/>
+		
+		<color id="gidrah-glow" order="50" c="!55,255,255,220"/>
+		
+	</colormap>	
+
 
 
 

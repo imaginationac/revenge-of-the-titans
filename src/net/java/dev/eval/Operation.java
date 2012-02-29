@@ -76,7 +76,7 @@ final class Operation {
 		return new Operation(Type.ARITHMETIC, operator, operand1, operand2, operand3);
 	}
 
-	BigDecimal eval(Map variables) {
+	BigDecimal eval(Map<?,?> variables) {
 		switch (this.operator.numberOfOperands) {
 			case 3:
 				return this.operator.perform(evaluateOperand(this.operand1, variables), evaluateOperand(this.operand2, variables),
@@ -89,7 +89,7 @@ final class Operation {
 		}
 	}
 
-	private BigDecimal evaluateOperand(Object operand, Map variables) {
+	private BigDecimal evaluateOperand(Object operand, Map<?,?> variables) {
 		if (operand instanceof Operation) {
 			return ((Operation) operand).eval(variables);
 		} else if (operand instanceof String) {

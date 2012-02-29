@@ -43,5 +43,5 @@ public interface SpriteProcessor {
 	 * @param end Last sprite in array to render + 1
 	 * @param renderer The sprite renderer to use
 	 */
-	public void processRendering(Sprite[] sprite, int start, int end, SpriteRenderer renderer);
+	void processRendering(Sprite[] sprite, int start, int end, SpriteRenderer renderer);
 }

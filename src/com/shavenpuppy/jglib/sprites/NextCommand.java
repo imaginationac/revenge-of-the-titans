@@ -36,7 +36,7 @@ package com.shavenpuppy.jglib.sprites;
  */
 public class NextCommand extends Command {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for GotoCommand.
@@ -49,7 +49,7 @@ public class NextCommand extends Command {
 	 * @see com.shavenpuppy.jglib.sprites.Command#execute(com.shavenpuppy.jglib.sprites.Animated)
 	 */
 	@Override
-	public boolean execute(Animated target, int tickRate) {
+	public boolean execute(Sprite target) {
 		target.setSequence(target.getSequence() + 1);
 		return false; // Stop here!
 	}

@@ -38,65 +38,603 @@
 	<!-- Load all the tags -->
 	<include resource="tags.xml" />
 
-	<animation name="earth.unit.dead.anim">
+	
+	<animation name="unit.dead.anim">
 		<loop count="10"/>
 			<animcolor a="+-25" d="2"/>				
 			<repeat seq="1"/>
 		<event id="1"/>
 	</animation>
 
-	<animation name="earth.unit.dead.ground.anim">
-		<frame i="spriteimage.unit.1.ground.01" d="50"/>
-		<frame i="earth.unit.dead.anim" d="0"/>
+
+
+	<!-- UNIT ANIMS ============================================================================================================================ -->
+
+	<!-- DROID ANIMS -->
+
+	<animation name="unit.droid.dead.ground.anim">
+		<frame i="spriteimage.unit.droid.ground.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
 	</animation>
 
-
-	<animation name="earth.unit.01.anim">
+	<animation name="unit.droid.anim">
 		<label id="start"/>
-			<frame i="spriteimage.unit.1.01" d="4" childYOffset="0.0"/>
-			<frame i="spriteimage.unit.1.01" d="1" childYOffset="2.0"/>
-			<frame i="spriteimage.unit.1.02" d="3" childYOffset="2.0"/>
-			<frame i="spriteimage.unit.1.02" d="1" childYOffset="0.0"/>
-			<frame i="spriteimage.unit.1.01" d="4" childYOffset="0.0"/>
-			<frame i="spriteimage.unit.1.01" d="1" childYOffset="2.0"/>
-			<frame i="spriteimage.unit.1.03" d="3" childYOffset="2.0"/>
-			<frame i="spriteimage.unit.1.03" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.droid.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.droid.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.droid.02" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.droid.02" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.droid.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.droid.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.droid.03" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.droid.03" d="1" childYOffset="0.0"/>
 		<goto id="start"/>
 	</animation>
 
-	<animation name="earth.unit.01.dead.anim">
-		<frame i="spriteimage.unit.1.01" d="50"/>
-		<frame i="earth.unit.dead.anim" d="0"/>
+	<animation name="unit.droid.dead.anim">
+		<frame i="spriteimage.unit.droid.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
 	</animation>
 
-	<animation name="earth.unit.01.blink.anim">
+	<animation name="unit.droid.blink.anim">
 		<label id="start"/>
-			<frame i="spriteimage.unit.1.glow.01" d="50" />
+			<frame i="spriteimage.unit.droid.glow.01" d="50" />
 		<random>
 			<dest id="blink" n="1"/>
 			<dest id="start" n="4"/>
 		</random>
 		<label id="blink"/>
-			<frame i="spriteimage.unit.1.glow.01" d="9" />
-			<frame i="spriteimage.unit.1.glow.02" d="1" />
-			<frame i="spriteimage.unit.1.glow.03" d="19" />
-			<frame i="spriteimage.unit.1.glow.02" d="3" />
-			<frame i="spriteimage.unit.1.glow.01" d="7" />
+			<frame i="spriteimage.unit.droid.glow.01" d="9" />
+			<frame i="spriteimage.unit.droid.glow.02" d="1" />
+			<frame i="spriteimage.unit.droid.glow.03" d="19" />
+			<frame i="spriteimage.unit.droid.glow.02" d="3" />
+			<frame i="spriteimage.unit.droid.glow.01" d="7" />
 		<random>
 			<dest id="continue" n="1"/>
 			<dest id="start" n="4"/>
 		</random>
 		<label id="continue"/>
-			<frame i="spriteimage.unit.1.glow.01" d="7" />
-			<frame i="spriteimage.unit.1.glow.02" d="1" />
-			<frame i="spriteimage.unit.1.glow.03" d="14" />
-			<frame i="spriteimage.unit.1.glow.02" d="4" />
+			<frame i="spriteimage.unit.droid.glow.01" d="7" />
+			<frame i="spriteimage.unit.droid.glow.02" d="1" />
+			<frame i="spriteimage.unit.droid.glow.03" d="14" />
+			<frame i="spriteimage.unit.droid.glow.02" d="4" />
 		<goto id="start"/>
 	</animation>
 
+
+	<animation name="unit.droid.sergeant.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.droid.sergeant.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.droid.sergeant.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.droid.sergeant.02" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.droid.sergeant.02" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.droid.sergeant.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.droid.sergeant.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.droid.sergeant.03" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.droid.sergeant.03" d="1" childYOffset="0.0"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="unit.droid.sergeant.dead.anim">
+		<frame i="spriteimage.unit.droid.sergeant.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="unit.droid.sergeant.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.droid.sergeant.glow.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.unit.droid.sergeant.glow.01" d="9" />
+			<frame i="spriteimage.unit.droid.sergeant.glow.02" d="1" />
+			<frame i="spriteimage.unit.droid.sergeant.glow.03" d="19" />
+			<frame i="spriteimage.unit.droid.sergeant.glow.02" d="3" />
+			<frame i="spriteimage.unit.droid.sergeant.glow.01" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="continue"/>
+			<frame i="spriteimage.unit.droid.sergeant.glow.01" d="7" />
+			<frame i="spriteimage.unit.droid.sergeant.glow.02" d="1" />
+			<frame i="spriteimage.unit.droid.sergeant.glow.03" d="14" />
+			<frame i="spriteimage.unit.droid.sergeant.glow.02" d="4" />
+		<goto id="start"/>
+	</animation>
+
+
+	<!-- TANK ANIMS -->
+
+	<animation name="unit.tank.dead.ground.anim">
+		<frame i="spriteimage.unit.tank.ground.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="unit.tank.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.tank.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.02" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.02" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.03" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.03" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.04" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.04" d="1" childYOffset="0.0"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="unit.tank.dead.anim">
+		<frame i="spriteimage.unit.tank.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="unit.tank.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.tank.glow.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.unit.tank.glow.01" d="9" />
+			<frame i="spriteimage.unit.tank.glow.02" d="1" />
+			<frame i="spriteimage.unit.tank.glow.03" d="19" />
+			<frame i="spriteimage.unit.tank.glow.02" d="3" />
+			<frame i="spriteimage.unit.tank.glow.01" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="continue"/>
+			<frame i="spriteimage.unit.tank.glow.01" d="7" />
+			<frame i="spriteimage.unit.tank.glow.02" d="1" />
+			<frame i="spriteimage.unit.tank.glow.03" d="14" />
+			<frame i="spriteimage.unit.tank.glow.02" d="4" />
+		<goto id="start"/>
+	</animation>
+
+
+	<animation name="unit.tank.sergeant.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.tank.sergeant.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.02" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.02" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.03" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.03" d="1" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.01" d="4" childYOffset="0.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.01" d="1" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.04" d="3" childYOffset="2.0"/>
+			<frame i="spriteimage.unit.tank.sergeant.04" d="1" childYOffset="0.0"/>
+		<goto id="start"/>
+	</animation>
+
+	<animation name="unit.tank.sergeant.dead.anim">
+		<frame i="spriteimage.unit.tank.sergeant.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="unit.tank.sergeant.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.tank.sergeant.glow.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.unit.tank.sergeant.glow.01" d="9" />
+			<frame i="spriteimage.unit.tank.sergeant.glow.02" d="1" />
+			<frame i="spriteimage.unit.tank.sergeant.glow.03" d="19" />
+			<frame i="spriteimage.unit.tank.sergeant.glow.02" d="3" />
+			<frame i="spriteimage.unit.tank.sergeant.glow.01" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="continue"/>
+			<frame i="spriteimage.unit.tank.sergeant.glow.01" d="7" />
+			<frame i="spriteimage.unit.tank.sergeant.glow.02" d="1" />
+			<frame i="spriteimage.unit.tank.sergeant.glow.03" d="14" />
+			<frame i="spriteimage.unit.tank.sergeant.glow.02" d="4" />
+		<goto id="start"/>
+	</animation>
+
+
+
+	<!-- DRONE ANIMS -->
+
+
+	<array name="unit.drone.array">
+		<item>spriteimage.unit.drone.01</item>
+		<item>spriteimage.unit.drone.02</item>
+		<item>spriteimage.unit.drone.03</item>
+		<item>spriteimage.unit.drone.04</item>
+	</array>
+
+<!-- 
+	<array name="unit.drone.sergeant.array">
+		<item>spriteimage.unit.drone.sergeant.01</item>
+		<item>spriteimage.unit.drone.sergeant.02</item>
+		<item>spriteimage.unit.drone.sergeant.03</item>
+		<item>spriteimage.unit.drone.sergeant.04</item>
+	</array>
+-->
+ 
+	<animation name="unit.drone.anim">
+		<frameset id="unit.drone.array" />
+		<frame i="unit.drone.hover.anim" d="0"/>
+	</animation>
+<!-- 
+	<animation name="unit.drone.sergeant.anim">
+		<frameset id="unit.drone.sergeant.array" />
+		<frame i="unit.drone.hover.anim" d="0"/>
+	</animation>
+ -->
+	<animation name="unit.drone.hover.anim">
+		<label id="start"/>
+			<frame idx="0" d="1" />
+			<frame idx="0" d="2" childYOffset="0.1" />
+			<frame idx="0" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame idx="0" d="1" childYOffset="0.3" />
+			<frame idx="0" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame idx="0" d="1" childYOffset="0.6" />
+			<frame idx="0" d="0" childYOffset="0.7" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.9" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame idx="0" d="1" childYOffset="1.1" />
+			<frame idx="0" d="0" childYOffset="1.2" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.4" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.6" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.8" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.9" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame idx="0" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame idx="0" d="0" childYOffset="2.3" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame idx="0" d="1" childYOffset="2.4" />
+			<frame idx="0" d="0" childYOffset="2.6" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame idx="0" d="0" childYOffset="2.7" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame idx="0" d="1" childYOffset="2.8" />
+			<frame idx="0" d="0" childYOffset="2.9" />
+			<offset x="0.0" y="1.4" d="2"/>
+			<frame idx="0" d="0" childYOffset="3.0" />
+			<offset x="0.0" y="1.5" d="3"/>
+			<frame idx="0" d="1" childYOffset="2.9" />
+			<frame idx="0" d="0" childYOffset="2.7" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame idx="0" d="0" childYOffset="2.5" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame idx="0" d="0" childYOffset="2.2" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.9" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.6" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.4" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.1" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.8" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.5" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.3" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.1" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame idx="0" d="0" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<offset x="0.0" y="0.0" d="1"/>
+		<random>
+			<dest id="pincer" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="pincer"/>
+			<frame idx="0" d="1" />
+			<frame idx="0" d="2" childYOffset="0.1" />
+			<frame idx="0" d="0" childYOffset="0.2" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<frame idx="0" d="1" childYOffset="0.3" />
+			<frame idx="0" d="0" childYOffset="0.4" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame idx="0" d="1" childYOffset="0.6" />
+			<frame idx="1" d="0" childYOffset="0.7" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame idx="1" d="0" childYOffset="0.9" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame idx="1" d="1" childYOffset="1.1" />
+			<frame idx="1" d="0" childYOffset="1.2" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame idx="1" d="0" childYOffset="1.4" />
+			<offset x="0.0" y="0.6" d="1"/>
+			<frame idx="1" d="0" childYOffset="1.6" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame idx="1" d="0" childYOffset="1.8" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame idx="1" d="0" childYOffset="1.9" />
+			<offset x="0.0" y="0.9" d="1"/>
+			<frame idx="2" d="0" childYOffset="2.1" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame idx="2" d="0" childYOffset="2.3" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame idx="2" d="1" childYOffset="2.4" />
+			<frame idx="2" d="0" childYOffset="2.6" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame idx="2" d="0" childYOffset="2.7" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame idx="2" d="1" childYOffset="2.8" />
+			<frame idx="2" d="0" childYOffset="2.9" />
+			<offset x="0.0" y="1.4" d="2"/>
+			<frame idx="2" d="0" childYOffset="3.0" />
+			<offset x="0.0" y="1.5" d="3"/>
+			<frame idx="2" d="1" childYOffset="2.9" />
+			<frame idx="2" d="0" childYOffset="2.7" />
+			<offset x="0.0" y="1.4" d="1"/>
+			<frame idx="2" d="0" childYOffset="2.5" />
+			<offset x="0.0" y="1.3" d="1"/>
+			<frame idx="3" d="0" childYOffset="2.2" />
+			<offset x="0.0" y="1.2" d="1"/>
+			<frame idx="3" d="0" childYOffset="1.9" />
+			<offset x="0.0" y="1.1" d="1"/>
+			<frame idx="3" d="0" childYOffset="1.6" />
+			<offset x="0.0" y="1.0" d="1"/>
+			<frame idx="3" d="0" childYOffset="1.4" />
+			<offset x="0.0" y="0.8" d="1"/>
+			<frame idx="0" d="0" childYOffset="1.1" />
+			<offset x="0.0" y="0.7" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.8" />
+			<offset x="0.0" y="0.5" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.5" />
+			<offset x="0.0" y="0.4" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.3" />
+			<offset x="0.0" y="0.3" d="1"/>
+			<frame idx="0" d="0" childYOffset="0.1" />
+			<offset x="0.0" y="0.2" d="1"/>
+			<frame idx="0" d="0" />
+			<offset x="0.0" y="0.1" d="1"/>
+			<offset x="0.0" y="0.0" d="1"/>
+		<random>
+			<dest id="pincer" n="1"/>
+			<dest id="start" n="1"/>
+		</random>
+	</animation>
+
+	<animation name="unit.drone.ground.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.drone.ground.01" d="1" />
+			<animcolor a="254" d="0"/>
+			<scale scale="0.5" d="1"/>
+			<animcolor a="253" d="0"/>
+			<scale scale="0.502" d="1"/>
+			<animcolor a="250" d="0"/>
+			<scale scale="0.504" d="1"/>
+			<animcolor a="246" d="0"/>
+			<scale scale="0.507" d="1"/>
+			<animcolor a="242" d="0"/>
+			<scale scale="0.51" d="1"/>
+			<animcolor a="236" d="0"/>
+			<scale scale="0.515" d="1"/>
+			<animcolor a="231" d="0"/>
+			<scale scale="0.519" d="1"/>
+			<animcolor a="224" d="0"/>
+			<scale scale="0.524" d="1"/>
+			<animcolor a="217" d="0"/>
+			<scale scale="0.53" d="1"/>
+			<animcolor a="210" d="0"/>
+			<scale scale="0.535" d="1"/>
+			<animcolor a="203" d="0"/>
+			<scale scale="0.541" d="1"/>
+			<animcolor a="195" d="0"/>
+			<scale scale="0.547" d="1"/>
+			<animcolor a="187" d="0"/>
+			<scale scale="0.553" d="1"/>
+			<animcolor a="180" d="0"/>
+			<scale scale="0.559" d="1"/>
+			<animcolor a="172" d="0"/>
+			<scale scale="0.565" d="1"/>
+			<animcolor a="165" d="0"/>
+			<scale scale="0.57" d="1"/>
+			<animcolor a="158" d="0"/>
+			<scale scale="0.576" d="1"/>
+			<animcolor a="152" d="0"/>
+			<scale scale="0.581" d="1"/>
+			<animcolor a="146" d="0"/>
+			<scale scale="0.585" d="1"/>
+			<animcolor a="141" d="0"/>
+			<scale scale="0.59" d="1"/>
+			<animcolor a="136" d="0"/>
+			<scale scale="0.593" d="1"/>
+			<animcolor a="133" d="0"/>
+			<scale scale="0.596" d="1"/>
+			<animcolor a="130" d="0"/>
+			<scale scale="0.598" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.6" d="1"/>
+			<animcolor a="128" d="0"/>
+			<scale scale="0.6" d="1"/>
+			<animcolor a="129" d="0"/>
+			<scale scale="0.599" d="1"/>
+			<animcolor a="134" d="0"/>
+			<scale scale="0.595" d="1"/>
+			<animcolor a="141" d="0"/>
+			<scale scale="0.59" d="1"/>
+			<animcolor a="150" d="0"/>
+			<scale scale="0.582" d="1"/>
+			<animcolor a="161" d="0"/>
+			<scale scale="0.574" d="1"/>
+			<animcolor a="172" d="0"/>
+			<scale scale="0.565" d="1"/>
+			<animcolor a="185" d="0"/>
+			<scale scale="0.555" d="1"/>
+			<animcolor a="198" d="0"/>
+			<scale scale="0.545" d="1"/>
+			<animcolor a="210" d="0"/>
+			<scale scale="0.535" d="1"/>
+			<animcolor a="222" d="0"/>
+			<scale scale="0.526" d="1"/>
+			<animcolor a="233" d="0"/>
+			<scale scale="0.518" d="1"/>
+			<animcolor a="242" d="0"/>
+			<scale scale="0.51" d="1"/>
+			<animcolor a="249" d="0"/>
+			<scale scale="0.505" d="1"/>
+			<animcolor a="253" d="0"/>
+			<scale scale="0.501" d="1"/>
+		<goto id="start"/>
+	</animation>
+
+
+	<animation name="unit.drone.dead.ground.anim">
+		<frame i="spriteimage.unit.drone.ground.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="unit.drone.dead.anim">
+		<frame i="spriteimage.unit.drone.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="unit.drone.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.drone.glow.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.unit.drone.glow.01" d="9" />
+			<frame i="spriteimage.unit.drone.glow.02" d="1" />
+			<frame i="spriteimage.unit.drone.glow.03" d="19" />
+			<frame i="spriteimage.unit.drone.glow.02" d="3" />
+			<frame i="spriteimage.unit.drone.glow.01" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="continue"/>
+			<frame i="spriteimage.unit.drone.glow.01" d="7" />
+			<frame i="spriteimage.unit.drone.glow.02" d="1" />
+			<frame i="spriteimage.unit.drone.glow.03" d="14" />
+			<frame i="spriteimage.unit.drone.glow.02" d="4" />
+		<goto id="start"/>
+	</animation>
+
+
+<!-- 
+	<animation name="unit.drone.sergeant.dead.anim">
+		<frame i="spriteimage.unit.drone.sergeant.01" d="50"/>
+		<frame i="unit.dead.anim" d="0"/>
+	</animation>
+
+	<animation name="unit.drone.sergeant.blink.anim">
+		<label id="start"/>
+			<frame i="spriteimage.unit.drone.sergeant.glow.01" d="50" />
+		<random>
+			<dest id="blink" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="blink"/>
+			<frame i="spriteimage.unit.drone.sergeant.glow.01" d="9" />
+			<frame i="spriteimage.unit.drone.sergeant.glow.02" d="1" />
+			<frame i="spriteimage.unit.drone.sergeant.glow.03" d="19" />
+			<frame i="spriteimage.unit.drone.sergeant.glow.02" d="3" />
+			<frame i="spriteimage.unit.drone.sergeant.glow.01" d="7" />
+		<random>
+			<dest id="continue" n="1"/>
+			<dest id="start" n="4"/>
+		</random>
+		<label id="continue"/>
+			<frame i="spriteimage.unit.drone.sergeant.glow.01" d="7" />
+			<frame i="spriteimage.unit.drone.sergeant.glow.02" d="1" />
+			<frame i="spriteimage.unit.drone.sergeant.glow.03" d="14" />
+			<frame i="spriteimage.unit.drone.sergeant.glow.02" d="4" />
+		<goto id="start"/>
+	</animation>
+
+ -->
+
+	<!--  repair drone emitters -->
+
+	<property key="repair_beam_start_hue" value="0.17" />
+	<property key="repair_beam_start_hue_end" value="0.06" />
+	
+	<property key="repair_beam_end_hue" value="0.17" />
+	<property key="repair_beam_end_hue_end" value="0.06" />
+	
+	<emitter name="repair.beam.start.emitter" 
+		startHue="=$repair_beam_start_hue"
+		endHue="=$repair_beam_start_hue_end"
+		inherit="weapon.flash.capacitor.emitter"
+		emitterScale="0.75"
+	/>
+	
+	<emitter name="repair.beam.end.emitter" inherit="repair.beam.start.emitter" 
+		particlesPerTick="1.0" 
+		particleDuration="1.0" 
+		fadeDuration="1.0"
+		scale="0.4,0.6"
+		endScale="0.8,1.0"
+		emitterScale="0.3"
+		startBrightness="0.8,1.0"
+		endBrightness="0.5,1.0"
+		startSaturation="0.0"
+	>
+	 	<slave>
+		 	<emitter inherit="repair.beam.start.emitter"
+				emitterScale="1.0"
+				startBrightness="0.3,0.5"
+				endBrightness="0.2,0.4"
+			>
+		 		<slave>
+		 			<emitter inherit="ricochet.sparks.emitter" 
+			 			particlesPerTick="-3.0, 1.0" 
+			 			velocity="7,9"
+						acceleration="-0.75"
+						interpolation="1"
+						startHue="=$repair_beam_end_hue"
+						endHue="=$repair_beam_end_hue_end"
+						angle="0.0, 360.0"
+						emitterScale="0.55"
+					>
+						<slave>
+							<emitter inherit="ricochet.sparks.trail.emitter" 
+								startHue="=$repair_beam_end_hue" 
+								endHue="=$repair_beam_end_hue_end"
+								endBrightness="0.3"
+								emitterScale="0.55"
+							/>
+						</slave>
+					</emitter>
+				</slave>
+			</emitter>
+		</slave>
+	</emitter>	
+	
+
+	<!-- UNIT DEFS ============================================================================================================================ -->
+
+	<!-- DROIDS -->
 			
 	<unit
-		name="earth.unit.01"
+		name="unit.droid"
 		bounds="0,0,6,6"
 		offset="3,1"
 		brain="unit.brain"
@@ -107,22 +645,22 @@
 	>
 		<appearance>
 			<layers scale="0.4">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.01.anim"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
-				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.01.blink.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.droid.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.droid.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.droid.blink.anim"/>
 			</layers>
 		</appearance>
 		<idleAppearance>
 			<layers scale="0.4">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.1.01"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
-				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.01.blink.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.droid.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.droid.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.droid.blink.anim"/>
 			</layers>
 		</idleAppearance>
 		<deathAppearance>
 			<layers scale="0.4">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.01.dead.anim"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="earth.unit.dead.ground.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.droid.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.droid.dead.ground.anim"/>
 				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
 				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
 				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
@@ -130,9 +668,9 @@
 		</deathAppearance>
 	</unit>
 	
-	<!--  Buffed unit -->
+
 	<unit
-		name="earth.unit.02"
+		name="unit.droid.buffed"
 		bounds="0,0,6,6"
 		offset="3,1"
 		brain="unit.brain"
@@ -143,22 +681,22 @@
 	>
 		<appearance>
 			<layers scale="0.45">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.01.anim"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
-				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.01.blink.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.droid.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.droid.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.droid.blink.anim"/>
 			</layers>
 		</appearance>
 		<idleAppearance>
 			<layers scale="0.45">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.1.01"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
-				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.01.blink.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.droid.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.droid.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.droid.blink.anim"/>
 			</layers>
 		</idleAppearance>
 		<deathAppearance>
 			<layers scale="0.45">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.01.dead.anim"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="earth.unit.dead.ground.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.droid.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.droid.dead.ground.anim"/>
 				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
 				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
 				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
@@ -167,56 +705,8 @@
 	</unit>
 
 
-	<!--  Sergeant -->
-
-	<animation name="earth.unit.03.anim">
-		<label id="start"/>
-			<frame i="spriteimage.unit.2.01" d="4" childYOffset="0.0"/>
-			<frame i="spriteimage.unit.2.01" d="1" childYOffset="2.0"/>
-			<frame i="spriteimage.unit.2.02" d="3" childYOffset="2.0"/>
-			<frame i="spriteimage.unit.2.02" d="1" childYOffset="0.0"/>
-			<frame i="spriteimage.unit.2.01" d="4" childYOffset="0.0"/>
-			<frame i="spriteimage.unit.2.01" d="1" childYOffset="2.0"/>
-			<frame i="spriteimage.unit.2.03" d="3" childYOffset="2.0"/>
-			<frame i="spriteimage.unit.2.03" d="1" childYOffset="0.0"/>
-		<goto id="start"/>
-	</animation>
-
-	<animation name="earth.unit.03.dead.anim">
-		<frame i="spriteimage.unit.2.01" d="50"/>
-		<frame i="earth.unit.dead.anim" d="0"/>
-	</animation>
-
-	<animation name="earth.unit.03.blink.anim">
-		<label id="start"/>
-			<frame i="spriteimage.unit.2.glow.01" d="50" />
-		<random>
-			<dest id="blink" n="1"/>
-			<dest id="start" n="4"/>
-		</random>
-		<label id="blink"/>
-			<frame i="spriteimage.unit.2.glow.01" d="9" />
-			<frame i="spriteimage.unit.2.glow.02" d="1" />
-			<frame i="spriteimage.unit.2.glow.03" d="19" />
-			<frame i="spriteimage.unit.2.glow.02" d="3" />
-			<frame i="spriteimage.unit.2.glow.01" d="7" />
-		<random>
-			<dest id="continue" n="1"/>
-			<dest id="start" n="4"/>
-		</random>
-		<label id="continue"/>
-			<frame i="spriteimage.unit.2.glow.01" d="7" />
-			<frame i="spriteimage.unit.2.glow.02" d="1" />
-			<frame i="spriteimage.unit.2.glow.03" d="14" />
-			<frame i="spriteimage.unit.2.glow.02" d="4" />
-		<goto id="start"/>
-	</animation>
-
-
-
-
 	<unit
-		name="earth.unit.03"
+		name="unit.droid.sergeant"
 		bounds="0,0,6,6"
 		offset="3,1"
 		brain="unit.brain"
@@ -227,22 +717,22 @@
 	>
 		<appearance>
 			<layers scale="0.525">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.03.anim"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
-				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.03.blink.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.droid.sergeant.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.droid.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.droid.sergeant.blink.anim"/>
 			</layers>
 		</appearance>
 		<idleAppearance>
 			<layers scale="0.525">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.2.01"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.1.ground.01"/>
-				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="earth.unit.03.blink.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.droid.sergeant.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.droid.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.droid.sergeant.blink.anim"/>
 			</layers>
 		</idleAppearance>
 		<deathAppearance>
 			<layers scale="0.525">
-				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="earth.unit.03.dead.anim"/>
-				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="earth.unit.dead.ground.anim"/>
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.droid.sergeant.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.droid.dead.ground.anim"/>
 				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
 				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
 				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
@@ -251,4 +741,236 @@
 	</unit>
 	
 	
+	<!-- TANKS -->
+			
+	<unit
+		name="unit.tank"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="tank.brain"
+		weapon="miniblastcannon.weapon"
+		hitPoints="1"
+		speed="140"
+		range="96.0"
+	>
+		<appearance>
+			<layers scale="0.7">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.tank.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.tank.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.tank.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.7">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.tank.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.tank.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.tank.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.7">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.tank.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.tank.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>
+	
+
+	<unit
+		name="unit.tank.buffed"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="tank.brain"
+		weapon="miniblastcannon.weapon"
+		hitPoints="1"
+		speed="120"
+		range="112.0"
+	>
+		<appearance>
+			<layers scale="0.7">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.tank.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.tank.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.tank.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.7">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.tank.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.tank.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.tank.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.7">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.tank.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.tank.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>
+
+
+	<unit
+		name="unit.tank.sergeant"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="tank.brain"
+		weapon="minilaser.weapon"
+		aerialTargets="true"
+		hitPoints="1"
+		speed="120"
+		range="128.0"
+	>
+		<appearance>
+			<layers scale="0.75">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.tank.sergeant.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.tank.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.tank.sergeant.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.75">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" image="spriteimage.unit.tank.sergeant.01"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.tank.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.tank.sergeant.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.75">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.tank.sergeant.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.tank.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>	
+
+
+	<!-- DRONES -->
+			
+	<unit
+		name="unit.drone"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="drone.brain"
+		repair="true"
+		repairInterval="120"
+		buffedRepairInterval="80"
+		range="48.0"
+		hitPoints="1"
+		speed="16"
+	>
+		<beamStartEmitter>
+			<emitter inherit="repair.beam.start.emitter" />	
+		</beamStartEmitter>
+		<beamEndEmitter>
+			<emitter inherit="repair.beam.end.emitter" />	
+		</beamEndEmitter>
+
+		<appearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.drone.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.drone.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.drone.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.drone.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.5">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.drone.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>
+	
+	<!-- 
+
+	<unit
+		name="unit.drone.buffed"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="drone.brain"
+		repair="true"
+		range="32.0"
+		hitPoints="1"
+		speed="30"
+	>
+		<appearance>
+			<layers scale="0.45">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.drone.ground.anim"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.drone.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.45">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.drone.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.drone.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.45">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.drone.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>
+
+
+	<unit
+		name="unit.drone.sergeant"
+		bounds="0,0,6,6"
+		offset="3,1"
+		brain="drone.brain"
+		repair="true"
+		range="32.0"
+		repairAll="true"
+		hitPoints="1"
+		speed="30"
+	>
+		<appearance>
+			<layers scale="0.525">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.sergeant.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.drone.ground.anim"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.drone.sergeant.blink.anim"/>
+			</layers>
+		</appearance>
+		<idleAppearance>
+			<layers scale="0.525">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.sergeant.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" image="spriteimage.unit.drone.ground.01"/>
+				<sprite layer="5" sublayer="1" attenuated="false" doChildOffset="true" animation="unit.drone.sergeant.blink.anim"/>
+			</layers>
+		</idleAppearance>
+		<deathAppearance>
+			<layers scale="0.525">
+				<sprite layer="5" sublayer="0" attenuated="true" bottomColored="floor-fog" topColored="buildings" animation="unit.drone.sergeant.dead.anim"/>
+				<sprite layer="4" sublayer="2" attenuated="true" colored="shadow" animation="unit.drone.dead.ground.anim"/>
+				<emitter offset="0,4" ySortOffset="0" emitter="unit.fire.emitter"/>
+				<emitter offset="4,0" ySortOffset="4" emitter="unit.explosion.sparks.emitter"/>
+				<emitter offset="4,0" ySortOffset="8" emitter="unit.explosion.flash.emitter"/>
+			</layers>
+		</deathAppearance>
+	</unit>
+	
+	 -->
 </resources>

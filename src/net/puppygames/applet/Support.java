@@ -50,7 +50,7 @@ public class Support {
 	 * @param reason The reason (opengl, crash)
 	 */
 	public static void doSupport(final String reason) {
-		if (Game.DEBUG) {
+		if (supportQueued || Game.DEBUG) {
 			return;
 		}
 		supportQueued = true;

@@ -34,13 +34,17 @@ package net.puppygames.applet.effects;
 
 import java.util.ArrayList;
 
-import net.puppygames.applet.*;
+import net.puppygames.applet.Res;
+import net.puppygames.applet.Screen;
+import net.puppygames.applet.Tickable;
 
-import org.lwjgl.util.*;
+import org.lwjgl.util.Color;
+import org.lwjgl.util.ReadableColor;
+import org.lwjgl.util.ReadablePoint;
 
 import com.shavenpuppy.jglib.interpolators.ColorInterpolator;
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
-import com.shavenpuppy.jglib.sprites.AnimatedAppearance;
+import com.shavenpuppy.jglib.sprites.Appearance;
 import com.shavenpuppy.jglib.sprites.Sprite;
 import com.shavenpuppy.jglib.util.FPMath;
 
@@ -126,9 +130,9 @@ public class Particle implements Tickable {
 	int tick, duration, fadeDuration;
 	ReadableColor startColor, endColor;
 	boolean fading, finished;
-	int scale = FPMath.ONE, endScale = FPMath.ONE, startScale = FPMath.ONE;
+	float scale = 1.0f, endScale = 1.0f, startScale = 1.0f;
 	Sprite sprite;
-	AnimatedAppearance appearance;
+	Appearance appearance;
 	Emitter emitter;
 	boolean floorSet, ceilingSet, leftWallSet, rightWallSet;
 	float rotation;
@@ -165,7 +169,7 @@ public class Particle implements Tickable {
 		tick = 0;
 		fading = false;
 		finished = false;
-		scale = endScale = startScale = FPMath.ONE;
+		scale = endScale = startScale = 1.0f;
 		sprite = null;
 		appearance = null;
 		emitter = null;
@@ -204,7 +208,7 @@ public class Particle implements Tickable {
 		this.rotation = rotation;
 	}
 
-	public void setAppearance(AnimatedAppearance appearance) {
+	public void setAppearance(Appearance appearance) {
 		this.appearance = appearance;
 	}
 
@@ -227,9 +231,6 @@ public class Particle implements Tickable {
 		emitter.setOffset(parent.getOffset());
 	}
 
-	/* (non-Javadoc)
-	 * @see net.puppygames.applet.Tickable#spawn(net.puppygames.applet.Screen)
-	 */
 	@Override
 	public void spawn(Screen screen) {
 		if (emitter != null) {
@@ -287,8 +288,8 @@ public class Particle implements Tickable {
 			screen.addTickable(this);
 			sprite.setLayer(layer);
 			sprite.setSubLayer(subLayer);
-			sprite.setLocation(x, y, 0.0f);
-			sprite.setOffset(0.0f, yOffset, 0.0f);
+			sprite.setLocation(x, y);
+			sprite.setOffset(0.0f, yOffset);
 			numParticles ++;
 //			if (parent.getTag() != null) {
 //				Int i = (Int) countMap.get(parent.getTag());
@@ -409,7 +410,7 @@ public class Particle implements Tickable {
 			float ratio = (float) tick / (float) fadeDuration;
 			color.setColor(endColor);
 			color.setAlpha(255 - (int)(endColor.getAlpha() * ratio));
-			sprite.setScale(LinearInterpolator.instance.interpolate(scale, endScale, FPMath.fpValue(ratio)));
+			sprite.setScale(FPMath.fpValue(LinearInterpolator.instance.interpolate(scale, endScale, ratio)));
 			if (tick == fadeDuration) {
 				finished = true;
 				tick = 0;
@@ -423,7 +424,7 @@ public class Particle implements Tickable {
 					LinearInterpolator.instance,
 					color
 					);
-			sprite.setScale(LinearInterpolator.instance.interpolate(startScale, scale, FPMath.fpValue(ratio)));
+			sprite.setScale(FPMath.fpValue(LinearInterpolator.instance.interpolate(startScale, scale, ratio)));
 			if (tick >= duration) {
 				fading = true;
 				tick = 0;
@@ -456,10 +457,10 @@ public class Particle implements Tickable {
 			yy += offset.getY();
 		}
 		if (doYOffset) {
-			sprite.setLocation(xx, yy, 0);
-			sprite.setOffset(0.0f, yOffset, 0.0f);
+			sprite.setLocation(xx, yy);
+			sprite.setOffset(0.0f, yOffset);
 		} else {
-			sprite.setLocation(xx, yy, 0);
+			sprite.setLocation(xx, yy);
 		}
 		sprite.setVisible(parent.isVisible());
 	}
@@ -512,15 +513,15 @@ public class Particle implements Tickable {
 	 * Sets the particle size, in 16:16FP
 	 * @param scale
 	 */
-	public void setScale(int scale) {
+	public void setScale(float scale) {
 		this.scale = scale;
 	}
 
-	public void setEndScale(int endScale) {
+	public void setEndScale(float endScale) {
 		this.endScale = endScale;
 	}
 
-	public void setStartScale(int startScale) {
+	public void setStartScale(float startScale) {
 		this.startScale = startScale;
 	}
 

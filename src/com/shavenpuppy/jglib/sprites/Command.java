@@ -41,7 +41,7 @@ public abstract class Command extends Resource {
 	/** Used for shorter names - there are a LOT of Commands in a game, and the long string names they get by default waste much memory... */
 	private static int counter;
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for Command.
@@ -56,9 +56,8 @@ public abstract class Command extends Resource {
 	 * case the next command should be executed. In this case, execute() returns
 	 * true to indicate that the next command should execute.
 	 * @param target The target Animated thing
-	 * @param tickRate The number of ticks
 	 * @return true If the next command should be immediately executed.
 	 */
-	public abstract boolean execute(Animated target, int tickRate);
+	public abstract boolean execute(Sprite target);
 
 }

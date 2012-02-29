@@ -89,7 +89,7 @@ public class CoolingTowerBuildingFeature extends BuildingFeature {
 	 */
 	@Override
 	public boolean isAffectedBy(BuildingFeature feature) {
-		if (feature instanceof ShieldGeneratorBuildingFeature) {
+		if (feature instanceof ShieldGeneratorBuildingFeature || feature instanceof CloakBuildingFeature) {
 			return true;
 		}
 		if (feature instanceof TurretBuildingFeature) {

@@ -31,7 +31,6 @@
  */
 package com.shavenpuppy.jglib.sprites;
 
-import com.shavenpuppy.jglib.util.FloatList;
 
 /**
  * The default sprite renderer has various different styles of rendering, which
@@ -43,36 +42,41 @@ public interface Style {
 	/**
 	 * Called to set up GL rendering state before actual drawing is done.
 	 */
-	public void setupState();
+	void setupState();
 
 	/**
 	 * Called to reset GL rendering state after actual drawing is done.
 	 */
-	public void resetState();
+	void resetState();
 
 	/**
 	 * @return the style's ID, which affects its rendering order
 	 */
-	public int getStyleID();
+	int getStyleID();
+
+	/**
+	 * @return the style's alpha operation
+	 */
+	AlphaOp getAlphaOp();
 
 	/**
 	 * Whether to actually render a sprite when using this Style.
 	 * @return boolean
 	 */
-	public boolean getRenderSprite();
+	boolean getRenderSprite();
 
 	/**
-	 * If not rendering a sprite, then we perform a build() to create a {@link FloatList} of geometry.
-	 * Later, render() is called, with a vertex offset position
+	 * If not rendering a sprite, then we perform a build() to create {@link GeometryData}
+	 * Later, render() is called, with a vertex offset position and index offset position
 	 * @return the number of vertices we wrote
 	 */
-	public FloatList build();
+	GeometryData build();
 
 	/**
 	 * If not rendering a sprite, then render stuff. Our geometry was written to a pre-prepared buffer which is pointed to
 	 * already.
 	 * @param vertexOffset
 	 */
-	public void render(int vertexOffset);
+	 void render(int vertexOffset, int indexOffset);
 
 }

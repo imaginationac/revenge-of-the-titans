@@ -32,13 +32,15 @@
 package com.shavenpuppy.jglib.opengl;
 
 import java.io.BufferedInputStream;
-import java.io.ObjectInputStream;
 import java.net.URL;
 
 import org.lwjgl.util.Point;
 import org.w3c.dom.Element;
 
-import com.shavenpuppy.jglib.*;
+import com.shavenpuppy.jglib.Font;
+import com.shavenpuppy.jglib.Glyph;
+import com.shavenpuppy.jglib.Resource;
+import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.resources.FontResource;
 import com.shavenpuppy.jglib.util.XMLUtil;
 
@@ -47,9 +49,9 @@ import static org.lwjgl.opengl.GL11.*;
 /**
  * A font suitable for rendering with GL.
  */
-public class GLFont extends GLResource implements GLNamedRenderable {
+public class GLFont extends Resource implements GLRenderable {
 
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/** Handy point */
 	private static final Point tempPoint = new Point();
@@ -63,12 +65,6 @@ public class GLFont extends GLResource implements GLNamedRenderable {
 
 	/** Whether this is an ascii font or not */
 	protected boolean ascii;
-
-	/** Linear interpolation for magnification */
-	private boolean linear = true;
-
-	/** Fullscreen font? */
-	private boolean fullscreen = true;
 
 	/** OR... use minMode/magMode instead of linear/fullscreen */
 	private int minMode, magMode;
@@ -149,24 +145,26 @@ public class GLFont extends GLResource implements GLNamedRenderable {
 	}
 
 	@Override
-	protected void doGLCreate() {
+	protected void doCreate() {
 
 		try {
 			// First get the image if necessary
 			if (url != null) {
 				if (url.startsWith("classpath:")) {
 					// Load directly from a serialised Font in the classpath
-					ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream(url.substring(10))));
-					font = (Font) ois.readObject();
-					ois.close();
+					BufferedInputStream bis = new BufferedInputStream(getClass().getClassLoader().getResourceAsStream(url.substring(10)));
+					font = new Font();
+					font.readExternal(bis);
+					bis.close();
 				} else if (url.startsWith("resource:")) {
 					// Load directly from Resources
 					fontResource = (FontResource) Resources.get(url.substring(9));
 				} else {
 					// Load from a URL
-					ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new URL(url).openStream()));
-					font = (Font) ois.readObject();
-					ois.close();
+					BufferedInputStream bis = new BufferedInputStream(new URL(url).openStream());
+					font = new Font();
+					font.readExternal(bis);
+					bis.close();
 				}
 			}
 
@@ -196,7 +194,7 @@ public class GLFont extends GLResource implements GLNamedRenderable {
 
 
 	@Override
-	protected void doGLDestroy() {
+	protected void doDestroy() {
 		texture.destroy();
 		texture = null;
 	}
@@ -331,19 +329,18 @@ public class GLFont extends GLResource implements GLNamedRenderable {
 
 		url = XMLUtil.getString(element, "url");
 		ascii = XMLUtil.getBoolean(element, "ascii", true);
-		linear = XMLUtil.getBoolean(element, "linear", true);
 		scale = XMLUtil.getFloat(element, "scale", 1.0f);
 		String minModeS = XMLUtil.getString(element, "minmode", null);
 		String magModeS = XMLUtil.getString(element, "magmode", null);
 		if (minModeS != null) {
 			minMode = GLUtil.decode(minModeS);
 		} else {
-			minMode = fullscreen ? GL_LINEAR_MIPMAP_LINEAR : GL_LINEAR;
+			minMode = GL_LINEAR_MIPMAP_LINEAR;
 		}
 		if (magModeS != null) {
 			magMode = GLUtil.decode(magModeS);
 		} else {
-			magMode = linear ? GL_LINEAR : GL_NEAREST;
+			magMode = GL_LINEAR;
 		}
 	}
 

@@ -94,6 +94,7 @@ public class ReactorBuildingFeature extends BuildingFeature {
 					feature instanceof ShieldGeneratorBuildingFeature
 				||	feature instanceof CapacitorBuildingFeature
 				||	feature instanceof BarracksBuildingFeature
+				|| 	feature instanceof CloakBuildingFeature
 			)
 		{
 			return true;

@@ -33,8 +33,8 @@ package com.shavenpuppy.jglib.sprites;
 
 public interface ReadablePosition {
 
-	public float getX();
-	public float getY();
-	public float getZ();
+	float getX();
+	float getY();
+	float getZ();
 
 }

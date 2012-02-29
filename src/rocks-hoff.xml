@@ -1,0 +1,453 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+  Copyright (c) 2003-onwards Shaven Puppy Ltd
+  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 
+  * Neither the name of 'Shaven Puppy' nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+
+		<wall name="hoff.wall.small.1.01" inherit="hoff.wall.spec" i="30121"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.1.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="24,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="10,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="20,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.1.02" inherit="hoff.wall.spec" i="30122"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.1.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="8,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="25,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="12,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.02" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.1.03" inherit="hoff.wall.spec" i="30123"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.1.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="27,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="9,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="12,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="14,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.03" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.1.04" inherit="hoff.wall.spec" i="30124"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.1.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="21,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="9,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="18,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.04" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.1.05" inherit="hoff.wall.spec" i="30125"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.1.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="27,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="9,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="13,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.05" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.1.06" inherit="hoff.wall.spec" i="30126"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.1.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="30,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="10,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="17,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.06" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.1.07" inherit="hoff.wall.spec" i="30127"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.1.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="10,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="25,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="15,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.07" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.1.08" inherit="hoff.wall.spec" i="30128"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.1.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="30,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="16,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="27,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.08" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.2.01" inherit="hoff.wall.spec" i="30129"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.2.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="25,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="6,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="11,4" ySortOffset="4" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.2.02" inherit="hoff.wall.spec" i="30130"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.2.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="29,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.03" />
+			<sprite layer="5" sublayer="2" offset="6,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="19,4" ySortOffset="4" attenuated="true" image="spriteimage.cliffHoff.rock.02" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.2.03" inherit="hoff.wall.spec" i="30131"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.2.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="31,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="9,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="12,4" ySortOffset="4" attenuated="true" image="spriteimage.cliffHoff.rock.03" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.2.04" inherit="hoff.wall.spec" i="30132"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.2.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="26,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="9,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="18,4" ySortOffset="4" attenuated="true" image="spriteimage.cliffHoff.rock.04" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.2.05" inherit="hoff.wall.spec" i="30133"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.2.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="9,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="14,4" ySortOffset="4" attenuated="true" image="spriteimage.cliffHoff.rock.05" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.2.06" inherit="hoff.wall.spec" i="30134"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.2.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="8,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="17,4" ySortOffset="4" attenuated="true" image="spriteimage.cliffHoff.rock.07" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.2.07" inherit="hoff.wall.spec" i="30135"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.2.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="26,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="6,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.03" />
+			<sprite layer="5" sublayer="2" offset="15,4" ySortOffset="4" attenuated="true" image="spriteimage.cliffHoff.rock.07" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.2.08" inherit="hoff.wall.spec" i="30136"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,14" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.2.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="25,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="6,26" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="17,4" ySortOffset="4" attenuated="true" image="spriteimage.cliffHoff.rock.08" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.3.01" inherit="hoff.wall.spec" i="30137"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.3.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="10,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.08" />
+			<sprite layer="5" sublayer="2" offset="19,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.3.02" inherit="hoff.wall.spec" i="30138"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.3.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="20,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="13,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.rock.02" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.3.03" inherit="hoff.wall.spec" i="30139"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.3.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="18,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="6,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="17,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.rock.03" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.3.04" inherit="hoff.wall.spec" i="30140"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.3.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.04" />
+			<sprite layer="5" sublayer="2" offset="8,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.3.05" inherit="hoff.wall.spec" i="30141"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.3.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="28,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="8,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.3.06" inherit="hoff.wall.spec" i="30142"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.3.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.03" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="24,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.3.07" inherit="hoff.wall.spec" i="30143"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.3.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="24,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.small.3.08" inherit="hoff.wall.spec" i="30144"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.small.3.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="6,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="24,27" ySortOffset="27" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.1.01" inherit="hoff.wall.spec" i="30145"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.large.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.2.01" inherit="hoff.wall.spec" i="30146"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,0" attenuated="true" image="spriteimage.cliffHoff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.large.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.1.02" inherit="hoff.wall.spec" i="30147"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.large.02" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.1.03" inherit="hoff.wall.spec" i="30148"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.large.03" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.1.04" inherit="hoff.wall.spec" i="30149"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.large.04" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.1.05" inherit="hoff.wall.spec" i="30150"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.large.05" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.1.06" inherit="hoff.wall.spec" i="30151"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.large.06" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.1.07" inherit="hoff.wall.spec" i="30152"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.large.07" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.1.08" inherit="hoff.wall.spec" i="30153"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.1.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="16,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.large.08" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.2.02" inherit="hoff.wall.spec" i="30154"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="18,0" attenuated="true" image="spriteimage.cliffHoff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.large.02" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.2.03" inherit="hoff.wall.spec" i="30155"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="14,0" attenuated="true" image="spriteimage.cliffHoff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.large.03" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.2.04" inherit="hoff.wall.spec" i="30156"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="20,0" attenuated="true" image="spriteimage.cliffHoff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.large.04" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.2.05" inherit="hoff.wall.spec" i="30157"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="12,0" attenuated="true" image="spriteimage.cliffHoff.rock.04" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.large.05" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.2.06" inherit="hoff.wall.spec" i="30158"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="22,0" attenuated="true" image="spriteimage.cliffHoff.rock.03" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.large.06" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.2.07" inherit="hoff.wall.spec" i="30159"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="10,0" attenuated="true" image="spriteimage.cliffHoff.rock.02" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.large.07" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.medium.2.08" inherit="hoff.wall.spec" i="30160"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="16,15" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.medium.2.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="4,0" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+			<sprite layer="5" sublayer="2" offset="16,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.large.08" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.01" inherit="hoff.wall.cliff.spec" i="30161"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.01.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" attenuated="true" image="spriteimage.cliffHoff.scree.01" />
+			<sprite layer="5" sublayer="2" offset="4,0" attenuated="true" image="spriteimage.cliffHoff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.01" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.02" inherit="hoff.wall.cliff.spec" i="30162"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.02.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" attenuated="true" image="spriteimage.cliffHoff.scree.02" />
+			<sprite layer="5" sublayer="2" offset="4,0" attenuated="true" image="spriteimage.cliffHoff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.02" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.02" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.03" inherit="hoff.wall.cliff.spec" i="30163"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.03.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" attenuated="true" image="spriteimage.cliffHoff.scree.03" />
+			<sprite layer="5" sublayer="2" offset="4,0" attenuated="true" image="spriteimage.cliffHoff.rock.04" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.03" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.03" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.04" inherit="hoff.wall.cliff.spec" i="30164"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.04.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" attenuated="true" image="spriteimage.cliffHoff.scree.04" />
+			<sprite layer="5" sublayer="2" offset="4,0" attenuated="true" image="spriteimage.cliffHoff.rock.03" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.04" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.04" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.05" inherit="hoff.wall.cliff.spec" i="30165"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.05.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" attenuated="true" image="spriteimage.cliffHoff.scree.05" />
+			<sprite layer="5" sublayer="2" offset="4,0" attenuated="true" image="spriteimage.cliffHoff.rock.02" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.05" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.05" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.06" inherit="hoff.wall.cliff.spec" i="30166"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.06.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" attenuated="true" image="spriteimage.cliffHoff.scree.06" />
+			<sprite layer="5" sublayer="2" offset="4,0" attenuated="true" image="spriteimage.cliffHoff.rock.01" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.06" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.06" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.07" inherit="hoff.wall.cliff.spec" i="30167"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="8,23" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.07.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="32,0" attenuated="true" image="spriteimage.cliffHoff.scree.07" />
+			<sprite layer="5" sublayer="2" offset="4,0" attenuated="true" image="spriteimage.cliffHoff.rock.02" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.07" />
+			<sprite layer="5" sublayer="2" offset="8,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.07" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.14" inherit="hoff.wall.cliff.spec" i="30168"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.14.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.02" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" attenuated="true" image="spriteimage.cliffHoff.xLarge.07" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.07" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.13" inherit="hoff.wall.cliff.spec" i="30169"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.13.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.03" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" attenuated="true" image="spriteimage.cliffHoff.xLarge.06" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.06" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.12" inherit="hoff.wall.cliff.spec" i="30170"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.12.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.04" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" attenuated="true" image="spriteimage.cliffHoff.xLarge.05" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.05" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.11" inherit="hoff.wall.cliff.spec" i="30171"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.11.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" attenuated="true" image="spriteimage.cliffHoff.xLarge.04" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.04" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.10" inherit="hoff.wall.cliff.spec" i="30172"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.10.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" attenuated="true" image="spriteimage.cliffHoff.xLarge.03" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.03" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.09" inherit="hoff.wall.cliff.spec" i="30173"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.09.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.06" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.07" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" attenuated="true" image="spriteimage.cliffHoff.xLarge.02" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.02" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.cliff.08" inherit="hoff.wall.cliff.spec" i="30174"><layers><layers scale="0.5">
+			<sprite layer="3" sublayer="2" offset="24,31" colored="cliff-shadow" attenuated="true" image="spriteimage.earth.wall.cliff.08.shadowmap" />
+			<sprite layer="5" sublayer="2" offset="8,5" ySortOffset="5" attenuated="true" image="spriteimage.cliffHoff.rock.05" />
+			<sprite layer="5" sublayer="2" offset="24,16" ySortOffset="16" attenuated="true" image="spriteimage.cliffHoff.rock.08" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="24" attenuated="true" image="spriteimage.cliffHoff.xLarge.01" />
+			<sprite layer="5" sublayer="2" offset="24,24" ySortOffset="26" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.01" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.internal.01" inherit="hoff.wall.internal.spec" i="30175"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.08" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.08" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.internal.02" inherit="hoff.wall.internal.spec" i="30176"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.09" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.09" />
+			</layers></layers></wall>
+
+		<wall name="hoff.wall.internal.03" inherit="hoff.wall.internal.spec" i="30177"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.10" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.10" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.internal.04" inherit="hoff.wall.internal.spec" i="30178"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.11" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.11" />
+		</layers></layers></wall>
+
+		<wall name="hoff.wall.internal.05" inherit="hoff.wall.internal.spec" i="30179"><layers><layers scale="0.5">
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="8" attenuated="true" image="spriteimage.cliffHoff.xLarge.12" />
+			<sprite layer="5" sublayer="2" offset="20,8" ySortOffset="10" attenuated="true" image="spriteimage.cliffHoff.xLarge.side.12" />
+		</layers></layers></wall>
+
+		
+
+
+
+
+</resources>

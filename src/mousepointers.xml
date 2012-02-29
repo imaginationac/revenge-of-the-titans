@@ -148,6 +148,21 @@
 		<frame i="spriteimage.crosshair.collect.back.04" d="16" />
 		<goto seq="0"/>
 	</animation>
+
+	<animation name="mousepointer.grab.animation">
+		<frame i="spriteimage.crosshair.grab.01" d="16" />
+		<frame i="spriteimage.crosshair.grab.02" d="2" />
+		<frame i="spriteimage.crosshair.grab.03" d="3" />	
+		<frame i="spriteimage.crosshair.grab.04" d="16" />		
+		<goto seq="0"/>
+	</animation>
+	<animation name="mousepointer.grab.back.animation">
+		<frame i="spriteimage.crosshair.grab.back.01" d="16" />
+		<frame i="spriteimage.crosshair.grab.back.02" d="2" />
+		<frame i="spriteimage.crosshair.grab.back.03" d="3" />	
+		<frame i="spriteimage.crosshair.grab.back.04" d="16" />		
+		<goto seq="0"/>
+	</animation>
 	
 	<animation name="mousepointer.smartbomb.animation">
 		<frame i="spriteimage.crosshair.smartbomb.01" d="16" />
@@ -273,7 +288,11 @@
 		<sprite layer="0" animation="mousepointer.sell.on.back.animation"/>
 	</layers>
 	
-	
+	<layers name="mousepointer.grab.on.layers" scale="0.5" autocreated="true">
+		<sprite layer="1" animation="mousepointer.grab.animation"/>
+		<sprite layer="0" animation="mousepointer.grab.back.animation"/>
+	</layers>
+		
 </resources>
 
 
