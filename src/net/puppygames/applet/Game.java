@@ -79,7 +79,7 @@ import net.puppygames.applet.screens.TitleScreen;
 import net.puppygames.gamecommerce.shared.GameInfo;
 import net.puppygames.gamecommerce.shared.GameInfoServerRemote;
 import net.puppygames.gamecommerce.shared.RegistrationDetails;
-//import net.puppygames.steam.Steam;
+import net.puppygames.steam.Steam;
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.LWJGLException;
@@ -778,17 +778,17 @@ public abstract class Game extends Feature {
 		}
 		System.out.println(new Date() + " Game: " + title + " " + version + " ["+internalVersion+"]");
 
-//		// Maybe init Steam
-//		if (isUsingSteam()) {
-//			try {
-//				initSteam();
-//			} catch (Exception e) {
-//				e.printStackTrace(System.err);
-//				String message = ((TextWrapper) Resources.get("lwjglapplets.game.steamerror")).getText().replace("[title]", getTitle()); // Can't use display title yet
-//				Game.alert(message);
-//				exit();
-//			}
-//		}
+		// Maybe init Steam
+		if (isUsingSteam()) {
+			try {
+				initSteam();
+			} catch (Exception e) {
+				e.printStackTrace(System.err);
+				String message = ((TextWrapper) Resources.get("lwjglapplets.game.steamerror")).getText().replace("[title]", getTitle()); // Can't use display title yet
+				Game.alert(message);
+				exit();
+			}
+		}
 
 		// Initialise local filesystem
 		initFiles();
@@ -1097,13 +1097,13 @@ public abstract class Game extends Feature {
 	 * Get the roaming app settings dir
 	 * @return String
 	 */
-//	private static String getRoamingSettingsDir() {
-//		if (isUsingSteamCloud()) {
-//			return "";
-//		} else {
-//			return getLocalSettingsDir();
-//		}
-//	}
+	private static String getRoamingSettingsDir() {
+		if (isUsingSteamCloud()) {
+			return "";
+		} else {
+			return getLocalSettingsDir();
+		}
+	}
 
 	/**
 	 * Get the local settings dir
@@ -1145,12 +1145,12 @@ public abstract class Game extends Feature {
 	public static String getPlayerDirectoryPrefix() {
 		String ret = getRoamingDirectoryPrefix() + "slots_" + getInternalVersion() + File.separator + playerSlot.getName();
 		// Lazy creation
-//		if (!isUsingSteamCloud()) {
-//			File f = new File(ret);
-//			if (!f.exists()) {
-//				f.mkdirs();
-//			}
-//		}
+		if (!isUsingSteamCloud()) {
+			File f = new File(ret);
+			if (!f.exists()) {
+				f.mkdirs();
+			}
+		}
 		return ret + File.separator;
 	}
 
@@ -1175,34 +1175,34 @@ public abstract class Game extends Feature {
 		boolean remoteDirPrefixExists;
 		String remoteSettingsDirName = getRoamingSettingsDir() + File.separator + "." + getTitle().replace(' ', '_').toLowerCase() + '_' + getInternalVersion();
 		System.out.println("Roaming settings dir name="+remoteSettingsDirName);
-//		if (!isUsingSteamCloud()) {
-                File settingsDir = new File(remoteSettingsDirName);
-                if (!settingsDir.exists()) {
-                        System.out.println("Creating roaming settings dir: "+remoteSettingsDirName);
-                        settingsDir.mkdirs();
-                        remoteDirPrefixExists = settingsDir.exists();
-                } else {
-                        remoteDirPrefixExists = true;
-                }
-//		} else {
-//			remoteDirPrefixExists = true;
-//		}
+		if (!isUsingSteamCloud()) {
+			File settingsDir = new File(remoteSettingsDirName);
+			if (!settingsDir.exists()) {
+				System.out.println("Creating roaming settings dir: "+remoteSettingsDirName);
+				settingsDir.mkdirs();
+				remoteDirPrefixExists = settingsDir.exists();
+			} else {
+				remoteDirPrefixExists = true;
+			}
+		} else {
+			remoteDirPrefixExists = true;
+		}
 
 		boolean localDirPrefixExists;
 		String localSettingsDirName = getLocalSettingsDir() + File.separator + "." + getTitle().replace(' ', '_').toLowerCase() + '_' + getInternalVersion();
 		System.out.println("Local settings dir name="+localSettingsDirName);
-//		if (!isUsingSteamCloud()) {
-                File localSettingsDir = new File(localSettingsDirName);
-                if (!localSettingsDir.exists()) {
-                        System.out.println("Creating local settings dir: "+localSettingsDirName);
-                        localSettingsDir.mkdirs();
-                        localDirPrefixExists = localSettingsDir.exists();
-                } else {
-                        localDirPrefixExists = true;
-                }
-//		} else {
-//			localDirPrefixExists = true;
-//		}
+		if (!isUsingSteamCloud()) {
+			File localSettingsDir = new File(localSettingsDirName);
+			if (!localSettingsDir.exists()) {
+				System.out.println("Creating local settings dir: "+localSettingsDirName);
+				localSettingsDir.mkdirs();
+				localDirPrefixExists = localSettingsDir.exists();
+			} else {
+				localDirPrefixExists = true;
+			}
+		} else {
+			localDirPrefixExists = true;
+		}
 
 
 		localDirPrefix = localDirPrefixExists ? localSettingsDirName + File.separator : getRoamingSettingsDir() + File.separator;
@@ -1387,7 +1387,7 @@ public abstract class Game extends Feature {
 		}
 
 
-//		Steam.destroy();
+		Steam.destroy();
 		AL.destroy();
 		Display.destroy();
 		System.exit(0);
@@ -2092,10 +2092,10 @@ public abstract class Game extends Feature {
 						framesTicked += ticksToDo;
 					}
 					render();
-//					// Steam support
-//					if (isUsingSteam()) {
-//						Steam.tick();
-//					}
+					// Steam support
+					if (isUsingSteam()) {
+						Steam.tick();
+					}
 					Display.update();
 				}
 				if (DEBUG || forceSleep) {
@@ -2816,9 +2816,9 @@ public abstract class Game extends Feature {
 	/**
 	 * @return true if we're able to use the Steam cloud
 	 */
-//	public static boolean isUsingSteamCloud() {
-//		return isUsingSteam() && Steam.isCreated() && Steam.isSteamRunning() && Steam.getRemoteStorage().isCloudEnabledForAccount() && Steam.getRemoteStorage().isCloudEnabledForApp();
-//	}
+	public static boolean isUsingSteamCloud() {
+		return isUsingSteam() && Steam.isCreated() && Steam.isSteamRunning() && Steam.getRemoteStorage().isCloudEnabledForAccount() && Steam.getRemoteStorage().isCloudEnabledForApp();
+	}
 
 	/**
 	 * @return the Steam app ID, if we're using steam
@@ -2830,9 +2830,9 @@ public abstract class Game extends Feature {
 	/**
 	 * Initialise Steam.
 	 */
-//	private static void initSteam() {
-//		Steam.init(Game.appID);
-//	}
+	private static void initSteam() {
+		Steam.init(Game.appID);
+	}
 
 	/**
 	 * @return the on-the-fly FPS counter

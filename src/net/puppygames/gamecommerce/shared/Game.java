@@ -74,7 +74,7 @@ public interface Game {
 	public String getPriceUSD();
 
 	/**
-	 * @return a String describing the normal price in sterling, eg. "Â£19.95"
+	 * @return a String describing the normal price in sterling, eg. "£19.95"
 	 */
 	public String getPriceGBP();
 
