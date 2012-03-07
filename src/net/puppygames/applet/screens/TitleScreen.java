@@ -276,7 +276,7 @@ public class TitleScreen extends Screen {
 						if (TEST_MESSAGE_LONG) {
 	                        pendingMessage = new MessageReturn("TEST LONG MESSAGE", "Unfortunately, newsletter signup failed for the following reason:\n\n There has been a problem connecting to the Puppygames newsletter server. Please ensure you are online and try again, or alternatively contact us on contact@humblebundle.com for assistance.", null);
                         } else {
-	                        pendingMessage = new MessageReturn("TEST MESSAGE", "This is an example message returned from the message service\nThis is a test of Q, ﬂ and Á Ê ¯ and ˆ\nTest of ˆ and —¿¡¬√ƒ≈ working with leading.", null);
+	                        pendingMessage = new MessageReturn("TEST MESSAGE", "This is an example message returned from the message service\nThis is a test of Q, √ü and √ß √¶ √∏ and √∂\nTest of √∂ and √ë√Ä√Å√Ç√É√Ñ√Ö working with leading.", null);
                         }
 					}
 					AppletMessageCheckerRemote amcr = (AppletMessageCheckerRemote) Naming.lookup("//"+AppletMessageCheckerRemote.REMOTE_HOST+"/"+AppletMessageCheckerRemote.REMOTE_NAME);

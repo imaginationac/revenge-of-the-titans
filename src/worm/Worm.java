@@ -31,44 +31,28 @@
  */
 package worm;
 
-import java.io.Serializable;
-import java.util.Calendar;
-
-import net.puppygames.applet.Game;
-import net.puppygames.applet.GameState;
-import net.puppygames.applet.MiniGame;
-import net.puppygames.applet.PlayerSlot;
-import net.puppygames.applet.Screen;
-import net.puppygames.applet.effects.LabelEffect;
-import net.puppygames.applet.effects.Particle;
-import net.puppygames.applet.screens.DialogScreen;
-import net.puppygames.applet.screens.NagScreen;
-import net.puppygames.gamecommerce.shared.RegistrationDetails;
-import net.puppygames.steam.NotificationPosition;
-import net.puppygames.steam.Steam;
-import net.puppygames.steam.SteamException;
-
-import org.lwjgl.Sys;
-import org.lwjgl.input.Mouse;
-import org.lwjgl.util.Point;
-
-import worm.animation.SimpleThingWithLayers;
-import worm.features.LayersFeature;
-import worm.screens.ChooseGameModeScreen;
-import worm.screens.GameScreen;
-
 import com.shavenpuppy.jglib.Resources;
 import com.shavenpuppy.jglib.interpolators.LinearInterpolator;
 import com.shavenpuppy.jglib.openal.ALBuffer;
 import com.shavenpuppy.jglib.resources.Attenuator;
 import com.shavenpuppy.jglib.resources.AttenuatorFeature;
 import com.shavenpuppy.jglib.resources.MappedColor;
-import com.shavenpuppy.jglib.sprites.SoundCommand;
-import com.shavenpuppy.jglib.sprites.Sprite;
-import com.shavenpuppy.jglib.sprites.SpriteAllocator;
-import com.shavenpuppy.jglib.sprites.SpriteEngine;
-import com.shavenpuppy.jglib.sprites.SpriteImage;
-import com.shavenpuppy.jglib.sprites.StaticSpriteEngine;
+import com.shavenpuppy.jglib.sprites.*;
+import java.io.Serializable;
+import java.util.Calendar;
+import net.puppygames.applet.*;
+import net.puppygames.applet.effects.LabelEffect;
+import net.puppygames.applet.effects.Particle;
+import net.puppygames.applet.screens.DialogScreen;
+import net.puppygames.applet.screens.NagScreen;
+import net.puppygames.gamecommerce.shared.RegistrationDetails;
+import org.lwjgl.Sys;
+import org.lwjgl.input.Mouse;
+import org.lwjgl.util.Point;
+import worm.animation.SimpleThingWithLayers;
+import worm.features.LayersFeature;
+import worm.screens.ChooseGameModeScreen;
+import worm.screens.GameScreen;
 
 /**
  * Revenge of the Titans game
@@ -247,15 +231,6 @@ public class Worm extends MiniGame {
 
 		Particle.setMaxParticles(4096);
 		SoundCommand.setDefaultAttenuator(DEFAULT_ATTENUATOR_FEATURE);
-
-		if (isUsingSteam() && Steam.isCreated() && Steam.isSteamRunning()) {
-			Steam.getUtils().setOverlayNotificationPosition(NotificationPosition.TopRight);
-			try {
-			Steam.getUserStats().requestCurrentStats();
-			} catch (SteamException e) {
-				System.err.println("Failed to request user stats due to "+e);
-			}
-		}
 	}
 
 	public static void setInstance(Worm instance) {

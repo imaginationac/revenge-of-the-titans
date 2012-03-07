@@ -2846,21 +2846,21 @@
 	<animation name="quicklaunch.key.DEL.de.on.animation">       <frame i="spriteimage.quicklaunch.key.DEL.de.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
 	<animation name="quicklaunch.key.DEL.de.disabled.animation"> <frame i="spriteimage.quicklaunch.key.DEL.de.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
 
-	<animation name="quicklaunch.key.Ä.off.animation">      <frame i="spriteimage.quicklaunch.key.A.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
-	<animation name="quicklaunch.key.Ä.on.animation">       <frame i="spriteimage.quicklaunch.key.A.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
-	<animation name="quicklaunch.key.Ä.disabled.animation"> <frame i="spriteimage.quicklaunch.key.A.umlaut.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ã„.off.animation">      <frame i="spriteimage.quicklaunch.key.A.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ã„.on.animation">       <frame i="spriteimage.quicklaunch.key.A.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ã„.disabled.animation"> <frame i="spriteimage.quicklaunch.key.A.umlaut.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
 
-	<animation name="quicklaunch.key.Ö.off.animation">      <frame i="spriteimage.quicklaunch.key.O.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
-	<animation name="quicklaunch.key.Ö.on.animation">       <frame i="spriteimage.quicklaunch.key.O.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
-	<animation name="quicklaunch.key.Ö.disabled.animation"> <frame i="spriteimage.quicklaunch.key.O.umlaut.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ã–.off.animation">      <frame i="spriteimage.quicklaunch.key.O.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ã–.on.animation">       <frame i="spriteimage.quicklaunch.key.O.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ã–.disabled.animation"> <frame i="spriteimage.quicklaunch.key.O.umlaut.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
 
-	<animation name="quicklaunch.key.Ü.off.animation">      <frame i="spriteimage.quicklaunch.key.U.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
-	<animation name="quicklaunch.key.Ü.on.animation">       <frame i="spriteimage.quicklaunch.key.U.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
-	<animation name="quicklaunch.key.Ü.disabled.animation"> <frame i="spriteimage.quicklaunch.key.U.umlaut.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ãœ.off.animation">      <frame i="spriteimage.quicklaunch.key.U.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ãœ.on.animation">       <frame i="spriteimage.quicklaunch.key.U.umlaut.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.Ãœ.disabled.animation"> <frame i="spriteimage.quicklaunch.key.U.umlaut.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
 
-	<animation name="quicklaunch.key.ß.off.animation">      <frame i="spriteimage.quicklaunch.key.S.sharp.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
-	<animation name="quicklaunch.key.ß.on.animation">       <frame i="spriteimage.quicklaunch.key.S.sharp.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
-	<animation name="quicklaunch.key.ß.disabled.animation"> <frame i="spriteimage.quicklaunch.key.S.sharp.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.ÃŸ.off.animation">      <frame i="spriteimage.quicklaunch.key.S.sharp.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.ÃŸ.on.animation">       <frame i="spriteimage.quicklaunch.key.S.sharp.02" d="0"/><frame i="quicklaunch.key.on.animation" d="0"/></animation>
+	<animation name="quicklaunch.key.ÃŸ.disabled.animation"> <frame i="spriteimage.quicklaunch.key.S.sharp.01" d="0"/><frame i="quicklaunch.key.disabled.animation" d="0"/></animation>
 
 
 	<!-- key shortcuts using world gui colors eg. eart.colormap -->
@@ -3131,21 +3131,21 @@
 	<animation name="hotkey.DEL.de.on.animation">       <frame i="spriteimage.quicklaunch.key.DEL.de.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
 	<animation name="hotkey.DEL.de.disabled.animation"> <frame i="spriteimage.quicklaunch.key.DEL.de.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
 
-	<animation name="hotkey.Ä.off.animation">      <frame i="spriteimage.quicklaunch.key.A.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
-	<animation name="hotkey.Ä.on.animation">       <frame i="spriteimage.quicklaunch.key.A.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
-	<animation name="hotkey.Ä.disabled.animation"> <frame i="spriteimage.quicklaunch.key.A.umlaut.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
+	<animation name="hotkey.Ã„.off.animation">      <frame i="spriteimage.quicklaunch.key.A.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
+	<animation name="hotkey.Ã„.on.animation">       <frame i="spriteimage.quicklaunch.key.A.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
+	<animation name="hotkey.Ã„.disabled.animation"> <frame i="spriteimage.quicklaunch.key.A.umlaut.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
 
-	<animation name="hotkey.Ö.off.animation">      			<frame i="spriteimage.quicklaunch.key.O.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
-	<animation name="hotkey.Ö.umlaut.on.animation">       <frame i="spriteimage.quicklaunch.key.O.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
-	<animation name="hotkey.Ö.umlaut.disabled.animation"> <frame i="spriteimage.quicklaunch.key.O.umlaut.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
+	<animation name="hotkey.Ã–.off.animation">      			<frame i="spriteimage.quicklaunch.key.O.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
+	<animation name="hotkey.Ã–.umlaut.on.animation">       <frame i="spriteimage.quicklaunch.key.O.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
+	<animation name="hotkey.Ã–.umlaut.disabled.animation"> <frame i="spriteimage.quicklaunch.key.O.umlaut.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
 
-	<animation name="hotkey.Ü.off.animation">      <frame i="spriteimage.quicklaunch.key.U.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
-	<animation name="hotkey.Ü.on.animation">       <frame i="spriteimage.quicklaunch.key.U.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
-	<animation name="hotkey.Ü.disabled.animation"> <frame i="spriteimage.quicklaunch.key.U.umlaut.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
+	<animation name="hotkey.Ãœ.off.animation">      <frame i="spriteimage.quicklaunch.key.U.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
+	<animation name="hotkey.Ãœ.on.animation">       <frame i="spriteimage.quicklaunch.key.U.umlaut.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
+	<animation name="hotkey.Ãœ.disabled.animation"> <frame i="spriteimage.quicklaunch.key.U.umlaut.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
 
-	<animation name="hotkey.ß.off.animation">      <frame i="spriteimage.quicklaunch.key.S.sharp.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
-	<animation name="hotkey.ß.on.animation">       <frame i="spriteimage.quicklaunch.key.S.sharp.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
-	<animation name="hotkey.ß.disabled.animation"> <frame i="spriteimage.quicklaunch.key.S.sharp.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
+	<animation name="hotkey.ÃŸ.off.animation">      <frame i="spriteimage.quicklaunch.key.S.sharp.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
+	<animation name="hotkey.ÃŸ.on.animation">       <frame i="spriteimage.quicklaunch.key.S.sharp.02" d="0"/><frame i="hotkey.on.animation" d="0"/></animation>
+	<animation name="hotkey.ÃŸ.disabled.animation"> <frame i="spriteimage.quicklaunch.key.S.sharp.01" d="0"/><frame i="hotkey.disabled.animation" d="0"/></animation>
 
 
 </resources>
